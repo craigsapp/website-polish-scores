@@ -1,0 +1,301 @@
+// vim: ts=3
+
+
+//////////////////////////////
+//
+// filterBrowseIndex -- Filter the full index by various search fields.
+//
+
+function filterBrowseIndex(index) {
+	if (SEARCH_FREEZE) {
+		return;
+	}
+	if (!index) {
+		index = BROWSE_INDEX;
+	}
+
+	// Reset search
+	SEARCH = {};
+
+	let results = index;
+	let newresults;
+
+	results = filterByCentury(results);
+	results = filterByComposer(results);
+	results = filterBySiglum(results);
+	results = filterByGenre(results);
+	results = filterByTitle(results);
+
+	if (results.length != BROWSE_INDEX) {
+		SEARCH_FREEZE = true;
+		buildCenturyFilter(results);
+		buildComposerFilter(results);
+		buildSiglumFilter(results);
+		buildGenreFilter(results);
+		SEARCH_FREEZE = false;
+	}
+
+	BROWSE_RESULTS = results;
+
+	showResultsCount(results.length);
+
+	SEARCH.count = results.length;
+	SEARCH.lang  = LANGUAGE;
+	storeSearchInfo(SEARCH);
+
+	displayBrowseResults(results);
+}
+
+
+
+//////////////////////////////
+//
+// showResultsCount --
+//
+
+function showResultsCount(count) {
+	let element = document.querySelector("#results-count");
+	if (!element) {
+		return;
+	}
+	let output = "";
+	if (!count) {
+		output = "0 ";
+		output += "matches";
+	} else if (count == 1) {
+		output = "1 ";
+		output += "match";
+	} else if (count == BROWSE_INDEX.length) {
+		// Everything matches, so not interesting to show the count.
+		output = "";
+	} else {
+		output = count.toString() + " ";
+		output += "matches";
+	}
+	element.innerHTML = output;
+}
+
+
+
+//////////////////////////////
+//
+// filterByComposer --
+//
+
+function filterByComposer(input) {
+	let type = "composer";
+	let field = "COM";
+	if (!input) {
+		return [];
+	}
+	if (input.length == 0) {
+		return input;
+	}
+	let element = document.querySelector(`select.filter.${type}`);
+	let target = "";
+	if (element) {
+		target = element.value;
+	}
+	{% if site.debug == "true" %}
+		console.log("COMPOSER QUERY:", target);
+	{% endif %}
+	if (target) {
+		SEARCH[type] = target;
+		let output = [];
+		for (let i=0; i<input.length; i++) {
+			if (input[i][field] === target) {
+				output.push(input[i]);
+			}
+		}
+		return output;
+	} else {
+		return input;
+	}
+}
+
+
+
+//////////////////////////////
+//
+// filterByCentury --
+//
+
+function filterByCentury(input) {
+	let type = "century";
+	let field = "cenid";
+	if (!input) {
+		return [];
+	}
+	if (input.length == 0) {
+		return input;
+	}
+	let element = document.querySelector(`select.filter.${type}`);
+	let target = "";
+	if (element) {
+		target = element.value;
+	}
+	{% if site.debug == "true" %}
+		console.log("CENTURY QUERY:", target);
+	{% endif %}
+	if (target) {
+		SEARCH[type] = target;
+		let output = [];
+		let re = new RegExp("^" + target);
+		for (let i=0; i<input.length; i++) {
+			if (re.exec(input[i][field])) {
+				output.push(input[i]);
+			}
+		}
+		return output;
+	} else {
+		return input;
+	}
+}
+
+
+
+//////////////////////////////
+//
+// filterBySiglum --
+//
+
+function filterBySiglum(input) {
+	let type = "siglum";
+	let field = "siglum";
+	if (!input) {
+		return [];
+	}
+	if (input.length == 0) {
+		return input;
+	}
+	let element = document.querySelector(`select.filter.${type}`);
+	let target = "";
+	if (element) {
+		target = element.value;
+	}
+	{% if site.debug == "true" %}
+		console.log("SIGLUM QUERY:", target);
+	{% endif %}
+	if (target) {
+		SEARCH[type] = target;
+		let output = [];
+		let re = new RegExp("^" + target);
+		for (let i=0; i<input.length; i++) {
+			if (re.exec(input[i][field])) {
+				output.push(input[i]);
+			}
+		}
+		return output;
+	} else {
+		return input;
+	}
+}
+
+
+
+//////////////////////////////
+//
+// filterByGenre --
+//
+
+function filterByGenre(input) {
+	let type = "genre";
+	let field = "AGN";
+	if (!input) {
+		return [];
+	}
+	if (input.length == 0) {
+		return input;
+	}
+	let element = document.querySelector(`select.filter.${type}`);
+	let target = "";
+	if (element) {
+		target = element.value;
+	}
+	{% if site.debug == "true" %}
+		console.log("GENRE QUERY:", target);
+	{% endif %}
+	if (target) {
+		SEARCH[type] = target;
+		let output = [];
+		let re = new RegExp("\\b" + target + "\\b");
+		for (let i=0; i<input.length; i++) {
+			if (re.exec(input[i][field])) {
+				output.push(input[i]);
+			}
+		}
+		return output;
+	} else {
+		return input;
+	}
+}
+
+
+
+//////////////////////////////
+//
+// filterByTitle --
+//
+
+function filterByTitle(input) {
+	let type = "title";
+	let field = "title";
+	if (!input) {
+		return [];
+	}
+	if (input.length == 0) {
+		return input;
+	}
+	let element = document.querySelector(`input.filter.${type}`);
+	let target = "";
+	if (element) {
+		target = element.value;
+	}
+
+	target = target.trim();
+	let pieces = target.split(/\s*"+\s*/);
+	let titleTargets = [];
+	for (let i=0; i<pieces.length; i++) {
+		pieces[i] = pieces[i].trim();
+		if (i % 2 == 0) {
+			let newpieces = pieces[i].split(/\s+/);
+			for (let j=0; j<newpieces.length; j++) {
+				if (newpieces[j]) {
+					titleTargets.push(newpieces[j]);
+				}
+			}
+		} else {
+			// Exact phrase to search for:
+			if (pieces[i]) {
+				titleTargets.push(pieces[i]);
+			}
+		}
+	}
+
+	{% if site.debug == "true" %}
+		console.log("TITLE QUERY:", target, titleTargets);
+	{% endif %}
+
+	if (titleTargets.length > 0) {
+		SEARCH[type] = target;
+		let output = [];
+		for (let i=0; i<titleTargets.length; i++) {
+			let re = new RegExp(titleTargets[i], "i");
+			for (let j=0; j<input.length; j++) {
+				if (re.exec(input[j][field])) {
+					output.push(input[j]);
+				}
+			}
+			if (i < titleTargets.length - 1) {
+				input = output;
+				output = [];
+			}
+		}
+		return output;
+	} else {
+		return input;
+	}
+}
+
+
+

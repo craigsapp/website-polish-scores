@@ -1,0 +1,18 @@
+
+
+.button {
+	background: {{ site.h1_color }};
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
+.button:hover {
+	background: limegreen;
+}
+
+
+

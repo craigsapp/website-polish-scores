@@ -1,0 +1,40 @@
+
+textarea:focus, input:focus select:focus {
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+
+select {
+	box-sizing: inherit;
+	display: inline-block;
+	font-size: 1.25rem;
+	font: inherit;
+	list-style-type: none;
+	margin-bottom: 2px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 2px;
+	text-transform: none;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* Input text placeholder styling: */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #aaaaaa;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #aaaaaa;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #aaaaaa;
+}
+
+

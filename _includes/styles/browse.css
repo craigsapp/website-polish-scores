@@ -1,0 +1,56 @@
+
+
+#filters {
+	margin-bottom: 30px;
+	margin-left: 30px;
+}
+
+#results-count {
+	color: #aaaaaa;
+}
+
+table.search-results {
+	border-collapse: collapse;
+	margin-left: 30px;
+	margin-right: 20px;
+	width: calc(100% - 50px);
+}
+
+
+table.search-results th {
+	cursor: pointer;
+}
+
+
+table.search-results td {
+	cursor: pointer;
+}
+
+
+table.search-results tbody tr:hover {
+	background: lavender;
+}
+
+
+table.search-results th {
+	text-align: left;
+}
+
+
+table.search-results td {
+	vertical-align: top;
+}
+
+
+.first-name {
+	color: #aaaaaa;
+}
+
+
+span.mark {
+	font-weight: bold;
+	color: {{ site.h1_color }};
+}
+
+
+

@@ -1,0 +1,200 @@
+// vim: ts=3
+
+
+//////////////////////////////
+//
+// displayBrowsePage --
+//
+
+function displayBrowsePage() {
+	{% if site.debug == "true" %}
+		console.log("DISPLAYING BROWSE PAGE");
+	{% endif %}
+	var telement = document.querySelector("#template-browse");
+	if (!telement) {
+		console.error("ERROR: Cannot find #template-browse.");
+		return;
+	}
+	var tsource = telement.textContent;
+	if (!tsource) {
+		console.error("ERROR: Cannot find browse-page template");
+		return;
+	}
+	var workTemplate = Handlebars.compile(tsource);
+	var output = workTemplate();
+
+	targets = document.querySelectorAll("#content .page");
+
+	for (let i=0; i<targets.length; i++) {
+		if (targets[i].id === "browse-page") {
+			targets[i].classList.remove("hidden");
+			targets[i].innerHTML = output;
+		}
+	}
+
+	buildBrowseFilters();
+
+	// displayBrowseResults();
+	filterBrowseIndex();
+}
+
+
+
+//////////////////////////////
+//
+// displayBrowseResults --
+//
+
+function displayBrowseResults(results, target) {
+	if (!target) {
+		target = "#results";
+	}
+	let element = document.querySelector("#results");
+	if (!element) {
+		console.error("ERROR: Cannot find", target);
+		return;
+	}
+
+	if (!results) {
+		results = BROWSE_RESULTS;
+	}
+
+	if (!results) {
+		element.innerHTML = "";
+		return;
+	}
+
+	if (results.length == 0) {
+		element.innerHTML = "";
+		return;
+	}
+
+	let output = "";
+	output += "<table class='search-results'>\n";
+	output += "<thead>\n";
+	output += `<th>${getTranslation("header_composer")}</th>\n`;
+	output += `<th>${getTranslation("header_title")}</th>\n`;
+	output += "</thead>\n";
+	output += "<tbody>\n";
+
+	for (let i=0; i<results.length; i++) {
+
+		let composer = results[i].COM;
+		let matches = composer.match(/^\s*([^,]+),\s*(.*)\s*$/);
+		if (matches) {
+			composer = `${matches[1]}<span class='first-name'>, ${matches[2]}</span`;
+		} else {
+			if ((composer === "Anonim") || (composer === "anonim")) {
+				composer = getTranslation("Anonymus");
+			}
+		}
+
+		output += "<tr>\n";
+		output += "<td class='composer'>";
+		output += composer;
+		output += "</td>\n";
+		output += "<td class='title'>";
+		output += getHighlightedTitleContent(results[i].title);
+		output += "</td>\n";
+		output += "</tr>\n";
+	}
+
+	output += "</tbody>\n";
+	output += "</table>\n";
+
+	element.innerHTML = output;
+}
+
+
+
+//////////////////////////////
+//
+// resetBrowse --
+//
+
+function resetBrowse() {
+	{% if site.debug == "true" %}
+		console.log("Resetting browse search fields");
+	{% endif %}
+	console.log("SEARCH", SEARCH);
+	SEARCH = {};
+	
+	SEARCH_FREEZE = true;
+	var centuryElement  = document.querySelector("select.filter.century");
+	var composerElement = document.querySelector("select.filter.composer");
+	var siglumElement   = document.querySelector("select.filter.siglum");
+	var genreElement    = document.querySelector("select.filter.genre");
+	var titleElement    = document.querySelector("input.filter.title");
+
+	if (centuryElement) {
+		centuryElement.value = "";
+	}
+	if (composerElement) {
+		composerElement.value = "";
+	}
+	if (siglumElement) {
+		siglumElement.value = "";
+	}
+	if (genreElement) {
+		genreElement.value = "";
+	}
+	if (titleElement) {
+		titleElement.value = "";
+	}
+	SEARCH_FREEZE = false;
+
+	filterBrowseIndex();
+
+}
+
+
+
+//////////////////////////////
+//
+// getHighlightedTitleContent
+//
+
+function getHighlightedTitleContent(title) {
+	if (!SEARCH) {
+		return title;
+	}
+	if (!SEARCH.title) {
+		return title;
+	}
+
+	target = SEARCH.title.trim();
+	let pieces = target.split(/\s*"+\s*/);
+	let titleTargets = [];
+	for (let i=0; i<pieces.length; i++) {
+		pieces[i] = pieces[i].trim();
+		if (i % 2 == 0) {
+			let newpieces = pieces[i].split(/\s+/);
+			for (let j=0; j<newpieces.length; j++) {
+				if (newpieces[j]) {
+					titleTargets.push(newpieces[j]);
+				}
+			}
+		} else {
+			// Exact phrase to search for:
+			if (pieces[i]) {
+				titleTargets.push(pieces[i]);
+			}
+		}
+	}
+
+	if (titleTargets.length == 0) {
+		return title;
+	}
+
+	for (let i=0; i<titleTargets.length; i++) {
+		let re = new RegExp(titleTargets[i], "gi");
+		title = title.replace(re, (match) => `<#>${match}</#>`);
+	}
+	title = title.replace(/#/g, "span");
+	title = title.replace(/<span>/g, "<span class='mark'>");
+
+	return title;
+}
+	
+	
+

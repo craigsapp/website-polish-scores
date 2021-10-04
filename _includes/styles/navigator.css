@@ -1,0 +1,56 @@
+
+
+#navigator .highlight {
+	color: goldenrod;
+	font-weight: bold;
+}
+
+
+#navigator {
+	box-sizing: unset;
+	cursor: auto;
+	display: flex;
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 15px;
+	justify-content: flex-end;
+	line-height: 1.5;
+	margin: 0px auto;
+	max-width: 1000px;
+	padding: 35px 15px 15px;
+	-webkit-text-size-adjust: 100%;
+}
+
+
+#language-list {
+	-space: nowrap;
+	overflow: hidden;
+	padding-right: 0px;
+}
+
+
+#language-list div:hover {
+	color: #dc143c;
+}
+
+
+#language-list div {
+	background-color: transparent;
+	border-radius: 21px;
+	box-sizing: inherit;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 1.5;
+	margin: 0;
+	outline: none;
+	text-align: center;
+	text-decoration: none;
+	transition: .3s;
+	width: 50px;
+	-webkit-text-size-adjust: 100%;
+}
+
+

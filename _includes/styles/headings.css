@@ -1,0 +1,36 @@
+
+
+h1 {
+
+	box-sizing: inherit;
+	color: {{ site.h1_color }};
+	cursor: auto;
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 36px;
+	font-weight: 400;
+	letter-spacing: -1px;
+	line-height: 1.5;
+	list-style-type: none;
+	margin: 0;
+	padding-bottom: 45px;
+	padding-top: 20px;
+	text-align: center;
+	-webkit-text-size-adjust: 100%;
+}
+
+
+h2 {
+	color: {{ site.h2_color }};
+}
+
+
+h3 {
+	color: {{ site.h3_color }};
+}
+
+
+th {
+	color: {{ site.th_color }};
+}
+
+

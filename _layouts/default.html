@@ -1,0 +1,21 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+{% include head/main.html %}
+</head>
+<body>
+<header></header>
+<main>
+	{% include navigator/main.html %}
+	<div id="content">
+	{{ content }}
+	<div class="page hidden" id="browse-page"></div>
+	<div class="page hidden" id="work-page"></div>
+	<div class="page hidden" id="analysis-page"></div>
+	</div>
+</main>
+<footer></footer>
+</body>
+</html>

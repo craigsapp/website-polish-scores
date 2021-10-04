@@ -1,0 +1,17 @@
+
+
+div#content {
+    -webkit-text-size-adjust: 100%;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 15px;
+    line-height: 1.5;
+    cursor: auto;
+    max-width: 1000px;
+    margin: 0px auto;
+    padding: 15px;
+    background: white;
+    filter: drop-shadow(0px 0px 5px rgba(45, 45, 45, 0.5));
+    box-sizing: unset;
+}
+
+

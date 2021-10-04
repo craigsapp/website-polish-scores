@@ -1,0 +1,13 @@
+
+{% include navigator/content.html %}
+
+<script>
+{% include navigator/navigator.js %}
+{% include navigator/listeners.js %}
+
+addLanguageButtons("#language-list", {{ site.languages | jsonify }});
+highlightLanguage(LANGUAGE);
+
+</script>
+
+

@@ -1,0 +1,44 @@
+
+body {
+	box-sizing: inherit;
+	cursor: auto;
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 15px;
+	line-height: 1.5;
+	margin: 0;
+	-webkit-text-size-adjust: 100%;
+}
+
+
+main {
+	background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(/img/bgcbw.png) no-repeat center fixed;
+	box-sizing: inherit;
+	cursor: auto;
+	display: block;
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 15px;
+	line-height: 1.5;
+	margin: 0;
+	min-height: 100vh;
+	padding: 50px 0;
+	-webkit-text-size-adjust: 100%;
+}
+
+
+#content {
+	min-height: 100vh;
+}
+
+
+body {
+	background: #6a6a6a;
+}
+
+
+.hidden {
+	display: none !important;
+}
+
+
+
+

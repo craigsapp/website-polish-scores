@@ -1,0 +1,184 @@
+
+@ For browsing genre select menu
+
+@@BEGIN:	ENTRY
+@TAG:		Aria
+@EN:		Aria
+@PL:		Aria
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Ballade
+@EN:		Ballade
+@PL:		Ballada
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Cantata
+@EN:		Cantata
+@PL:		Kantata
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Cassation
+@EN:		Cassation
+@PL:		Kasacja
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Completorium
+@EN:		Completorium
+@PL:		Komplettorium
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Easter
+@EN:		Easter
+@PL:		Wielkanoc
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Fantasy
+@EN:		Fantasy
+@PL:		Fantazja
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Fugue
+@EN:		Fugue
+@PL:		Fuga
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		March
+@EN:		March
+@PL:		Marsz
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Mass
+@EN:		Mass
+@PL:		Msza
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Mass_section
+@EN:		Mass section
+@PL:		Sekcja msza
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Mazurka
+@EN:		Mazurka
+@PL:		Mazurek
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Minuet
+@EN:		Minuet
+@PL:		Menuet
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Motet
+@EN:		Motet
+@PL:		Motet
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Partita
+@EN:		Partita
+@PL:		Partita
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Polka
+@EN:		Polka
+@PL:		Polka
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Polonaise
+@EN:		Polonaise
+@PL:		Polonez
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Prelude
+@EN:		Prelude
+@PL:		Preludium
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Requiem
+@EN:		Requiem
+@PL:		Msza żałobna
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Requiem_section
+@EN:		Requiem section
+@PL:		Sekcja Requiem
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Rondo
+@EN:		Rondo
+@PL:		Rondo
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Sacred
+@EN:		Sacred
+@PL:		Poświęcony
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Secular
+@EN:		Secular
+@PL:		Świecki
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Sonata
+@EN:		Sonata
+@PL:		Sonata
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Song
+@EN:		Song
+@PL:		Pieśń
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		String_quartet
+@EN:		String quartet
+@PL:		Kwartet smyczkowy
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Toccata
+@EN:		Toccata
+@PL:		Toccata
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Variations
+@EN:		Variations
+@PL:		Wariacje
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Vespers
+@EN:		Vespers
+@PL:		Nieszpory
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Waltz
+@EN:		Waltz
+@PL:		Walc
+@@END:		ENTRY
+
+

@@ -1,0 +1,28 @@
+
+<!-- template-browse
+	Template for the main browsing page.
+-->
+
+{% raw %}
+<script id="template-browse" type="text/x-handlebars-template">
+
+
+<h1>{{trans "title"}}</h1>
+
+<div id="filters">
+<div style="display:inline-block" id="filter-century"></div>
+<div style="display:inline-block" id="filter-composer"></div>
+<div style="display:inline-block" id="filter-siglum"></div>
+<div style="display:inline-block" id="filter-genre"></div>
+<br/>
+<div style="display:inline-block" id="filter-title"></div>
+<div style="display:inline-block" class="button" onclick="resetBrowse()">{{trans "clear"}}</div>
+<div id="results-count"></div>
+</div>
+
+<div id="results"></div>
+
+</script>
+{% endraw %}
+
+

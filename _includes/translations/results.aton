@@ -1,0 +1,15 @@
+
+@ Translations for the search-results table (headings)
+
+@@BEGIN:	ENTRY
+@TAG:		header_composer
+@EN:		Composer
+@PL:		Kompozytor
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		header_title
+@EN:		Title
+@PL:		Tytuł
+@@END:		ENTRY
+

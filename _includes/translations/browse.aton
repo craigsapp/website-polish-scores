@@ -1,0 +1,73 @@
+
+@ Language-specific composer names 
+
+@@BEGIN:	ENTRY
+@TAG:		Anonymus
+@EN:		Anonymous
+@PL:		Anonim
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		anonymus
+@EN:		anonymous
+@PL:		anonim
+@@END:		ENTRY
+
+@
+@ Composer drop-down list on browse page:
+@
+
+@@BEGIN:	ENTRY
+@TAG:		any_composer
+@EN:		Any composer
+@PL:		Każdy kompozytor 
+@@END:		ENTRY
+
+@
+@ Century drop-down list on browse page:
+@
+
+@@BEGIN:	ENTRY
+@TAG:		any_century
+@EN:		Any century
+@PL:		Dowolne stulecie
+@@END:		ENTRY
+
+@
+@ Siglum drop-down list on browse page:
+@
+
+@@BEGIN:	ENTRY
+@TAG:		any_library
+@EN:		Any library
+@PL:		Dowolna biblioteka
+@@END:		ENTRY
+
+@
+@ Genre drop-down list on browse page:
+@
+
+@@BEGIN:	ENTRY
+@TAG:		any_genre
+@EN:		Any genre
+@PL:		Dowolny gatunek
+@@END:		ENTRY
+@
+@ Title placeholder on browse page
+@
+
+@@BEGIN:	ENTRY
+@TAG:		title_placeholder
+@EN:		Search title for words or exact phrases in quotes here.
+@PL:		Szukaj w tytule słów lub dokładnych fraz w cudzysłowie.
+@@END:		ENTRY
+
+
+@@BEGIN:	ENTRY
+@TAG:		clear
+@EN:		clear
+@PL:		oczyścić
+@@END:		ENTRY
+
+
+

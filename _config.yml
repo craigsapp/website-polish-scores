@@ -1,0 +1,43 @@
+
+# tab_title: Title to display in browser tab.
+tab_title: "Polish scores"
+
+# data_addr: website for Humdrum scores and derivatives.
+data_addr: "https://data.nifc.humdrum.org"
+
+# browse_index: JSON list of works for browse page.
+browse_index: "https://data.nifc.humdrum.org/popc2-browse-index.json"
+
+# background_image: Background image for <main>
+background_image: "/img/bgcbw.png"
+
+# langauges: List of langauges available on website.
+languages:
+   - "EN"
+   - "PL"
+
+# debug: print debugging statements
+debug: "true"
+# debug: "false"
+
+
+##############################
+##
+## CSS Stylings --
+##
+
+# h1_color: Color for H1 headings.
+h1_color: "#a71b1d"
+
+# h2_color: Color for H2 headings.
+h2_color: "black"
+
+# h3_color: Color for H3 headings.
+h3_color: "#aaaaaa"
+
+# th_color: Color for Table headings.
+th_color: "#a71b1d"
+
+
+
+

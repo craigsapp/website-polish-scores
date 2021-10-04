@@ -211,7 +211,7 @@ function getHighlightedTitleContent(title) {
 //          s = siglum
 //          g = genre
 //          n = nationality
-//          t = text
+//          t = title
 //
 
 function copySearchLink() {
@@ -237,6 +237,10 @@ function copySearchLink() {
 	if (typeof SEARCH.nationality !== "undefined") {
 		if (!search.match(/^\s*$/)) { search += "&"; }
 		search += `n=${encodeURIComponent(SEARCH.nationality)}`;
+	}
+	if (typeof SEARCH.title !== "undefined") {
+		if (!search.match(/^\s*$/)) { search += "&"; }
+		search += `t=${encodeURIComponent(SEARCH.title)}`;
 	}
 
 	if (!search.match(/^\s*$/)) {

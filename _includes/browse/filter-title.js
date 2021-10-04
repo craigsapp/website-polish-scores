@@ -35,6 +35,7 @@ function buildTitleFilter(target) {
 
 	let output = "<input type='text' style='width:350px;' class='filter title'";
 	output += ` placeholder='${getTranslation("title_placeholder")}'`;
+	output += ` value="${selectedTitle}"`;
 	output += ">\n";
 
 	element.innerHTML = output;

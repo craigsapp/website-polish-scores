@@ -83,7 +83,7 @@ function changeToLanguage(lang) {
 	}
 	highlightLanguage(lang);
 	LANGUAGE = lang;
-	sessionStorage.LANGUAGE = lang;
+	localStorage.LANGUAGE = lang;
 
 	// Change current page to given langauge
 

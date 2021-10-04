@@ -8,7 +8,8 @@ h1 {
 	font-family: 'Montserrat', sans-serif !important;
 	font-size: 36px;
 	font-weight: 400;
-	letter-spacing: -1px;
+	letter-spacing: 2px;
+	word-spacing: 5px;
 	line-height: 1.5;
 	list-style-type: none;
 	margin: 0;

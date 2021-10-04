@@ -22,6 +22,11 @@ select {
 	-webkit-text-size-adjust: 100%;
 }
 
+
+input {
+	font-size: 1.25rem;
+}
+
 /* Input text placeholder styling: */
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

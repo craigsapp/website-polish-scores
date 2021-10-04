@@ -4,6 +4,7 @@ let BROWSE_INDEX = [];
 let BROWSE_RESULTS = [];
 
 document.addEventListener("DOMContentLoaded", function() {
+	
 	let url = "{{ site.browse_index }}";
 	{% if site.debug == "true" %}
 		console.log("GOING TO DOWNLOAD BROWSE INDEX FROM", url);

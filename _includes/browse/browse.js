@@ -195,6 +195,60 @@ function getHighlightedTitleContent(title) {
 
 	return title;
 }
-	
-	
+
+
+
+//////////////////////////////
+//
+// copySearchLink --
+//
+
+function copySearchLink() {
+	let base = window.location.origin;
+	let url = base;
+	let search = "";
+	if (typeof SEARCH.century !== "undefined") {
+		if (!search.match(/^\s*$/)) { search += "&"; }
+		search += `y=${encodeURIComponent(SEARCH.century)}`;
+	}
+	if (typeof SEARCH.composer !== "undefined") {
+		if (!search.match(/^\s*$/)) { search += "&"; }
+		search += `c=${encodeURIComponent(SEARCH.composer)}`;
+	}
+	if (typeof SEARCH.siglum !== "undefined") {
+		if (!search.match(/^\s*$/)) { search += "&"; }
+		search += `s=${encodeURIComponent(SEARCH.siglum)}`;
+	}
+	if (typeof SEARCH.genre !== "undefined") {
+		if (!search.match(/^\s*$/)) { search += "&"; }
+		search += `g=${encodeURIComponent(SEARCH.genre)}`;
+	}
+
+	if (!search.match(/^\s*$/)) {
+		url += "?" + search;
+	}
+
+	copyToClipboard(url);
+}
+
+
+
+//////////////////////////////
+//
+// copyToClipboard --
+//
+
+function copyToClipboard(string) {
+	{% if site.debug == "true" %}
+   	console.log("Copying", string, "to clipboard");
+	{% endif %}
+   let element = document.createElement("textarea");
+   element.value = string;
+   document.body.appendChild(element);
+   element.select();
+   document.execCommand("copy");
+   document.body.removeChild(element);
+};
+
+
 

@@ -50,7 +50,6 @@ function buildGenreFilter(index, target) {
 		let entry = {};
 		entry.value = keys[i];
 		entry.count = genres[keys[i]];
-console.log("GETTING TRANSLATION FOR ", keys[i].replace(/\s+/g, "_"));
 		entry.title = getTranslation(keys[i].replace(/\s+/g, "_"));
 		tgenres.push(entry);
 	}

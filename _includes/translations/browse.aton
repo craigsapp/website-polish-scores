@@ -1,5 +1,7 @@
 
+@
 @ Language-specific composer names 
+@
 
 @@BEGIN:	ENTRY
 @TAG:		Anonymus
@@ -62,11 +64,32 @@
 @PL:		Szukaj w tytule słów lub fraz...
 @@END:		ENTRY
 
+@
+@ General translations for browse page
+@
 
 @@BEGIN:	ENTRY
 @TAG:		clear
 @EN:		clear
 @PL:		oczyścić
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		link
+@EN:		link
+@PL:		łącze
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		copy_link
+@EN:		Copy search link
+@PL:		Skopiuj łącze wyszukiwania
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		clear_help
+@EN:		Clear all search parameters
+@PL:		Wyczyść wszystkie parametry wyszukiwania
 @@END:		ENTRY
 
 

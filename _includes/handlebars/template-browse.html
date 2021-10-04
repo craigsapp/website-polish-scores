@@ -18,7 +18,9 @@
 <div style="display:inline-block" id="filter-genre"></div>
 <br/>
 <div style="display:inline-block" id="filter-title"></div>
-<div style="display:inline-block" class="button" onclick="resetBrowse()">{{trans "clear"}}</div>
+<div style="display:inline-block" class="button" title="{{trans 'clear_help'}}" onclick="resetBrowse()">{{trans "clear"}}</div>
+<div style="display:inline-block" class="button" title="{{trans 'copy_link'}}"
+	onclick="copySearchLink()">{{trans "link"}}</div>
 <div id="results-count"></div>
 </div>
 </center>

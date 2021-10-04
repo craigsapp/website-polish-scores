@@ -1,0 +1,25 @@
+@
+@ Composer drop-down list on browse page:
+@
+
+@@BEGIN:	ENTRY
+@TAG:		any_composer
+@EN:		any composer
+@PL:		każdy kompozytor 
+@@END:		ENTRY
+
+@
+@ Language-specific composer names:
+@
+
+@@BEGIN:	ENTRY
+@TAG:		Anonymus
+@EN:		Anonymous
+@PL:		Anonim
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		anonymus
+@EN:		anonymous
+@PL:		anonim
+@@END:		ENTRY

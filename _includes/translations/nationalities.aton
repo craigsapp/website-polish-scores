@@ -1,0 +1,114 @@
+@
+@ For browsing nationality select menu
+@
+
+@@BEGIN:	ENTRY
+@TAG:		any_nationality
+@EN:		any nationality
+@PL:		dowolna narodowość
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Austrian
+@EN:		Austrian
+@PL:		austriacki
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Belgian
+@EN:		Belgian
+@PL:		belgijski
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Czech
+@EN:		Czech
+@PL:		czech
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Danish
+@EN:		Danish
+@PL:		duński
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Dutch
+@EN:		Dutch
+@PL:		holenderski
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		English
+@EN:		English
+@PL:		angielski
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Flemish
+@EN:		Flemish
+@PL:		flamandzki
+@@END:		ENTRY
+
+
+@@BEGIN:	ENTRY
+@TAG:		French
+@EN:		French
+@PL:		francuski
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		French-Flemish
+@EN:		French-Flemish
+@PL:		francusko-flamandzki
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		German
+@EN:		German
+@PL:		niemiecki
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Italian
+@EN:		Italian
+@PL:		włoski
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Polish
+@EN:		Polish
+@PL:		polski
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Polish-Lithuanian
+@EN:		Polish-Lithuanian
+@PL:		polsko-litewski
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Slovakian
+@EN:		Slovakian
+@PL:		słowacki
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Slovenian?
+@EN:		Slovenian?
+@PL:		słoweński?
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Swedish
+@EN:		Swedish
+@PL:		szwedzki
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Ukrainian
+@EN:		Ukrainian
+@PL:		ukraiński
+@@END:		ENTRY
+
+

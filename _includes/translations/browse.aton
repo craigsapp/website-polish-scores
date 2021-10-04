@@ -1,29 +1,7 @@
 
-@
-@ Language-specific composer names 
-@
-
-@@BEGIN:	ENTRY
-@TAG:		Anonymus
-@EN:		Anonymous
-@PL:		Anonim
-@@END:		ENTRY
-
-@@BEGIN:	ENTRY
-@TAG:		anonymus
-@EN:		anonymous
-@PL:		anonim
-@@END:		ENTRY
-
-@
-@ Composer drop-down list on browse page:
-@
-
-@@BEGIN:	ENTRY
-@TAG:		any_composer
-@EN:		Any composer
-@PL:		Każdy kompozytor 
-@@END:		ENTRY
+{% include translations/composers.aton %}
+{% include translations/nationalities.aton %}
+{% include translations/genres.aton %}
 
 @
 @ Century drop-down list on browse page:
@@ -31,8 +9,8 @@
 
 @@BEGIN:	ENTRY
 @TAG:		any_century
-@EN:		Any century
-@PL:		Dowolne stulecie
+@EN:		any century
+@PL:		dowolne stulecie
 @@END:		ENTRY
 
 @
@@ -41,27 +19,18 @@
 
 @@BEGIN:	ENTRY
 @TAG:		any_library
-@EN:		Any library
-@PL:		Dowolna biblioteka
+@EN:		any library
+@PL:		dowolna biblioteka
 @@END:		ENTRY
 
-@
-@ Genre drop-down list on browse page:
-@
-
-@@BEGIN:	ENTRY
-@TAG:		any_genre
-@EN:		Any genre
-@PL:		Dowolny gatunek
-@@END:		ENTRY
 @
 @ Title placeholder on browse page
 @
 
 @@BEGIN:	ENTRY
 @TAG:		title_placeholder
-@EN:		Search title for words or phrases...
-@PL:		Szukaj w tytule słów lub fraz...
+@EN:		search title for words or phrases...
+@PL:		szukaj w tytule słów lub fraz...
 @@END:		ENTRY
 
 @

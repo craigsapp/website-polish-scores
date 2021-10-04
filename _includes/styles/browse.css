@@ -5,9 +5,16 @@
 	margin-left: 30px;
 }
 
+
+.filter-div {
+	display: inline-block;
+}
+
+
 #results-count {
 	color: #aaaaaa;
 }
+
 
 table.search-results {
 	border-collapse: collapse;

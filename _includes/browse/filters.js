@@ -11,6 +11,7 @@ function buildBrowseFilters() {
 	buildComposerFilter(BROWSE_INDEX);
 	buildSiglumFilter(BROWSE_INDEX);
 	buildGenreFilter(BROWSE_INDEX);
+	buildNationalityFilter(BROWSE_INDEX);
 	buildTitleFilter();
 }
 

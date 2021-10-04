@@ -1,4 +1,14 @@
 
+@
+@ Genre drop-down list on browse page:
+@
+
+@@BEGIN:	ENTRY
+@TAG:		any_genre
+@EN:		any genre
+@PL:		dowolny gatunek
+@@END:		ENTRY
+
 @ For browsing genre select menu
 
 @@BEGIN:	ENTRY
@@ -263,6 +273,12 @@
 @TAG:		Warsaw
 @EN:		Warsaw
 @PL:		Warszawa
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		uncategorized
+@EN:		uncategorized
+@PL:		bez kategorii
 @@END:		ENTRY
 
 

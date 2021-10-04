@@ -24,6 +24,7 @@ function filterBrowseIndex(index) {
 	results = filterByComposer(results);
 	results = filterBySiglum(results);
 	results = filterByGenre(results);
+	results = filterByNationality(results);
 	results = filterByTitle(results);
 
 	if (results.length != BROWSE_INDEX) {
@@ -32,6 +33,7 @@ function filterBrowseIndex(index) {
 		buildComposerFilter(results);
 		buildSiglumFilter(results);
 		buildGenreFilter(results);
+		buildNationalityFilter(results);
 		SEARCH_FREEZE = false;
 	}
 
@@ -214,6 +216,45 @@ function filterByGenre(input) {
 	}
 	{% if site.debug == "true" %}
 		console.log("GENRE QUERY:", target);
+	{% endif %}
+	if (target) {
+		SEARCH[type] = target;
+		let output = [];
+		let re = new RegExp("\\b" + target + "\\b");
+		for (let i=0; i<input.length; i++) {
+			if (re.exec(input[i][field])) {
+				output.push(input[i]);
+			}
+		}
+		return output;
+	} else {
+		return input;
+	}
+}
+
+
+
+//////////////////////////////
+//
+// filterByNationality --
+//
+
+function filterByNationality(input) {
+	let type = "nationality";
+	let field = "CNT";
+	if (!input) {
+		return [];
+	}
+	if (input.length == 0) {
+		return input;
+	}
+	let element = document.querySelector(`select.filter.${type}`);
+	let target = "";
+	if (element) {
+		target = element.value;
+	}
+	{% if site.debug == "true" %}
+		console.log("NATIONALITY QUERY:", target);
 	{% endif %}
 	if (target) {
 		SEARCH[type] = target;

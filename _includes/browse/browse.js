@@ -120,11 +120,12 @@ function resetBrowse() {
 	SEARCH = {};
 	
 	SEARCH_FREEZE = true;
-	var centuryElement  = document.querySelector("select.filter.century");
-	var composerElement = document.querySelector("select.filter.composer");
-	var siglumElement   = document.querySelector("select.filter.siglum");
-	var genreElement    = document.querySelector("select.filter.genre");
-	var titleElement    = document.querySelector("input.filter.title");
+	var centuryElement     = document.querySelector("select.filter.century");
+	var composerElement    = document.querySelector("select.filter.composer");
+	var siglumElement      = document.querySelector("select.filter.siglum");
+	var genreElement       = document.querySelector("select.filter.genre");
+	var nationalityElement = document.querySelector("select.filter.nationality");
+	var titleElement       = document.querySelector("input.filter.title");
 
 	if (centuryElement) {
 		centuryElement.value = "";
@@ -137,6 +138,9 @@ function resetBrowse() {
 	}
 	if (genreElement) {
 		genreElement.value = "";
+	}
+	if (nationalityElement) {
+		nationalityElement.value = "";
 	}
 	if (titleElement) {
 		titleElement.value = "";
@@ -201,6 +205,13 @@ function getHighlightedTitleContent(title) {
 //////////////////////////////
 //
 // copySearchLink --
+//      Parameters:
+//          y = century
+//          c = composer
+//          s = siglum
+//          g = genre
+//          n = nationality
+//          t = text
 //
 
 function copySearchLink() {
@@ -222,6 +233,10 @@ function copySearchLink() {
 	if (typeof SEARCH.genre !== "undefined") {
 		if (!search.match(/^\s*$/)) { search += "&"; }
 		search += `g=${encodeURIComponent(SEARCH.genre)}`;
+	}
+	if (typeof SEARCH.nationality !== "undefined") {
+		if (!search.match(/^\s*$/)) { search += "&"; }
+		search += `n=${encodeURIComponent(SEARCH.nationality)}`;
 	}
 
 	if (!search.match(/^\s*$/)) {

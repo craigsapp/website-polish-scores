@@ -2,6 +2,12 @@
 @ For browsing genre select menu
 
 @@BEGIN:	ENTRY
+@TAG:		A_capella
+@EN:		A capella
+@PL:		A capella
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		Aria
 @EN:		Aria
 @PL:		Aria
@@ -26,15 +32,51 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		Christmas
+@EN:		Christmas
+@PL:		Boże Narodzenie
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		Completorium
 @EN:		Completorium
 @PL:		Komplettorium
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		Contradance
+@EN:		Contradance
+@PL:		Kontradancja
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Cotillion
+@EN:		Cotillion
+@PL:		Kotylion
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Cracow
+@EN:		Cracow
+@PL:		Kraków
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Dumka
+@EN:		Dumka
+@PL:		Dumka
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		Easter
 @EN:		Easter
 @PL:		Wielkanoc
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Etude
+@EN:		Etude
+@PL:		Etiuda
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
@@ -47,6 +89,24 @@
 @TAG:		Fugue
 @EN:		Fugue
 @PL:		Fuga
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Galop
+@EN:		Galop
+@PL:		Galop
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Gavotte
+@EN:		Gavotte
+@PL:		Gavotte
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Krakowiak
+@EN:		Krakowiak
+@PL:		Krakowiak
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
@@ -89,6 +149,18 @@
 @TAG:		Partita
 @EN:		Partita
 @PL:		Partita
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Opera
+@EN:		Opera
+@PL:		Opera
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Oratorio
+@EN:		Oratorio
+@PL:		Oratorium
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
@@ -176,9 +248,21 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		Vienna
+@EN:		Vienna
+@PL:		Wiedeń
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		Waltz
 @EN:		Waltz
 @PL:		Walc
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		Warsaw
+@EN:		Warsaw
+@PL:		Warszawa
 @@END:		ENTRY
 
 

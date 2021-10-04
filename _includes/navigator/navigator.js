@@ -20,7 +20,13 @@ function addLanguageButtons(target, languages) {
 	}
 	let output = "";
 	for (let i=0; i<languages.length; i++) {
-		output += `<div class="button-language">${languages[i]}</div>\n`;
+		languageTitle = "";
+		if (languages[i] === "EN") {
+			languageTitle = "View webpage in English";
+		} else if (languages[i] === "PL") {
+			languageTitle = "Zobacz stronę w języku polskim";
+		}
+		output += `<div title="${languageTitle}" class="button-language">${languages[i]}</div>\n`;
 	}
 	element.innerHTML = output;
 }

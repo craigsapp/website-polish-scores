@@ -9,7 +9,6 @@
 
 
 document.addEventListener("DOMContentLoaded", function() {
-	console.log("ADDING LANGUAGE LIST EVENT HANDLER ===================");
 	let languageList = document.querySelector("#language-list");
 	if (!languageList) {
 		console.warn("ERROR: Cannot find language list");

@@ -2,6 +2,12 @@
 @ Translations for the search-results table (headings)
 
 @@BEGIN:	ENTRY
+@TAG:		header_shelfmark
+@EN:		Shelfmark
+@PL:		Znak półki
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		header_composer
 @EN:		Composer
 @PL:		Kompozytor

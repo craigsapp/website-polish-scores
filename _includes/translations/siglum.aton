@@ -1,0 +1,47 @@
+@
+@ Siglum long names to display in browse results shelfmark pop-up titles.
+@
+
+@@BEGIN:	ENTRY
+@TAG:		pl-cz
+@EN:		Klasztor OO. Paulinów Jasna Góra, Biblioteka, Częstochowa
+@PL:		Klasztor OO. Paulinów Jasna Góra, Biblioteka, Częstochowa
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		pl-kk
+@EN:		Archives and Library of Cracow Cathedral Chapter
+@PL:		Archives and Library of Cracow Cathedral Chapter
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		pl-kozmzk
+@EN:		Muzeum Zamoyskich w Kozłówce, Kozłówka
+@PL:		Muzeum Zamoyskich w Kozłówce, Kozłówka
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		pl-sa
+@EN:		Diocesan Library in Sandomierz
+@PL:		Diocesan Library in Sandomierz
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		pl-stab
+@EN:		Benedictine nuns abbey of St. Adalbert
+@PL:		Benedictine nuns abbey of St. Adalbert
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		pl-stab
+@EN:		Polish National Library, Warsaw
+@PL:		Polish National Library, Warsaw
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		pl-wtm
+@EN:		Warsaw Music Society
+@PL:		Warsaw Music Society
+@@END:		ENTRY
+
+

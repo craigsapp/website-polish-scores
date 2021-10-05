@@ -72,14 +72,15 @@ function displayBrowseResults(results, target) {
 	let output = "";
 	output += "<table class='search-results'>\n";
 	output += "<thead>\n";
-	output += `<th>${getTranslation("header_composer")}</th>\n`;
-	output += `<th>${getTranslation("header_title")}</th>\n`;
+	output += `<th class="shelfmark">${getTranslation("header_shelfmark")}</th>\n`;
+	output += `<th class="composer">${getTranslation("header_composer")}</th>\n`;
+	output += `<th class="title">${getTranslation("header_title")}</th>\n`;
 	output += "</thead>\n";
 	output += "<tbody>\n";
 
 	for (let i=0; i<results.length; i++) {
 
-		let composer = results[i].COM;
+		let composer = results[i].COM || "";
 		let matches = composer.match(/^\s*([^,]+),\s*(.*)\s*$/);
 		if (matches) {
 			composer = `${matches[1]}<span class='first-name'>, ${matches[2]}</span`;
@@ -88,13 +89,18 @@ function displayBrowseResults(results, target) {
 				composer = getTranslation("Anonymus");
 			}
 		}
+		let siglum = results[i].siglum || "";
+		let shelfmark = results[i].shelfmark || "";
 
-		output += "<tr>\n";
+		output += "<tr data-id='xxx'>\n";
+		output += "<td class='shelfmark'>";
+		output += getShelfMarkContent(siglum, shelfmark);
+		output += "</td>\n";
 		output += "<td class='composer'>";
 		output += composer;
 		output += "</td>\n";
 		output += "<td class='title'>";
-		output += getHighlightedTitleContent(results[i].title);
+		output += getHighlightedTitleContent(results[i].title || "");
 		output += "</td>\n";
 		output += "</tr>\n";
 	}
@@ -103,6 +109,26 @@ function displayBrowseResults(results, target) {
 	output += "</table>\n";
 
 	element.innerHTML = output;
+}
+
+
+
+//////////////////////////////
+//
+// getShelfmarkContent --
+//
+
+function getShelfMarkContent(siglum, shelfmark) {
+	let lowshelf = siglum.toLowerCase();
+	let output = "";
+	output += "<span"
+	output += ` title="${getTranslation(lowshelf)}"`;
+	output += " class='siglum'>";
+	output += `${siglum}`;
+	output += "</span>";
+	output += `<span class='siglum-postfix'>: `;
+	output += `<span class='shelfmark'>${shelfmark}</span>`;
+	return output;
 }
 
 

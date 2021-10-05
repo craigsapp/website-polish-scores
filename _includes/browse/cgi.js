@@ -13,6 +13,7 @@
 //    g      genre        option string for genre select
 //    n      nationality  option string for genre select
 //    t      title        query string for title searches
+//    l      lyrics       query string for lyrics searches
 //    id                  work ID for displaying score
 //
 // For y, c, s, n, and g, the string must match exactly one of the select options.
@@ -31,6 +32,7 @@ function getCgiParameters() {
 		if (pair[0] === "g") { pair[0] = "genre"; }
 		if (pair[0] === "n") { pair[0] = "nationality"; }
 		if (pair[0] === "t") { pair[0] = "title"; }
+		if (pair[0] === "l") { pair[0] = "lyrics"; }
 		pair[1] = decodeURIComponent(pair[1]);
 		if (typeof output[pair[0]] === 'undefined') {
 			output[pair[0]] = pair[1];

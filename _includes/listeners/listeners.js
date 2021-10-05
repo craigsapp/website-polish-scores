@@ -20,9 +20,16 @@ document.addEventListener("DOMContentLoaded", function() {
 				BROWSE_INDEX[i].seq = i;
 			}
 			BROWSE_RESULTS = json;
-			displayBrowsePage();
+			let cgi = getCgiParameters();
+			if (!cgi.lyrics) {
+				// Show the search page now with any CGI-based search parameters.
+				// but only showing of lyrics are not involved.
+				displayBrowsePage();
+			}
+			downloadLyricsIndex();
 		})
 		.catch(err => { console.error('Error:', err)});
+
 });
 
 

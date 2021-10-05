@@ -13,6 +13,7 @@ function buildBrowseFilters() {
 	buildGenreFilter(BROWSE_INDEX);
 	buildNationalityFilter(BROWSE_INDEX);
 	buildTitleFilter();
+	buildLyricsFilter();
 }
 
 

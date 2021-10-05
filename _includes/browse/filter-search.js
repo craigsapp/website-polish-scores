@@ -26,6 +26,7 @@ function filterBrowseIndex(index) {
 	results = filterByGenre(results);
 	results = filterByNationality(results);
 	results = filterByTitle(results);
+	results = filterByLyrics(results);
 
 	if (results.length != BROWSE_INDEX) {
 		SEARCH_FREEZE = true;
@@ -293,6 +294,74 @@ function filterByTitle(input) {
 		target = element.value;
 	}
 
+	target = target.trim();
+	let pieces = target.split(/\s*"+\s*/);
+	let titleTargets = [];
+	for (let i=0; i<pieces.length; i++) {
+		pieces[i] = pieces[i].trim();
+		if (i % 2 == 0) {
+			let newpieces = pieces[i].split(/\s+/);
+			for (let j=0; j<newpieces.length; j++) {
+				if (newpieces[j]) {
+					titleTargets.push(newpieces[j]);
+				}
+			}
+		} else {
+			// Exact phrase to search for:
+			if (pieces[i]) {
+				titleTargets.push(pieces[i]);
+			}
+		}
+	}
+
+	{% if site.debug == "true" %}
+		console.log("TITLE QUERY:", target, titleTargets);
+	{% endif %}
+
+	if (titleTargets.length > 0) {
+		SEARCH[type] = target;
+		let output = [];
+		for (let i=0; i<titleTargets.length; i++) {
+			let re = new RegExp(titleTargets[i], "i");
+			for (let j=0; j<input.length; j++) {
+				if (re.exec(input[j][field])) {
+					output.push(input[j]);
+				}
+			}
+			if (i < titleTargets.length - 1) {
+				input = output;
+				output = [];
+			}
+		}
+		return output;
+	} else {
+		return input;
+	}
+}
+
+
+
+//////////////////////////////
+//
+// filterByLyrics --
+//
+
+function filterByLyrics(input) {
+	let type = "lyrics";
+	let field = "lyrics";
+	if (!input) {
+		return [];
+	}
+	if (input.length == 0) {
+		return input;
+	}
+	let element = document.querySelector(`input.filter.${type}`);
+	let target = "";
+	if (element) {
+		target = element.value;
+	}
+
+	// Phrases are not allowed in lyrics search, but pretend they are.
 	target = target.trim();
 	let pieces = target.split(/\s*"+\s*/);
 	let titleTargets = [];

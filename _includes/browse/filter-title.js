@@ -33,7 +33,7 @@ function buildTitleFilter(target) {
 		selectedTitle = lastTitle;
 	}
 
-	let output = "<input type='text' style='width:350px;' class='filter title'";
+	let output = "<input type='text' class='filter title'";
 	output += ` placeholder='${getTranslation("title_placeholder")}'`;
 	output += ` value="${selectedTitle}"`;
 	output += ">\n";

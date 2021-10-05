@@ -126,6 +126,7 @@ function resetBrowse() {
 	var genreElement       = document.querySelector("select.filter.genre");
 	var nationalityElement = document.querySelector("select.filter.nationality");
 	var titleElement       = document.querySelector("input.filter.title");
+	var lyricsElement      = document.querySelector("input.filter.lyrics");
 
 	if (centuryElement) {
 		centuryElement.value = "";
@@ -144,6 +145,9 @@ function resetBrowse() {
 	}
 	if (titleElement) {
 		titleElement.value = "";
+	}
+	if (lyricsElement) {
+		lyricsElement.value = "";
 	}
 	SEARCH_FREEZE = false;
 
@@ -212,6 +216,7 @@ function getHighlightedTitleContent(title) {
 //          g = genre
 //          n = nationality
 //          t = title
+//          l = lyrics
 //
 
 function copySearchLink() {
@@ -241,6 +246,10 @@ function copySearchLink() {
 	if (typeof SEARCH.title !== "undefined") {
 		if (!search.match(/^\s*$/)) { search += "&"; }
 		search += `t=${encodeURIComponent(SEARCH.title)}`;
+	}
+	if (typeof SEARCH.lyrics !== "undefined") {
+		if (!search.match(/^\s*$/)) { search += "&"; }
+		search += `l=${encodeURIComponent(SEARCH.lyrics)}`;
 	}
 
 	if (!search.match(/^\s*$/)) {

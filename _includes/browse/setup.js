@@ -1,4 +1,4 @@
-// vim: ts=3
+// vim: ts=3:nowrap
 
 let CGI = getCgiParameters();
 
@@ -9,6 +9,7 @@ if (typeof CGI.siglum      !== "undefined") { cgiSearch = true; }
 if (typeof CGI.genre       !== "undefined") { cgiSearch = true; }
 if (typeof CGI.nationality !== "undefined") { cgiSearch = true; }
 if (typeof CGI.title       !== "undefined") { cgiSearch = true; }
+if (typeof CGI.lyrics      !== "undefined") { cgiSearch = true; }
 
 // SEARCH stores the last search that was done.  This is used to
 // redo the search fields when the langauge is changes, or when returning
@@ -22,6 +23,7 @@ if (cgiSearch) {
 	if (typeof CGI.genre       !== "undefined") { SEARCH.genre       = CGI.genre;       }
 	if (typeof CGI.nationality !== "undefined") { SEARCH.nationality = CGI.nationality; }
 	if (typeof CGI.title       !== "undefined") { SEARCH.title       = CGI.title;       }
+	if (typeof CGI.lyrics      !== "undefined") { SEARCH.lyrics      = CGI.lyrics;      }
 } else if (localStorage.SEARCH) {
 	SEARCH = JSON.parse(localStorage.SEARCH);
 }

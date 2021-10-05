@@ -29,8 +29,18 @@
 
 @@BEGIN:	ENTRY
 @TAG:		title_placeholder
-@EN:		search title for words or phrases...
-@PL:		szukaj w tytule słów lub fraz...
+@EN:		search title text...
+@PL:		szukaj tytułu...
+@@END:		ENTRY
+
+@
+@ Lyrics placeholder on browse page
+@
+
+@@BEGIN:	ENTRY
+@TAG:		lyrics_placeholder
+@EN:		search lyric text...
+@PL:		szukaj tekstów...
 @@END:		ENTRY
 
 @

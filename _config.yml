@@ -8,6 +8,9 @@ data_addr: "https://data.nifc.humdrum.org"
 # browse_index: JSON list of works for browse page.
 browse_index: "https://data.nifc.humdrum.org/popc2-browse-index.json"
 
+# lyrics_index: TEXT list of works for lyrics searching.
+lyrics_index: "https://data.nifc.humdrum.org/popc2-lyrics-index.txt"
+
 # background_image: Background image for <main>
 background_image: "/img/bgcbw.png"
 

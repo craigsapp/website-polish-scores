@@ -27,6 +27,14 @@ input {
 	font-size: 1.25rem;
 }
 
+input.filter.title {
+	width: 200px;
+}
+
+input.filter.lyrics {
+	width: 200px;
+}
+
 /* Input text placeholder styling: */
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

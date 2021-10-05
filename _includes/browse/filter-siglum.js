@@ -52,10 +52,12 @@ function buildSiglumFilter(index, target) {
 	}
 
 	let output = "<select class='filter siglum'>\n";
+
 	output += "<option value=''>";
 	output += getTranslation("any_library");
-	output += ` (${index.length})`;
+	output += ` (${keys.length})`;
 	output += "</option>\n";
+
 	for (let i=0; i<keys.length; i++) {
 		output += '<option value="';
 		let siglum = keys[i];

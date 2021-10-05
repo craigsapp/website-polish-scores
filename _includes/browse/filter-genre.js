@@ -51,6 +51,9 @@ function buildGenreFilter(index, target) {
 		entry.value = keys[i];
 		entry.count = genres[keys[i]];
 		entry.title = getTranslation(keys[i].replace(/\s+/g, "_"));
+		if (entry.value === "uncategorized") {
+			entry.title = "ZZZZZ " + entry.title;
+		}
 		tgenres.push(entry);
 	}
 
@@ -64,9 +67,10 @@ function buildGenreFilter(index, target) {
 	}
 
 	let output = "<select class='filter genre'>\n";
+
 	output += "<option value=''>";
 	output += getTranslation("any_genre");
-	output += ` (${index.length})`;
+	output += ` (${tgenres.length})`;
 	output += "</option>\n";
 
 	for (let i=0; i<tgenres.length; i++) {
@@ -77,7 +81,7 @@ function buildGenreFilter(index, target) {
 			output += " selected";
 		}
 		output += '>';
-		output += tgenres[i].title;
+		output += tgenres[i].title.replace("ZZZZZ ", "");
 		output += " (";
 		output += tgenres[i].count;
 		output += ")";

@@ -51,6 +51,9 @@ function buildNationalityFilter(index, target) {
 		entry.value = keys[i];
 		entry.count = nationalities[keys[i]];
 		entry.title = getTranslation(keys[i].replace(/\s+/g, "_"));
+		if (entry.value === "undetermined") {
+			entry.title = "ZZZZZ " + entry.title;
+		}
 		tnationalities.push(entry);
 	}
 
@@ -64,9 +67,10 @@ function buildNationalityFilter(index, target) {
 	}
 
 	let output = "<select class='filter nationality'>\n";
+
 	output += "<option value=''>";
 	output += getTranslation("any_nationality");
-	output += ` (${index.length})`;
+	output += ` (${tnationalities.length})`;
 	output += "</option>\n";
 
 	for (let i=0; i<tnationalities.length; i++) {
@@ -77,7 +81,7 @@ function buildNationalityFilter(index, target) {
 			output += " selected";
 		}
 		output += '>';
-		output += tnationalities[i].title;
+		output += tnationalities[i].title.replace("ZZZZZ ", "");;
 		output += " (";
 		output += tnationalities[i].count;
 		output += ")";

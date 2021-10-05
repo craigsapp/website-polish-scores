@@ -57,10 +57,12 @@ function buildComposerFilter(index, target) {
 	}
 
 	let output = "<select class='filter composer'>\n";
+
 	output += "<option value=''>";
 	output += getTranslation("any_composer");
-	output += ` (${index.length})`;
+	output += ` (${keys.length})`;
 	output += "</option>\n";
+
 	for (let i=0; i<keys.length; i++) {
 		output += '<option value="';
 		let composer = keys[i];

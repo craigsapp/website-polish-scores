@@ -18,6 +18,9 @@
 //
 
 function updateComposerPortrait() {
+	{% if site.debug == "true" %}
+		console.log("UPDATING PORTRAIT for", GLOBAL.SEARCH.composer);
+	{% endif %}
 	let element = document.querySelector("#portrait");
 	if (!element) {
 		return;
@@ -68,7 +71,11 @@ function updateComposerPortrait() {
 	if (link) {
 		output += `<a target="_blank" href="${link}">`;
 	}
-	output += `<img src="${url}">`;
+	if (GLOBAL.PORTRAITS[GLOBAL.SEARCH.composer]) {
+		output += `<img src="${GLOBAL.PORTRAITS[GLOBAL.SEARCH.composer]}">`;
+	} else {
+		output += `<img crossorigin="anonymous" src="${url}">`;
+	}
 	if (link) {
 		output += "</a>";
 	}
@@ -95,6 +102,33 @@ function updateComposerPortrait() {
 	element.innerHTML = output;
 	element.style.display = "block";
 	element.dataset.composer = GLOBAL.SEARCH.composer;
+
+	if (!GLOBAL.PORTRAITS[GLOBAL.SEARCH.composer]) {
+		let imageElement = document.querySelector("#portrait img");
+		if (!imageElement) {
+			return;
+		}
+		imageElement.onload = function(event) {
+			let encodedImage = getBase64Image(event.currentTarget);
+			GLOBAL.PORTRAITS[GLOBAL.SEARCH.composer] = encodedImage;
+		};
+	}
+}
+
+
+
+//////////////////////////////
+//
+// getBase64Image --
+//
+
+function getDataUrl(img) {
+	let canvas = document.createElement('canvas');
+	let ctx = canvas.getContext('2d');
+	canvas.width = img.naturalWidth;
+	canvas.height = img.naturalHeight;
+	ctx.drawImage(img, 0, 0);
+	return canvas.toDataURL('image/jpeg');
 }
 
 
@@ -108,14 +142,7 @@ function updateComposerPortrait() {
 //
 
 function makeComposerDates(birth, death) {
-console.log("PREPARING DATES FOR", birth, "AND", death);
-	let output = "";
-	let byear = "";
-	let dyear = "";
-	let matches = birth.match(/^(\d{4})/);
-	if (matches) {
-		byear = matches[1];
-	}
+	// Currently require both birth and death dates.
 	if (!birth) {
 		return "";
 	}
@@ -123,10 +150,30 @@ console.log("PREPARING DATES FOR", birth, "AND", death);
 		return "";
 	}
 
+	let output = "";
+	let byear = "";
+	let dyear = "";
+
+	let matches = birth.match(/^(\d{4})/);
+	if (matches) {
+		byear = matches[1];
+	} else {
+		matches = birth.match(/^~(\d{4})/);
+		if (matches) {
+			byear = "<i>c</i>" + matches[1];
+		}
+	}
+
 	matches = death.match(/^(\d{4})/);
 	if (matches) {
 		dyear = matches[1];
+	} else {
+		matches = birth.match(/^~(\d{4})/);
+		if (matches) {
+			dyear = "<i>c</i>" + matches[1];
+		}
 	}
+
 	if (byear && dyear) {
 		return `${byear}&ndash;${dyear}`;
 	} else {

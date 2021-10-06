@@ -56,4 +56,14 @@ GLOBAL.SEARCH_FREEZE = false;
 GLOBAL.TRANSLATIONS = {};
 
 
+//////////////////////////////
+//
+// Variables related to portraits:
+//
+
+// PORTRAITS == A lookup table of composer portraits indexed by
+//    composer's name.
+GLOBAL.PORTRAITS = {};
+
+
 

@@ -1,9 +1,19 @@
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct  6 12:27:04 PDT 2021
+// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Filename:      _includes/browse/portrait.js
+// Syntax:        ECMAScript 6
+// vim:           ts=3:nowrap
+//
+// Description:   Functions for displaying composer portraits on the browse page.
+//
 
 
 //////////////////////////////
 //
 // updateComposerPortrait -- Display the composer portrait in the
-//    SEARCH.composer field if there is one; otherwise, hide the 
+//    GLOBAL.SEARCH.composer field if there is one; otherwise, hide the
 //    #portrait element.
 //
 
@@ -12,18 +22,18 @@ function updateComposerPortrait() {
 	if (!element) {
 		return;
 	}
-	if (!SEARCH.composer) {
+	if (!GLOBAL.SEARCH.composer) {
 		element.style.display = "none";
 		return;
 	}
-	if (element.dataset.composer === SEARCH.composer) {
+	if (element.dataset.composer === GLOBAL.SEARCH.composer) {
 		// The composer is already displayed, so don't do anything,
 		// except ensure that the portrait is visible:
 		element.style.display = "block";
 		return;
 	}
 
-	let entry = COMPOSERS[SEARCH.composer];
+	let entry = GLOBAL.COMPOSERS[GLOBAL.SEARCH.composer];
 	if (!entry) {
 		element.style.display = "none";
 		return;
@@ -36,7 +46,7 @@ function updateComposerPortrait() {
 	let url = entry.Portrait;
 
 	let link = "";
-	if (LANGUAGE === "PL") {
+	if (GLOBAL.LANGUAGE === "PL") {
 		if (entry["URL-COM-wikipedia@PL"]) {
 			link = entry["URL-COM-wikipedia@PL"];
 		} else if (entry["URL-COM-wikipedia@EN"]) {
@@ -64,7 +74,7 @@ function updateComposerPortrait() {
 	}
 	output += "<br>";
 	output += "<div class='composer-name'>\n";
-	let name = SEARCH.composer;
+	let name = GLOBAL.SEARCH.composer;
 	let years = makeComposerDates(entry.Birth, entry.Death);
 	let matches = name.match(/([^,]+?)\s*,\s*(.*)\s*$/);
 	if (matches) {
@@ -84,14 +94,17 @@ function updateComposerPortrait() {
 
 	element.innerHTML = output;
 	element.style.display = "block";
-	element.dataset.composer = SEARCH.composer;
+	element.dataset.composer = GLOBAL.SEARCH.composer;
 }
 
 
 
 //////////////////////////////
 //
-// makeComposerDates --
+// makeComposerDates -- Take Humdrum-formatted birth and
+//    death dates and create a date range to display on a webpage
+//    Currently processes cases where a specific year for both
+//    birth and death are known; otherwise, returns an empty string.
 //
 
 function makeComposerDates(birth, death) {
@@ -117,10 +130,11 @@ console.log("PREPARING DATES FOR", birth, "AND", death);
 	if (byear && dyear) {
 		return `${byear}&ndash;${dyear}`;
 	} else {
-		// Only displaying years when both birth and death are 
+		// Only displaying years when both birth and death are
 		// known exactly.
 		return "";
 	}
 }
+
 
 

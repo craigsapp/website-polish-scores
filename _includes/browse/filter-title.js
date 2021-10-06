@@ -1,4 +1,13 @@
-// vim: ts=3
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct  6 12:27:04 PDT 2021
+// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Filename:      _includes/browse/filter-title.js
+// Syntax:        ECMAScript 6
+// vim:           ts=3:nowrap
+//
+// Description:   Functions for creating the title search box on the browse search form.
+//
 
 
 //////////////////////////////
@@ -26,8 +35,8 @@ function buildTitleFilter(target) {
 	}
 
 	let selectedTitle = "";
-	if (SEARCH && SEARCH.title) {
-		selectedTitle = SEARCH.title;
+	if (GLOBAL.SEARCH && GLOBAL.SEARCH.title) {
+		selectedTitle = GLOBAL.SEARCH.title;
 	}
 	if (lastTitle) {
 		selectedTitle = lastTitle;

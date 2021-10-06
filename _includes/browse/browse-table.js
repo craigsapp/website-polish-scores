@@ -1,9 +1,21 @@
-// vim: ts=3:nowrap
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct  6 12:27:04 PDT 2021
+// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Filename:      _includes/browse/browse-table.js
+// Syntax:        ECMAScript 6
+// vim:           ts=3:nowrap
+//
+// Description:   Functions related to displaying worklist on the browse page.
+//
 
 
 //////////////////////////////
 //
-// displayBrowseTable --
+// displayBrowseTable -- Display a list of works on the browse
+//     page.   The last search results on the browse page,
+//     stored in GLOBAL.BROWSE_RESULTS will be used to display
+//     the list if no list is given as input to this function.
 //
 
 function displayBrowseTable(results, target) {
@@ -17,7 +29,7 @@ function displayBrowseTable(results, target) {
 	}
 
 	if (!results) {
-		results = BROWSE_RESULTS;
+		results = GLOBAL.BROWSE_RESULTS;
 	}
 
 	if (!results) {
@@ -78,7 +90,7 @@ function displayBrowseTable(results, target) {
 		output += composer;
 		output += "</td>\n";
 		output += "<td class='title'>";
-		output += getHighlightedString(results[i].title || "", SEARCH.title);
+		output += getHighlightedString(results[i].title || "", GLOBAL.SEARCH.title);
 		output += "</td>\n";
 		output += "</tr>\n";
 
@@ -169,7 +181,8 @@ function printHighlightedLyric(word, query) {
 
 //////////////////////////////
 //
-// getHighlightedString --
+// getHighlightedString -- Return the input stirng, highlighting
+//    any matches from the query string as HTML markup.
 //
 
 function getHighlightedString(contents, query) {
@@ -215,7 +228,8 @@ function getHighlightedString(contents, query) {
 
 //////////////////////////////
 //
-// getShelfmarkContent --
+// getShelfmarkContent -- Create HTML markup for "siglum: shelfmark"
+//    to display in the browse table.
 //
 
 function getShelfmarkContent(siglum, shelfmark) {

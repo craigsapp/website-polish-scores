@@ -1,36 +1,38 @@
-// vim: ts=3:nowrap
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct  6 12:27:04 PDT 2021
+// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Filename:      _includes/browse/setup.js
+// Syntax:        ECMAScript 6
+// vim:           ts=3:nowrap
+//
+// Description:   Initializations for the browse page.
+//
 
-let CGI = getCgiParameters();
+
+GLOBAL.CGI = getCgiParameters();
 
 let cgiSearch = false;
-if (typeof CGI.century     !== "undefined") { cgiSearch = true; }
-if (typeof CGI.composer    !== "undefined") { cgiSearch = true; }
-if (typeof CGI.siglum      !== "undefined") { cgiSearch = true; }
-if (typeof CGI.genre       !== "undefined") { cgiSearch = true; }
-if (typeof CGI.nationality !== "undefined") { cgiSearch = true; }
-if (typeof CGI.title       !== "undefined") { cgiSearch = true; }
-if (typeof CGI.lyrics      !== "undefined") { cgiSearch = true; }
-
-// SEARCH stores the last search that was done.  This is used to
-// redo the search fields when the langauge is changes, or when returning
-// to the page at a later date.
-let SEARCH = {};
+if (typeof GLOBAL.CGI.century     !== "undefined") { cgiSearch = true; }
+if (typeof GLOBAL.CGI.composer    !== "undefined") { cgiSearch = true; }
+if (typeof GLOBAL.CGI.siglum      !== "undefined") { cgiSearch = true; }
+if (typeof GLOBAL.CGI.genre       !== "undefined") { cgiSearch = true; }
+if (typeof GLOBAL.CGI.nationality !== "undefined") { cgiSearch = true; }
+if (typeof GLOBAL.CGI.title       !== "undefined") { cgiSearch = true; }
+if (typeof GLOBAL.CGI.lyrics      !== "undefined") { cgiSearch = true; }
 
 if (cgiSearch) {
-	if (typeof CGI.century     !== "undefined") { SEARCH.century     = CGI.century;     }
-	if (typeof CGI.composer    !== "undefined") { SEARCH.composer    = CGI.composer;    }
-	if (typeof CGI.siglum      !== "undefined") { SEARCH.siglum      = CGI.siglum;      }
-	if (typeof CGI.genre       !== "undefined") { SEARCH.genre       = CGI.genre;       }
-	if (typeof CGI.nationality !== "undefined") { SEARCH.nationality = CGI.nationality; }
-	if (typeof CGI.title       !== "undefined") { SEARCH.title       = CGI.title;       }
-	if (typeof CGI.lyrics      !== "undefined") { SEARCH.lyrics      = CGI.lyrics;      }
+	if (typeof GLOBAL.CGI.century     !== "undefined") { GLOBAL.SEARCH.century     = GLOBAL.CGI.century;     }
+	if (typeof GLOBAL.CGI.composer    !== "undefined") { GLOBAL.SEARCH.composer    = GLOBAL.CGI.composer;    }
+	if (typeof GLOBAL.CGI.siglum      !== "undefined") { GLOBAL.SEARCH.siglum      = GLOBAL.CGI.siglum;      }
+	if (typeof GLOBAL.CGI.genre       !== "undefined") { GLOBAL.SEARCH.genre       = GLOBAL.CGI.genre;       }
+	if (typeof GLOBAL.CGI.nationality !== "undefined") { GLOBAL.SEARCH.nationality = GLOBAL.CGI.nationality; }
+	if (typeof GLOBAL.CGI.title       !== "undefined") { GLOBAL.SEARCH.title       = GLOBAL.CGI.title;       }
+	if (typeof GLOBAL.CGI.lyrics      !== "undefined") { GLOBAL.SEARCH.lyrics      = GLOBAL.CGI.lyrics;      }
 } else if (localStorage.SEARCH) {
-	SEARCH = JSON.parse(localStorage.SEARCH);
+	GLOBAL.SEARCH = JSON.parse(localStorage.SEARCH);
 }
 
-
-// SEARCH_FREEZE: Prevent recursion problems with dynamic search filters.
-let SEARCH_FREEZE = false;
 
 
 //////////////////////////////
@@ -40,7 +42,7 @@ let SEARCH_FREEZE = false;
 
 function storeSearchInfo(search) {
 	if (!search) {
-		search = SEARCH;
+		search = GLOBAL.SEARCH;
 	}
 	if (!search) {
 		search = {};

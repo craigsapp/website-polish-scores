@@ -1,7 +1,10 @@
 // vim: ts=3
 
-let BROWSE_INDEX = [];
-let BROWSE_RESULTS = [];
+
+//////////////////////////////
+//
+// COMContentLoaded event listener -- Load index files from the server.
+//
 
 document.addEventListener("DOMContentLoaded", function() {
 	
@@ -12,14 +15,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	fetch(url)
 		.then(res => res.json())
 		.then(json => {
-			{% if site.debug == "true" %}
-				console.log("JSON DATA FOR BROWSE INDEX", json); 
-			{% endif %}
-			BROWSE_INDEX = json; 
-			for (let i=0; i<BROWSE_INDEX.length; i++) {
-				BROWSE_INDEX[i].seq = i;
+			// console.log("JSON DATA FOR BROWSE INDEX", json); 
+			GLOBAL.BROWSE_INDEX = json; 
+			for (let i=0; i<GLOBAL.BROWSE_INDEX.length; i++) {
+				GLOBAL.BROWSE_INDEX[i].seq = i;
 			}
-			BROWSE_RESULTS = json;
+			GLOBAL.BROWSE_RESULTS = json;
 			let cgi = getCgiParameters();
 			if (!cgi.lyrics) {
 				// Show the search page now with any CGI-based search parameters.

@@ -1,4 +1,13 @@
-// vim: ts=3
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct  6 12:27:04 PDT 2021
+// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Filename:      _includes/browse/filter-siglum.js
+// Syntax:        ECMAScript 6
+// vim:           ts=3:nowrap
+//
+// Description:   Functions for creating the siglum list in the browse search form.
+//
 
 
 //////////////////////////////
@@ -12,7 +21,7 @@
 
 function buildSiglumFilter(index, target) {
 	if (!index) {
-		index = BROWSE_INDEX;
+		index = GLOBAL.BROWSE_INDEX;
 	}
 	if (!target) {
 		target = "#filter-siglum";
@@ -47,8 +56,8 @@ function buildSiglumFilter(index, target) {
 	});
 
 	let selectedSiglum = "";
-	if (SEARCH && SEARCH.siglum) {
-		selectedSiglum = SEARCH.siglum;
+	if (GLOBAL.SEARCH && GLOBAL.SEARCH.siglum) {
+		selectedSiglum = GLOBAL.SEARCH.siglum;
 	}
 
 	let output = "<select class='filter siglum'>\n";

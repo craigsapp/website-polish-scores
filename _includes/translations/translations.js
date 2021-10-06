@@ -1,10 +1,10 @@
-// vim: ts=3
+// vim: ts=3:nowrap
 
 
 //////////////////////////////
 //
 // getTranslation -- Returns the translation using the given language in the
-//    lookup list.  If no language is given, the the LANGUAGE variable will be
+//    lookup list.  If no language is given, the GLOBAL.LANGUAGE variable will be
 //    used.  If there is no entry for a given tag, then the English one is tried,
 //    and then the Polish one.  If no translation is available, then the tag is
 //    returned;
@@ -15,13 +15,13 @@ function getTranslation(tag, lang, lookup) {
 		return "";
 	}
 	if (!lang) {
-		lang = LANGUAGE;
+		lang = GLOBAL.LANGUAGE;
 	}
 	if (!lang) {
 		lang = "EN";
 	}
 	if (!lookup) {
-		lookup = TRANSLATIONS;
+		lookup = GLOBAL.TRANSLATIONS;
 	}
 	let entry = lookup[tag];
 	let output = "";

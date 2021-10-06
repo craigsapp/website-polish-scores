@@ -1,4 +1,4 @@
-// vim: ts=3
+// vim: ts=3:nowrap
 
 
 //////////////////////////////
@@ -88,15 +88,13 @@ function changeToLanguage(lang) {
 		return;
 	}
 	highlightLanguage(lang);
-	LANGUAGE = lang;
+	GLOBAL.LANGUAGE = lang;
 	localStorage.LANGUAGE = lang;
 
 	// Change current page to given langauge
 
 	// Currently only update browse page:
 	displayBrowsePage();
-
-
 }
 
 

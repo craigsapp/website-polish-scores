@@ -1,4 +1,13 @@
-// vim: ts=3
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct  6 12:27:04 PDT 2021
+// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Filename:      _includes/browse/filter-genre.js
+// Syntax:        ECMAScript 6
+// vim:           ts=3:nowrap
+//
+// Description:   Functions for creating the genre list in the browse search form.
+//
 
 
 //////////////////////////////
@@ -12,7 +21,7 @@
 
 function buildGenreFilter(index, target) {
 	if (!index) {
-		index = BROWSE_INDEX;
+		index = GLOBAL.BROWSE_INDEX;
 	}
 	if (!target) {
 		target = "#filter-genre";
@@ -62,8 +71,8 @@ function buildGenreFilter(index, target) {
 	});
 
 	let selectedGenre = "";
-	if (SEARCH && SEARCH.genre) {
-		selectedGenre = SEARCH.genre;
+	if (GLOBAL.SEARCH && GLOBAL.SEARCH.genre) {
+		selectedGenre = GLOBAL.SEARCH.genre;
 	}
 
 	let output = "<select class='filter genre'>\n";

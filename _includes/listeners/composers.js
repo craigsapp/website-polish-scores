@@ -1,12 +1,10 @@
+// vim: ts=3:nowrap
 
-
-// COMPOSERS -- Database of cmposers, indexed by their full names.
-let COMPOSERS = {};
 
 //////////////////////////////
 //
 // downloadComposerIndex -- Download the composer index and store
-//     its contents into COMPOSERS global variable.
+//     its contents into GLOBAL.COMPOSERS global variable.
 //
 
 function downloadComposerIndex() {
@@ -18,7 +16,7 @@ function downloadComposerIndex() {
 		.then(res => res.json())
 		.then(data => {
 			// convert data to associative array
-			COMPOSERS = {};
+			GLOBAL.COMPOSERS = {};
 			for (let i=0; i<data.length; i++) {
 				let COM = data[i].COM;
 				if (!COM) {
@@ -27,7 +25,7 @@ function downloadComposerIndex() {
 				if (COM.match(/^\s*$/)) {
 					continue;
 				}
-				COMPOSERS[COM] = data[i];
+				GLOBAL.COMPOSERS[COM] = data[i];
 			}
 			{% if site.debug == "true" %}
 				console.log("DOWNLOADED COMPOSER INDEX FROM", url);

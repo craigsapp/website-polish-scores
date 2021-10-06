@@ -1,4 +1,4 @@
-// vim: ts=3
+// vim: ts=3:nowrap
 
 
 //////////////////////////////
@@ -9,17 +9,14 @@
 //
 
 Handlebars.registerHelper("trans", function(tag) {
-console.log("TAG", tag);
 	if (!tag) {
 		return new Handlebars.SafeString("");
 	}
-	let lang = LANGUAGE;
+	let lang = GLOBAL.LANGUAGE;
 	if (!lang) {
 		lang = "EN";
 	}
-console.log("TRANSLATIONS", TRANSLATIONS);
-	let item = TRANSLATIONS[tag];
-console.log("ITEM", item);
+	let item = GLOBAL.TRANSLATIONS[tag];
 	if (!item) {
 		return new Handlebars.SafeString("");
 	}

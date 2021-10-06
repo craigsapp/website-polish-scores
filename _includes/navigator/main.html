@@ -6,7 +6,7 @@
 {% include navigator/listeners.js %}
 
 addLanguageButtons("#language-list", {{ site.languages | jsonify }});
-highlightLanguage(LANGUAGE);
+highlightLanguage(GLOBAL.LANGUAGE);
 
 </script>
 

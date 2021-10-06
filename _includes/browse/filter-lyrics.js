@@ -1,4 +1,13 @@
-// vim: ts=3
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct  6 12:27:04 PDT 2021
+// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Filename:      _includes/browse/filter-lyrics.js
+// Syntax:        ECMAScript 6
+// vim:           ts=3:nowrap
+//
+// Description:   Functions for creating the lyris search box in the browse search form.
+//
 
 
 //////////////////////////////
@@ -26,8 +35,8 @@ function buildLyricsFilter(target) {
 	}
 
 	let selectedLyrics = "";
-	if (SEARCH && SEARCH.lyrics) {
-		selectedLyrics = SEARCH.lyrics;
+	if (GLOBAL.SEARCH && GLOBAL.SEARCH.lyrics) {
+		selectedLyrics = GLOBAL.SEARCH.lyrics;
 	}
 	if (lastLyrics) {
 		selectedLyrics = lastLyrics;

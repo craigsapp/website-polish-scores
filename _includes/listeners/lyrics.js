@@ -4,7 +4,7 @@
 //////////////////////////////
 //
 // downloadLyricsIndex -- Download the search index for lyrics and
-//   insert its contents into BROWSE_INDEX in the .lyrics field.
+//   insert its contents into GLOBAL.BROWSE_INDEX in the .lyrics field.
 //
 
 function downloadLyricsIndex() {
@@ -24,17 +24,17 @@ function downloadLyricsIndex() {
 					index[matches[1]] = matches[2];
 				}
 			}
-			for (let i=0; i<BROWSE_INDEX.length; i++) {
-				let id = BROWSE_INDEX[i].cenid;
+			for (let i=0; i<GLOBAL.BROWSE_INDEX.length; i++) {
+				let id = GLOBAL.BROWSE_INDEX[i].cenid;
 				if (id) {
 					let lyrics = index[id];
 					if (lyrics) {
-						BROWSE_INDEX[i].lyrics = lyrics;
+						GLOBAL.BROWSE_INDEX[i].lyrics = lyrics;
 					}
 				}
 			}
 			let cgi = getCgiParameters();
-			if (cgi.lyrics || SEARCH.lyrics) {
+			if (cgi.lyrics || GLOBAL.SEARCH.lyrics) {
 				// Do a CGI-base browse search, but only if it includes lyrics.
 				// If no lyrics involved, then the search was already done.
 				displayBrowsePage();

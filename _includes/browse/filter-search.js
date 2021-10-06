@@ -1,4 +1,13 @@
-// vim: ts=3
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct  6 12:27:04 PDT 2021
+// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Filename:      _includes/browse/filter-search.js
+// Syntax:        ECMAScript 6
+// vim:           ts=3:nowrap
+//
+// Description:   Functions for doing searches on the browse page.
+//
 
 
 //////////////////////////////
@@ -7,15 +16,15 @@
 //
 
 function filterBrowseIndex(index) {
-	if (SEARCH_FREEZE) {
+	if (GLOBAL.SEARCH_FREEZE) {
 		return;
 	}
 	if (!index) {
-		index = BROWSE_INDEX;
+		index = GLOBAL.BROWSE_INDEX;
 	}
 
 	// Reset search
-	SEARCH = {};
+	GLOBAL.SEARCH = {};
 
 	let results = index;
 	let newresults;
@@ -28,23 +37,23 @@ function filterBrowseIndex(index) {
 	results = filterByTitle(results);
 	results = filterByLyrics(results);
 
-	if (results.length != BROWSE_INDEX) {
-		SEARCH_FREEZE = true;
+	if (results.length != GLOBAL.BROWSE_INDEX) {
+		GLOBAL.SEARCH_FREEZE = true;
 		buildCenturyFilter(results);
 		buildComposerFilter(results);
 		buildSiglumFilter(results);
 		buildGenreFilter(results);
 		buildNationalityFilter(results);
-		SEARCH_FREEZE = false;
+		GLOBAL.SEARCH_FREEZE = false;
 	}
 
-	BROWSE_RESULTS = results;
+	GLOBAL.BROWSE_RESULTS = results;
 
 	showResultsCount(results.length);
 
-	SEARCH.count = results.length;
-	SEARCH.lang  = LANGUAGE;
-	storeSearchInfo(SEARCH);
+	GLOBAL.SEARCH.count = results.length;
+	GLOBAL.SEARCH.lang  = GLOBAL.LANGUAGE;
+	storeSearchInfo(GLOBAL.SEARCH);
 
 	updateComposerPortrait();
 	displayBrowseTable(results);
@@ -69,7 +78,7 @@ function showResultsCount(count) {
 	} else if (count == 1) {
 		output = "1 ";
 		output += "match";
-	} else if (count == BROWSE_INDEX.length) {
+	} else if (count == GLOBAL.BROWSE_INDEX.length) {
 		// Everything matches, so not interesting to show the count.
 		output = "";
 	} else {
@@ -104,7 +113,7 @@ function filterByComposer(input) {
 		console.log("COMPOSER QUERY:", target);
 	{% endif %}
 	if (target) {
-		SEARCH[type] = target;
+		GLOBAL.SEARCH[type] = target;
 		let output = [];
 		for (let i=0; i<input.length; i++) {
 			if (input[i][field] === target) {
@@ -142,7 +151,7 @@ function filterByCentury(input) {
 		console.log("CENTURY QUERY:", target);
 	{% endif %}
 	if (target) {
-		SEARCH[type] = target;
+		GLOBAL.SEARCH[type] = target;
 		let output = [];
 		let re = new RegExp("^" + target);
 		for (let i=0; i<input.length; i++) {
@@ -181,7 +190,7 @@ function filterBySiglum(input) {
 		console.log("SIGLUM QUERY:", target);
 	{% endif %}
 	if (target) {
-		SEARCH[type] = target;
+		GLOBAL.SEARCH[type] = target;
 		let output = [];
 		let re = new RegExp("^" + target);
 		for (let i=0; i<input.length; i++) {
@@ -220,7 +229,7 @@ function filterByGenre(input) {
 		console.log("GENRE QUERY:", target);
 	{% endif %}
 	if (target) {
-		SEARCH[type] = target;
+		GLOBAL.SEARCH[type] = target;
 		let output = [];
 		let re = new RegExp("\\b" + target + "\\b");
 		for (let i=0; i<input.length; i++) {
@@ -259,7 +268,7 @@ function filterByNationality(input) {
 		console.log("NATIONALITY QUERY:", target);
 	{% endif %}
 	if (target) {
-		SEARCH[type] = target;
+		GLOBAL.SEARCH[type] = target;
 		let output = [];
 		let re = new RegExp("\\b" + target + "\\b");
 		for (let i=0; i<input.length; i++) {
@@ -321,7 +330,7 @@ function filterByTitle(input) {
 	{% endif %}
 
 	if (titleTargets.length > 0) {
-		SEARCH[type] = target;
+		GLOBAL.SEARCH[type] = target;
 		let output = [];
 		for (let i=0; i<titleTargets.length; i++) {
 			let negate = false;
@@ -403,7 +412,7 @@ function filterByLyrics(input) {
 	{% endif %}
 
 	if (lyricsTargets.length > 0) {
-		SEARCH[type] = target;
+		GLOBAL.SEARCH[type] = target;
 		let output = [];
 		for (let i=0; i<lyricsTargets.length; i++) {
 			let negate = false;

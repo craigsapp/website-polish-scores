@@ -2,9 +2,14 @@
 
 table.search-results {
 	border-collapse: collapse;
-	margin-left: 30px;
-	margin-right: 20px;
-	width: calc(100% - 50px);
+	table-layout: fixed;
+	width: 100%;
+}
+
+
+table.search-results th:first-child,
+table.search-results td:first-child {
+	padding-left: 30px;
 }
 
 
@@ -49,6 +54,11 @@ table.search-results tbody tr:hover {
 }
 
 
+table.search-results tbody tr.lyrics:hover{
+	background: none !important;
+}
+
+
 table.search-results th {
 	text-align: left;
 }
@@ -59,11 +69,30 @@ table.search-results td {
 }
 
 
+div.lyrics-match {
+	width: 50%;
+	float: right;
+	background: #f8f8f8;
+	border: 1px solid #f0f0f0;
+	border-radius: 3px;
+	padding: 10px;
+}
+
+.lyric-count {
+	color: #aaaaaa;
+}
+
+.lyric-entry {
+	display: inline-block;
+	margin-right: 5px;
+
+}
+
+
 @media only screen and (max-width: 600px) {
 	table.search-results td.shelfmark,
 	table.search-results th.shelfmark {
 		display: none;
 	}
 }
-
 

@@ -34,7 +34,7 @@ function downloadLyricsIndex() {
 				}
 			}
 			let cgi = getCgiParameters();
-			if (cgi.lyrics) {
+			if (cgi.lyrics || SEARCH.lyrics) {
 				// Do a CGI-base browse search, but only if it includes lyrics.
 				// If no lyrics involved, then the search was already done.
 				displayBrowsePage();

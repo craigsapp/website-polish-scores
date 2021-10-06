@@ -46,7 +46,7 @@ function filterBrowseIndex(index) {
 	SEARCH.lang  = LANGUAGE;
 	storeSearchInfo(SEARCH);
 
-	displayBrowseResults(results);
+	displayBrowseTable(results);
 }
 
 

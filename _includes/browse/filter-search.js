@@ -46,6 +46,7 @@ function filterBrowseIndex(index) {
 	SEARCH.lang  = LANGUAGE;
 	storeSearchInfo(SEARCH);
 
+	updateComposerPortrait();
 	displayBrowseTable(results);
 }
 

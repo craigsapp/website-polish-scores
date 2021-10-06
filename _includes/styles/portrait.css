@@ -1,0 +1,21 @@
+
+
+#portrait img {
+	max-width:200px;
+	max-height:200px;
+	margin-bottom: 20px;
+	margin-top: -20px;
+}
+
+
+#portrait .composer-name {
+	margin-bottom: 20px;
+	margin-top: -27px;
+}
+
+
+#portrait .composer-name a {
+	text-decoration: none;
+}
+
+

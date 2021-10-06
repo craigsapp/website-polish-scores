@@ -11,6 +11,9 @@ browse_index: "https://data.nifc.humdrum.org/popc2-browse-index.json"
 # lyrics_index: TEXT list of works for lyrics searching.
 lyrics_index: "https://data.nifc.humdrum.org/popc2-lyrics-index.txt"
 
+# composer_index: JSON list of composers for browse and work pages.
+composer_index: "https://data.nifc.humdrum.org/popc2-composer-index.json"
+
 # background_image: Background image for <main>
 background_image: "/img/bgcbw.png"
 

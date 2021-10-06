@@ -42,6 +42,8 @@ function downloadLyricsIndex() {
 			{% if site.debug == "true" %}
 				console.log("DOWNLOADED LYRICS INDEX FROM", url);
 			{% endif %}
+			// Now download the composer index
+			downloadComposerIndex();
 		})
 		.catch(err => { console.error('Error:', err)});
 }

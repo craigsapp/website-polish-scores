@@ -34,7 +34,7 @@ function displayBrowseTable(results, target) {
 	let lyricsSearchText = "";
 	let lyricsElement = document.querySelector("#filter-lyrics input.filter.lyrics");
 	if (lyricsElement) {
-		let value = lyricsElement.value;
+		let value = lyricsElement.value.trim();
 		// don't show single-letter matches since there will be
 		// too many of them, and the results will not be very useful.
 		// So at least two characters are required in the lyrics search

@@ -32,6 +32,7 @@ POPC2.prototype.downloadComposerIndex = function () {
 				if (COM.match(/^\s*$/)) {
 					continue;
 				}
+				that.GLOBAL.COMPOSERS[COM] = data[i];
 			}
 			// Create a list of the composers, including counts of files for the
 			// composer and links into the COMPSERS database entry for the composer

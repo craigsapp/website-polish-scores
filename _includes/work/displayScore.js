@@ -37,5 +37,7 @@ POPC2.prototype.displayScore = function (id) {
 	}
 };
 
+Object.defineProperty(POPC2.prototype.displayScore, "name", { value: "displayScore" });
+
 
 

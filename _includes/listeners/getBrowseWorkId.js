@@ -14,6 +14,7 @@
 {% endcomment %}
 
 POPC2.prototype.getBrowseWorkId = function (path) {
+	this.DebugMessageFunction();
 	let inBrowseTable = this.isInBrowseTable(path);
 	if (!inBrowseTable) {
 		return null;
@@ -28,7 +29,9 @@ POPC2.prototype.getBrowseWorkId = function (path) {
 		let id = path[i].dataset.id;
 		return id;
 	}
-}
+};
+
+Object.defineProperty(POPC2.prototype.getBrowseWorkId, "name", { value: "getBrowseWorkId" });
 
 
 

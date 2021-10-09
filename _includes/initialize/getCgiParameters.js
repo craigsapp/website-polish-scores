@@ -29,11 +29,18 @@
 
 POPC2.prototype.getCgiParameters = function () {
 	var url = window.location.search.substring(1);
+	this.DebugMessageFunction(url);
 	var output = {};
 	var settings = url.split('&');
+	if (!settings) {
+		return output;
+	}
 	for (var i=0; i<settings.length; i++) {
 		var pair = settings[i].split('=');
 		pair[0] = decodeURIComponent(pair[0]);
+		if (!pair[0]) {
+			continue;
+		}
 		if (pair[0] === "y") { pair[0] = "century"; }
 		if (pair[0] === "c") { pair[0] = "composer"; }
 		if (pair[0] === "s") { pair[0] = "siglum"; }
@@ -53,6 +60,8 @@ POPC2.prototype.getCgiParameters = function () {
 	}
 	return output;
 };
+
+Object.defineProperty(POPC2.prototype.getCgiParameters, "name", { value: "getCgiParameters" });
 
 
 

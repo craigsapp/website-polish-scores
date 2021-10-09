@@ -4,7 +4,14 @@
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Wed Oct  6 12:27:07 PDT 2021
 // Filename:      _includes/browse/filterBrowseIndex.js
-// Used by:
+// Used by:       _includes/browse/buildCenturyFilter.js
+// Used by:       _includes/browse/buildComposerFilter.js
+// Used by:       _includes/browse/buildGenreFilter.js
+// Used by:       _includes/browse/buildLyricsFilter.js
+// Used by:       _includes/browse/buildNationalityFilter.js
+// Used by:       _includes/browse/buildSiglumFilter.js
+// Used by:       _includes/browse/buildTitleFilter.js
+// Used by:       _includes/browse/displayBrowsePage.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -14,6 +21,7 @@
 {% endcomment %}
 
 POPC2.prototype.filterBrowseIndex = function (index) {
+	this.DebugMessageFunction();
 	if (this.GLOBAL.SEARCH_FREEZE) {
 		return;
 	}
@@ -45,7 +53,7 @@ POPC2.prototype.filterBrowseIndex = function (index) {
 		this.GLOBAL.SEARCH_FREEZE = false;
 	}
 
-	this.GLOBAL.BROWSE_RESULTS = results;
+	this.GLOBAL.SEARCH_RESULTS = results;
 
 	this.showResultsCount(results.length);
 
@@ -56,6 +64,8 @@ POPC2.prototype.filterBrowseIndex = function (index) {
 	this.displayComposerBrowsePortrait();
 	this.displayBrowseTable(results);
 };
+
+Object.defineProperty(POPC2.prototype.filterBrowseIndex, "name", { value: "filterBrowseIndex" });
 
 
 

@@ -4,7 +4,7 @@
 // Creation Date: Wed Oct  6 12:29:12 PDT 2021
 // Last Modified: Wed Oct  6 12:29:15 PDT 2021
 // Filename:      _includes/browse/resetBrowseSearchFields.js
-// Used by:
+// Used by:       _includes/handlebars/template-browse.html
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -14,8 +14,7 @@
 {% endcomment %}
 
 POPC2.prototype.resetBrowseSearchFields = function () {
-	this.DebugMessageFunction();
-	console.log("Clearing SEARCH:", this.GLOBAL.SEARCH);
+	this.DebugMessageFunction(JSON.stringify(this.GLOBAL.SEARCH));
 	this.GLOBAL.SEARCH = {};
 
 	this.GLOBAL.SEARCH_FREEZE = true;
@@ -54,6 +53,8 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	this.filterBrowseIndex();
 
 };
+
+Object.defineProperty(POPC2.prototype.resetBrowseSearchFields, "name", { value: "resetBrowseSearchFields" });
 
 
 

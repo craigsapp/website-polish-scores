@@ -40,5 +40,7 @@ POPC2.prototype.ChangePageLanguage = function (lang, type) {
 	}
 };
 
+Object.defineProperty(POPC2.prototype.ChangePageLanguage, "name", { value: "ChangePageLanguage" });
+
 
 

@@ -30,5 +30,7 @@ POPC2.prototype.HighlightLanguage = function (lang) {
 	}
 };
 
+Object.defineProperty(POPC2.prototype.HighlightLanguage, "name", { value: "HighlightLanguage" });
+
 
 

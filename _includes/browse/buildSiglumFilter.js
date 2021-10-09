@@ -20,6 +20,7 @@
 {% endcomment %}
 
 POPC2.prototype.buildSiglumFilter = function (index, target) {
+	this.DebugMessageFunctionVerbose();
 	if (!index) {
 		index = this.GLOBAL.BROWSE_INDEX;
 	}
@@ -64,7 +65,7 @@ POPC2.prototype.buildSiglumFilter = function (index, target) {
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_library");
-	output += ` (${keys.length})`;
+	output += ` [${keys.length}]`;
 	output += "</option>\n";
 
 	for (let i=0; i<keys.length; i++) {
@@ -90,6 +91,8 @@ POPC2.prototype.buildSiglumFilter = function (index, target) {
 	let that = this;
 	element.onchange = function() { that.filterBrowseIndex(); };
 };
+
+Object.defineProperty(POPC2.prototype.buildSiglumFilter, "name", { value: "buildSiglumFilter" });
 
 
 

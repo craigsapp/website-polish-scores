@@ -4,7 +4,8 @@
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Wed Oct  6 12:27:07 PDT 2021
 // Filename:      _includes/browse/getHighlightedString.js
-// Used by:
+// Used by:       _includes/browse/displayBrowseTable.js
+// Used by:       _includes/browse/printHighlightedLyric.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -15,6 +16,7 @@
 {% endcomment %}
 
 POPC2.prototype.getHighlightedString = function (contents, query) {
+	this.DebugMessageFunctionVerbose();
 	if (!query) {
 		return contents;
 	}
@@ -52,6 +54,8 @@ POPC2.prototype.getHighlightedString = function (contents, query) {
 
 	return contents;
 };
+
+Object.defineProperty(POPC2.prototype.getHighlightedString, "name", { value: "getHighlightedString" });
 
 
 

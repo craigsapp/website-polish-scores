@@ -20,6 +20,7 @@
 {% endcomment %}
 
 POPC2.prototype.getTranslation = function (tag, lang, lookup) {
+	this.DebugMessageFunctionVerbose();
 	if (!tag) {
 		return "";
 	}
@@ -55,6 +56,8 @@ POPC2.prototype.getTranslation = function (tag, lang, lookup) {
 	}
 	return output;
 };
+
+Object.defineProperty(POPC2.prototype.getTranslation, "name", { value: "getTranslation" });
 
 
 

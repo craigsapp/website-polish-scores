@@ -36,5 +36,7 @@ POPC2.prototype.ShowPage = function (type) {
 	return element;
 };
 
+Object.defineProperty(POPC2.prototype.ShowPage, "name", { value: "ShowPage" });
+
 
 

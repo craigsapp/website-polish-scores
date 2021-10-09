@@ -14,6 +14,7 @@
 {% endcomment %}
 
 POPC2.prototype.isInBrowseTable = function (path) {
+	this.DebugMessageFunction();
 	for (let i=0; i<path.length; i++) {
 		if (path[i].nodeName !== "TABLE") {
 			continue;
@@ -23,7 +24,9 @@ POPC2.prototype.isInBrowseTable = function (path) {
 		}
 	}
 	return false;
-}
+};
+
+Object.defineProperty(POPC2.prototype.isInBrowseTable, "name", { value: "isInBrowseTable" });
 
 
 

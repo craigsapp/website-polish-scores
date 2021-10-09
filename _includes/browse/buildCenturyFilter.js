@@ -20,6 +20,7 @@
 {% endcomment %}
 
 POPC2.prototype.buildCenturyFilter = function (index, target) {
+	this.DebugMessageFunctionVerbose();
 	if (!index) {
 		index = this.GLOBAL.BROWSE_INDEX;
 	}
@@ -68,7 +69,7 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_century");
-	output += ` (${keys.length})`;
+	output += ` [${keys.length}]`;
 	output += "</option>\n";
 
 	for (let i=0; i<keys.length; i++) {
@@ -94,6 +95,8 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 	let that = this;
 	element.onchange = function() { that.filterBrowseIndex(); };
 };
+
+Object.defineProperty(POPC2.prototype.buildCenturyFilter, "name", { value: "buildCenturyFilter" });
 
 
 

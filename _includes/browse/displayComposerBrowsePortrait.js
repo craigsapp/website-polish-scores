@@ -20,7 +20,7 @@
 //                portrait.
 //
 //                Once the portrait image is downloaded, it will be stored in
-//                GLOBAL.PORTRAITS for faster loading of the image when the
+//                GLOBAL.PORTRAIT_IMAGES for faster loading of the image when the
 //                browse page is redrawn (such as when changing languages).
 //
 {% endcomment %}
@@ -77,8 +77,8 @@ POPC2.prototype.displayComposerBrowsePortrait = function () {
 	if (link) {
 		output += `<a target="_blank" href="${link}">`;
 	}
-	if (this.GLOBAL.PORTRAITS[this.GLOBAL.SEARCH.composer]) {
-		output += `<img src="${this.GLOBAL.PORTRAITS[this.GLOBAL.SEARCH.composer]}">`;
+	if (this.GLOBAL.PORTRAIT_IMAGES[this.GLOBAL.SEARCH.composer]) {
+		output += `<img src="${this.GLOBAL.PORTRAIT_IMAGES[this.GLOBAL.SEARCH.composer]}">`;
 	} else {
 		output += `<img crossorigin="anonymous" src="${url}">`;
 	}
@@ -111,17 +111,19 @@ POPC2.prototype.displayComposerBrowsePortrait = function () {
 
 	let that = this;
 
-	if (!this.GLOBAL.PORTRAITS[this.GLOBAL.SEARCH.composer]) {
+	if (!this.GLOBAL.PORTRAIT_IMAGES[this.GLOBAL.SEARCH.composer]) {
 		let imageElement = document.querySelector("#portrait img");
 		if (!imageElement) {
 			return;
 		}
 		imageElement.onload = function(event) {
 			let encodedImage = that.GetBase64Image(event.currentTarget);
-			that.GLOBAL.PORTRAITS[that.GLOBAL.SEARCH.composer] = encodedImage;
+			that.GLOBAL.PORTRAIT_IMAGES[that.GLOBAL.SEARCH.composer] = encodedImage;
 		};
 	}
 };
+
+Object.defineProperty(POPC2.prototype.displayComposerBrowsePortrait, "name", { value: "displayComposerBrowsePortrait" });
 
 
 

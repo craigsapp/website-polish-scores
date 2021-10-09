@@ -38,5 +38,7 @@ POPC2.prototype.displayBrowsePage = function () {
 	this.filterBrowseIndex();
 };
 
+Object.defineProperty(POPC2.prototype.displayBrowsePage, "name", { value: "displayBrowsePage" });
+
 
 

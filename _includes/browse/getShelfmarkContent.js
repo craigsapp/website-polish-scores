@@ -15,6 +15,7 @@
 {% endcomment %}
 
 POPC2.prototype.getShelfmarkContent = function (siglum, shelfmark) {
+	this.DebugMessageFunctionVerbose();
 	let lowshelf = siglum.toLowerCase();
 	let output = "";
 	output += "<span"
@@ -26,6 +27,8 @@ POPC2.prototype.getShelfmarkContent = function (siglum, shelfmark) {
 	output += `<span class='shelfmark'>${shelfmark}</span>`;
 	return output;
 };
+
+Object.defineProperty(POPC2.prototype.getShelfmarkContent, "name", { value: "getShelfmarkContent" });
 
 
 

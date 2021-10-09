@@ -15,7 +15,7 @@
 //
 {% endcomment %}
 
-POPC2.prototype.GetLangaugeFromBrowser = function () {
+POPC2.prototype.GetLanguageFromBrowser = function () {
 	this.DebugMessageFunction();
 	if (navigator.language.match(/\ben\b/i)) {
 		return "EN";
@@ -25,6 +25,8 @@ POPC2.prototype.GetLangaugeFromBrowser = function () {
 		return "EN";
 	}
 };
+
+Object.defineProperty(POPC2.prototype.GetLanguageFromBrowser, "name", { value: "GetLanguageFromBrowser" });
 
 
 

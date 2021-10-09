@@ -4,7 +4,7 @@
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Wed Oct  6 12:27:07 PDT 2021
 // Filename:      _includes/browse/printHighlightLyric.js
-// Used By:       printLyricsSearchResults.js
+// Used By:       _includes/browse/printLyricsSearchResults.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -14,6 +14,7 @@
 {% endcomment %}
 
 POPC2.prototype.printHighlightedLyric = function (word, query) {
+	this.DebugMessageFunction();
 	let newword = this.getHighlightedString(word, query);
 	if (newword === word) {
 		// No match so return empty string
@@ -25,6 +26,8 @@ POPC2.prototype.printHighlightedLyric = function (word, query) {
 	output += "</span>";
 	return output;
 };
+
+Object.defineProperty(POPC2.prototype.printHighlightedLyric, "name", { value: "printHighlightedLyric" });
 
 
 

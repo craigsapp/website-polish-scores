@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					popc2.GLOBAL.BROWSE_INDEX[i]._next = popc2.GLOBAL.BROWSE_INDEX[i+1];
 				}
 			}
-			popc2.GLOBAL.BROWSE_RESULTS = json;
+			popc2.GLOBAL.SEARCH_RESULTS = json;
 			let cgi = popc2.getCgiParameters();
 			if (!cgi.lyrics) {
 				// Show the search page now with any CGI-based search parameters.
@@ -40,9 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 			popc2.downloadLyricsIndex();
 		})
-		.catch(err => {
-			popc2.DebugMessage("Error: problem downloading browse index: " + err, "pink");
-		});
+		.catch(err => { console.error(err); });
 });
 
 

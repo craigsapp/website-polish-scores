@@ -18,6 +18,7 @@
 {% endcomment %}
 
 POPC2.prototype.makeComposerDates = function (birth, death) {
+	this.DebugMessageFunction();
 	// Currently require both birth and death dates.
 	if (!birth) {
 		return "";
@@ -58,6 +59,8 @@ POPC2.prototype.makeComposerDates = function (birth, death) {
 		return "";
 	}
 };
+
+Object.defineProperty(POPC2.prototype.makeComposerDates, "name", { value: "makeComposerDates" });
 
 
 

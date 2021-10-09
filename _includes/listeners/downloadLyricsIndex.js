@@ -15,6 +15,7 @@
 {% endcomment %}
 
 POPC2.prototype.downloadLyricsIndex = function () {
+	this.DebugMessageFunction();
 	let url = popc2.SETTINGS.lyrics_index;
 	this.DebugMessage("DOWNLOADING LYRICS INDEX FROM " + url, "hotpink");
 	let that = this;
@@ -49,10 +50,10 @@ POPC2.prototype.downloadLyricsIndex = function () {
 			// Now download the composer index
 			that.downloadComposerIndex();
 		})
-		.catch(err => {
-			that.DebugMessage("ERROR DOWNLOADING LYRICS INDEX: " + err, "hotpink");
-		});
+		.catch(err => { console.error(err); });
 };
+
+Object.defineProperty(POPC2.prototype.downloadLyricsIndex, "name", { value: "downloadLyricsIndex" });
 
 
 

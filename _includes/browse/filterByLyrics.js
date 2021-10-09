@@ -4,7 +4,7 @@
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Wed Oct  6 12:27:07 PDT 2021
 // Filename:      _includes/browse/filterByLyrics.js
-// Used by:
+// Used by:       _includes/browse/filterBrowseIndex.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -14,6 +14,7 @@
 {% endcomment %}
 
 POPC2.prototype.filterByLyrics = function (input) {
+	this.DebugMessageFunctionVerbose();
 	let type = "lyrics";
 	let field = "lyrics";
 	if (!input) {
@@ -83,6 +84,8 @@ POPC2.prototype.filterByLyrics = function (input) {
 		return input;
 	}
 };
+
+Object.defineProperty(POPC2.prototype.filterByLyrics, "name", { value: "filterByLyrics" });
 
 
 

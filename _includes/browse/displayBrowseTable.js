@@ -11,12 +11,13 @@
 //
 // Description:   Display a list of works on the browse
 //                page.   The last search results on the browse page,
-//                stored in GLOBAL.BROWSE_RESULTS will be used to display
+//                stored in GLOBAL.SEARCH_RESULTS will be used to display
 //                the list if no list is given as input to this function.
 //
 {% endcomment %}
 
 POPC2.prototype.displayBrowseTable = function (results, target) {
+	this.DebugMessageFunction();
 	if (!target) {
 		target = "#results";
 	}
@@ -27,7 +28,7 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 	}
 
 	if (!results) {
-		results = this.GLOBAL.BROWSE_RESULTS;
+		results = this.GLOBAL.SEARCH_RESULTS;
 	}
 
 	if (!results) {
@@ -103,6 +104,8 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 
 	element.innerHTML = output;
 };
+
+Object.defineProperty(POPC2.prototype.displayBrowseTable, "name", { value: "displayBrowseTable" });
 
 
 

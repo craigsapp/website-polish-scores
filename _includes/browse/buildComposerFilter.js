@@ -2,9 +2,10 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Last Modified: Sat Oct  9 10:04:20 PDT 2021
 // Filename:      _includes/browse/buildComposerFilter.js
-// Used by:
+// Used by:       _include/browse/buildBrowseFilters.js
+// Used by:       _include/browse/filterBrowseIndex.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -19,6 +20,7 @@
 {% endcomment %}
 
 POPC2.prototype.buildComposerFilter = function (index, target) {
+	this.DebugMessageFunctionVerbose();
 	if (!index) {
 		index = this.GLOBAL.BROWSE_INDEX;
 	}
@@ -67,7 +69,7 @@ POPC2.prototype.buildComposerFilter = function (index, target) {
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_composer");
-	output += ` (${keys.length})`;
+	output += ` [${keys.length}]`;
 	output += "</option>\n";
 
 	for (let i=0; i<keys.length; i++) {
@@ -102,6 +104,8 @@ POPC2.prototype.buildComposerFilter = function (index, target) {
 	let that = this;
 	element.onchange = function() { that.filterBrowseIndex(); };
 };
+
+Object.defineProperty(POPC2.prototype.buildComposerFilter, "name", { value: "buildComposerFilter" });
 
 
 

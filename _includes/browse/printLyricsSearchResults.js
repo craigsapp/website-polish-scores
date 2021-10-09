@@ -4,7 +4,8 @@
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Wed Oct  6 12:27:07 PDT 2021
 // Filename:      _includes/browse/printLyricsSearchResults.js
-// Used by:
+// Used by:       _includes/browse/displayBrowseTable.js
+// Used by:       _includes/browse/printHighlightedLyric.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -56,6 +57,8 @@ POPC2.prototype.printLyricsSearchResults = function (lyrics, query, columns) {
 	output += "</tr>";
 	return output;
 };
+
+Object.defineProperty(POPC2.prototype.printLyricsSearchResults, "name", { value: "printLyricsSearchResults" });
 
 
 

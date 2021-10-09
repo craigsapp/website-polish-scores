@@ -1,10 +1,10 @@
 {% comment %}
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
-// Creation Date: Fri Oct  8 00:53:37 PDT 2021
-// Last Modified: Sat Oct  9 11:53:40 PDT 2021
-// Filename:      _includes/initialize/DebugMessageFunction.js
-// Used by:       Many POPC2 prototype functions
+// Creation Date: Sat Oct  9 12:14:08 PDT 2021
+// Last Modified: Sat Oct  9 12:14:11 PDT 2021
+// Filename:      _includes/initialize/DebugMessageFunctionVerbose.js
+// Used by:       POPC2 prototype functions that are used often
 // Included in:   _includes/initialize/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -15,8 +15,8 @@
 //
 {% endcomment %}
 
-POPC2.prototype.DebugMessageFunction = function () {
-	if (this.SETTINGS.debug === "true") {
+POPC2.prototype.DebugMessageFunctionVerbose = function () {
+	if (this.SETTINGS.debug_verbose === "true") {
 		let functionName = "";
 		if (arguments.callee.caller.name) {
 			functionName = arguments.callee.caller.name;
@@ -33,7 +33,7 @@ POPC2.prototype.DebugMessageFunction = function () {
 		}
 		if (arguments.length == 0) {
 			console.log(`%cEntering %c${functionName}%c()`,
-					"color: gray", "color: green", "color: gray");
+					"color: gray", "color: chartreuse", "color: gray");
 		} else {
 			// also print arguments
 			let args = "(";
@@ -54,13 +54,13 @@ POPC2.prototype.DebugMessageFunction = function () {
 				}
 				args += ")";
 				console.log(`%cEntering %c${functionName}%c${args}`,
-						"color: gray", "color: green", "color: gray");
+						"color: gray", "color: chartreuse", "color: gray");
 			}
 		}
 	}
 };
 
-Object.defineProperty(POPC2.prototype.DebugMessageFunction, "name", { value: "DebugMessageFunction" });
+Object.defineProperty(POPC2.prototype.DebugMessageFunctionVerbose, "name", { value: "DebugMessageFunctionVerbose" });
 
 
 

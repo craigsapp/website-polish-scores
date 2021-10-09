@@ -20,6 +20,8 @@ POPC2.prototype.displayWorkPage = function (id) {
 	}
 	this.ShowPage("work");
 	this.displayScore(id);
+
+Object.defineProperty(POPC2.prototype.displayWorkPage, "name", { value: "displayWorkPage" });
 };
 
 

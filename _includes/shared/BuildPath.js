@@ -14,6 +14,7 @@
 {% endcomment %}
 
 POPC2.prototype.BuildPath = function (element) {
+	this.DebugMessageFunction();
 	let output = [];
 	while (element) {
 		output.push(element);
@@ -21,6 +22,8 @@ POPC2.prototype.BuildPath = function (element) {
 	}
 	return output;
 };
+
+Object.defineProperty(POPC2.prototype.BuildPath, "name", { value: "BuildPath" });
 
 
 

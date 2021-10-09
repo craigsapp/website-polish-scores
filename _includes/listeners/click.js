@@ -15,12 +15,6 @@
 //
 {% endcomment %}
 
-
-///////////////////////////////
-//
-// click event delegation --
-//
-
 document.addEventListener("click", function (event) {
 	if (!event) {
 		return;

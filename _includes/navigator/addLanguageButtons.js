@@ -15,7 +15,7 @@
 {% endcomment %}
 
 POPC2.prototype.addLanguageButtons = function (target, languages) {
-	this.DebugMessage("LANGUAGE BUTTONS TO ADD: " + JSON.stringify(languages), "blue");
+	this.DebugMessageFunction(target, JSON.stringify(languages));
 	if (!target) {
 		target = "#language-list";
 	}
@@ -37,6 +37,8 @@ POPC2.prototype.addLanguageButtons = function (target, languages) {
 	}
 	element.innerHTML = output;
 };
+
+Object.defineProperty(POPC2.prototype.addLanguageButtons, "name", { value: "addLanguageButtons" });
 
 
 

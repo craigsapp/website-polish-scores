@@ -4,6 +4,10 @@
 #     {{ site.tab_title }}
 # For documentation, see https://jekyllrb.com/docs/variables/#site-variables
 #
+# Note: if you change a variable in this file, you have to restart the jekyll
+# web server (typically ./.server script) in order for the variable to be updated
+# on the locally served website.
+#
 
 # tab_title: Title to display in browser tab for webpage.
 tab_title: "POPC2"
@@ -31,6 +35,11 @@ languages:
 # debug: Print debugging statements (or not, if set to "false").
 debug: "true"
 # debug: "false"
+
+# debug: Print extra debugging statements for functions that are called
+# very often (and thus are not included in the regular debug level).
+# debug_verbose: "true"
+debug_verbose: "false"
 
 
 ##############################

@@ -36,5 +36,7 @@ POPC2.prototype.GetPageType = function () {
 	return "none";
 };
 
+Object.defineProperty(POPC2.prototype.GetPageType, "name", { value: "GetPageType" });
+
 
 

@@ -15,6 +15,7 @@
 {% endcomment %}
 
 POPC2.prototype.GetBase64Image = function (img) {
+	this.DebugMessageFunction();
 	let canvas = document.createElement("canvas");
 	let context = canvas.getContext("2d");
 	canvas.width = img.naturalWidth;
@@ -22,6 +23,8 @@ POPC2.prototype.GetBase64Image = function (img) {
 	context.drawImage(img, 0, 0);
 	return canvas.toDataURL('image/jpeg');
 };
+
+Object.defineProperty(POPC2.prototype.GetBase64Image, "name", { value: "GetBase64Image" });
 
 
 

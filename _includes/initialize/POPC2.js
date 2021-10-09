@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct  8 10:27:38 PDT 2021
-// Last Modified: Fri Oct  8 10:27:41 PDT 2021
+// Last Modified: Sat Oct  9 12:43:01 PDT 2021
 // Filename:      _includes/initialize/POPC2.js
 // Used by:
 // Included in:
@@ -46,9 +46,9 @@ function POPC2() {
 	// Variables primarily related to the Browse page:
 	//
 
-	// BROWSE_RESULTS == The list of matches from the last
+	// SEARCH_RESULTS == The list of matches from the last
 	// search on the browse page.
-	this.GLOBAL.BROWSE_RESULTS = [];
+	this.GLOBAL.SEARCH_RESULTS = [];
 
 	// SEARCH == List of parameters for browse page searching:
 	this.GLOBAL.SEARCH = {};
@@ -82,9 +82,9 @@ function POPC2() {
 	// Variables related to portraits:
 	//
 
-	// PORTRAITS == A lookup table of composer portraits indexed by
+	// PORTRAIT_IMAGES == A lookup table of composer portraits indexed by
 	//    composer's name.
-	this.GLOBAL.PORTRAITS = {};
+	this.GLOBAL.PORTRAIT_IMAGES = {};
 
 
 	//////////////////////////////
@@ -104,6 +104,7 @@ function POPC2() {
 		spacingSystem: 20
 	};
 
+
 	//////////////////////////////
 	//
 	// SETTINGS -- Parameters set in ../../_config.yml, such as the URLs for
@@ -118,8 +119,9 @@ function POPC2() {
 		lyrics_index:       "{{ site.lyrics_index        }}",
 		composer_index:     "{{ site.composer_index      }}",
 		background_image:   "{{ site.background_image    }}",
-		languages:          {{ site.languages | jsonify  }},
-		debug:              "{{ debug                    }}",
+		languages:           {{ site.languages | jsonify }} ,
+		debug:              "{{ site.debug               }}",
+		debug_verbose:      "{{ site.debug_verbose       }}",
 		h1_color:           "{{ site.h1_color            }}",
 		h2_color:           "{{ site.h1_color            }}",
 		h3_color:           "{{ site.h1_color            }}",

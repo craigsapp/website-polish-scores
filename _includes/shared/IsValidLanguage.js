@@ -28,5 +28,7 @@ POPC2.prototype.IsValidLanguage = function (lang) {
 	return false;
 };
 
+Object.defineProperty(POPC2.prototype.IsValidLanguage, "name", { value: "IsValidLanguage" });
+
 
 

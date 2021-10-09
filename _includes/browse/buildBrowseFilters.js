@@ -24,5 +24,7 @@ POPC2.prototype.buildBrowseFilters = function () {
 	this.buildLyricsFilter();
 };
 
+Object.defineProperty(POPC2.prototype.buildBrowseFilters, "name", { value: "buildBrowseFilters" });
+
 
 

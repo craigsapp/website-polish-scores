@@ -15,6 +15,7 @@
 {% endcomment %}
 
 POPC2.prototype.downloadComposerIndex = function () {
+	this.DebugMessageFunction();
 	let url = this.SETTINGS.composer_index;
 	this.DebugMessage("DOWNLOADING COMPOSER INDEX FROM " + url, "purple");
 	let that = this;
@@ -31,15 +32,16 @@ POPC2.prototype.downloadComposerIndex = function () {
 				if (COM.match(/^\s*$/)) {
 					continue;
 				}
-				that.GLOBAL.COMPOSERS[COM] = data[i];
 			}
+			// Create a list of the composers, including counts of files for the
+			// composer and links into the COMPSERS database entry for the composer
 			that.DebugMessage("DOWNLOADED COMPOSER INDEX FROM " + url, "purple");
 			that.displayComposerBrowsePortrait();
 		})
-		.catch(err => {
-			that.DebugMessage("ERROR DOWNLOADING COMPOSER INDEX: " + err, "purple");
-		});
+		.catch(err => { console.error(err); });
 };
+
+Object.defineProperty(POPC2.prototype.downloadComposerIndex, "name", { value: "downloadComposerIndex" });
 
 
 

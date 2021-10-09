@@ -20,6 +20,7 @@
 {% endcomment %}
 
 POPC2.prototype.buildTitleFilter = function (target) {
+	this.DebugMessageFunctionVerbose();
 	if (!target) {
 		target = "#filter-title";
 	}
@@ -51,6 +52,8 @@ POPC2.prototype.buildTitleFilter = function (target) {
 	let that = this;
 	element.onkeyup = function() { that.filterBrowseIndex(); };
 };
+
+Object.defineProperty(POPC2.prototype.buildTitleFilter, "name", { value: "buildTitleFilter" });
 
 
 

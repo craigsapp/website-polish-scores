@@ -4,7 +4,7 @@
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Wed Oct  6 12:27:07 PDT 2021
 // Filename:      _includes/browse/showResultsCount.js
-// Used by:
+// Used by:       _includes/browse/filterBrowseIndex.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -14,6 +14,7 @@
 {% endcomment %}
 
 POPC2.prototype.showResultsCount = function (count) {
+	this.DebugMessageFunction();
 	let element = document.querySelector("#results-count");
 	if (!element) {
 		return;
@@ -34,6 +35,8 @@ POPC2.prototype.showResultsCount = function (count) {
 	}
 	element.innerHTML = output;
 };
+
+Object.defineProperty(POPC2.prototype.showResultsCount, "name", { value: "showResultsCount" });
 
 
 

@@ -20,6 +20,7 @@
 {% endcomment %}
 
 POPC2.prototype.buildLyricsFilter = function (target) {
+	this.DebugMessageFunctionVerbose();
 	if (!target) {
 		target = "#filter-lyrics";
 	}
@@ -51,6 +52,8 @@ POPC2.prototype.buildLyricsFilter = function (target) {
 	let that = this;
 	element.onkeyup = function() { that.filterBrowseIndex(); };
 };
+
+Object.defineProperty(POPC2.prototype.buildLyricsFilter, "name", { value: "buildLyricsFilter" });
 
 
 

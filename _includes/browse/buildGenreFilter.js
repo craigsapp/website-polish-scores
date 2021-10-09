@@ -20,6 +20,7 @@
 {% endcomment %}
 
 POPC2.prototype.buildGenreFilter = function (index, target) {
+	this.DebugMessageFunctionVerbose();
 	if (!index) {
 		index = this.GLOBAL.BROWSE_INDEX;
 	}
@@ -79,7 +80,7 @@ POPC2.prototype.buildGenreFilter = function (index, target) {
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_genre");
-	output += ` (${tgenres.length})`;
+	output += ` [${tgenres.length}]`;
 	output += "</option>\n";
 
 	for (let i=0; i<tgenres.length; i++) {
@@ -103,6 +104,8 @@ POPC2.prototype.buildGenreFilter = function (index, target) {
 	let that = this;
 	element.onchange = function() { that.filterBrowseIndex(); };
 };
+
+Object.defineProperty(POPC2.prototype.buildGenreFilter, "name", { value: "buildGenreFilter" });
 
 
 

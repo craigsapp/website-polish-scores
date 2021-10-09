@@ -24,6 +24,7 @@
 {% endcomment %}
 
 POPC2.prototype.copySearchLink = function () {
+	this.DebugMessageFunction();
 	let base = window.location.origin;
 	let url = base;
 	let search = "";
@@ -62,6 +63,8 @@ POPC2.prototype.copySearchLink = function () {
 
 	this.CopyToClipboard(url);
 };
+
+Object.defineProperty(POPC2.prototype.copySearchLink, "name", { value: "copySearchLink" });
 
 
 

@@ -2,10 +2,10 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct  8 23:44:31 PDT 2021
-// Last Modified: Fri Oct  8 23:44:36 PDT 2021
+// Last Modified: Sat Oct  9 12:46:01 PDT 2021
 // Filename:      _includes/initialize/main.html
 // Included in:   _includes/head/main.html
-// Syntax:        ECMAScript 6
+// Syntax:        HTML; ECMAScript 6; Jekyll/Liquid
 // vim:           ts=3:nowrap
 //
 // Description:   Scripts that should have priority in loading.
@@ -14,15 +14,17 @@
 
 <script>
 
-{% include initialize/POPC2.js               %}
+{% include initialize/POPC2.js                       %}
 let popc2 = new POPC2();
 
-{% include initialize/DebugMessage.js         %}
-{% include initialize/DebugMessageFunction.js %}
+{% include initialize/DebugMessage.js                %}
+{% include initialize/DebugMessageVerbose.js         %}
+{% include initialize/DebugMessageFunction.js        %}
+{% include initialize/DebugMessageFunctionVerbose.js %}
 
 popc2.DebugMessage("Created popc2 interface", "chartreuse");
 
-{% include initialize/getCgiParameters.js     %}
+{% include initialize/getCgiParameters.js            %}
 
 </script>
 

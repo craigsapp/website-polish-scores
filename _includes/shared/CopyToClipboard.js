@@ -23,5 +23,7 @@ POPC2.prototype.CopyToClipboard = function (string) {
 	document.body.removeChild(element);
 };
 
+Object.defineProperty(POPC2.prototype.CopyToClipboard, "name", { value: "CopyToClipboard" });
+
 
 

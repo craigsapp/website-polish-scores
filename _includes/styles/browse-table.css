@@ -1,4 +1,16 @@
-
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct  9 00:34:21 PDT 2021
+// Last Modified: Sat Oct  9 00:34:25 PDT 2021
+// Filename:      _includes/styles/browse-table.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for the search results table on the browse page
+//
+{% endcomment %}
 
 table.search-results {
 	border-collapse: collapse;
@@ -6,68 +18,51 @@ table.search-results {
 	width: 100%;
 }
 
-
 table.search-results th:first-child,
 table.search-results td:first-child {
 	padding-left: 30px;
 }
 
-
-table.search-results th {
-	cursor: pointer;
-}
-
-
+table.search-results th,
 table.search-results td {
 	cursor: pointer;
 }
-
-
-table.search-results td.shelfmark {
-	padding-right: 5px;
-
-}
-
-
-table.search-results td.shelfmark span.siglum {
-	letter-spacing: -1px;
-}
-
-
-table.search-results td.shelfmark span.shelfmark {
-	letter-spacing: -0.5px;
-}
-
-
-table.search-results td.composer .first-name {
-	letter-spacing: -0.5px;
-}
-
-
-table.search-results td.shelfmark span.siglum-postfix {
-	padding-left: 2px;
-}
-
-
-table.search-results tbody tr:hover {
-	background: lavender;
-}
-
-
-table.search-results tbody tr.lyrics:hover{
-	background: none !important;
-}
-
 
 table.search-results th {
 	text-align: left;
 }
 
-
 table.search-results td {
 	vertical-align: top;
 }
 
+table.search-results td.shelfmark {
+	padding-right: 5px;
+}
+
+table.search-results td.shelfmark span.siglum {
+	letter-spacing: -1px;
+}
+
+table.search-results td.shelfmark span.shelfmark {
+	letter-spacing: -0.5px;
+}
+
+table.search-results td.composer .first-name {
+	letter-spacing: -0.5px;
+}
+
+table.search-results td.shelfmark span.siglum-postfix {
+	padding-left: 2px;
+}
+
+table.search-results tbody tr:hover {
+	background: #99000011;
+}
+
+table.search-results tbody tr.lyrics:hover{
+	background: none !important;
+}
 
 div.lyrics-match {
 	width: 50%;
@@ -89,10 +84,18 @@ div.lyrics-match {
 }
 
 
+{% comment %}
+/* 
+ * When the screen is 600px or less wide, hide
+ * the shelfmark column in the search results table.
+ */
+{% endcomment %}
 @media only screen and (max-width: 600px) {
 	table.search-results td.shelfmark,
 	table.search-results th.shelfmark {
 		display: none;
 	}
 }
+
+
 

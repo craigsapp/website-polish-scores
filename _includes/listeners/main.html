@@ -1,9 +1,28 @@
-
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct  6 12:27:04 PDT 2021
+// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Filename:      _includes/listeners/main.html
+// Included in:   _includes/head/main.html
+// Syntax:        HTML; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Collect event listeners for inclusion in the head element
+//                of the webpage.
+//
+{% endcomment %}
 
 <script>
-{% include listeners/lyrics.js %}
-{% include listeners/composers.js %}
-{% include listeners/listeners.js %}
+
+{% include listeners/browse-index.js          %}
+{% include listeners/click.js                 %}
+{% include listeners/downloadComposerIndex.js %}
+{% include listeners/downloadLyricsIndex.js   %}
+{% include listeners/getBrowseWorkId.js       %}
+{% include listeners/isInBrowseTable.js       %}
+
 </script>
+
 
 

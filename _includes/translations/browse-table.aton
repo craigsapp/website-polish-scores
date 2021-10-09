@@ -1,5 +1,6 @@
-
+@
 @ Translations for the search-results table (headings)
+@
 
 @@BEGIN:	ENTRY
 @TAG:		header_shelfmark
@@ -18,4 +19,6 @@
 @EN:		Title
 @PL:		Tytuł
 @@END:		ENTRY
+
+
 

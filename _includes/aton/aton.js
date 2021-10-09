@@ -152,10 +152,10 @@ ATON.prototype.setUCKeys = function () { this.setOption('forceKeyCase', 'uc'); r
 ATON.prototype.setOCKeys = function () { this.setOption('forceKeyCase', ''); return this; }
 ATON.prototype.unsetKeyCase = function ()  { this.setOCKeys(); }
 
-ATON.prototype.setOnlyChildRoot = function () { 
+ATON.prototype.setOnlyChildRoot = function () {
 	this.setOption('onlyChildToRoot', true);
 }
-ATON.prototype.unsetOnlyChildRoot = function () { 
+ATON.prototype.unsetOnlyChildRoot = function () {
 	this.setOption('onlyChildToRoot', false);
 }
 
@@ -208,7 +208,7 @@ ATON.prototype.parse = function (string) {
 		if ((keys.length === 1) && (typeof output[keys[0]] === 'object')) {
 			return output[keys[0]];
 		}
-	} 
+	}
 	return output;
 };
 

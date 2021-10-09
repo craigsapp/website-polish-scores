@@ -1,29 +1,38 @@
-
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct  9 00:35:35 PDT 2021
+// Last Modified: Sat Oct  9 00:35:37 PDT 2021
+// Filename:      _includes/styles/browse.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for the browse page.
+//
+{% endcomment %}
 
 #filters {
 	margin-bottom: 30px;
 	margin-left: 30px;
 }
 
-
 .filter-div {
 	display: inline-block;
 }
-
 
 #results-count {
 	color: #aaaaaa;
 }
 
-
 .first-name {
 	color: #aaaaaa;
 }
-
 
 span.mark {
 	font-weight: bold;
 	color: {{ site.h1_color }};
 }
+
 
 

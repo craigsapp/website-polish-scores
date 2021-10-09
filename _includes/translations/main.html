@@ -1,14 +1,35 @@
-
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct  9 01:27:18 PDT 2021
+// Last Modified: Sat Oct  9 01:27:22 PDT 2021
+// Filename:      _includes/translations/main.html
+// Included in:   _includes/head/main.html
+// Syntax:        HTML; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   This file collects all translation-related files in 
+//                this directory into a single file that is included into
+//                the head element of the webpage.  Each aton file contains
+//                a particular category of translations.
+//
+{% endcomment %}
 
 <script id="translations" type="text/x-aton">
-{% include translations/basic.aton         %}
-{% include translations/siglum.aton        %}
-{% include translations/browse.aton        %}
+
+{% include translations/basic.aton        %}
+{% include translations/siglum.aton       %}
+{% include translations/browse.aton       %}
+
 </script>
 
+
 <script>
-{% include translations/setup.js           %}
-{% include translations/translations.js    %}
+
+{% include translations/setup.js          %}
+{% include translations/getTranslation.js %}
+
 </script>
+
 
 

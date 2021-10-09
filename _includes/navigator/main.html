@@ -1,13 +1,33 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct  9 00:23:42 PDT 2021
+// Last Modified: Sat Oct  9 00:23:45 PDT 2021
+// Filename:      _includes/navigator/main.html
+// Included in:   _includes/head/main.html
+// Syntax:        HTML; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Collect navigator related HTML and javascript for
+//                inclusion in the head element of the webpage.
+//
+{% endcomment %}
 
-{% include navigator/content.html %}
+<div id="navigator">
+	<span id="work-navigator"></span>
+	<span id="language-list"></span>
+</div>
+
 
 <script>
-{% include navigator/navigator.js %}
-{% include navigator/listeners.js %}
 
-addLanguageButtons("#language-list", {{ site.languages | jsonify }});
-highlightLanguage(GLOBAL.LANGUAGE);
+{% include navigator/addLanguageButtons.js %}
+{% include navigator/listeners.js          %}
+
+popc2.addLanguageButtons("#language-list", popc2.SETTINGS.languages);
+popc2.HighlightLanguage(popc2.GLOBAL.LANGUAGE);
 
 </script>
+
 
 

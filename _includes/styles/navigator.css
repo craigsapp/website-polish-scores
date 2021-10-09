@@ -1,10 +1,21 @@
-
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct  9 00:48:08 PDT 2021
+// Last Modified: Sat Oct  9 00:48:10 PDT 2021
+// Filename:      _includes/styles/navigator.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for language/work navigator.
+//
+{% endcomment %}
 
 #navigator .highlight {
-	color: goldenrod;
+	color: {{ site.selected_language_color }};
 	font-weight: bold;
 }
-
 
 #navigator {
 	box-sizing: unset;
@@ -20,18 +31,15 @@
 	-webkit-text-size-adjust: 100%;
 }
 
-
 #language-list {
 	-space: nowrap;
 	overflow: hidden;
 	padding-right: 0px;
 }
 
-
 #language-list div:hover {
 	color: #dc143c;
 }
-
 
 #language-list div {
 	background-color: transparent;
@@ -52,5 +60,6 @@
 	width: 50px;
 	-webkit-text-size-adjust: 100%;
 }
+
 
 

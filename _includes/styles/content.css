@@ -1,17 +1,30 @@
-
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct  9 00:40:46 PDT 2021
+// Last Modified: Sat Oct  9 00:40:52 PDT 2021
+// Filename:      _includes/styles/content.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for controlling look of main content div.
+//
+{% endcomment %}
 
 div#content {
-    -webkit-text-size-adjust: 100%;
+    background: white;
+    box-sizing: unset;
+    cursor: auto;
+    filter: drop-shadow(0px 0px 5px rgba(45, 45, 45, 0.5));
     font-family: 'Montserrat', sans-serif !important;
     font-size: 15px;
     line-height: 1.5;
-    cursor: auto;
-    max-width: 1000px;
     margin: 0px auto;
+    max-width: 1000px;
     padding: 15px;
-    background: white;
-    filter: drop-shadow(0px 0px 5px rgba(45, 45, 45, 0.5));
-    box-sizing: unset;
+    -webkit-text-size-adjust: 100%;
 }
+
 
 

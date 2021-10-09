@@ -1,8 +1,14 @@
+#
+# _config.yml: Site-wide liquid variables for Jekyll website.  These values
+# can be used in Jekyll files with the construction:
+#     {{ site.tab_title }}
+# For documentation, see https://jekyllrb.com/docs/variables/#site-variables
+#
 
-# tab_title: Title to display in browser tab.
-tab_title: "Polish scores"
+# tab_title: Title to display in browser tab for webpage.
+tab_title: "POPC2"
 
-# data_addr: website for Humdrum scores and derivatives.
+# data_addr: Website for Humdrum scores and derivatives.
 data_addr: "https://data.nifc.humdrum.org"
 
 # browse_index: JSON list of works for browse page.
@@ -22,14 +28,18 @@ languages:
    - "EN"
    - "PL"
 
-# debug: print debugging statements
+# debug: Print debugging statements (or not, if set to "false").
 debug: "true"
 # debug: "false"
 
 
 ##############################
 ##
-## CSS Stylings --
+## CSS Stylings -- The following variables control site-wide styles
+##     (mostly colors) on the website.  These variables are used in the
+##     css files found in _includes/styles, but are also stored in
+##     the POPC2.STYLES object (see _includes/initialize/POPC2.js) in case
+##     they are needed for dynamic content generation.
 ##
 
 # h1_color: Color for H1 headings.
@@ -44,6 +54,11 @@ h3_color: "#aaaaaa"
 # th_color: Color for Table headings.
 th_color: "#a71b1d"
 
+# button_hover_color: Color for buttons when hovering over them.
+button_hover_color: "limegreen"
+
+# selected_langauge_color: Color to highlight the selected language in the navigator.
+selected_language_color: "goldenrod"
 
 
 

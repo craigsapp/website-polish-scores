@@ -11,9 +11,11 @@
 	{% include navigator/main.html %}
 	<div id="content">
 	{{ content }}
-	<div class="page hidden" id="browse-page"></div>
-	<div class="page hidden" id="work-page"></div>
-	<div class="page hidden" id="analysis-page"></div>
+	<div class="page hidden" id="page-browse"></div>
+	<div class="page hidden" id="page-work">
+		{% include work/work.html %}
+	</div>
+	<div class="page hidden" id="page-analysis"></div>
 	</div>
 </main>
 <footer></footer>

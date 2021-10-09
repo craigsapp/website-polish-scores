@@ -1,7 +1,39 @@
-
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct  9 00:06:59 PDT 2021
+// Last Modified: Sat Oct  9 00:07:02 PDT 2021
+// Filename:      _includes/language/main.html
+// Included in:   _includes/head/main.html
+// Syntax:        ECMAScript 6
+// vim:           ts=3:nowrap
+//
+// Description:   Set the display language for the website.  If the user
+//                has previously visited the website, the preferred
+//                language will be stored in localStorage.LANGUAGE.
+//                If this is the first time visiting the page, The
+//                language of the web browser will be chosen as the
+//                default language.
+//
+{% endcomment %}
 
 <script>
-{% include language/setup.js %}
+
+popc2.DebugMessage("SETTING UP LANGUAGE", "brickred");
+
+if (localStorage.LANGUAGE) {
+	popc2.GLOBAL.LANGUAGE = localStorage.LANGUAGE;
+}
+
+if (!popc2.GLOBAL.LANGUAGE) {
+	setLanguageFromBrowserPreferences();
+}
+
+localStorage.LANGUAGE = popc2.GLOBAL.LANGUAGE;
+
+popc2.DebugMessage("LEAVING LANGUAGE SETUP", "brickred");
+
 </script>
+
 
 

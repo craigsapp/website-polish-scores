@@ -1,11 +1,19 @@
-
-<!-- template-browse
-	Template for the main browsing page.
--->
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Fri Oct  8 23:22:31 PDT 2021
+// Last Modified: Fri Oct  8 23:22:34 PDT 2021
+// Filename:      _includes/handlebars/template-browse.html
+// Included in:   _includes/handlebars/main.html
+// Syntax:        HTML; Handlebars; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Template for the browse page.
+//
+{% endcomment %}
 
 {% raw %}
 <script id="template-browse" type="text/x-handlebars-template">
-
 
 <h1>{{trans "title"}}</h1>
 
@@ -20,9 +28,9 @@
 <br/>
 <div class="filter-div" id="filter-title"></div>
 <div class="filter-div" id="filter-lyrics"></div>
-<div class="filter-div button" title="{{trans 'clear_help'}}" onclick="resetBrowse()">{{trans "clear"}}</div>
+<div class="filter-div button" title="{{trans 'clear_help'}}" onclick="popc2.resetBrowseSearchFields()">{{trans "clear"}}</div>
 <div class="filter-div button" title="{{trans 'copy_link'}}"
-	onclick="copySearchLink()">{{trans "link"}}</div>
+	onclick="popc2.copySearchLink()">{{trans "link"}}</div>
 <br/>
 <div class="filter-div" id="results-count"></div>
 </div>
@@ -33,5 +41,6 @@
 
 </script>
 {% endraw %}
+
 
 

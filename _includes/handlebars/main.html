@@ -1,14 +1,27 @@
-
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct  6 12:27:04 PDT 2021
+// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Filename:      _includes/handlebars/main.html
+// Included in:   _includes/head/main.html
+// Syntax:        ECMAScript 6
+// vim:           ts=3:nowrap
+//
+// Description:   Include Handlebars library, templates and helpers into
+//                head element of webpage.
+//
+{% endcomment %}
 
 <script>
 {% include handlebars/handlebars.min-v4.7.7.js %}
 </script>
 
 {% include handlebars/template-browse.html     %}
-{% include handlebars/template-work.html       %}
 
 <script>
-{% include handlebars/templates.js             %}
+{% include handlebars/helper-trans.js          %}
 </script>
+
 
 

@@ -1,5 +1,5 @@
 
-{% include translations/composers.aton %}
+1% include translations/composers.aton %}
 {% include translations/nationalities.aton %}
 {% include translations/genres.aton %}
 {% include translations/browse-table.aton %}
@@ -72,5 +72,34 @@
 @PL:		Wyczyść wszystkie parametry wyszukiwania
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		0_matches
+@EN:		matches
+@PL:		wyników
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		1_match
+@EN:		match
+@PL:		wynik
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		2-4_matches
+@EN:		matches
+@PL:		wyniki
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		5-21_matches
+@EN:		matches
+@PL:		wyników
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		101_matches
+@EN:		matches
+@PL:		wyniki
+@@END:		ENTRY
 
 

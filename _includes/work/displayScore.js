@@ -15,11 +15,11 @@
 
 POPC2.prototype.displayScore = function (id) {
 	this.DebugMessageFunction(id);
-	let options = JSON.parse(JSON.stringify(this.GLOBAL.HNP_OPTIONS));
+	let options = JSON.parse(JSON.stringify(this.VARS.HNP_OPTIONS));
 	options.incipit = true;
 	options.source = "humdrum";
-	if (this.GLOBAL.HUMDRUM[id]) {
-		this.storeHumdrumOnPage(this.GLOBAL.HUMDRUM[id]);
+	if (this.VARS.HUMDRUM[id]) {
+		this.storeHumdrumOnPage(this.VARS.HUMDRUM[id]);
 		console.log("VHV OPTIONS", options);
 		displayHumdrum(options);
 	} else {
@@ -29,7 +29,7 @@ POPC2.prototype.displayScore = function (id) {
 		fetch(url)
 			.then(res => res.text())
 			.then(text => {
-				that.GLOBAL.HUMDRUM[id] = text;
+				that.VARS.HUMDRUM[id] = text;
 				that.storeHumdrumOnPage(text);
 				console.log("VHV OPTIONS", options);
 				displayHumdrum(options);

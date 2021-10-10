@@ -36,8 +36,8 @@ POPC2.prototype.buildLyricsFilter = function (target) {
 	}
 
 	let selectedLyrics = "";
-	if (this.GLOBAL.SEARCH && this.GLOBAL.SEARCH.lyrics) {
-		selectedLyrics = this.GLOBAL.SEARCH.lyrics;
+	if (this.VARS.SEARCH && this.VARS.SEARCH.lyrics) {
+		selectedLyrics = this.VARS.SEARCH.lyrics;
 	}
 	if (lastLyrics) {
 		selectedLyrics = lastLyrics;

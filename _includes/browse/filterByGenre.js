@@ -29,7 +29,7 @@ POPC2.prototype.filterByGenre = function (input) {
 		target = element.value;
 	}
 	if (target) {
-		this.GLOBAL.SEARCH[type] = target;
+		this.VARS.SEARCH[type] = target;
 		let output = [];
 		let re = new RegExp("\\b" + target + "\\b");
 		for (let i=0; i<input.length; i++) {

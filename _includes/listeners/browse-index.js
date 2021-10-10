@@ -20,25 +20,37 @@ document.addEventListener("DOMContentLoaded", function() {
 		.then(res => res.json())
 		.then(json => {
 			popc2.DebugMessage("DOWNLOADED BROWSE INDEX FROM " + url, "pink");
-			popc2.GLOBAL.BROWSE_INDEX = json;
+			popc2.VARS.SCORE_INDEX = json;
 			// Add ._seq, ._prev and ._next parameters to browse index:
-			for (let i=0; i<popc2.GLOBAL.BROWSE_INDEX.length; i++) {
-				popc2.GLOBAL.BROWSE_INDEX[i]._seq = i;
+			for (let i=0; i<json.length; i++) {
+				json[i]._seq = i;
 				if (i > 0) {
-					popc2.GLOBAL.BROWSE_INDEX[i]._prev = popc2.GLOBAL.BROWSE_INDEX[i-1];
+					json[i]._prev = json[i-1];
 				}
-				if (i < popc2.GLOBAL.BROWSE_INDEX.length - 1) {
-					popc2.GLOBAL.BROWSE_INDEX[i]._next = popc2.GLOBAL.BROWSE_INDEX[i+1];
+				if (i < json.length - 1) {
+					json._next = json[i+1];
 				}
 			}
-			popc2.GLOBAL.SEARCH_RESULTS = json;
+         // Wrap links to next/previous browse entries?
+			json[0]._prev = json[json.length-1];
+			json[json.length-1]._next = json[0];
+
+			popc2.VARS.SEARCH_RESULTS = json;
 			let cgi = popc2.getCgiParameters();
 			if (!cgi.lyrics) {
 				// Show the search page now with any CGI-based search parameters.
 				// but only showing of lyrics are not involved.
 				popc2.displayBrowsePage();
 			}
+
+			// Now download secondary indexes.  Both of the following downloads
+			// will add extra fields to the popcs.VARS.SCORE_INDEX object.
+
+			// Lyrics index is for searching for words in musical text:
 			popc2.downloadLyricsIndex();
+
+			// Composer index is for enhancing information about composers:
+			popc2.downloadComposerIndex();
 		})
 		.catch(err => { console.error(err); });
 });

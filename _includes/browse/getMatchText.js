@@ -16,7 +16,7 @@
 POPC2.prototype.getMatchText = function (count) {
 	this.DebugMessageFunction();
 
-	if (this.GLOBAL.LANGUAGE !== "PL") {
+	if (this.VARS.LANGUAGE !== "PL") {
 		if (count == 1) {
 			return "match";
 		} else {

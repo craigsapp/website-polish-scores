@@ -22,7 +22,7 @@
 POPC2.prototype.buildNationalityFilter = function (index, target) {
 	this.DebugMessageFunctionVerbose();
 	if (!index) {
-		index = this.GLOBAL.BROWSE_INDEX;
+		index = this.VARS.SCORE_INDEX;
 	}
 	if (!target) {
 		target = "#filter-nationality";
@@ -72,8 +72,8 @@ POPC2.prototype.buildNationalityFilter = function (index, target) {
 	});
 
 	let selectedNationality = "";
-	if (this.GLOBAL.SEARCH && this.GLOBAL.SEARCH.nationality) {
-		selectedNationality = this.GLOBAL.SEARCH.nationality;
+	if (this.VARS.SEARCH && this.VARS.SEARCH.nationality) {
+		selectedNationality = this.VARS.SEARCH.nationality;
 	}
 
 	let output = "<select class='filter nationality'>\n";

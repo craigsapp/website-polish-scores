@@ -22,7 +22,7 @@
 POPC2.prototype.buildSiglumFilter = function (index, target) {
 	this.DebugMessageFunctionVerbose();
 	if (!index) {
-		index = this.GLOBAL.BROWSE_INDEX;
+		index = this.VARS.SCORE_INDEX;
 	}
 	if (!target) {
 		target = "#filter-siglum";
@@ -57,8 +57,8 @@ POPC2.prototype.buildSiglumFilter = function (index, target) {
 	});
 
 	let selectedSiglum = "";
-	if (this.GLOBAL.SEARCH && this.GLOBAL.SEARCH.siglum) {
-		selectedSiglum = this.GLOBAL.SEARCH.siglum;
+	if (this.VARS.SEARCH && this.VARS.SEARCH.siglum) {
+		selectedSiglum = this.VARS.SEARCH.siglum;
 	}
 
 	let output = "<select class='filter siglum'>\n";

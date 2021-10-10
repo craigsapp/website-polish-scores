@@ -9,12 +9,18 @@
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
-// Description:
+// Description:   Search VARS.SCORE_INDEX for entries composed by the specified
+//                composer.  If the entire SCORE_INDEX will be searched and if
+//                VARS.COMPOSER_INDEX is available and a ._worklist entry has been
+//                prepared for the composer, then return that worklist; otherwise,
+//                the SCORE_INDEX will be searched for entries by the composer.
+//                Do this search first from the browse searching form, since this
+//                will speed up the searching a bit when a composer is involved.
 //
 {% endcomment %}
 
 POPC2.prototype.filterByComposer = function (input) {
-	this.DebugMessageFunctionVerbose();
+	this.DebugMessageFunction();
 	let type = "composer";
 	let field = "COM";
 	if (!input) {
@@ -29,17 +35,28 @@ POPC2.prototype.filterByComposer = function (input) {
 		target = element.value;
 	}
 	if (target) {
-		this.GLOBAL.SEARCH[type] = target;
+
+		if ((input.length == this.VARS.SCORE_INDEX.length)
+				&& !this.IsEmptyObject(this.VARS.COMPOSER_INDEX)) {
+			// Used the prepared composer worklist if available:
+			let centry = this.VARS.COMPOSER_INDEX[target];
+			let worklist = centry._worklist;
+			if (worklist) {
+				return worklist;
+			}
+		}
+
+		this.VARS.SEARCH[type] = target;
 		let output = [];
-		for (let i=0; i<input.length; i++) {
-			if (input[i][field] === target) {
-				output.push(input[i]);
+		for (let entry in input) {
+			if (entry[field] === target) {
+				output.push(entry);
 			}
 		}
 		return output;
-	} else {
-		return input;
 	}
+
+	return input;
 };
 
 Object.defineProperty(POPC2.prototype.filterByComposer, "name", { value: "filterByComposer" });

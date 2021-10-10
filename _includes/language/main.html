@@ -22,14 +22,14 @@
 popc2.DebugMessage("SETTING UP LANGUAGE", "mediumslateblue");
 
 if (localStorage.LANGUAGE) {
-	popc2.GLOBAL.LANGUAGE = localStorage.LANGUAGE;
+	popc2.VARS.LANGUAGE = localStorage.LANGUAGE;
 }
 
-if (!popc2.GLOBAL.LANGUAGE) {
+if (!popc2.VARS.LANGUAGE) {
 	setLanguageFromBrowserPreferences();
 }
 
-localStorage.LANGUAGE = popc2.GLOBAL.LANGUAGE;
+localStorage.LANGUAGE = popc2.VARS.LANGUAGE;
 
 </script>
 

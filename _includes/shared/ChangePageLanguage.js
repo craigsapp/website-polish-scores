@@ -24,7 +24,7 @@ POPC2.prototype.ChangePageLanguage = function (lang, type) {
 		return;
 	}
 	this.HighlightLanguage(lang);
-	this.GLOBAL.LANGUAGE = lang;
+	this.VARS.LANGUAGE = lang;
 	localStorage.LANGUAGE = lang;
 
 	// Change current page to given language

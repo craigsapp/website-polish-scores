@@ -36,8 +36,8 @@ POPC2.prototype.buildTitleFilter = function (target) {
 	}
 
 	let selectedTitle = "";
-	if (this.GLOBAL.SEARCH && this.GLOBAL.SEARCH.title) {
-		selectedTitle = this.GLOBAL.SEARCH.title;
+	if (this.VARS.SEARCH && this.VARS.SEARCH.title) {
+		selectedTitle = this.VARS.SEARCH.title;
 	}
 	if (lastTitle) {
 		selectedTitle = lastTitle;

@@ -9,14 +9,14 @@
 // Syntax:        ECMAScript 6; Jekyll/Liquid
 // vim:           ts=3:nowrap
 //
-// Description:   Storage location for POPC2 website variables and functions.
+// Description:   Storage object for POPC2 website variables and functions.
 //
 {% endcomment %}
 
 function POPC2() {
 
-	// GLOBAL: storage for variables accessible outside of prototype functions:
-	this.GLOBAL = {};
+	// VARS: storage for variables accessible outside of prototype functions:
+	this.VARS = {};
 
 	//////////////////////////////
 	//
@@ -25,7 +25,7 @@ function POPC2() {
 
 	// LANGUAGE == The Language of the webpage, used to select the
 	// desired translations.
-	this.GLOBAL.LANGUAGE = null;
+	this.VARS.LANGUAGE = null;
 
 
 	//////////////////////////////
@@ -33,12 +33,12 @@ function POPC2() {
 	// Variables related to downloaded data.
 	//
 
-	// BROWSE_INDEX == A file list downloaded from {{ site.browse_index}}
-	this.GLOBAL.BROWSE_INDEX = [];
+	// SCORE_INDEX == A file list downloaded from {{ site.browse_index}}
+	this.VARS.SCORE_INDEX = [];
 
-	// COMPOSERS == A list of the composers indexed by the composer's names,
+	// COMPOSER_INDEX == A list of the composers indexed by the composer's names,
 	// downloaded from {{ site.composer_index}}
-	this.GLOBAL.COMPOSERS = {};
+	this.VARS.COMPOSER_INDEX = {};
 
 
 	//////////////////////////////
@@ -48,14 +48,14 @@ function POPC2() {
 
 	// SEARCH_RESULTS == The list of matches from the last
 	// search on the browse page.
-	this.GLOBAL.SEARCH_RESULTS = [];
+	this.VARS.SEARCH_RESULTS = [];
 
 	// SEARCH == List of parameters for browse page searching:
-	this.GLOBAL.SEARCH = {};
+	this.VARS.SEARCH = {};
 
 	// SEARCH_FREEZE == State variable used to avoid recursive
 	// updating of search drop-down menus when searching.
-	this.GLOBAL.SEARCH_FREEZE = false;
+	this.VARS.SEARCH_FREEZE = false;
 
 
 	//////////////////////////////
@@ -64,7 +64,7 @@ function POPC2() {
 	//
 
 	// WORK_ID = work id of score to be displayed.
-	this.GLOBAL.WORK_ID = null;
+	this.VARS.WORK_ID = null;
 
 
 	//////////////////////////////
@@ -74,7 +74,7 @@ function POPC2() {
 
 	// TRANSLATIONS == A lookup table of translations indexed by
 	//    translation key.
-	this.GLOBAL.TRANSLATIONS = {};
+	this.VARS.TRANSLATIONS = {};
 
 
 	//////////////////////////////
@@ -84,7 +84,7 @@ function POPC2() {
 
 	// PORTRAIT_IMAGES == A lookup table of composer portraits indexed by
 	//    composer's name.
-	this.GLOBAL.PORTRAIT_IMAGES = {};
+	this.VARS.PORTRAIT_IMAGES = {};
 
 
 	//////////////////////////////
@@ -94,11 +94,11 @@ function POPC2() {
 
 	// HUMDRUM == A lookup table of downloaded Humdrum files, indexed
 	//    by id (cinid, fileid, sqlid).
-	this.GLOBAL.HUMDRUM = {};
+	this.VARS.HUMDRUM = {};
 
 	// HNP_OPTIONS == A list of options for displaying Humdrum scores,
 	// along with default options.
-	this.GLOBAL.HNP_OPTIONS = {
+	this.VARS.HNP_OPTIONS = {
 		scale: 39,
 		autoResize: true,
 		spacingSystem: 20

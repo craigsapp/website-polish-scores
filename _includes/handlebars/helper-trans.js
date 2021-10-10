@@ -10,7 +10,7 @@
 // vim:           ts=3:nowrap
 //
 // Description:   Interface to provide translations from various
-//                languages.  The GLOBAL.LANGUAGE variable controls
+//                languages.  The VARS.LANGUAGE variable controls
 //                which language to generate.
 //
 {% endcomment %}
@@ -19,11 +19,11 @@ Handlebars.registerHelper("trans", function(tag) {
 	if (!tag) {
 		return new Handlebars.SafeString("");
 	}
-	let lang = popc2.GLOBAL.LANGUAGE;
+	let lang = popc2.VARS.LANGUAGE;
 	if (!lang) {
 		lang = "EN";
 	}
-	let item = popc2.GLOBAL.TRANSLATIONS[tag];
+	let item = popc2.VARS.TRANSLATIONS[tag];
 	if (!item) {
 		return new Handlebars.SafeString("");
 	}

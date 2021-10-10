@@ -20,7 +20,7 @@ POPC2.prototype.showResultsCount = function (count) {
 		return;
 	}
 	let output = "";
-	if (count != this.GLOBAL.BROWSE_INDEX.length) {
+	if (count != this.VARS.SCORE_INDEX.length) {
 		output = count + " " + this.getMatchText(count);
 	} else {
 		// Everything matches, so not interesting to show the count.

@@ -9,10 +9,10 @@
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
-// Description:   Display the composer portrait in the GLOBAL.SEARCH.composer
+// Description:   Display the composer portrait in the VARS.SEARCH.composer
 //                field if there is one; otherwise, hide the #portrait element.
 //                Portraits are loaded from a url stored in the .Portrait parameter
-//                of an entry in GLOBAL.COMPOSERS.  The code checks data-composer
+//                of an entry in VARS.COMPOSER_INDEX.  The code checks data-composer
 //                parameter of the #portrait element and will update the
 //                portrait if needed.  A portrait will only be displayed if
 //                a specific composer is selected in the browse select menu, and
@@ -20,29 +20,29 @@
 //                portrait.
 //
 //                Once the portrait image is downloaded, it will be stored in
-//                GLOBAL.PORTRAIT_IMAGES for faster loading of the image when the
+//                VARS.PORTRAIT_IMAGES for faster loading of the image when the
 //                browse page is redrawn (such as when changing languages).
 //
 {% endcomment %}
 
 POPC2.prototype.displayComposerBrowsePortrait = function () {
-	this.DebugMessageFunction(this.GLOBAL.SEARCH.composer);
+	this.DebugMessageFunction(this.VARS.SEARCH.composer);
 	let element = document.querySelector("#portrait");
 	if (!element) {
 		return;
 	}
-	if (!this.GLOBAL.SEARCH.composer) {
+	if (!this.VARS.SEARCH.composer) {
 		element.style.display = "none";
 		return;
 	}
-	if (element.dataset.composer === this.GLOBAL.SEARCH.composer) {
+	if (element.dataset.composer === this.VARS.SEARCH.composer) {
 		// The composer is already displayed, so don't do anything,
 		// except ensure that the portrait is visible:
 		element.style.display = "block";
 		return;
 	}
 
-	let entry = this.GLOBAL.COMPOSERS[this.GLOBAL.SEARCH.composer];
+	let entry = this.VARS.COMPOSER_INDEX[this.VARS.SEARCH.composer];
 	if (!entry) {
 		element.style.display = "none";
 		return;
@@ -55,7 +55,7 @@ POPC2.prototype.displayComposerBrowsePortrait = function () {
 	let url = entry.Portrait;
 
 	let link = "";
-	if (this.GLOBAL.LANGUAGE === "PL") {
+	if (this.VARS.LANGUAGE === "PL") {
 		if (entry["URL-COM-wikipedia@PL"]) {
 			link = entry["URL-COM-wikipedia@PL"];
 		} else if (entry["URL-COM-wikipedia@EN"]) {
@@ -77,8 +77,8 @@ POPC2.prototype.displayComposerBrowsePortrait = function () {
 	if (link) {
 		output += `<a target="_blank" href="${link}">`;
 	}
-	if (this.GLOBAL.PORTRAIT_IMAGES[this.GLOBAL.SEARCH.composer]) {
-		output += `<img src="${this.GLOBAL.PORTRAIT_IMAGES[this.GLOBAL.SEARCH.composer]}">`;
+	if (this.VARS.PORTRAIT_IMAGES[this.VARS.SEARCH.composer]) {
+		output += `<img src="${this.VARS.PORTRAIT_IMAGES[this.VARS.SEARCH.composer]}">`;
 	} else {
 		output += `<img crossorigin="anonymous" src="${url}">`;
 	}
@@ -87,7 +87,7 @@ POPC2.prototype.displayComposerBrowsePortrait = function () {
 	}
 	output += "<br>";
 	output += "<div class='composer-name'>\n";
-	let name = this.GLOBAL.SEARCH.composer;
+	let name = this.VARS.SEARCH.composer;
 	let years = this.makeComposerDates(entry.Birth, entry.Death);
 	let matches = name.match(/([^,]+?)\s*,\s*(.*)\s*$/);
 	if (matches) {
@@ -107,18 +107,18 @@ POPC2.prototype.displayComposerBrowsePortrait = function () {
 
 	element.innerHTML = output;
 	element.style.display = "block";
-	element.dataset.composer = this.GLOBAL.SEARCH.composer;
+	element.dataset.composer = this.VARS.SEARCH.composer;
 
 	let that = this;
 
-	if (!this.GLOBAL.PORTRAIT_IMAGES[this.GLOBAL.SEARCH.composer]) {
+	if (!this.VARS.PORTRAIT_IMAGES[this.VARS.SEARCH.composer]) {
 		let imageElement = document.querySelector("#portrait img");
 		if (!imageElement) {
 			return;
 		}
 		imageElement.onload = function(event) {
 			let encodedImage = that.GetBase64Image(event.currentTarget);
-			that.GLOBAL.PORTRAIT_IMAGES[that.GLOBAL.SEARCH.composer] = encodedImage;
+			that.VARS.PORTRAIT_IMAGES[that.VARS.SEARCH.composer] = encodedImage;
 		};
 	}
 };

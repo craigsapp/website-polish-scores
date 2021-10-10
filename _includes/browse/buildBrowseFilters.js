@@ -15,11 +15,11 @@
 
 POPC2.prototype.buildBrowseFilters = function () {
 	this.DebugMessageFunction();
-	this.buildCenturyFilter(this.GLOBAL.BROWSE_INDEX);
-	this.buildComposerFilter(this.GLOBAL.BROWSE_INDEX);
-	this.buildSiglumFilter(this.GLOBAL.BROWSE_INDEX);
-	this.buildGenreFilter(this.GLOBAL.BROWSE_INDEX);
-	this.buildNationalityFilter(this.GLOBAL.BROWSE_INDEX);
+	this.buildCenturyFilter(this.VARS.SCORE_INDEX);
+	this.buildComposerFilter(this.VARS.SCORE_INDEX);
+	this.buildSiglumFilter(this.VARS.SCORE_INDEX);
+	this.buildGenreFilter(this.VARS.SCORE_INDEX);
+	this.buildNationalityFilter(this.VARS.SCORE_INDEX);
 	this.buildTitleFilter();
 	this.buildLyricsFilter();
 };

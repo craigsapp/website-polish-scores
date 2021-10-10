@@ -22,7 +22,7 @@
 POPC2.prototype.buildComposerFilter = function (index, target) {
 	this.DebugMessageFunctionVerbose();
 	if (!index) {
-		index = this.GLOBAL.BROWSE_INDEX;
+		index = this.VARS.SCORE_INDEX;
 	}
 	if (!target) {
 		target = "#filter-composer";
@@ -58,8 +58,8 @@ POPC2.prototype.buildComposerFilter = function (index, target) {
 	});
 
 	let selectedComposer = "";
-	if (this.GLOBAL.SEARCH && this.GLOBAL.SEARCH.composer) {
-		selectedComposer = this.GLOBAL.SEARCH.composer;
+	if (this.VARS.SEARCH && this.VARS.SEARCH.composer) {
+		selectedComposer = this.VARS.SEARCH.composer;
 	}
 	if (lastComposer) {
 		selectedComposer = lastComposer;

@@ -14,10 +14,10 @@
 {% endcomment %}
 
 POPC2.prototype.resetBrowseSearchFields = function () {
-	this.DebugMessageFunction(JSON.stringify(this.GLOBAL.SEARCH));
-	this.GLOBAL.SEARCH = {};
+	this.DebugMessageFunction(JSON.stringify(this.VARS.SEARCH));
+	this.VARS.SEARCH = {};
 
-	this.GLOBAL.SEARCH_FREEZE = true;
+	this.VARS.SEARCH_FREEZE = true;
 
 	var centuryElement     = document.querySelector("select.filter.century");
 	var composerElement    = document.querySelector("select.filter.composer");
@@ -48,7 +48,7 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	if (lyricsElement) {
 		lyricsElement.value = "";
 	}
-	this.GLOBAL.SEARCH_FREEZE = false;
+	this.VARS.SEARCH_FREEZE = false;
 
 	this.filterBrowseIndex();
 

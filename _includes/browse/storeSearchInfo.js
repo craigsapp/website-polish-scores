@@ -16,7 +16,7 @@
 POPC2.prototype.storeSearchInfo = function (search) {
 	this.DebugMessageFunction();
 	if (!search) {
-		search = this.GLOBAL.SEARCH;
+		search = this.VARS.SEARCH;
 	}
 	if (!search) {
 		search = {};

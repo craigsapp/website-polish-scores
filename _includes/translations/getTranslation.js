@@ -11,7 +11,7 @@
 //
 // Description:   Returns the translation using the given language
 //                in the lookup list.  If no language is given,
-//                the popc2.GLOBAL.LANGUAGE variable will be used.
+//                the popc2.VARS.LANGUAGE variable will be used.
 //                If there is no entry for a given tag, then the
 //                English one is tried, and then the Polish one.
 //                If no translation is available, then the tag is
@@ -25,13 +25,13 @@ POPC2.prototype.getTranslation = function (tag, lang, lookup) {
 		return "";
 	}
 	if (!lang) {
-		lang = this.GLOBAL.LANGUAGE;
+		lang = this.VARS.LANGUAGE;
 	}
 	if (!lang) {
 		lang = "EN";
 	}
 	if (!lookup) {
-		lookup = this.GLOBAL.TRANSLATIONS;
+		lookup = this.VARS.TRANSLATIONS;
 	}
 	let entry = lookup[tag];
 	let output = "";

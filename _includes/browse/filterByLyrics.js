@@ -52,7 +52,7 @@ POPC2.prototype.filterByLyrics = function (input) {
 	}
 
 	if (lyricsTargets.length > 0) {
-		this.GLOBAL.SEARCH[type] = target;
+		this.VARS.SEARCH[type] = target;
 		let output = [];
 		for (let i=0; i<lyricsTargets.length; i++) {
 			let negate = false;

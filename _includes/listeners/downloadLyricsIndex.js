@@ -10,7 +10,7 @@
 // vim:           ts=3:nowrap
 //
 // Description:   Download the search index for lyrics and insert its
-//                contents into GLOBAL.BROWSE_INDEX in the .lyrics field.
+//                contents into VARS.SCORE_INDEX in the .lyrics field.
 //
 {% endcomment %}
 
@@ -31,24 +31,22 @@ POPC2.prototype.downloadLyricsIndex = function () {
 					index[matches[1]] = matches[2];
 				}
 			}
-			for (let i=0; i<that.GLOBAL.BROWSE_INDEX.length; i++) {
-				let id = that.GLOBAL.BROWSE_INDEX[i].cenid;
+			for (let i=0; i<that.VARS.SCORE_INDEX.length; i++) {
+				let id = that.VARS.SCORE_INDEX[i].cenid;
 				if (id) {
 					let lyrics = index[id];
 					if (lyrics) {
-						that.GLOBAL.BROWSE_INDEX[i].lyrics = lyrics;
+						that.VARS.SCORE_INDEX[i].lyrics = lyrics;
 					}
 				}
 			}
 			let cgi = popc2.getCgiParameters();
-			if (cgi.lyrics || that.GLOBAL.SEARCH.lyrics) {
+			if (cgi.lyrics || that.VARS.SEARCH.lyrics) {
 				// Do a CGI-base browse search, but only if it includes lyrics.
 				// If no lyrics involved, then the search was already done.
 				that.displayBrowsePage();
 			}
 			that.DebugMessage("DOWNLOADED LYRICS INDEX FROM " + url, "hotpink");
-			// Now download the composer index
-			that.downloadComposerIndex();
 		})
 		.catch(err => { console.error(err); });
 };

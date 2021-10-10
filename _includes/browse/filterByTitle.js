@@ -51,7 +51,7 @@ POPC2.prototype.filterByTitle = function (input) {
 	}
 
 	if (titleTargets.length > 0) {
-		this.GLOBAL.SEARCH[type] = target;
+		this.VARS.SEARCH[type] = target;
 		let output = [];
 		for (let i=0; i<titleTargets.length; i++) {
 			let negate = false;

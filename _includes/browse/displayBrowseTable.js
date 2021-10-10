@@ -11,7 +11,7 @@
 //
 // Description:   Display a list of works on the browse
 //                page.   The last search results on the browse page,
-//                stored in GLOBAL.SEARCH_RESULTS will be used to display
+//                stored in VARS.SEARCH_RESULTS will be used to display
 //                the list if no list is given as input to this function.
 //
 {% endcomment %}
@@ -28,7 +28,7 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 	}
 
 	if (!results) {
-		results = this.GLOBAL.SEARCH_RESULTS;
+		results = this.VARS.SEARCH_RESULTS;
 	}
 
 	if (!results) {
@@ -90,7 +90,7 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 		output += composer;
 		output += "</td>\n";
 		output += "<td class='title'>";
-		output += this.getHighlightedString(results[i].title || "", this.GLOBAL.SEARCH.title);
+		output += this.getHighlightedString(results[i].title || "", this.VARS.SEARCH.title);
 		output += "</td>\n";
 		output += "</tr>\n";
 

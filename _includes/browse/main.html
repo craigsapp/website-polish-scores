@@ -17,27 +17,27 @@
 
 <script>
 
-popc2.GLOBAL.CGI = popc2.getCgiParameters();
+popc2.VARS.CGI = popc2.getCgiParameters();
 
 let cgiSearch = false;
-if (typeof popc2.GLOBAL.CGI.century     !== "undefined") { cgiSearch = true; }
-if (typeof popc2.GLOBAL.CGI.composer    !== "undefined") { cgiSearch = true; }
-if (typeof popc2.GLOBAL.CGI.siglum      !== "undefined") { cgiSearch = true; }
-if (typeof popc2.GLOBAL.CGI.genre       !== "undefined") { cgiSearch = true; }
-if (typeof popc2.GLOBAL.CGI.nationality !== "undefined") { cgiSearch = true; }
-if (typeof popc2.GLOBAL.CGI.title       !== "undefined") { cgiSearch = true; }
-if (typeof popc2.GLOBAL.CGI.lyrics      !== "undefined") { cgiSearch = true; }
+if (typeof popc2.VARS.CGI.century     !== "undefined") { cgiSearch = true; }
+if (typeof popc2.VARS.CGI.composer    !== "undefined") { cgiSearch = true; }
+if (typeof popc2.VARS.CGI.siglum      !== "undefined") { cgiSearch = true; }
+if (typeof popc2.VARS.CGI.genre       !== "undefined") { cgiSearch = true; }
+if (typeof popc2.VARS.CGI.nationality !== "undefined") { cgiSearch = true; }
+if (typeof popc2.VARS.CGI.title       !== "undefined") { cgiSearch = true; }
+if (typeof popc2.VARS.CGI.lyrics      !== "undefined") { cgiSearch = true; }
 
 if (cgiSearch) {
-	if (typeof popc2.GLOBAL.CGI.century     !== "undefined") { popc2.GLOBAL.SEARCH.century     = popc2.GLOBAL.CGI.century;     }
-	if (typeof popc2.GLOBAL.CGI.composer    !== "undefined") { popc2.GLOBAL.SEARCH.composer    = popc2.GLOBAL.CGI.composer;    }
-	if (typeof popc2.GLOBAL.CGI.siglum      !== "undefined") { popc2.GLOBAL.SEARCH.siglum      = popc2.GLOBAL.CGI.siglum;      }
-	if (typeof popc2.GLOBAL.CGI.genre       !== "undefined") { popc2.GLOBAL.SEARCH.genre       = popc2.GLOBAL.CGI.genre;       }
-	if (typeof popc2.GLOBAL.CGI.nationality !== "undefined") { popc2.GLOBAL.SEARCH.nationality = popc2.GLOBAL.CGI.nationality; }
-	if (typeof popc2.GLOBAL.CGI.title       !== "undefined") { popc2.GLOBAL.SEARCH.title       = popc2.GLOBAL.CGI.title;       }
-	if (typeof popc2.GLOBAL.CGI.lyrics      !== "undefined") { popc2.GLOBAL.SEARCH.lyrics      = popc2.GLOBAL.CGI.lyrics;      }
+	if (typeof popc2.VARS.CGI.century     !== "undefined") { popc2.VARS.SEARCH.century     = popc2.VARS.CGI.century;     }
+	if (typeof popc2.VARS.CGI.composer    !== "undefined") { popc2.VARS.SEARCH.composer    = popc2.VARS.CGI.composer;    }
+	if (typeof popc2.VARS.CGI.siglum      !== "undefined") { popc2.VARS.SEARCH.siglum      = popc2.VARS.CGI.siglum;      }
+	if (typeof popc2.VARS.CGI.genre       !== "undefined") { popc2.VARS.SEARCH.genre       = popc2.VARS.CGI.genre;       }
+	if (typeof popc2.VARS.CGI.nationality !== "undefined") { popc2.VARS.SEARCH.nationality = popc2.VARS.CGI.nationality; }
+	if (typeof popc2.VARS.CGI.title       !== "undefined") { popc2.VARS.SEARCH.title       = popc2.VARS.CGI.title;       }
+	if (typeof popc2.VARS.CGI.lyrics      !== "undefined") { popc2.VARS.SEARCH.lyrics      = popc2.VARS.CGI.lyrics;      }
 } else if (localStorage.SEARCH) {
-	popc2.GLOBAL.SEARCH = JSON.parse(localStorage.SEARCH);
+	popc2.VARS.SEARCH = JSON.parse(localStorage.SEARCH);
 }
 
 </script>

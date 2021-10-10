@@ -18,7 +18,7 @@
 	popc2.DebugMessage("PREPARING TRANSLATIONS", "seagreen");
 
 	// Translation data is already embedded on the webpage, so extract
-	// and store in the GLOBAL.TRANSLATIONS object.
+	// and store in the VARS.TRANSLATIONS object.
 	let atondata = document.querySelector("script#translations").textContent;
 	let aton = new ATON;
 	let translation_array = aton.parse(atondata).ENTRY;
@@ -30,12 +30,12 @@
 
 	for (let i=0; i<translation_array.length; i++) {
 		let tag = translation_array[i].TAG;
-		if (popc2.GLOBAL.TRANSLATIONS[tag]) {
+		if (popc2.VARS.TRANSLATIONS[tag]) {
 			popc2.DebugMessage("WARNING: Translation tag " + tag +
-				" already defined in: " + JSON.stringify(popc2.GLOBAL.TRANSLATIONS[tag]) +
+				" already defined in: " + JSON.stringify(popc2.VARS.TRANSLATIONS[tag]) +
 				". Changing to:" + JSON.stringify(translation_array[i]), "seagreen");
 		}
-		popc2.GLOBAL.TRANSLATIONS[tag] = translation_array[i];
+		popc2.VARS.TRANSLATIONS[tag] = translation_array[i];
 	}
 }());
 

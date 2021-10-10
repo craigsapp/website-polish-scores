@@ -28,33 +28,33 @@ POPC2.prototype.copySearchLink = function () {
 	let base = window.location.origin;
 	let url = base;
 	let search = "";
-	if (typeof this.GLOBAL.SEARCH.century !== "undefined") {
+	if (typeof this.VARS.SEARCH.century !== "undefined") {
 		if (!search.match(/^\s*$/)) { search += "&"; }
-		search += `y=${encodeURIComponent(this.GLOBAL.SEARCH.century)}`;
+		search += `y=${encodeURIComponent(this.VARS.SEARCH.century)}`;
 	}
-	if (typeof this.GLOBAL.SEARCH.composer !== "undefined") {
+	if (typeof this.VARS.SEARCH.composer !== "undefined") {
 		if (!search.match(/^\s*$/)) { search += "&"; }
-		search += `c=${encodeURIComponent(this.GLOBAL.SEARCH.composer)}`;
+		search += `c=${encodeURIComponent(this.VARS.SEARCH.composer)}`;
 	}
-	if (typeof this.GLOBAL.SEARCH.siglum !== "undefined") {
+	if (typeof this.VARS.SEARCH.siglum !== "undefined") {
 		if (!search.match(/^\s*$/)) { search += "&"; }
-		search += `s=${encodeURIComponent(this.GLOBAL.SEARCH.siglum)}`;
+		search += `s=${encodeURIComponent(this.VARS.SEARCH.siglum)}`;
 	}
-	if (typeof this.GLOBAL.SEARCH.genre !== "undefined") {
+	if (typeof this.VARS.SEARCH.genre !== "undefined") {
 		if (!search.match(/^\s*$/)) { search += "&"; }
-		search += `g=${encodeURIComponent(this.GLOBAL.SEARCH.genre)}`;
+		search += `g=${encodeURIComponent(this.VARS.SEARCH.genre)}`;
 	}
-	if (typeof this.GLOBAL.SEARCH.nationality !== "undefined") {
+	if (typeof this.VARS.SEARCH.nationality !== "undefined") {
 		if (!search.match(/^\s*$/)) { search += "&"; }
-		search += `n=${encodeURIComponent(this.GLOBAL.SEARCH.nationality)}`;
+		search += `n=${encodeURIComponent(this.VARS.SEARCH.nationality)}`;
 	}
-	if (typeof this.GLOBAL.SEARCH.title !== "undefined") {
+	if (typeof this.VARS.SEARCH.title !== "undefined") {
 		if (!search.match(/^\s*$/)) { search += "&"; }
-		search += `t=${encodeURIComponent(this.GLOBAL.SEARCH.title)}`;
+		search += `t=${encodeURIComponent(this.VARS.SEARCH.title)}`;
 	}
-	if (typeof this.GLOBAL.SEARCH.lyrics !== "undefined") {
+	if (typeof this.VARS.SEARCH.lyrics !== "undefined") {
 		if (!search.match(/^\s*$/)) { search += "&"; }
-		search += `l=${encodeURIComponent(this.GLOBAL.SEARCH.lyrics)}`;
+		search += `l=${encodeURIComponent(this.VARS.SEARCH.lyrics)}`;
 	}
 
 	if (!search.match(/^\s*$/)) {

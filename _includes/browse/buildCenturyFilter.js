@@ -22,7 +22,7 @@
 POPC2.prototype.buildCenturyFilter = function (index, target) {
 	this.DebugMessageFunctionVerbose();
 	if (!index) {
-		index = this.GLOBAL.BROWSE_INDEX;
+		index = this.VARS.SCORE_INDEX;
 	}
 	if (!target) {
 		target = "#filter-century";
@@ -61,8 +61,8 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 	});
 
 	let selectedCentury = "";
-	if (this.GLOBAL.SEARCH && this.GLOBAL.SEARCH.century) {
-		selectedCentury = this.GLOBAL.SEARCH.century;
+	if (this.VARS.SEARCH && this.VARS.SEARCH.century) {
+		selectedCentury = this.VARS.SEARCH.century;
 	}
 
 	let output = "<select class='filter century'>\n";

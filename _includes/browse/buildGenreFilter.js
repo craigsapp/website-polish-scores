@@ -22,7 +22,7 @@
 POPC2.prototype.buildGenreFilter = function (index, target) {
 	this.DebugMessageFunctionVerbose();
 	if (!index) {
-		index = this.GLOBAL.BROWSE_INDEX;
+		index = this.VARS.SCORE_INDEX;
 	}
 	if (!target) {
 		target = "#filter-genre";
@@ -72,8 +72,8 @@ POPC2.prototype.buildGenreFilter = function (index, target) {
 	});
 
 	let selectedGenre = "";
-	if (this.GLOBAL.SEARCH && this.GLOBAL.SEARCH.genre) {
-		selectedGenre = this.GLOBAL.SEARCH.genre;
+	if (this.VARS.SEARCH && this.VARS.SEARCH.genre) {
+		selectedGenre = this.VARS.SEARCH.genre;
 	}
 
 	let output = "<select class='filter genre'>\n";

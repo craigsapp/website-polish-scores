@@ -22,44 +22,46 @@
 
 POPC2.prototype.filterBrowseIndex = function (index) {
 	this.DebugMessageFunction();
-	if (this.GLOBAL.SEARCH_FREEZE) {
+	if (this.VARS.SEARCH_FREEZE) {
 		return;
 	}
 	if (!index) {
-		index = this.GLOBAL.BROWSE_INDEX;
+		index = this.VARS.SCORE_INDEX;
 	}
 
 	// Reset search
-	this.GLOBAL.SEARCH = {};
+	this.VARS.SEARCH = {};
 
 	let results = index;
 	let newresults;
 
-	results = this.filterByCentury(results);
+	// Search by composer first since there are pre-build
+	// worklist for composers that can speed up the search.
 	results = this.filterByComposer(results);
+	results = this.filterByCentury(results);
 	results = this.filterBySiglum(results);
 	results = this.filterByGenre(results);
 	results = this.filterByNationality(results);
 	results = this.filterByTitle(results);
 	results = this.filterByLyrics(results);
 
-	if (results.length != this.GLOBAL.BROWSE_INDEX) {
-		this.GLOBAL.SEARCH_FREEZE = true;
+	if (results.length != this.VARS.SCORE_INDEX) {
+		this.VARS.SEARCH_FREEZE = true;
 		this.buildCenturyFilter(results);
 		this.buildComposerFilter(results);
 		this.buildSiglumFilter(results);
 		this.buildGenreFilter(results);
 		this.buildNationalityFilter(results);
-		this.GLOBAL.SEARCH_FREEZE = false;
+		this.VARS.SEARCH_FREEZE = false;
 	}
 
-	this.GLOBAL.SEARCH_RESULTS = results;
+	this.VARS.SEARCH_RESULTS = results;
 
 	this.showResultsCount(results.length);
 
-	this.GLOBAL.SEARCH.count = results.length;
-	this.GLOBAL.SEARCH.lang  = this.GLOBAL.LANGUAGE;
-	this.storeSearchInfo(this.GLOBAL.SEARCH);
+	this.VARS.SEARCH.count = results.length;
+	this.VARS.SEARCH.lang  = this.VARS.LANGUAGE;
+	this.storeSearchInfo(this.VARS.SEARCH);
 
 	this.displayComposerBrowsePortrait();
 	this.displayBrowseTable(results);

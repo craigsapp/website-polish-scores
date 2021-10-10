@@ -16,7 +16,7 @@
 POPC2.prototype.displayWorkPage = function (id) {
 	this.DebugMessageFunction(id);
 	if (!id) {
-		id = this.GLOBAL.WORK_ID;
+		id = this.VARS.WORK_ID;
 	}
 	this.ShowPage("work");
 	this.displayScore(id);

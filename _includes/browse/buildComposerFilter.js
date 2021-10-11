@@ -5,7 +5,7 @@
 // Last Modified: Sat Oct  9 10:04:20 PDT 2021
 // Filename:      _includes/browse/buildComposerFilter.js
 // Used by:       _include/browse/buildBrowseFilters.js
-// Used by:       _include/browse/filterBrowseIndex.js
+// Used by:       _include/browse/doBrowseSearch.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -43,17 +43,24 @@ POPC2.prototype.buildComposerFilter = function (index, target) {
 	}
 
 	let composers = {};
-	for (let i=0; i<index.length; i++) {
-		let com = index[i].COM;
-		if (!composers[com]) {
-			composers[com] = 1;
-		} else {
-			composers[com]++;
+	if (index.length === this.VARS.SCORE_INDEX.length) {
+			// Use cached composer counts
+			composers = this.VARS.BROWSE_MENU_OPTIONS.composer;
+	} else {
+		for (let i=0; i<index.length; i++) {
+			let com = index[i].COM;
+			if (!composers[com]) {
+				composers[com] = 1;
+			} else {
+				composers[com]++;
+			}
 		}
 	}
 
-	let keys = Object.getOwnPropertyNames(composers);
-	keys.sort(function(a, b) {
+	let limitedKeys = Object.getOwnPropertyNames(composers);
+	let fullKeys    = Object.getOwnPropertyNames(this.VARS.BROWSE_MENU_OPTIONS.composer);
+
+	fullKeys.sort(function(a, b) {
 		return a.localeCompare(b);
 	});
 
@@ -69,12 +76,13 @@ POPC2.prototype.buildComposerFilter = function (index, target) {
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_composer");
-	output += ` [${keys.length}]`;
+	output += ` [${limitedKeys.length}]`;
 	output += "</option>\n";
 
-	for (let i=0; i<keys.length; i++) {
+	for (let i=0; i<fullKeys.length; i++) {
 		output += '<option value="';
-		let composer = keys[i];
+		let composer = fullKeys[i];
+		let count = composers[composer] || 0;
 		let displayComposer = composer;
 		if ((displayComposer === "Anonim") || (displayComposer === "anonim")) {
 			displayComposer = this.getTranslation("Anonymus");
@@ -92,9 +100,9 @@ POPC2.prototype.buildComposerFilter = function (index, target) {
 		}
 		output += '>';
 		output += displayComposer;
-		output += " (";
-		output += composers[composer];
-		output += ")";
+		if (count > 0) {
+			output += ` (${count})`;
+		}
 		output += "</option>\n";
 	}
 
@@ -102,7 +110,7 @@ POPC2.prototype.buildComposerFilter = function (index, target) {
 
 	element.innerHTML = output;
 	let that = this;
-	element.onchange = function() { that.filterBrowseIndex(); };
+	element.onchange = function() { that.doBrowseSearch(); };
 };
 
 Object.defineProperty(POPC2.prototype.buildComposerFilter, "name", { value: "buildComposerFilter" });

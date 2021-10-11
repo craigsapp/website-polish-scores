@@ -46,11 +46,14 @@ function POPC2() {
 	// Variables primarily related to the Browse page:
 	//
 
-	// SEARCH_RESULTS == The list of matches from the last
-	// search on the browse page.
+	// BROWSE_MENU_OPTIONS == List of all options in various browse select menus.
+	// Indexed by select ID.
+	this.VARS.BROWSE_MENU_OPTIONS = {};
+
+	// SEARCH_RESULTS == The list of matches from the last search on the browse page.
 	this.VARS.SEARCH_RESULTS = [];
 
-	// SEARCH == List of parameters for browse page searching:
+	// SEARCH == List of parameters for browse page searching.
 	this.VARS.SEARCH = {};
 
 	// SEARCH_FREEZE == State variable used to avoid recursive

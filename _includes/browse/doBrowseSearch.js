@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Wed Oct  6 12:27:07 PDT 2021
-// Filename:      _includes/browse/filterBrowseIndex.js
+// Filename:      _includes/browse/doBrowseSearch.js
 // Used by:       _includes/browse/buildCenturyFilter.js
 // Used by:       _includes/browse/buildComposerFilter.js
 // Used by:       _includes/browse/buildGenreFilter.js
@@ -20,7 +20,7 @@
 //
 {% endcomment %}
 
-POPC2.prototype.filterBrowseIndex = function (index) {
+POPC2.prototype.doBrowseSearch = function (index) {
 	this.DebugMessageFunction();
 	if (this.VARS.SEARCH_FREEZE) {
 		return;
@@ -45,15 +45,16 @@ POPC2.prototype.filterBrowseIndex = function (index) {
 	results = this.filterByTitle(results);
 	results = this.filterByLyrics(results);
 
-	if (results.length != this.VARS.SCORE_INDEX) {
+	if (results.length != this.VARS.SCORE_INDEX.length) {
 		this.VARS.SEARCH_FREEZE = true;
-		this.buildCenturyFilter(results);
 		this.buildComposerFilter(results);
+		this.buildCenturyFilter(results);
 		this.buildSiglumFilter(results);
 		this.buildGenreFilter(results);
 		this.buildNationalityFilter(results);
 		this.VARS.SEARCH_FREEZE = false;
 	}
+	this.buildBrowseFilters(results);
 
 	this.VARS.SEARCH_RESULTS = results;
 
@@ -63,11 +64,11 @@ POPC2.prototype.filterBrowseIndex = function (index) {
 	this.VARS.SEARCH.lang  = this.VARS.LANGUAGE;
 	this.storeSearchInfo(this.VARS.SEARCH);
 
-	this.displayComposerBrowsePortrait();
+	this.displayComposerBrowsePortrait(this.VARS.SEARCH.composer);
 	this.displayBrowseTable(results);
 };
 
-Object.defineProperty(POPC2.prototype.filterBrowseIndex, "name", { value: "filterBrowseIndex" });
+Object.defineProperty(POPC2.prototype.doBrowseSearch, "name", { value: "doBrowseSearch" });
 
 
 

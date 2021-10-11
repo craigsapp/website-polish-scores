@@ -4,7 +4,7 @@
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Wed Oct  6 12:27:07 PDT 2021
 // Filename:      _includes/browse/buildNationalityFilter.js
-// Used by:
+// Used by:       _incuode/browse/doBrowseSearch();
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -102,7 +102,7 @@ POPC2.prototype.buildNationalityFilter = function (index, target) {
 
 	element.innerHTML = output;
 	let that = this;
-	element.onchange = function() { that.filterBrowseIndex(); };
+	element.onchange = function() { that.doBrowseSearch(); };
 };
 
 Object.defineProperty(POPC2.prototype.buildNationalityFilter, "name", { value: "buildNationalityFilter" });

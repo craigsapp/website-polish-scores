@@ -40,9 +40,8 @@ POPC2.prototype.downloadLyricsIndex = function () {
 					}
 				}
 			}
-			let cgi = popc2.getCgiParameters();
-			if (cgi.lyrics || that.VARS.SEARCH.lyrics) {
-				// Do a CGI-base browse search, but only if it includes lyrics.
+			if (that.VARS.SEARCH.lyrics) {
+				// Do an initial browse search, but only if it includes lyrics.
 				// If no lyrics involved, then the search was already done.
 				that.displayBrowsePage();
 			}

@@ -37,26 +37,33 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 		return;
 	}
 	let centuries = {};
-	for (let i=0; i<index.length; i++) {
-		let cenid = index[i].cenid;
-		if (!cenid) {
-			continue;
-		}
-		let matches = cenid.match(/^\s*(\d\dxx)\s*:/);
-		if (!matches) {
-			continue;
-		}
-		let tag = matches[1];
+	if (index.length === this.VARS.SCORE_INDEX.length) {
+			// Use cached century counts
+			centuries = this.VARS.BROWSE_MENU_OPTIONS.century;
+	} else {
+		for (let i=0; i<index.length; i++) {
+			let cenid = index[i].cenid;
+			if (!cenid) {
+				continue;
+			}
+			let matches = cenid.match(/^\s*(\d\dxx)\s*:/);
+			if (!matches) {
+				continue;
+			}
+			let tag = matches[1];
 
-		if (!centuries[tag]) {
-			centuries[tag] = 1;
-		} else {
-			centuries[tag]++;
+			if (!centuries[tag]) {
+				centuries[tag] = 1;
+			} else {
+				centuries[tag]++;
+			}
 		}
 	}
 
-	let keys = Object.getOwnPropertyNames(centuries);
-	keys.sort(function(a, b) {
+	let limitedKeys = Object.getOwnPropertyNames(centuries);
+	let fullKeys    = Object.getOwnPropertyNames(this.VARS.BROWSE_MENU_OPTIONS.century);
+
+	fullKeys.sort(function(a, b) {
 		return a.localeCompare(b);
 	});
 
@@ -69,12 +76,12 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_century");
-	output += ` [${keys.length}]`;
+	output += ` [${limitedKeys.length}]`;
 	output += "</option>\n";
 
-	for (let i=0; i<keys.length; i++) {
+	for (let i=0; i<fullKeys.length; i++) {
 		output += '<option value="';
-		let century = keys[i];
+		let century = fullKeys[i];
 		let displayCentury = century;
 		output += century.replace(/"/g, '\\"');
 		output += '"'
@@ -83,9 +90,9 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 		}
 		output += '>';
 		output += displayCentury;
-		output += " (";
-		output += centuries[century];
-		output += ")";
+		if (centuries[century]) {
+			output += ` (${centuries[century]})`;
+		}
 		output += "</option>\n";
 	}
 
@@ -93,7 +100,7 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 
 	element.innerHTML = output;
 	let that = this;
-	element.onchange = function() { that.filterBrowseIndex(); };
+	element.onchange = function() { that.doBrowseSearch(); };
 };
 
 Object.defineProperty(POPC2.prototype.buildCenturyFilter, "name", { value: "buildCenturyFilter" });

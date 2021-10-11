@@ -25,24 +25,27 @@
 //
 {% endcomment %}
 
-POPC2.prototype.displayComposerBrowsePortrait = function () {
-	this.DebugMessageFunction(this.VARS.SEARCH.composer);
+POPC2.prototype.displayComposerBrowsePortrait = function (composer) {
+	if (!composer) {
+		composer = this.VARS.SEARCH.composer;
+	}
+	this.DebugMessageFunction(composer);
 	let element = document.querySelector("#portrait");
 	if (!element) {
 		return;
 	}
-	if (!this.VARS.SEARCH.composer) {
+	if (!composer) {
 		element.style.display = "none";
 		return;
 	}
-	if (element.dataset.composer === this.VARS.SEARCH.composer) {
+	if (element.dataset.composer === composer) {
 		// The composer is already displayed, so don't do anything,
 		// except ensure that the portrait is visible:
 		element.style.display = "block";
 		return;
 	}
 
-	let entry = this.VARS.COMPOSER_INDEX[this.VARS.SEARCH.composer];
+	let entry = this.VARS.COMPOSER_INDEX[composer];
 	if (!entry) {
 		element.style.display = "none";
 		return;
@@ -77,8 +80,8 @@ POPC2.prototype.displayComposerBrowsePortrait = function () {
 	if (link) {
 		output += `<a target="_blank" href="${link}">`;
 	}
-	if (this.VARS.PORTRAIT_IMAGES[this.VARS.SEARCH.composer]) {
-		output += `<img src="${this.VARS.PORTRAIT_IMAGES[this.VARS.SEARCH.composer]}">`;
+	if (this.VARS.PORTRAIT_IMAGES[composer]) {
+		output += `<img src="${this.VARS.PORTRAIT_IMAGES[composer]}">`;
 	} else {
 		output += `<img crossorigin="anonymous" src="${url}">`;
 	}
@@ -87,7 +90,7 @@ POPC2.prototype.displayComposerBrowsePortrait = function () {
 	}
 	output += "<br>";
 	output += "<div class='composer-name'>\n";
-	let name = this.VARS.SEARCH.composer;
+	let name = composer;
 	let years = this.makeComposerDates(entry.Birth, entry.Death);
 	let matches = name.match(/([^,]+?)\s*,\s*(.*)\s*$/);
 	if (matches) {
@@ -107,18 +110,18 @@ POPC2.prototype.displayComposerBrowsePortrait = function () {
 
 	element.innerHTML = output;
 	element.style.display = "block";
-	element.dataset.composer = this.VARS.SEARCH.composer;
+	element.dataset.composer = composer;
 
 	let that = this;
 
-	if (!this.VARS.PORTRAIT_IMAGES[this.VARS.SEARCH.composer]) {
+	if (!this.VARS.PORTRAIT_IMAGES[composer]) {
 		let imageElement = document.querySelector("#portrait img");
 		if (!imageElement) {
 			return;
 		}
 		imageElement.onload = function(event) {
 			let encodedImage = that.GetBase64Image(event.currentTarget);
-			that.VARS.PORTRAIT_IMAGES[that.VARS.SEARCH.composer] = encodedImage;
+			that.VARS.PORTRAIT_IMAGES[composer] = encodedImage;
 		};
 	}
 };

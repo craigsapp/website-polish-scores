@@ -43,6 +43,10 @@ POPC2.prototype.downloadComposerIndex = function () {
             entry._composer_info = that.VARS.COMPOSER_INDEX[COM];
 				that.VARS.COMPOSER_INDEX[COM]._worklist.push(entry);
 			}
+
+			// Check if there are composers in the SCORE_INDEX that are
+			// not in the COMPOSER_INDEX.
+
 			that.DebugMessage("DOWNLOADED COMPOSER INDEX FROM " + url, "purple");
 			that.displayComposerBrowsePortrait();
 		})

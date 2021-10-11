@@ -4,7 +4,7 @@
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Sat Oct  9 19:31:58 PDT 2021
 // Filename:      _includes/browse/showResultsCount.js
-// Used by:       _includes/browse/filterBrowseIndex.js
+// Used by:       _includes/browse/doBrowseSearch.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap

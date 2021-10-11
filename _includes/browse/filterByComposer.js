@@ -2,9 +2,9 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Last Modified: Sun Oct 10 17:29:42 PDT 2021
 // Filename:      _includes/browse/filterByComposer.js
-// Used by:       _includes/browse/filterBrowseIndex.js
+// Used by:       _includes/browse/doBrowseSearch.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -35,12 +35,13 @@ POPC2.prototype.filterByComposer = function (input) {
 		target = element.value;
 	}
 	if (target) {
+		this.VARS.SEARCH.composer = target;
 
 		if ((input.length == this.VARS.SCORE_INDEX.length)
 				&& !this.IsEmptyObject(this.VARS.COMPOSER_INDEX)) {
 			// Used the prepared composer worklist if available:
-			let centry = this.VARS.COMPOSER_INDEX[target];
-			let worklist = centry._worklist;
+			let composerEntry = this.VARS.COMPOSER_INDEX[target];
+			let worklist = composerEntry._worklist;
 			if (worklist) {
 				return worklist;
 			}
@@ -48,7 +49,8 @@ POPC2.prototype.filterByComposer = function (input) {
 
 		this.VARS.SEARCH[type] = target;
 		let output = [];
-		for (let entry in input) {
+		for (let i=0; i<input.length; i++) {
+			let entry = input[i];
 			if (entry[field] === target) {
 				output.push(entry);
 			}

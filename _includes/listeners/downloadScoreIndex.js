@@ -3,9 +3,9 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 20:03:37 PDT 2021
 // Last Modified: Wed Oct  6 20:03:40 PDT 2021
-// Filename:      _includes/listeners/browse-index.js
+// Filename:      _includes/listeners/downloadScoreIndex.js
 // Used by:
-// Included in:
+// Included in:   _includes/listeners/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
@@ -15,11 +15,11 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 	let url = popc2.SETTINGS.browse_index;
-	popc2.DebugMessage("DOWNLOADING BROWSE INDEX FROM " + url, "pink");
+	popc2.DebugMessage("DOWNLOADING SCORE INDEX FROM " + url, "pink");
 	fetch(url)
 		.then(res => res.json())
 		.then(json => {
-			popc2.DebugMessage("DOWNLOADED BROWSE INDEX FROM " + url, "pink");
+			popc2.DebugMessage("DOWNLOADED SCORE INDEX FROM " + url, "pink");
 			popc2.VARS.SCORE_INDEX = json;
 			// Add ._seq, ._prev and ._next parameters to browse index:
 			for (let i=0; i<json.length; i++) {
@@ -28,16 +28,17 @@ document.addEventListener("DOMContentLoaded", function() {
 					json[i]._prev = json[i-1];
 				}
 				if (i < json.length - 1) {
-					json._next = json[i+1];
+					json[i]._next = json[i+1];
 				}
 			}
          // Wrap links to next/previous browse entries?
-			json[0]._prev = json[json.length-1];
-			json[json.length-1]._next = json[0];
+			// json[0]._prev = json[json.length-1];
+			// json[json.length-1]._next = json[0];
 
 			popc2.VARS.SEARCH_RESULTS = json;
-			let cgi = popc2.getCgiParameters();
-			if (!cgi.lyrics) {
+			popc2.prepareBrowseSelectOptions();
+
+			if (!popc2.VARS.SEARCH.lyrics) {
 				// Show the search page now with any CGI-based search parameters.
 				// but only showing of lyrics are not involved.
 				popc2.displayBrowsePage();
@@ -51,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 			// Composer index is for enhancing information about composers:
 			popc2.downloadComposerIndex();
+
 		})
 		.catch(err => { console.error(err); });
 });

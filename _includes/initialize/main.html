@@ -25,6 +25,10 @@ let popc2 = new POPC2();
 popc2.DebugMessage("Created popc2 interface", "chartreuse");
 
 {% include initialize/getCgiParameters.js            %}
+{% include initialize/setInitialSearch.js            %}
+
+popc2.VARS.CGI = popc2.getCgiParameters();
+popc2.setInitialSearch();
 
 </script>
 

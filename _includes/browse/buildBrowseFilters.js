@@ -13,15 +13,56 @@
 //
 {% endcomment %}
 
-POPC2.prototype.buildBrowseFilters = function () {
+POPC2.prototype.buildBrowseFilters = function (index) {
 	this.DebugMessageFunction();
-	this.buildCenturyFilter(this.VARS.SCORE_INDEX);
-	this.buildComposerFilter(this.VARS.SCORE_INDEX);
-	this.buildSiglumFilter(this.VARS.SCORE_INDEX);
-	this.buildGenreFilter(this.VARS.SCORE_INDEX);
-	this.buildNationalityFilter(this.VARS.SCORE_INDEX);
+	if (!index) {
+		index = this.VARS.SCORE_INDEX;
+	}
+
+	let element = document.activeElement;
+	let selector = element.nodeName.toLowerCase();
+	if (selector === "input") {
+		let parent = element.parentNode;
+		if (parent.id) {
+			selector = `#${parent.id} ${selector}`;
+		}
+		let classes = element.className.replace(/\s+/g, ".");
+		if (classes) {
+			selector += "." + classes;
+		}
+	} else {
+		selector = null;
+	}
+
+	this.buildComposerFilter(index);
+	this.buildCenturyFilter(index);
+	this.buildSiglumFilter(index);
+	this.buildGenreFilter(index);
+	this.buildNationalityFilter(index);
 	this.buildTitleFilter();
 	this.buildLyricsFilter();
+
+	if (selector) {
+		// Restore focus on the title/lyrics input:
+		let newelement = document.querySelector(selector);
+		if (newelement) {
+			console.log("FOCUSING BACK ON SELECTOR", selector, newelement);
+			newelement.focus();
+			// Force cursor to the end of the string (generalize later):
+			// Currently it is not possible to move the cursor to the
+			// middle or beginning of the text, but this can be fixed later by
+			// saving the original cursor position and then restoring it here.
+			if (typeof newelement.selectionStart == "number") {
+				newelement.selectionStart = newelement.selectionEnd = newelement.value.length;
+			} else if (typeof newelement.createTextRange != "undefined") {
+				newelement.focus();
+				var range = newelement.createTextRange();
+				range.collapse(false);
+				range.select();
+			}
+		}
+	}
+
 };
 
 Object.defineProperty(POPC2.prototype.buildBrowseFilters, "name", { value: "buildBrowseFilters" });

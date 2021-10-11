@@ -13,11 +13,11 @@
 {% endcomment %}
 
 textarea:focus, input:focus select:focus {
-    outline: none;
+	outline: none;
 }
 
 *:focus {
-    outline: none;
+	outline: none;
 }
 
 select {
@@ -50,16 +50,16 @@ input.filter.lyrics {
 /* Input text placeholder styling: */
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #aaaaaa;
-  opacity: 1; /* Firefox */
+	color: #aaaaaa;
+	opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #aaaaaa;
+	color: #aaaaaa;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: #aaaaaa;
+	color: #aaaaaa;
 }
 
 

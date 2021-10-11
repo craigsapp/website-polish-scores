@@ -4,7 +4,7 @@
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Wed Oct  6 12:27:07 PDT 2021
 // Filename:      _includes/browse/buildGenreFilter.js
-// Used by:
+// Used by:       _includes/browse/doBrowseSearch.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -37,30 +37,39 @@ POPC2.prototype.buildGenreFilter = function (index, target) {
 		return;
 	}
 	let genres = {};
-	for (let i=0; i<index.length; i++) {
-		let genre = index[i].AGN;
-		if (!genre) {
-			continue;
-		}
-		genre = genre.trim();
-		pieces = genre.split(/\s*;\s*/);
+	if (index.length === this.VARS.SCORE_INDEX.length) {
+			// Use cached genre counts
+			genres = this.VARS.BROWSE_MENU_OPTIONS.genre;
+	} else {
 
-		for (let j=0; j<pieces.length; j++) {
-			if (!genres[pieces[j]]) {
-				genres[pieces[j]] = 1;
-			} else {
-				genres[pieces[j]]++;
+		for (let i=0; i<index.length; i++) {
+			let genre = index[i].AGN;
+			if (!genre) {
+				continue;
+			}
+			genre = genre.trim();
+			pieces = genre.split(/\s*;\s*/);
+
+			for (let j=0; j<pieces.length; j++) {
+				if (!genres[pieces[j]]) {
+					genres[pieces[j]] = 1;
+				} else {
+					genres[pieces[j]]++;
+				}
 			}
 		}
 	}
 
-	let tgenres = [];
-	let keys = Object.getOwnPropertyNames(genres);
-	for (let i=0; i<keys.length; i++) {
+	let limitedKeys = Object.getOwnPropertyNames(genres);
+	let fullKeys    = Object.getOwnPropertyNames(this.VARS.BROWSE_MENU_OPTIONS.genre);
+	let keys        = fullKeys;
+
+	let tgenres = [];  // Translate genres into active language.
+	for (let i=0; i<fullKeys.length; i++) {
 		let entry = {};
-		entry.value = keys[i];
-		entry.count = genres[keys[i]];
-		entry.title = this.getTranslation(keys[i].replace(/\s+/g, "_"));
+		entry.value = fullKeys[i];
+		entry.count = genres[fullKeys[i]];
+		entry.title = this.getTranslation(fullKeys[i].replace(/\s+/g, "_"));
 		if (entry.value === "uncategorized") {
 			entry.title = "ZZZZZ " + entry.title;
 		}
@@ -80,7 +89,7 @@ POPC2.prototype.buildGenreFilter = function (index, target) {
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_genre");
-	output += ` [${tgenres.length}]`;
+	output += ` [${limitedKeys.length}]`;
 	output += "</option>\n";
 
 	for (let i=0; i<tgenres.length; i++) {
@@ -92,9 +101,9 @@ POPC2.prototype.buildGenreFilter = function (index, target) {
 		}
 		output += '>';
 		output += tgenres[i].title.replace("ZZZZZ ", "");
-		output += " (";
-		output += tgenres[i].count;
-		output += ")";
+		if (tgenres[i].count) {
+			output += ` (${tgenres[i].count})`;
+		}
 		output += "</option>\n";
 	}
 
@@ -102,7 +111,7 @@ POPC2.prototype.buildGenreFilter = function (index, target) {
 
 	element.innerHTML = output;
 	let that = this;
-	element.onchange = function() { that.filterBrowseIndex(); };
+	element.onchange = function() { that.doBrowseSearch(); };
 };
 
 Object.defineProperty(POPC2.prototype.buildGenreFilter, "name", { value: "buildGenreFilter" });

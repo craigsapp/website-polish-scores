@@ -4,7 +4,7 @@
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Wed Oct  6 12:27:07 PDT 2021
 // Filename:      _includes/browse/buildLyricsFilter.js
-// Used by:
+// Used by:       _includes/browse/doBrowseSearch.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -50,7 +50,7 @@ POPC2.prototype.buildLyricsFilter = function (target) {
 
 	element.innerHTML = output;
 	let that = this;
-	element.onkeyup = function() { that.filterBrowseIndex(); };
+	element.onkeyup = function() { that.doBrowseSearch(); };
 };
 
 Object.defineProperty(POPC2.prototype.buildLyricsFilter, "name", { value: "buildLyricsFilter" });

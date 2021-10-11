@@ -14,10 +14,11 @@
 {% endcomment %}
 
 POPC2.prototype.resetBrowseSearchFields = function () {
-	this.DebugMessageFunction(JSON.stringify(this.VARS.SEARCH));
+	this.DebugMessageFunction();
 	this.VARS.SEARCH = {};
 
 	this.VARS.SEARCH_FREEZE = true;
+	localStorage.SEARCH = "{}";
 
 	var centuryElement     = document.querySelector("select.filter.century");
 	var composerElement    = document.querySelector("select.filter.composer");
@@ -50,7 +51,9 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	}
 	this.VARS.SEARCH_FREEZE = false;
 
-	this.filterBrowseIndex();
+	this.VARS.SEARCH_RESULTS = this.VARS.SCORE_INDEX;
+	this.buildBrowseFilters();
+	this.displayComposerBrowsePortrait();
 
 };
 

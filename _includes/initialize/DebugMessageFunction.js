@@ -23,7 +23,6 @@ POPC2.prototype.DebugMessageFunction = function () {
 		} else {
 			let matches = arguments.callee.caller.toString().match(/^function\s+([A-Z\d_]+)/i);
 			if (!matches) {
-				// need to find a way of getting a prototype function name...
 				matches = arguments.callee.caller.toString().match(/this.([A-Z\d_]+)/i);
 			}
 			if (!matches) {
@@ -52,10 +51,10 @@ POPC2.prototype.DebugMessageFunction = function () {
 				if (i < arguments.length - 1) {
 					args += ", ";
 				}
-				args += ")";
-				console.log(`%cEntering %c${functionName}%c${args}`,
-						"color: gray", "color: green", "color: gray");
 			}
+			args += ")";
+			console.log(`%cEntering %c${functionName}%c${args}`,
+					"color: gray", "color: green", "color: gray");
 		}
 	}
 };

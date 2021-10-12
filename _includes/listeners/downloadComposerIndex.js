@@ -45,7 +45,7 @@ POPC2.prototype.downloadComposerIndex = function () {
 			}
 
 			// Check if there are composers in the SCORE_INDEX that are
-			// not in the COMPOSER_INDEX.
+			// not in the COMPOSER_INDEX and print some warnings here.
 
 			that.DebugMessage("DOWNLOADED COMPOSER INDEX FROM " + url, "purple");
 			that.displayComposerBrowsePortrait();

@@ -41,12 +41,12 @@ POPC2.prototype.buildBrowseFilters = function (index) {
 	this.buildNationalityFilter(index);
 	this.buildTitleFilter();
 	this.buildLyricsFilter();
+	this.buildPitchFilter();
 
 	if (selector) {
 		// Restore focus on the title/lyrics input:
 		let newelement = document.querySelector(selector);
 		if (newelement) {
-			console.log("FOCUSING BACK ON SELECTOR", selector, newelement);
 			newelement.focus();
 			// Force cursor to the end of the string (generalize later):
 			// Currently it is not possible to move the cursor to the

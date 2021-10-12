@@ -95,7 +95,7 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 		output += "</tr>\n";
 
 		if (lyricsSearch) {
-			output += this.printLyricsSearchResults(results[i].lyrics, lyricsSearchText, 3);
+			output += this.printLyricsSearchResults(results[i]._lyrics, lyricsSearchText, 3);
 		}
 	}
 

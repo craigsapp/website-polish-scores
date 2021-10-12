@@ -45,6 +45,16 @@
 @@END:		ENTRY
 
 @
+@ Pitch placeholder on browse page
+@
+
+@@BEGIN:	ENTRY
+@TAG:		pitch_placeholder
+@EN:		search pitch...
+@PL:		wyszukaj ton...
+@@END:		ENTRY
+
+@
 @ General translations for browse page
 @
 

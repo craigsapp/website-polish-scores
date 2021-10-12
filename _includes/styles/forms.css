@@ -35,7 +35,9 @@ select {
 }
 
 input {
+	margin-top: 1px;
 	font-size: 1.25rem;
+	margin-bottom: 2px;
 }
 
 input.filter.title {

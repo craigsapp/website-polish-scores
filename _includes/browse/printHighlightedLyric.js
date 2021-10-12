@@ -14,7 +14,7 @@
 {% endcomment %}
 
 POPC2.prototype.printHighlightedLyric = function (word, query) {
-	this.DebugMessageFunction();
+	this.DebugMessageFunctionVerbose();
 	let newword = this.getHighlightedString(word, query);
 	if (newword === word) {
 		// No match so return empty string

@@ -16,7 +16,7 @@
 POPC2.prototype.filterByLyrics = function (input) {
 	this.DebugMessageFunctionVerbose();
 	let type = "lyrics";
-	let field = "lyrics";
+	let field = "_lyrics";
 	if (!input) {
 		return [];
 	}

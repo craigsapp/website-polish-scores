@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			popc2.VARS.SEARCH_RESULTS = json;
 			popc2.prepareBrowseSelectOptions();
 
-			if (!popc2.VARS.SEARCH.lyrics) {
+			if ((!popc2.VARS.SEARCH.lyrics) && (!popc2.VARS.SEARCH.pitch)) {
 				// Show the search page now with any CGI-based search parameters.
 				// but only showing of lyrics are not involved.
 				popc2.displayBrowsePage();
@@ -52,6 +52,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 			// Composer index is for enhancing information about composers:
 			popc2.downloadComposerIndex();
+
+			// Pitch index is for searching for melodic pitch in musical notes:
+			popc2.downloadPitchIndex();
 
 		})
 		.catch(err => { console.error(err); });

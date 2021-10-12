@@ -2,9 +2,9 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:29:12 PDT 2021
-// Last Modified: Wed Oct  6 12:29:15 PDT 2021
+// Last Modified: Mon Oct 11 20:59:13 PDT 2021
 // Filename:      _includes/browse/copySearchLink.js
-// Used by:
+// Used by:       _includes/handlebars/template-browse.html
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -20,6 +20,7 @@
 //    n = nationality query
 //    t = title query
 //    l = lyrics query
+//    p = pitch query
 //
 {% endcomment %}
 
@@ -55,6 +56,10 @@ POPC2.prototype.copySearchLink = function () {
 	if (typeof this.VARS.SEARCH.lyrics !== "undefined") {
 		if (!search.match(/^\s*$/)) { search += "&"; }
 		search += `l=${encodeURIComponent(this.VARS.SEARCH.lyrics)}`;
+	}
+	if (typeof this.VARS.SEARCH.pitch !== "undefined") {
+		if (!search.match(/^\s*$/)) { search += "&"; }
+		search += `p=${encodeURIComponent(this.VARS.SEARCH.pitch)}`;
 	}
 
 	if (!search.match(/^\s*$/)) {

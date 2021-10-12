@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:29:12 PDT 2021
-// Last Modified: Wed Oct  6 12:29:15 PDT 2021
+// Last Modified: Mon Oct 11 18:23:58 PDT 2021
 // Filename:      _includes/browse/resetBrowseSearchFields.js
 // Used by:       _includes/handlebars/template-browse.html
 // Included in:   _includes/browse/main.html
@@ -27,6 +27,7 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	var nationalityElement = document.querySelector("select.filter.nationality");
 	var titleElement       = document.querySelector("input.filter.title");
 	var lyricsElement      = document.querySelector("input.filter.lyrics");
+	var pitchElement       = document.querySelector("input.filter.pitch");
 
 	if (centuryElement) {
 		centuryElement.value = "";
@@ -49,10 +50,14 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	if (lyricsElement) {
 		lyricsElement.value = "";
 	}
+	if (pitchElement) {
+		pitchElement.value = "";
+	}
 	this.VARS.SEARCH_FREEZE = false;
 
 	this.VARS.SEARCH_RESULTS = this.VARS.SCORE_INDEX;
 	this.buildBrowseFilters();
+	this.doBrowseSearch();
 	this.displayComposerBrowsePortrait();
 
 };

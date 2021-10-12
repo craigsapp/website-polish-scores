@@ -2,10 +2,10 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct  8 10:32:14 PDT 2021
-// Last Modified: Fri Oct  8 10:32:17 PDT 2021
+// Last Modified: Mon Oct 11 18:29:32 PDT 2021
 // Filename:      _includes/initialize/getCgiParameters.js
-// Used by:
-// Included in:
+// Used by:       _includes/initialize/main.html
+// Included in:   _includes/initialize/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
@@ -21,6 +21,7 @@
 //    n      nationality  option string for genre select
 //    t      title        query string for title searches
 //    l      lyrics       query string for lyrics searches
+//    p      pitch        query string for melodic pitch searches
 //    id                  work ID for displaying score
 //
 // For y, c, s, n, and g, the string must match exactly one of the select options.
@@ -48,6 +49,7 @@ POPC2.prototype.getCgiParameters = function () {
 		if (pair[0] === "n") { pair[0] = "nationality"; }
 		if (pair[0] === "t") { pair[0] = "title"; }
 		if (pair[0] === "l") { pair[0] = "lyrics"; }
+		if (pair[0] === "p") { pair[0] = "pitch"; }
 		pair[1] = decodeURIComponent(pair[1]);
 		if (typeof output[pair[0]] === 'undefined') {
 			output[pair[0]] = pair[1];
@@ -58,6 +60,7 @@ POPC2.prototype.getCgiParameters = function () {
 			output[pair[0]].push(pair[1]);
 		}
 	}
+	this.DebugMessage("CGI PARAMETERS: " + JSON.stringify(output), "steelblue");
 	return output;
 };
 

@@ -8,6 +8,7 @@
 // Used by:       _includes/browse/buildComposerFilter.js
 // Used by:       _includes/browse/buildGenreFilter.js
 // Used by:       _includes/browse/buildLyricsFilter.js
+// Used by:       _includes/browse/buildPitchFilter.js
 // Used by:       _includes/browse/buildNationalityFilter.js
 // Used by:       _includes/browse/buildSiglumFilter.js
 // Used by:       _includes/browse/buildTitleFilter.js
@@ -44,6 +45,7 @@ POPC2.prototype.doBrowseSearch = function (index) {
 	results = this.filterByNationality(results);
 	results = this.filterByTitle(results);
 	results = this.filterByLyrics(results);
+	results = this.filterByPitch(results);
 
 	if (results.length != this.VARS.SCORE_INDEX.length) {
 		this.VARS.SEARCH_FREEZE = true;

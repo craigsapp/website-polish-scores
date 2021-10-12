@@ -121,6 +121,7 @@ function POPC2() {
 		browse_index:       "{{ site.browse_index        }}",
 		lyrics_index:       "{{ site.lyrics_index        }}",
 		composer_index:     "{{ site.composer_index      }}",
+		pitch_index:        "{{ site.pitch_index         }}",
 		background_image:   "{{ site.background_image    }}",
 		languages:           {{ site.languages | jsonify }} ,
 		debug:              "{{ site.debug               }}",

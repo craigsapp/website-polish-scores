@@ -15,7 +15,7 @@
 {% endcomment %}
 
 POPC2.prototype.printLyricsSearchResults = function (lyrics, query, columns) {
-	this.DebugMessageFunction();
+	this.DebugMessageFunctionVerbose();
 	if (!lyrics) {
 		return "";
 	}

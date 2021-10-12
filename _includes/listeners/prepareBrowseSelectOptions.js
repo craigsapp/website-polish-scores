@@ -81,7 +81,6 @@ POPC2.prototype.prepareBrowseSelectOptions = function () {
 			}
 		}
 	}
-console.error("DATA", data);
 };
 
 Object.defineProperty(POPC2.prototype.prepareBrowseSelectOptions, "name", { value: "prepareBrowseSelectOptions" });

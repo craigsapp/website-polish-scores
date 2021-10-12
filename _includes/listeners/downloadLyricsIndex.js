@@ -36,7 +36,7 @@ POPC2.prototype.downloadLyricsIndex = function () {
 				if (id) {
 					let lyrics = index[id];
 					if (lyrics) {
-						that.VARS.SCORE_INDEX[i].lyrics = lyrics;
+						that.VARS.SCORE_INDEX[i]._lyrics = lyrics;
 					}
 				}
 			}

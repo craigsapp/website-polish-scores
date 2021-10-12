@@ -27,15 +27,18 @@ POPC2.prototype.setInitialSearch = function (path) {
 	if (cgi.nationality) { tempSearch.nationality = cgi.nationality; }
 	if (cgi.text)        { tempSearch.text        = cgi.text;        }
 	if (cgi.lyrics)      { tempSearch.lyrics      = cgi.lyrics;      }
+	if (cgi.pitch)       { tempSearch.pitch       = cgi.pitch;       }
 	let keys = Object.keys(tempSearch);
 	if (keys.length > 0) {
 		this.VARS.SEARCH = tempSearch;
+		this.DebugMessage("INITIAL CGI SEARCH SET TO: " + JSON.stringify(this.VARS.SEARCH), "steelblue");
 		return;
 	}
 
 	if (localStorage.SEARCH) {
 		tempSearch = JSON.parse(localStorage.SEARCH);
 		if (tempSearch) {
+		   this.DebugMessage("INITIAL LOCALSTORAGE SEARCH SET TO: " + JSON.stringify(this.VARS.SEARCH), "steelblue");
 			this.VARS.SEARCH = tempSearch
 		}
 	}

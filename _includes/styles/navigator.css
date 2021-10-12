@@ -41,6 +41,12 @@
 	color: #dc143c;
 }
 
+#next-work:hover,
+#previous-work:hover,
+#to-browse-page:hover {
+	color: #dc143c;
+}
+
 #language-list div {
 	background-color: transparent;
 	border-radius: 21px;

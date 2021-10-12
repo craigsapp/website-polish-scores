@@ -66,7 +66,7 @@ function POPC2() {
 	// Variables primarily related to work page:
 	//
 
-	// WORK_ID = work id of score to be displayed.
+	// WORK_ID = work id of score being displayed
 	this.VARS.WORK_ID = null;
 
 

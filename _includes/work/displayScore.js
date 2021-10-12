@@ -18,6 +18,9 @@ POPC2.prototype.displayScore = function (id) {
 	this.displayWorkNavigator();
 	this.applyElementTranslations();
 
+	this.VARS.WORK_ID = id;
+	this.displayWorkInfo();
+
 	let options = JSON.parse(JSON.stringify(this.VARS.HNP_OPTIONS));
 	// options.incipit = true;
 	options.source = "humdrum";
@@ -25,6 +28,7 @@ POPC2.prototype.displayScore = function (id) {
 		this.storeHumdrumOnPage(this.VARS.HUMDRUM[id]);
 		console.log("VHV OPTIONS", options);
 		displayHumdrum(options);
+		scroll(0, 0);
 	} else {
 		let url = `${this.SETTINGS.data_addr}/${id}.krn`;
 		this.DebugMessage("Downloading Humdrum score " + url, "yellow");
@@ -36,6 +40,7 @@ POPC2.prototype.displayScore = function (id) {
 				that.storeHumdrumOnPage(text);
 				console.log("VHV OPTIONS", options);
 				displayHumdrum(options);
+				scroll(0, 0);
 			})
 			.catch(err => { console.error('Error downloading Humdrum:', err)});
 	}

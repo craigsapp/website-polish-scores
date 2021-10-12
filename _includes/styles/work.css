@@ -1,33 +1,51 @@
-
-
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Tue Oct 12 08:07:59 PDT 2021
+// Last Modified: Tue Oct 12 08:08:06 PDT 2021
+// Filename:      _includes/styles/work.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for the work page.
+//
+{% endcomment %}
 
 #work-navigator {
-    font-family: 'Montserrat', sans-serif !important;
-    cursor: auto;
-    margin: 0;
-    top: -90px;
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    margin-right: 120px;
-    flex: 1 0 auto;
+	font-family: 'Montserrat', sans-serif !important;
+	cursor: auto;
+	margin: 0;
+	top: -90px;
+	display: flex;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	margin-right: 120px;
+	flex: 1 0 auto;
 }
 
-
 #work-navigator span {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 500;
-    transition: .3s;
-    outline: none;
-    padding: 0 5px;
-    margin-right: 15px;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 500;
+	transition: .3s;
+	outline: none;
+	padding: 0 5px;
+	margin-right: 15px;
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+}
+
+#composer-name {
+	font-size: 1.3rem;
+}
+
+#OTL {
+	font-size: 1.2rem;
 }
 
 

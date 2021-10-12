@@ -23,9 +23,8 @@ textarea:focus, input:focus select:focus {
 select {
 	box-sizing: inherit;
 	display: inline-block;
-	font-size: 1.25rem;
-	font: inherit;
 	list-style-type: none;
+	font: inherit;
 	margin-bottom: 2px;
 	margin-left: 0;
 	margin-right: 0;

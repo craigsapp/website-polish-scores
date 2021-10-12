@@ -21,10 +21,10 @@ POPC2.prototype.showResultsCount = function (count) {
 	}
 	let output = "";
 	if (count != this.VARS.SCORE_INDEX.length) {
-		output = count + " " + this.getMatchText(count);
+		output = `${count} ${this.getMatchText(count)}`;
 	} else {
-		// Everything matches, so not interesting to show the count.
-		output = "";
+		// Everything matches, so show the total number of scores in the database:
+		output = `${count} ${this.getTranslation("scores")}`;
 	}
 	element.innerHTML = output;
 };

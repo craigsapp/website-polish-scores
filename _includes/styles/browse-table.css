@@ -36,8 +36,24 @@ table.search-results td {
 	vertical-align: top;
 }
 
+table.search-results th.title,
+table.search-results td.title {
+	width: 49%;
+}
+
+table.search-results th.composer,
+table.search-results td.composer {
+	width: 30%;
+}
+
+table.search-results th.shelfmark,
+table.search-results td.shelfmark {
+	width: 21%;
+}
+
 table.search-results td.shelfmark {
 	padding-right: 5px;
+	color: #555555;
 }
 
 table.search-results td.shelfmark span.siglum {
@@ -65,10 +81,10 @@ table.search-results tbody tr.lyrics:hover{
 }
 
 div.lyrics-match {
-	width: 50%;
+	width: 82%;
 	float: right;
-	background: #f8f8f8;
-	border: 1px solid #f0f0f0;
+	background: linear-gradient(to right, #f8f8f8, white);
+	/* border: 1px solid #f0f0f0; */
 	border-radius: 3px;
 	padding: 10px;
 }

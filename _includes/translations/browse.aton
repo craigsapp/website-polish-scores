@@ -1,9 +1,4 @@
 
-1% include translations/composers.aton %}
-{% include translations/nationalities.aton %}
-{% include translations/genres.aton %}
-{% include translations/browse-table.aton %}
-
 @
 @ Century drop-down list on browse page:
 @
@@ -80,6 +75,12 @@
 @TAG:		clear_help
 @EN:		Clear all search parameters
 @PL:		Wyczyść wszystkie parametry wyszukiwania
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		scores
+@EN:		scores
+@PL:		partytury
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY

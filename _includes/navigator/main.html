@@ -14,7 +14,17 @@
 {% endcomment %}
 
 <div id="navigator">
-	<span id="work-navigator"></span>
+	<span style="display:none;" id="work-navigator">
+		<span data-translation="previous_work"  class="translation"
+			id="previous-work" onclick="popc2.displayPreviousWork();">
+		</span>
+		<span data-translation="browse_page"  class="translation"
+			id="to-browse-page" onclick="popc2.displayBrowsePage();">
+		</span>
+		<span data-translation="next_work"  class="translation"
+			id="next-work" onclick="popc2.displayNextWork();">
+		</span>
+	</span>
 	<span id="language-list"></span>
 </div>
 

@@ -1,0 +1,22 @@
+@
+@ Top navigator on work page:
+@
+
+@@BEGIN:	ENTRY
+@TAG:		previous_work
+@EN:		&lt;previous
+@PL:		&lt;poprzednia
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		next_work
+@EN:		next&gt;
+@PL:		następna&gt;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		browse_page
+@EN:		score&nbsp;list
+@PL:		lista&nbsp;partytur
+@@END:		ENTRY
+

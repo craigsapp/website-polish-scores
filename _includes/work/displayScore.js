@@ -15,6 +15,9 @@
 
 POPC2.prototype.displayScore = function (id) {
 	this.DebugMessageFunction(id);
+	this.displayWorkNavigator();
+	this.applyElementTranslations();
+
 	let options = JSON.parse(JSON.stringify(this.VARS.HNP_OPTIONS));
 	// options.incipit = true;
 	options.source = "humdrum";

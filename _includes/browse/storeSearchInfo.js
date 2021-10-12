@@ -21,7 +21,8 @@ POPC2.prototype.storeSearchInfo = function (search) {
 	if (!search) {
 		search = {};
 	}
-	localStorage.SEARCH = JSON.stringify(search);
+	// Disabling storing searches between sessions for now:
+	// localStorage.SEARCH = JSON.stringify(search);
 };
 
 Object.defineProperty(POPC2.prototype.storeSearchInfo, "name", { value: "storeSearchInfo" });

@@ -16,6 +16,7 @@
 
 POPC2.prototype.displayBrowsePage = function () {
 	this.DebugMessageFunction();
+	this.hideWorkNavigator();
 	var telement = document.querySelector("#template-browse");
 	if (!telement) {
 		console.error("ERROR: Cannot find #template-browse.");

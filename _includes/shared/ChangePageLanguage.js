@@ -38,6 +38,7 @@ POPC2.prototype.ChangePageLanguage = function (lang, type) {
 	} else {
 		console.log("UNKNOWN PAGE TYPE:", pageType);
 	}
+	this.applyElementTranslations();
 };
 
 Object.defineProperty(POPC2.prototype.ChangePageLanguage, "name", { value: "ChangePageLanguage" });

@@ -28,7 +28,6 @@ POPC2.prototype.addLanguageButtons = function (target, languages) {
 	for (let i=0; i<languages.length; i++) {
 		languageTitle = "";
 		if (languages[i] === "EN") {
-			// todo: Move these translations to lookup table:
 			languageTitle = "View webpage in English";
 		} else if (languages[i] === "PL") {
 			languageTitle = "Zobacz stronę w języku polskim";

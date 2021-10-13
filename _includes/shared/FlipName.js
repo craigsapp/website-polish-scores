@@ -17,6 +17,14 @@ POPC2.prototype.FlipName = function (name) {
 	this.DebugMessageFunctionVerbose(name);
 	let matches = name.match(/^\s*([^,]+)\s*,\s*(.+)\s*$/);
 	if (!matches) {
+		// Translate Anonymus/Anonim/Anonymous to English or Polish:
+		if (name.toLowerCase() === "anonim") {
+			name = this.getTranslation("Anonim");
+		} else if (name.toLowerCase() === "anonymus") {
+			name = this.getTranslation("Anonim");
+		} else if (name.toLowerCase() === "anonymous") {
+			name = this.getTranslation("Anonim");
+		}
 		return name;
 	}
 	let first = matches[2];

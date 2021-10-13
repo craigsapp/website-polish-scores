@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 11 23:20:01 PDT 2021
-// Last Modified: Mon Oct 11 23:20:04 PDT 2021
+// Last Modified: Tue Oct 12 19:18:40 PDT 2021
 // Filename:      _includes/work/displayNextWork.js
 // Used by:
 // Included in:   _includes/work/main.html
@@ -26,33 +26,20 @@ POPC2.prototype.displayNextWork = function() {
 		console.error("NO ACTIVE WORK ID");
 		return;
 	}
-	let foundi = -1;
-	let idtype = "unknown";
-	for (let i=0; i<index.length; i++) {
-		if (index[i].cenid === targetid) {
-			foundi = i;
-			idtype = "cenid";
-			break;
-		}
-		if (index[i].fileid === targetid) {
-			foundi = i;
-			idtype = "fileid";
-			break;
-		}
-		if (index[i].nifcid === targetid) {
-			foundi = i;
-			idtype = "nifcid";
-			break;
-		}
-	}
+
+	let obj = this.GetIndexAndTypeInSearchResults(targetid, index);
+	let foundi = obj.index;
+	let idtype = obj.type;
+
 	if (foundi < 0) {
-		console.error("DID NOT FIND ID", targetid, "IN SCORE LIST");
+		console.error("Current ID", targetid, "NOT FOUND IN INDEX", index);
 		return;
 	}
-	if (idtype === "unknown") {
-		console.error("DID NOT FIND ID (B)", targetid, "IN SCORE LIST");
+	if ((!idtype) || (idtype === "unknown")) {
+		console.error("Type of Current ID", targetid, "NOT FOUND IN INDEX", index);
 		return;
 	}
+
 	let nexti = foundi + 1;
 	if (nexti >= index.length) {
 		nexti = 0;

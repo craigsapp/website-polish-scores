@@ -21,7 +21,7 @@ POPC2.prototype.sanitizePitchQuery = function (input) {
 	if (!input) {
 		return "";
 	}
-	
+
 	let start = input;
 	input = input.replace(/ut/ig,  "C");
 	input = input.replace(/do/ig,  "C");

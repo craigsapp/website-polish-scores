@@ -3,9 +3,9 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 11 22:55:01 PDT 2021
 // Last Modified: Mon Oct 11 22:55:06 PDT 2021
-// Filename:      _includes/work/applyElementTranslations.js
+// Filename:      _includes/shared/ApplyElementTranslations.js
 // Used by:       _includes/work/displayWorkPage.js
-// Included in:   _includes/work/main.html
+// Included in:   _includes/shared/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
@@ -16,11 +16,10 @@
 //
 {% endcomment %}
 
-POPC2.prototype.applyElementTranslations = function () {
+POPC2.prototype.ApplyElementTranslations = function () {
 	this.DebugMessageFunction();
-	
+
 	let list = document.querySelectorAll(".trans");
-console.error("TRANS LIST", list);
 
 	// Apply translations to element text content:
 	for (let i=0; i<list.length; i++) {
@@ -42,8 +41,6 @@ console.error("TRANS LIST", list);
 			continue;
 		}
 
-console.warn("PROCESSING TAG", tag);
-
 		let matches = tag.match(/^([^:]+):(.*)/);
 		if (!matches) {
 			continue;
@@ -56,7 +53,7 @@ console.warn("PROCESSING TAG", tag);
 
 };
 
-Object.defineProperty(POPC2.prototype.applyElementTranslations, "name", { value: "applyElementTranslations" });
+Object.defineProperty(POPC2.prototype.ApplyElementTranslations, "name", { value: "ApplyElementTranslations" });
 
 
 

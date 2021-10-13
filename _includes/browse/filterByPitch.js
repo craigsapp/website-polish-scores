@@ -32,7 +32,7 @@ POPC2.prototype.filterByPitch = function (input) {
 	// Phrases are not allowed in pitch search, but pretend they are.
 	let dirty = target;
 	let clean = this.sanitizePitchQuery(target);
-	
+
 	if (clean.length > 0) {
 		this.VARS.SEARCH[type] = dirty;
 		let output = [];

@@ -12,6 +12,11 @@
 //
 {% endcomment %}
 
+
+body.waiting * {
+	cursor: progress !important;
+}
+
 body {
 	box-sizing: inherit;
 	cursor: auto;

@@ -30,6 +30,16 @@ popc2.DebugMessage("Created popc2 interface", "chartreuse");
 popc2.VARS.CGI = popc2.getCgiParameters();
 popc2.setInitialSearch();
 
+
+//////////////////////////////
+//
+// Load settings from localStorage:
+//
+
+if (localStorage.BROWSE_STYLE) {
+	popc2.VARS.BROWSE_STYLE = localStorage.BROWSE_STYLE;
+}
+
 </script>
 
 

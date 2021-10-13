@@ -1,4 +1,33 @@
 
+
+@
+@ More-or-less button
+@
+
+@@BEGIN:	ENTRY
+@TAG:		button_more
+@EN:		more
+@PL:		jeszcze
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		button_more_help
+@EN:		Click to view more browsinge options
+@PL:		Kliknij, aby wyświetlić więcej opcji przeglądania
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		button_less
+@EN:		less
+@PL:		mniej
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		button_less_help
+@EN:		Click to view fewer browsing options
+@PL:		Kliknij, aby wyświetlić mniej opcji przeglądania
+@@END:		ENTRY
+
 @
 @ Century drop-down list on browse page:
 @

@@ -35,6 +35,12 @@ POPC2.prototype.displayBrowsePage = function () {
 		pageElement.innerHTML = output;
 	}
 
+	if (this.VARS.BROWSE_STYLE === "more") {
+		this.showBrowseMore();
+	} else {
+		this.showBrowseLess();
+	}
+
 	this.buildBrowseFilters();
 	this.doBrowseSearch();
 };

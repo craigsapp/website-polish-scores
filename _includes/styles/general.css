@@ -29,6 +29,7 @@ body {
 
 main {
 	background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(/img/bgcbw.png) no-repeat center fixed;
+	background-size: cover;
 	box-sizing: inherit;
 	cursor: auto;
 	display: block;

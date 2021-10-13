@@ -26,10 +26,9 @@ if (localStorage.LANGUAGE) {
 }
 
 if (!popc2.VARS.LANGUAGE) {
-	setLanguageFromBrowserPreferences();
+	popc2.VARS.LANGUAGE = popc2.GetLanguageFromBrowser();
+	localStorage.LANGUAGE = popc2.VARS.LANGUAGE;
 }
-
-localStorage.LANGUAGE = popc2.VARS.LANGUAGE;
 
 </script>
 

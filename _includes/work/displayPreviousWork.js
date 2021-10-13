@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 11 23:20:01 PDT 2021
-// Last Modified: Tue Oct 12 19:18:45 PDT 2021
+// Last Modified: Wed Oct 13 02:13:23 PDT 2021
 // Filename:      _includes/work/displayPreviousWork.js
 // Used by:
 // Included in:   _includes/work/main.html
@@ -40,17 +40,17 @@ POPC2.prototype.displayPreviousWork = function() {
 		return;
 	}
 
-	let nexti = foundi + 1;
-	if (nexti >= index.length - 1) {
-		nexti = 0;
+	let previ = foundi - 1;
+	if (previ < 0) {
+		previ = index.length - 1;
 	}
 	let id;
-	id = index[nexti][idtype];
+	id = index[previ][idtype];
 	if (!id) {
-		id = index[nexti].fileid;
+		id = index[previ].fileid;
 	}
 	if (!id) {
-		console.error("CANNOT FIND ID FOR NEXT SCORE AFTER", targetid);
+		console.error("CANNOT FIND ID FOR PREVIOUS SCORE BEFORE", targetid);
 		return;
 	}
 	this.displayScore(id);

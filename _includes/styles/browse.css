@@ -21,9 +21,15 @@
 	display: inline-block;
 }
 
-#results-count {
+#results-count,
+#results-notecount {
 	color: #aaaaaa;
 }
+
+#results-notecount {
+	padding-left: 50px;
+}
+
 
 .first-name {
 	color: #aaaaaa;

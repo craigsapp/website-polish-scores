@@ -113,6 +113,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		note_count
+@EN:		notes
+@PL:		nuty
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		0_matches
 @EN:		matches
 @PL:		wyników

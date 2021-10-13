@@ -17,6 +17,7 @@
 //                   #filter-pitch
 //                   #filter-reset
 //                   #filter-link
+//                   #results-notecount
 //
 {% endcomment %}
 
@@ -31,9 +32,11 @@ POPC2.prototype.showBrowseMore = function () {
 	if (element) { element.style.display = "inline-block"; }
 	element = document.querySelector("#filter-pitch");
 	if (element) { element.style.display = "inline-block"; }
-	element = document.querySelector("#filter-reset");
-	if (element) { element.style.display = "inline-block"; }
+	// element = document.querySelector("#filter-reset");
+	// if (element) { element.style.display = "inline-block"; }
 	element = document.querySelector("#filter-link");
+	if (element) { element.style.display = "inline-block"; }
+	element = document.querySelector("#results-notecount");
 	if (element) { element.style.display = "inline-block"; }
 
 	this.setMoreLessBrowseLanguage("less");

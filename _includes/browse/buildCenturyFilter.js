@@ -63,6 +63,9 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 	let limitedKeys = Object.getOwnPropertyNames(centuries);
 	let fullKeys    = Object.getOwnPropertyNames(this.VARS.BROWSE_MENU_OPTIONS.century);
 
+	let partial = limitedKeys.length != fullKeys.length;
+console.warn("PARTIAL", partial);
+
 	fullKeys.sort(function(a, b) {
 		return a.localeCompare(b);
 	});
@@ -80,9 +83,13 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 	output += "</option>\n";
 
 	for (let i=0; i<fullKeys.length; i++) {
-		output += '<option value="';
 		let century = fullKeys[i];
 		let displayCentury = century;
+		output += '<option';
+		if (partial && centuries[century]) {
+			output += ' class="highlight"';
+		}
+		output += ' value="';
 		output += century.replace(/"/g, '\\"');
 		output += '"'
 		if (selectedCentury === century) {

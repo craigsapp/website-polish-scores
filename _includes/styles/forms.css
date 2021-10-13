@@ -5,7 +5,7 @@
 // Last Modified: Sat Oct  9 00:41:53 PDT 2021
 // Filename:      _includes/styles/forms.css
 // Included in:   _includes/styles/main.html
-// Syntax:        CSS
+// Syntax:        CSS; Jekyll/Liquid
 // vim:           ts=3:nowrap
 //
 // Description:   Styles for controlling look of form elements on website.
@@ -31,6 +31,10 @@ select {
 	margin-top: 2px;
 	text-transform: none;
 	-webkit-text-size-adjust: 100%;
+}
+
+select option.highlight {
+	background: {{ site.selected_language_color }};
 }
 
 input {

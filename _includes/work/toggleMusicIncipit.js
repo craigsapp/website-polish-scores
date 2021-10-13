@@ -39,8 +39,9 @@ POPC2.prototype.toggleMusicIncipit = function () {
 		}
 	}
 
+	let id = this.VARS.WORK_ID;
 	this.ApplyElementTranslations();
-	this.displayScore();
+	this.displayScore(id, true);
 };
 
 Object.defineProperty(POPC2.prototype.toggleMusicIncipit, "name", { value: "toggleMusicIncipit" });

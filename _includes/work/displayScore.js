@@ -13,7 +13,7 @@
 //
 {% endcomment %}
 
-POPC2.prototype.displayScore = function (id) {
+POPC2.prototype.displayScore = function (id, noscrollQ) {
 	this.DebugMessageFunction(id);
 	this.displayWorkNavigator();
 	this.ApplyElementTranslations();
@@ -36,7 +36,9 @@ POPC2.prototype.displayScore = function (id) {
 			 document.body.classList.add("waiting");
 		}, 80);
 		displayHumdrum(options);
-		scroll(0, 0);
+		if (!noscrollQ) {
+			scroll(0, 0);
+		}
 	} else {
 		let url = `${this.SETTINGS.data_addr}/${id}.krn`;
 		this.DebugMessage("Downloading Humdrum score " + url, "yellow");
@@ -56,7 +58,9 @@ POPC2.prototype.displayScore = function (id) {
 					document.body.classList.add("waiting");
 				}, 80);
 				displayHumdrum(options);
-				scroll(0, 0);
+				if (!noscrollQ) {
+					scroll(0, 0);
+				}
 				this.prefetchAdjacentHumdrumScores(id);
 			})
 			.catch(err => { console.error('Error downloading Humdrum:', err)});

@@ -17,6 +17,7 @@
 //                   #filter-pitch
 //                   #filter-reset
 //                   #filter-link
+//                   #more-break
 //                   #results-notecount
 //
 {% endcomment %}
@@ -38,6 +39,8 @@ POPC2.prototype.showBrowseMore = function () {
 	if (element) { element.style.display = "inline-block"; }
 	element = document.querySelector("#results-notecount");
 	if (element) { element.style.display = "inline-block"; }
+	element = document.querySelector("#more-break");
+	if (element) { element.style.display = "block"; }
 
 	this.setMoreLessBrowseLanguage("less");
 

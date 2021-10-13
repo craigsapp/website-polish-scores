@@ -19,15 +19,41 @@
 POPC2.prototype.applyElementTranslations = function () {
 	this.DebugMessageFunction();
 	
-	let list = document.querySelectorAll(".translation");
+	let list = document.querySelectorAll(".trans");
+console.error("TRANS LIST", list);
+
+	// Apply translations to element text content:
 	for (let i=0; i<list.length; i++) {
-		let tag = list[i].dataset.translation;
+		let tag = list[i].dataset.trans;
 		if (!tag) {
 			continue;
 		}
 		let translation = this.getTranslation(tag);
 		list[i].innerHTML = translation;
 	}
+
+	// Apply translations to element attributions:
+	// Example:
+	//    data-transatt="title:tag"
+	// this will apply the translation to the title attribute.
+	for (let i=0; i<list.length; i++) {
+		let tag = list[i].dataset.transatt;
+		if (!tag) {
+			continue;
+		}
+
+console.warn("PROCESSING TAG", tag);
+
+		let matches = tag.match(/^([^:]+):(.*)/);
+		if (!matches) {
+			continue;
+		}
+		let attribute = matches[1];
+		let newtag = matches[2];
+		let translation = this.getTranslation(newtag);
+		list[i][attribute] = translation;
+	}
+
 };
 
 Object.defineProperty(POPC2.prototype.applyElementTranslations, "name", { value: "applyElementTranslations" });

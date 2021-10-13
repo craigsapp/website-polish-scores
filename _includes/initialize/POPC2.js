@@ -33,7 +33,7 @@ function POPC2() {
 	// Variables related to downloaded data.
 	//
 
-	// SCORE_INDEX == A file list downloaded from {{ site.browse_index}}
+	// SCORE_INDEX == A file list downloaded from this.SETTINGS.score_index.
 	this.VARS.SCORE_INDEX = [];
 
 	// COMPOSER_INDEX == A list of the composers indexed by the composer's names,
@@ -118,7 +118,7 @@ function POPC2() {
 	this.SETTINGS = {
 		tab_title:          "{{ site.tab_title           }}",
 		data_addr:          "{{ site.data_addr           }}",
-		browse_index:       "{{ site.browse_index        }}",
+		score_index:        "{{ site.score_index         }}",
 		lyrics_index:       "{{ site.lyrics_index        }}",
 		composer_index:     "{{ site.composer_index      }}",
 		pitch_index:        "{{ site.pitch_index         }}",

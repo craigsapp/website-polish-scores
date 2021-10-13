@@ -11,23 +11,27 @@
 // Description:   Collect navigator related HTML and javascript for
 //                inclusion in the head element of the webpage.
 //
+// Text translations version:
+//		<span data-translation="previous_work"  class="translation"
+//		<span data-translation="browse_page"  class="translation"
+//		<span data-translation="next_work"  class="translation"
 {% endcomment %}
 
+
 <div id="navigator">
-	<span style="display:none;" id="work-navigator">
-		<span data-translation="previous_work"  class="translation"
-			id="previous-work" onclick="popc2.displayPreviousWork();">
-		</span>
-		<span data-translation="browse_page"  class="translation"
-			id="to-browse-page" onclick="popc2.displayBrowsePage();">
-		</span>
-		<span data-translation="next_work"  class="translation"
-			id="next-work" onclick="popc2.displayNextWork();">
-		</span>
+	<span style="visibility:hidden;" id="work-navigator">
+		<div id="previous-work" class="trans worknav-arrow fas fa-arrow-circle-left"
+				data-transatt="title:previous_work" onclick="popc2.displayPreviousWork();">
+		</div>
+		<div id="to-browse-page" class="trans worknav-arrow fas fa-arrow-circle-up"
+				data-transatt="title:browse_page" onclick="popc2.displayBrowsePage();">
+		</div>
+		<div id="next-work" class="trans worknav-arrow fas fa-arrow-circle-right"
+				data-transatt="title:next_work" onclick="popc2.displayNextWork();">
+		</div>
 	</span>
 	<span id="language-list"></span>
 </div>
-
 
 <script>
 

@@ -81,7 +81,7 @@ table.search-results tbody tr.lyrics:hover{
 }
 
 div.lyrics-match {
-	width: 82%;
+	width: 61%;
 	float: right;
 	background: linear-gradient(to right, #f8f8f8, white);
 	/* border: 1px solid #f0f0f0; */

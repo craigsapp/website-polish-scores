@@ -18,8 +18,22 @@
 POPC2.prototype.hideWorkNavigator = function(data) {
 	this.DebugMessageFunction();
 
-	element = document.querySelector("#work-navigator");
-	element.style.display = "none";
+	let element = document.querySelector("#work-navigator");
+	if (element) {
+		element.style.visibility = "hidden";
+	}
+	element = document.querySelector("#next-work");
+	if (element) {
+		element.style.visibility = "hidden";
+	}
+	element = document.querySelector("#previous-work");
+	if (element) {
+		element.style.visibility = "hidden";
+	}
+	element = document.querySelector("#to-browse-page");
+	if (element) {
+		element.style.visibility = "hidden";
+	}
 
 };
 

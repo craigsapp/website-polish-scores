@@ -4,19 +4,19 @@
 
 @@BEGIN:	ENTRY
 @TAG:		previous_work
-@EN:		&lt;previous
-@PL:		&lt;poprzednia
+@EN:		previous work in list
+@PL:		poprzednia
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		next_work
-@EN:		next&gt;
-@PL:		następna&gt;
+@EN:		next work in list
+@PL:		następna
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		browse_page
-@EN:		score&nbsp;list
-@PL:		lista&nbsp;partytur
+@EN:		go to browse page
+@PL:		przejdź do strony przeglądania
 @@END:		ENTRY
 

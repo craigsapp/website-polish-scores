@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 11 22:30:44 PDT 2021
-// Last Modified: Mon Oct 11 22:30:46 PDT 2021
+// Last Modified: Tue Oct 12 10:56:20 PDT 2021
 // Filename:      _includes/work/displayWorkNavigator.js
 // Used by:
 // Included in:   _includes/work/main.html
@@ -15,17 +15,37 @@
 //
 {% endcomment %}
 
-POPC2.prototype.displayWorkNavigator = function(data) {
+POPC2.prototype.displayWorkNavigator = function() {
 	this.DebugMessageFunction();
 
-	element = document.querySelector("#work-navigator");
+	let element = document.querySelector("#work-navigator");
+	if (element) {
+		element.style.visibility = "visible";
+	}
+
+	element = document.querySelector("#to-browse-page");
+	if (element) {
+		element.style.visibility = "visible";
+	}
 
 	if (this.VARS.SEARCH_RESULTS && this.VARS.SEARCH_RESULTS.length > 1) {
-		element.style.display = "inline-block";
-		console.warn("DISPAYED WORK NAVIGATOR");
+		element = document.querySelector("#previous-work");
+		if (element) {
+			element.style.visibility = "visible";
+		}
+		element = document.querySelector("#next-work");
+		if (element) {
+			element.style.visibility = "visible";
+		}
 	} else {
-		element.style.display = "none";
-		console.warn("NO RESULTS");
+		element = document.querySelector("#previous-work");
+		if (element) {
+			element.style.visibility = "hidden";
+		}
+		element = document.querySelector("#next-work");
+		if (element) {
+			element.style.visibility = "hidden";
+		}
 	}
 
 };

@@ -4,7 +4,7 @@
 // Creation Date: Tue Oct 12 20:50:31 PDT 2021
 // Last Modified: Tue Oct 12 20:50:34 PDT 2021
 // Filename:      _includes/browse/showBrowseMore.js
-// Used by:       
+// Used by:
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap

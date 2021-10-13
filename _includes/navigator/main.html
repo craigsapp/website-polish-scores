@@ -20,16 +20,26 @@
 
 <div id="navigator">
 	<span style="visibility:hidden;" id="work-navigator">
-		<div id="previous-work" class="trans worknav-arrow fas fa-arrow-circle-left"
+
+		<div id="previous-work" class="trans worknav-tool fas fa-arrow-circle-left"
 				data-transatt="title:previous_work" onclick="popc2.displayPreviousWork();">
 		</div>
-		<div id="to-browse-page" class="trans worknav-arrow fas fa-arrow-circle-up"
+		<div id="to-browse-page" class="trans worknav-tool fas fa-arrow-circle-up"
 				data-transatt="title:browse_page" onclick="popc2.displayBrowsePage();">
 		</div>
-		<div id="next-work" class="trans worknav-arrow fas fa-arrow-circle-right"
+		<div id="next-work" class="trans worknav-tool fas fa-arrow-circle-right"
 				data-transatt="title:next_work" onclick="popc2.displayNextWork();">
 		</div>
+
+		<div class="navigation-divider"></div>
+
+		<div id="incipit-button" class="trans worknav-tool fas fa-compress-arrows-alt"
+				data-transatt="title:incipit_tool_compress" onclick="popc2.toggleMusicIncipit();">
+		</div>
+
+
 	</span>
+
 	<span id="language-list"></span>
 </div>
 

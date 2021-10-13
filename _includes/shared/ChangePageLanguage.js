@@ -34,7 +34,8 @@ POPC2.prototype.ChangePageLanguage = function (lang, type) {
 	if (pageType === "browse") {
 		this.displayBrowsePage();
 	} else if (pageType === "work") {
-		this.updateWorkPageLanguage();
+		// Most/all of work is now done by ApplyElementTranslations.
+		// this.updateWorkPageLanguage();
 	} else {
 		console.log("UNKNOWN PAGE TYPE:", pageType);
 	}

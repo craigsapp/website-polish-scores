@@ -20,3 +20,17 @@
 @PL:		przejdź do strony przeglądania
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		incipit_tool_compress
+@EN:		show only first system of music
+@PL:		pokaż tylko pierwszy system muzyki
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		incipit_tool_expand
+@EN:		show full score
+@PL:		pokaż całą partyturę muzyczną
+@@END:		ENTRY
+
+
+

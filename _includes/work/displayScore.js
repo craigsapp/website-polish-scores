@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 19:24:32 PDT 2021
-// Last Modified: Tue Oct 12 19:40:05 PDT 2021
+// Last Modified: Wed Oct 13 00:39:54 PDT 2021
 // Filename:      _includes/work/displayScore.js
 // Used by:
 // Included in:   _includes/work/main.html
@@ -17,6 +17,10 @@ POPC2.prototype.displayScore = function (id) {
 	this.DebugMessageFunction(id);
 	this.displayWorkNavigator();
 	this.ApplyElementTranslations();
+
+	if (!id) {
+		id = this.VARS.WORK_ID;
+	}
 
 	this.VARS.WORK_ID = id;
 	this.displayWorkInfo(id);

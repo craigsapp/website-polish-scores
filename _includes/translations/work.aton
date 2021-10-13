@@ -32,5 +32,16 @@
 @PL:		pokaż całą partyturę muzyczną
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		play_tool_play
+@EN:		play music
+@PL:		graj muzykę
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		play_tool_stop
+@EN:		stop music playback
+@PL:		przestań odtwarzać muzykę
+@@END:		ENTRY
 
 

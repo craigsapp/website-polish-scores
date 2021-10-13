@@ -23,6 +23,7 @@ POPC2.prototype.sanitizePitchQuery = function (input) {
 	}
 
 	let start = input;
+
 	input = input.replace(/ut/ig,  "C");
 	input = input.replace(/do/ig,  "C");
 	input = input.replace(/re/ig,  "D");
@@ -40,6 +41,7 @@ POPC2.prototype.sanitizePitchQuery = function (input) {
 
 	if (this.VARS.LANGUAGE === "PL") {
 		// Use German pitch system:
+		// Also deal with accidentals after B?
 		input = input.replace(/B/i, "B-");
 		input = input.replace(/H/i, "B");
 	}
@@ -50,6 +52,7 @@ POPC2.prototype.sanitizePitchQuery = function (input) {
 	let output = "";
 	for (let i=0; i<matches.length; i++) {
 		let value = matches[i].toUpperCase();
+		value = value.replace(/-/g, "b");  // "b" is search-index flat
 		if (value.match(/-/)) {
 			output += `${value} `;
 		} else if (value.match(/#/)) {

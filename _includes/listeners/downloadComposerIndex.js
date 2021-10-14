@@ -48,7 +48,11 @@ POPC2.prototype.downloadComposerIndex = function () {
 			// not in the COMPOSER_INDEX and print some warnings here.
 
 			that.DebugMessage("DOWNLOADED COMPOSER INDEX FROM " + url, "purple");
-			that.displayComposerBrowsePortrait();
+			if (that.VARS.WORK_ID) {
+				that.displayWorkPage();
+			} else {
+				that.displayComposerBrowsePortrait();
+			}
 		})
 		.catch(err => { console.error(err); });
 };

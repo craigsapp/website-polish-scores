@@ -64,7 +64,6 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 	let fullKeys    = Object.getOwnPropertyNames(this.VARS.BROWSE_MENU_OPTIONS.century);
 
 	let partial = limitedKeys.length != fullKeys.length;
-console.warn("PARTIAL", partial);
 
 	fullKeys.sort(function(a, b) {
 		return a.localeCompare(b);

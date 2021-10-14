@@ -44,4 +44,18 @@
 @PL:		przestań odtwarzać muzykę
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		larger_tool
+@EN:		make notation larger
+@PL:		zwiększ notację muzyczną
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		smaller_tool
+@EN:		make notation smaller
+@PL:		zmniejsz notację muzyczną
+@@END:		ENTRY
+
+
+
 

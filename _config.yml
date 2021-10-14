@@ -44,6 +44,16 @@ debug: "true"
 # debug_verbose: "true"
 debug_verbose: "false"
 
+##############################
+##
+## Notation settings
+##
+
+# size_increment: The increase/decrease in notation size when the larger/smaller
+# button is pressed.
+size_increment: "1.10"
+
+
 
 ##############################
 ##

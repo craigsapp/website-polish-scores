@@ -121,21 +121,30 @@ function POPC2() {
 	//
 
 	this.SETTINGS = {
+
+		background_image:   "{{ site.background_image    }}",
+		languages:           {{ site.languages | jsonify }} ,
+		debug:              "{{ site.debug               }}",
+		debug_verbose:      "{{ site.debug_verbose       }}",
 		tab_title:          "{{ site.tab_title           }}",
+
+		// URLs for data/indexes:
 		data_addr:          "{{ site.data_addr           }}",
 		score_index:        "{{ site.score_index         }}",
 		lyrics_index:       "{{ site.lyrics_index        }}",
 		composer_index:     "{{ site.composer_index      }}",
 		pitch_index:        "{{ site.pitch_index         }}",
-		background_image:   "{{ site.background_image    }}",
-		languages:           {{ site.languages | jsonify }} ,
-		debug:              "{{ site.debug               }}",
-		debug_verbose:      "{{ site.debug_verbose       }}",
+
+		// Website coloring styles:
 		h1_color:           "{{ site.h1_color            }}",
 		h2_color:           "{{ site.h1_color            }}",
 		h3_color:           "{{ site.h1_color            }}",
 		th_color:           "{{ site.th_color            }}",
-		button_hover_color: "{{ site.button_hover_color  }}"
+		button_hover_color: "{{ site.button_hover_color  }}",
+
+		// Notation settings:
+		size_increment:     {{ site.size_increment  }}
+
 	};
 
 }

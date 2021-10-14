@@ -15,7 +15,7 @@
 
 POPC2.prototype.HnpCallback = function () {
 	this.DebugMessageFunction();
-	console.warn("CALLBACK ARGUMENTS", arguments);
+
 	document.body.classList.remove("waiting");
 	setTimeout(function() {
  		document.body.classList.remove("waiting");
@@ -29,6 +29,7 @@ POPC2.prototype.HnpCallback = function () {
 	setTimeout(function() {
  		document.body.classList.remove("waiting");
 	}, 120);
+
 };
 
 Object.defineProperty(POPC2.prototype.HnpCallback, "name", { value: "HnpCallback" });

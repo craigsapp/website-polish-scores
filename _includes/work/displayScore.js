@@ -18,6 +18,9 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 	this.displayWorkNavigator();
 	this.ApplyElementTranslations();
 
+	if (id === "random") {
+		id = this.getRandomWorkId(this.VARS.SEARCH_RESULTS);
+	}
 	if (!id) {
 		id = this.VARS.WORK_ID;
 	}
@@ -31,7 +34,9 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 	options.postFunction = target => popc2.HnpCallback(target);
 	if (this.VARS.HUMDRUM[id]) {
 		this.storeHumdrumOnPage(this.VARS.HUMDRUM[id]);
-		console.log("HNP OPTIONS", options);
+		if (this.SETTINGS.debug_verbose === "true") {
+			console.log("HNP OPTIONS", options);
+		}
 		setTimeout(function() {
 			 document.body.classList.add("waiting");
 		}, 80);
@@ -53,7 +58,9 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 				}
 				that.VARS.HUMDRUM[id] = text;
 				that.storeHumdrumOnPage(text);
-				console.log("HNP OPTIONS", options);
+				if (this.SETTINGS.debug_verbose === "true") {
+					console.log("HNP OPTIONS", options);
+				}
 				setTimeout(function() {
 					document.body.classList.add("waiting");
 				}, 80);

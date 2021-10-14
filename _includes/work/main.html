@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat Oct  9 01:30:29 PDT 2021
-// Last Modified: Mon Oct 11 22:55:44 PDT 2021
+// Last Modified: Thu Oct 14 16:03:16 PDT 2021
 // Filename:      _includes/browse/main.html
 // Included in:   _includes/head/main.html
 // Syntax:        HTML; ECMAScript 6; Jekyll/Liquid
@@ -15,19 +15,21 @@
 //
 {% endcomment %}
 
-
 <script>
 
+{% include work/copyWorkLink.js                  %}
 {% include work/displayNextWork.js               %}
 {% include work/displayPreviousWork.js           %}
 {% include work/displayScore.js                  %}
 {% include work/displayWorkInfo.js               %}
 {% include work/displayWorkNavigator.js          %}
 {% include work/displayWorkPage.js               %}
+{% include work/getRandomWorkId.js               %}
 {% include work/hideWorkNavigator.js             %}
 {% include work/makeNotationLarger.js            %}
 {% include work/makeNotationSmaller.js           %}
 {% include work/prefetchAdjacentHumdrumScores.js %}
+{% include work/setWorkPageErrorMessage.js       %}
 {% include work/storeHumdrumOnPage.js            %}
 {% include work/toggleMusicIncipit.js            %}
 

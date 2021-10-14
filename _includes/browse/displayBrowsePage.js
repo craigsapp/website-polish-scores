@@ -15,6 +15,13 @@
 {% endcomment %}
 
 POPC2.prototype.displayBrowsePage = function () {
+	let pageElement = this.ShowPage("browse");
+
+	// Initial page load sets the cursor to "progress" (mostly for the
+	// workpage load which will take longer than the browse page).
+	// Remove the waiting class to stop the cursor spinning:
+	document.body.classList.remove("waiting");
+
 	this.DebugMessageFunction();
 	this.hideWorkNavigator();
 	var telement = document.querySelector("#template-browse");
@@ -30,7 +37,6 @@ POPC2.prototype.displayBrowsePage = function () {
 	var browseTemplate = Handlebars.compile(tsource);
 	var output = browseTemplate();
 
-	let pageElement = this.ShowPage("browse");
 	if (pageElement) {
 		pageElement.innerHTML = output;
 	}

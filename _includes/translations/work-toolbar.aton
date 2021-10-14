@@ -21,18 +21,6 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
-@TAG:		incipit_tool_compress
-@EN:		show only first system of music
-@PL:		pokaż tylko pierwszy system muzyki
-@@END:		ENTRY
-
-@@BEGIN:	ENTRY
-@TAG:		incipit_tool_expand
-@EN:		show full score
-@PL:		pokaż całą partyturę muzyczną
-@@END:		ENTRY
-
-@@BEGIN:	ENTRY
 @TAG:		play_tool_play
 @EN:		play music
 @PL:		graj muzykę
@@ -56,6 +44,29 @@
 @PL:		zmniejsz notację muzyczną
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		worklink_tool
+@EN:		copy link to this page
+@PL:		skopiuj link do tej strony
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		incipit_tool_compress
+@EN:		show only first system of music
+@PL:		pokaż tylko pierwszy system muzyki
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		incipit_tool_expand
+@EN:		show full score
+@PL:		pokaż całą partyturę muzyczną
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		random_tool
+@EN:		display a random score
+@PL:		wyświetl losową partyturę muzyczną
+@@END:		ENTRY
 
 
 

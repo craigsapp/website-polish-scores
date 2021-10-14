@@ -40,10 +40,15 @@ POPC2.prototype.downloadLyricsIndex = function () {
 					}
 				}
 			}
-			if (that.VARS.SEARCH.lyrics) {
-				// Do an initial browse search, but only if it includes lyrics.
-				// If no lyrics involved, then the search was already done.
-				that.displayBrowsePage();
+			if (that.VARS.WORK_ID) {
+				// Display of work page handled by downloadComposerIndex().
+				// that.displayWorkPage();
+			} else {
+				if (that.VARS.SEARCH.lyrics) {
+					// Do an initial browse search, but only if it includes lyrics.
+					// If no lyrics involved, then the search was already done.
+					that.displayBrowsePage();
+				}
 			}
 			that.DebugMessage("DOWNLOADED LYRICS INDEX FROM " + url, "hotpink");
 		})

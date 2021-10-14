@@ -42,7 +42,7 @@ POPC2.prototype.displayWorkInfo = function(id) {
 		}
 	}
 	if (!entry) {
-		console.error("DID NOT FIND ID", targetid, "IN SCORE LIST");
+		this.setWorkPageErrorMessage("Did not find score for ID: " + targetid);
 		return;
 	}
 	let base = document.querySelector("#work-header");

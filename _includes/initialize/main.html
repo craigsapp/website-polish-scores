@@ -28,6 +28,11 @@ popc2.DebugMessage("Created popc2 interface", "chartreuse");
 {% include initialize/setInitialSearch.js            %}
 
 popc2.VARS.CGI = popc2.getCgiParameters();
+
+if (popc2.VARS.CGI.id) {
+	popc2.VARS.WORK_ID = popc2.VARS.CGI.id;
+}
+
 popc2.setInitialSearch();
 
 

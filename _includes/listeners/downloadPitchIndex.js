@@ -44,10 +44,15 @@ POPC2.prototype.downloadPitchIndex = function () {
 					}
 				}
 			}
-			if (that.VARS.SEARCH.pitch) {
-				// Do an initial browse search, but only if it includes pitch.
-				// If no pitch involved, then the search was already done.
-				that.displayBrowsePage();
+			if (that.VARS.WORK_ID) {
+				// Display of work page handled by downloadComposerIndex().
+				// that.displayWorkPage();
+			} else {
+				if (that.VARS.SEARCH.pitch) {
+					// Do an initial browse search, but only if it includes pitch.
+					// If no pitch involved, then the search was already done.
+					that.displayBrowsePage();
+				}
 			}
 			that.DebugMessage("DOWNLOADED PITCH INDEX FROM " + url, "magenta");
 		})

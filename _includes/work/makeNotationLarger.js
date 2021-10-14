@@ -23,7 +23,7 @@ POPC2.prototype.makeNotationLarger = function () {
 			value = 200;
 		}
 		this.VARS.HNP_OPTIONS.scale = value;
-		
+
 	} else {
 		this.VARS.HNP_OPTIONS.scale = 39;
 	}

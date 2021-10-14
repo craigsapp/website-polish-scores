@@ -38,7 +38,10 @@ document.addEventListener("DOMContentLoaded", function() {
 			popc2.VARS.SEARCH_RESULTS = json;
 			popc2.prepareBrowseSelectOptions();
 
-			if ((!popc2.VARS.SEARCH.lyrics) && (!popc2.VARS.SEARCH.pitch)) {
+			if (popc2.VARS.WORK_ID) {
+				// Display of work page handled by downloadComposerIndex().
+				// popc2.displayWorkPage();
+			} else if ((!popc2.VARS.SEARCH.lyrics) && (!popc2.VARS.SEARCH.pitch)) {
 				// Show the search page now with any CGI-based search parameters.
 				// but only showing of lyrics are not involved.
 				popc2.displayBrowsePage();

@@ -1,8 +1,8 @@
 {% comment %}
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
-// Creation Date: Sat Oct  9 00:23:42 PDT 2021
-// Last Modified: Sat Oct  9 00:23:45 PDT 2021
+// Creation Date: Thu Oct 14 09:21:30 PDT 2021
+// Last Modified: Thu Oct 14 09:21:32 PDT 2021
 // Filename:      _includes/navigator/main.html
 // Included in:   _includes/head/main.html
 // Syntax:        HTML; Jekyll/Liquid
@@ -14,8 +14,8 @@
 {% endcomment %}
 
 
-<div id="navigator">
-	<span style="visibility:hidden;" id="work-navigator">
+<div id="top-navigator">
+	<span display="none" id="work-navigator">
 
 		{% include navigator/work-navigator.html %}
 
@@ -24,18 +24,8 @@
 		{% include navigator/work-toolbar.html %}
 
 	</span>
-	<span id="language-list"></span>
 </div>
 
-<script>
-
-{% include navigator/addLanguageButtons.js %}
-{% include navigator/listeners.js          %}
-
-popc2.addLanguageButtons("#language-list", popc2.SETTINGS.languages);
-popc2.HighlightLanguage(popc2.VARS.LANGUAGE);
-
-</script>
 
 
 

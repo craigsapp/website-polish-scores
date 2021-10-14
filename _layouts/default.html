@@ -6,9 +6,11 @@
 {% include head/main.html %}
 </head>
 <body>
-<header></header>
-<main>
+<header style="display:none">
 	{% include navigator/main.html %}
+</header>
+<main>
+	{% include navigator/language-navigator.html %}
 	<div id="content">
 	{{ content }}
 	<div class="page hidden" id="page-browse"></div>

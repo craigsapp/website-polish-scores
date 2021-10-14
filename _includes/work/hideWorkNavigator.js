@@ -18,6 +18,12 @@
 POPC2.prototype.hideWorkNavigator = function(data) {
 	this.DebugMessageFunction();
 
+	let element = document.querySelector("header");
+	if (element) {
+		element.style.display = "none";
+	}
+
+/*
 	let element = document.querySelector("#work-navigator");
 	if (element) {
 		element.style.visibility = "hidden";
@@ -34,6 +40,7 @@ POPC2.prototype.hideWorkNavigator = function(data) {
 	if (element) {
 		element.style.visibility = "hidden";
 	}
+*/
 
 };
 

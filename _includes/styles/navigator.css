@@ -12,6 +12,7 @@
 //
 {% endcomment %}
 
+#top-navigator .highlight,
 #navigator .highlight {
 	color: {{ site.selected_language_color }};
 	font-weight: bold;
@@ -37,17 +38,6 @@
 	padding-right: 0px;
 }
 
-#language-list div:hover {
-	color: #dc143c;
-}
-
-#next-work:hover,
-#previous-work:hover,
-.worknav-tool:hover,
-#to-browse-page:hover {
-	color: #dc143c;
-}
-
 #language-list div {
 	background-color: transparent;
 	border-radius: 21px;
@@ -66,6 +56,31 @@
 	transition: .3s;
 	width: 50px;
 	-webkit-text-size-adjust: 100%;
+}
+
+#language-list div:hover {
+	color: #dc143c;
+}
+
+#next-work:hover,
+#previous-work:hover,
+.worknav-tool:hover,
+#to-browse-page:hover {
+	color: #dc143c;
+}
+
+header {
+	padding-top: 5px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+	padding-right: 5px;
+	background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url({{ site.background_image }}) no-repeat center fixed;
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
 }
 
 

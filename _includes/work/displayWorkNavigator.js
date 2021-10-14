@@ -18,7 +18,12 @@
 POPC2.prototype.displayWorkNavigator = function() {
 	this.DebugMessageFunction();
 
-	let element = document.querySelector("#work-navigator");
+	let element = document.querySelector("header");
+	if (element) {
+		element.style.display = "block";
+	}
+
+	element = document.querySelector("#work-navigator");
 	if (element) {
 		element.style.visibility = "visible";
 	}

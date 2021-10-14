@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Last Modified: Thu Oct 14 14:25:29 PDT 2021
 // Filename:      _includes/browse/displayBrowsePage.js
 // Used by:
 // Included in:   _includes/browse/main.html
@@ -41,6 +41,7 @@ POPC2.prototype.displayBrowsePage = function () {
 		this.showBrowseLess();
 	}
 
+	this.ApplyElementTranslations();
 	this.buildBrowseFilters();
 	this.doBrowseSearch();
 };

@@ -1,3 +1,15 @@
+
+@
+@ hover text for EU flag
+@
+
+@@BEGIN:	ENTRY
+@TAG:		eu_funds
+@EN:		Funded by the European Union
+@PL:		Finansowane przez Unię Europejską
+@@END:		ENTRY
+
+
 @
 @ Genre drop-down list on browse page:
 @

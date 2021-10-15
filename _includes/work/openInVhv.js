@@ -22,7 +22,6 @@ POPC2.prototype.openInVhv = function () {
 	}
 	url = "https://verovio.humdrum.org?file=";
 	url += encodeURIComponent(`${this.SETTINGS.data_addr}/${id}.krn`);
-console.log("URL:", url);
 	window.open(url, "_blank");
 
 };

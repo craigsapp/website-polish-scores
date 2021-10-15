@@ -12,15 +12,17 @@
 <main>
 	{% include navigator/language-navigator.html %}
 	<div id="content">
-	{% include navigator/euflag.html %}
-	{{ content }}
-	<div class="page hidden" id="page-browse"></div>
-	<div class="page hidden" id="page-work">
-		{% include work/work.html %}
+		{% include navigator/euflag.html %}
+		{{ content }}
+		<div class="page hidden" id="page-browse"></div>
+		<div class="page hidden" id="page-work">
+			{% include work/work.html %}
+		</div>
+		<div class="page hidden" id="page-analysis"></div>
 	</div>
-	<div class="page hidden" id="page-analysis"></div>
-	</div>
+<footer>
+	{% include footer/main.html %}
+</footer>
 </main>
-<footer></footer>
 </body>
 </html>

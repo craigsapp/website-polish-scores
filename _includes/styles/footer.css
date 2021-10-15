@@ -1,0 +1,44 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Thu Oct 14 21:35:05 PDT 2021
+// Last Modified: Thu Oct 14 21:35:07 PDT 2021
+// Filename:      _includes/styles/footer.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles related to the footer.
+//
+{% endcomment %}
+
+footer {
+	display: block;
+}
+
+footer center {
+	font-size: 0; /* needed to avoid gap between image spans */
+}
+
+span.img-background {
+  	background-image: linear-gradient(to top, 
+		#706a6040,
+		#706a60ff,
+		#706a60ff,
+		#706a50ff,
+		#706a6040);
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	margin: 0;
+	padding-bottom: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+}
+
+
+

@@ -68,5 +68,9 @@
 @PL:		wyświetl losową partyturę muzyczną
 @@END:		ENTRY
 
-
+@@BEGIN:	ENTRY
+@TAG:		vhv_tool
+@EN:		edit in Verovio Humdrum Viewer
+@PL:		edytuj w Verovio Humdrum Viewer
+@@END:		ENTRY
 

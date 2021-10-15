@@ -83,10 +83,56 @@ header {
 	width: 100%;
 }
 
-
 #euflag {
 	width: 50px;
 	position: relative;
 	top: -55px;
 }
+
+#vhv-button {
+	background: white;
+	color: black !important;
+	border-radius: 5px;
+	display: block;
+	height: 30px !important;
+	margin-left: 10px;
+	margin-top: -5px;
+	padding: 0;
+	position: relative;
+	top: 0px;
+	width: 30px !important;
+	mix-blend-mode: screen;
+	will-change: opacity;
+}
+
+#v1, #h, #v2 {
+	font-weight: bold !important;
+	color: black !important;
+	display: inline-block;
+	position: relative;
+	left: 5px;
+}
+
+#v1 {
+	top: -24px;
+	font-size: 12px !important;
+}
+
+#h {
+	font-size: 30px !important;
+	top: -57px;
+	left: -3px;
+}
+
+#v2 {
+	font-size: 12px !important;
+	top: -105px;
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+}
+
+
 

@@ -112,6 +112,18 @@ function POPC2() {
 		spacingSystem: 20
 	};
 
+	//////////////////////////////
+	//
+	// Other interface state variables:
+	//
+
+	// PROBLEM_TEXT: text to show in problem markers in verovio notation.
+	// The options are null (or ""), and "&#xf071;", which is the
+	// FontAwsome caution icon.
+	this.VARS.PROBLEM_TEXT = false;
+
+	// SVG_OBSERVER: Observer watching SVG image to add problem/sic markers.
+	this.VARS.SVG_OBSERVER = null;
 
 	//////////////////////////////
 	//

@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 20:03:37 PDT 2021
 // Last Modified: Wed Oct  6 20:03:40 PDT 2021
-// Filename:      _includes/listeners/click.js
+// Filename:      _includes/listeners/clickEventListener.js
 // Used by:
 // Included in:
 // Syntax:        ECMAScript 6

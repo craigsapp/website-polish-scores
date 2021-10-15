@@ -18,48 +18,65 @@
 POPC2.prototype.observeSvgContent = function () {
 	this.DebugMessageFunction();
 
-   var content = document.querySelector("#notation");
+ 	let content = document.querySelector("#notation");
 	if (!content) {
 		console.error("Error: Cannot find #notation element");
 	}
-   var i;
-   var s;
-   var callback = function(mList, observer) {
-      var svg = content.querySelector("svg");
-      if (svg) {
-         // Mark encoding problem messages with red caution symbol.
-         spans = svg.querySelectorAll("g.dir.problem tspan.rend tspan.text tspan.text");
-         for (i=0; i<spans.length; i++) {
-            s = spans[i];
-            if (s.innerHTML === "P") {
-               // s.innerHTML = "&#xf071;";
-               s.innerHTML = "";
-               s.classList.add("p");
-            }
-         }
+	let i;
+	let s;
+	let that = this;
 
-         // Mark encoding problem messages with green caution symbol.
-         spans = svg.querySelectorAll("g.dir.sic tspan.rend tspan.text tspan.text");
-         for (i=0; i<spans.length; i++) {
-            s = spans[i];
-            if (s.innerHTML === "S") {
-               s.innerHTML = "&#xf071;";
-               s.classList.add("s");
-            }
-         }
-      }
+	let callback = function(mList, observer) {
+		let svg = content.querySelector("svg");
+		if (!svg) {
+			return;
+		}
 
-      for (var mu in mList) {
-         if (svg && svg.isSameNode(mList[mu].target)) {
-            // remove busy class if svg changed
-            // document.body.classList.remove("busy");
-         }
-      }
-   }
-   var observer = new MutationObserver(callback);
+		// Mark encoding problem messages with red caution symbol.
+		spans = svg.querySelectorAll("g.dir.problem tspan.rend tspan.text tspan.text");
+		for (i=0; i<spans.length; i++) {
+			s = spans[i];
+			if (s.innerHTML === "P") {
+					s.innerHTML = "&#xf071";
+					s.classList.add("p");
+			}
+			if (!that.VARS.PROBLEM_TEXT) {
+				s.style.opacity = 0;
+			} else {
+				s.style.opacity = 1;
+			}
+		}
 
-   observer.observe(content, { childList: true, subtree: true });
-}
+		// Mark encoding problem messages with green caution symbol.
+		spans = svg.querySelectorAll("g.dir.sic tspan.rend tspan.text tspan.text");
+		for (i=0; i<spans.length; i++) {
+			s = spans[i];
+			if (s.innerHTML === "S") {
+				s.innerHTML = "&#xf071;";
+				s.classList.add("s");
+			}
+		}
+
+		for (var mu in mList) {
+			if (svg && svg.isSameNode(mList[mu].target)) {
+				// Remove busy class if svg changed
+				// document.body.classList.remove("busy");
+			}
+		}
+	};
+
+	if (this.VARS.SVG_OBSERVER) {
+		this.VARS.SVG_OBSERVER.disconnect();
+		this.VARS.SVG_OBSERVER = null;
+	}
+	this.VARS.SVG_OBSERVER = new MutationObserver(callback);
+	this.VARS.SVG_OBSERVER.observe(content,
+		{
+			childList: true,
+			subtree: true,
+			attributes: true
+		});
+};
 
 Object.defineProperty(POPC2.prototype.observeSvgContent, "name", { value: "observeSvgContent" });
 

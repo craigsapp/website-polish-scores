@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Last Modified: Thu Oct 14 23:59:29 PDT 2021
 // Filename:      _includes/listeners/main.html
 // Included in:   _includes/head/main.html
 // Syntax:        HTML; Jekyll/Liquid
@@ -14,16 +14,24 @@
 {% endcomment %}
 
 <script>
+// Code related to event handlers:
 
-
-{% include listeners/click.js                      %}
 {% include listeners/downloadComposerIndex.js      %}
 {% include listeners/downloadLyricsIndex.js        %}
 {% include listeners/downloadPitchIndex.js         %}
-{% include listeners/downloadScoreIndex.js         %}
 {% include listeners/getBrowseWorkId.js            %}
 {% include listeners/isInBrowseTable.js            %}
 {% include listeners/prepareBrowseSelectOptions.js %}
+{% include listeners/processKeyboardCommand.js     %}
+
+</script>
+
+<script>
+// Actual event listeners:
+
+{% include listeners/clickEventListener.js         %}
+{% include listeners/downloadScoreIndex.js         %}
+{% include listeners/keydownEventListener.js       %}
 
 </script>
 

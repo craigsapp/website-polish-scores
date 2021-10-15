@@ -18,12 +18,19 @@ POPC2.prototype.FlipName = function (name) {
 	let matches = name.match(/^\s*([^,]+)\s*,\s*(.+)\s*$/);
 	if (!matches) {
 		// Translate Anonymus/Anonim/Anonymous to English or Polish:
+		let anon = false;
 		if (name.toLowerCase() === "anonim") {
 			name = this.getTranslation("Anonim");
+			anon = true;
 		} else if (name.toLowerCase() === "anonymus") {
 			name = this.getTranslation("Anonim");
+			anon = true;
 		} else if (name.toLowerCase() === "anonymous") {
 			name = this.getTranslation("Anonim");
+			anon = true;
+		}
+		if (anon) {
+			name = `<span class="trans" data-trans="Anonymus">${name}</span>`;
 		}
 		return name;
 	}

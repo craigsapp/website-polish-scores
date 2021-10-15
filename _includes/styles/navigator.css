@@ -89,6 +89,10 @@ header {
 	top: -60px;
 }
 
+#vhv-button:hover {
+	background: #cc0000ff;
+}
+
 #vhv-button {
 	background: white;
 	color: black !important;
@@ -102,7 +106,6 @@ header {
 	top: 0px;
 	width: 30px !important;
 	mix-blend-mode: screen;
-	will-change: opacity;
 }
 
 #v1, #h, #v2 {

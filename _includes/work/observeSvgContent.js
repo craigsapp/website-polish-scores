@@ -32,7 +32,8 @@ POPC2.prototype.observeSvgContent = function () {
          for (i=0; i<spans.length; i++) {
             s = spans[i];
             if (s.innerHTML === "P") {
-               s.innerHTML = "&#xf071;";
+               // s.innerHTML = "&#xf071;";
+               s.innerHTML = "";
                s.classList.add("p");
             }
          }

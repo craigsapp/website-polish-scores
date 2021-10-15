@@ -1,0 +1,9 @@
+
+svg g.dir.problem tspan.rend tspan.text tspan.text.p {
+    font-family: "FontAwesome";
+}
+
+svg g.dir.sic tspan.rend tspan.text tspan.text.s {
+  font-family: "FontAwesome";
+}
+

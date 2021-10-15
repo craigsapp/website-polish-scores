@@ -27,7 +27,15 @@
 	</div>
 </div>
 
-<script type="text/x-html" id="humdrum"></script>
+<div id="notation">
+	<script type="text/x-html" id="humdrum"></script>
+</div>
+
+<script>
+	// Script needed to adjust SVG output in #notation.
+	{% include work/observeSvgContent.js %}
+	popc2.observeSvgContent();
+</script>
 
 
 

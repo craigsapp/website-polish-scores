@@ -1,0 +1,32 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct 16 15:59:10 PDT 2021
+// Last Modified: Sat Oct 16 15:59:12 PDT 2021
+// Filename:      _includes/language-navigator/main.html
+// Included in:   _layouts/default.html
+// Syntax:        HTML; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Resources related to the language navigator near
+//                the top of the page.
+//
+{% endcomment %}
+
+
+<div id="language-navigator">
+	<span id="language-list"></span>
+</div>
+
+<script>
+
+{% include language-navigator/addLanguageButtons.js %}
+{% include language-navigator/listeners.js          %}
+
+popc2.addLanguageButtons("#language-list", popc2.SETTINGS.languages);
+popc2.HighlightLanguage(popc2.VARS.LANGUAGE);
+
+</script>
+
+
+

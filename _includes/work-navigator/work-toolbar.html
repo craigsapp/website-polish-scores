@@ -1,19 +1,31 @@
 {% comment %}
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
-// Creation Date: Wed Oct 13 11:18:25 PDT 2021
-// Last Modified: Wed Oct 13 11:18:28 PDT 2021
-// Filename:      _includes/navigator/work-toolbar.html
+// Creation Date: Wed Oct 13 11:13:01 PDT 2021
+// Last Modified: Wed Oct 13 11:13:04 PDT 2021
+// Filename:      _includes/navigator/work-navigator.html
 // Included in:   _includes/navigator/main.html
 // Syntax:        HTML
 // vim:           ts=3:nowrap
 //
-// Description:   List of tool buttons for doing things on the work page.
+// Description:   List of buttons for moving to the next/previous work
+//                in SEARCH_RESULTS as well as a button to return to
+//                the browse page.
 //
 {% endcomment %}
 
 
+<div id="previous-work" class="trans worknav-tool fas fa-arrow-circle-left"
+		data-transatt="title:previous_work" onclick="popc2.displayPreviousWork();">
+</div>
 
+<div id="to-browse-page" class="trans worknav-tool fas fa-arrow-circle-up"
+		data-transatt="title:browse_page" onclick="popc2.displayBrowsePage();">
+</div>
+
+<div id="next-work" class="trans worknav-tool fas fa-arrow-circle-right"
+		data-transatt="title:next_work" onclick="popc2.displayNextWork();">
+</div>
 
 <div id="play-button" class="trans worknav-tool fas fa-play"
 		data-transatt="title:play_tool_play">
@@ -43,14 +55,11 @@
 		data-transatt="title:download_tool" onclick="popc2.toggleDownloadDisplay();">
 </div>
 
-<div id="vhv-button" class="trans worknav-tool"
+<div id="vhv-button" class="size-225 trans worknav-tool"
 		data-transatt="title:vhv_tool" onclick="popc2.openInVhv();">
-	<span id="v1">V</span>
-	<span id="h">H</span>
-	<span id="v2">V</span>
+	<span class="v1-letter size-225">V</span>
+	<span class="h-letter size-225">H</span>
+	<span class="v2-letter size-225">V</span>
 </div>
-
-
-
 
 

@@ -1,0 +1,67 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct  9 00:48:08 PDT 2021
+// Last Modified: Sat Oct 16 16:28:15 PDT 2021
+// Filename:      _includes/styles/vhv-button.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Stylings for VHV button in work navigator.
+//
+{% endcomment %}
+
+#vhv-button.size-225:hover {
+	background: #cc0000ff;
+}
+
+#vhv-button.size-225 {
+	background: white;
+	border-radius: 5px;
+	color: black !important;
+	display: inline-block;
+	height: 36px !important;
+	mix-blend-mode: screen;
+	padding: 0;
+	width: 36px !important;
+	position: relative;
+	top: 0;
+}
+
+#vhv-button .v1-letter.size-225,
+#vhv-button .h-letter.size-225,
+#vhv-button .v2-letter.size-225 {
+	color: black !important;
+	display: inline-block !important;
+	font-weight: bold !important;
+	position: relative;
+}
+
+#vhv-button .v1-letter.size-225 {
+	font-size: 14px !important;
+	left: 13px;
+	top: -27px;
+}
+
+#vhv-button .v2-letter.size-225 {
+	font-size: 14px !important;
+	left: 13px;
+	position: relative;
+	top: -116px;
+	transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+}
+
+#vhv-button .h-letter.size-225 {
+	font-size: 36px !important;
+	left: 3px;
+	position: relative;
+	top: -63px;
+}
+
+
+

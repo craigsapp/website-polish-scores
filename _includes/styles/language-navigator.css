@@ -2,23 +2,26 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat Oct  9 00:48:08 PDT 2021
-// Last Modified: Sat Oct  9 00:48:10 PDT 2021
-// Filename:      _includes/styles/navigator.css
+// Last Modified: Sat Oct 16 16:00:31 PDT 2021
+// Filename:      _includes/styles/language-navigator.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS; Jekyll/Liquid
 // vim:           ts=3:nowrap
 //
-// Description:   Styles for language/work navigator.
+// Description:   Styles for language navigator.
 //
 {% endcomment %}
 
-#top-navigator .highlight,
-#navigator .highlight {
-	color: {{ site.selected_language_color }};
+#language-navigator {
+	text-shadow: 0px 0px 1px #999999;
+}
+
+#language-navigator .button-language.highlight {
+	color: {{ site.selected_language_color }} !important;
 	font-weight: bold;
 }
 
-#navigator {
+#language-navigator {
 	box-sizing: unset;
 	cursor: auto;
 	display: flex;
@@ -62,13 +65,6 @@
 	color: #dc143c;
 }
 
-#next-work:hover,
-#previous-work:hover,
-.worknav-tool:hover,
-#to-browse-page:hover {
-	color: #dc143c;
-}
-
 header {
 	background-size: cover;
 	background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url({{ site.background_image }}) no-repeat center fixed;
@@ -88,54 +84,4 @@ header {
 	position: relative;
 	top: -60px;
 }
-
-#vhv-button:hover {
-	background: #cc0000ff;
-}
-
-#vhv-button {
-	background: white;
-	color: black !important;
-	border-radius: 5px;
-	display: block;
-	height: 30px !important;
-	margin-left: 10px;
-	margin-top: -5px;
-	padding: 0;
-	position: relative;
-	top: 0px;
-	width: 30px !important;
-	mix-blend-mode: screen;
-}
-
-#v1, #h, #v2 {
-	font-weight: bold !important;
-	color: black !important;
-	display: inline-block;
-	position: relative;
-	left: 5px;
-}
-
-#v1 {
-	top: -24px;
-	font-size: 12px !important;
-}
-
-#h {
-	font-size: 30px !important;
-	top: -57px;
-	left: -3px;
-}
-
-#v2 {
-	font-size: 12px !important;
-	top: -104px;
-	transform: rotate(180deg);
-	-webkit-transform: rotate(180deg);
-	-moz-transform: rotate(180deg);
-	-ms-transform: rotate(180deg);
-	-o-transform: rotate(180deg);
-}
-
-
 

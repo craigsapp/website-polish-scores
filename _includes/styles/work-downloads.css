@@ -1,0 +1,40 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct 16 13:25:46 PDT 2021
+// Last Modified: Sat Oct 16 13:25:49 PDT 2021
+// Filename:      _includes/styles/work-downloads.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for the download section of the work page.
+//
+{% endcomment %}
+
+#subpage-downloads {
+	/* background: #f0f0f0; */
+	height: 110px; 
+	margin-top: -110px; 
+	width: 100%; 
+	justify-content: space-around;
+	align-items: center;
+	padding: 0px;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.data-download {
+	font-size: 24px;
+	padding: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.data-download:hover {
+	color: #dc143c;
+}
+
+
+

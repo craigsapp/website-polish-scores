@@ -1,0 +1,36 @@
+@
+@ Download list
+@
+
+@@BEGIN:	ENTRY
+@TAG:		download_humdrum
+@EN:		download Humdrum digital score
+@PL:		pobierz cyfrowy wynik Humdrum
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		download_mei
+@EN:		download MEI digital score
+@PL:		pobierz cyfrowy wynik MEI
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		download_musicxml
+@EN:		download MusicXML digital score
+@PL:		pobierz cyfrowy wynik MusicXML
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		download_midi
+@EN:		download MIDI file
+@PL:		pobierz plik MIDI
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		download_humdrum
+@EN:		download PDF file
+@PL:		pobierz plik PDF
+@@END:		ENTRY
+
+
+

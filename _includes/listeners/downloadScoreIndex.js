@@ -16,6 +16,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 	let url = popc2.SETTINGS.score_index;
 	popc2.DebugMessage("DOWNLOADING SCORE INDEX FROM " + url, "pink");
+
 	fetch(url)
 		.then(res => res.json())
 		.then(json => {
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		})
 		.catch(err => { console.error(err); });
+
 });
 
 

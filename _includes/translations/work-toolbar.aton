@@ -74,3 +74,9 @@
 @PL:		edytuj w Verovio Humdrum Viewer
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		download_tool
+@EN:		toggle display of downloads
+@PL:		przełącz pobieranie pobranych plików
+@@END:		ENTRY
+

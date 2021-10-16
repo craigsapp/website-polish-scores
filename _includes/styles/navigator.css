@@ -70,17 +70,17 @@
 }
 
 header {
-	padding-top: 5px;
+	background-size: cover;
+	background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url({{ site.background_image }}) no-repeat center fixed;
+	left: 0;
 	padding-bottom: 10px;
 	padding-left: 0px;
 	padding-right: 5px;
-	background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url({{ site.background_image }}) no-repeat center fixed;
-	background-size: cover;
+	padding-top: 5px;
 	position: fixed;
 	top: 0;
-	left: 0;
-	z-index: 999;
 	width: 100%;
+	z-index: 999;
 }
 
 #euflag {

@@ -24,9 +24,7 @@ POPC2.prototype.CountNotesInIndex = function (index) {
 	let count = 0;
 	for (let i=0; i<index.length; i++) {
 		if (index[i].notecount) {
-			if (index[i].notecount.match(/^\s*\d/)) {
-				count += parseInt(index[i].notecount);
-			}
+			count += index[i].notecount;
 		}
 	}
 	return count;

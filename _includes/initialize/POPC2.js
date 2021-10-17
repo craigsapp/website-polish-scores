@@ -66,6 +66,15 @@ function POPC2() {
 	// updating of search drop-down menus when searching.
 	this.VARS.SEARCH_FREEZE = false;
 
+	// SEARCH_SORT_TYPE -- what sort of sorting to apply to search results.
+	// Allowed values are:
+	//     null:       Do not sort (uses cenid order).
+	//    "notecount": Sort by the number of notes in the score.
+	this.VARS.SEARCH_SORT_TYPE = null;
+
+	// SEARCH_SORT_REVERSE -- sort in normal or reversed order.
+	this.VARS.SEARCH_SORT_REVERSE = false;
+
 
 	//////////////////////////////
 	//

@@ -58,10 +58,11 @@ POPC2.prototype.doBrowseSearch = function (index) {
 	}
 	this.buildBrowseFilters(results);
 
-	this.VARS.SEARCH_RESULTS = results;
-
 	this.showResultsCount(results.length);
 
+	results = this.sortIndex(results);
+
+	this.VARS.SEARCH_RESULTS = results;
 	this.VARS.SEARCH.count = results.length;
 	this.VARS.SEARCH.lang  = this.VARS.LANGUAGE;
 	this.storeSearchInfo(this.VARS.SEARCH);

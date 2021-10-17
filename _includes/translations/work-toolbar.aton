@@ -4,20 +4,20 @@
 
 @@BEGIN:	ENTRY
 @TAG:		previous_work
-@EN:		previous work in list (←)
-@PL:		poprzednia (←)
+@EN:		previous work in list (shift-←)
+@PL:		poprzednia (shift-←)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		next_work
-@EN:		next work in list (→)
-@PL:		następna (→)
+@EN:		next work in list (shift-→)
+@PL:		następna (shift-→)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		browse_page
-@EN:		go to browse page (↑)
-@PL:		przejdź do strony przeglądania (↑)
+@EN:		go to browse page (b)
+@PL:		przejdź do strony przeglądania (b)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
@@ -64,14 +64,14 @@
 
 @@BEGIN:	ENTRY
 @TAG:		fullwidth_tool_expand
-@EN:		expand notation to full screen
-@PL:		Rozszerz notację muzyczną do pełnego ekranu
+@EN:		expand notation to full screen (f)
+@PL:		Rozszerz notację muzyczną do pełnego ekranu (f)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		fullwidth_tool_compress
-@EN:		leave full-screen mode
-@PL:		opuść tryb pełnoekranowy
+@EN:		leave full-screen mode (f)
+@PL:		opuść tryb pełnoekranowy (f)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY

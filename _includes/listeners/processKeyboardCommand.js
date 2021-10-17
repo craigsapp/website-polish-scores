@@ -53,6 +53,14 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			}
 			break;
 
+		case "f":
+			if (popc2.IsWorkPage()) {
+				// Toggle display of download menu.
+				popc2.toggleFullScreen();
+				event.preventDefault();
+			}
+			break;
+
 		case "i":
 			if (popc2.IsWorkPage()) {
 				// Toggle view of full score or first system (incipit).
@@ -66,6 +74,35 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 				// Copy URL to currently viewed score.
 				popc2.copyWorkLink();
 				event.preventDefault();
+			}
+			break;
+
+		case "n":
+			if (popc2.IsBrowsePage()) {
+				// Toggle sorting search results in notecount order.
+				if ((popc2.VARS.SEARCH_SORT_TYPE === "notecount") && (popc2.VARS.SEARCH_SORT_REVERSE == null)) {
+					popc2.VARS.SEARCH_SORT_TYPE = null;
+					popc2.VARS.SEARCH_SORT_REVERSE = false;
+				} else {
+					popc2.VARS.SEARCH_SORT_TYPE = "notecount";
+					popc2.VARS.SEARCH_SORT_REVERSE = false;
+				}
+				popc2.doBrowseSearch();
+				event.preventDefault();
+			}
+			break;
+
+		case "N":
+			if (popc2.IsBrowsePage()) {
+				// Toggle sorting search results in reverse notecount order.
+				if ((popc2.VARS.SEARCH_SORT_TYPE === "notecount") && (popc2.VARS.SEARCH_SORT_REVERSE)) {
+					popc2.VARS.SEARCH_SORT_TYPE = null;
+					popc2.VARS.SEARCH_SORT_REVERSE = false;
+				} else {
+					popc2.VARS.SEARCH_SORT_TYPE = "notecount";
+					popc2.VARS.SEARCH_SORT_REVERSE = true;
+				}
+				popc2.doBrowseSearch();
 			}
 			break;
 
@@ -128,17 +165,21 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 
 		case "ArrowRight":
 			if (popc2.IsWorkPage() && (popc2.VARS.SEARCH_RESULTS.length > 1)) {
-				// Display the next score.
-				popc2.displayNextWork();
-				event.preventDefault();
+				if (event.shiftKey) {
+					// Display the next score.
+					popc2.displayNextWork();
+					event.preventDefault();
+				}
 			}
 			break;
 
 		case "ArrowLeft":
 			if (popc2.IsWorkPage() && (popc2.VARS.SEARCH_RESULTS.length > 1)) {
-				// Display the previous score.
-				popc2.displayPreviousWork();
-				event.preventDefault();
+				if (event.shiftKey) {
+					// Display the previous score.
+					popc2.displayPreviousWork();
+					event.preventDefault();
+				}
 			}
 			break;
 
@@ -154,10 +195,12 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 
 		case "ArrowDown":
 			if (popc2.IsWorkPage()) {
-				let element = document.querySelector("footer");
-				if (element) {
-					element.scrollIntoView();
-					event.preventDefault();
+				if (event.shiftKey) {
+					let element = document.querySelector("footer");
+					if (element) {
+						element.scrollIntoView();
+						event.preventDefault();
+					}
 				}
 			}
 			break;

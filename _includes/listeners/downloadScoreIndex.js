@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
 		.then(json => {
 			popc2.DebugMessage("DOWNLOADED SCORE INDEX FROM " + url, "pink");
 			popc2.VARS.SCORE_INDEX = json;
-			// Add ._seq, ._prev and ._next parameters to browse index:
+			// Add ._cenid_seq, ._prev and ._next parameters to browse index:
 			for (let i=0; i<json.length; i++) {
-				json[i]._seq = i;
+				json[i]._cenid_seq = i;
 				if (i > 0) {
 					json[i]._prev = json[i-1];
 				}

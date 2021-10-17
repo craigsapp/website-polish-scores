@@ -2,10 +2,10 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct  8 10:27:38 PDT 2021
-// Last Modified: Sat Oct  9 12:43:01 PDT 2021
+// Last Modified: Sun Oct 17 09:10:53 PDT 2021
 // Filename:      _includes/initialize/POPC2.js
 // Used by:
-// Included in:
+// Included in:   _includes/initialize/main.html
 // Syntax:        ECMAScript 6; Jekyll/Liquid
 // vim:           ts=3:nowrap
 //
@@ -17,6 +17,7 @@ function POPC2() {
 
 	// VARS: storage for variables accessible outside of prototype functions:
 	this.VARS = {};
+
 
 	//////////////////////////////
 	//
@@ -112,6 +113,7 @@ function POPC2() {
 		spacingSystem: 20
 	};
 
+
 	//////////////////////////////
 	//
 	// Other interface state variables:
@@ -124,6 +126,11 @@ function POPC2() {
 
 	// SVG_OBSERVER: Observer watching SVG image to add problem/sic markers.
 	this.VARS.SVG_OBSERVER = null;
+
+	// INITIALIZE_WORK_PAGE: Used for the "w" keyboard shortcut to suppress
+	// displaying the work page if no work has been shown before.
+	this.VARS.INITIALIZED_WORK_PAGE = false;
+
 
 	//////////////////////////////
 	//

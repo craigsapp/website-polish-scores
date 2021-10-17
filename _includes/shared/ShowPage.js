@@ -33,6 +33,11 @@ POPC2.prototype.ShowPage = function (type) {
 			targets[i].classList.add("hidden");
 		}
 	}
+	if (type === "work") {
+		this.ActivateNotationUpdates();
+	} else {
+		this.DeactivateNotationUpdates();
+	}
 	return element;
 };
 

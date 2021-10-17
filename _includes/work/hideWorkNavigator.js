@@ -17,31 +17,10 @@
 
 POPC2.prototype.hideWorkNavigator = function(data) {
 	this.DebugMessageFunction();
-
 	let element = document.querySelector("header");
 	if (element) {
 		element.style.display = "none";
 	}
-
-/*
-	let element = document.querySelector("#work-navigator");
-	if (element) {
-		element.style.visibility = "hidden";
-	}
-	element = document.querySelector("#next-work");
-	if (element) {
-		element.style.visibility = "hidden";
-	}
-	element = document.querySelector("#previous-work");
-	if (element) {
-		element.style.visibility = "hidden";
-	}
-	element = document.querySelector("#to-browse-page");
-	if (element) {
-		element.style.visibility = "hidden";
-	}
-*/
-
 };
 
 Object.defineProperty(POPC2.prototype.hideWorkNavigator, "name", { value: "hideWorkNavigator" });

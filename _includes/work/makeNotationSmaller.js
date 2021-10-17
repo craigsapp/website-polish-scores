@@ -34,3 +34,4 @@ POPC2.prototype.makeNotationSmaller = function () {
 Object.defineProperty(POPC2.prototype.makeNotationSmaller, "name", { value: "makeNotationSmaller" });
 
 
+

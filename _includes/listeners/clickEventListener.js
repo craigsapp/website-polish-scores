@@ -27,7 +27,6 @@ document.addEventListener("click", function (event) {
 
 	let workid = popc2.getBrowseWorkId(path);
 	if (workid) {
-		console.log("WORKID = ", workid);
 		popc2.displayWorkPage(workid);
 		return;
 	}

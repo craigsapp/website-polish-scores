@@ -37,6 +37,14 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 
 	switch (event.key) {
 
+		case "b":
+			if (popc2.IsWorkPage()) {
+				// Display browse page (return from work page)
+				popc2.displayBrowsePage();
+				event.preventDefault();
+			}
+			break;
+
 		case "d":
 			if (popc2.IsWorkPage()) {
 				// Toggle display of download menu.
@@ -77,10 +85,15 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			break;
 
 		case "r":
-			if (popc2.IsWorkPage() && (popc2.VARS.SEARCH_RESULTS.length > 1)) {
-				// Display a random score.
-				popc2.displayScore("random");
-				event.preventDefault();
+			if (popc2.VARS.SEARCH_RESULTS.length > 1) {
+				if (popc2.IsWorkPage()) {
+					// Display a random score.
+					popc2.displayScore("random");
+					event.preventDefault();
+				} else {
+					popc2.displayWorkPage("random");
+					event.preventDefault();
+				}
 			}
 			break;
 
@@ -92,6 +105,15 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			}
 			break;
 
+		case "w":
+			if (popc2.IsBrowsePage()) {
+				if (popc2.VARS.WORK_ID) {
+					// Display the work page (with the last viewed score)
+					popc2.displayWorkPage();
+					event.preventDefault();
+				}
+			}
+			break;
 
 		case "0":
 			// Reset the notation scale to the default value.
@@ -101,6 +123,7 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			if (popc2.IsWorkPage()) {
 				popc2.displayScore();
 			}
+			// Do not call event.preventDefault.
 			break;
 
 		case "ArrowRight":
@@ -124,9 +147,16 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 				if (event.shiftKey) {
 					// Go to the top of the page.
 					window.scrollTo(0, 0);
-				} else {
-					// Go back to the browse page.
-					popc2.displayBrowsePage();
+					event.preventDefault();
+				}
+			}
+			break;
+
+		case "ArrowDown":
+			if (popc2.IsWorkPage()) {
+				let element = document.querySelector("footer");
+				if (element) {
+					element.scrollIntoView();
 					event.preventDefault();
 				}
 			}
@@ -157,7 +187,9 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			break;
 
 	}
-
 };
+
+Object.defineProperty(POPC2.prototype.processKeyboardCommand, "name", { value: "processKeyboardCommand" });
+
 
 

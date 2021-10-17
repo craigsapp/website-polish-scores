@@ -15,14 +15,12 @@
 
 POPC2.prototype.IsBrowsePage = function () {
 	this.DebugMessageFunction();
-
 	let element = document.querySelector("#page-browse");
 	if (element && element.classList.contains("hidden")) {
 		return false;
 	} else {
 		return true;
 	}
-
 };
 
 Object.defineProperty(POPC2.prototype.IsBrowsePage, "name", { value: "IsBrowsePage" });

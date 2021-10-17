@@ -64,3 +64,4 @@ POPC2.prototype.showDataInNewTab = function (data_type) {
 Object.defineProperty(POPC2.prototype.showDataInNewTab, "name", { value: "showDataInNewTab" });
 
 
+

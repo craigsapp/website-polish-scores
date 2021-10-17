@@ -20,7 +20,7 @@
 <div style="display:none;" id="subpage-downloads">
 
 	<div class="data-download trans" id="data-humdrum"
-			onclick="popc2.downloadData('humdrum')"
+			onclick="popc2.downloadData(event, 'humdrum')"
 			data-transatt="title:download_humdrum">
 		<i class="fas fa-file-download"></i>
 		<i data-transatt="title:view_humdrum" class="trans fas fa-eye"
@@ -30,7 +30,7 @@
 	</div>
 
 	<div class="data-download trans" id="data-mei"
-			onclick="popc2.downloadData('mei')"
+			onclick="popc2.downloadData(event, 'mei')"
 			data-transatt="title:download_mei">
 		<i class="fas fa-file-download"></i>
 		<i data-transatt="title:view_mei" class="trans fas fa-eye"
@@ -40,7 +40,7 @@
 	</div>
 
 	<div class="data-download trans" id="data-midi"
-			onclick="popc2.downloadData('mid')"
+			onclick="popc2.downloadData(event, 'mid')"
 			data-transatt="title:download_midi">
 		<i class="fas fa-file-download"></i>
 		<br/>
@@ -48,7 +48,7 @@
 	</div>
 
 	<div class="data-download trans" id="data-musicxml"
-			onclick="popc2.downloadData('musicxml')"
+			onclick="popc2.downloadData(event, 'musicxml')"
 			data-transatt="title:download_musicxml">
 		<i class="fas fa-file-download"></i>
 		<i data-transatt="title:view_musicxml" class="trans fas fa-eye"
@@ -57,9 +57,8 @@
 		MusicXML
 	</div>
 
-	<div class="data-download trans" id="data-pdf"
-			style="color:#dddddd"
-			data-onclick="popc2.downloadData('pdf')"
+	<div class="disabled data-download trans" id="data-pdf"
+			onclick="popc2.downloadData(event, 'pdf')"
 			data-transatt="title:download_pdf">
 		<i class="fas fa-file-download"></i>
 		<br/>

@@ -13,8 +13,24 @@
 //
 {% endcomment %}
 
-POPC2.prototype.downloadData = function (data_type) {
+POPC2.prototype.downloadData = function (event, data_type) {
 	this.DebugMessageFunction(data_type);
+	console.log("EVENT");
+
+	if (!event) {
+		console.error("Error: missing event in parameters to downloadData");
+		return;
+	}
+	let target = event.target;
+	if (target.classList.contains("disabled")) {
+		// Do not generate data if download element is disabled.
+		return;
+	}
+	let parent = target.parentNode;
+	if (parent.classList.contains("disabled")) {
+		// Do not generate data if download element is disabled.
+		return;
+	}
 
 	let pos = this.GetIndexInSearchResults(this.VARS.WORK_ID, this.VARS.SCORE_INDEX);
 	let filebase = this.VARS.SCORE_INDEX[pos].fileid;

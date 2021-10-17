@@ -25,12 +25,12 @@ POPC2.prototype.toggleDownloadDisplay = function () {
 	if (showing) {
 		element.style.display = "none";
 		if (icon) {
-			icon.classList.remove("highlight");
+			icon.classList.remove("selected");
 		}
 	} else {
 		element.style.display = "flex";
 		if (icon) {
-			icon.classList.add("highlight");
+			icon.classList.add("selected");
 		}
 		// scroll to the download box if it is not on the page.
 

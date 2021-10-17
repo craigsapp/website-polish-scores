@@ -40,5 +40,14 @@
 	color: #dc143c;
 }
 
+#subpage-downloads .disabled {
+	color: #dddddd;
+}
+
+#subpage-downloads .disabled:hover,
+#subpage-downloads .disabled i:hover {
+	color: #dddddd !important;
+	cursor: auto;
+}
 
 

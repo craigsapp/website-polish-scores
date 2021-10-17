@@ -20,12 +20,11 @@
 #previous-work:hover,
 .worknav-tool:hover,
 #to-browse-page:hover {
-	color: #dc143c;
+	color: #dc143c !important;
 }
 
-#work-navigator .highlight {
+#work-navigator .selected {
 	color: {{ site.selected_language_color }};
-	font-weight: bold;
 }
 
 #work-navigator {
@@ -47,5 +46,12 @@
 	cursor: pointer;
 }
 
+#incipit-button {
+	/* Expand/compress icons are not the same width, so
+	 * put them in a container with a constant width
+    * (the size of the largest at 2.25rem).
+	 */
+	width:36px;
+}
 
 

@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Tue Oct 12 20:50:31 PDT 2021
-// Last Modified: Tue Oct 12 20:50:34 PDT 2021
+// Last Modified: Sat Oct 16 17:05:46 PDT 2021
 // Filename:      _includes/browse/toggleBrowseStyle.js
 // Used by:       _includes/handlebars/template-browse.html
 // Included in:   _includes/browse/main.html

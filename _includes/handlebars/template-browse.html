@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct  8 23:22:31 PDT 2021
-// Last Modified: Fri Oct  8 23:22:34 PDT 2021
+// Last Modified: Sat Oct 16 17:21:01 PDT 2021
 // Filename:      _includes/handlebars/template-browse.html
 // Included in:   _includes/handlebars/main.html
 // Syntax:        HTML; Handlebars; Jekyll/Liquid
@@ -22,10 +22,15 @@
 <div class="filter-div" id="filter-composer"></div>
 <div class="filter-div" id="filter-nationality" style="display:none;"></div>
 
-<div id="filter-reset" class="filter-div button" title="{{trans 'clear_help'}}" onclick="popc2.resetBrowseSearchFields()">{{trans "clear"}}</div>
+<div id="filter-reset" class="filter-div button" title="{{trans 'clear_help'}}"
+	onclick="popc2.resetBrowseSearchFields()"><i class="fas fa-backspace"></i></div>
+
+<div id="filter-moreless" class="filter-div button" title=""
+	onclick="popc2.toggleBrowseStyle()"></div>
+
 <div id="filter-link" class="filter-div button" title="{{trans 'copy_link'}}"
-	onclick="popc2.copySearchLink()">{{trans "link"}}</div>
-<div id="filter-moreless" class="filter-div button" title="" onclick="popc2.toggleBrowseStyle()"></div>
+	onclick="popc2.copySearchLink()"><i class="fas fa-link"></i></div>
+
 <br/>
 
 <div class="filter-div" id="filter-century"></div>

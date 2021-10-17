@@ -27,6 +27,12 @@ POPC2.prototype.setMoreLessBrowseLanguage = function (tag) {
 	let buttonText     = this.getTranslation(buttonTextTag);
 	let buttonTitle    = this.getTranslation(buttonTitleTag);
 
+	if (tag.match(/more/i)) {
+		buttonText = '<i class="fas fa-expand-arrows-alt"></i>';
+	} else {
+		buttonText = '<i class="fas fa-compress-arrows-alt"></i>';
+	}
+
 	element.innerHTML = buttonText;
 	element.title     = buttonTitle;
 };

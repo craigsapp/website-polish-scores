@@ -4,79 +4,79 @@
 
 @@BEGIN:	ENTRY
 @TAG:		previous_work
-@EN:		previous work in list
-@PL:		poprzednia
+@EN:		previous work in list (←)
+@PL:		poprzednia (←)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		next_work
-@EN:		next work in list
-@PL:		następna
+@EN:		next work in list (→)
+@PL:		następna (→)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		browse_page
-@EN:		go to browse page
-@PL:		przejdź do strony przeglądania
+@EN:		go to browse page (↑)
+@PL:		przejdź do strony przeglądania (↑)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		play_tool_play
-@EN:		play music
-@PL:		graj muzykę
+@EN:		play music (space bar)
+@PL:		graj muzykę (space bar)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		play_tool_stop
-@EN:		stop music playback
-@PL:		przestań odtwarzać muzykę
+@EN:		stop music playback (space bar)
+@PL:		przestań odtwarzać muzykę (space bar)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		larger_tool
-@EN:		make notation larger
-@PL:		zwiększ notację muzyczną
+@EN:		make notation larger (+)
+@PL:		zwiększ notację muzyczną (+)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		smaller_tool
-@EN:		make notation smaller
-@PL:		zmniejsz notację muzyczną
+@EN:		make notation smaller (-)
+@PL:		zmniejsz notację muzyczną (-)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		worklink_tool
-@EN:		copy link to this page
-@PL:		skopiuj link do tej strony
+@EN:		copy link to this page (l)
+@PL:		skopiuj link do tej strony (l)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		incipit_tool_compress
-@EN:		show only first system of music
-@PL:		pokaż tylko pierwszy system muzyki
+@EN:		show only first system of music (i)
+@PL:		pokaż tylko pierwszy system muzyki (i)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		incipit_tool_expand
-@EN:		show full score
-@PL:		pokaż całą partyturę muzyczną
+@EN:		show full score (i)
+@PL:		pokaż całą partyturę muzyczną (i)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		random_tool
-@EN:		display a random score
-@PL:		wyświetl losową partyturę muzyczną
+@EN:		display a random score (r)
+@PL:		wyświetl losową partyturę muzyczną (r)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		vhv_tool
-@EN:		edit in Verovio Humdrum Viewer
-@PL:		edytuj w Verovio Humdrum Viewer
+@EN:		edit in Verovio Humdrum Viewer (v)
+@PL:		edytuj w Verovio Humdrum Viewer (v)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		download_tool
-@EN:		toggle display of downloads
-@PL:		przełącz pobieranie pobranych plików
+@EN:		toggle display of downloads (d)
+@PL:		przełącz pobieranie pobranych plików (d)
 @@END:		ENTRY
 

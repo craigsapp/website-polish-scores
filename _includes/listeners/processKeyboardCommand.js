@@ -36,17 +36,26 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 
 	switch (event.key) {
 
+		case "d":
+			if (popc2.IsWorkPage()) {
+				popc2.toggleDownloadDisplay();
+				event.preventDefault();
+			}
+			break;
+
 		case "p":
-			if (popc2.VARS.PROBLEM_TEXT) {
-				popc2.VARS.PROBLEM_TEXT = false;;
-			} else {
-				popc2.VARS.PROBLEM_TEXT = true;
+			if (popc2.IsWorkPage()) {
+				if (popc2.VARS.PROBLEM_TEXT) {
+					popc2.VARS.PROBLEM_TEXT = false;;
+				} else {
+					popc2.VARS.PROBLEM_TEXT = true;
+				}
+				let element = document.querySelector("#notation svg");
+				if (element) {
+					element.setAttribute("data-random", Math.random());
+				}
+				event.preventDefault();
 			}
-			let element = document.querySelector("#notation svg");
-			if (element) {
-				element.setAttribute("data-random", Math.random());
-			}
-			event.preventDefault();
 			break;
 
 	}

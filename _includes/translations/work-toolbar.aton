@@ -34,14 +34,14 @@
 
 @@BEGIN:	ENTRY
 @TAG:		larger_tool
-@EN:		make notation larger (+)
-@PL:		zwiększ notację muzyczną (+)
+@EN:		make notation larger (+; 0:reset)
+@PL:		zwiększ notację muzyczną (+; 0:reset)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		smaller_tool
-@EN:		make notation smaller (-)
-@PL:		zmniejsz notację muzyczną (-)
+@EN:		make notation smaller (-; 0:reset)
+@PL:		zmniejsz notację muzyczną (-; 0:reset)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY

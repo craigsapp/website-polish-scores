@@ -82,5 +82,7 @@ button_hover_color: "limegreen"
 # selected_langauge_color: Color to highlight the selected language in the navigator.
 selected_language_color: "goldenrod"
 
+# max_content_width: Maximum width of main content
+max_content_width: "1000px"
 
 

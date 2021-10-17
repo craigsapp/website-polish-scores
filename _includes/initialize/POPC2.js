@@ -161,6 +161,9 @@ function POPC2() {
 		th_color:           "{{ site.th_color            }}",
 		button_hover_color: "{{ site.button_hover_color  }}",
 
+		// Other CSS settings:
+		max_content_width:  "{{ site.max_content_width   }}",
+
 		// Notation settings:
 		size_increment:     {{ site.size_increment  }}
 

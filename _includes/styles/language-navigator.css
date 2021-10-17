@@ -30,7 +30,7 @@
 	justify-content: flex-end;
 	line-height: 1.5;
 	margin: 0px auto;
-	max-width: 1000px;
+	max-width: {{ site.max_content_width }};
 	padding: 35px 15px 15px;
 	-webkit-text-size-adjust: 100%;
 }

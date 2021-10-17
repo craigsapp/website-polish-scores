@@ -33,6 +33,10 @@
 }
 
 .data-download:hover {
+	color: {{ site.h1_color }};
+}
+
+.data-download i:hover {
 	color: #dc143c;
 }
 

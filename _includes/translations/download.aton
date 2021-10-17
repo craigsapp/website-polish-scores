@@ -27,9 +27,27 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
-@TAG:		download_humdrum
+@TAG:		download_pdf
 @EN:		download PDF file
 @PL:		pobierz plik PDF
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		view_humdrum
+@EN:		view Humdrum data in new tab
+@PL:		wyświetl dane Humdrum w nowej karcie
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		view_mei
+@EN:		view MEI data in new tab
+@PL:		wyświetl dane MEI w nowej karcie
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		view_musicxml
+@EN:		view MusicXML data in new tab
+@PL:		wyświetl dane MusicXML w nowej karcie
 @@END:		ENTRY
 
 

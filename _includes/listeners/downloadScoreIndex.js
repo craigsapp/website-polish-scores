@@ -24,6 +24,13 @@ document.addEventListener("DOMContentLoaded", function() {
 			popc2.VARS.SCORE_INDEX = json;
 			// Add ._cenid_seq, ._prev and ._next parameters to browse index:
 			for (let i=0; i<json.length; i++) {
+				if (typeof json[i].notecount !== "undefined") {
+					if (typeof json[i].notecount === "string") {
+						if (json[i].notecount.match(/^\s*\d/)) {
+							json[i].notecount = parseInt(json[i].notecount);
+						}
+					}
+				}
 				json[i]._cenid_seq = i;
 				if (i > 0) {
 					json[i]._prev = json[i-1];

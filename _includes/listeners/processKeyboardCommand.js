@@ -229,6 +229,14 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			}
 			break;
 
+		case "Backspace":
+			if (popc2.IsBrowsePage()) {
+				// Reset browse search fields
+				popc2.resetBrowseSearchFields();
+				event.preventDefault();
+			}
+			break;
+
 	}
 };
 

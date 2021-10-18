@@ -16,6 +16,8 @@
 POPC2.prototype.toggleDownloadDisplay = function () {
 	this.DebugMessageFunction();
 
+	// Hide Search form display if visible.
+
 	let element = document.querySelector("#subpage-downloads");
 	let icon = document.querySelector("#download-button");
 	if (!element) {

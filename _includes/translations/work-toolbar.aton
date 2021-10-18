@@ -92,3 +92,9 @@
 @PL:		przełącz pobieranie pobranych plików (d)
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		search_tool
+@EN:		toggle display of music/text searching
+@PL:		przełącz wyświetlanie muzyki/wyszukiwania tekstu
+@@END:		ENTRY
+

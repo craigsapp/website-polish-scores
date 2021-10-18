@@ -4,7 +4,7 @@
 // Creation Date: Sun Oct 17 15:31:28 PDT 2021
 // Last Modified: Sun Oct 17 15:31:31 PDT 2021
 // Filename:      _includes/sort/sortByNoteCount.js
-// Used by:       
+// Used by:
 // Included in:   _includes/sort/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap

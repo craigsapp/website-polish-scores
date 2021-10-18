@@ -13,9 +13,21 @@
 //
 {% endcomment %}
 
-POPC2.prototype.showResultsCount = function (count) {
+POPC2.prototype.showResultsCount = function (index) {
 	this.DebugMessageFunction();
+
+	if (!index) {
+		index = this.VARS.SEARCH_RESULTS;
+	}
 	let element = document.querySelector("#results-count");
+	if (!index) {
+		if (element) {
+			element.innerHTML = "";
+		}
+		return;
+	}
+
+	let count = index.length;
 	if (element) {
 		let output = "";
 		if (count != this.VARS.SCORE_INDEX.length) {
@@ -31,7 +43,7 @@ POPC2.prototype.showResultsCount = function (count) {
 	element = document.querySelector("#results-notecount");
 	if (element) {
 		let output = "";
-		let notecount = this.CountNotesInIndex();
+		let notecount = this.CountNotesInIndex(index);
 		output = `${notecount} ${this.getTranslation("note_count")}`;
 		element.innerHTML = output;
 	}

@@ -1,0 +1,62 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Mon Oct 18 09:55:53 PDT 2021
+// Last Modified: Mon Oct 18 09:55:56 PDT 2021
+// Filename:      _includes/work/subpage-downloads.html
+// Included in:   _includes/work/work.html
+// Syntax:        HTML
+// vim:           ts=3:nowrap
+//
+// Description:   Show the work download menu.
+//
+{% endcomment %}
+
+<div class="data-download trans" id="data-humdrum"
+		onclick="popc2.downloadData(event, 'humdrum')"
+		data-transatt="title:download_humdrum">
+	<i class="fas fa-file-download"></i>
+	<i data-transatt="title:view_humdrum" class="trans fas fa-eye"
+		onclick="popc2.showDataInNewTab('humdrum')"></i>
+	<br/>
+	Humdrum
+</div>
+
+<div class="data-download trans" id="data-mei"
+		onclick="popc2.downloadData(event, 'mei')"
+		data-transatt="title:download_mei">
+	<i class="fas fa-file-download"></i>
+	<i data-transatt="title:view_mei" class="trans fas fa-eye"
+		onclick="popc2.showDataInNewTab('mei')"></i>
+	<br/>
+	MEI
+</div>
+
+<div class="data-download trans" id="data-midi"
+		onclick="popc2.downloadData(event, 'mid')"
+		data-transatt="title:download_midi">
+	<i class="fas fa-file-download"></i>
+	<br/>
+	MIDI
+</div>
+
+<div class="data-download trans" id="data-musicxml"
+		onclick="popc2.downloadData(event, 'musicxml')"
+		data-transatt="title:download_musicxml">
+	<i class="fas fa-file-download"></i>
+	<i data-transatt="title:view_musicxml" class="trans fas fa-eye"
+		onclick="popc2.showDataInNewTab('musicxml')"></i>
+	<br/>
+	MusicXML
+</div>
+
+<div class="disabled data-download trans" id="data-pdf"
+		onclick="popc2.downloadData(event, 'pdf')"
+		data-transatt="title:download_pdf">
+	<i class="fas fa-file-pdf"></i>
+	<br/>
+	PDF
+</div>
+
+
+

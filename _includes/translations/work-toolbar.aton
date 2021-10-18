@@ -98,3 +98,9 @@
 @PL:		przełącz wyświetlanie muzyki/wyszukiwania tekstu
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		configure_tool
+@EN:		toggle display of configuration menu
+@PL:		przełącz wyświetlanie narzędzia konfiguracyjnego
+@@END:		ENTRY
+

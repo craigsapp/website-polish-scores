@@ -34,8 +34,12 @@ POPC2.prototype.toggleDownloadDisplay = function () {
 		if (icon) {
 			icon.classList.add("selected");
 		}
-		// scroll to the download box if it is not on the page.
-
+		// Scroll to the download box if it is not on the page.
+		let elementY = element.getBoundingClientRect().top;
+		// 50 is about the height of the work toolbar.
+		if (elementY < 50) {
+			this.scrollToTopOfNotation();
+		}
 	}
 		
 };

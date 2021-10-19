@@ -33,9 +33,21 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
-@TAG:		view_humdrum
+@TAG:		view_humdrum_tab
 @EN:		view Humdrum data in new tab
 @PL:		wyświetl dane Humdrum w nowej karcie
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		view_humdrum_vhv
+@EN:		view Humdrum data in VHV
+@PL:		przeglądaj dane Humdrum w VHV
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		view_humdrum_github
+@EN:		view Humdrum data on Github
+@PL:		wyświetl prosty plik na github
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
@@ -45,10 +57,21 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		view_mei_vhv
+@EN:		view MEI data in VHV
+@PL:		przeglądaj dane MEI w VHV
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		view_musicxml
 @EN:		view MusicXML data in new tab
 @PL:		wyświetl dane MusicXML w nowej karcie
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		view_musicxml_vhv
+@EN:		przeglądaj dane MusicXML w VHV
+@PL:		wyświetl dane MusicXML w nowej karcie
+@@END:		ENTRY
 
 

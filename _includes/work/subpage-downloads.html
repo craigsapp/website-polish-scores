@@ -16,8 +16,12 @@
 		onclick="popc2.downloadData(event, 'humdrum')"
 		data-transatt="title:download_humdrum">
 	<i class="fas fa-file-download"></i>
-	<i data-transatt="title:view_humdrum" class="trans fas fa-eye"
-		onclick="popc2.showDataInNewTab('humdrum')"></i>
+	<i data-transatt="title:view_humdrum_tab" class="trans fas fa-eye"
+		onclick="popc2.showDataInNewTab(event, 'humdrum')"></i>
+	<i data-transatt="title:view_humdrum_github" class="trans fab fa-github-square"
+		onclick="popc2.showDataInNewTab(event, 'humdrum', 'github')"></i>
+	<i data-transatt="title:view_humdrum_vhv" class="trans fas fa-hospital-symbol"
+		onclick="popc2.showDataInNewTab(event, 'humdrum', 'vhv')"></i>
 	<br/>
 	Humdrum
 </div>
@@ -27,7 +31,9 @@
 		data-transatt="title:download_mei">
 	<i class="fas fa-file-download"></i>
 	<i data-transatt="title:view_mei" class="trans fas fa-eye"
-		onclick="popc2.showDataInNewTab('mei')"></i>
+		onclick="popc2.showDataInNewTab(event, 'mei')"></i>
+	<i data-transatt="title:view_mei_vhv" class="trans fas fa-hospital-symbol"
+		onclick="popc2.showDataInNewTab(event, 'mei', 'vhv')"></i>
 	<br/>
 	MEI
 </div>
@@ -45,7 +51,9 @@
 		data-transatt="title:download_musicxml">
 	<i class="fas fa-file-download"></i>
 	<i data-transatt="title:view_musicxml" class="trans fas fa-eye"
-		onclick="popc2.showDataInNewTab('musicxml')"></i>
+		onclick="popc2.showDataInNewTab(event, 'musicxml')"></i>
+	<i data-transatt="title:view_musicxml_vhv" class="trans fas fa-hospital-symbol"
+		onclick="popc2.showDataInNewTab(event, 'musicxml', 'vhv')"></i>
 	<br/>
 	MusicXML
 </div>

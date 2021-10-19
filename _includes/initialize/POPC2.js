@@ -157,6 +157,8 @@ function POPC2() {
 		tab_title:          "{{ site.tab_title           }}",
 
 		// URLs for data/indexes:
+		popc1_github_addr:  "{{ site.popc1_github_addr   }}",
+		popc2_github_addr:  "{{ site.popc2_github_addr   }}",
 		data_addr:          "{{ site.data_addr           }}",
 		score_index:        "{{ site.score_index         }}",
 		lyrics_index:       "{{ site.lyrics_index        }}",

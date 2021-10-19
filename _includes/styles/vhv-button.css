@@ -29,22 +29,22 @@
 	top: 0;
 }
 
-#vhv-button .v1-letter.size-225,
-#vhv-button .h-letter.size-225,
-#vhv-button .v2-letter.size-225 {
+.v1-letter.size-225,
+.h-letter.size-225,
+.v2-letter.size-225 {
 	color: black !important;
 	display: inline-block !important;
 	font-weight: bold !important;
 	position: relative;
 }
 
-#vhv-button .v1-letter.size-225 {
+.v1-letter.size-225 {
 	font-size: 14px !important;
 	left: 13px;
 	top: -27px;
 }
 
-#vhv-button .v2-letter.size-225 {
+.v2-letter.size-225 {
 	font-size: 14px !important;
 	left: 13px;
 	position: relative;
@@ -56,7 +56,7 @@
 	-webkit-transform: rotate(180deg);
 }
 
-#vhv-button .h-letter.size-225 {
+.h-letter.size-225 {
 	font-size: 36px !important;
 	left: 3px;
 	position: relative;

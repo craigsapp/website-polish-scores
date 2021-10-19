@@ -2,9 +2,9 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Tue Oct 12 07:35:37 PDT 2021
-// Last Modified: Tue Oct 12 07:35:39 PDT 2021
+// Last Modified: Tue Oct 19 06:34:18 PDT 2021
 // Filename:      _includes/work/displayWorkInfo.js
-// Used by:
+// Used by:       _includes/work/displayScore.js
 // Included in:   _includes/work/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -49,30 +49,42 @@ POPC2.prototype.displayWorkInfo = function(id) {
 	if (!base) {
 		console.error("Error: cannot find #work-header");
 	}
-	let composerElement = base.querySelector("#composer-name");
-	if (composerElement && entry.COM) {
-		composerElement.innerHTML = this.FlipName(entry.COM);
+
+	// Show composer name/info
+	let composerNameElement = base.querySelector("#composer-name");
+	if (composerNameElement && entry.COM) {
+		let text = this.FlipName(entry.COM);
+		if (!entry.COM.match(/^anon/i)) {
+			composerNameElement.style.cursor = "pointer";
+			text += "&nbsp;<i class='composer-question fas fa-question-circle'></i>";
+		} else {
+			composerNameElement.style.cursor = "auto";
+		}
+		composerNameElement.innerHTML = text;
+		composerNameElement.dataset.name = entry.COM;
 	}
+	this.fillInComposerInfo(entry.COM);
+
+	// Show work/movement title:
 	let titleElement = base.querySelector("#title-area");
 	let gtlElement = base.querySelector("#GTL");
 	let oprElement = base.querySelector("#OPR");
 	let otlElement = base.querySelector("#OTL");
 
 	if (titleElement) {
-		titleElement.style.display = "none";
 		if (gtlElement) {
-			gtlElement.style.display = "none";
+			gtlElement.classList.add("hidden");
 		}
 		if (oprElement) {
-			oprElement.style.display = "none";
+			oprElement.classList.add("hidden");
 		}
 		if (otlElement) {
 			if (entry.title) {
-				otlElement.style.display = "block";
-				titleElement.style.display = "block";
 				otlElement.innerHTML = entry.title;
+				otlElement.classList.remove("hidden");
+				titleElement.classList.remove("hidden");
 			} else {
-				otlElement.style.display = "none";
+				otlElement.classList.add("hidden");
 			}
 		}
 	}

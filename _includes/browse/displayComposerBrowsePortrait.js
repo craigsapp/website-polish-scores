@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Last Modified: Tue Oct 19 19:13:56 PDT 2021
 // Filename:      _includes/browse/showComposerBrowsePortrait.js
 // Used by:
 // Included in:   _includes/browse/main.html
@@ -25,12 +25,17 @@
 //
 {% endcomment %}
 
-POPC2.prototype.displayComposerBrowsePortrait = function (composer) {
+POPC2.prototype.displayComposerBrowsePortrait = function (composer, selector) {
+
 	if (!composer) {
 		composer = this.VARS.SEARCH.composer;
 	}
 	this.DebugMessageFunction(composer);
-	let element = document.querySelector("#portrait");
+	if (!selector) {
+		selector = "#portrait-browse";
+	}
+	let inbrowse = selector.match(/portrait/i);
+	let element = document.querySelector(selector);
 	if (!element) {
 		return;
 	}
@@ -76,7 +81,39 @@ POPC2.prototype.displayComposerBrowsePortrait = function (composer) {
 		}
 	}
 	link = link || "";
-	let output = "";
+	let output = "<center>\n";
+
+	if (inbrowse) {
+		output += "<div class='composer-name'>\n";
+		let name = composer;
+		let years = this.makeComposerDates(entry.Birth, entry.Death);
+		let matches = name.match(/([^,]+?)\s*,\s*(.*)\s*$/);
+		if (matches) {
+			name = matches[2] + " " + matches[1];
+		}
+		if (link) {
+			output += `<a target="_blank" href="${link}">`;
+		}
+		output += name;
+		if (years) {
+			output += " (" + years + ")";
+		}
+		if (link) {
+			output += "</a>\n";
+		}
+		output += "</div>\n";
+	} else {
+		output += "<div class='composer-dates'>\n";
+		let years = this.makeComposerDates(entry.Birth, entry.Death);
+		output += years;
+		output += "</div>\n";
+	}
+
+	output += "<table id='composer-image-table'>\n";
+	output += "<tr><td>";
+
+	output += "<div id='image-wrapper'>\n";
+	output += "<center>";
 	if (link) {
 		output += `<a target="_blank" href="${link}">`;
 	}
@@ -88,25 +125,16 @@ POPC2.prototype.displayComposerBrowsePortrait = function (composer) {
 	if (link) {
 		output += "</a>";
 	}
-	output += "<br>";
-	output += "<div class='composer-name'>\n";
-	let name = composer;
-	let years = this.makeComposerDates(entry.Birth, entry.Death);
-	let matches = name.match(/([^,]+?)\s*,\s*(.*)\s*$/);
-	if (matches) {
-		name = matches[2] + " " + matches[1];
-	}
-	if (link) {
-		output += `<a target="_blank" href="${link}">`;
-	}
-	output += name;
-	if (years) {
-		output += " (" + years + ")";
-	}
-	if (link) {
-		output += "</a>\n";
-	}
+	output += "</center>";
 	output += "</div>\n";
+
+
+	output += "</td><td>";
+	output += this.getComposerLinks(entry);
+	output += "</td></tr>";
+	output += "</table>";
+
+	output += "</center>\n";
 
 	element.innerHTML = output;
 	element.style.display = "block";

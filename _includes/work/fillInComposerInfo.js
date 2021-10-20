@@ -15,6 +15,7 @@
 
 POPC2.prototype.fillInComposerInfo = function(composer) {
 	this.DebugMessageFunction(composer);
+
 	let element = document.querySelector("#composer-info");
 	if (!element) {
 		return;
@@ -29,8 +30,7 @@ POPC2.prototype.fillInComposerInfo = function(composer) {
 		return;
 	}
 
-	element.innerHTML = `Show information for ${composer} here`;
-
+	this.displayComposerBrowsePortrait(composer, "#composer-info");
 };
 
 Object.defineProperty(POPC2.prototype.fillInComposerInfo, "name", { value: "fillInComposerInfo" });

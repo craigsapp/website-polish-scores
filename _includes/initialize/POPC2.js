@@ -81,8 +81,11 @@ function POPC2() {
 	// Variables primarily related to work page:
 	//
 
-	// WORK_ID = work id of score being displayed
+	// WORK_ID = Work ID of score being displayed.
 	this.VARS.WORK_ID = null;
+
+	// WORK_HISTORY = List of works that have been shown during the current session.
+	this.VARS.WORK_HISTORY = [];
 
 
 	//////////////////////////////

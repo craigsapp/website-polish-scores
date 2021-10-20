@@ -26,7 +26,7 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 		id = this.VARS.WORK_ID;
 	}
 
-	this.VARS.WORK_ID = id;
+	this.storeWorkId(id);
 	this.displayWorkInfo(id);
 
 	let options = JSON.parse(JSON.stringify(this.VARS.HNP_OPTIONS));

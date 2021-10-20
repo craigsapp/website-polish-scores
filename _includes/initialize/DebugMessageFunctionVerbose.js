@@ -44,7 +44,7 @@ POPC2.prototype.DebugMessageFunctionVerbose = function () {
 					args += `"${arguments[i]}"`;
 				} else if (!arguments[i]) {
 					args += "null";
-				} else if (Array.isArray(argments[i])) {
+				} else if (Array.isArray(arguments[i])) {
 					args += "[array]";
 				} else {
 					args += "[obj]";

@@ -41,6 +41,7 @@ POPC2.prototype.displayWorkInfo = function(id) {
 			break;
 		}
 	}
+	this.setBookmarkState(entry.fileid);
 	if (!entry) {
 		this.setWorkPageErrorMessage("Did not find score for ID: " + targetid);
 		return;

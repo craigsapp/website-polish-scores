@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 			popc2.VARS.SEARCH_RESULTS = json;
 			popc2.prepareBrowseSelectOptions();
+			popc2.loadBookmarksFromLocalStorage();
 
 			if (popc2.VARS.WORK_ID) {
 				// Display of work page handled by downloadComposerIndex().

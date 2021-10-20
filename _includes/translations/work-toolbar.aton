@@ -104,3 +104,9 @@
 @PL:		przełącz wyświetlanie narzędzia konfiguracyjnego
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		bookmark_tool
+@EN:		bookmark this score
+@PL:		dodaj ten wynik do zakładek
+@@END:		ENTRY
+

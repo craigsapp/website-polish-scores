@@ -87,6 +87,11 @@ function POPC2() {
 	// WORK_HISTORY = List of works that have been shown during the current session.
 	this.VARS.WORK_HISTORY = [];
 
+	// WORK_BOOKMARKS = List of works that are bookmarked (array of SCORE Index
+	// entries).  The list is stored in localStorage.BOOKMARKS for access in
+	// later sessions (as a JSON array of fileids).
+	this.VARS.WORK_BOOKMARKS = [];
+
 
 	//////////////////////////////
 	//

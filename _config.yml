@@ -9,9 +9,6 @@
 # on the locally served website.
 #
 
-# tab_title: Title to display in browser tab for webpage.
-tab_title: "POPC2"
-
 # data_addr: Website for Humdrum scores and derivatives.
 data_addr: "https://data.nifc.humdrum.org"
 
@@ -40,6 +37,13 @@ background_image: "/img/bgcbw.png"
 languages:
    - "EN"
    - "PL"
+
+# website_root: The root of the website (for relative path names).
+# The variable must end in a shash.
+website_root: "/"
+
+# tab_title: Title to display in browser tab for webpage.
+tab_title: "POPC2"
 
 # debug: Print debugging statements (or not, if set to "false").
 debug: "true"

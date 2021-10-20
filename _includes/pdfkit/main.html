@@ -1,0 +1,23 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct 20 13:20:56 PDT 2021
+// Last Modified: Wed Oct 20 13:20:59 PDT 2021
+// Filename:      _includes/pdfkit/main.html
+// Included in:   _includes/head/main-bottom.html
+// Syntax:        ECMAScript 6; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Javascript resources needed for PDF creation (with pdfkit).
+//                These scripts are not immediately needed so they are placed
+//                at the bottom of the page and loaded asynchronously.
+//                See: https://javascript.info/script-async-defer
+//
+{% endcomment %}
+
+<script async src="{{ site.website_root }}scripts/pdfkit/blobstream.js"></script>
+<script async src="{{ site.website_root }}scripts/pdfkit/pdfkit.js"></script>
+<script async src="{{ site.website_root }}scripts/pdfkit/source.js"></script>
+<script async src="{{ site.website_root }}scripts/pdfkit/FileSaver.js"></script>
+
+

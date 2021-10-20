@@ -1,9 +1,67 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct 20 12:44:45 PDT 2021
+// Last Modified: Wed Oct 20 12:44:57 PDT 2021
+// Filename:      _includes/styles/work.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for SVG output from verovio.
+//
+{% endcomment %}
+
+/*
+ * Set the problem markers to be a red triangle. Verovio outputs a "P" letter
+ * which _includes/listeners/observeSvgContent.js will convert to a FontAwsome
+ * glyph whenever the SVG content is changed.
+ */
 
 svg g.dir.problem tspan.rend tspan.text tspan.text.p {
     font-family: "FontAwesome";
 }
 
+/*
+ * SIC markers are converted into green triangles:
+ */
+
 svg g.dir.sic tspan.rend tspan.text tspan.text.s {
   font-family: "FontAwesome";
 }
+
+
+/*
+ * Force Times fonts in verovio SVG images to be substituted with EB Garamond:
+ */
+
+@font-face {
+	font-family: "Times";
+	src: url("{{ site.website_root }}scripts/pdfkit/EBGaramond-Regular.ttf");
+	font-style: normal;
+	font-weight: normal
+}
+
+@font-face {
+	font-family: "Times";
+	src: url("{{ site.website_root }}scripts/pdfkit/EBGaramond-Italic.ttf");
+	font-style: italic;
+	font-weight: normal
+}
+
+@font-face {
+	font-family: "Times";
+	src: url("{{ site.website_root }}scripts/pdfkit/EBGaramond-Bold.ttf");
+	font-style: normal;
+	font-weight: bold
+}
+
+@font-face {
+	font-family: "Times";
+	src: url("{{ site.website_root }}scripts/pdfkit/EBGaramond-BoldItalic.ttf");
+	font-style: italic;
+	font-weight: bold
+}
+
+
 

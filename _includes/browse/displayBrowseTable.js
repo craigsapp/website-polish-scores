@@ -103,6 +103,11 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 	output += "</table>\n";
 
 	element.innerHTML = output;
+	if (this.VARS.BROWSE_STYLE === "less") {
+		this.hideShelfmarkColumn();
+	} else {
+		this.showShelfmarkColumn();
+	}
 };
 
 Object.defineProperty(POPC2.prototype.displayBrowseTable, "name", { value: "displayBrowseTable" });

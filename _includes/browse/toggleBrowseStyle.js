@@ -26,8 +26,10 @@ POPC2.prototype.toggleBrowseStyle = function () {
 
 	if (current === "more") {
 		this.showBrowseMore();
+		this.showShelfmarkColumn();
 	} else {
 		this.showBrowseLess();
+		this.hideShelfmarkColumn();
 	}
 };
 

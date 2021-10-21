@@ -30,7 +30,7 @@ POPC2.prototype.fillInComposerInfo = function(composer) {
 		return;
 	}
 
-	this.displayComposerBrowsePortrait(composer, "#composer-info");
+	this.DisplayComposerInfoPortrait(composer, "#composer-info");
 };
 
 Object.defineProperty(POPC2.prototype.fillInComposerInfo, "name", { value: "fillInComposerInfo" });

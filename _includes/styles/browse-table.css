@@ -8,14 +8,19 @@
 // Syntax:        CSS
 // vim:           ts=3:nowrap
 //
-// Description:   Styles for the search results table on the browse page
+// Description:   Styles for the search results table on the browse page.
 //
 {% endcomment %}
 
 table.search-results {
 	border-collapse: collapse;
+	max-width: 800px;
 	table-layout: fixed;
 	width: 100%;
+}
+
+table.search-results.narrow {
+	max-width: 650px !important;
 }
 
 table.search-results th:first-child,
@@ -54,6 +59,7 @@ table.search-results td.shelfmark {
 table.search-results td.shelfmark {
 	padding-right: 5px;
 	color: #555555;
+	font-size: 90%;
 }
 
 table.search-results td.shelfmark span.siglum {

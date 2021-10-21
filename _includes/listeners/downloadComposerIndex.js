@@ -51,7 +51,7 @@ POPC2.prototype.downloadComposerIndex = function () {
 			if (that.VARS.WORK_ID) {
 				that.displayWorkPage();
 			} else {
-				that.displayComposerBrowsePortrait();
+				that.DisplayComposerInfoPortrait();
 			}
 		})
 		.catch(err => { console.error(err); });

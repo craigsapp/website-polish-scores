@@ -3,9 +3,9 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Tue Oct 19 19:13:56 PDT 2021
-// Filename:      _includes/browse/showComposerBrowsePortrait.js
+// Filename:      _includes/browse/displayComposerInfoPortrait.js
 // Used by:
-// Included in:   _includes/browse/main.html
+// Included in:   _includes/shared/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
@@ -25,7 +25,7 @@
 //
 {% endcomment %}
 
-POPC2.prototype.displayComposerBrowsePortrait = function (composer, selector) {
+POPC2.prototype.DisplayComposerInfoPortrait = function (composer, selector) {
 
 	if (!composer) {
 		composer = this.VARS.SEARCH.composer;
@@ -128,13 +128,16 @@ POPC2.prototype.displayComposerBrowsePortrait = function (composer, selector) {
 	output += "</center>";
 	output += "</div>\n";
 
-
 	output += "</td><td>";
 	output += this.getComposerLinks(entry);
 	output += "</td></tr>";
 	output += "</table>";
 
 	output += "</center>\n";
+
+	if (inbrowse) {
+		output += "<br/><br/>";
+	}
 
 	element.innerHTML = output;
 	element.style.display = "block";
@@ -154,7 +157,7 @@ POPC2.prototype.displayComposerBrowsePortrait = function (composer, selector) {
 	}
 };
 
-Object.defineProperty(POPC2.prototype.displayComposerBrowsePortrait, "name", { value: "displayComposerBrowsePortrait" });
+Object.defineProperty(POPC2.prototype.DisplayComposerInfoPortrait, "name", { value: "DisplayComposerInfoPortrait" });
 
 
 

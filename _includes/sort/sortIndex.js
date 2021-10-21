@@ -25,6 +25,8 @@ POPC2.prototype.sortIndex = function (index) {
 		newlist = this.sortByNoteCount(index, this.VARS.SEARCH_SORT_REVERSE);
 	} else if (this.VARS.SEARCH_SORT_TYPE === "lastedit") {
 		newlist = this.sortByLastEditedDate(index, this.VARS.SEARCH_SORT_REVERSE);
+	} else if (this.VARS.SEARCH_SORT_TYPE === "shelfmark") {
+		newlist = this.sortByShelfmark(index, this.VARS.SEARCH_SORT_REVERSE);
 	}
 
 	return newlist;

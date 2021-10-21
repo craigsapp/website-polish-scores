@@ -71,7 +71,9 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 		output += `<th class="date hidden">${this.getTranslation("last_edited")}</th>\n`;
 	}
 
-	output += `<th class="shelfmark">${this.getTranslation("header_shelfmark")}</th>\n`;
+	output += '<th class="shelfmark" onclick="popc2.toggleShelfmarkSort()">';
+	output += this.getTranslation("header_shelfmark");
+ 	output += "</th>\n";
 
 	output += `<th class="composer">${this.getTranslation("header_composer")}</th>\n`;
 

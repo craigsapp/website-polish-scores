@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sun Oct 17 15:28:56 PDT 2021
-// Last Modified: Sun Oct 17 15:28:59 PDT 2021
+// Last Modified: Thu Oct 21 12:45:58 PDT 2021
 // Filename:      _includes/sort/main.html
 // Included in:   _includes/head/main.html
 // Syntax:        HTML; ECMAScript 6; Jekyll/Liquid
@@ -15,8 +15,9 @@
 
 <script>
 
-{% include sort/sortByNoteCount.js      %}
 {% include sort/sortByLastEditedDate.js %}
+{% include sort/sortByNoteCount.js      %}
+{% include sort/sortByShelfmark.js      %}
 {% include sort/sortIndex.js            %}
 
 </script>

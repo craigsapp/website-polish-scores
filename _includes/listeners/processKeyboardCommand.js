@@ -46,7 +46,19 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			break;
 
 		case "d":
-			if (popc2.IsWorkPage()) {
+			if (popc2.IsBrowsePage()) {
+				// Toggle display of last edited date entry in browse table.
+				if (this.VARS.SEARCH_SORT_TYPE === "lastedit") {
+					let tempval = this.VARS.SEARCH_SORT_TYPE;
+					this.VARS.SEARCH_SORT_TYPE =  this.VARS.SEARCH_SORT_TYPE_LAST;
+					this.VARS.SEARCH_SORT_TYPE_LAST = tempval;
+				} else {
+					this.VARS.SEARCH_SORT_TYPE_LAST = this.VARS.SEARCH_SORT_TYPE;
+					this.VARS.SEARCH_SORT_TYPE = "lastedit";
+				}
+				this.displayBrowseTable();
+				event.preventDefault();
+			} else if (popc2.IsWorkPage()) {
 				// Toggle display of download menu.
 				popc2.toggleDownloadDisplay();
 				event.preventDefault();

@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sun Oct 17 15:31:28 PDT 2021
-// Last Modified: Sun Oct 17 15:31:31 PDT 2021
+// Last Modified: Thu Oct 21 10:32:43 PDT 2021
 // Filename:      _includes/sort/sortByNoteCount.js
 // Used by:
 // Included in:   _includes/sort/main.html
@@ -18,17 +18,19 @@
 {% endcomment %}
 
 POPC2.prototype.sortIndex = function (index) {
-	this.DebugMessageFunction();
+	this.DebugMessageFunction(this.VARS.SEARCH_SORT_TYPE);
 
 	let newlist = index;
 	if (this.VARS.SEARCH_SORT_TYPE === "notecount") {
 		newlist = this.sortByNoteCount(index, this.VARS.SEARCH_SORT_REVERSE);
+	} else if (this.VARS.SEARCH_SORT_TYPE === "lastedit") {
+		newlist = this.sortByLastEditedDate(index, this.VARS.SEARCH_SORT_REVERSE);
 	}
 
 	return newlist;
 };
 
-Object.defineProperty(POPC2.prototype.sortByNoteCount, "name", { value: "sortByNoteCount" });
+Object.defineProperty(POPC2.prototype.sortIndex, "name", { value: "sortIndex" });
 
 
 

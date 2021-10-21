@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Last Modified: Thu Oct 21 09:42:12 PDT 2021
 // Filename:      _includes/browse/displayBrowseTable.js
 // Used by:
 // Included in:   _includes/browse/main.html
@@ -41,6 +41,9 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 		return;
 	}
 
+	results = this.sortIndex(results);
+	let sortByDate = (this.VARS.SEARCH_SORT_TYPE === "lastedit");
+
 	let lyricsSearch = false;
 	let lyricsSearchText = "";
 	let lyricsElement = document.querySelector("#filter-lyrics input.filter.lyrics");
@@ -61,12 +64,24 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 	let output = "";
 	output += "<table class='search-results'>\n";
 	output += "<thead>\n";
+
+	if (sortByDate) {
+		output += `<th class="date">${this.getTranslation("last_edited")}</th>\n`;
+	} else {
+		output += `<th class="date hidden">${this.getTranslation("last_edited")}</th>\n`;
+	}
+
 	output += `<th class="shelfmark">${this.getTranslation("header_shelfmark")}</th>\n`;
+
 	output += `<th class="composer">${this.getTranslation("header_composer")}</th>\n`;
+
 	output += `<th class="title">${this.getTranslation("header_title")}</th>\n`;
+
 	output += "</thead>\n";
 	output += "<tbody>\n";
 
+	let lastedit = -1;
+	let lastlastedit = -1;
 	for (let i=0; i<results.length; i++) {
 
 		let composer = results[i].COM || "";
@@ -81,17 +96,33 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 		let siglum = results[i].siglum || "";
 		let shelfmark = results[i].shelfmark || "";
 		let cenid = results[i].cenid || "";
+		let lastedit = results[i].lastedit || 0;
 
 		output += `<tr data-id='${cenid}'>\n`;
+
+		if (sortByDate) {
+			output += "<td class='date'>";
+		} else {
+			output += "<td class='date hidden'>";
+		}
+		if (lastedit != lastlastedit) {
+			output += this.GetDateFromInteger(lastedit);
+			lastlastedit = lastedit
+		}
+		output += "</td>\n";
+
 		output += "<td class='shelfmark'>";
 		output += this.getShelfmarkContent(siglum, shelfmark);
 		output += "</td>\n";
+
 		output += "<td class='composer'>";
 		output += composer;
 		output += "</td>\n";
+
 		output += "<td class='title'>";
 		output += this.getHighlightedString(results[i].title || "", this.VARS.SEARCH.title);
 		output += "</td>\n";
+
 		output += "</tr>\n";
 
 		if (lyricsSearch) {

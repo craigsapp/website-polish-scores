@@ -14,7 +14,7 @@
 
 table.search-results {
 	border-collapse: collapse;
-	max-width: 800px;
+	max-width: 1000px;
 	table-layout: fixed;
 	width: 100%;
 }
@@ -43,17 +43,14 @@ table.search-results td {
 
 table.search-results th.title,
 table.search-results td.title {
-	width: 49%;
 }
 
 table.search-results th.composer,
 table.search-results td.composer {
-	width: 30%;
 }
 
 table.search-results th.shelfmark,
 table.search-results td.shelfmark {
-	width: 21%;
 }
 
 table.search-results td.shelfmark {

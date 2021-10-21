@@ -20,5 +20,11 @@
 @PL:		Tytuł
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		last_edited
+@EN:		Last&nbsp;edited
+@PL:		Ostatnio&nbsp;edytowany
+@@END:		ENTRY
+
 
 

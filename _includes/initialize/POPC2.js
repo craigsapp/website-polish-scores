@@ -72,6 +72,10 @@ function POPC2() {
 	//    "notecount": Sort by the number of notes in the score.
 	this.VARS.SEARCH_SORT_TYPE = null;
 
+	// SEARCH_SORT_TYPE_PREV = the previous sorting method (used for
+	// toggling sort methods.
+	this.VARS.SEARCH_SORT_TYPE_PREV = null;
+
 	// SEARCH_SORT_REVERSE -- sort in normal or reversed order.
 	this.VARS.SEARCH_SORT_REVERSE = false;
 

@@ -57,7 +57,7 @@ POPC2.prototype.displayWorkInfo = function(id) {
 		let text = this.FlipName(entry.COM);
 		if (!entry.COM.match(/^anon/i)) {
 			composerNameElement.style.cursor = "pointer";
-			text += "&nbsp;<i class='composer-question fas fa-question-circle'></i>";
+			text += "&nbsp;<i class='composer-info fas fa-info-circle'></i>";
 		} else {
 			composerNameElement.style.cursor = "auto";
 		}

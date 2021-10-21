@@ -2,8 +2,8 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Tue Oct 12 08:07:59 PDT 2021
-// Last Modified: Tue Oct 12 08:08:06 PDT 2021
-// Filename:      _includes/styles/work-toolbar.css
+// Last Modified: Thu Oct 21 00:27:14 PDT 2021
+// Filename:      _includes/styles/navigator-work.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
 // vim:           ts=3:nowrap
@@ -12,25 +12,9 @@
 //
 {% endcomment %}
 
-#work-navigator {
-	text-shadow: 0px 0px 1px #999999;
-	width: 100%;
-	max-width: {{ site.max_content_width }};
-}
-
-#next-work:hover,
-#previous-work:hover,
-.worknav-tool:hover,
-#to-browse-page:hover {
-	color: #dc143c !important;
-}
-
-#work-navigator .selected {
-	color: {{ site.selected_language_color }};
-}
-
-#work-navigator {
+[id^="navigator-"] {
 	margin-top: 0;
+	text-shadow: 0px 0px 1px #999999;
 	margin-bottom: 0;
 	margin-left: auto;
 	margin-right: auto;
@@ -38,8 +22,20 @@
 	justify-content: space-around;
 	align-items: center;
 	max-width: {{ site.max_content_width }};
+	width: 100%;
 	flex-wrap: wrap;
 	flex: 1 0 auto;
+}
+
+[id^="navigator-"] .selected {
+	color: {{ site.selected_language_color }};
+}
+
+#next-work:hover,
+#previous-work:hover,
+.worknav-tool:hover,
+#to-browse-page:hover {
+	color: #dc143c !important;
 }
 
 .worknav-tool {

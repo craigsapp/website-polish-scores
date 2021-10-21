@@ -4,7 +4,7 @@
 // Creation Date: Thu Oct 14 15:32:12 PDT 2021
 // Last Modified: Thu Oct 14 15:32:16 PDT 2021
 // Filename:      _includes/work/copyWorkLink.js
-// Used by:       _includes/navigator/work-toolbar.html
+// Used by:       _includes/navigator/toolbar-work.html
 // Included in:   _includes/work/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap

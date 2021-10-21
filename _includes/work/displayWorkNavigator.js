@@ -23,7 +23,7 @@ POPC2.prototype.displayWorkNavigator = function() {
 		element.style.display = "block";
 	}
 
-	element = document.querySelector("#work-navigator");
+	element = document.querySelector("#navigator-work");
 	if (element) {
 		element.style.visibility = "visible";
 	}

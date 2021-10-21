@@ -4,7 +4,7 @@
 // Creation Date: Fri Oct 15 12:40:31 PDT 2021
 // Last Modified: Mon Oct 18 11:35:43 PDT 2021
 // Filename:      _includes/work/toggleSubpageDisplay.js
-// Used by:       _includes/navigator/work-toolbar.html
+// Used by:       _includes/navigator/toolbar-work.html
 // Included in:   _includes/work/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap

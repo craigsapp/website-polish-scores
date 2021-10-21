@@ -22,10 +22,7 @@ document.addEventListener("keydown", function(event) {
 		// Needed to prevent key commands when in text/lyrics search boxes.
 		return;
 	}
-
-	console.log("EVENT", event);
 	popc2.processKeyboardCommand(event);
-
 });
 
 

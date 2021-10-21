@@ -15,7 +15,6 @@
 
 POPC2.prototype.downloadData = function (event, data_type) {
 	this.DebugMessageFunction(data_type);
-	console.log("EVENT");
 
 	if (!event) {
 		console.error("Error: missing event in parameters to downloadData");

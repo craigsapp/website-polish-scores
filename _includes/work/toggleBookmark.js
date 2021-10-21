@@ -4,7 +4,7 @@
 // Creation Date: Tue Oct 19 22:15:39 PDT 2021
 // Last Modified: Tue Oct 19 22:15:42 PDT 2021
 // Filename:      _includes/work/toggleBookmark.js
-// Used by:       _includes/navigator/work-toolbar.html
+// Used by:       _includes/navigator/toolbar-work.html
 // Included in:   _includes/work/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap

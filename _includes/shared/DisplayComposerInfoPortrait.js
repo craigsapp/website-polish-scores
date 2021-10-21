@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Tue Oct 19 19:13:56 PDT 2021
+// Last Modified: Thu Oct 21 01:44:14 PDT 2021
 // Filename:      _includes/browse/displayComposerInfoPortrait.js
 // Used by:
 // Included in:   _includes/shared/main.html
@@ -91,15 +91,9 @@ POPC2.prototype.DisplayComposerInfoPortrait = function (composer, selector) {
 		if (matches) {
 			name = matches[2] + " " + matches[1];
 		}
-		if (link) {
-			output += `<a target="_blank" href="${link}">`;
-		}
 		output += name;
 		if (years) {
 			output += " (" + years + ")";
-		}
-		if (link) {
-			output += "</a>\n";
 		}
 		output += "</div>\n";
 	} else {
@@ -114,16 +108,10 @@ POPC2.prototype.DisplayComposerInfoPortrait = function (composer, selector) {
 
 	output += "<div id='image-wrapper'>\n";
 	output += "<center>";
-	if (link) {
-		output += `<a target="_blank" href="${link}">`;
-	}
 	if (this.VARS.PORTRAIT_IMAGES[composer]) {
 		output += `<img src="${this.VARS.PORTRAIT_IMAGES[composer]}">`;
 	} else {
 		output += `<img crossorigin="anonymous" src="${url}">`;
-	}
-	if (link) {
-		output += "</a>";
 	}
 	output += "</center>";
 	output += "</div>\n";

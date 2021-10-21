@@ -23,7 +23,7 @@ POPC2.prototype.displayBrowsePage = function () {
 	document.body.classList.remove("waiting");
 
 	this.DebugMessageFunction();
-	this.hideWorkNavigator();
+	this.showNavigator("browse");
 	var telement = document.querySelector("#template-browse");
 	if (!telement) {
 		console.error("ERROR: Cannot find #template-browse.");
@@ -47,6 +47,7 @@ POPC2.prototype.displayBrowsePage = function () {
 		this.showBrowseLess();
 	}
 
+	this.showNavigator("browse");
 	this.ApplyElementTranslations();
 	this.buildBrowseFilters();
 	this.doBrowseSearch();

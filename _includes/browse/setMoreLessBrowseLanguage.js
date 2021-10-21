@@ -16,24 +16,22 @@
 POPC2.prototype.setMoreLessBrowseLanguage = function (tag) {
 	this.DebugMessageFunction();
 
-	let element = document.querySelector("#filter-moreless");
+	let element = document.querySelector("#moreless-button");
 	if (!element) {
 		console.error("Error: cannot find more/less button");
 		return;
 	}
 
-	let buttonTextTag  = `button_${tag}`;
 	let buttonTitleTag = `button_${tag}_help`;
-	let buttonText     = this.getTranslation(buttonTextTag);
 	let buttonTitle    = this.getTranslation(buttonTitleTag);
 
 	if (tag.match(/more/i)) {
-		buttonText = '<i class="fas fa-expand-arrows-alt"></i>';
+		element.classList.remove("fa-compress-arrows-alt");
+		element.classList.add("fa-expand-arrows-alt");
 	} else {
-		buttonText = '<i class="fas fa-compress-arrows-alt"></i>';
+		element.classList.add("fa-compress-arrows-alt");
+		element.classList.remove("fa-expand-arrows-alt");
 	}
-
-	element.innerHTML = buttonText;
 	element.title     = buttonTitle;
 };
 

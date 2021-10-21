@@ -15,6 +15,9 @@
 
 POPC2.prototype.resetBrowseSearchFields = function () {
 	this.DebugMessageFunction();
+	if (!this.IsBrowsePage()) {
+		return;
+	}
 	this.VARS.SEARCH = {};
 
 	this.VARS.SEARCH_FREEZE = true;

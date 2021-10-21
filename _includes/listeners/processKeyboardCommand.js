@@ -123,14 +123,8 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 
 		case "r":
 			if (popc2.VARS.SEARCH_RESULTS.length > 1) {
-				if (popc2.IsWorkPage()) {
-					// Display a random score.
-					popc2.displayScore("random");
-					event.preventDefault();
-				} else {
-					popc2.displayWorkPage("random");
-					event.preventDefault();
-				}
+				popc2.displayRandomWork();
+				event.preventDefault();
 			}
 			break;
 
@@ -230,11 +224,9 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			break;
 
 		case "Backspace":
-			if (popc2.IsBrowsePage()) {
-				// Reset browse search fields
-				popc2.resetBrowseSearchFields();
-				event.preventDefault();
-			}
+			// Reset browse search fields
+			popc2.resetBrowseSearchFields();
+			event.preventDefault();
 			break;
 
 	}

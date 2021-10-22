@@ -15,10 +15,11 @@
 
 <script>
 
-{% include sort/sortByLastEditedDate.js %}
-{% include sort/sortByNoteCount.js      %}
-{% include sort/sortByShelfmark.js      %}
-{% include sort/sortIndex.js            %}
+{% include sort/prepareShelfmarkForSorting.js %}
+{% include sort/sortByLastEditedDate.js       %}
+{% include sort/sortByNoteCount.js            %}
+{% include sort/sortByShelfmark.js            %}
+{% include sort/sortIndex.js                  %}
 
 </script>
 

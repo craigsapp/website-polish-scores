@@ -28,6 +28,7 @@ POPC2.prototype.sortByShelfmark = function (index, reverse) {
 		newlist.push(index[i]);
 	}
 
+	let that = this;
 	newlist.sort(function (a, b) {
 		let siglumA    = a.siglum    || "";
 		let siglumB    = b.siglum    || "";
@@ -36,8 +37,10 @@ POPC2.prototype.sortByShelfmark = function (index, reverse) {
 		let shelfworkA = a.shelfwork || "";
 		let shelfworkB = b.shelfwork || "";
 
-		// Need to expand numbers in shelfmarks here to allow
-		// sorting numbers alphabetically.
+		// Need to expand numbers in shelfmarks to allow
+		// sorting numbers alphabetically:
+		shelfmarkA = that.prepareShelfmarkForSorting(shelfmarkA);
+		shelfmarkB = that.prepareShelfmarkForSorting(shelfmarkB);
 
 		let stringA = `${siglumA} ${shelfmarkA} ${shelfworkA}`;
 		let stringB = `${siglumB} ${shelfmarkB} ${shelfworkB}`;

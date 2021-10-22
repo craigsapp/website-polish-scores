@@ -47,6 +47,10 @@ POPC2.prototype.toggleSubpageDisplay = function (type) {
 				icon.classList.remove("selected");
 			}
 		}
+		if (hidden && (type === "keyscape")) {
+			// (hidden will be now not hidden)
+			this.showKeyscape();
+		}
 	}
 };
 

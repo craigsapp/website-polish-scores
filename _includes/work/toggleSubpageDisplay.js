@@ -48,7 +48,7 @@ POPC2.prototype.toggleSubpageDisplay = function (type) {
 			}
 		}
 		if (hidden && (type === "keyscape")) {
-			// (hidden will be now not hidden)
+			// (hidden now will be not hidden)
 			this.showKeyscape();
 		}
 	}

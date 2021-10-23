@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Tue Oct 12 08:07:59 PDT 2021
 // Last Modified: Thu Oct 21 00:27:14 PDT 2021
-// Filename:      _includes/styles/navigator-work.css
+// Filename:      _includes/styles/navigator.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
 // vim:           ts=3:nowrap
@@ -51,5 +51,31 @@
 	 */
 	width:36px;
 }
+
+
+@media only screen and (max-width: 900px) {
+	.worknav-tool {
+		font-size: 2.03rem;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.worknav-tool {
+		font-size: 1.80rem;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.worknav-tool {
+		font-size: 1.58rem;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.worknav-tool {
+		font-size: 1.35rem;
+	}
+}
+
 
 

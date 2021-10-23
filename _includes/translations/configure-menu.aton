@@ -1,0 +1,28 @@
+@
+@ Composer drop-down list on browse page:
+@
+
+@@BEGIN:	ENTRY
+@TAG:		modern_stemming
+@EN:		Modern stemming
+@PL:		Nowoczesne łodygi
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		no_c_clefs
+@EN:		No C clefs
+@PL:		Brak kluczy C
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		show_all_notes
+@EN:		Show all notes
+@PL:		Pokaż wszystkie notatki
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		expand_repeats
+@EN:		Expand repeat marks
+@PL:		Rozwiń znaki powtarzania
+@@END:		ENTRY
+

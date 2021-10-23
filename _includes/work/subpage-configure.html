@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 18 09:58:45 PDT 2021
-// Last Modified: Mon Oct 18 09:58:47 PDT 2021
+// Last Modified: Sat Oct 23 07:59:01 PDT 2021
 // Filename:      _includes/work/subpage-configure.html
 // Included in:   _includes/work/work.html
 // Syntax:        HTML
@@ -12,6 +12,33 @@
 //
 {% endcomment %}
 
+<div class="checkboxes">
 
-Configure parameters for notation go here
+	<label class="container">
+		<span class="ctext trans" data-trans="modern_stemming"></span>
+		<input type="checkbox" id="checkbox-stemming" onchange="popc2.displayScore()">
+		<span class="checkmark"></span>
+	</label>
+
+	<label class="container">
+		<span class="ctext trans" data-trans="no_c_clefs"></span>
+		<input type="checkbox" id="checkbox-nocclefs" onchange="popc2.displayScore()">
+		<span class="checkmark"></span>
+	</label>
+
+	<label class="container">
+		<span class="ctext trans" data-trans="show_all_notes"></span>
+		<input type="checkbox" id="checkbox-shownotes" onchange="popc2.displayScore()">
+		<span class="checkmark"></span>
+	</label>
+
+	<label class="container">
+		<span class="ctext trans" data-trans="expand_repeats"></span>
+		<input type="checkbox" id="checkbox-expandrep" onchange="popc2.displayScore()">
+		<span class="checkmark"></span>
+	</label>
+
+</div>
+
+
 

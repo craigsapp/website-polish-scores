@@ -1,0 +1,97 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct 23 02:12:11 PDT 2021
+// Last Modified: Sat Oct 23 02:12:13 PDT 2021
+// Filename:      _includes/styles/checkbox.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for checkboxes on the website.
+//
+{% endcomment %}
+
+div.checkboxes {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	height: 110px;
+}
+
+span.ctext {
+	display: inline-block;
+}
+
+/* Customize the label (the container) */
+.container {
+	cursor: pointer;
+	display: block;
+	font-size: 18px;
+	margin-bottom: -4px;
+	padding-left: 35px;
+	padding-right: 10px;
+	position: relative;
+	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+	cursor: pointer;
+	height: 0;
+	opacity: 0;
+	position: absolute;
+	width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+	background-color: #eee;
+	outline: 1px solid #aaa;
+	height: 20px;
+	left: 0;
+	position: absolute;
+	top: 5px;
+	width: 20px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+	background-color: {{ site.button_hover_color }};
+}
+
+/* When the checkbox is checked, add background */
+.container input:checked ~ .checkmark {
+	background-color: {{ site.h1_color }};
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+	content: "";
+	display: none;
+	position: absolute;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+	border-width: 0 3px 3px 0 !important;
+	border: solid white;
+	height: 10px;
+	left: 7px;
+	top: 3px;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	width: 5px;
+}
+
+

@@ -34,9 +34,9 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 	this.displayWorkInfo(id);
 
 	let options = JSON.parse(JSON.stringify(this.VARS.HNP_OPTIONS));
-	// options.incipit = true;
 	options.source = "humdrum";
 	options.postFunction = target => popc2.HnpCallback(target);
+	options = this.addNotationConfigureOptions(options);
 	if (this.VARS.HUMDRUM[id]) {
 		this.storeHumdrumOnPage(this.VARS.HUMDRUM[id]);
 		if (this.SETTINGS.debug_verbose === "true") {

@@ -50,6 +50,8 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor) {
 		else if (hexColor == '#3fa4b8') { keyText = 'G Moll'; }
 		else if (hexColor == '#6416b6') { keyText = 'As Moll'; }
 		else if (hexColor == '#8905b6') { keyText = 'A Moll'; }
+		else if (hexColor == '#8905b7') { keyText = 'A Moll'; }
+		else if (hexColor == '#8905b8') { keyText = 'A Moll'; }
 		else if (hexColor == '#b65d0c') { keyText = 'B Moll'; }
 		else if (hexColor == '#d46b00') { keyText = 'H Moll'; }
 
@@ -88,6 +90,8 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor) {
 		else if (hexColor == '#3fa4b8') { keyText = 'G minor'; }
 		else if (hexColor == '#6416b6') { keyText = 'A'+flat+' minor'; }
 		else if (hexColor == '#8905b6') { keyText = 'A minor'; }
+		else if (hexColor == '#8905b7') { keyText = 'A minor'; }
+		else if (hexColor == '#8905b8') { keyText = 'A minor'; }
 		else if (hexColor == '#b65d0c') { keyText = 'B'+flat+' minor'; }
 		else if (hexColor == '#d46b00') { keyText = 'B minor'; }
 

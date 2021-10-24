@@ -26,3 +26,9 @@
 @PL:		Rozwiń znaki powtarzania
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		configure_filter
+@EN:		Filter:
+@PL:		Filtr:
+@@END:		ENTRY
+

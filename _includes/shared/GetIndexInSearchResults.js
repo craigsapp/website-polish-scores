@@ -18,7 +18,7 @@
 {% endcomment %}
 
 POPC2.prototype.GetIndexInSearchResults = function (id, index) {
-	this.DebugMessageFunction(id);
+	this.DebugMessageFunctionVerbose(id);
 	return this.GetIndexAndTypeInSearchResults(id, index).index;
 };
 

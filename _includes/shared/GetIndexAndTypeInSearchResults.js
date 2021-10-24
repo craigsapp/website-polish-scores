@@ -22,7 +22,7 @@
 {% endcomment %}
 
 POPC2.prototype.GetIndexAndTypeInSearchResults = function (id, index) {
-	this.DebugMessageFunction(id);
+	this.DebugMessageFunctionVerbose(id);
 
 	if (!id) {
 		return {index: -1, type: "unknown"};

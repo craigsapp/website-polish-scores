@@ -1,0 +1,38 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct 23 14:37:14 PDT 2021
+// Last Modified: Sat Oct 23 14:37:18 PDT 2021
+// Filename:      _includes/styles/keyscape.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for the search results table on the browse page.
+//
+{% endcomment %}
+
+
+div#keyscape {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -115px;
+	height: 311px;
+}
+
+canvas#image {
+	position: absolute;
+	top: 5px;
+	left: calc(50vw - 300px);
+
+}
+
+canvas#cursor {
+	position: absolute;
+	top: 5px;
+	left: calc(50vw - 300px);
+}
+
+
+

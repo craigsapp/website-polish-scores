@@ -2,18 +2,19 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct 22 21:48:09 PDT 2021
-// Last Modified: Fri Oct 22 21:48:12 PDT 2021
+// Last Modified: Sun Oct 24 06:32:26 PDT 2021
 // Filename:      _includes/keyscape/printKeyInfo.js
-// Used by:       
+// Used by:
 // Included in:   _includes/keyscape/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
-// Description:   
+// Description:   Print the measured key at the current cursor point in the
+//                keyscape.
 //
 {% endcomment %}
 
-POPC2.prototype.printKeyInfo = function (textElement, hexColor) {
+POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) {
 	let keyText = "";
 	let sharp = '&#x266f;'
 	let good = 1;

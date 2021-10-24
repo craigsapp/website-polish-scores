@@ -21,9 +21,22 @@ POPC2.prototype.showKeyscape = function (id) {
 	if (!id) {
 		return;
 	}
+
+	let infourl = `${this.SETTINGS.data_addr}/${id}.keyscape-info`;
+	fetch(infourl)
+		.then(res => res.json())
+		.then(json => {
+			// console.warn("JSON INFO KEYSCAPE", json);
+			this.VARS.KEYSCAPE_INFO = json;
+		})
+		.catch(err => { console.error(err); });
+
+
 	let url = `${this.SETTINGS.data_addr}/${id}.keyscape-abspre`;
 	let imgElement = document.querySelector("#keyscape img");
 	imgElement.src = url;
+
+
 };
 
 Object.defineProperty(POPC2.prototype.showKeyscape, "name", { value: "showKeyscape" });

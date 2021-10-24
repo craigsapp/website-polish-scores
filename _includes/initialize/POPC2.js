@@ -96,6 +96,11 @@ function POPC2() {
 	// later sessions (as a JSON array of fileids).
 	this.VARS.WORK_BOOKMARKS = [];
 
+	// KEYSCAPE_INFO = timing informat for each double-wide pixel column
+	// in a keyscape.  This is used to display measure ranges in keyscapes.
+	// There should be 300 entries in the array, since keyscapes are set to 600px.
+	this.VARS.KEYSCAPE_INFO = [];
+
 
 	//////////////////////////////
 	//

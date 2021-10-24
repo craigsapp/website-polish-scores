@@ -33,7 +33,7 @@ POPC2.prototype.prepareShelfmarkForSorting = function (input) {
 		} else {
 			throw 'Invalid value';
 		}
-  
+
 		function parse(str) {
 			const VALUES = {
 			            	'm' : 1000,

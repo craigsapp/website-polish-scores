@@ -4,12 +4,13 @@
 // Creation Date: Fri Oct 22 22:14:42 PDT 2021
 // Last Modified: Fri Oct 22 22:14:46 PDT 2021
 // Filename:      _includes/keyscape/getFullTopOffset.js
-// Used by:       
+// Used by:
 // Included in:   _includes/keyscape/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
-// Description:   
+// Description:   Find the top absolute position of the element by summing
+//                all ancestor left offsets together.
 //
 {% endcomment %}
 

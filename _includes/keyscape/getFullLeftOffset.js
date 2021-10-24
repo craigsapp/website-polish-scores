@@ -4,12 +4,13 @@
 // Creation Date: Sat Oct 23 16:11:28 PDT 2021
 // Last Modified: Sat Oct 23 16:11:30 PDT 2021
 // Filename:      _includes/keyscape/getFullLeftOffset.js
-// Used by:       
+// Used by:
 // Included in:   _includes/keyscape/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
-// Description:   
+// Description:   Find the left absolute position of the element by summing
+//                all ancecstor left offsets together.
 //
 {% endcomment %}
 

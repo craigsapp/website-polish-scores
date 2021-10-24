@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct 22 22:31:11 PDT 2021
-// Last Modified: Fri Oct 22 22:31:14 PDT 2021
+// Last Modified: Sun Oct 24 06:30:33 PDT 2021
 // Filename:      _includes/listeners/keyscapeListener.js
 // Included in:   _includes/listeners/main.html
 // Syntax:        ECMAScript 6
@@ -28,16 +28,28 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.error("Error: cannot find keyinfo element.");
 		return;
 	}
-	let offset = 15;
+	let minfo = document.querySelector("#measureinfo");
+	if (!minfo) {
+		console.error("Error: cannot find keyscape measure info element.");
+		return;
+	}
+
+	let xoffset = 160;
+	let yoffset = 55;
 	keyinfo.style.position = "absolute";
 	keyinfo.style.display = "inline-block";
-	keyinfo.style.left = parseInt(canvas.getBoundingClientRect().left + offset) + 'px';
-	keyinfo.style.top  = parseInt(canvas.getBoundingClientRect().top  + offset) + 'px';
+	keyinfo.style.left = parseInt(canvas.getBoundingClientRect().left + xoffset) + 'px';
+	keyinfo.style.top  = parseInt(canvas.getBoundingClientRect().top  + yoffset) + 'px';
+
+	let yoffset2 = yoffset + 40;
+	minfo.style.position = "absolute";
+	minfo.style.display = "inline-block";
+	minfo.style.left = parseInt(canvas.getBoundingClientRect().left + xoffset) + 'px';
+	minfo.style.top  = parseInt(canvas.getBoundingClientRect().top  + yoffset2) + 'px';
 
 	cursor.onmousemove = function (event) {
 		event.preventDefault();
 		event.stopPropagation();
-
 
 		let position = popc2.findPos(cursor);
 		let x = event.pageX - position.x;
@@ -57,6 +69,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		let context2 = cursor.getContext('2d');
 		if (!good) {
 			context2.clearRect(0, 0, cursor.width, cursor.height);
+			let element = document.querySelector("#measureinfo");
+			if (element) {
+				element.innerHTML = "";
+			}
 			return;
 		}
 
@@ -66,19 +82,20 @@ document.addEventListener("DOMContentLoaded", function () {
 		mouseX = parseInt(event.clientX - offsetX);
 		mouseY = parseInt(event.clientY - offsetY);
 
-		let b = mouseY - mouseX;
-		let newx = 300 - b;
+		let b1 = mouseX + mouseY;
+		let newx1 = b1 - 300;
 
-		let b2 = mouseX + mouseY;
-		let newx2 = b2 - 300;
+		let b2 = mouseY - mouseX;
+		let newx2 = 300 - b2;
 
 		context2.clearRect(0, 0, cursor.width, cursor.height);
 		context2.beginPath();
-		context2.moveTo(mouseX ,mouseY);
-		context2.lineTo(newx, 300);
-		context2.moveTo(mouseX,mouseY);
-		context2.lineTo(newx2,300);
+		context2.moveTo(newx1,300);
+		context2.lineTo(mouseX,mouseY);
+		context2.lineTo(newx2, 300);
 		context2.stroke();
+
+		popc2.printMeasureInfo(newx1, newx2);
 
 	};
 
@@ -111,7 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 		cursor.width = width;
 		cursor.height = height;
-
 	};
 
 });

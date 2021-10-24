@@ -4,7 +4,7 @@
 // Creation Date: Fri Oct 22 21:58:53 PDT 2021
 // Last Modified: Fri Oct 22 21:58:56 PDT 2021
 // Filename:      _includes/keyscape/findPos.js
-// Used by:       
+// Used by:
 // Included in:   _includes/keyscape/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap

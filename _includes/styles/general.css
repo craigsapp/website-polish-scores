@@ -22,6 +22,7 @@ body {
 	cursor: auto;
 	font-family: 'Montserrat', sans-serif !important;
 	font-size: 15px;
+	font-smooth: always;
 	line-height: 1.5;
 	margin: 0;
 	-webkit-text-size-adjust: 100%;

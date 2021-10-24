@@ -4,12 +4,12 @@
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
 // Last Modified: Wed Oct  6 12:27:07 PDT 2021
 // Filename:      _includes/keyscape/rgbToHex.js
-// Used by:       
+// Used by:
 // Included in:   _includes/keyscape/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
-// Description:   
+// Description:   Convert integer RGB values into hex string.
 //
 {% endcomment %}
 

@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 		let position = popc2.findPos(cursor);
-		cursor.style.cursor = 'crosshair';
 		let x = event.pageX - position.x;
 		let y = event.pageY - position.y;
 		let context = canvas.getContext('2d');

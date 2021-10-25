@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct 22 21:21:08 PDT 2021
-// Last Modified: Sat Oct 23 16:11:52 PDT 2021
+// Last Modified: Mon Oct 25 09:02:00 PDT 2021
 // Filename:      _includes/keyscape/main.html
 // Included in:   _includes/head/main.html
 // Syntax:        ECMAScript 6; Jekyll/Liquid
@@ -14,10 +14,14 @@
 
 <script>
 
-{% include keyscape/findPos.js           %}
-{% include keyscape/printKeyInfo.js      %}
-{% include keyscape/printMeasureInfo.js  %}
-{% include keyscape/rgbToHex.js          %}
+{% include keyscape/findPos.js                %}
+{% include keyscape/getQuarterNoteRange.js    %}
+{% include keyscape/keyscapeClickEvent.js     %}
+{% include keyscape/keyscapeImageLoadEvent.js %}
+{% include keyscape/printKeyInfo.js           %}
+{% include keyscape/printMeasureInfo.js       %}
+{% include keyscape/rgbToHex.js               %}
+{% include keyscape/showKeyscape.js           %}
 
 </script>
 

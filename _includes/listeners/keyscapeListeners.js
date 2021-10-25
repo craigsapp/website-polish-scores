@@ -49,7 +49,16 @@ document.addEventListener("DOMContentLoaded", function () {
 	minfo.style.left = parseInt(rect.left + xoffset) + 'px';
 	minfo.style.top  = parseInt(rect.top  + yoffset2) + 'px';
 
-	cursor.onmousemove = function (event) {
+
+	//////////////////////////////
+	//
+	// cursor mousemove event listener -- When hovering over the keyscape,
+	//    print the color-to-key mapping of the selected position in the plot.
+	//    Also draw a triangular cursor that shows the range of music that the
+	//    selected point represents.
+	//
+
+	cursor.addEventListener("mousemove", function (event) {
 		event.preventDefault();
 		event.stopPropagation();
 
@@ -92,39 +101,18 @@ document.addEventListener("DOMContentLoaded", function () {
 		context2.stroke();
 
 		popc2.printMeasureInfo(newx1, newx2);
+	});
 
-	};
+	cursor.addEventListener("click", popc2.keyscapeClickEvent);
 
 	let imgElement = document.querySelector("#keyscape img");
 	if (!imgElement) {
 		console.error("Error: cannot find keyscape img element.");
 		return;
 	}
+	// Allow the cross-origin image to be loaded into the canvas:
 	imgElement.crossOrigin = "Anonymous";
-
-	imgElement.onload = function () {
-		let width = imgElement.width;
-		let height = imgElement.height;
-		if (width == 0)  { width  = 600; }
-		if (height == 0) { height = 311; }
-		let canvas = document.querySelector("#keyscape #image");
-		if (!canvas) {
-			console.error("Error: cannot find keyscape canvas.");
-			return;
-		}
-		canvas.width = width;
-		canvas.height = height;
-		let context = canvas.getContext("2d");
-		context.drawImage(imgElement, 0, 0);
-
-		let cursor = document.querySelector("#keyscape #cursor");
-		if (!cursor) {
-			console.error("Error: cannot find keyscape cursor.");
-			return;
-		}
-		cursor.width = width;
-		cursor.height = height;
-	};
+	imgElement.addEventListener("load", popc2.keyscapeImageLoadEvent);
 
 });
 

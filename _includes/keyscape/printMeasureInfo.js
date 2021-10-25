@@ -14,13 +14,14 @@
 {% endcomment %}
 
 POPC2.prototype.printMeasureInfo = function (startpx, endpx) {
-	// console.warn("STARTPX", startpx, "ENDPX", endpx);
 	if (!this.VARS.KEYSCAPE_INFO) {
 		return;
 	}
 	if (this.VARS.KEYSCAPE_INFO.length != 300) {
 		return;
 	}
+
+	// Keyscape is displayed in 2:1 aspect ratio, so convert to 1:1:
 	let startcol = parseInt(startpx / 2)
 	let endcol   = parseInt(endpx / 2)
 	if (endcol >= 300) { endcol = 299; }

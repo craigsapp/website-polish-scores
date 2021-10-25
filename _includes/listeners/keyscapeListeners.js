@@ -34,28 +34,30 @@ document.addEventListener("DOMContentLoaded", function () {
 		return;
 	}
 
+	let rect = canvas.getBoundingClientRect();
+
 	let xoffset = 160;
 	let yoffset = 55;
 	keyinfo.style.position = "absolute";
 	keyinfo.style.display = "inline-block";
-	keyinfo.style.left = parseInt(canvas.getBoundingClientRect().left + xoffset) + 'px';
-	keyinfo.style.top  = parseInt(canvas.getBoundingClientRect().top  + yoffset) + 'px';
+	keyinfo.style.left = parseInt(rect.left + xoffset) + 'px';
+	keyinfo.style.top  = parseInt(rect.top  + yoffset) + 'px';
 
 	let yoffset2 = yoffset + 40;
 	minfo.style.position = "absolute";
 	minfo.style.display = "inline-block";
-	minfo.style.left = parseInt(canvas.getBoundingClientRect().left + xoffset) + 'px';
-	minfo.style.top  = parseInt(canvas.getBoundingClientRect().top  + yoffset2) + 'px';
+	minfo.style.left = parseInt(rect.left + xoffset) + 'px';
+	minfo.style.top  = parseInt(rect.top  + yoffset2) + 'px';
 
 	cursor.onmousemove = function (event) {
 		event.preventDefault();
 		event.stopPropagation();
 
 		let position = popc2.findPos(cursor);
-		let x = event.pageX - position.x;
-		let y = event.pageY - position.y;
+		let mouseX = event.pageX - position.x;
+		let mouseY = event.pageY - position.y;
 		let context = canvas.getContext('2d');
-		let p = context.getImageData(x, y, 1, 1).data;
+		let p = context.getImageData(mouseX, mouseY, 1, 1).data;
 		let hex = "#" + ("000000" + popc2.rgbToHex(p[0], p[1], p[2])).slice(-6);
 		let good = popc2.printKeyInfo(keyinfo, hex);
 		if (good) {
@@ -75,12 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 			return;
 		}
-
-		let offsetX = parseInt(popc2.getFullLeftOffset(cursor));
-		let offsetY = parseInt(popc2.getFullTopOffset(cursor));
-
-		mouseX = parseInt(event.clientX - offsetX);
-		mouseY = parseInt(event.clientY - offsetY);
 
 		let b1 = mouseX + mouseY;
 		let newx1 = b1 - 300;

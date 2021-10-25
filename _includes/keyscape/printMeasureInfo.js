@@ -49,8 +49,6 @@ POPC2.prototype.printMeasureInfo = function (startpx, endpx) {
 		console.error("Error: cannot find #measureinfo");
 	}
 	element.innerHTML = value;
-	console.log(value);
-
 }
 
 Object.defineProperty(POPC2.prototype.printMeasureInfo, "name", { value: "printMeasureInfo" });

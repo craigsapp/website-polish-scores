@@ -24,14 +24,11 @@ div#keyscape {
 canvas#image {
 	position: absolute;
 	top: 5px;
-	left: calc(50vw - 300px);
-
 }
 
 canvas#cursor {
 	position: absolute;
 	top: 5px;
-	left: calc(50vw - 300px);
 }
 
 

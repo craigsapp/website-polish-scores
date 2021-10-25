@@ -1,14 +1,14 @@
 {% comment %}
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
-// Creation Date: Sat Oct 16 13:25:46 PDT 2021
-// Last Modified: Sat Oct 16 13:25:49 PDT 2021
-// Filename:      _includes/styles/work-downloads.css
+// Creation Date: Mon Oct 25 12:26:45 PDT 2021
+// Last Modified: Mon Oct 25 12:26:48 PDT 2021
+// Filename:      _includes/styles/subpage-downloads.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
 // vim:           ts=3:nowrap
 //
-// Description:   Styles for the download section of the work page.
+// Description:   Styles for the downloads subpage on the work page.
 //
 {% endcomment %}
 
@@ -51,29 +51,3 @@
 	color: #dddddd !important;
 	cursor: auto;
 }
-
-#subpage-search {
-	background: #f0f0f0;
-	height: 110px;
-	margin-top: -110px;
-	width: 100%;
-	justify-content: space-around;
-	align-items: center;
-	padding: 0px;
-	max-width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#subpage-configure {
-	height: 110px;
-	margin-top: -110px;
-	width: 100%;
-	justify-content: space-around;
-	align-items: center;
-	padding: 0px;
-	max-width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-}
-

@@ -33,6 +33,8 @@ POPC2.prototype.showSubpage = function (type) {
 			targets[i].classList.add("hidden");
 		}
 	}
+	this.ApplyElementTranslations();
+
 	return element;
 };
 

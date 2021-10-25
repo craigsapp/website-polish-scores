@@ -77,6 +77,20 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		options.filter = [];
 	}
 
+	// Add free-form filter option
+	element = document.querySelector("#checkbox-filter");
+	if (element) {
+		if (element.checked) {
+			let ielement = document.querySelector("#filter-input");
+			if (ielement) {
+				let value = ielement.value;
+				if (value && !value.match(/^\s*$/)) {
+					options.filter.push(value);
+				}
+			}
+		}
+	}
+
 	return options;
 };
 

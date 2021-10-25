@@ -38,13 +38,13 @@
 		<span class="checkmark"></span>
 	</label>
 
-	<div class="checkboxes" style="white-space:nowrap !important">
+	<div id="filter-form" class="checkboxes">
 		<label class="container">
-			<span class="ctext trans" data-trans="configure_filter"></span>
-			<input type="checkbox" id="checkbox-expandrep" onchange="popc2.displayScore()">
+			<span id="dummy-span">&nbsp;</span>
+			<input type="checkbox" id="checkbox-filter" onchange="popc2.displayScore()">
 			<span class="checkmark"></span>
 		</label>
-		<input type="text" placeholder="xxx" value="YYY">
+		<input id="filter-input" class="trans" data-transatt="placeholder:filter_placeholder" style="display:block" type="text" placeholder="" value="">
 	</div>
 
 </div>

@@ -1,0 +1,49 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Mon Oct 25 22:53:20 PDT 2021
+// Last Modified: Mon Oct 25 22:53:26 PDT 2021
+// Filename:      _includes/midi/main.html
+// Included in:   _includes/head/main-bottom.html
+// Syntax:        HTML; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   This directory contains Javascript functions related
+//						to MIDI playback.
+//
+{% endcomment %}
+
+<script src="{{ site.website_root }}scripts/wildwestmidi/jquery-3.2.1.slim.min.js"></script>
+<script src="{{ site.website_root }}scripts/wildwestmidi/wildwebmidi.js"></script>
+<script src="{{ site.website_root }}scripts/wildwestmidi/midiplayer.js"></script>
+<script src="{{ site.website_root }}scripts/wildwestmidi/midifunctions.js"></script>
+
+<script>
+
+{% include midi/initializeWildWebMidi.js %}
+
+initializeWildWebMidi();
+
+</script>
+
+<!-- 
+	The following svg is used to add a blur around the highted music notation:
+-->
+<svg width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" style="position:absolute;" >
+<defs>
+<filter id="dropshadow" height="130%">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="100"/> <!-- stdDeviation is how much to blur -->
+  <feOffset dx="2" dy="2" result="offsetblur"/> <!-- how much to offset -->
+  <feComponentTransfer>
+    <feFuncA type="linear" slope="0.5"/> <!-- slope is the opacity of the shadow -->
+  </feComponentTransfer>
+  <feMerge>
+    <feMergeNode/> <!-- this contains the offset blurred image -->
+    <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+  </feMerge>
+</filter>
+</defs>
+</svg>
+
+
+

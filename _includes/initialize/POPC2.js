@@ -72,7 +72,7 @@ function POPC2() {
 	//    "notecount": Sort by the number of notes in the score.
 	this.VARS.SEARCH_SORT_TYPE = null;
 
-	// SEARCH_SORT_TYPE_PREV = the previous sorting method (used for
+	// SEARCH_SORT_TYPE_PREV -- the previous sorting method (used for
 	// toggling sort methods.
 	this.VARS.SEARCH_SORT_TYPE_PREV = null;
 
@@ -85,21 +85,37 @@ function POPC2() {
 	// Variables primarily related to work page:
 	//
 
-	// WORK_ID = Work ID of score being displayed.
+	// WORK_ID -- Work ID of score being displayed.
 	this.VARS.WORK_ID = null;
 
-	// WORK_HISTORY = List of works that have been shown during the current session.
+	// WORK_HISTORY -- List of works that have been shown during the current session.
 	this.VARS.WORK_HISTORY = [];
 
-	// WORK_BOOKMARKS = List of works that are bookmarked (array of SCORE Index
+	// WORK_BOOKMARKS -- List of works that are bookmarked (array of SCORE Index
 	// entries).  The list is stored in localStorage.BOOKMARKS for access in
 	// later sessions (as a JSON array of fileids).
 	this.VARS.WORK_BOOKMARKS = [];
 
-	// KEYSCAPE_INFO = timing informat for each double-wide pixel column
+	// KEYSCAPE_INFO -- timing informat for each double-wide pixel column
 	// in a keyscape.  This is used to display measure ranges in keyscapes.
 	// There should be 300 entries in the array, since keyscapes are set to 600px.
 	this.VARS.KEYSCAPE_INFO = [];
+
+
+	//////////////////////////////
+	//
+	// Variables related to MIDI playback.
+	//
+
+	// MIDI_DELAY -- Used to delay MIDI playback for alignment.
+	this.VARS.MIDI_DELAY = 0;
+
+	// CURSOR_NOTE -- Used to highlight the current note at the location of the cursor.
+	this.VARS.CURSOR_NOTE = null;
+
+	// RESTORE_CURSOR_NOTE -- Used to go back to a highlighted note after a redraw.
+	// This is an ID string rather than an element.
+	this.VARS.RESTORE_CURSOR_NOTE = null;
 
 
 	//////////////////////////////
@@ -135,6 +151,7 @@ function POPC2() {
 	// along with default options.
 	this.VARS.HNP_OPTIONS = {
 		scale: 39,
+		humType: 1,
 		autoResize: true,
 		spacingSystem: 20
 	};

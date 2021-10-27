@@ -45,9 +45,9 @@ POPC2.prototype.printMeasureInfo = function (startpx, endpx) {
 		value = `mm. ${startmeasure}–${endmeasure}`;
 	}
 
-	let element = document.querySelector("#measureinfo");
+	let element = document.querySelector("#measure-info");
 	if (!element) {
-		console.error("Error: cannot find #measureinfo");
+		console.error("Error: cannot find #measure-info");
 	}
 	element.innerHTML = value;
 }

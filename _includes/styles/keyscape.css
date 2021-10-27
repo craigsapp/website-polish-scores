@@ -13,7 +13,7 @@
 {% endcomment %}
 
 
-div#keyscape {
+#keyscape {
 	width: 600px;
 	margin-left: auto;
 	margin-right: auto;
@@ -29,6 +29,13 @@ canvas#image {
 canvas#cursor {
 	position: absolute;
 	top: 5px;
+}
+
+#keyscape #left-info {
+	position: relative;
+	display: inline-block;
+	left: 5px;
+	top: 25px;
 }
 
 

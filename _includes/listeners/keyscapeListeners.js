@@ -23,32 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.error("Error: cannot find cursor canvas.");
 		return;
 	}
-	let keyinfo = document.querySelector("#keyinfo");
+	let keyinfo = document.querySelector("#key-info");
 	if (!keyinfo) {
 		console.error("Error: cannot find keyinfo element.");
 		return;
 	}
-	let minfo = document.querySelector("#measureinfo");
-	if (!minfo) {
-		console.error("Error: cannot find keyscape measure info element.");
-		return;
-	}
-
-	let rect = canvas.getBoundingClientRect();
-
-	let xoffset = 160;
-	let yoffset = 55;
-	keyinfo.style.position = "absolute";
-	keyinfo.style.display = "inline-block";
-	keyinfo.style.left = parseInt(rect.left + xoffset) + 'px';
-	keyinfo.style.top  = parseInt(rect.top  + yoffset) + 'px';
-
-	let yoffset2 = yoffset + 40;
-	minfo.style.position = "absolute";
-	minfo.style.display = "inline-block";
-	minfo.style.left = parseInt(rect.left + xoffset) + 'px';
-	minfo.style.top  = parseInt(rect.top  + yoffset2) + 'px';
-
 
 	//////////////////////////////
 	//
@@ -80,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		let context2 = cursor.getContext('2d');
 		if (!good) {
 			context2.clearRect(0, 0, cursor.width, cursor.height);
-			let element = document.querySelector("#measureinfo");
+			let element = document.querySelector("#measure-info");
 			if (element) {
 				element.innerHTML = "";
 			}

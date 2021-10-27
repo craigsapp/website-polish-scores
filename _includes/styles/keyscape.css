@@ -36,26 +36,30 @@ canvas#cursor {
 
 #keyscape #info-overlay {
 	border-collapse: collapse;
-	display: inline-block;
-	height: 100px;
+	display: flex;
+	/* height: 100px; */
 	left: 0px;
 	margin: 0;
 	padding: 0;
 	position: relative;
 	top: 25px;
+	justify-content: space-between;
 	width: 600px;
+	z-index: 999;
 }
 
 #keyscape #left-info {
-	padding: 5px;
-	width: 300px;
 }
 
 #keyscape #right-info {
-	padding: 5px;
 	text-align:right;
 	vertical-align: top;
-	width: 300px;
+	opacity: 0.15;
+}
+
+#keyscape #right-info:hover {
+	display: block;
+	opacity: 1.0;
 }
 
 

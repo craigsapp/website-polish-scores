@@ -15,8 +15,6 @@
 {% endcomment %}
 
 POPC2.prototype.keyscapeClickEvent = function (event) {
-	event.preventDefault();
-	event.stopPropagation();
 
 	let position = popc2.findPos(cursor);
 	let mouseX = event.pageX - position.x;
@@ -45,6 +43,9 @@ POPC2.prototype.keyscapeClickEvent = function (event) {
 
 	let qrange = popc2.getQuarterNoteRange(newx1, newx2);
 	console.warn(`PLAY from quarter note ${qrange.qstart} to ${qrange.qend}`);
+
+	event.preventDefault();
+	event.stopPropagation();
 
 };
 

@@ -38,8 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	//
 
 	cursor.addEventListener("mousemove", function (event) {
-		event.preventDefault();
-		event.stopPropagation();
 
 		let position = popc2.findPos(cursor);
 		let mouseX = event.pageX - position.x;

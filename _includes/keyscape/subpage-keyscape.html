@@ -15,26 +15,24 @@
 <div id="keyscape">
 	<canvas id="image"></canvas>
 	<canvas id="cursor"></canvas>
-	<table id="info-overlay">
-		<tr>
-			<td id="left-info">
-					<div id="key-info"></div>
-					<div id="measure-info"></div>
-			</td>
-			<td id="right-info">
-				<label class="reverse-container">
-					<span class="ctext ztrans" data-trans="cleaned_keyscape">Cleaned</span>
-					<input type="checkbox" id="checkbox-cleaned" onchange="popc2.displayKeyscape()">
-					<span class="checkmark"></span>
-				</label>
-				<label class="reverse-container">
-					<span class="ctext ztrans" data-trans="relative_keyscape">Relative</span>
-					<input type="checkbox" id="checkbox-relative" onchange="popc2.displayKeyscape()">
-					<span class="checkmark"></span>
-				</label>
-			</td>
-		</tr>
-	</table>
+	<div id="info-overlay">
+		<div id="left-info">
+				<div id="key-info"></div>
+				<div id="measure-info"></div>
+		</div>
+		<div id="right-info">
+			<label style="z-index:500" class="reverse-container">
+				<span class="ctext ztrans" data-trans="cleaned_keyscape">Cleaned</span>
+				<input type="checkbox" id="checkbox-cleaned" onchange="popc2.displayKeyscape()">
+				<span class="checkmark"></span>
+			</label>
+			<label class="reverse-container">
+				<span class="ctext ztrans" data-trans="relative_keyscape">Relative</span>
+				<input type="checkbox" id="checkbox-relative" onchange="popc2.displayKeyscape()">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
 	<img class="hidden">
 </div>
 

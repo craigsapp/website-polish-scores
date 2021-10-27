@@ -40,7 +40,8 @@ span.ctext {
 }
 
 /* Hide the browser's default checkbox */
-.container input {
+.container input,
+.reverse-container input {
 	cursor: pointer;
 	height: 0;
 	opacity: 0;
@@ -49,7 +50,7 @@ span.ctext {
 }
 
 /* Create a custom checkbox */
-.checkmark {
+.container .checkmark {
 	background-color: #eee;
 	outline: 1px solid #aaa;
 	height: 20px;
@@ -60,12 +61,14 @@ span.ctext {
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.container:hover input ~ .checkmark,
+.reverse-container:hover input ~ .checkmark {
 	background-color: {{ site.button_hover_color }};
 }
 
 /* When the checkbox is checked, add background */
-.container input:checked ~ .checkmark {
+.container input:checked ~ .checkmark,
+.reverse-container input:checked ~ .checkmark {
 	background-color: {{ site.h1_color }};
 }
 
@@ -77,12 +80,14 @@ span.ctext {
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked ~ .checkmark:after,
+.reverse-container input:checked ~ .checkmark:after {
 	display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.container .checkmark:after,
+.reverse-container .checkmark:after {
 	border-width: 0 3px 3px 0 !important;
 	border: solid white;
 	height: 10px;
@@ -93,5 +98,34 @@ span.ctext {
 	-webkit-transform: rotate(45deg);
 	width: 5px;
 }
+
+/* Reverse container (right-justified checkbox) */
+
+/* Customize the label (the reverse container) */
+.reverse-container {
+	cursor: pointer;
+	display: block;
+	font-size: 18px;
+	margin-bottom: -4px;
+	padding-left: 35px;
+	padding-right: 10px;
+	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+
+/* Create a custom checkbox */
+.reverse-container .checkmark {
+	background-color: #eee;
+	outline: 1px solid #aaa;
+	height: 20px;
+	display: inline-block;
+	/* left: 0; */
+	/* position: absolute; */
+	/* top: 5px; */
+	width: 20px;
+}
+
 
 

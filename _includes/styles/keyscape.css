@@ -2,40 +2,60 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat Oct 23 14:37:14 PDT 2021
-// Last Modified: Sat Oct 23 14:37:18 PDT 2021
+// Last Modified: Wed Oct 27 01:41:11 PDT 2021
 // Filename:      _includes/styles/keyscape.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
 // vim:           ts=3:nowrap
 //
-// Description:   Styles for the search results table on the browse page.
+// Description:   Styles for the keyscape subpage on the work page.
 //
 {% endcomment %}
 
-
 #keyscape {
-	width: 600px;
+	height: 311px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: -115px;
-	height: 311px;
+	width: 600px;
 }
 
 canvas#image {
 	position: absolute;
 	top: 5px;
+	z-index: 99;
+	mix-blend-mode: multiply;
 }
 
 canvas#cursor {
 	position: absolute;
 	top: 5px;
+	z-index: 99;
+	mix-blend-mode: multiply;
+}
+
+#keyscape #info-overlay {
+	border-collapse: collapse;
+	display: inline-block;
+	height: 100px;
+	left: 0px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: 25px;
+	width: 600px;
 }
 
 #keyscape #left-info {
-	position: relative;
-	display: inline-block;
-	left: 5px;
-	top: 25px;
+	padding: 5px;
+	width: 300px;
+}
+
+#keyscape #right-info {
+	padding: 5px;
+	text-align:right;
+	vertical-align: top;
+	width: 300px;
 }
 
 

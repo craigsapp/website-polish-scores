@@ -24,7 +24,8 @@ h1 {
 	list-style-type: none;
 	margin: 0;
 	padding-bottom: 45px;
-	padding-top: 20px;
+	/* padding-top: 20px; */
+	padding-top: 81px; /* increased due to #player */
 	text-align: center;
 	word-spacing: 5px;
 	-webkit-text-size-adjust: 100%;

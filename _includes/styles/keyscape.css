@@ -62,5 +62,16 @@ canvas#cursor {
 	opacity: 1.0;
 }
 
+#keyscape #keyscape-info {
+	opacity: 0.7555;
+	size: 1.75rem;
+	padding-top: 3px;
+	padding-right: 13px;
+}
+
+#keyscape #keyscape-info:hover {
+	color: {{ site.h1_color }};
+}
+
 
 

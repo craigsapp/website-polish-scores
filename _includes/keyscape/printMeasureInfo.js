@@ -17,7 +17,11 @@ POPC2.prototype.printMeasureInfo = function (startpx, endpx) {
 	if (!this.VARS.KEYSCAPE_INFO) {
 		return;
 	}
-	if (this.VARS.KEYSCAPE_INFO.length != 300) {
+	let id = this.VARS.WORK_ID;
+	if (!id) {
+		return;
+	}
+	if (this.VARS.KEYSCAPE_INFO[id].length != 300) {
 		return;
 	}
 
@@ -28,15 +32,15 @@ POPC2.prototype.printMeasureInfo = function (startpx, endpx) {
 	if (startcol < 0)  { startcol = 0; }
 	// console.warn("STARTPX", startcol, "ENDPX", endcol);
 
-	if (typeof this.VARS.KEYSCAPE_INFO[startcol].startbar === "undefined") {
+	if (typeof this.VARS.KEYSCAPE_INFO[id][startcol].startbar === "undefined") {
 		return;
 	}
-	let startmeasure = this.VARS.KEYSCAPE_INFO[startcol].startbar;
+	let startmeasure = this.VARS.KEYSCAPE_INFO[id][startcol].startbar;
 
-	if (typeof this.VARS.KEYSCAPE_INFO[endcol].endbar === "undefined") {
+	if (typeof this.VARS.KEYSCAPE_INFO[id][endcol].endbar === "undefined") {
 		return;
 	}
-	let endmeasure = this.VARS.KEYSCAPE_INFO[endcol].endbar;
+	let endmeasure = this.VARS.KEYSCAPE_INFO[id][endcol].endbar;
 
 	let value;
 	if (startmeasure === endmeasure) {

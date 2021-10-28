@@ -86,13 +86,27 @@ span.ctext {
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after,
-.reverse-container .checkmark:after {
+.container .checkmark:after {
 	border-width: 0 3px 3px 0 !important;
 	border: solid white;
 	height: 10px;
 	left: 7px;
 	top: 3px;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	width: 5px;
+}
+
+/* Style the checkmark/indicator */
+.reverse-container .checkmark:after {
+	border-width: 0 3px 3px 0 !important;
+	border: solid white;
+	height: 10px;
+	margin-left: 7px;
+	margin-top: 3px;
+	/* left: 7px; */
+	/* top: 3px; */
 	transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);

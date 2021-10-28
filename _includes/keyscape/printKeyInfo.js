@@ -20,9 +20,54 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) 
 	let good = 1;
 	let flat  = '<span style="line-height:100%; margin: 0 -0.18em 0 -0.18em;">&#x266d;</span>'
 
+	let cleanedElement = document.querySelector("#checkbox-relative");
+	let relativeQ = false;
+	if (cleanedElement && cleanedElement.checked) {
+		relativeQ = true;
+	}
+
 	// console.log("HEXCOLOR", hexColor);
 
-	if (this.VARS.LANGUAGE === "PL") {
+	if (relativeQ) {
+
+		if      (hexColor == '#00ff00') { keyText = 'I'; }
+		else if (hexColor == '#21ff8d') { keyText = 'II-'; }
+		else if (hexColor == '#3d5fff') { keyText = 'II'; }
+		else if (hexColor == '#e50b52') { keyText = 'III-'; }
+		else if (hexColor == '#ff0000') { keyText = 'III'; }
+		else if (hexColor == '#ffff00') { keyText = 'IV'; }
+		else if (hexColor == '#c1ff00') { keyText = 'V-'; }
+		else if (hexColor == '#5dd4ff') { keyText = 'V'; }
+		else if (hexColor == '#822eff') { keyText = 'VI-'; }
+		else if (hexColor == '#ce24ff') { keyText = 'VI'; }
+		else if (hexColor == '#ffa100') { keyText = 'VII-'; }
+		else if (hexColor == '#ff6e03') { keyText = 'VII'; }
+
+		else if (hexColor == '#00a200') { keyText = 'i'; }
+		else if (hexColor == '#06c05a') { keyText = 'ii-'; }
+		else if (hexColor == '#203ab6') { keyText = 'ii'; }
+		else if (hexColor == '#203ab7') { keyText = 'ii'; }
+		else if (hexColor == '#203ab8') { keyText = 'ii'; }
+		else if (hexColor == '#b9144a') { keyText = 'iii-'; }
+		else if (hexColor == '#b00000') { keyText = 'iii'; }
+		else if (hexColor == '#ddc900') { keyText = 'iv'; }
+		else if (hexColor == '#8dc900') { keyText = 'v-'; }
+		else if (hexColor == '#3fa4b6') { keyText = 'v'; }
+		else if (hexColor == '#3fa4b7') { keyText = 'v'; }
+		else if (hexColor == '#3fa4b8') { keyText = 'v'; }
+		else if (hexColor == '#6416b6') { keyText = 'vi-'; }
+		else if (hexColor == '#8905b6') { keyText = 'vi'; }
+		else if (hexColor == '#8905b7') { keyText = 'vi'; }
+		else if (hexColor == '#8905b8') { keyText = 'vi'; }
+		else if (hexColor == '#b65d0c') { keyText = 'vii-'; }
+		else if (hexColor == '#d46b00') { keyText = 'vii'; }
+
+		else {
+			keyText = '';
+			good = 0;
+		}
+
+	} else if (this.VARS.LANGUAGE === "PL") {
 
 		if      (hexColor == '#00ff00') { keyText = 'C Dur'; }
 		else if (hexColor == '#21ff8d') { keyText = 'Cis/Des Dur'; }

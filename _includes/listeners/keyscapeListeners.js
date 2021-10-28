@@ -97,7 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	let elem = document.querySelector("#keyscape #info-overlay");
 	if (elem) {
 		elem.addEventListener("mousemove", function (event) {
-			console.warn("MOUSEOVER EVENT FOR INFO-OVERLAY", event);
 			event.preventDefault();
 			event.stopImmediatePropagation();
 			cursor.dispatchEvent(new MouseEvent(event.type, event));

@@ -22,17 +22,31 @@ POPC2.prototype.showKeyscape = function (id) {
 		return;
 	}
 
-	let infourl = `${this.SETTINGS.data_addr}/${id}.keyscape-info`;
-	fetch(infourl)
-		.then(res => res.json())
-		.then(json => {
-			// console.warn("JSON INFO KEYSCAPE", json);
-			this.VARS.KEYSCAPE_INFO = json;
+	if (!this.VARS.KEYSCAPE_INFO[id]) {
+		let infourl = `${this.SETTINGS.data_addr}/${id}.keyscape-info`;
+		fetch(infourl)
+			.then(res => res.json())
+			.then(json => {
+				// console.warn("JSON INFO KEYSCAPE", json);
+				this.VARS.KEYSCAPE_INFO[id] = json;
+	
+			})
+			.catch(err => { console.error(err); });
+	}
 
-		})
-		.catch(err => { console.error(err); });
+	let option1 = "abs";
+	let option2 = "pre";
 
-	let url = `${this.SETTINGS.data_addr}/${id}.keyscape-abspre`;
+	let element1 = document.querySelector("#checkbox-relative");
+	let element2 = document.querySelector("#checkbox-cleaned");
+	if (element1 && element1.checked) {
+		option1 = "rel";
+	}
+	if (element2 && element2.checked) {
+		option2 = "post";
+	}
+
+	let url = `${this.SETTINGS.data_addr}/${id}.keyscape-${option1}${option2}`;
 	let ielement = document.querySelector("#keyscape img");
 	ielement.src = url;
 

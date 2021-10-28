@@ -91,6 +91,19 @@ document.addEventListener("DOMContentLoaded", function () {
 	imgElement.crossOrigin = "Anonymous";
 	imgElement.addEventListener("load", popc2.keyscapeImageLoadEvent);
 
+
+	// Pass mousemove events on the info-overlay to the canvas partially
+	// underneath it.
+	let elem = document.querySelector("#keyscape #info-overlay");
+	if (elem) {
+		elem.addEventListener("mousemove", function (event) {
+			console.warn("MOUSEOVER EVENT FOR INFO-OVERLAY", event);
+			event.preventDefault();
+			event.stopImmediatePropagation();
+			cursor.dispatchEvent(new MouseEvent(event.type, event));
+		});
+	}
+
 });
 
 

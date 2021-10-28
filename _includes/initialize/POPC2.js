@@ -101,6 +101,9 @@ function POPC2() {
 	// There should be 300 entries in the array, since keyscapes are set to 600px.
 	this.VARS.KEYSCAPE_INFO = {};
 
+	// TIMEMAP -- quarter note to time in seconds mapping.
+	this.VARS.TIMEMAP = {};
+
 
 	//////////////////////////////
 	//

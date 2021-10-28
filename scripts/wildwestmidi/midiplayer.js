@@ -313,7 +313,7 @@ console.log("play", millisec);
 	_EM_signalStop = 0;
 	midiPlayer_play.style.display = 'none';
 	midiPlayer_pause.style.display = 'inline-block';
-	midiPlayer_stop.style.display = 'inline-block';
+	// midiPlayer_stop.style.display = 'inline-block';
 	// add small delay so UI can update.
 	// setTimeout(runConversion, 100);
 	runConversion();
@@ -386,15 +386,12 @@ console.log("initializing midi player");
 		options.updateRate = Math.max(options.updateRate, 10);
 
 		$.fn.midiPlayer.play = function (song, millisec) {
-console.log("entering midiPlayer.play");
 			if (midiPlayer_isLoaded == false) {
 
-console.log("midiPlayer.play - loading song");
 				midiPlayer_input = song;
 			}
 			else {
 
-console.log("midiPlayer.play - initializing a song");
 				var byteArray = convertDataURIToBinary(song);
 				if (midiPlayer_totalSamples > 0) {
 					stop();
@@ -402,7 +399,6 @@ console.log("midiPlayer.play - initializing a song");
 					setTimeout(function() {convertFile("player.midi", byteArray);}, 200, millisec);
 				}
 				else {
-console.log("midiPlayer.play - converting file");
 					convertFile("player.midi", byteArray, millisec);
 				}
 			}
@@ -422,14 +418,16 @@ console.log("midiPlayer.play - converting file");
 console.log("CREATING THE PLAYER");
 		// Create the player
 		this.append("<div id='midiPlayer_div'></div>");
-		$("#midiPlayer_div").append("<div id='midiPlayer_playingTime'>0:00</div>")
-			.append("<div id='midiPlayer_bar'><div id='midiPlayer_progress'></div></div>")
-			.append("<div id='midiPlayer_totalTime'>0:00</div>")
+		$("#midiPlayer_div")
 			.append("<a class='mbutton icon play' id='midiPlayer_play' onclick='play()'><span class='fas fa-play'></span></a>")
 			.append("<a class='mbutton icon pause' id='midiPlayer_pause' onclick='pause()'><span class='fas fa-pause'></span></a>")
-			.append("<a class='mbutton icon stop' id='midiPlayer_stop' onclick='stop()'><span style='padding-left:20px' class='fas fa-stop'></span></a>");
+			.append("<div id='midiPlayer_playingTime'>0:00</div>")
+			.append("<div id='midiPlayer_bar'><div id='midiPlayer_progress'></div></div>")
+			.append("<div id='midiPlayer_totalTime'>0:00</div>")
+		;
+		//	.append("<a class='mbutton icon stop' id='midiPlayer_stop' onclick='stop()'><span style='padding-left:20px' class='fas fa-stop'></span></a>");
 
-		$("#midiPlayer_div").css("width", options.width + 200);
+		$("#midiPlayer_div").css("width", options.width + 150);
 		$("#midiPlayer_bar").css("width", options.width);
 		$("#midiPlayer_progress").css("background", options.color);
 

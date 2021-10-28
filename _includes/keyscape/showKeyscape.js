@@ -29,10 +29,13 @@ POPC2.prototype.showKeyscape = function (id) {
 			.then(json => {
 				// console.warn("JSON INFO KEYSCAPE", json);
 				this.VARS.KEYSCAPE_INFO[id] = json;
-	
 			})
 			.catch(err => { console.error(err); });
 	}
+
+	// Store timemap, which can be used to start MIDI music playback
+	// when clicking on the keyscape.
+	this.LoadTimemap();
 
 	let option1 = "abs";
 	let option2 = "pre";

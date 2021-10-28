@@ -16,7 +16,7 @@ let RestoreCursorNote;
 // otherwise, start from the start of the music.
 //
 
-function playCurrentMidi() {
+function playCurrentMidi(startime) {
 	if (CursorNote && CursorNote.id) {
 		let id = CursorNote.id;
 		vrvWorker.getTimeForElement(id)
@@ -24,7 +24,7 @@ function playCurrentMidi() {
 			play_midi(time);
 		});
 	} else {
-		play_midi();
+		play_midi(startime);
 	}
 } 
 

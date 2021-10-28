@@ -43,6 +43,11 @@ POPC2.prototype.keyscapeClickEvent = function (event) {
 
 	let qrange = popc2.getQuarterNoteRange(newx1, newx2);
 	console.warn(`PLAY from quarter note ${qrange.qstart} to ${qrange.qend}`);
+	let timerange = popc2.getTimeRange(qrange.qstart, qrange.qend);
+
+	console.log("TIMERANGE", timerange);
+	console.log("START TIME", timerange["start-time"]);
+	playCurrentMidi(timerange["start-time"]);
 
 	event.preventDefault();
 	event.stopPropagation();

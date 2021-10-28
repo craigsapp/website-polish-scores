@@ -14,6 +14,8 @@
 {% endcomment %}
 
 POPC2.prototype.keyscapeImageLoadEvent = function (event) {
+   popc2.LoadTimemap();
+
 	if (!event) {
 		console.error("Event is empty");
 		return;

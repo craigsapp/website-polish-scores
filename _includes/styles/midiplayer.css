@@ -1,46 +1,75 @@
 
+#player {
+	position:sticky;
+	position: -webkit-sticky;
+	margin-left:80px;
+	margin-top:-98px;
+	visibility:hidden;
+}
+
 #midiPlayer_div  {
-	height:     36px;
+	height: 24px;
 	background: #999;
-	opacity:    0.70;
+	opacity: 0.70;
 }
 
 #midiPlayer_bar  {
-	height:            12px;
-	width:             250px;
-	background:        #ccc;
-	cursor:            pointer;
-	display:           inline-block;
+	/* progress bar background */
+
+	background: #ccc;
+	cursor: pointer;
+	display: inline-block;
+	height: 12px;
+	position: relative;
+	top: -7px;
+	width: 250px;
+
 }
 
 #midiPlayer_progress {
-	background:        #555;
-	margin:            0;
-	width:             0;
-	height:            100%;
+
+	/* background: #555; */
+	background: {{ site.h1_color }};
+	height: 100%;
+	margin: 0;
+	position: relative;
+	top: 0px;
+	width: 0;
+
 }
 
 #midiPlayer_playingTime {
-	width:             45px;
-	margin:            8px;
-	font-size:         16px;
-	text-align:        right;
-	font-family:       arial;
-	display:           inline-block;
+	display: inline-block;
+	font-family: arial;
+	font-size: 16px;
+	margin: 8px;
+	position: relative;
+	text-align: right;
+	top: -7px;
+	width: 45px;
+}
+
+#midiPlayer_play,
+#midiPlayer_pause {
+	margin-left: 10px;
+	position: relative;
+	top: -7px;
 }
 
 #midiPlayer_totalTime {
-	width:             40px;
-	text-align:        right;
-	margin:            4px;
-	font-size:         16px;
-	font-family:       arial;
-	display:           inline-block;
+	display: inline-block;
+	font-family: arial;
+	font-size: 16px;
+	margin: 4px;
+	position: relative;
+	text-align: right;
+	top: -7px;
+	width: 40px;
 }
 
 #midiPlayer_div a.icon {
-	cursor:            pointer;
-	vertical-align:    center;
+	cursor: pointer;
+	vertical-align: center;
 }
 
 #midiPlayer_div a.icon: hover {

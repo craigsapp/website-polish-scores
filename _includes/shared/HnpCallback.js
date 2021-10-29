@@ -30,6 +30,9 @@ POPC2.prototype.HnpCallback = function () {
  		document.body.classList.remove("waiting");
 	}, 120);
 
+	// Prepare timemap in case it is needed (for keyscape performance time selection).
+   popc2.LoadTimemap();
+
 };
 
 Object.defineProperty(POPC2.prototype.HnpCallback, "name", { value: "HnpCallback" });

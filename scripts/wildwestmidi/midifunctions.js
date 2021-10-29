@@ -16,7 +16,7 @@ let RestoreCursorNote;
 // otherwise, start from the start of the music.
 //
 
-function playCurrentMidi(startime) {
+function playCurrentMidi(startime, stoptime) {
 	if (CursorNote && CursorNote.id) {
 		let id = CursorNote.id;
 		vrvWorker.getTimeForElement(id)
@@ -24,7 +24,7 @@ function playCurrentMidi(startime) {
 			play_midi(time);
 		});
 	} else {
-		play_midi(startime);
+		play_midi(startime, stoptime);
 	}
 } 
 
@@ -35,8 +35,7 @@ function playCurrentMidi(startime) {
 
 var DELAY = 600;
 
-function play_midi(starttime) {
-console.warn("Entered play_midi, starttime=", starttime);
+function play_midi(starttime, stoptime) {
 	starttime = starttime ? starttime : 0;
 	if (starttime == 0) {
 		DELAY = 600;
@@ -68,6 +67,19 @@ console.warn("Entered play_midi, starttime=", starttime);
 		$("#player").midiPlayer.play(song, starttime);
 		PLAY = true;
 		LASTLINE = -1;
+
+
+		if (stoptime) {
+			let duration = stoptime - starttime;
+			console.warn("STOPPING MIDI IN", duration, "ms.");
+			if (duration > 0.0) {
+				setTimeout(function () {
+					console.warn("STOPPING MIDI");
+					stop();
+				}, duration);
+			}
+		}
+
 	});
 }
 

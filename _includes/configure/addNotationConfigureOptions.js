@@ -3,9 +3,9 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat Oct 23 01:38:24 PDT 2021
 // Last Modified: Sat Oct 23 01:38:26 PDT 2021
-// Filename:      _includes/work/addNotationConfigureOptions.js
+// Filename:      _includes/configure/addNotationConfigureOptions.js
 // Used by:
-// Included in:   _includes/work/main.html
+// Included in:   _includes/configure/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
@@ -75,6 +75,15 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 	}
 	if (!options.filter) {
 		options.filter = [];
+	}
+
+	// Correct sic
+	element = document.querySelector("#checkbox-sic");
+	if (element) {
+		if (element.checked) {
+			let entry = "sic -s";
+			shed.push(entry);
+		}
 	}
 
 	// Add free-form filter option

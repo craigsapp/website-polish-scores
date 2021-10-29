@@ -26,7 +26,7 @@
 
 #filter-form {
 	white-space: nowrap;
-	display: inline;
+	display: inline-block !important;
 }
 
 #filter-form label {
@@ -36,7 +36,7 @@
 }
 
 #filter-form input {
-	display: inline !important;
+	display: inline-block !important;
 }
 
 #filter-form #dummy-span {

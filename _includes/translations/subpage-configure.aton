@@ -27,6 +27,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		correct_sic
+@EN:		Correct sic
+@PL:		Poprawny sic
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		filter_placeholder
 @EN:		Filter
 @PL:		Filtr

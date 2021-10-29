@@ -169,7 +169,7 @@ var midiPlayer_progress;
 var midiPlayer_playingTime;
 var midiPlayer_play;
 var midiPlayer_pause;
-var midiPlayer_stop;
+// var midiPlayer_stop;
 var midiPlayer_totalTime;
 
 // variables
@@ -334,7 +334,7 @@ function stop() {
 
 	midiPlayer_play.style.display = 'none';
 	midiPlayer_pause.style.display = 'none';
-	midiPlayer_stop.style.display = 'none';
+	// midiPlayer_stop.style.display = 'none';
 
 	if (midiPlayer_onStop != null) midiPlayer_onStop();
 }
@@ -411,11 +411,10 @@ console.log("initializing midi player");
 			play();
 		};
 
-		$.fn.midiPlayer.stop = function () {
-			stop();
-		};
+//		$.fn.midiPlayer.stop = function () {
+//			stop();
+//		};
 
-console.log("CREATING THE PLAYER");
 		// Create the player
 		this.append("<div id='midiPlayer_div'></div>");
 		$("#midiPlayer_div")
@@ -440,7 +439,7 @@ console.log("CREATING THE PLAYER");
 		midiPlayer_playingTime = document.getElementById('midiPlayer_playingTime');
 		midiPlayer_play = document.getElementById('midiPlayer_play');
 		midiPlayer_pause = document.getElementById('midiPlayer_pause');
-		midiPlayer_stop = document.getElementById('midiPlayer_stop');
+//		midiPlayer_stop = document.getElementById('midiPlayer_stop');
 		midiPlayer_totalTime = document.getElementById('midiPlayer_totalTime');
 
 

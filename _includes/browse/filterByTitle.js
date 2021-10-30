@@ -16,7 +16,7 @@
 POPC2.prototype.filterByTitle = function (input) {
 	this.DebugMessageFunctionVerbose();
 	let type = "title";
-	let field = "title";
+	let field = "_title";
 	if (!input) {
 		return [];
 	}

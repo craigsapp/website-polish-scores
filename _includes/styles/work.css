@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Tue Oct 12 08:07:59 PDT 2021
-// Last Modified: Tue Oct 12 08:08:06 PDT 2021
+// Last Modified: Sat Oct 30 10:33:34 PDT 2021
 // Filename:      _includes/styles/work.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
@@ -16,9 +16,16 @@
 	font-size: 1.3rem;
 }
 
-#OTL {
-	font-size: 1.2rem;
+#GROUPTITLE {
+	font-size: 1.5rem;
 }
 
+#TITLE {
+	font-size: 1.5rem;
+}
+
+#SUBTITLE {
+	font-size: 1.2rem;
+}
 
 

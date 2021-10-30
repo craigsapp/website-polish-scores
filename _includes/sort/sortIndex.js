@@ -2,8 +2,8 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sun Oct 17 15:31:28 PDT 2021
-// Last Modified: Thu Oct 21 10:32:43 PDT 2021
-// Filename:      _includes/sort/sortByNoteCount.js
+// Last Modified: Sat Oct 30 11:16:25 PDT 2021
+// Filename:      _includes/sort/sortIndex.js
 // Used by:
 // Included in:   _includes/sort/main.html
 // Syntax:        ECMAScript 6
@@ -27,6 +27,8 @@ POPC2.prototype.sortIndex = function (index) {
 		newlist = this.sortByLastEditedDate(index, this.VARS.SEARCH_SORT_REVERSE);
 	} else if (this.VARS.SEARCH_SORT_TYPE === "shelfmark") {
 		newlist = this.sortByShelfmark(index, this.VARS.SEARCH_SORT_REVERSE);
+	} else if (this.VARS.SEARCH_SORT_TYPE === "title") {
+		newlist = this.sortByTitle(index, this.VARS.SEARCH_SORT_REVERSE);
 	}
 
 	return newlist;

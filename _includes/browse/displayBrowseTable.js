@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Thu Oct 21 09:42:12 PDT 2021
+// Last Modified: Sat Oct 30 11:45:08 PDT 2021
 // Filename:      _includes/browse/displayBrowseTable.js
 // Used by:
 // Included in:   _includes/browse/main.html
@@ -77,7 +77,7 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 
 	output += `<th class="composer">${this.getTranslation("header_composer")}</th>\n`;
 
-	output += `<th class="title">${this.getTranslation("header_title")}</th>\n`;
+	output += `<th class="title" onclick="popc2.toggleTitleSort()">${this.getTranslation("header_title")}</th>\n`;
 
 	output += "</thead>\n";
 	output += "<tbody>\n";
@@ -122,7 +122,36 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 		output += "</td>\n";
 
 		output += "<td class='title'>";
-		output += this.getHighlightedString(results[i].title || "", this.VARS.SEARCH.title);
+		if (this.VARS.SEARCH_SORT_TYPE === "title") {
+			let gtl = results[i].GTL || "";
+			let opr = results[i].OPR || "";
+			let otl = results[i].OTL || "";
+			let unsorttitle = "";
+			let sorttitle = "";
+			if (gtl) {
+				unsorttitle = gtl;
+				sorttitle = otl;
+				output += "<span class='mute'>";
+				output += this.getHighlightedString(unsorttitle, this.VARS.SEARCH.title);
+				output += " &mdash; ";
+				output += "</span>";
+				output += this.getHighlightedString(sorttitle, this.VARS.SEARCH.title);
+			} else if (opr) {
+				sorttitle = opr;
+				unsorttitle = otl;
+				output += this.getHighlightedString(sorttitle, this.VARS.SEARCH.title);
+				output += "<span class='mute'>";
+				output += " &mdash; ";
+				output += this.getHighlightedString(unsorttitle, this.VARS.SEARCH.title);
+				output += "</span>";
+			} else {
+				sorttitle = otl;
+				unsorttitle = "";
+				output += this.getHighlightedString(sorttitle, this.VARS.SEARCH.title);
+			}
+		} else {
+			output += this.getHighlightedString(results[i]._title || "", this.VARS.SEARCH.title);
+		}
 		output += "</td>\n";
 
 		output += "</tr>\n";

@@ -1,21 +1,20 @@
 {% comment %}
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
-// Creation Date: Sat Oct 30 10:59:31 PDT 2021
-// Last Modified: Sat Oct 30 10:59:33 PDT 2021
-// Filename:      _includes/sort/sortByTitle.js
+// Creation Date: Sat Oct 30 13:48:59 PDT 2021
+// Last Modified: Sat Oct 30 13:49:02 PDT 2021
+// Filename:      _includes/sort/sortByComposer.js
 // Used by:
 // Included in:   _includes/sort/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
-// Description:   Sort entries by title.  This is either the OTL parameter in a 
-//                sorting record, or OPR parameter if it is present (but GTL is
-//                ignored).  Sorting ties are broken by composer/siglum/shelfmark/shelfwork.
+// Description:   Sort entries by composer.  Anonymous will be placed last, and ties
+//                will be reolved by sorting by title.
 //
 {% endcomment %}
 
-POPC2.prototype.sortByTitle = function (index, reverse) {
+POPC2.prototype.sortByComposer = function (index, reverse) {
 	this.DebugMessageFunction();
 
 	let newlist = [];
@@ -28,6 +27,17 @@ POPC2.prototype.sortByTitle = function (index, reverse) {
 	}
 
 	newlist.sort(function (a, b) {
+		let comA = a.COM || "";
+		let comB = b.COM || "";
+		if (comA !== comB) {
+			if (comA.match(/^anon/i) && !comB.match(/^anon/i)) {
+				return +1;
+			} else if ((!comA.match(/^anon/i)) && comB.match(/^anon/i)) {
+				return -1;
+			}
+			return comA.localeCompare(comB);
+		}
+
 		let otlA       = a.OTL       || "";
 		let otlB       = b.OTL       || "";
 		let oprA       = a.OPR       || "";
@@ -54,18 +64,6 @@ POPC2.prototype.sortByTitle = function (index, reverse) {
 			return titleA.localeCompare(titleB);
 		}
 
-		// To break ties in the title, compare composer names next
-		let comA = a.COM || "";
-		let comB = b.COM || "";
-		if (comA !== comB) {
-			if (comA.match(/^anon/i) && !comB.match(/^anon/i)) {
-				return +1;
-			} else if ((!comA.match(/^anon/i)) && comB.match(/^anon/i)) {
-				return -1;
-			}
-			return comA.localeCompare(comB);
-		}
-		
 		// To break ties remaining ties, sort by siglum/shelfmark/shelfwork
 		let siglumA = a.siglum || "";
 		let siglumB = b.siglum || "";
@@ -97,7 +95,7 @@ POPC2.prototype.sortByTitle = function (index, reverse) {
 	return newlist;
 };
 
-Object.defineProperty(POPC2.prototype.sortByTitle, "name", { value: "sortByTitle" });
+Object.defineProperty(POPC2.prototype.sortByComposer, "name", { value: "sortByComposer" });
 
 
 

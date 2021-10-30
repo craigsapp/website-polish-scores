@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sun Oct 17 15:31:28 PDT 2021
-// Last Modified: Sat Oct 30 11:16:25 PDT 2021
+// Last Modified: Sat Oct 30 13:58:35 PDT 2021
 // Filename:      _includes/sort/sortIndex.js
 // Used by:
 // Included in:   _includes/sort/main.html
@@ -29,6 +29,8 @@ POPC2.prototype.sortIndex = function (index) {
 		newlist = this.sortByShelfmark(index, this.VARS.SEARCH_SORT_REVERSE);
 	} else if (this.VARS.SEARCH_SORT_TYPE === "title") {
 		newlist = this.sortByTitle(index, this.VARS.SEARCH_SORT_REVERSE);
+	} else if (this.VARS.SEARCH_SORT_TYPE === "composer") {
+		newlist = this.sortByComposer(index, this.VARS.SEARCH_SORT_REVERSE);
 	}
 
 	return newlist;

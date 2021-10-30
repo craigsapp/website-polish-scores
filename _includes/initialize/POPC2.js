@@ -70,7 +70,10 @@ function POPC2() {
 	// Allowed values are:
 	//     null:       Do not sort (uses cenid order).
 	//    "notecount": Sort by the number of notes in the score.
-	this.VARS.SEARCH_SORT_TYPE = null;
+	//    "shelfmark": Sort by shelfmark of the works.
+	//    "title":     Sort by titles of the works.
+	//    "composer":  Sort by composers' names.
+	this.VARS.SEARCH_SORT_TYPE = "composer";
 
 	// SEARCH_SORT_TYPE_PREV -- the previous sorting method (used for
 	// toggling sort methods.

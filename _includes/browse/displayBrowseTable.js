@@ -75,7 +75,7 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 	output += this.getTranslation("header_shelfmark");
  	output += "</th>\n";
 
-	output += `<th class="composer">${this.getTranslation("header_composer")}</th>\n`;
+	output += `<th class="composer" onclick="popc2.toggleComposerSort()">${this.getTranslation("header_composer")}</th>\n`;
 
 	output += `<th class="title" onclick="popc2.toggleTitleSort()">${this.getTranslation("header_title")}</th>\n`;
 

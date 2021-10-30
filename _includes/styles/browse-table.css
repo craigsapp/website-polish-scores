@@ -35,6 +35,19 @@ table.search-results td {
 
 table.search-results th {
 	text-align: left;
+	font-size: 1.15rem;
+}
+
+table.search-results th::after {
+	content: "\f0dd";
+	padding-left: 5px;
+	font-family: FontAwesome;
+	color: #ddd;
+	font-size: 1.15rem;
+}
+
+table.search-results th:hover::after {
+	color: {{ site.button_hover_color }};
 }
 
 table.search-results td {

@@ -106,7 +106,6 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 	scoredata += "!!!header-left: \n";
 	//scoredata += "!!!header-left: @{PPR}, @{PPP}\n";
 
-	console.log("humdrum data for PDF:", scoredata);
 	//var staffcount = getStaffCount(scoredata);
 	//if (staffcount == 2) {
 	//	//vrvOptions.justifySystemsOnly = 1;
@@ -118,10 +117,23 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 	//}
 
 	vrvOptions = this.cleanOptions2(scoredata, vrvOptions);
-	console.log("PRINTING OPTIONS", vrvOptions);
 
-	// store the options for debugging PDF files:
-	// PDFOPTIONS = vrvOptions;
+	// Include options from the notation configuration menu:
+	vrvOptions = this.addNotationConfigureOptions(vrvOptions);
+
+	// Remove the filter parameters since those are for HNP only.
+	// Instead, insert into Humdrum data.
+	if (vrvOptions.filter) {
+		let filter = vrvOptions.filter;
+		delete vrvOptions.filter;
+		if (typeof filter === "string") {
+			scoredata += `!!!filter: ${filter}\n`;
+		} else {
+			for (let i=0; i<filter.length; i++) {
+				scoredata += `!!!filter: ${filter[i]}\n`;
+			}
+		}
+	}
 
 	let that = this;
 	RSVP.hash({

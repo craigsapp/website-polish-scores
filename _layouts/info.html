@@ -1,0 +1,26 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+{% include head/main-info.html %}
+</head>
+<body>
+<header>
+</header>
+<main>
+	{% include language-navigator/main.html %}
+	<div id="content">
+		{% include language-navigator/euflag.html %}
+		<div style="height:51px"></div>
+		{{ content }}
+		<div id="EN-content"></div>
+		<div id="PL-content"></div>
+	</div>
+<footer>
+	{% include footer/main.html %}
+</footer>
+</main>
+{% include head/main-bottom.html %}
+</body>
+</html>

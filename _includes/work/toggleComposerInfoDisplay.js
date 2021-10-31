@@ -15,14 +15,23 @@
 
 POPC2.prototype.toggleComposerInfoDisplay = function () {
 	this.DebugMessageFunction();
-	element = document.querySelector("#composer-info");
+	let element = document.querySelector("#composer-info");
 	if (!element) {
 		return;
 	}
+
+	let e2 = document.querySelector("#composer .composer-info");
+
 	if (element.classList.contains("hidden")) {
 		element.classList.remove("hidden");
+		if (e2) {
+			e2.classList.add("open");
+		}
 	} else {
 		element.classList.add("hidden");
+		if (e2) {
+			e2.classList.remove("open");
+		}
 	}
 };
 

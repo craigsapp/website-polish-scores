@@ -27,8 +27,8 @@
 	flex: 1 0 auto;
 }
 
-[id^="navigator-"] .selected {
-	color: {{ site.selected_language_color }};
+.worknav-tool.selected {
+	color: {{ site.selected_language_color }} !important;
 }
 
 #next-work:hover,

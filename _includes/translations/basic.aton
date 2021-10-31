@@ -14,4 +14,10 @@
 @PL:		Portal Muzyki Polskie
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		bookmarks
+@EN:		Bookmarks
+@PL:		Zakładki
+@@END:		ENTRY
+
 

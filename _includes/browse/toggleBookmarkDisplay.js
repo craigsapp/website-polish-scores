@@ -1,0 +1,59 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct 30 20:51:13 PDT 2021
+// Last Modified: Sat Oct 30 20:51:17 PDT 2021
+// Filename:      _includes/browse/toggleBookmarkDisplay.js
+// Used by:       _includes/handlebars/template-browse.html
+// Included in:   _includes/browse/main.html
+// Syntax:        ECMAScript 6
+// vim:           ts=3:nowrap
+//
+// Description:   Toggle between bookmark and browse search results.
+//
+{% endcomment %}
+
+POPC2.prototype.toggleBookmarkDisplay = function () {
+	this.DebugMessageFunction();
+	
+	let belement = document.querySelector("#bookmark-browse-button");
+	if (!belement) {
+		console.log("CANNOT FIND B ELEMENT");
+		return;
+	}
+
+	let state = 0;
+	if (belement.classList.contains("selected")) {
+		state = 1;
+	}
+
+	let felement = document.querySelector("#filters");
+	let h1element = document.querySelector("h1");
+
+	state = !state;
+	if (state) {
+		belement.classList.add("selected");
+		if (felement) {
+			felement.classList.add("hidden");
+		}
+		this.VARS.SEARCH_RESULTS = this.VARS.WORK_BOOKMARKS;
+		if (h1element) {
+			h1element.innerHTML = this.getTranslation("bookmarks");
+		}
+	} else {
+		belement.classList.remove("selected");
+		if (felement) {
+			felement.classList.remove("hidden");
+		}
+		if (h1element) {
+			h1element.innerHTML = this.getTranslation("title");
+		}
+	}
+
+	this.displayBrowseTable();
+};
+
+Object.defineProperty(POPC2.prototype.toggleBookmarkDisplay, "name", { value: "toggleBookmarkDisplay" });
+
+
+

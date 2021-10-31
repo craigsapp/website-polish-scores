@@ -39,7 +39,7 @@
 }
 
 .data-download i:hover {
-	color: #dc143c;
+	color: {{ site.button_hover_color }};
 }
 
 #subpage-downloads .disabled {
@@ -51,3 +51,6 @@
 	color: #dddddd !important;
 	cursor: auto;
 }
+
+
+

@@ -14,7 +14,7 @@
 {% endcomment %}
 
 POPC2.prototype.showDataInNewTab = function (event, data_type, location) {
-	this.DebugMessageFunction(data_type);
+	this.DebugMessageFunction(data_type, location);
 
 	let pos = this.GetIndexInSearchResults(this.VARS.WORK_ID, this.VARS.SCORE_INDEX);
 	let filebase = this.VARS.SCORE_INDEX[pos].fileid;
@@ -74,10 +74,21 @@ POPC2.prototype.showDataInNewTab = function (event, data_type, location) {
 	} else {
 		url = `${this.SETTINGS.data_addr}/${this.VARS.WORK_ID}.${ext2}`;
 	}
-	if (url) {
-		window.open(url, "_blank");
+
+	if (location === "copy") {
+		console.warn("COPYING FILE");
+		fetch(url)
+			.then(res => res.text())
+			.then(text => this.CopyToClipboard(text))
+			.catch(err => console.error(err));
+	} else {
+		if (url) {
+			window.open(url, "_blank");
+		}
 	}
 
+	event.preventDefault();
+	event.stopPropagation();
 };
 
 Object.defineProperty(POPC2.prototype.showDataInNewTab, "name", { value: "showDataInNewTab" });

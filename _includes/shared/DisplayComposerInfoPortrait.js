@@ -55,11 +55,7 @@ POPC2.prototype.DisplayComposerInfoPortrait = function (composer, selector) {
 		element.style.display = "none";
 		return;
 	}
-	if (!entry.Portrait) {
-		// No portrait to display
-		element.style.display = "none";
-		return;
-	}
+
 	let url = entry.Portrait;
 
 	let link = "";
@@ -103,23 +99,28 @@ POPC2.prototype.DisplayComposerInfoPortrait = function (composer, selector) {
 		output += "</div>\n";
 	}
 
-	output += "<table id='composer-image-table'>\n";
-	output += "<tr><td>";
+	if (url) {
+		output += "<table id='composer-image-table'>\n";
+		output += "<tr><td>";
 
-	output += "<div id='image-wrapper'>\n";
-	output += "<center>";
-	if (this.VARS.PORTRAIT_IMAGES[composer]) {
-		output += `<img src="${this.VARS.PORTRAIT_IMAGES[composer]}">`;
-	} else {
-		output += `<img crossorigin="anonymous" src="${url}">`;
+		output += "<div id='image-wrapper'>\n";
+		output += "<center>";
+		if (this.VARS.PORTRAIT_IMAGES[composer]) {
+			output += `<img src="${this.VARS.PORTRAIT_IMAGES[composer]}">`;
+		} else {
+			output += `<img crossorigin="anonymous" src="${url}">`;
+		}
+		output += "</center>";
+		output += "</div>\n";
+
+		output += "</td><td>";
 	}
-	output += "</center>";
-	output += "</div>\n";
-
-	output += "</td><td>";
 	output += this.getComposerLinks(entry);
-	output += "</td></tr>";
-	output += "</table>";
+
+	if (url) {
+		output += "</td></tr>";
+		output += "</table>";
+	}
 
 	output += "</center>\n";
 

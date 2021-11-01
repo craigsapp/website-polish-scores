@@ -213,8 +213,11 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 
 		case " ":
 			if (popc2.IsWorkPage()) {
-				console.warn("Going to toggle MIDI playback in future.");
-				event.preventDefault();
+				let player = document.querySelector("#player");
+				if (player) {
+					playCurrentMidi();
+					event.preventDefault();
+				}
 			}
 			break;
 

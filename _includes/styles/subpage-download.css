@@ -3,16 +3,16 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 25 12:26:45 PDT 2021
 // Last Modified: Mon Oct 25 12:26:48 PDT 2021
-// Filename:      _includes/styles/subpage-downloads.css
+// Filename:      _includes/styles/subpage-download.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
 // vim:           ts=3:nowrap
 //
-// Description:   Styles for the downloads subpage on the work page.
+// Description:   Styles for the download subpage on the work page.
 //
 {% endcomment %}
 
-#subpage-downloads {
+#subpage-download {
 	/* background: #f0f0f0; */
 	align-items: center;
 	color: #666666;
@@ -42,12 +42,12 @@
 	color: {{ site.button_hover_color }};
 }
 
-#subpage-downloads .disabled {
+#subpage-download .disabled {
 	color: #dddddd;
 }
 
-#subpage-downloads .disabled:hover,
-#subpage-downloads .disabled i:hover {
+#subpage-download .disabled:hover,
+#subpage-download .disabled i:hover {
 	color: #dddddd !important;
 	cursor: auto;
 }

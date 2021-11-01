@@ -2,10 +2,10 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat Oct 16 17:34:30 PDT 2021
-// Last Modified: Mon Oct 18 21:36:08 PDT 2021
-// Filename:      _includes/work/showDataInNewTab.js
-// Used by:       _includes/work/work.html
-// Included in:   _includes/work/main.html
+// Last Modified: Sun Oct 31 18:19:26 PDT 2021
+// Filename:      _includes/download/showDataInNewTab.js
+// Used by:       _includes/download/subpage-download.html
+// Included in:   _includes/download/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //

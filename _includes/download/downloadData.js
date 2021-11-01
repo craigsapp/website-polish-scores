@@ -74,15 +74,47 @@ POPC2.prototype.downloadData = function (event, data_type) {
 	let url = `${this.SETTINGS.data_addr}/${this.VARS.WORK_ID}.${ext2}`;
 	this.DebugMessage(`Downloading ${url} to file ${filebase}.${extension}`, "hotpink");
 
-	fetch(url)
-		.then(res => res.blob())
-		.then(blob => {
-			let link = document.createElement("a");
-			link.setAttribute("download", `${filebase}.${extension}`);
-			link.href = window.URL.createObjectURL(blob);
-			link.click();
-		})
-		.catch(err => { console.error(err); });
+	if (data_type.match(/hum/i)) {
+		fetch(url)
+			.then(res => res.text())
+			.then(text => {
+				let options = {};
+
+				// Include options from the notation configuration menu:
+				options = this.addNotationConfigureOptions(options);
+
+				// Remove the filter parameters since those are for HNP only.
+				// Instead, insert into Humdrum data.
+				if (options.filter) {
+					let filter = options.filter;
+					if (typeof filter === "string") {
+						text += `!!!filter: ${filter}\n`;
+					} else {
+						for (let i=0; i<filter.length; i++) {
+							text += `!!!filter: ${filter[i]}\n`;
+						}
+					}
+				}
+				let type = "text/x-humdrum";
+				let blob = new Blob([text], { type: type });
+				let link = document.createElement("a");
+				link.setAttribute("download", `${filebase}.${extension}`);
+				link.href = window.URL.createObjectURL(blob);
+				link.click();
+			})
+			.catch(err => { console.error(err); });
+
+	} else {
+		fetch(url)
+			.then(res => res.blob())
+			.then(blob => {
+				let link = document.createElement("a");
+				link.setAttribute("download", `${filebase}.${extension}`);
+				link.href = window.URL.createObjectURL(blob);
+				link.click();
+			})
+			.catch(err => { console.error(err); });
+	}
 };
 
 Object.defineProperty(POPC2.prototype.downloadData, "name", { value: "downloadData" });

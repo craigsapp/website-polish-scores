@@ -78,13 +78,9 @@ POPC2.prototype.downloadData = function (event, data_type) {
 		fetch(url)
 			.then(res => res.text())
 			.then(text => {
-				let options = {};
 
 				// Include options from the notation configuration menu:
-				options = this.addNotationConfigureOptions(options);
-
-				// Remove the filter parameters since those are for HNP only.
-				// Instead, insert into Humdrum data.
+				let options = this.addNotationConfigureOptions({});
 				if (options.filter) {
 					let filter = options.filter;
 					if (typeof filter === "string") {
@@ -95,6 +91,7 @@ POPC2.prototype.downloadData = function (event, data_type) {
 						}
 					}
 				}
+
 				let type = "text/x-humdrum";
 				let blob = new Blob([text], { type: type });
 				let link = document.createElement("a");

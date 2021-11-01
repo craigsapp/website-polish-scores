@@ -79,7 +79,21 @@ POPC2.prototype.showDataInNewTab = function (event, data_type, location) {
 		console.warn("COPYING FILE");
 		fetch(url)
 			.then(res => res.text())
-			.then(text => this.CopyToClipboard(text))
+			.then(text => {
+				// Include options from the notation configuration menu:
+				let options = this.addNotationConfigureOptions({});
+				if (options.filter) {
+					let filter = options.filter;
+					if (typeof filter === "string") {
+						text += `!!!filter: ${filter}\n`;
+					} else {
+						for (let i=0; i<filter.length; i++) {
+							text += `!!!filter: ${filter[i]}\n`;
+						}
+					}
+				}
+				this.CopyToClipboard(text);
+			})
 			.catch(err => console.error(err));
 	} else {
 		if (url) {

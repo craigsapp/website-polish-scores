@@ -14,22 +14,22 @@
 {% endcomment %}
 
 POPC2.prototype.generatePdfFull = function (format, orientation) {
-	var oldOptions = vrvWorker.options;
+	let oldOptions = vrvWorker.options;
 	// need to explicitly disable mmOutput = 1 set by the printing process.
 	oldOptions.mmOutput = 0;
 
 	document.body.classList.add("waiting");
 
-	var format = format ? format : "letter";
-	var orientation = orientation ? orientation : "portrait";
+	format = format ? format : "letter";
+	orientation = orientation ? orientation : "portrait";
 
-	//var width = 2159;
-	//var height = 2794;
-	//var height = 2920;
+	//let width = 2159;
+	//let height = 2794;
+	//let height = 2920;
 
 	//if (format === "A4") {
-		var width = 2100;
-		var height = 2970;
+		let width = 2100;
+		let height = 2970;
 	//} else if (format === "B3") {
 	//	width = 2500;
 	//	height = 3530;
@@ -38,20 +38,20 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 		width = [height, height = width][0];
 	}
 
-	var pdfOptions = {};
+	let pdfOptions = {};
 	pdfOptions.fontCallback = this.svgFontCallback;
 
-	var pdf = new PDFDocument({
+	let pdf = new PDFDocument({
 		useCSS:        true,
 		compress:      true,
 		autoFirstPage: false,
 		layout:        orientation
 	});
-	var stream = pdf.pipe(blobStream());
+	let stream = pdf.pipe(blobStream());
 	stream.on('finish', function() {
-		var blob = stream.toBlob('application/pdf');
-		var pdfFilebase = "DATA";
-		var pdfFilename = pdfFilebase;
+		let blob = stream.toBlob('application/pdf');
+		let pdfFilebase = "DATA";
+		let pdfFilename = pdfFilebase;
 		if (pdfFilename) {
 			pdfFilename += ".pdf";
 		} else {
@@ -61,20 +61,20 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 		document.body.classList.remove("waiting");
 	});
 
-	var scale = 95;
+	let scale = 95;
 	height /= scale / 100;
 	width  /= scale / 100;
 
-	// var spacingBraceGroup   = 12;
-	// var spacingBracketGroup = 12;
-	var spacingStaff        = 10;
-	var spacingSystem       = 14;
-	var pageMarginTop       = 100;
-	var pageMarginBottom    = 100;
-	var pageMarginLeft      = 50;
-	var pageMarginRight     = 50;
+	// let spacingBraceGroup   = 12;
+	// let spacingBracketGroup = 12;
+	let spacingStaff        = 10;
+	let spacingSystem       = 14;
+	let pageMarginTop       = 100;
+	let pageMarginBottom    = 100;
+	let pageMarginLeft      = 50;
+	let pageMarginRight     = 50;
 
-	var vrvOptions = {
+	let vrvOptions = {
 		pageHeight             : height - pageMarginTop,
 		pageWidth              : width,
 		pageMarginLeft         : pageMarginLeft,
@@ -100,13 +100,17 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 		font                   : "Leland",
 	}
 
-	var scoredata = this.VARS.HUMDRUM[this.VARS.WORK_ID];
+	let scoredata = this.VARS.HUMDRUM[this.VARS.WORK_ID];
 	scoredata += "\n!!!filter: shed -e s/t=P://L | shed -e s/:problem/:PROBLEM/L\n";
 	// scoredata += "!!!header-center: " + HUMDRUMFILETITLE + "\n";
 	scoredata += "!!!header-left: \n";
 	//scoredata += "!!!header-left: @{PPR}, @{PPP}\n";
 
-	//var staffcount = getStaffCount(scoredata);
+	let url = `https://polishscores.org?${this.VARS.WORK_ID}\n`;
+	scoredata += `!!!footer-left: \\n\\n${url}\n`;
+	scoredata += "!!!footer-right: \\n\\n%P\n"
+
+	//let staffcount = getStaffCount(scoredata);
 	//if (staffcount == 2) {
 	//	//vrvOptions.justifySystemsOnly = 1;
 	//	//vrvOptions.justifyIncludeLastPage = 1;
@@ -141,10 +145,10 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 		svglist: vrvWorker.renderAllPages(scoredata, vrvOptions)
 	})
 	.then(function(data) {
-		for (var i=0; i < data.svglist.length; i++) {
+		for (let i=0; i < data.svglist.length; i++) {
 			pdf.addPage({size: format, layout: orientation});
-			var x = 0;
-			var y = 0;
+			let x = 0;
+			let y = 0;
 			SVGtoPDF(pdf, data.svglist[i], x, y, pdfOptions);
 		}
 		pdf.end();
@@ -152,9 +156,9 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 	})
 	.finally(function() {
 		// restore the old layout for the VHV  webpage:
-		var force = false;
-		var page = vrvWorker.page;
-		var cleanoldoptions = that.cleanOptions2(scoredata, oldOptions);
+		let force = false;
+		let page = vrvWorker.page;
+		let cleanoldoptions = that.cleanOptions2(scoredata, oldOptions);
 		vrvWorker.redoLayout(oldOptions, true);
 		vrvWorker.options = oldOptions;
 	});

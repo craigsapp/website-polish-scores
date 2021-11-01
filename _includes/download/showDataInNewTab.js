@@ -69,8 +69,27 @@ POPC2.prototype.showDataInNewTab = function (event, data_type, location) {
 			url = `${this.SETTINGS.popc2_github_addr}/blob/main/kern/${filename}`;
 		}
 	} else if (location === "vhv") {
-			let encode = encodeURIComponent(`${this.SETTINGS.data_addr}/${this.VARS.WORK_ID}.${ext2}`);
-			url = `https://verovio.humdrum.org/?file=${encode}`;
+		let encode = encodeURIComponent(`${this.SETTINGS.data_addr}/${this.VARS.WORK_ID}.${ext2}`);
+		url = `https://verovio.humdrum.org/?file=${encode}`;
+
+		let ftext = "";
+		let options = this.addNotationConfigureOptions({});
+		if (options.filter) {
+			let filter = options.filter;
+			if (typeof filter === "string") {
+				ftext += filter;
+			} else {
+				for (let i=0; i<filter.length; i++) {
+					if (i > 0) {
+						ftext += " | ";
+					}
+					ftext += filter[i];
+				}
+			}
+		}
+		if (ftext) {
+			url += `?filter=${encodeURIComponent(ftext)}`;
+		}
 	} else {
 		url = `${this.SETTINGS.data_addr}/${this.VARS.WORK_ID}.${ext2}`;
 	}

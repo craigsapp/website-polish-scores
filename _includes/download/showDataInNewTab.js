@@ -88,7 +88,7 @@ POPC2.prototype.showDataInNewTab = function (event, data_type, location) {
 			}
 		}
 		if (ftext) {
-			url += `?filter=${encodeURIComponent(ftext)}`;
+			url += `&filter=${encodeURIComponent(ftext)}`;
 		}
 	} else {
 		url = `${this.SETTINGS.data_addr}/${this.VARS.WORK_ID}.${ext2}`;

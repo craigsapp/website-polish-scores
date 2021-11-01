@@ -38,6 +38,7 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 		width = [height, height = width][0];
 	}
 
+	let that = this;
 	let pdfOptions = {};
 	pdfOptions.fontCallback = this.svgFontCallback;
 
@@ -51,6 +52,13 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 	stream.on('finish', function() {
 		let blob = stream.toBlob('application/pdf');
 		let pdfFilebase = "DATA";
+		if (that.VARS.WORK_ID) {
+			pdfFilebase = that.VARS.WORK_ID;
+			let matches = that.VARS.HUMDRUM[that.VARS.WORK_ID].match(/!!!!SEGMENT:\s*([^\s]+)/);
+			if (matches) {
+				pdfFilebase = matches[1].replace(/\.krn$/, "");
+			}
+		}
 		let pdfFilename = pdfFilebase;
 		if (pdfFilename) {
 			pdfFilename += ".pdf";
@@ -139,7 +147,6 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 		}
 	}
 
-	let that = this;
 	RSVP.hash({
 		fonts: this.loadPdfFonts(pdf),
 		svglist: vrvWorker.renderAllPages(scoredata, vrvOptions)

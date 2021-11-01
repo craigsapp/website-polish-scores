@@ -38,6 +38,10 @@ table.search-results th {
 	font-size: 1.15rem;
 }
 
+table.search-results th.sorted::after {
+	color: {{ site.h1_color }};
+}
+
 table.search-results th::after {
 	content: "\f0dd";
 	padding-left: 5px;

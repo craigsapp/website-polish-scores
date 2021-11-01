@@ -61,23 +61,37 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 		}
 	}
 
+	let sortMethod = this.VARS.SEARCH_SORT_TYPE;
+
 	let output = "";
 	output += "<table class='search-results'>\n";
 	output += "<thead>\n";
 
 	if (sortByDate) {
-		output += `<th class="date">${this.getTranslation("last_edited")}</th>\n`;
+		output += `<th class="date sorted">${this.getTranslation("last_edited")}</th>\n`;
 	} else {
 		output += `<th class="date hidden">${this.getTranslation("last_edited")}</th>\n`;
 	}
 
-	output += '<th class="shelfmark" onclick="popc2.toggleShelfmarkSort()">';
+	output += '<th class="shelfmark';
+	if (sortMethod === "shelfmark") {
+		output += " sorted";
+	}
+	output += '" onclick="popc2.toggleShelfmarkSort()">';
 	output += this.getTranslation("header_shelfmark");
  	output += "</th>\n";
 
-	output += `<th class="composer" onclick="popc2.toggleComposerSort()">${this.getTranslation("header_composer")}</th>\n`;
+	output += `<th class="composer`;
+	if (sortMethod === "composer") {
+		output += " sorted";
+	}
+	output += `" onclick="popc2.toggleComposerSort()">${this.getTranslation("header_composer")}</th>\n`;
 
-	output += `<th class="title" onclick="popc2.toggleTitleSort()">${this.getTranslation("header_title")}</th>\n`;
+	output += `<th class="title`;
+	if (sortMethod === "title") {
+		output += " sorted";
+	}
+	output += `" onclick="popc2.toggleTitleSort()">${this.getTranslation("header_title")}</th>\n`;
 
 	output += "</thead>\n";
 	output += "<tbody>\n";

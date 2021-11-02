@@ -41,6 +41,12 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 		return;
 	}
 
+	if (results.length <= 1) {
+		this.hideRandomButton();
+	} else {
+		this.showRandomButton();
+	}
+
 	results = this.sortIndex(results);
 	let sortByDate = (this.VARS.SEARCH_SORT_TYPE === "lastedit");
 

@@ -209,6 +209,16 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 	} else {
 		this.showShelfmarkColumn();
 	}
+
+	// Dynamically change the font size based on the length of the search results table:
+	let height = element.offsetHeight;
+	console.warn("HEIGHT OF TABLE IS", height);
+	let zoom = 1.25 - (1.0/400000.0) * height;
+	if (zoom < 0.90) {
+		zoom = 0.90;
+	}
+	element.style.zoom = zoom;
+
 };
 
 Object.defineProperty(POPC2.prototype.displayBrowseTable, "name", { value: "displayBrowseTable" });

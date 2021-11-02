@@ -15,6 +15,7 @@
 #filters {
 	margin-bottom: 30px;
 	margin-left: 30px;
+	zoom: 1.15;
 }
 
 .filter-div {
@@ -39,6 +40,23 @@ span.mark {
 	font-weight: bold;
 	color: {{ site.h1_color }};
 }
+
+
+
+{% comment %}
+/*
+ * Adjust the search form so that it is always approximatly
+ * fitting the width of the page (under 650 it will do some wrapping).
+ */
+{% endcomment %}
+@media only screen and (max-width: 950px) { #filters { zoom: 1.10; } }
+@media only screen and (max-width: 900px) { #filters { zoom: 1.04; } }
+@media only screen and (max-width: 850px) { #filters { zoom: 1.00; } }
+@media only screen and (max-width: 800px) { #filters { zoom: 0.96; } }
+@media only screen and (max-width: 750px) { #filters { zoom: 0.92; } }
+@media only screen and (max-width: 700px) { #filters { zoom: 0.88; } }
+@media only screen and (max-width: 650px) { #filters { zoom: 0.84; } }
+@media only screen and (max-width: 600px) { #filters { zoom: 0.78; } }
 
 
 

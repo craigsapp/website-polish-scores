@@ -23,7 +23,7 @@ textarea:focus, input:focus select:focus {
 select {
 	background: {{ site.h1_color }};
 	box-sizing: inherit;
-	color: #dddddd;
+	color: #eeeeee;
 	display: inline-block;
 	font-size: 1.15rem;
 	border: none;
@@ -37,6 +37,7 @@ select {
 	min-width: 200px;
 	margin-top: 0;
 	text-align-last: center;
+	text-shadow: 0px 0px 1px black;
 	text-transform: none;
 	-webkit-text-size-adjust: 100%;
 }

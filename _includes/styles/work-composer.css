@@ -4,6 +4,10 @@
 	padding-bottom: 20px;
 }
 
+#composer-info.anonymous {
+	padding-bottom: 0px;
+}
+
 .composer-info {
 	color: #dddddd;
 	font-size: 16px;

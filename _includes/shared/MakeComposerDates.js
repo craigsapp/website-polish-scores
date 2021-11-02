@@ -2,8 +2,8 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Wed Oct  6 12:27:07 PDT 2021
-// Filename:      _includes/browse/makeComposerDates.js
+// Last Modified: Mon Nov  1 21:57:35 PDT 2021
+// Filename:      _includes/browse/MakeComposerDates.js
 // Used by:
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
@@ -17,8 +17,8 @@
 //
 {% endcomment %}
 
-POPC2.prototype.makeComposerDates = function (birth, death) {
-	this.DebugMessageFunction();
+POPC2.prototype.MakeComposerDates = function (birth, death) {
+	this.DebugMessageFunction(birth, death);
 	// Currently require both birth and death dates.
 	if (!birth) {
 		return "";
@@ -27,11 +27,24 @@ POPC2.prototype.makeComposerDates = function (birth, death) {
 		return "";
 	}
 
+	let matches;
+	// Check if approximate century specified, such as
+	// ~1800-~1899 which means "19th century"
+	matches = birth.match(/^~(1[123456789])00$/);
+	if (matches) {
+		let century = parseInt(matches[1]) + 1;
+		matches = death.match(/^~1[23456789]99$/);
+		if (matches) {
+			// Also set up this date for Polish:
+			return `<div class="trans" data-trans="${century}_century">xXx</div>`;
+		}
+	}
+
 	let output = "";
 	let byear = "";
 	let dyear = "";
 
-	let matches = birth.match(/^(\d{4})/);
+	matches = birth.match(/^(\d{4})/);
 	if (matches) {
 		byear = matches[1];
 	} else {
@@ -60,7 +73,7 @@ POPC2.prototype.makeComposerDates = function (birth, death) {
 	}
 };
 
-Object.defineProperty(POPC2.prototype.makeComposerDates, "name", { value: "makeComposerDates" });
+Object.defineProperty(POPC2.prototype.MakeComposerDates, "name", { value: "MakeComposerDates" });
 
 
 

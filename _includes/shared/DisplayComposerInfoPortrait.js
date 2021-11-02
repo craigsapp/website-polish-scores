@@ -82,7 +82,7 @@ POPC2.prototype.DisplayComposerInfoPortrait = function (composer, selector) {
 	if (inbrowse) {
 		output += "<div class='composer-name'>\n";
 		let name = composer;
-		let years = this.makeComposerDates(entry.Birth, entry.Death);
+		let years = this.MakeComposerDates(entry.Birth, entry.Death);
 		let matches = name.match(/([^,]+?)\s*,\s*(.*)\s*$/);
 		if (matches) {
 			name = matches[2] + " " + matches[1];
@@ -94,7 +94,7 @@ POPC2.prototype.DisplayComposerInfoPortrait = function (composer, selector) {
 		output += "</div>\n";
 	} else {
 		output += "<div class='composer-dates'>\n";
-		let years = this.makeComposerDates(entry.Birth, entry.Death);
+		let years = this.MakeComposerDates(entry.Birth, entry.Death);
 		output += years;
 		output += "</div>\n";
 	}

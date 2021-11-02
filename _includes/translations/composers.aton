@@ -48,5 +48,41 @@
 @PL:		anonim
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		19_century
+@EN:		19th centry
+@PL:		XIX wiek
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		18_century
+@EN:		18th centry
+@PL:		XVIII wiek
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		17_century
+@EN:		17th centry
+@PL:		XVII wiek
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		16_century
+@EN:		16th centry
+@PL:		XVI wiek
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		15_century
+@EN:		15th centry
+@PL:		XV wiek
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		14_century
+@EN:		14th centry
+@PL:		XIV wiek
+@@END:		ENTRY
+
 
 

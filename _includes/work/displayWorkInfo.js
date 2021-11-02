@@ -121,6 +121,9 @@ POPC2.prototype.displayWorkInfo = function(id) {
 
 	}
 
+	// Needed for some composer dates:
+	this.ApplyElementTranslations();
+
 };
 
 Object.defineProperty(POPC2.prototype.displayWorkInfo, "name", { value: "displayWorkInfo" });

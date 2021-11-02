@@ -100,6 +100,15 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// Automatic note stems
+	element = document.querySelector("#checkbox-autostems");
+	if (element) {
+		if (element.checked) {
+			let entry = "autostem -r";
+			options.filter.push(entry);
+		}
+	}
+
 	return options;
 };
 

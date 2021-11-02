@@ -39,10 +39,10 @@ POPC2.prototype.MakeComposerDates = function (birth, death) {
 		}
 	}
 
-	matches = birth.match(/^<(1[123456789]\d\d)/);
+	matches = birth.match(/^<=?(1[123456789]\d\d)/);
 	if (matches) {
 		let year = matches[1];
-		matches = death.match(/^>(1[23456789]\d\d)/);
+		matches = death.match(/^>=?(1[23456789]\d\d)/);
 		if (matches) {
 			return `<span class="trans" data-trans="flourished"></span> ${year} &ndash; ${matches[1]}`;
 		}
@@ -60,11 +60,11 @@ POPC2.prototype.MakeComposerDates = function (birth, death) {
 		if (matches) {
 			byear = "<i>c</i>" + matches[1];
 		} else {
-			matches = birth.match(/^<~?(\d{4})/);
+			matches = birth.match(/^<=?~?(\d{4})/);
 			if (matches) {
 				byear = `<span class="trans" data-trans="before"></span> ${matches[1]}`;
 			} else {
-				matches = birth.match(/^>~?(\d{4})/);
+				matches = birth.match(/^>=?~?(\d{4})/);
 				byear = `<span class="trans" data-trans="after"></span> ${matches[1]}`;
 			}
 		}
@@ -78,12 +78,12 @@ POPC2.prototype.MakeComposerDates = function (birth, death) {
 		if (matches) {
 			dyear = "<i>c</i>" + matches[1];
 		} else {
-			matches = death.match(/^<~?(\d{4})/);
+			matches = death.match(/^<=?~?(\d{4})/);
 			if (matches) {
 				dyear = "bef. " + matches[1];
 				dyear = `<span class="trans" data-trans="before"></span> ${matches[1]}`;
 			} else {
-				matches = death.match(/^>~?(\d{4})/);
+				matches = death.match(/^>=?~?(\d{4})/);
 				dyear = "aft. " + matches[1];
 				dyear = `<span class="trans" data-trans="after"></span> ${matches[1]}`;
 			}

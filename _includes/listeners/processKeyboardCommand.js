@@ -13,6 +13,7 @@
 {% endcomment %}
 
 POPC2.prototype.processKeyboardCommand = function (event) {
+console.warn("KEY", event.key, event);
 	if (!event) {
 		return;
 	}

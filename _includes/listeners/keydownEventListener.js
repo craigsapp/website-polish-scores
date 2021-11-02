@@ -18,7 +18,15 @@ document.addEventListener("keydown", function(event) {
 	if (!event) {
 		return;
 	}
-	if (event.target.nodeName == "INPUT") {
+	if ((event.target.nodeName === "INPUT") && (event.target.id === "filter-input")) {
+		// Monitor free-form filter box on configuration menu so that
+		// the Enter key can activate the filter, and typing other
+		// keys in the box will automatically disable the filter (and
+		// pressing Enter or clicking on the checkbox is necessary to
+		// reactivate the filter).
+		popc2.handleFreeFilterInput(event);
+		return;
+	} else if (event.target.nodeName === "INPUT") {
 		// Needed to prevent key commands when in text/lyrics search boxes.
 		return;
 	}

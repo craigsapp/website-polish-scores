@@ -16,16 +16,12 @@ table.search-results {
 	border-collapse: collapse;
 	max-width: 1000px;
 	table-layout: fixed;
-	width: 100%;
+	width: 97%;
+	margin-left: 10px;
 }
 
 table.search-results.narrow {
 	max-width: 650px !important;
-}
-
-table.search-results th:first-child,
-table.search-results td:first-child {
-	padding-left: 30px;
 }
 
 table.search-results th,

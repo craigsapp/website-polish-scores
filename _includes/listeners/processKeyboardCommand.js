@@ -190,23 +190,19 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			break;
 
 		case "ArrowUp":
-			if (popc2.IsWorkPage()) {
-				if (event.shiftKey) {
-					// Go to the top of the page.
-					window.scrollTo(0, 0);
-					event.preventDefault();
-				}
+			if (event.shiftKey) {
+				// Go to the top of the page.
+				window.scrollTo(0, 0);
+				event.preventDefault();
 			}
 			break;
 
 		case "ArrowDown":
-			if (popc2.IsWorkPage()) {
-				if (event.shiftKey) {
-					let element = document.querySelector("footer");
-					if (element) {
-						element.scrollIntoView();
-						event.preventDefault();
-					}
+			if (event.shiftKey) {
+				let element = document.querySelector("footer");
+				if (element) {
+					element.scrollIntoView();
+					event.preventDefault();
 				}
 			}
 			break;

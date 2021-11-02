@@ -54,6 +54,15 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// Sounding score (remove transposition information)
+	element = document.querySelector("#checkbox-soundingscore");
+	if (element) {
+		if (element.checked) {
+			let entry = "s/^ITrd/XITrd/I";
+			shed.push(entry);
+		}
+	}
+
 	if (shed.length > 0) {
 		// create shed filter
 		let sstring = "shed -e '";
@@ -82,7 +91,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 	if (element) {
 		if (element.checked) {
 			let entry = "sic -s";
-			shed.push(entry);
+			options.filter.push(entry);
 		}
 	}
 

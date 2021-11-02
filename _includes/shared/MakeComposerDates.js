@@ -35,8 +35,16 @@ POPC2.prototype.MakeComposerDates = function (birth, death) {
 		let century = parseInt(matches[1]) + 1;
 		matches = death.match(/^~1[23456789]99$/);
 		if (matches) {
-			// Also set up this date for Polish:
 			return `<div class="trans" data-trans="${century}_century">xXx</div>`;
+		}
+	}
+
+	matches = birth.match(/^<(1[123456789]\d\d)$/);
+	if (matches) {
+		let year = matches[1];
+		matches = death.match(/^>(1[23456789]\d\d)$/);
+		if (matches) {
+			return `<span class="trans" data-trans="flourished">yyy</span> ${year}&ndash;${matches[1]}`;
 		}
 	}
 

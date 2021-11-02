@@ -145,6 +145,12 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 			if (gtl) {
 				unsorttitle = gtl;
 				sorttitle = otl;
+				if (sorttitle === "[post correcturam]") {
+					sorttitle = "[post&nbsp;correcturam]";
+				}
+				if (sorttitle === "[pre correcturam]") {
+					sorttitle = "[pre&nbsp;correcturam]";
+				}
 				output += "<span class='mute'>";
 				output += this.getHighlightedString(unsorttitle, this.VARS.SEARCH.title);
 				output += " &mdash; ";
@@ -153,6 +159,12 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 			} else if (opr) {
 				sorttitle = opr;
 				unsorttitle = otl;
+				if (sorttitle === "[post correcturam]") {
+					sorttitle = "[post&nbsp;correcturam]";
+				}
+				if (sorttitle === "[pre correcturam]") {
+					sorttitle = "[pre&nbsp;correcturam]";
+				}
 				output += this.getHighlightedString(sorttitle, this.VARS.SEARCH.title);
 				output += "<span class='mute'>";
 				output += " &mdash; ";
@@ -161,9 +173,22 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 			} else {
 				sorttitle = otl;
 				unsorttitle = "";
+				if (sorttitle === "[post correcturam]") {
+					sorttitle = "[post&nbsp;correcturam]";
+				}
+				if (sorttitle === "[pre correcturam]") {
+					sorttitle = "[pre&nbsp;correcturam]";
+				}
 				output += this.getHighlightedString(sorttitle, this.VARS.SEARCH.title);
 			}
 		} else {
+			let title = results[i]._title || "";
+			if (title === "[post correcturam]") {
+				title = "[post&nbsp;correcturam]";
+			}
+			if (title === "[pre correcturam]") {
+				title = "[pre&nbsp;correcturam]";
+			}
 			output += this.getHighlightedString(results[i]._title || "", this.VARS.SEARCH.title);
 		}
 		output += "</td>\n";

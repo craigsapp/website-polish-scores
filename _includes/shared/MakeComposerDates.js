@@ -35,7 +35,7 @@ POPC2.prototype.MakeComposerDates = function (birth, death) {
 		let century = parseInt(matches[1]) + 1;
 		matches = death.match(/^~1[23456789]99$/);
 		if (matches) {
-			return `<div class="trans" data-trans="${century}_century">xXx</div>`;
+			return `<div class="trans" data-trans="${century}_century"></div>`;
 		}
 	}
 
@@ -44,7 +44,7 @@ POPC2.prototype.MakeComposerDates = function (birth, death) {
 		let year = matches[1];
 		matches = death.match(/^>(1[23456789]\d\d)$/);
 		if (matches) {
-			return `<span class="trans" data-trans="flourished">yyy</span> ${year}&ndash;${matches[1]}`;
+			return `<span class="trans" data-trans="flourished"></span> ${year} &ndash; ${matches[1]}`;
 		}
 	}
 
@@ -62,10 +62,10 @@ POPC2.prototype.MakeComposerDates = function (birth, death) {
 		} else {
 			matches = birth.match(/^<~(\d{4})/);
 			if (matches) {
-				byear = `<span class="trans" data-trans="before">bef.</span> ${matches[1]}`;
+				byear = `<span class="trans" data-trans="before"></span> ${matches[1]}`;
 			} else {
 				matches = birth.match(/^>~(\d{4})/);
-				byear = `<span class="trans" data-trans="after">aft.</span> ${matches[1]}`;
+				byear = `<span class="trans" data-trans="after"></span> ${matches[1]}`;
 			}
 		}
 	}
@@ -81,17 +81,17 @@ POPC2.prototype.MakeComposerDates = function (birth, death) {
 			matches = death.match(/^<~(\d{4})/);
 			if (matches) {
 				dyear = "bef. " + matches[1];
-				dyear = `<span class="trans" data-trans="before">bef.</span> ${matches[1]}`;
+				dyear = `<span class="trans" data-trans="before"></span> ${matches[1]}`;
 			} else {
 				matches = death.match(/^>~(\d{4})/);
 				dyear = "aft. " + matches[1];
-				dyear = `<span class="trans" data-trans="after">aft.</span> ${matches[1]}`;
+				dyear = `<span class="trans" data-trans="after"></span> ${matches[1]}`;
 			}
 		}
 	}
 
 	if (byear && dyear) {
-		return `${byear}&ndash;${dyear}`;
+		return `${byear} &ndash; ${dyear}`;
 	} else {
 		// Only displaying years when both birth and death are
 		// known exactly.

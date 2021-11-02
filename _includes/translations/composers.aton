@@ -90,5 +90,19 @@
 @PL:		rozkwitł
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		after
+@EN:		aft.
+@PL:		po
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		before
+@EN:		bef.
+@PL:		przed
+@@END:		ENTRY
+
+
+
 
 

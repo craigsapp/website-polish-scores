@@ -46,8 +46,8 @@
 
 @@BEGIN:	ENTRY
 @TAG:		worklink_tool
-@EN:		copy link to this page (l)
-@PL:		skopiuj link do tej strony (l)
+@EN:		copy link to current search (l)
+@PL:		skopiuj link do bieżącego wyszukiwania (l)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY

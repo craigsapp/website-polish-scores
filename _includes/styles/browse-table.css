@@ -77,6 +77,7 @@ table.search-results td.title {
 
 table.search-results th.composer,
 table.search-results td.composer {
+	min-width: 30%;
 }
 
 table.search-results td.shelfmark {

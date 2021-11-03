@@ -12,10 +12,6 @@
 //
 {% endcomment %}
 
-#subpage-configure {
-	letter-spacing: -0.5px;
-}
-
 div.checkboxes {
 	display: flex;
 	flex-direction: column;

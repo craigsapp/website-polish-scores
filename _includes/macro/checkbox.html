@@ -1,0 +1,27 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Tue Nov  2 18:06:51 PDT 2021
+// Last Modified: Tue Nov  2 18:06:55 PDT 2021
+// Filename:      _includes/macro/checkbox.js
+// Used by:       
+// Included in:   
+// Syntax:        ECMAScript 6; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Macro for creating a checkbox.  Parameters are:
+//                   id     = Element ID.
+//                   trans  = Translation tag.
+//                   action = onchange event listener.
+//
+{% endcomment %}
+
+
+<label class="container">
+	<span class="ctext trans" data-trans="{{ include.trans }}"></span>
+	<input type="checkbox" id="{{ include.id }}"
+		onchange="{% if include.action %}{{ include.action }}{% else %}popc2.displayScore(){% endif %}">
+	<span class="checkmark"></span>
+</label>
+
+

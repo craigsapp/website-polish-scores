@@ -50,5 +50,11 @@
 @PL:		Brzmiąca partytura
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		display_incipit
+@EN:		First system only
+@PL:		Tylko pierwszy system
+@@END:		ENTRY
+
 
 

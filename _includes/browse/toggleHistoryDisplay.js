@@ -50,6 +50,12 @@ POPC2.prototype.toggleHistoryDisplay = function () {
 		if (h1element) {
 			h1element.innerHTML = this.getTranslation("history");
 		}
+
+		// Turn off bookmarks if already selected:
+		let belement = document.querySelector("#bookmark-browse-button");
+		if (belement) {
+			belement.classList.remove("selected");
+		}
 	} else {
 		helement.classList.remove("selected");
 		if (felement) {

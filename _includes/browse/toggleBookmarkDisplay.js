@@ -42,9 +42,16 @@ POPC2.prototype.toggleBookmarkDisplay = function () {
 		if (h1element) {
 			h1element.innerHTML = this.getTranslation("bookmarks");
 		}
+
+		// Turn off history if already selected:
+		let helement = document.querySelector("#history-browse-button");
+		if (helement) {
+			helement.classList.remove("selected");
+		}
 	} else {
 		belement.classList.remove("selected");
 		if (felement) {
+			// (no longer hidden)
 			felement.classList.remove("hidden");
 		}
 		this.VARS.SEARCH_RESULTS = this.VARS.SCORE_INDEX;

@@ -31,6 +31,10 @@ POPC2.prototype.sortIndex = function (index) {
 		newlist = this.sortByTitle(index, this.VARS.SEARCH_SORT_REVERSE);
 	} else if (this.VARS.SEARCH_SORT_TYPE === "composer") {
 		newlist = this.sortByComposer(index, this.VARS.SEARCH_SORT_REVERSE);
+	} else if (this.VARS.SEARCH_SORT_TYPE === "bookmark") {
+		newlist = this.sortByBookmark(index, this.VARS.SEARCH_SORT_REVERSE);
+	} else if (this.VARS.SEARCH_SORT_TYPE === "history") {
+		newlist = this.sortByHistory(index, this.VARS.SEARCH_SORT_REVERSE);
 	}
 
 	return newlist;

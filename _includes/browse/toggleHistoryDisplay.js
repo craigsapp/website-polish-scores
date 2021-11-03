@@ -1,46 +1,54 @@
 {% comment %}
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
-// Creation Date: Wed Nov  3 00:48:31 PDT 2021
-// Last Modified: Wed Nov  3 00:48:34 PDT 2021
+// Creation Date: Wed Nov  3 11:45:57 PDT 2021
+// Last Modified: Wed Nov  3 11:45:59 PDT 2021
 // Filename:      _includes/browse/toggleHistoryDisplay.js
 // Used by:       _includes/handlebars/template-browse.html
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
-// Description:   Toggle between history and score index.
+// Description:   Toggle between history and browse search results.
 //
 {% endcomment %}
 
 POPC2.prototype.toggleHistoryDisplay = function () {
 	this.DebugMessageFunction();
 
-	if (this.VARS.WORK_HISTORY == 0) {
-		// Do not show history when there is no history.
-		// Adjust this later to hide the history button when
-		// there is no history (when using the Handlbars template
-		// for the browse page).
+	let belement = document.querySelector("#bookmark-browse-button");
+	if (!belement) {
+		console.error("CANNOT FIND BOOKMARK BUTTON");
 		return;
 	}
-	
 	let helement = document.querySelector("#history-browse-button");
 	if (!helement) {
-		console.log("CANNOT FIND B ELEMENT");
+		console.error("CANNOT FIND HISTORY BUTTON");
 		return;
 	}
 
-	let state = 0;
+	let bstate = 0;
+	if (belement.classList.contains("selected")) {
+		bstate = 1;
+	}
+
+	let hstate = 0;
 	if (helement.classList.contains("selected")) {
-		state = 1;
+		hstate = 1;
+	}
+
+	// Store the browse sort method if both hstate and bstate are 0.
+	if ((bstate == 0) && (hstate == 0)) {
+		this.VARS.SAVED_SORT_TYPE = this.VARS.SEARCH_SORT_TYPE;
 	}
 
 	// let felement = document.querySelector("#filters");
 	let felement = null; // Allow search filters for bookmark page.
 	let h1element = document.querySelector("h1");
 
-	state = !state;
-	if (state) {
+	hstate = !hstate;
+	if (hstate) {
+		this.VARS.SEARCH_SORT_TYPE = "history";
 		helement.classList.add("selected");
 		if (felement) {
 			felement.classList.add("hidden");
@@ -51,14 +59,15 @@ POPC2.prototype.toggleHistoryDisplay = function () {
 			h1element.innerHTML = this.getTranslation("history");
 		}
 
-		// Turn off bookmarks if already selected:
-		let belement = document.querySelector("#bookmark-browse-button");
+		// Turn off bookmark if already selected:
 		if (belement) {
 			belement.classList.remove("selected");
 		}
 	} else {
+		this.VARS.SEARCH_SORT_TYPE = this.VARS.SAVED_SORT_TYPE;
 		helement.classList.remove("selected");
 		if (felement) {
+			// (no longer hidden)
 			felement.classList.remove("hidden");
 		}
 		this.VARS.SEARCH_RESULTS = this.VARS.SCORE_INDEX;
@@ -69,6 +78,7 @@ POPC2.prototype.toggleHistoryDisplay = function () {
 	}
 
 	this.displayBrowseTable();
+	this.showResultsCount(this.VARS.SEARCH_INDEX);
 };
 
 Object.defineProperty(POPC2.prototype.toggleHistoryDisplay, "name", { value: "toggleHistoryDisplay" });

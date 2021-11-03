@@ -18,21 +18,37 @@ POPC2.prototype.toggleBookmarkDisplay = function () {
 	
 	let belement = document.querySelector("#bookmark-browse-button");
 	if (!belement) {
-		console.log("CANNOT FIND B ELEMENT");
+		console.error("CANNOT FIND BOOKMARK BUTTON");
+		return;
+	}
+	let helement = document.querySelector("#history-browse-button");
+	if (!helement) {
+		console.error("CANNOT FIND HISTORY BUTTON");
 		return;
 	}
 
-	let state = 0;
+	let bstate = 0;
 	if (belement.classList.contains("selected")) {
-		state = 1;
+		bstate = 1;
+	}
+
+	let hstate = 0;
+	if (helement.classList.contains("selected")) {
+		hstate = 1;
+	}
+
+	// Store the browse sort method if both hstate and bstate are 0.
+	if ((bstate == 0) && (hstate == 0)) {
+		this.VARS.SAVED_SORT_TYPE = this.VARS.SEARCH_SORT_TYPE;
 	}
 
 	// let felement = document.querySelector("#filters");
 	let felement = null; // Allow search filters for bookmark page.
 	let h1element = document.querySelector("h1");
 
-	state = !state;
-	if (state) {
+	bstate = !bstate;
+	if (bstate) {
+		this.VARS.SEARCH_SORT_TYPE = "bookmark";
 		belement.classList.add("selected");
 		if (felement) {
 			felement.classList.add("hidden");
@@ -44,11 +60,11 @@ POPC2.prototype.toggleBookmarkDisplay = function () {
 		}
 
 		// Turn off history if already selected:
-		let helement = document.querySelector("#history-browse-button");
 		if (helement) {
 			helement.classList.remove("selected");
 		}
 	} else {
+		this.VARS.SEARCH_SORT_TYPE = this.VARS.SAVED_SORT_TYPE;
 		belement.classList.remove("selected");
 		if (felement) {
 			// (no longer hidden)

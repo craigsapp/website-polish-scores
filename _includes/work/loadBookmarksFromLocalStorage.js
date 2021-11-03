@@ -39,6 +39,13 @@ POPC2.prototype.loadBookmarksFromLocalStorage = function () {
 		}
 		bookmarks.push(entry);
 	}
+
+	belement = document.querySelector("#bookmark-browse-button");
+	if (bookmarks && bookmarks.length > 0) {
+		belement.classList.remove("hidden");
+	} else {
+		belement.classList.add("hidden");
+	}
 };
 
 Object.defineProperty(POPC2.prototype.loadBookmarksFromLocalStorage, "name", { value: "loadBookmarksFromLocalStorage" });

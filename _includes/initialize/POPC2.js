@@ -81,12 +81,17 @@ function POPC2() {
 	//    "composer":  Sort by composers' names.
 	this.VARS.SEARCH_SORT_TYPE = "composer";
 
+	// this.VARS.SAVED_SORT_TYPE -- sort choice for browsing before bookmark/history.
+	// The sort method that should be restore when returning from bookmark/history.
+	this.VARS.SAVED_SORT_TYPE = "composer";
+
 	// SEARCH_SORT_TYPE_PREV -- the previous sorting method (used for
 	// toggling sort methods.
 	this.VARS.SEARCH_SORT_TYPE_PREV = null;
 
 	// SEARCH_SORT_REVERSE -- sort in normal or reversed order.
 	this.VARS.SEARCH_SORT_REVERSE = false;
+
 
 
 	//////////////////////////////

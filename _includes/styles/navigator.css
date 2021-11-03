@@ -27,6 +27,14 @@
 	flex: 1 0 auto;
 }
 
+#navigator-browse {
+	justify-content: right;
+}
+
+#navigator-browse .worknav-tool {
+	padding-left: 25px;
+}
+
 .worknav-tool.selected {
 	color: {{ site.selected_language_color }} !important;
 }

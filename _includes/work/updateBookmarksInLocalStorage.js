@@ -25,6 +25,15 @@ POPC2.prototype.updateBookmarksInLocalStorage = function () {
 		}
 	}
 	localStorage.WORK_BOOKMARKS = JSON.stringify(list);
+
+	let belement = document.querySelector("#bookmark-browse-button");
+	if (belement) {
+		if (bookmarks.length > 0) {
+			belement.classList.remove("hidden");
+		} else {
+			belement.classList.add("hidden");
+		}
+	}
 };
 
 Object.defineProperty(POPC2.prototype.updateBookmarksInLocalStorage, "name", { value: "updateBookmarksInLocalStorage" });

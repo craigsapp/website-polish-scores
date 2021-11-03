@@ -1,0 +1,28 @@
+@
+@ Top navigator on browse page:
+@
+
+@@ Random tool is same as on work toolbar.
+
+@@ Link tool is same as on work toolbar.
+
+@@BEGIN:	ENTRY
+@TAG:		link_browse_tool
+@EN:		copy link to current search (l)
+@PL:		skopiuj link do bieżącego wyszukiwania (l)
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		history_tool
+@EN:		view history
+@PL:		zobacz historię
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		bookmark_browse_tool
+@EN:		view bookmarked scores
+@PL:		zobacz zakładki
+@@END:		ENTRY
+
+
+

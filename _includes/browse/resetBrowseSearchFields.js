@@ -58,7 +58,7 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	}
 	this.VARS.SEARCH_FREEZE = false;
 
-	this.VARS.SEARCH_RESULTS = this.VARS.SCORE_INDEX;
+	this.VARS.SEARCH_RESULTS = this.VARS.SEARCH_INDEX;
 	this.buildBrowseFilters();
 	this.doBrowseSearch();
 	this.DisplayComposerInfoPortrait();

@@ -37,6 +37,12 @@ function POPC2() {
 	// SCORE_INDEX -- A file list downloaded from this.SETTINGS.score_index.
 	this.VARS.SCORE_INDEX = [];
 
+	// SEARCH_INDEX -- The active list of scores to search on the browse page.
+	// This can be either SCORE_INDEX when doing regular browsing, or it can
+	// be WORK_BOOKMARKS when viewing bookmarks, or WORK_HISTORY when viewing
+	// history.
+	this.VARS.SEARCH_INDEX = [];
+
 	// COMPOSER_INDEX -- A list of the composers indexed by the composer's names,
 	// downloaded from {{ site.composer_index}}
 	this.VARS.COMPOSER_INDEX = {};

@@ -22,7 +22,7 @@
 POPC2.prototype.buildCenturyFilter = function (index, target) {
 	this.DebugMessageFunctionVerbose();
 	if (!index) {
-		index = this.VARS.SCORE_INDEX;
+		index = this.VARS.SEARCH_INDEX;
 	}
 	if (!target) {
 		target = "#filter-century";
@@ -37,7 +37,7 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 		return;
 	}
 	let centuries = {};
-	if (index.length === this.VARS.SCORE_INDEX.length) {
+	if (index.length === this.VARS.SEARCH_INDEX.length) {
 			// Use cached century counts
 			centuries = this.VARS.BROWSE_MENU_OPTIONS.century;
 	} else {

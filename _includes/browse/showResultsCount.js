@@ -30,7 +30,7 @@ POPC2.prototype.showResultsCount = function (index) {
 	let count = index.length;
 	if (element) {
 		let output = "";
-		if (count != this.VARS.SCORE_INDEX.length) {
+		if (count != this.VARS.SEARCH_INDEX.length) {
 			output = `${count} ${this.getMatchText(count)}`;
 		} else {
 			// Everything matches, so show the total number of scores in the database:

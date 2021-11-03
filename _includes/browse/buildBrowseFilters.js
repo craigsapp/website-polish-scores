@@ -16,7 +16,7 @@
 POPC2.prototype.buildBrowseFilters = function (index) {
 	this.DebugMessageFunction();
 	if (!index) {
-		index = this.VARS.SCORE_INDEX;
+		index = this.VARS.SEARCH_INDEX;
 	}
 
 	let element = document.activeElement;

@@ -27,7 +27,8 @@ POPC2.prototype.toggleBookmarkDisplay = function () {
 		state = 1;
 	}
 
-	let felement = document.querySelector("#filters");
+	// let felement = document.querySelector("#filters");
+	let felement = null; // Allow search filters for bookmark page.
 	let h1element = document.querySelector("h1");
 
 	state = !state;
@@ -37,6 +38,7 @@ POPC2.prototype.toggleBookmarkDisplay = function () {
 			felement.classList.add("hidden");
 		}
 		this.VARS.SEARCH_RESULTS = this.VARS.WORK_BOOKMARKS;
+		this.VARS.SEARCH_INDEX   = this.VARS.WORK_BOOKMARKS;
 		if (h1element) {
 			h1element.innerHTML = this.getTranslation("bookmarks");
 		}
@@ -45,6 +47,8 @@ POPC2.prototype.toggleBookmarkDisplay = function () {
 		if (felement) {
 			felement.classList.remove("hidden");
 		}
+		this.VARS.SEARCH_RESULTS = this.VARS.SCORE_INDEX;
+		this.VARS.SEARCH_INDEX   = this.VARS.SCORE_INDEX;
 		if (h1element) {
 			h1element.innerHTML = this.getTranslation("title");
 		}

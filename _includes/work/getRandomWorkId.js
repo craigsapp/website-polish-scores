@@ -22,7 +22,7 @@ POPC2.prototype.getRandomWorkId = function(index) {
 		index = this.VARS.SEARCH_RESULTS;
 	}
 	if (!index) {
-		index = this.VARS.SCORE_INDEX;
+		index = this.VARS.SEARCH_INDEX;
 	}
 	let random_value = Math.floor(Math.random() * index.length)
 	let id = index[random_value].fileid;
@@ -30,7 +30,7 @@ POPC2.prototype.getRandomWorkId = function(index) {
 		id = index[random_value].cenid;
 	}
 	if (!id) {
-		this.VARS.SCORE_INDEX[0];
+		this.VARS.SEARCH_INDEX[0];
 	}
 	if (!id) {
 		id = "18xx:105";

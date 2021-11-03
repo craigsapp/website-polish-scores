@@ -74,6 +74,7 @@ POPC2.prototype.PrepareDownloadedScoreIndex = function (database) {
 	// database[database.length-1]._next = database[0];
 
 	popc2.VARS.SCORE_INDEX    = database;
+	popc2.VARS.SEARCH_INDEX   = database;
 	popc2.VARS.SEARCH_RESULTS = database;
 
 };

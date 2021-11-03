@@ -19,7 +19,7 @@ POPC2.prototype.displayNextWork = function() {
 	this.DebugMessageFunction();
 	let index = this.VARS.SEARCH_RESULTS;
 	if (index.length == 0) {
-		index = this.VARS.SCORE_INDEX;
+		index = this.VARS.SEARCH_INDEX;
 	}
 	let targetid = this.VARS.WORK_ID;
 	if (!targetid) {

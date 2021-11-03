@@ -20,4 +20,10 @@
 @PL:		Zakładki
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		history
+@EN:		History
+@PL:		Historia
+@@END:		ENTRY
+
 

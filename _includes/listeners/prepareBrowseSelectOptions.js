@@ -26,7 +26,7 @@ POPC2.prototype.prepareBrowseSelectOptions = function () {
 	data.genre       = {};
 	data.nationality = {};
 
-	let index = this.VARS.SCORE_INDEX;
+	let index = this.VARS.SEARCH_INDEX;
 	for (let i=0; i<index.length; i++) {
 		let entry = index[i];
 		let composer    = entry.COM    || "";

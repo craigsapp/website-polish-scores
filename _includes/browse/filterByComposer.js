@@ -9,11 +9,11 @@
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
-// Description:   Search VARS.SCORE_INDEX for entries composed by the specified
-//                composer.  If the entire SCORE_INDEX will be searched and if
+// Description:   Search VARS.SEARCH_INDEX for entries composed by the specified
+//                composer.  If the entire SEARCH_INDEX will be searched and if
 //                VARS.COMPOSER_INDEX is available and a ._worklist entry has been
 //                prepared for the composer, then return that worklist; otherwise,
-//                the SCORE_INDEX will be searched for entries by the composer.
+//                the SEARCH_INDEX will be searched for entries by the composer.
 //                Do this search first from the browse searching form, since this
 //                will speed up the searching a bit when a composer is involved.
 //
@@ -37,7 +37,7 @@ POPC2.prototype.filterByComposer = function (input) {
 	if (target) {
 		this.VARS.SEARCH.composer = target;
 
-		if ((input.length == this.VARS.SCORE_INDEX.length)
+		if ((input.length == this.VARS.SEARCH_INDEX.length)
 				&& !this.IsEmptyObject(this.VARS.COMPOSER_INDEX)) {
 			// Used the prepared composer worklist if available:
 			let composerEntry = this.VARS.COMPOSER_INDEX[target];

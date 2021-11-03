@@ -118,13 +118,25 @@ div.lyrics-match {
 
 {% comment %}
 /*
- * When the screen is 600px or less wide, hide
+ * When the screen is 650px or less wide, hide
  * the shelfmark column in the search results table.
  */
 {% endcomment %}
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
 	table.search-results td.shelfmark,
 	table.search-results th.shelfmark {
+		display: none;
+	}
+}
+
+{% comment %}
+/*
+ * When the screen is 600px or less wide, hide
+ * the composers' first name in the search results table.
+ */
+{% endcomment %}
+@media only screen and (max-width: 600px) {
+	table.search-results .first-name {
 		display: none;
 	}
 }

@@ -102,6 +102,9 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 	output += "</thead>\n";
 	output += "<tbody>\n";
 
+	let cutoff1 = 30;  // boundary between short and long titles (for kern adjusting).
+	let cutoff2 = 40;  // boundary between short and long titles (for kern adjusting).
+	let cutoff3 = 60;  // boundary between short and long titles (for kern adjusting).
 	let lastedit = -1;
 	let lastlastedit = -1;
 	for (let i=0; i<results.length; i++) {
@@ -141,7 +144,7 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 		output += composer;
 		output += "</td>\n";
 
-		output += "<td class='title'>";
+		output += "<td class='title hangingindent'>";
 		if (this.VARS.SEARCH_SORT_TYPE === "title") {
 			let gtl = results[i].GTL || "";
 			let opr = results[i].OPR || "";
@@ -157,11 +160,16 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 				if (sorttitle === "[pre correcturam]") {
 					sorttitle = "[pre&nbsp;correcturam]";
 				}
+				let length = unsorttitle.length + sorttitle.length;
+				if      (length > cutoff3) { output += "<span class='long3'>"; }
+				else if (length > cutoff2) { output += "<span class='long2'>"; }
+				else if (length > cutoff1) { output += "<span class='long1'>"; }
 				output += "<span class='mute'>";
 				output += this.getHighlightedString(unsorttitle, this.VARS.SEARCH.title);
 				output += " &mdash; ";
 				output += "</span>";
 				output += this.getHighlightedString(sorttitle, this.VARS.SEARCH.title);
+				if (length > cutoff1) { output += "</span>"; }
 			} else if (opr) {
 				sorttitle = opr;
 				unsorttitle = otl;
@@ -171,11 +179,16 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 				if (sorttitle === "[pre correcturam]") {
 					sorttitle = "[pre&nbsp;correcturam]";
 				}
+				let length = unsorttitle.length + sorttitle.length;
+				if      (length > cutoff3) { output += "<span class='long3'>"; }
+				else if (length > cutoff2) { output += "<span class='long2'>"; }
+				else if (length > cutoff1) { output += "<span class='long1'>"; }
 				output += this.getHighlightedString(sorttitle, this.VARS.SEARCH.title);
 				output += "<span class='mute'>";
 				output += " &mdash; ";
 				output += this.getHighlightedString(unsorttitle, this.VARS.SEARCH.title);
 				output += "</span>";
+				if (length > cutoff1) { output += "</span>"; }
 			} else {
 				sorttitle = otl;
 				unsorttitle = "";
@@ -185,7 +198,12 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 				if (sorttitle === "[pre correcturam]") {
 					sorttitle = "[pre&nbsp;correcturam]";
 				}
+				let length = unsorttitle.length + sorttitle.length;
+				if      (length > cutoff3) { output += "<span class='long3'>"; }
+				else if (length > cutoff2) { output += "<span class='long2'>"; }
+				else if (length > cutoff1) { output += "<span class='long1'>"; }
 				output += this.getHighlightedString(sorttitle, this.VARS.SEARCH.title);
+				if (length > cutoff1) { output += "</span>"; }
 			}
 		} else {
 			let title = results[i]._title || "";
@@ -195,7 +213,12 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 			if (title === "[pre correcturam]") {
 				title = "[pre&nbsp;correcturam]";
 			}
+			let length = title.length;
+			if      (length > cutoff3) { output += "<span class='long3'>"; }
+			else if (length > cutoff2) { output += "<span class='long2'>"; }
+			else if (length > cutoff1) { output += "<span class='long1'>"; }
 			output += this.getHighlightedString(results[i]._title || "", this.VARS.SEARCH.title);
+			if (length > cutoff1) { output += "</span>"; }
 		}
 		output += "</td>\n";
 

@@ -15,7 +15,7 @@
 table.search-results {
 	border-collapse: collapse;
 	max-width: 1000px;
-	table-layout: fixed;
+	table-layout: auto;
 	width: 97%;
 	margin-left: 10px;
 }
@@ -54,6 +54,23 @@ table.search-results td {
 	vertical-align: top;
 }
 
+.long1 {
+	letter-spacing: -0.25px;
+}
+
+.long2 {
+	letter-spacing: -0.50px;
+}
+
+.long3 {
+	letter-spacing: -0.75px;
+}
+
+.hangingindent {
+  padding-left: 22px ;
+  text-indent: -22px ;
+}
+
 table.search-results th.title,
 table.search-results td.title {
 }
@@ -62,14 +79,11 @@ table.search-results th.composer,
 table.search-results td.composer {
 }
 
-table.search-results th.shelfmark,
-table.search-results td.shelfmark {
-}
-
 table.search-results td.shelfmark {
 	padding-right: 5px;
 	color: #555555;
 	font-size: 90%;
+	white-space: nowrap;
 }
 
 table.search-results td.shelfmark span.siglum {
@@ -118,11 +132,11 @@ div.lyrics-match {
 
 {% comment %}
 /*
- * When the screen is 650px or less wide, hide
+ * When the screen is 700px or less wide, hide
  * the shelfmark column in the search results table.
  */
 {% endcomment %}
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 700px) {
 	table.search-results td.shelfmark,
 	table.search-results th.shelfmark {
 		display: none;
@@ -131,11 +145,11 @@ div.lyrics-match {
 
 {% comment %}
 /*
- * When the screen is 600px or less wide, hide
+ * When the screen is 650px or less wide, hide
  * the composers' first name in the search results table.
  */
 {% endcomment %}
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
 	table.search-results .first-name {
 		display: none;
 	}

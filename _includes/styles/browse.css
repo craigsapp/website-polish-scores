@@ -22,6 +22,32 @@
 	display: inline-block;
 }
 
+#moreless-button {
+	color: {{ site.h1_color }};
+	display: inline-block;
+	font-size: 1.65rem;
+	padding-left: 10px;
+	position: relative;
+	top: 3px;
+	vertical-align: baseline;
+	width: 24px;
+}
+
+#clear-button {
+	color: {{ site.h1_color }};
+	display: inline-block;
+	font-size: 1.95rem;
+	height: 24px;
+	position: relative;
+	top: 5px;
+	vertical-align: baseline;
+}
+
+#moreless-button:hover,
+#clear-button:hover {
+	color: {{ site.button_hover_color }};
+}
+
 #results-count,
 #results-notecount {
 	color: #aaaaaa;
@@ -30,7 +56,6 @@
 #results-notecount {
 	padding-left: 50px;
 }
-
 
 .first-name {
 	color: #aaaaaa;

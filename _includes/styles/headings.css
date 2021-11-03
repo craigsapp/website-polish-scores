@@ -51,13 +51,13 @@ th {
  * Adjust the page title so that it does not wrap (usually).
  */
 {% endcomment %}
-@media only screen and (max-width: 950px) { h1#browse-page { zoom: 0.96; } }
-@media only screen and (max-width: 900px) { h1#browse-page { zoom: 0.92; } }
-@media only screen and (max-width: 850px) { h1#browse-page { zoom: 0.88; } }
-@media only screen and (max-width: 800px) { h1#browse-page { zoom: 0.84; } }
-@media only screen and (max-width: 750px) { h1#browse-page { zoom: 0.80; } }
-@media only screen and (max-width: 700px) { h1#browse-page { zoom: 0.76; letter-spacing: 6px;} }
-@media only screen and (max-width: 650px) { h1#browse-page { zoom: 0.72; letter-spacing: 5px;} }
+@media only screen and (max-width: 950px) { h1.browse-page { zoom: 0.96; letter-spacing: 6px; } }
+@media only screen and (max-width: 900px) { h1.browse-page { zoom: 0.92; letter-spacing: 5px; } }
+@media only screen and (max-width: 850px) { h1.browse-page { zoom: 0.88; letter-spacing: 4px; } }
+@media only screen and (max-width: 800px) { h1.browse-page { zoom: 0.84; letter-spacing: 3px; } }
+@media only screen and (max-width: 750px) { h1.browse-page { zoom: 0.80; letter-spacing: 2px; } }
+@media only screen and (max-width: 700px) { h1.browse-page { zoom: 0.76; letter-spacing: 1px; } }
+@media only screen and (max-width: 650px) { h1.browse-page { zoom: 0.72; letter-spacing: 0px; } }
 
 
 

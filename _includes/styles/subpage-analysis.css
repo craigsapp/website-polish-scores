@@ -1,0 +1,29 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Tue Nov  2 20:00:39 PDT 2021
+// Last Modified: Tue Nov  2 20:00:42 PDT 2021
+// Filename:      _includes/styles/subpage-analysis.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for the analysis section of the work page.
+//
+{% endcomment %}
+
+#subpage-analysis {
+	background: #f0f0f0;
+	height: 110px;
+	margin-top: -110px;
+	width: 100%;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0px;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+

@@ -28,10 +28,14 @@
 }
 
 .data-download {
-	font-size: 24px;
+	font-size: 1.60rem;
 	padding: 5px;
 	text-align: center;
 	cursor: pointer;
+}
+
+#subpage-download i {
+	font-size: 1.70rem;
 }
 
 .data-download:hover {
@@ -58,5 +62,11 @@
 		display: none;
 	}
 }
+
+@media only screen and (max-width: 700px) { #subpage-download i { font-size: 1.70rem; } }
+@media only screen and (max-width: 650px) { #subpage-download i { font-size: 1.60rem; } }
+@media only screen and (max-width: 600px) { #subpage-download i { font-size: 1.45rem; } }
+@media only screen and (max-width: 575px) { #subpage-download i { font-size: 1.35rem; } }
+
 
 

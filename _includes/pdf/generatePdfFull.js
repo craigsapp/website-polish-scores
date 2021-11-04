@@ -132,6 +132,7 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 
 	// Include options from the notation configuration menu:
 	vrvOptions = this.addNotationConfigureOptions(vrvOptions);
+	vrvOptions = this.addAnalysisOptions(vrvOptions);
 
 	// Remove the filter parameters since those are for HNP only.
 	// Instead, insert into Humdrum data.

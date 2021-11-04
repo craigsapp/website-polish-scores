@@ -77,7 +77,13 @@ table.search-results td.title {
 
 table.search-results th.composer,
 table.search-results td.composer {
-	min-width: 30%;
+	white-space: nowrap;
+	padding-right: 10px;
+}
+
+table.search-results td.shelfmark,
+table.search-results th.shelfmark {
+	padding-right: 10px;
 }
 
 table.search-results td.shelfmark {

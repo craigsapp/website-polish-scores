@@ -1,0 +1,30 @@
+@
+@ Translations for analysis tools
+@
+
+@@BEGIN:	ENTRY
+@TAG:		choose_analysis_tool
+@EN:		Choose analysis tool
+@PL:		Wybierz narzędzie do analizy
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		color_triads
+@EN:		Color triads
+@PL:		Kolorowe triady
+@@END:		ENTRY
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN:	ENTRY
+@TAG:		composite_rhythm
+@EN:		Composite rhythm
+@PL:		Złożony rytm
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		composite_only
+@EN:		Display only analysis staff
+@PL:		Wyświetlaj tylko personel analityczny
+@@END:		ENTRY
+

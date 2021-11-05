@@ -9,6 +9,17 @@
 @PL:		Finansowane przez Unię Europejską
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		nifc
+@EN:		Chopin Institute
+@PL:		Narodowy Institut Fryderyka Chopina
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		nifc_url
+@EN:		https://nifc.pl/en
+@PL:		https://nifc.pl/pl
+@@END:		ENTRY
 
 @
 @ Genre drop-down list on browse page:

@@ -17,13 +17,13 @@
 @@BEGIN:	ENTRY
 @TAG:		show_all_notes
 @EN:		Show all notes
-@PL:		Pokaż wszystkie notatki
+@PL:		Pokaż wszystkie znaki
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		expand_repeats
 @EN:		Expand repeat marks
-@PL:		Rozwiń znaki powtarzania
+@PL:		Rozwiń zapis skrótowy
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
@@ -41,13 +41,13 @@
 @@BEGIN:	ENTRY
 @TAG:		auto_stemming
 @EN:		Automatic stemming
-@PL:		Automatyczne łodygi
+@PL:		Automatyczne laski nut
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		sounding_score
 @EN:		Sounding score
-@PL:		Brzmiąca partytura
+@PL:		Partytura brzmiąca
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY

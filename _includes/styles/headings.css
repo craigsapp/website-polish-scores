@@ -16,10 +16,11 @@ h1 {
 	box-sizing: inherit;
 	color: {{ site.h1_color }};
 	cursor: auto;
+	text-shadow: 0px 0px 2px #300;
 	font-family: 'Montserrat', sans-serif !important;
-	font-size: 36px;
+	font-size: 2.75rem;
 	font-weight: 400;
-	letter-spacing: 2px;
+	letter-spacing: 7px;
 	line-height: 1.5;
 	list-style-type: none;
 	margin: 0;
@@ -43,6 +44,20 @@ h3 {
 th {
 	color: {{ site.th_color }};
 }
+
+
+{% comment %}
+/*
+ * Adjust the page title so that it does not wrap (usually).
+ */
+{% endcomment %}
+@media only screen and (max-width: 950px) { h1.browse-page { zoom: 0.96; letter-spacing: 6px; } }
+@media only screen and (max-width: 900px) { h1.browse-page { zoom: 0.92; letter-spacing: 5px; } }
+@media only screen and (max-width: 850px) { h1.browse-page { zoom: 0.88; letter-spacing: 4px; } }
+@media only screen and (max-width: 800px) { h1.browse-page { zoom: 0.84; letter-spacing: 3px; } }
+@media only screen and (max-width: 750px) { h1.browse-page { zoom: 0.80; letter-spacing: 2px; } }
+@media only screen and (max-width: 700px) { h1.browse-page { zoom: 0.76; letter-spacing: 1px; } }
+@media only screen and (max-width: 650px) { h1.browse-page { zoom: 0.72; letter-spacing: 0px; } }
 
 
 

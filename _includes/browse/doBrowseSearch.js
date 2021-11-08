@@ -27,7 +27,7 @@ POPC2.prototype.doBrowseSearch = function (index) {
 		return;
 	}
 	if (!index) {
-		index = this.VARS.SCORE_INDEX;
+		index = this.VARS.SEARCH_INDEX;
 	}
 
 	// Reset search
@@ -47,7 +47,7 @@ POPC2.prototype.doBrowseSearch = function (index) {
 	results = this.filterByLyrics(results);
 	results = this.filterByPitch(results);
 
-	if (results.length != this.VARS.SCORE_INDEX.length) {
+	if (results.length != this.VARS.SEARCH_INDEX.length) {
 		this.VARS.SEARCH_FREEZE = true;
 		this.buildComposerFilter(results);
 		this.buildCenturyFilter(results);

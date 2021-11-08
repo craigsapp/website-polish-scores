@@ -1,0 +1,43 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sun Oct 31 08:37:23 PDT 2021
+// Last Modified: Sun Oct 31 08:37:25 PDT 2021
+// Filename:      _includes/head/main.html
+// Included in:   _layouts/info.html
+// Syntax:        ECMAScript 6; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Include javascript code and other head-related content into
+//                head element on info webpages.
+//
+{% endcomment %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+<title>{{site.tab_title}}</title>
+
+{% include aton/main.html              %}
+{% include handlebars/main.html        %}
+
+{% include initialize/main.html        %}
+
+{% include shared/main.html            %}
+{% include language/main.html          %}
+{% include navigator/main.html         %}
+{% include styles/main.html            %}
+{% include translations/main.html      %}
+
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&amp;display=swap" rel="stylesheet">
+
+
+<!--
+<link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+-->
+<link rel="stylesheet" href="/styles/fontawesome/font-awesome.min.css">
+<link href="/styles/fontawesome/all.css" rel="stylesheet">
+
+
+

@@ -4,9 +4,21 @@
 	padding-bottom: 20px;
 }
 
+#composer-info.anonymous {
+	padding-bottom: 0px;
+}
+
 .composer-info {
 	color: #dddddd;
 	font-size: 16px;
+}
+
+.composer-info:hover {
+	color: {{ site.button_hover_color }};
+}
+
+.open.composer-info:hover {
+	color: {{ site.h1_color }};
 }
 
 #composer-name {

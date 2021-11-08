@@ -190,31 +190,30 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			break;
 
 		case "ArrowUp":
-			if (popc2.IsWorkPage()) {
-				if (event.shiftKey) {
-					// Go to the top of the page.
-					window.scrollTo(0, 0);
-					event.preventDefault();
-				}
+			if (event.shiftKey) {
+				// Go to the top of the page.
+				window.scrollTo(0, 0);
+				event.preventDefault();
 			}
 			break;
 
 		case "ArrowDown":
-			if (popc2.IsWorkPage()) {
-				if (event.shiftKey) {
-					let element = document.querySelector("footer");
-					if (element) {
-						element.scrollIntoView();
-						event.preventDefault();
-					}
+			if (event.shiftKey) {
+				let element = document.querySelector("footer");
+				if (element) {
+					element.scrollIntoView();
+					event.preventDefault();
 				}
 			}
 			break;
 
 		case " ":
 			if (popc2.IsWorkPage()) {
-				console.warn("Going to toggle MIDI playback in future.");
-				event.preventDefault();
+				let player = document.querySelector("#player");
+				if (player) {
+					playCurrentMidi();
+					event.preventDefault();
+				}
 			}
 			break;
 

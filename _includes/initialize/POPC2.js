@@ -37,6 +37,12 @@ function POPC2() {
 	// SCORE_INDEX -- A file list downloaded from this.SETTINGS.score_index.
 	this.VARS.SCORE_INDEX = [];
 
+	// SEARCH_INDEX -- The active list of scores to search on the browse page.
+	// This can be either SCORE_INDEX when doing regular browsing, or it can
+	// be WORK_BOOKMARKS when viewing bookmarks, or WORK_HISTORY when viewing
+	// history.
+	this.VARS.SEARCH_INDEX = [];
+
 	// COMPOSER_INDEX -- A list of the composers indexed by the composer's names,
 	// downloaded from {{ site.composer_index}}
 	this.VARS.COMPOSER_INDEX = {};
@@ -70,7 +76,14 @@ function POPC2() {
 	// Allowed values are:
 	//     null:       Do not sort (uses cenid order).
 	//    "notecount": Sort by the number of notes in the score.
-	this.VARS.SEARCH_SORT_TYPE = null;
+	//    "shelfmark": Sort by shelfmark of the works.
+	//    "title":     Sort by titles of the works.
+	//    "composer":  Sort by composers' names.
+	this.VARS.SEARCH_SORT_TYPE = "composer";
+
+	// this.VARS.SAVED_SORT_TYPE -- sort choice for browsing before bookmark/history.
+	// The sort method that should be restore when returning from bookmark/history.
+	this.VARS.SAVED_SORT_TYPE = "composer";
 
 	// SEARCH_SORT_TYPE_PREV -- the previous sorting method (used for
 	// toggling sort methods.
@@ -78,6 +91,7 @@ function POPC2() {
 
 	// SEARCH_SORT_REVERSE -- sort in normal or reversed order.
 	this.VARS.SEARCH_SORT_REVERSE = false;
+
 
 
 	//////////////////////////////

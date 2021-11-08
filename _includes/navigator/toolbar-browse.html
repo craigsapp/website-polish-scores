@@ -13,70 +13,21 @@
 {% endcomment %}
 
 
-<div id="previous-work" class="invisible trans worknav-tool fas fa-arrow-circle-left"
-		data-transatt="title:previous_work" onclick="popc2.displayPreviousWork();">
-</div>
-
-<div id="to-browse-page" class="invisible trans worknav-tool fas fa-arrow-circle-up"
-		data-transatt="title:browse_page" onclick="popc2.displayBrowsePage();">
-</div>
-
-<div id="next-work" class="invisible trans worknav-tool fas fa-arrow-circle-right"
-		data-transatt="title:next_work" onclick="popc2.displayNextWork();">
-</div>
-
-<div id="play-button" class="invisible trans worknav-tool fas fa-play"
-		data-transatt="title:play_tool_play">
-</div>
-
-<div id="smaller-button" class="invisible trans worknav-tool fas fa-minus-square"
-		data-transatt="title:smaller_tool" onclick = "popc2.makeNotationSmaller();">
-</div>
-
-<div id="larger-button" class="invisible trans worknav-tool fas fa-plus-square"
-		data-transatt="title:larger_tool" onclick="popc2.makeNotationLarger();">
-</div>
-
-<div id="search-button" class="invisible trans worknav-tool fas fa-search"
-		data-transatt="title:search_tool" onclick="popc2.toggleSubpageDisplay('search')">
-</div>
-
-<div id="configure-button" class="invisible trans worknav-tool fas fa-wrench"
-		data-transatt="title:configure_tool" onclick="popc2.toggleSubpageDisplay('configure')">
-</div>
-
-<div id="downloads-button" class="invisible trans worknav-tool fas fa-download"
-		data-transatt="title:download_tool" onclick="popc2.toggleSubpageDisplay('downloads')">
-</div>
-
-<div id="downloads-button" class="invisible trans worknav-tool fas fa-key"
-		data-transatt="title:download_tool">
-</div>
-
-<div id="delete-button" class="trans worknav-tool fas fa-backspace"
-		data-transatt="title:clear_help" onclick="popc2.resetBrowseSearchFields();">
-</div>
-
-<div id="history-button" class="trans worknav-tool fas fa-history"
-		data-transatt="title:fullwidth_tool_expand" onclick="alert('this button will show workpage history');">
-</div>
-
-<div id="moreless-button" class="trans worknav-tool fas fa-compress-arrows-alt"
-		data-transatt="title:incipit_tool_compress" onclick="popc2.toggleBrowseStyle();">
-</div>
-
-<div id="random-button" class="trans worknav-tool fas fa-random"
+<div id="random-browse-button" class="trans worknav-tool fas fa-random"
 		data-transatt="title:random_tool" onclick="popc2.displayRandomWork();">
 </div>
 
-<div id="worklink-button" class="trans worknav-tool fas fa-link"
-		data-transatt="title:worklink_tool" onclick="popc2.copySearchLink();">
+<div id="worklink-browse-button" class="trans worknav-tool fas fa-link"
+		data-transatt="title:link_browse_tool" onclick="popc2.copySearchLink();">
 </div>
 
-<div id="bookmark-button" class="trans worknav-tool fas fa-star"
-		data-transatt="title:bookmark_tool" onclick="alert('this button will show bookmark list')">
+<div id="history-browse-button" class="hidden trans worknav-tool fas fa-history"
+		data-transatt="title:history_tool" onclick="popc2.toggleHistoryDisplay()">
 </div>
 
+<div id="bookmark-browse-button" class="hidden trans worknav-tool fas fa-star"
+		data-transatt="title:bookmark_browse_tool" onclick="popc2.toggleBookmarkDisplay()">
+</div>
 
 
 

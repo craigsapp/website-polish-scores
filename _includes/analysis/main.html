@@ -1,0 +1,28 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Nov  3 18:43:06 PDT 2021
+// Last Modified: Wed Nov  3 18:43:09 PDT 2021
+// Filename:      _includes/analysis/main.html
+// Included in:   _includes/head/main.html
+// Syntax:        ECMAScript 6; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   This file collects all files in this directory into
+//                a single file that is included in the head element
+//                of the webpage.  Each javascript function is stored
+//                in a separate file based on the name of the function.
+//
+{% endcomment %}
+
+<script>
+
+{% include analysis/addAnalysisOptions.js %}
+{% include analysis/displayAnalysisPanel.js %}
+{% include analysis/doAnalysis.js %}
+{% include analysis/getAnalysisFilter.js %}
+
+</script>
+
+
+

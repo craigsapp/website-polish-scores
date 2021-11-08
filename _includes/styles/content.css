@@ -21,6 +21,7 @@
 	font-size: 15px;
 	line-height: 1.5;
 	margin: 0px auto;
+	margin-top: 71px;
 	max-width: {{ site.max_content_width }};
 	min-height: 100vh;
 	padding: 15px;

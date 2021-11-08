@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct  8 23:22:31 PDT 2021
-// Last Modified: Sat Oct 16 17:21:01 PDT 2021
+// Last Modified: Sat Oct 30 22:21:12 PDT 2021
 // Filename:      _includes/handlebars/template-browse.html
 // Included in:   _includes/handlebars/main.html
 // Syntax:        HTML; Handlebars; Jekyll/Liquid
@@ -15,23 +15,23 @@
 {% raw %}
 <script id="template-browse" type="text/x-handlebars-template">
 
-<h1>{{trans "title"}}</h1>
+<h1 class="browse-page">{{showTitle}}</h1>
 
 <center>
+<!--
+<div id="filters" class="{{bookmarkHide}}">
+-->
 <div id="filters">
 <div class="filter-div" id="filter-composer"></div>
-<div class="filter-div" id="filter-nationality" style="display:none;"></div>
+<div class="filter-div hidden" id="filter-nationality"></div>
 
-<!--
-<div id="filter-reset" class="filter-div button" title="{{trans 'clear_help'}}"
-	onclick="popc2.resetBrowseSearchFields()"><i class="fas fa-backspace"></i></div>
+<div id="clear-button" class="trans fas fa-backspace"
+		data-transatt="title:clear_help" onclick="popc2.resetBrowseSearchFields();">
+</div>
 
-<div id="filter-moreless" class="filter-div button" title=""
-	onclick="popc2.toggleBrowseStyle()"></div>
-
-<div id="filter-link" class="filter-div button" title="{{trans 'copy_link'}}"
-	onclick="popc2.copySearchLink()"><i class="fas fa-link"></i></div>
--->
+<div id="moreless-button" class="trans fas fa-compress-arrows-alt"
+		data-transatt="title:incipit_tool_compress" onclick="popc2.toggleBrowseStyle();">
+</div>
 
 <br/>
 
@@ -50,7 +50,9 @@
 <div class="filter-div" id="results-count"></div>
 <div class="filter-div" id="results-notecount"></div>
 </div>
+<!--
 <div id="portrait-browse"></div>
+-->
 </center>
 
 <center>

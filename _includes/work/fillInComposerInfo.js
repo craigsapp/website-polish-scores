@@ -27,8 +27,11 @@ POPC2.prototype.fillInComposerInfo = function(composer) {
 	element.dataset.name = composer;
 	if (composer.match(/^anon/i)) {
 		element.innerHTML = "";
+		element.classList.add("anonymous");
 		return;
 	}
+
+	element.classList.remove("anonymous");
 
 	this.DisplayComposerInfoPortrait(composer, "#composer-info");
 };

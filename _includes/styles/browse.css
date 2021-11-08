@@ -15,10 +15,37 @@
 #filters {
 	margin-bottom: 30px;
 	margin-left: 30px;
+	zoom: 1.15;
 }
 
 .filter-div {
 	display: inline-block;
+}
+
+#moreless-button {
+	color: {{ site.h1_color }};
+	display: inline-block;
+	font-size: 1.65rem;
+	padding-left: 10px;
+	position: relative;
+	top: 3px;
+	vertical-align: baseline;
+	width: 24px;
+}
+
+#clear-button {
+	color: {{ site.h1_color }};
+	display: inline-block;
+	font-size: 1.95rem;
+	height: 24px;
+	position: relative;
+	top: 5px;
+	vertical-align: baseline;
+}
+
+#moreless-button:hover,
+#clear-button:hover {
+	color: {{ site.button_hover_color }};
 }
 
 #results-count,
@@ -30,7 +57,6 @@
 	padding-left: 50px;
 }
 
-
 .first-name {
 	color: #aaaaaa;
 }
@@ -39,6 +65,23 @@ span.mark {
 	font-weight: bold;
 	color: {{ site.h1_color }};
 }
+
+
+
+{% comment %}
+/*
+ * Adjust the search form so that it is always approximatly
+ * fitting the width of the page (under 650 it will do some wrapping).
+ */
+{% endcomment %}
+@media only screen and (max-width: 950px) { #filters { zoom: 1.10; } }
+@media only screen and (max-width: 900px) { #filters { zoom: 1.04; } }
+@media only screen and (max-width: 850px) { #filters { zoom: 1.00; } }
+@media only screen and (max-width: 800px) { #filters { zoom: 0.96; } }
+@media only screen and (max-width: 750px) { #filters { zoom: 0.92; } }
+@media only screen and (max-width: 700px) { #filters { zoom: 0.88; } }
+@media only screen and (max-width: 650px) { #filters { zoom: 0.84; } }
+@media only screen and (max-width: 600px) { #filters { zoom: 0.78; } }
 
 
 

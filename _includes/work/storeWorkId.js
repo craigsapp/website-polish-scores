@@ -33,6 +33,15 @@ POPC2.prototype.storeWorkId = function (id) {
 	} else {
 		this.VARS.WORK_HISTORY.push(entry);
 	}
+
+	let helement = document.querySelector("#history-browse-button");
+	if (helement) {
+		if (this.VARS.WORK_HISTORY && (this.VARS.WORK_HISTORY.length > 0)) {
+			helement.classList.remove("hidden");
+		} else{
+			helement.classList.add("hidden");
+		}
+	}
 };
 
 Object.defineProperty(POPC2.prototype.storeWorkId, "name", { value: "storeWorkId" });

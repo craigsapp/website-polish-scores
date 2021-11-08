@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 18 09:55:53 PDT 2021
 // Last Modified: Mon Oct 18 09:55:56 PDT 2021
-// Filename:      _includes/work/subpage-downloads.html
+// Filename:      _includes/work/subpage-download.html
 // Included in:   _includes/work/work.html
 // Syntax:        HTML
 // vim:           ts=3:nowrap
@@ -20,6 +20,8 @@
 		onclick="popc2.showDataInNewTab(event, 'humdrum')"></i>
 	<i data-transatt="title:view_humdrum_github" class="trans fab fa-github-square"
 		onclick="popc2.showDataInNewTab(event, 'humdrum', 'github')"></i>
+	<i data-transatt="title:copy_humdrum" class="trans fa fa-copy"
+		onclick="popc2.showDataInNewTab(event, 'humdrum', 'copy')"></i>
 	<i data-transatt="title:view_humdrum_vhv" class="trans fas fa-hospital-symbol"
 		onclick="popc2.showDataInNewTab(event, 'humdrum', 'vhv')"></i>
 	<br/>
@@ -32,6 +34,8 @@
 	<i class="fas fa-file-download"></i>
 	<i data-transatt="title:view_mei" class="trans fas fa-eye"
 		onclick="popc2.showDataInNewTab(event, 'mei')"></i>
+	<i data-transatt="title:copy_mei" class="trans fa fa-copy"
+		onclick="popc2.showDataInNewTab(event, 'mei', 'copy')"></i>
 	<i data-transatt="title:view_mei_vhv" class="trans fas fa-hospital-symbol"
 		onclick="popc2.showDataInNewTab(event, 'mei', 'vhv')"></i>
 	<br/>
@@ -52,14 +56,16 @@
 	<i class="fas fa-file-download"></i>
 	<i data-transatt="title:view_musicxml" class="trans fas fa-eye"
 		onclick="popc2.showDataInNewTab(event, 'musicxml')"></i>
+	<i data-transatt="title:copy_musicxml" class="trans fa fa-copy"
+		onclick="popc2.showDataInNewTab(event, 'musicxml', 'copy')"></i>
 	<i data-transatt="title:view_musicxml_vhv" class="trans fas fa-hospital-symbol"
 		onclick="popc2.showDataInNewTab(event, 'musicxml', 'vhv')"></i>
 	<br/>
 	MusicXML
 </div>
 
-<div class="disabled data-download trans" id="data-pdf"
-		onclick="popc2.downloadData(event, 'pdf')"
+<div class="data-download trans" id="data-pdf"
+		onclick="popc2.generatePdfFull()"
 		data-transatt="title:download_pdf">
 	<i class="fas fa-file-pdf"></i>
 	<br/>

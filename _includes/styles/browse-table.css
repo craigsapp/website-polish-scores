@@ -15,17 +15,13 @@
 table.search-results {
 	border-collapse: collapse;
 	max-width: 1000px;
-	table-layout: fixed;
-	width: 100%;
+	table-layout: auto;
+	width: 97%;
+	margin-left: 10px;
 }
 
 table.search-results.narrow {
-	max-width: 650px !important;
-}
-
-table.search-results th:first-child,
-table.search-results td:first-child {
-	padding-left: 30px;
+	max-width: 700px !important;
 }
 
 table.search-results th,
@@ -35,10 +31,44 @@ table.search-results td {
 
 table.search-results th {
 	text-align: left;
+	font-size: 1.15rem;
+}
+
+table.search-results th.sorted::after {
+	color: {{ site.h1_color }};
+}
+
+table.search-results th::after {
+	content: "\f0dd";
+	padding-left: 5px;
+	font-family: FontAwesome;
+	color: #ddd;
+	font-size: 1.15rem;
+}
+
+table.search-results th:hover::after {
+	color: {{ site.button_hover_color }};
 }
 
 table.search-results td {
 	vertical-align: top;
+}
+
+.long1 {
+	letter-spacing: -0.25px;
+}
+
+.long2 {
+	letter-spacing: -0.50px;
+}
+
+.long3 {
+	letter-spacing: -0.75px;
+}
+
+.hangingindent {
+  padding-left: 22px ;
+  text-indent: -22px ;
 }
 
 table.search-results th.title,
@@ -47,16 +77,20 @@ table.search-results td.title {
 
 table.search-results th.composer,
 table.search-results td.composer {
+	white-space: nowrap;
+	padding-right: 10px;
 }
 
-table.search-results th.shelfmark,
-table.search-results td.shelfmark {
+table.search-results td.shelfmark,
+table.search-results th.shelfmark {
+	padding-right: 10px;
 }
 
 table.search-results td.shelfmark {
 	padding-right: 5px;
 	color: #555555;
 	font-size: 90%;
+	white-space: nowrap;
 }
 
 table.search-results td.shelfmark span.siglum {
@@ -105,13 +139,25 @@ div.lyrics-match {
 
 {% comment %}
 /*
- * When the screen is 600px or less wide, hide
+ * When the screen is 700px or less wide, hide
  * the shelfmark column in the search results table.
  */
 {% endcomment %}
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
 	table.search-results td.shelfmark,
 	table.search-results th.shelfmark {
+		display: none;
+	}
+}
+
+{% comment %}
+/*
+ * When the screen is 650px or less wide, hide
+ * the composers' first name in the search results table.
+ */
+{% endcomment %}
+@media only screen and (max-width: 650px) {
+	table.search-results .first-name {
 		display: none;
 	}
 }

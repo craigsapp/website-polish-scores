@@ -14,4 +14,16 @@
 @PL:		Portal Muzyki Polskiej
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		bookmarks
+@EN:		Bookmarks
+@PL:		Zakładki
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		history
+@EN:		History
+@PL:		Historia
+@@END:		ENTRY
+
 

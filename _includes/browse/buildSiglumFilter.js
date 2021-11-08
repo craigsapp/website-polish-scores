@@ -22,7 +22,7 @@
 POPC2.prototype.buildSiglumFilter = function (index, target) {
 	this.DebugMessageFunctionVerbose();
 	if (!index) {
-		index = this.VARS.SCORE_INDEX;
+		index = this.VARS.SEARCH_INDEX;
 	}
 	if (!target) {
 		target = "#filter-siglum";
@@ -38,7 +38,7 @@ POPC2.prototype.buildSiglumFilter = function (index, target) {
 	}
 
 	let sigla = {};
-	if (index.length === this.VARS.SCORE_INDEX.length) {
+	if (index.length === this.VARS.SEARCH_INDEX.length) {
 			// Use cached sigla counts
 			sigla = this.VARS.BROWSE_MENU_OPTIONS.siglum;
 	} else {

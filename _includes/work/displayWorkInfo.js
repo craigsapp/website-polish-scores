@@ -68,27 +68,61 @@ POPC2.prototype.displayWorkInfo = function(id) {
 
 	// Show work/movement title:
 	let titleElement = base.querySelector("#title-area");
-	let gtlElement = base.querySelector("#GTL");
-	let oprElement = base.querySelector("#OPR");
-	let otlElement = base.querySelector("#OTL");
+	let gElement = base.querySelector("#GROUPTITLE");
+	let tElement = base.querySelector("#TITLE");
+	let sElement = base.querySelector("#SUBTITLE");
+
+	let gtl = entry.GTL || "";
+	let opr = entry.OPR || "";
+	let otl = entry.OTL || "";
+
+	let subtitle   = "";
+	let title      = "";
+	let grouptitle = "";
+
+	if (gtl) {
+		grouptitle = gtl;
+		subtitle = otl;
+	} else if (opr) {
+		title = opr;
+		subtitle = otl;
+	} else {
+		title = otl;
+	}
 
 	if (titleElement) {
-		if (gtlElement) {
-			gtlElement.classList.add("hidden");
+		if (grouptitle) {
+			gElement.innerHTML = grouptitle;
+			gElement.classList.remove("hidden");
+			titleElement.classList.remove("hidden");
+		} else {
+			gElement.classList.add("hidden");
 		}
-		if (oprElement) {
-			oprElement.classList.add("hidden");
-		}
-		if (otlElement) {
-			if (entry.title) {
-				otlElement.innerHTML = entry.title;
-				otlElement.classList.remove("hidden");
+
+		if (tElement) {
+			if (title) {
+				tElement.innerHTML = title;
+				tElement.classList.remove("hidden");
 				titleElement.classList.remove("hidden");
 			} else {
-				otlElement.classList.add("hidden");
+				tElement.classList.add("hidden");
 			}
 		}
+
+		if (sElement) {
+			if (subtitle) {
+				sElement.innerHTML = subtitle;
+				sElement.classList.remove("hidden");
+				titleElement.classList.remove("hidden");
+			} else {
+				sElement.classList.add("hidden");
+			}
+		}
+
 	}
+
+	// Needed for some composer dates:
+	this.ApplyElementTranslations();
 
 };
 

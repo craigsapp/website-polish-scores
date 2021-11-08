@@ -22,7 +22,7 @@
 POPC2.prototype.buildComposerFilter = function (index, target) {
 	this.DebugMessageFunctionVerbose();
 	if (!index) {
-		index = this.VARS.SCORE_INDEX;
+		index = this.VARS.SEARCH_INDEX;
 	}
 	if (!target) {
 		target = "#filter-composer";
@@ -43,7 +43,7 @@ POPC2.prototype.buildComposerFilter = function (index, target) {
 	}
 
 	let composers = {};
-	if (index.length === this.VARS.SCORE_INDEX.length) {
+	if (index.length === this.VARS.SEARCH_INDEX.length) {
 			// Use cached composer counts
 			composers = this.VARS.BROWSE_MENU_OPTIONS.composer;
 	} else {

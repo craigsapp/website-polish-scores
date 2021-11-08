@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct 20 13:20:56 PDT 2021
 // Last Modified: Wed Oct 20 13:20:59 PDT 2021
-// Filename:      _includes/pdfkit/main.html
+// Filename:      _includes/pdf/main.html
 // Included in:   _includes/head/main-bottom.html
 // Syntax:        ECMAScript 6; Jekyll/Liquid
 // vim:           ts=3:nowrap
@@ -20,4 +20,14 @@
 <script async src="{{ site.website_root }}scripts/pdfkit/source.js"></script>
 <script async src="{{ site.website_root }}scripts/pdfkit/FileSaver.js"></script>
 
+<script>
+
+{% include pdf/cleanOptions2.js       %}
+{% include pdf/generatePdfFull.js     %}
+{% include pdf/generatePdfSnapshot.js %}
+{% include pdf/loadFontResource.js    %}
+{% include pdf/loadPdfFonts.js        %}
+{% include pdf/svgFontCallback.js     %}
+
+</script>
 

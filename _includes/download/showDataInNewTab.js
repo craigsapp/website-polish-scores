@@ -2,10 +2,10 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat Oct 16 17:34:30 PDT 2021
-// Last Modified: Mon Oct 18 21:36:08 PDT 2021
-// Filename:      _includes/work/showDataInNewTab.js
-// Used by:       _includes/work/work.html
-// Included in:   _includes/work/main.html
+// Last Modified: Sun Oct 31 18:19:26 PDT 2021
+// Filename:      _includes/download/showDataInNewTab.js
+// Used by:       _includes/download/subpage-download.html
+// Included in:   _includes/download/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
@@ -14,7 +14,7 @@
 {% endcomment %}
 
 POPC2.prototype.showDataInNewTab = function (event, data_type, location) {
-	this.DebugMessageFunction(data_type);
+	this.DebugMessageFunction(data_type, location);
 
 	let pos = this.GetIndexInSearchResults(this.VARS.WORK_ID, this.VARS.SCORE_INDEX);
 	let filebase = this.VARS.SCORE_INDEX[pos].fileid;
@@ -69,15 +69,59 @@ POPC2.prototype.showDataInNewTab = function (event, data_type, location) {
 			url = `${this.SETTINGS.popc2_github_addr}/blob/main/kern/${filename}`;
 		}
 	} else if (location === "vhv") {
-			let encode = encodeURIComponent(`${this.SETTINGS.data_addr}/${this.VARS.WORK_ID}.${ext2}`);
-			url = `https://verovio.humdrum.org/?file=${encode}`;
+		let encode = encodeURIComponent(`${this.SETTINGS.data_addr}/${this.VARS.WORK_ID}.${ext2}`);
+		url = `https://verovio.humdrum.org/?file=${encode}`;
+
+		let ftext = "";
+		let options = this.addNotationConfigureOptions({});
+		if (options.filter) {
+			let filter = options.filter;
+			if (typeof filter === "string") {
+				ftext += filter;
+			} else {
+				for (let i=0; i<filter.length; i++) {
+					if (i > 0) {
+						ftext += " | ";
+					}
+					ftext += filter[i];
+				}
+			}
+		}
+		if (ftext) {
+			url += `&filter=${encodeURIComponent(ftext)}`;
+		}
 	} else {
 		url = `${this.SETTINGS.data_addr}/${this.VARS.WORK_ID}.${ext2}`;
 	}
-	if (url) {
-		window.open(url, "_blank");
+
+	if (location === "copy") {
+		console.warn("COPYING FILE");
+		fetch(url)
+			.then(res => res.text())
+			.then(text => {
+				// Include options from the notation configuration menu:
+				let options = this.addNotationConfigureOptions({});
+				if (options.filter) {
+					let filter = options.filter;
+					if (typeof filter === "string") {
+						text += `!!!filter: ${filter}\n`;
+					} else {
+						for (let i=0; i<filter.length; i++) {
+							text += `!!!filter: ${filter[i]}\n`;
+						}
+					}
+				}
+				this.CopyToClipboard(text);
+			})
+			.catch(err => console.error(err));
+	} else {
+		if (url) {
+			window.open(url, "_blank");
+		}
 	}
 
+	event.preventDefault();
+	event.stopPropagation();
 };
 
 Object.defineProperty(POPC2.prototype.showDataInNewTab, "name", { value: "showDataInNewTab" });

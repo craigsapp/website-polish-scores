@@ -55,11 +55,7 @@ POPC2.prototype.DisplayComposerInfoPortrait = function (composer, selector) {
 		element.style.display = "none";
 		return;
 	}
-	if (!entry.Portrait) {
-		// No portrait to display
-		element.style.display = "none";
-		return;
-	}
+
 	let url = entry.Portrait;
 
 	let link = "";
@@ -86,7 +82,7 @@ POPC2.prototype.DisplayComposerInfoPortrait = function (composer, selector) {
 	if (inbrowse) {
 		output += "<div class='composer-name'>\n";
 		let name = composer;
-		let years = this.makeComposerDates(entry.Birth, entry.Death);
+		let years = this.MakeComposerDates(entry.Birth, entry.Death);
 		let matches = name.match(/([^,]+?)\s*,\s*(.*)\s*$/);
 		if (matches) {
 			name = matches[2] + " " + matches[1];
@@ -98,28 +94,33 @@ POPC2.prototype.DisplayComposerInfoPortrait = function (composer, selector) {
 		output += "</div>\n";
 	} else {
 		output += "<div class='composer-dates'>\n";
-		let years = this.makeComposerDates(entry.Birth, entry.Death);
+		let years = this.MakeComposerDates(entry.Birth, entry.Death);
 		output += years;
 		output += "</div>\n";
 	}
 
-	output += "<table id='composer-image-table'>\n";
-	output += "<tr><td>";
+	if (url) {
+		output += "<table id='composer-image-table'>\n";
+		output += "<tr><td>";
 
-	output += "<div id='image-wrapper'>\n";
-	output += "<center>";
-	if (this.VARS.PORTRAIT_IMAGES[composer]) {
-		output += `<img src="${this.VARS.PORTRAIT_IMAGES[composer]}">`;
-	} else {
-		output += `<img crossorigin="anonymous" src="${url}">`;
+		output += "<div id='image-wrapper'>\n";
+		output += "<center>";
+		if (this.VARS.PORTRAIT_IMAGES[composer]) {
+			output += `<img src="${this.VARS.PORTRAIT_IMAGES[composer]}">`;
+		} else {
+			output += `<img crossorigin="anonymous" src="${url}">`;
+		}
+		output += "</center>";
+		output += "</div>\n";
+
+		output += "</td><td>";
 	}
-	output += "</center>";
-	output += "</div>\n";
-
-	output += "</td><td>";
 	output += this.getComposerLinks(entry);
-	output += "</td></tr>";
-	output += "</table>";
+
+	if (url) {
+		output += "</td></tr>";
+		output += "</table>";
+	}
 
 	output += "</center>\n";
 

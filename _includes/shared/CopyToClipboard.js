@@ -14,7 +14,14 @@
 {% endcomment %}
 
 POPC2.prototype.CopyToClipboard = function (string) {
-	this.DebugMessageFunction(string);
+	if (typeof string !== "string") {
+		this.DebugMessageFunction(string);
+	} else if (string.length < 200) {
+		this.DebugMessageFunction(string);
+	} else {
+		this.DebugMessageFunction(string.substring(0, 200) + " ...");
+	}
+
 	let element = document.createElement("textarea");
 	element.value = string;
 	document.body.appendChild(element);

@@ -82,6 +82,28 @@ header {
 #euflag {
 	width: 50px;
 	position: relative;
-	top: -60px;
+	float: right;
+	right: -10px;
+	top: 20px;
 }
+
+#nifc-logo {
+	width: 60px;
+	position: relative;
+	top: -15px;
+	left: -30px;
+}
+
+{% comment %}
+/*
+ * Hide the logos when the browse width shrinks.
+ */
+{% endcomment %}
+@media only screen and (max-width: 950px) {
+	#euflag, #nifc-logo {
+		visibility: hidden;
+	}
+}
+
+
 

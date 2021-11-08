@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 18 09:58:45 PDT 2021
-// Last Modified: Mon Oct 25 19:23:38 PDT 2021
+// Last Modified: Tue Nov  2 19:01:05 PDT 2021
 // Filename:      _includes/subpage-configure/subpage-configure.html
 // Included in:   _includes/work/work.html
 // Syntax:        HTML
@@ -14,29 +14,21 @@
 
 <div class="checkboxes">
 
-	<label class="container">
-		<span class="ctext trans" data-trans="modern_stemming"></span>
-		<input type="checkbox" id="checkbox-stemming" onchange="popc2.displayScore()">
-		<span class="checkmark"></span>
-	</label>
+	{% include macro/checkbox.html id="checkbox-stemming"      trans="modern_stemming" %}
+	{% include macro/checkbox.html id="checkbox-nocclefs"      trans="no_c_clefs"      %}
+	{% include macro/checkbox.html id="checkbox-shownotes"     trans="show_all_notes"  %}
+	{% include macro/checkbox.html id="checkbox-expandrep"     trans="expand_repeats"  %}
+	{% include macro/checkbox.html id="checkbox-autostems"     trans="auto_stemming"   %}
+	{% include macro/checkbox.html id="checkbox-soundingscore" trans="sounding_score"  %}
+	{% include macro/checkbox.html
+		id="checkbox-incipit"
+		trans="display_incipit" 
+		action="popc2.toggleMusicIncipit()"
+	%}
 
-	<label class="container">
-		<span class="ctext trans" data-trans="no_c_clefs"></span>
-		<input type="checkbox" id="checkbox-nocclefs" onchange="popc2.displayScore()">
-		<span class="checkmark"></span>
-	</label>
-
-	<label class="container">
-		<span class="ctext trans" data-trans="show_all_notes"></span>
-		<input type="checkbox" id="checkbox-shownotes" onchange="popc2.displayScore()">
-		<span class="checkmark"></span>
-	</label>
-
-	<label class="container">
-		<span class="ctext trans" data-trans="expand_repeats"></span>
-		<input type="checkbox" id="checkbox-expandrep" onchange="popc2.displayScore()">
-		<span class="checkmark"></span>
-	</label>
+	{% comment %}
+		{% include macro/checkbox.html id="checkbox-sic" trans="correct_sic"  %}
+	{% endcomment %}
 
 	<div id="filter-form" class="checkboxes">
 		<label class="container">

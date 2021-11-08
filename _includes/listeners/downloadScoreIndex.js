@@ -21,29 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		.then(res => res.json())
 		.then(json => {
 			popc2.DebugMessage("DOWNLOADED SCORE INDEX FROM " + url, "pink");
-			popc2.VARS.SCORE_INDEX = json;
-			// Add ._cenid_seq, ._prev and ._next parameters to browse index:
-			for (let i=0; i<json.length; i++) {
-				if (typeof json[i].notecount !== "undefined") {
-					if (typeof json[i].notecount === "string") {
-						if (json[i].notecount.match(/^\s*\d/)) {
-							json[i].notecount = parseInt(json[i].notecount);
-						}
-					}
-				}
-				json[i]._cenid_seq = i;
-				if (i > 0) {
-					json[i]._prev = json[i-1];
-				}
-				if (i < json.length - 1) {
-					json[i]._next = json[i+1];
-				}
-			}
-         // Wrap links to next/previous browse entries?
-			// json[0]._prev = json[json.length-1];
-			// json[json.length-1]._next = json[0];
-
-			popc2.VARS.SEARCH_RESULTS = json;
+			popc2.PrepareDownloadedScoreIndex(json);
 			popc2.prepareBrowseSelectOptions();
 			popc2.loadBookmarksFromLocalStorage();
 

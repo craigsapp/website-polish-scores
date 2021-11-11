@@ -41,7 +41,12 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) 
 		else if (hexColor == '#822eff') { keyText = 'VI-'; }
 		else if (hexColor == '#ce24ff') { keyText = 'VI'; }
 		else if (hexColor == '#ffa100') { keyText = 'VII-'; }
-		else if (hexColor == '#ff6e03') { keyText = 'VII'; }
+		else if (hexColor == '#ff6301') { keyText = 'VII'; }
+		else if (hexColor == '#ff6302') { keyText = 'VII'; }
+		else if (hexColor == '#ff6303') { keyText = 'VII'; }
+		else if (hexColor == '#ff6304') { keyText = 'VII'; }
+		else if (hexColor == '#fe6f08') { keyText = 'VII'; }
+		else if (hexColor == '#ff6f03') { keyText = 'VII'; }
 
 		else if (hexColor == '#00a200') { keyText = 'i'; }
 		else if (hexColor == '#06c05a') { keyText = 'ii-'; }
@@ -80,7 +85,12 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) 
 		else if (hexColor == '#822eff') { keyText = 'As Dur'; }
 		else if (hexColor == '#ce24ff') { keyText = 'A Dur'; }
 		else if (hexColor == '#ffa100') { keyText = 'B Dur'; }
-		else if (hexColor == '#ff6e03') { keyText = 'H Dur'; }
+		else if (hexColor == '#ff6301') { keyText = 'H Dur'; }
+		else if (hexColor == '#ff6302') { keyText = 'H Dur'; }
+		else if (hexColor == '#ff6303') { keyText = 'H Dur'; }
+		else if (hexColor == '#ff6304') { keyText = 'H Dur'; }
+		else if (hexColor == '#fe6f08') { keyText = 'H Dur'; }
+		else if (hexColor == '#ff6f03') { keyText = 'H Dur'; }
 
 		else if (hexColor == '#00a200') { keyText = 'C Moll'; }
 		else if (hexColor == '#06c05a') { keyText = 'Cis Moll'; }
@@ -120,7 +130,12 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) 
 		else if (hexColor == '#822eff') { keyText = 'A'+flat+' major'; }
 		else if (hexColor == '#ce24ff') { keyText = 'A major'; }
 		else if (hexColor == '#ffa100') { keyText = 'B'+flat+' major'; }
-		else if (hexColor == '#ff6e03') { keyText = 'B major'; }
+		else if (hexColor == '#ff6301') { keyText = 'B major'; }
+		else if (hexColor == '#ff6302') { keyText = 'B major'; }
+		else if (hexColor == '#ff6303') { keyText = 'B major'; }
+		else if (hexColor == '#ff6304') { keyText = 'B major'; }
+		else if (hexColor == '#fe6f08') { keyText = 'B major'; }
+		else if (hexColor == '#ff6f03') { keyText = 'B major'; }
 
 		else if (hexColor == '#00a200') { keyText = 'C minor'; }
 		else if (hexColor == '#06c05a') { keyText = 'C'+sharp+' minor'; }

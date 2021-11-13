@@ -70,6 +70,7 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 				setTimeout(function() {
 					document.body.classList.add("waiting");
 				}, 80);
+				options = this.getWorkPageSearchOptions(options);
 				displayHumdrum(options);
 				if (!noscrollQ) {
 					scroll(0, 0);

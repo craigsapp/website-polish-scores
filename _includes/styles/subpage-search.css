@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat Oct 16 13:25:46 PDT 2021
-// Last Modified: Mon Oct 25 12:28:16 PDT 2021
+// Last Modified: Fri Nov 12 21:11:45 PST 2021
 // Filename:      _includes/styles/subpage-search.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
@@ -13,7 +13,6 @@
 {% endcomment %}
 
 #subpage-search {
-	background: #f0f0f0;
 	height: 110px;
 	margin-top: -110px;
 	width: 100%;

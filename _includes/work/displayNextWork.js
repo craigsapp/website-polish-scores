@@ -17,7 +17,7 @@
 
 POPC2.prototype.displayNextWork = function() {
 	this.DebugMessageFunction();
-	let index = this.VARS.SEARCH_RESULTS;
+	let index = this.sortIndex(this.VARS.SEARCH_RESULTS);
 	if (index.length == 0) {
 		index = this.VARS.SEARCH_INDEX;
 	}

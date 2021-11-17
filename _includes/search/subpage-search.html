@@ -17,9 +17,53 @@
 	id="work-search-pitch"
 	class="filter pitch trans"
 	data-transatt="placeholder:pitch_placeholder"
+	onkeyup="popc2.displayScore();";
 	placeholder=""
-	value=""
->
+	value="" >
+
+<span id="search-chord-option"
+	onclick="popc2.toggleChordSearchDirection()" >
+	<div id="search-chord-button-up"
+		class="trans fa fa-hand-o-up"
+		data-transatt="title:chord_search_highest"
+		title="Melodically searching highest note in chords">
+	</div>
+
+	<div id="search-chord-button-down"
+		class="hidden trans fa fa-hand-o-down"
+		data-transatt="title:chord_search_lowest"
+		title="Melodically searching lowest note in chords">
+	</div>
+</span>
+
+
+<span id="search-chord-option"
+	onclick="popc2.toggleSearchView()" >
+
+	<div id="search-zoom-button-minus"
+		class="hidden trans fa fa-search-minus"
+		data-transatt="title:zoom_search"
+		title="Show entire score with matches">
+	</div>
+
+	<div id="search-zoom-button-plus"
+		class="trans fa fa-search-plus"
+		data-transatt="title:zoom_search"
+		title="Show only measures with matches">
+	</div>
+
+</span>
+
+
+<div id="search-clear-button"
+	class="trans fas fa-backspace"
+	data-transatt="title:clear_help"
+	onclick="popc2.resetBrowseSearchFields();"
+	title="Clear all search parameters">
+</div>
+
+
+
 
 
 

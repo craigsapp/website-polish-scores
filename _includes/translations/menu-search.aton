@@ -1,0 +1,16 @@
+@
+@ Search menu on the work page
+@
+
+@@BEGIN:	ENTRY
+@TAG:		chord_search_highest
+@EN:		Melodically searching highest note of chords
+@PL:		Melodycznie poszukując najwyższej nuty akordów
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		chord_search_lowest
+@EN:		Melodically searching lowest note of chords
+@PL:		Melodycznie poszukując najniższej nuty akordów
+@@END:		ENTRY
+

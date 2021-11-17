@@ -38,6 +38,7 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 	options.postFunction = target => popc2.HnpCallback(target);
 	options = this.addNotationConfigureOptions(options);
 	options = this.addAnalysisOptions(options);
+	options = this.getWorkPageSearchOptions(options);
 	if (this.VARS.HUMDRUM[id]) {
 		this.storeHumdrumOnPage(this.VARS.HUMDRUM[id]);
 		if (this.SETTINGS.debug_verbose === "true") {
@@ -70,7 +71,6 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 				setTimeout(function() {
 					document.body.classList.add("waiting");
 				}, 80);
-				options = this.getWorkPageSearchOptions(options);
 				displayHumdrum(options);
 				if (!noscrollQ) {
 					scroll(0, 0);

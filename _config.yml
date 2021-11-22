@@ -75,7 +75,8 @@ size_increment: "1.10"
 ##
 
 # h1_color: Color for H1 headings.
-h1_color: "#a71b1d"
+#h1_color: "#a71b1d"
+h1_color: "#312783"
 
 # h2_color: Color for H2 headings.
 h2_color: "black"
@@ -84,7 +85,8 @@ h2_color: "black"
 h3_color: "#aaaaaa"
 
 # th_color: Color for Table headings.
-th_color: "#a71b1d"
+#th_color: "#a71b1d"
+th_color: "#312783"
 
 # button_hover_color: Color for buttons when hovering over them.
 button_hover_color: "limegreen"

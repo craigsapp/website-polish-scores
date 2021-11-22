@@ -41,7 +41,15 @@ POPC2.prototype.downloadComposerIndex = function () {
 				let entry = that.VARS.SCORE_INDEX[i];
 				let COM = entry.COM;
             entry._composer_info = that.VARS.COMPOSER_INDEX[COM];
-				that.VARS.COMPOSER_INDEX[COM]._worklist.push(entry);
+				if (that.VARS.COMPOSER_INDEX[COM]) {
+					// The above check is needed in case there is a composer
+					// that is not in the composer index.
+					if (that.VARS.COMPOSER_INDEX[COM]._worklist) {
+						that.VARS.COMPOSER_INDEX[COM]._worklist.push(entry);
+					} else {
+						that.VARS.COMPOSER_INDEX[COM]._worklist = [entry];
+					}
+				}
 			}
 
 			// Check if there are composers in the SCORE_INDEX that are

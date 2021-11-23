@@ -30,6 +30,11 @@ POPC2.prototype.HnpCallback = function () {
  		document.body.classList.remove("waiting");
 	}, 120);
 
+	// Update search results on work page from embedded search
+	// results in Humdrum output from verovio:
+	vrvWorker.getHumdrum()
+		.then(humdrum => popc2.displayWorkSearchResults(humdrum));
+
 	// Prepare timemap in case it is needed (for keyscape performance time selection).
    popc2.LoadTimemap();
 

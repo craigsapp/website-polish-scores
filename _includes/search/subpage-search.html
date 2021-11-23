@@ -17,9 +17,28 @@
 	id="work-search-pitch"
 	class="filter pitch trans"
 	data-transatt="placeholder:pitch_placeholder"
-	onkeyup="popc2.displayScore();";
+	onkeyup="searchScore(event)";
 	placeholder=""
+	autocomplete="off"
 	value="" >
+
+<script>
+
+function searchScore(event) {
+	document.body.classList.add("waiting");
+
+	// Need a timeout; otherwise, the previous search will be
+	// done (and need to use keyup and cannot use keypress event).
+	setTimeout(function () {
+		let input = document.querySelector("#work-search-pitch");
+		if (input) {
+			console.error("#work-search-pitch value", input.value);
+		}
+		popc2.displayScore();
+	}, 10); // waiting 10 milliseconds after event to do search
+}
+
+</script>
 
 <span id="search-chord-option"
 	onclick="popc2.toggleChordSearchDirection()" >
@@ -63,7 +82,13 @@
 </div>
 
 
-
-
+<details id="work-search-details">
+	<summary>
+		<span id="work-search-result-count"></span>
+	</summary>
+	<div class="details-body">
+		List of match results here
+	</div>
+</details>
 
 

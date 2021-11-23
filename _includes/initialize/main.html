@@ -12,10 +12,16 @@
 //
 {% endcomment %}
 
+<!-- include HNP highlighting code (later it will be incorporated
+     directly into HNP --!>
+<script src="https://verovio.humdrum.org/scripts/highlight.js"></script>
+
 <script>
 
 {% include initialize/POPC2.js                       %}
+
 let popc2 = new POPC2();
+popc2.VARS.MARKER = new HnpSvg();
 
 {% include initialize/DebugMessage.js                %}
 {% include initialize/DebugMessageVerbose.js         %}

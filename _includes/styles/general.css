@@ -81,5 +81,10 @@ details#work-search-details .details-body {
 	top: -20px;
 }
 
+.search-measure {
+	cursor: pointer;
+	color: {{ site.h1_color }};
+}
+
 
 

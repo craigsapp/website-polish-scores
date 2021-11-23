@@ -13,8 +13,9 @@
 //
 {% endcomment %}
 
-POPC2.prototype.HnpCallback = function () {
+POPC2.prototype.HnpCallback = function (humid) {
 	this.DebugMessageFunction();
+
 
 	document.body.classList.remove("waiting");
 	setTimeout(function() {
@@ -29,6 +30,13 @@ POPC2.prototype.HnpCallback = function () {
 	setTimeout(function() {
  		document.body.classList.remove("waiting");
 	}, 120);
+
+	var svg = document.querySelector(`#${humid}-svg`);
+	if (svg) {
+		if (popc2.VARS.MARKER) {
+			   popc2.VARS.MARKER.loadSvg("svg");
+		}
+	}
 
 	// Update search results on work page from embedded search
 	// results in Humdrum output from verovio:

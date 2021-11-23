@@ -122,7 +122,9 @@ POPC2.prototype.displayWorkSearchResults = function (humdrum) {
 	let mtext = "<i>measures</i>:";
 	for (let i=0; i<mkeys.length; i++) {
 		mtext += " ";
+		mtext += `<span class="search-measure" onclick='popc2.gotoMeasure(${mkeys[i]})'>`;
 		mtext += mkeys[i];
+		mtext += "</span>";
 		if (i < mkeys.length - 1) {
 			mtext += ",";
 		}

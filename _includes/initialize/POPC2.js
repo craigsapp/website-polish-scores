@@ -173,6 +173,9 @@ function POPC2() {
 		spacingSystem: 20
 	};
 
+	// MARKER -- HNP Marker object.
+	this.VARS.MARKER = null;
+
 
 	//////////////////////////////
 	//

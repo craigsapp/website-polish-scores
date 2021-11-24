@@ -31,7 +31,9 @@ popc1_github_addr: "https://github.com/pl-wnifc/humdrum-chopin-first-editions"
 popc2_github_addr: "https://github.com/pl-wnifc/humdrum-polish-scores"
 
 # background_image: Background image for <main>
-background_image: "/img/bgcbw.png"
+#background_image: "/img/bgcbw.png"
+#background_image: "/img/pope-martin.jpg"
+background_image: "/img/zielenski.png"
 
 # langauges: List of langauges available on website.
 languages:

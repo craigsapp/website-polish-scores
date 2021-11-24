@@ -42,13 +42,34 @@ POPC2.prototype.keyscapeClickEvent = function (event) {
 	let newx2 = 300 - b2;
 
 	let qrange = popc2.getQuarterNoteRange(newx1, newx2);
-	console.warn(`PLAY from quarter note ${qrange.qstart} to ${qrange.qend}`);
+	// console.warn(`PLAY from quarter note ${qrange.qstart} to ${qrange.qend}`);
 	let timerange = popc2.getTimeRange(qrange.qstart, qrange.qend);
 
-	console.warn("TIMERANGE", timerange);
-	console.warn("START TIME", timerange["start-time"], "END TIME", timerange["end-time"]);
+	// console.warn("TIMERANGE", timerange);
+	// console.warn("START TIME", timerange["start-time"], "END TIME", timerange["end-time"]);
 
-	playCurrentMidi(timerange["start-time"], timerange["end-time"]);
+	if (event.altKey) {
+		// Go to first measure in range of mouse selection (do not start MIDI playback).
+		if (typeof popc2.VARS.KEYSCAPE_INFO === "undefined") {
+			return;
+		}
+		let id = popc2.VARS.WORK_ID;
+		if (!id) {
+			return;
+		}
+		if (popc2.VARS.KEYSCAPE_INFO[id].length != 300) {
+			return;
+		}
+		let b1 = mouseX + mouseY;
+		let startpx = b1 - 300;
+		let startcol = parseInt(startpx / 2)
+		if (startcol < 0)  { startcol = 0; }
+		let startmeasure = popc2.VARS.KEYSCAPE_INFO[id][startcol].startbar;
+		// console.error("START MEASURE", startmeasure);
+		popc2.gotoMeasure(startmeasure);
+	} else {
+		playCurrentMidi(timerange["start-time"], timerange["end-time"]);
+	}
 
 	event.preventDefault();
 	event.stopPropagation();

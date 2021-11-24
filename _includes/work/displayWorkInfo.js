@@ -28,24 +28,27 @@ POPC2.prototype.displayWorkInfo = function(id) {
 	let index = this.VARS.SCORE_INDEX;
 	let entry;
 	for (let i=0; i<index.length; i++) {
-		if (index[i].cenid === targetid) {
+		if ((typeof index[i].cenid !== "undefined") && (index[i].cenid === targetid)) {
 			entry = index[i];
 			break;
 		}
-		if (index[i].fileid === targetid) {
+		if ((typeof index[i].fileid !== "undefined") && (index[i].fileid === targetid)) {
 			entry = index[i];
 			break;
 		}
-		if (index[i].nifcid === targetid) {
+		if ((typeof index[i].nifcid !== "undefined") && (index[i].nifcid === targetid)) {
 			entry = index[i];
 			break;
 		}
 	}
-	this.setBookmarkState(entry.fileid);
 	if (!entry) {
-		this.setWorkPageErrorMessage("Did not find score for ID: " + targetid);
+		// suppressing the message about a missing score, since POPC1 files
+		// will have missing metadata in the POPC2 website, but it is still
+		// interesting to be able to display them.
+		// this.setWorkPageErrorMessage("Did not find score for ID: " + targetid);
 		return;
 	}
+	this.setBookmarkState(entry.fileid);
 	let base = document.querySelector("#work-header");
 	if (!base) {
 		console.error("Error: cannot find #work-header");

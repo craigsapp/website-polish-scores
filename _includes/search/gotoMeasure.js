@@ -21,6 +21,10 @@
 //     !!@MARKER:	@
 //     !!@@END: MUSIC_SEARCH_RESULT
 //
+// To do: deal with cases where there is no measure with a given number (due to 
+//      hidden barlines most likely).  This can be minimized by implementation of
+//      issue https://github.com/humdrum-tools/verovio-humdrum-viewer/issues/632
+//
 {% endcomment %}
 
 POPC2.prototype.gotoMeasure = function (barnum) {

@@ -95,6 +95,9 @@ th_color: "#312783"
 # button_hover_color: Color for buttons when hovering over them.
 button_hover_color: "limegreen"
 
+# navigator_hover_color: Color when hovering over top navigator buttons.
+navigator_hover_color: "#dc143c"
+
 # selected_langauge_color: Color to highlight the selected language in the navigator.
 selected_language_color: "goldenrod"
 

@@ -62,29 +62,5 @@ body {
 	color: #ddd;
 }
 
-/* Hide details triangle for 0 matches on work pages: */
-
-details.nomarker > summary {
-  list-style: none;
-}
-
-details.nomarker > summary::marker {
-  display: none;
-}
-
-details#work-search-details .details-body {
-	/* still needs work to fit in narrow window */
-	position: relative;
-	margin-left: 150px;
-	padding-right: 20px;
-	width: 92%;
-	top: -20px;
-}
-
-.search-measure {
-	cursor: pointer;
-	color: {{ site.h1_color }};
-}
-
 
 

@@ -3,9 +3,15 @@
 @
 
 @@BEGIN:	ENTRY
-@TAG:		title
+@TAG:		title_popc2
 @EN:		Polish Digital Scores
 @PL:		Polskie Partytury Cyfrowe
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		title_popc1
+@EN:		Chopin First Editions
+@PL:		Pierwsze wydania Chopina
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY

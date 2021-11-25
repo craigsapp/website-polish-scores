@@ -73,7 +73,7 @@ POPC2.prototype.toggleBookmarkDisplay = function () {
 		this.VARS.SEARCH_RESULTS = this.VARS.SCORE_INDEX;
 		this.VARS.SEARCH_INDEX   = this.VARS.SCORE_INDEX;
 		if (h1element) {
-			h1element.innerHTML = this.getTranslation("title");
+			h1element.innerHTML = this.getTranslation(`title_${this.VARS.REPERTORY}`);
 		}
 	}
 

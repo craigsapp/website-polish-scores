@@ -26,7 +26,7 @@ Handlebars.registerHelper("showTitle", function() {
 		return new Handlebars.SafeString(popc2.getTranslation("bookmarks"));
 	}
 
-	return new Handlebars.SafeString(popc2.getTranslation("title"));
+	return new Handlebars.SafeString(popc2.getTranslation(`title_${popc2.VARS.REPERTORY}`));
 });
 
 

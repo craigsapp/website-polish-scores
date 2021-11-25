@@ -25,12 +25,7 @@ function POPC2() {
 	// can be set to "popc1" to display Chopin First Edition scores instead
 	// of the Polish Digital Scores files.
 	//
-
 	this.VARS.REPERTORY = "popc2";
-
-	this.VARS.REPERTORY_TITLE = {};
-	this.VARS.REPERTORY_TITLE["popc2"] = "Polish Digital Scores";
-	this.VARS.REPERTORY_TITLE["popc1"] = "Chopin First Editions";
 
 
 	//////////////////////////////

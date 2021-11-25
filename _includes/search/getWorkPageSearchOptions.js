@@ -46,6 +46,16 @@ POPC2.prototype.getWorkPageSearchOptions = function (options) {
 		}
 	}
 
+	let minusElement = document.querySelector("#search-zoom-button-minus");
+	if (!minusElement.classList.contains("hidden")) {
+		let zfilter = "myank --marks --double";
+		if (options.filter) {
+			options.filter.push(zfilter);
+		} else{
+			options.filter = [zfilter];
+		}
+	}
+
 	return options;
 };
 

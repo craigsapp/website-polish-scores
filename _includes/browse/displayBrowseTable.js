@@ -121,9 +121,17 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 		let siglum = results[i].siglum || "";
 		let shelfmark = results[i].shelfmark || "";
 		let cenid = results[i].cenid || "";
+		let fileid = results[i].fileid || "";
+		let nifcid = results[i].nifcid || "";
 		let lastedit = results[i].lastedit || 0;
 
-		output += `<tr data-id='${cenid}'>\n`;
+		if (!cenid.match(/^\s*$/)) {
+			output += `<tr data-id='${cenid}'>\n`;
+		} else if (!fileid.match(/^\s*$/)) {
+			output += `<tr data-id='${fileid}'>\n`;
+		} else if (!nifcid.match(/^\s*$/)) {
+			output += `<tr data-id='${nifcid}'>\n`;
+		}
 
 		if (sortByDate) {
 			output += "<td class='date'>";

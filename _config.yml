@@ -13,22 +13,24 @@
 data_addr: "https://data.nifc.humdrum.org"
 
 # score_index: JSON list of works for browse page.
-score_index: "https://data.nifc.humdrum.org/popc2-score-index.json"
+score_index_popc2: "https://data.nifc.humdrum.org/popc2-score-index.json"
+score_index_popc1: "https://data.nifc.humdrum.org/popc1-score-index.json"
 
 # lyrics_index: TEXT list of works for lyrics searching.
-lyrics_index: "https://data.nifc.humdrum.org/popc2-lyrics-index.txt"
+lyrics_index_popc2: "https://data.nifc.humdrum.org/popc2-lyrics-index.txt"
+lyrics_index_popc1: "https://data.nifc.humdrum.org/popc1-lyrics-index.txt"
 
 # composer_index: JSON list of composers for browse and work pages.
-composer_index: "https://data.nifc.humdrum.org/popc2-composer-index.json"
+composer_index_popc2: "https://data.nifc.humdrum.org/popc2-composer-index.json"
+composer_index_popc1: "https://data.nifc.humdrum.org/popc1-composer-index.json"
 
 # pitch_index: TEXT list of melodic pitches for browse page searching.
-pitch_index: "https://data.nifc.humdrum.org/popc2-pitch-index.txt"
+pitch_index_popc2: "https://data.nifc.humdrum.org/popc2-pitch-index.txt"
+pitch_index_popc1: "https://data.nifc.humdrum.org/popc1-pitch-index.txt"
 
-# popc1_github: URL to the POPC-1 repostory on github
-popc1_github_addr: "https://github.com/pl-wnifc/humdrum-chopin-first-editions"
-
-# popc2_github: URL to the POPC-2 repostory on github
-popc2_github_addr: "https://github.com/pl-wnifc/humdrum-polish-scores"
+# URL to the POPC-1/POPC-2 repostories on github
+github_addr_popc2: "https://github.com/pl-wnifc/humdrum-polish-scores"
+github_addr_popc1: "https://github.com/pl-wnifc/humdrum-chopin-first-editions"
 
 # background_image: Background image for <main>
 #background_image: "/img/bgcbw.png"

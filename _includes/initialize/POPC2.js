@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct  8 10:27:38 PDT 2021
-// Last Modified: Sun Oct 17 09:10:53 PDT 2021
+// Last Modified: Thu Nov 25 02:04:08 CET 2021
 // Filename:      _includes/initialize/POPC2.js
 // Used by:
 // Included in:   _includes/initialize/main.html
@@ -17,6 +17,20 @@ function POPC2() {
 
 	// VARS: storage for variables accessible outside of prototype functions:
 	this.VARS = {};
+
+	//////////////////////////////
+	//
+	// Repertory-based variables  -- REPERTORY indicates which repository to
+	// use as a basis for the website.  The CGI parameter "r" or "repertory"
+	// can be set to "popc1" to display Chopin First Edition scores instead
+	// of the Polish Digital Scores files.
+	//
+
+	this.VARS.REPERTORY = "popc2";
+
+	this.VARS.REPERTORY_TITLE = {};
+	this.VARS.REPERTORY_TITLE["popc2"] = "Polish Digital Scores";
+	this.VARS.REPERTORY_TITLE["popc1"] = "Chopin First Editions";
 
 
 	//////////////////////////////
@@ -211,13 +225,26 @@ function POPC2() {
 		tab_title:          "{{ site.tab_title           }}",
 
 		// URLs for data/indexes:
-		popc1_github_addr:  "{{ site.popc1_github_addr   }}",
-		popc2_github_addr:  "{{ site.popc2_github_addr   }}",
+		github_addr_popc1:  "{{ site.github_addr_popc1   }}",
+		github_addr_popc2:  "{{ site.github_addr_popc2   }}",
+
 		data_addr:          "{{ site.data_addr           }}",
-		score_index:        "{{ site.score_index         }}",
-		lyrics_index:       "{{ site.lyrics_index        }}",
-		composer_index:     "{{ site.composer_index      }}",
-		pitch_index:        "{{ site.pitch_index         }}",
+
+		score_index:        "{{ site.score_index_popc2   }}", // active score index
+		score_index_popc1:  "{{ site.score_index_popc1   }}",
+		score_index_popc2:  "{{ site.score_index_popc2   }}",
+
+		lyrics_index:       "{{ site.lyrics_index_popc2  }}", // active lyrics index
+		lyrics_index_popc1: "{{ site.lyrics_index_popc1  }}",
+		lyrics_index_popc2: "{{ site.lyrics_index_popc2  }}",
+
+		composer_index:      "{{ site.composer_index_popc2}}", // active composer index
+		composer_index_popc1:"{{ site.composer_index_popc1}}",
+		composer_index_popc2:"{{ site.composer_index_popc2}}",
+
+		pitch_index:        "{{ site.pitch_index_popc2   }}", // active pitch index
+		pitch_index_popc1:  "{{ site.pitch_index_popc1   }}",
+		pitch_index_popc2:  "{{ site.pitch_index_popc2   }}",
 
 		// Website coloring styles:
 		h1_color:           "{{ site.h1_color            }}",
@@ -237,4 +264,4 @@ function POPC2() {
 }
 
 
-
+ 

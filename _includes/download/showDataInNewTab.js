@@ -59,13 +59,22 @@ POPC2.prototype.showDataInNewTab = function (event, data_type, location) {
 	let ext2 = extension.replace("txt", "krn");
 
 	let url;
+	// let popc1 = false;
+	// let popc2 = true;
+	// if (!filename.match(/^pl-/)) {
+	// 	popc1 = true;
+	// 	popc2 = false;
+	// }
+
 	if ((location === "github") && filename) {
 		// Display link to file in Github repository
 		let matches = filename.match(/^(pl-[a-z]+)/);
 		if (matches) {
+			// POPC2 source, where scores are organized into siglum folders.
 			let siglum = matches[1];
 			url = `${this.SETTINGS.popc2_github_addr}/blob/main/${siglum}/kern/${filename}`;
 		} else {
+			// POPC1 source
 			url = `${this.SETTINGS.popc2_github_addr}/blob/main/kern/${filename}`;
 		}
 	} else if (location === "vhv") {

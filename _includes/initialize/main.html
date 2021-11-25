@@ -35,6 +35,15 @@ popc2.DebugMessage("Created popc2 interface", "chartreuse");
 
 popc2.VARS.CGI = popc2.getCgiParameters();
 
+if (popc2.VARS.CGI.repertory === "popc1") {
+	popc2.VARS.REPERTORY = "popc1";
+	// switch website to popc1 datasbase:
+	popc2.SETTINGS.score_index    = popc2.SETTINGS.score_index_popc1;
+	popc2.SETTINGS.pitch_index    = popc2.SETTINGS.pitch_index_popc1;
+	popc2.SETTINGS.lyrics_index   = popc2.SETTINGS.lyrics_index_popc1;
+	popc2.SETTINGS.composer_index = popc2.SETTINGS.composer_index_popc1;
+}
+
 if (popc2.VARS.CGI.id) {
 	popc2.VARS.WORK_ID = popc2.VARS.CGI.id;
 }

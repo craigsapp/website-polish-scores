@@ -71,6 +71,7 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 				setTimeout(function() {
 					document.body.classList.add("waiting");
 				}, 80);
+console.error("OPTIONSB", options);
 				displayHumdrum(options);
 				if (!noscrollQ) {
 					scroll(0, 0);

@@ -9,12 +9,16 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		extract_lyrics_tool
+@EN:		Extract lyrics
+@PL:		Wyodrębnij tekst liryczny
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		color_triads
 @EN:		Color triads
 @PL:		Kolorowe triady
 @@END:		ENTRY
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN:	ENTRY
 @TAG:		composite_rhythm

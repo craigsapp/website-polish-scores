@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Tue Nov  2 20:00:39 PDT 2021
-// Last Modified: Tue Nov  2 20:00:42 PDT 2021
+// Last Modified: Fri Nov 26 10:52:40 CET 2021
 // Filename:      _includes/styles/subpage-analysis.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
@@ -13,7 +13,8 @@
 {% endcomment %}
 
 #subpage-analysis {
-	height: 110px;
+	/* height: 110px; now handleded by displayAnalysisPanel.js */
+	min-height: 110px;
 	margin-top: -110px;
 	width: 100%;
 	justify-content: space-around;

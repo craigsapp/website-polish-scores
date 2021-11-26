@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Nov  3 18:38:40 PDT 2021
-// Last Modified: Wed Nov  3 18:38:43 PDT 2021
+// Last Modified: Fri Nov 26 09:46:40 CET 2021
 // Filename:      _includes/analysis/subpage-analysis.html
 // Included in:   _includes/work/work.html
 // Syntax:        HTML
@@ -14,12 +14,16 @@
 
 <select id="analysis-select" onchange="popc2.doAnalysis()">
 	<option class="trans" data-trans="choose_analysis_tool" value=""></option>
+	<option class="trans" data-trans="extract_lyrics_tool" value="lyrics"></option>
 	<option class="trans" data-trans="color_triads" value="colortriads"></option>
 	<option class="trans" data-trans="composite_rhythm" value="composite"></option>
 </select>
 
 <div class="analysis-options invisible" id="analysis-composite">
 	{% include macro/checkbox.html id="option-x" trans="composite_only" action="popc2.doAnalysis()" %}
+</div>
+
+<div class="analysis-options variable-height invisible" id="analysis-lyrics">
 </div>
 
 

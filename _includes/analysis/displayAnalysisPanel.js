@@ -16,6 +16,11 @@
 POPC2.prototype.displayAnalysisPanel = function (tool) {
 	this.DebugMessageFunction(tool);
 
+	let subpageAnalysisElement = document.querySelector("#subpage-analysis");
+	if (subpageAnalysisElement) {
+		subpageAnalysisElement.style.height = "110px";
+	}
+
 	let list = document.querySelectorAll("div.analysis-options");
 	if (!tool) {
 		for (let i=0; i<list.length; i++) {
@@ -31,10 +36,22 @@ POPC2.prototype.displayAnalysisPanel = function (tool) {
 		}
 		if (list[i].id === `analysis-${tool}`) {
 			list[i].classList.remove("invisible");
+			if (list[i].classList.contains("variable-height")) {
+				if (subpageAnalysisElement) {
+					subpageAnalysisElement.style.height = "auto";
+				}
+			} else {
+				if (subpageAnalysisElement) {
+					subpageAnalysisElement.style.height = "110px";
+				}
+			}
 		} else {
 			list[i].classList.add("invisible");
 		}
 	}
+
+
+
 };
 
 Object.defineProperty(POPC2.prototype.displayAnalysisPanel, "name", { value: "displayAnalysisPanel" });

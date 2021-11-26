@@ -16,8 +16,16 @@
 POPC2.prototype.doAnalysis = function () {
 	this.DebugMessageFunction();
 
-	this.displayScore();
+	let analysisSelectElement = document.querySelector("#analysis-select");
+	if (analysisSelectElement) {
+		let value = analysisSelectElement.value;
+		if (value === "lyrics") {
+			this.displayLyricsTool();
+			return;
+		}
+	}
 
+	this.displayScore();
 };
 
 Object.defineProperty(POPC2.prototype.doAnalysis, "name", { value: "doAnalysis" });

@@ -13,6 +13,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		copy_browse_tool
+@EN:		Copy table as TSV
+@PL:		Skopiuj tabelę jako TSV
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		history_tool
 @EN:		view history
 @PL:		zobacz historię

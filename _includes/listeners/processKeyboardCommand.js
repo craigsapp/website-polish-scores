@@ -235,8 +235,11 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			break;
 
 		case "Backspace":
-			// Reset browse search fields
-			popc2.resetBrowseSearchFields();
+			if (popc2.GetPageType() === "work") {
+				popc2.resetWorkSearchFields();
+			} else {
+				popc2.resetBrowseSearchFields();
+			}
 			event.preventDefault();
 			break;
 

@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct 15 21:56:49 PDT 2021
-// Last Modified: Fri Oct 15 21:56:52 PDT 2021
+// Last Modified: Fri Nov 26 07:03:31 CET 2021
 // Filename:      _includes/work/downloadData.js
 // Used by:       _includes/work/work.html
 // Included in:   _includes/work/main.html
@@ -64,12 +64,28 @@ POPC2.prototype.downloadData = function (event, data_type) {
 		extension = "mid";
 	} else if (data_type.match(/pdf/i)) {
 		extension = "pdf";
+	} else if (data_type.match(/svg/i)) {
+		extension = "svg";
 	}
 	if (!extension) {
 		console.warn("Warning: Unknown file type to download:", data_type);
 		return;
 	}
 	let ext2 = extension.replace("txt", "krn");
+
+	if (extension === "svg") {
+		let svg = document.querySelector("svg");
+		if (svg) {
+			let text = svg.outerHTML.replace(/&nbsp;/g, "&#xa0;");
+			let type = "image/svg+xml";
+			let blob = new Blob([text], { type: type });
+			let link = document.createElement("a");
+			link.setAttribute("download", `${filebase}.${extension}`);
+			link.href = window.URL.createObjectURL(blob);
+			link.click();
+		}
+		return;
+	}
 
 	let url = `${this.SETTINGS.data_addr}/${this.VARS.WORK_ID}.${ext2}`;
 	this.DebugMessage(`Downloading ${url} to file ${filebase}.${extension}`, "hotpink");

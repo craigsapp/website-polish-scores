@@ -33,6 +33,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		download_svg
+@EN:		download SVG image
+@PL:		pobierz obraz SVG
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		view_humdrum_tab
 @EN:		view Humdrum data in new tab
 @PL:		wyświetl dane Humdrum w nowej karcie

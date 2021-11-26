@@ -27,6 +27,9 @@ POPC2.prototype.displayPreviousWork = function() {
 		return;
 	}
 
+	// Turn of MIDI playback is active for current work:
+	stop();
+
 	let obj = this.GetIndexAndTypeInSearchResults(targetid, index);
 	let foundi = obj.index;
 	let idtype = obj.type;

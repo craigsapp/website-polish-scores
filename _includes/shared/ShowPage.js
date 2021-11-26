@@ -38,6 +38,8 @@ POPC2.prototype.ShowPage = function (type) {
 		this.ActivateNotationUpdates();
 	} else {
 		this.DeactivateNotationUpdates();
+		// Turn off MIDI playback if active:
+		stop();
 	}
 	return element;
 };

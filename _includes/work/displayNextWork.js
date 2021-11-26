@@ -17,6 +17,7 @@
 
 POPC2.prototype.displayNextWork = function() {
 	this.DebugMessageFunction();
+
 	let index = this.sortIndex(this.VARS.SEARCH_RESULTS);
 	if (index.length == 0) {
 		index = this.VARS.SEARCH_INDEX;
@@ -26,6 +27,9 @@ POPC2.prototype.displayNextWork = function() {
 		console.error("NO ACTIVE WORK ID");
 		return;
 	}
+
+	// Turn of MIDI playback is active for current work:
+	stop();
 
 	let obj = this.GetIndexAndTypeInSearchResults(targetid, index);
 	let foundi = obj.index;

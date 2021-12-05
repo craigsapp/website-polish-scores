@@ -1,0 +1,43 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sun Dec  5 16:37:44 CET 2021
+// Last Modified: Sun Dec  5 16:37:47 CET 2021
+// Filename:      _includes/svg/svg-filters.html
+// Included in:   _includes/svg/main.html
+// Syntax:        HTML; ECMAScript 6; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Filters for use with SVG css styling (in _includes/styles/verovio.css)
+//
+{% endcomment %}
+
+
+<svg height="0" style="position: absolute; top: -999999px" xmlns="http://www.w3.org/2000/svg">
+
+ <filter id="highlight-shadow">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+    <feOffset dx="0" dy="0" result="offsetblur"/>
+    <feFlood flood-color="black"/>
+    <feComposite in2="offsetblur" operator="in"/>
+    <feMerge>
+      <feMergeNode/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+ <filter id="hover-shadow">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+    <feOffset dx="0" dy="0" result="offsetblur"/>
+    <feFlood flood-color="#D30"/>
+    <feComposite in2="offsetblur" operator="in"/>
+    <feMerge>
+      <feMergeNode/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+</svg>
+
+
+

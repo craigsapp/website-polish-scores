@@ -32,6 +32,40 @@ svg g.dir.sic tspan.rend tspan.text tspan.text.s {
 
 
 /*
+ * Hover highligting of musical elements
+ */
+
+
+g[id^="clef-"]:hover,
+g[id^="ksig-"]:hover,
+g[id^="msig-"]:hover,
+g[id^="note-"]:hover,
+g[id^="hairpin-"]:hover,
+g[id^="accid-"]:hover,
+g[id^="trill-"]:hover,
+g[id^="artic-"]:hover,
+g[id^="slur-"]:hover,
+g[id^="tie-"]:hover,
+g[id^="slur-"]:hover,
+g[id^="fermata-"]:hover,
+g[id^="rest-"]:hover {
+        fill: orange;
+        stroke: orange;
+        filter: url(#hover-shadow);
+}
+
+/* Highlight barlines:
+g[id^="bline-"] path:hover
+*/
+g[id^="slur-"] path:hover
+{
+        stroke: orange;
+}
+
+
+
+
+/*
  * Force Times fonts in verovio SVG images to be substituted with EB Garamond:
  */
 

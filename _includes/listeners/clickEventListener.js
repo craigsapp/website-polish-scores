@@ -25,11 +25,19 @@ document.addEventListener("click", function (event) {
 	}
 	let path = popc2.BuildPath(target);
 
-	let workid = popc2.getBrowseWorkId(path);
-	if (workid) {
-		popc2.displayWorkPage(workid);
-		return;
+
+	let pageType = popc2.GetPageType();
+	if (pageType === "work") {
+		if (event.altKey) {
+			popc2.processClickForIiif(event, path);
+		}
+	} else if (pageType === "browse") {
+		let workid = popc2.getBrowseWorkId(path);
+		if (workid) {
+			popc2.displayWorkPage(workid);
+		}
 	}
+
 });
 
 

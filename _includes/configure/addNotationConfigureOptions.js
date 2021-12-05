@@ -118,6 +118,15 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// Encoded system breaks
+	element = document.querySelector("#checkbox-systembreaks");
+	options.breaks = "auto";
+	if (element) {
+		if (element.checked) {
+			options.breaks = "encoded";
+		}
+	}
+
 	return options;
 };
 

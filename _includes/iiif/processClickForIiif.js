@@ -48,7 +48,7 @@ POPC2.prototype.processClickForIiif = function (event, path) {
 		return;
 	}
 	// zero-index line and field
-	let info = this.getIiifInfo(line-1, field-1);
+	let info = this.getIiifBase(line-1, field-1);
 	// console.log("IIIF info", info);
 	if (!info.xywh) {
 		return;
@@ -70,7 +70,7 @@ POPC2.prototype.processClickForIiif = function (event, path) {
 
 	if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
 		// display full page
-		let infourl = info.infourl;
+		let infourl = `${info.baseurl}/info.json`;
 		let url = `${info.iiifbase}/full/,${scheight}/0/default.jpg`;
 		options += `,top=0`;
 		options += `,left=0`;

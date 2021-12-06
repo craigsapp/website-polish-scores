@@ -1,8 +1,8 @@
 {% comment %}
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
-// Creation Date: Wed Oct  6 20:03:37 PDT 2021
-// Last Modified: Mon Dec  6 12:24:03 CET 2021
+// Creation Date: Mon Dec  6 12:24:15 CET 2021
+// Last Modified: Mon Dec  6 12:24:17 CET 2021
 // Filename:      _includes/listeners/clickEventListener.js
 // Used by:
 // Included in:
@@ -15,7 +15,7 @@
 //
 {% endcomment %}
 
-document.addEventListener("click", function (event) {
+document.addEventListener("dblclick", function (event) {
 	if (!event) {
 		return;
 	}
@@ -25,11 +25,8 @@ document.addEventListener("click", function (event) {
 	}
 	let path = popc2.BuildPath(target);
 	let pageType = popc2.GetPageType();
-	if (pageType === "browse") {
-		let workid = popc2.getBrowseWorkId(path);
-		if (workid) {
-			popc2.displayWorkPage(workid);
-		}
+	if (pageType === "work") {
+		popc2.processClickForIiif(event, path);
 	}
 });
 

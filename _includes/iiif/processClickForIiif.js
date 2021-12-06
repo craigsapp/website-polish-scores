@@ -68,7 +68,7 @@ POPC2.prototype.processClickForIiif = function (event, path) {
 	let scwidth = parseInt(window.screen.width);
 	let scheight = parseInt(window.screen.height);
 
-	if (event.shiftKey) {
+	if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
 		// display full page
 		let infourl = info.infourl;
 		let url = `${info.iiifbase}/full/,${scheight}/0/default.jpg`;

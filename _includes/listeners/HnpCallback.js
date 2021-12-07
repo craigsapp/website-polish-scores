@@ -34,7 +34,7 @@ POPC2.prototype.HnpCallback = function (humid) {
 	var svg = document.querySelector(`#${humid}-svg`);
 	if (svg) {
 		if (popc2.VARS.MARKER) {
-			   popc2.VARS.MARKER.loadSvg("svg");
+			   popc2.VARS.MARKER.loadSvg(`#${humid}-svg svg`);
 		}
 	}
 

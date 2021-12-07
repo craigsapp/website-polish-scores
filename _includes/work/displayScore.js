@@ -26,6 +26,12 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 		id = this.VARS.WORK_ID;
 	}
 
+	let url = `${window.location.origin}/?id=${id}`;
+	if (url !== window.location.href) {
+		console.error("Setting URL", url);
+		window.history.pushState(null, null, url);
+	}
+
 	let subpage = this.getActiveSubpage();
 	if (subpage === "keyscape") {
 		this.showKeyscape(id);

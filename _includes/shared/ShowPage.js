@@ -37,6 +37,8 @@ POPC2.prototype.ShowPage = function (type) {
 	if (type === "work") {
 		this.ActivateNotationUpdates();
 	} else {
+		let url = window.location.origin;
+		window.history.pushState(null, null, url);
 		this.DeactivateNotationUpdates();
 		// Turn off MIDI playback if active:
 		stop();

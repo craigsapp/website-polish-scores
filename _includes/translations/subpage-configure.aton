@@ -9,9 +9,9 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
-@TAG:		no_c_clefs
-@EN:		No C clefs
-@PL:		Brak kluczy C
+@TAG:		only_bass_treble_clefs
+@EN:		Only bass/treble clefs
+@PL:		Tylko klucze wiolinowe/basowe
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY

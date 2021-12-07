@@ -31,7 +31,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 	element = document.querySelector("#checkbox-nocclefs");
 	if (element) {
 		if (element.checked) {
-			let entry = "s/clefC[12]/clefG2/I; s/clefC[34]/clefGv2/I; s/clefC5/clefF4/I";
+			let entry = "s/^clefC[12]/clefG2/I; s/^clefC[34]/clefGv2/I; s/^clefC5/clefF4/I; s/^clefF[35]/clefF4/I; s/^clefG[13]/clefG2/I";
 			shed.push(entry);
 		}
 	}

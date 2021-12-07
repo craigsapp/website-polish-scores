@@ -249,7 +249,7 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 
 	// Dynamically change the font size based on the length of the search results table:
 	let height = element.offsetHeight;
-	console.warn("HEIGHT OF TABLE IS", height);
+	// console.warn("HEIGHT OF TABLE IS", height);
 	let zoom = 1.25 - (1.0/400000.0) * height;
 	if (zoom < 0.90) {
 		zoom = 0.90;

@@ -70,7 +70,7 @@ POPC2.prototype.processClickForIiif = function (event, path) {
 
 	if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
 		// display full page
-		let infourl = `${info.baseurl}/info.json`;
+		let infourl = `${info.iiifbase}/info.json`;
 		let url = `${info.iiifbase}/full/,${scheight}/0/default.jpg`;
 		options += `,top=0`;
 		options += `,left=0`;
@@ -78,7 +78,6 @@ POPC2.prototype.processClickForIiif = function (event, path) {
 		fetch(infourl)
 			.then(res => res.json())
 			.then(data => {
-				// console.warn(data);
 				let imgwidth = data.width;
 				let imgheight = data.height;
 				// console.warn("IW", imgwidth, "IH", imgheight);

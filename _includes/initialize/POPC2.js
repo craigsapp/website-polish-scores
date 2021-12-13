@@ -188,6 +188,16 @@ function POPC2() {
 
 	//////////////////////////////
 	//
+	// IIIF variables.
+	//
+
+	// IIIF_MANIFEST: List of manifest derived information
+	// indexed by work ID and manifest ID.
+	this.VARS.IIIF_MANIFEST = {};
+
+
+	//////////////////////////////
+	//
 	// Other interface state variables:
 	//
 

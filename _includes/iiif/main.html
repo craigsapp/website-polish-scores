@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat Dec  4 13:30:29 CET 2021
-// Last Modified: Sat Dec  4 16:54:57 CET 2021
+// Last Modified: Sun Dec 12 08:12:21 CET 2021
 // Filename:      _includes/iiif/main.html
 // Included in:   _includes/head/main.html
 // Syntax:        HTML; ECMAScript 6; Jekyll/Liquid
@@ -17,8 +17,11 @@
 
 <script>
 
-{% include iiif/getIiifBase.js %}
-{% include iiif/processClickForIiif.js %}
+{% include iiif/getIiifBase.js            %}
+{% include iiif/getIiifBoundingBoxInfo.js %}
+{% include iiif/getIiifManifestInfo.js    %}
+{% include iiif/iiifCallback.js           %}
+{% include iiif/processClickForIiif.js    %}
 
 </script>
 

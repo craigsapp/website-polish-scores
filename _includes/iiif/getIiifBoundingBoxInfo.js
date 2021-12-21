@@ -53,6 +53,7 @@ POPC2.prototype.getIiifBoundingBoxInfo = function (path) {
 	// zero-index line and field
 	line--;
 	field--;
+	let cfield = field; // current field;
 
 	let humdrum = this.GetHumdrumOnPage();
 	let lines = humdrum.split(/\r?\n/);
@@ -61,14 +62,58 @@ POPC2.prototype.getIiifBoundingBoxInfo = function (path) {
 	output.label = "";
 	output.humdrum = lines; // Also used later to extract output.iiifbase 
 
+	let isManipulator = function (line) {
+		let tokens = line.split(/\t+/);
+		let output = true;
+		let empty = true;
+		for (let i=0; i<tokens.length; i++) {
+			if (tokens[i] === "*") { continue; }
+			empty = 0;
+			if (tokens[i].substring(0, 2) === "**") { continue; }
+			if (tokens[i] === "*-") { continue; }
+			if (tokens[i] === "*v") { continue; }
+			if (tokens[i] === "*^") { continue; }
+			// not dealing with *+
+			return false;
+		}
+		if (empty) {
+			return false;
+		}
+		return true;
+	};
+
+	let getNewFieldIndex = function (ofield, line) {
+		let tokens = line.split(/\t+/);
+		let adjust = [];
+		for (let i=0; i<tokens.length; i++) {
+			adjust[i] = 0;
+		}
+		let ladjust = 0;
+		for (let i=1; i<tokens.length; i++) {
+			if ((tokens[i] === "*v") && (tokens[i-1] === "*v")) {
+				ladjust++;
+				adjust[i] += ladjust;
+			} else if (tokens[i-1] === "*^") {
+				ladjust--;
+				adjust[i] += ladjust;
+			}
+		}
+		return ofield + adjust[ofield];
+	};
+
 	// The iiifbase parameter will be extracted in the calling function.
 	output.iiifbase = "";
 
 	// Currently requires no spine splits or merges.
-	for (let i=line-1; i>=0; i--) {
+	for (let i=line; i>=0; i--) {
 		if (!lines[i].match(/^\*/)) {
 			continue;
 		}
+		let ismanipulator = isManipulator(lines[i]);
+		if (ismanipulator) {
+			cfield = getNewFieldIndex(cfield, lines[i]);
+		}
+
 		let fields = lines[i].split(/\t+/);
 		let matches = fields[field].match(/^\*xywh-([^:]+):(.*)$/);
 		if (matches) {

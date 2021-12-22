@@ -50,18 +50,6 @@ POPC2.prototype.getIiifBoundingBoxInfo = function (path) {
 		return;
 	}
 
-	// zero-index line and field
-	line--;
-	field--;
-	let cfield = field; // current field;
-
-	let humdrum = this.GetHumdrumOnPage();
-	let lines = humdrum.split(/\r?\n/);
-	let output = {};
-	output.xywh = "0,0,0,0";
-	output.label = "";
-	output.humdrum = lines; // Also used later to extract output.iiifbase 
-
 	let isManipulator = function (line) {
 		let tokens = line.split(/\t+/);
 		let output = true;
@@ -98,8 +86,25 @@ POPC2.prototype.getIiifBoundingBoxInfo = function (path) {
 				adjust[i] += ladjust;
 			}
 		}
-		return ofield + adjust[ofield];
+		for (let j=0; j<adjust.length; j++) {
+			if (j - adjust[j] == ofield) {
+				return j;
+			}
+		}
+		return -100;
 	};
+
+	// zero-index line and field
+	line--;
+	field--;
+	let cfield = field; // current field;
+
+	let humdrum = this.GetHumdrumOnPage();
+	let lines = humdrum.split(/\r?\n/);
+	let output = {};
+	output.xywh = "0,0,0,0";
+	output.label = "";
+	output.humdrum = lines; // Also used later to extract output.iiifbase 
 
 	// The iiifbase parameter will be extracted in the calling function.
 	output.iiifbase = "";
@@ -115,17 +120,17 @@ POPC2.prototype.getIiifBoundingBoxInfo = function (path) {
 		}
 
 		let fields = lines[i].split(/\t+/);
-		let matches = fields[field].match(/^\*xywh-([^:]+):(.*)$/);
+		let matches = fields[cfield].match(/^\*xywh-([^:]+):(.*)$/);
 		if (matches) {
 			output.label = matches[1];
 			output.xywh = matches[2];
 			break;
 		}
-		matches = fields[field].match(/^\*xywh:(.*)$/);
+		matches = fields[cfield].match(/^\*xywh:(.*)$/);
 		if (matches) {
 			output.xywh = matches[1];
 		}
-		matches = fields[field].match(/^\*iiif:([^:]+)/);
+		matches = fields[cfield].match(/^\*iiif:([^:]+)/);
 		if (matches) {
 			output.label = matches[1];
 			break;

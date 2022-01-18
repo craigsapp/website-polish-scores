@@ -31,7 +31,7 @@ POPC2.prototype.filterBySiglum = function (input) {
 	if (target) {
 		this.VARS.SEARCH[type] = target;
 		let output = [];
-		let re = new RegExp("^" + target);
+		let re = new RegExp("^" + target + "$");
 		for (let i=0; i<input.length; i++) {
 			if (re.exec(input[i][field])) {
 				output.push(input[i]);

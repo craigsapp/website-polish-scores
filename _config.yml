@@ -24,6 +24,9 @@ lyrics_index_popc1: "https://data.nifc.humdrum.org/popc1-lyrics-index.txt"
 composer_index_popc2: "https://data.nifc.humdrum.org/popc2-composer-index.json"
 composer_index_popc1: "https://data.nifc.humdrum.org/popc1-composer-index.json"
 
+# siglum_index: JSON list of RISM sigla for browse and work pages.
+siglum_index: "https://data.nifc.humdrum.org/siglum-index.json"
+
 # pitch_index: TEXT list of melodic pitches for browse page searching.
 pitch_index_popc2: "https://data.nifc.humdrum.org/popc2-pitch-index.txt"
 pitch_index_popc1: "https://data.nifc.humdrum.org/popc1-pitch-index.txt"

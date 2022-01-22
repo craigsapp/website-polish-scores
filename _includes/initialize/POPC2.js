@@ -56,6 +56,10 @@ function POPC2() {
 	// downloaded from {{ site.composer_index}}
 	this.VARS.COMPOSER_INDEX = {};
 
+	// SIGLUM_INDEX -- A list of RISM sigla giving name and URL for libraries.
+	// downloaded from {{ site.siglum_index}}.  Indexed by siglum (country-library).
+	this.VARS.SIGLUM_INDEX = {};
+
 
 	//////////////////////////////
 	//
@@ -223,46 +227,48 @@ function POPC2() {
 
 	this.SETTINGS = {
 
-		background_image:   "{{ site.background_image    }}",
-		languages:           {{ site.languages | jsonify }} ,
-		debug:              "{{ site.debug               }}",
-		debug_verbose:      "{{ site.debug_verbose       }}",
-		tab_title:          "{{ site.tab_title           }}",
+		background_image:   "{{ site.background_image     }}",
+		languages:           {{ site.languages | jsonify  }} ,
+		debug:              "{{ site.debug                }}",
+		debug_verbose:      "{{ site.debug_verbose        }}",
+		tab_title:          "{{ site.tab_title            }}",
 
 		// URLs for data/indexes:
-		github_addr_popc1:  "{{ site.github_addr_popc1   }}",
-		github_addr_popc2:  "{{ site.github_addr_popc2   }}",
+		github_addr_popc1:  "{{ site.github_addr_popc1    }}",
+		github_addr_popc2:  "{{ site.github_addr_popc2    }}",
 
-		data_addr:          "{{ site.data_addr           }}",
+		data_addr:          "{{ site.data_addr            }}",
 
-		score_index:        "{{ site.score_index_popc2   }}", // active score index
-		score_index_popc1:  "{{ site.score_index_popc1   }}",
-		score_index_popc2:  "{{ site.score_index_popc2   }}",
+		score_index:        "{{ site.score_index_popc2    }}", // active score index
+		score_index_popc1:  "{{ site.score_index_popc1    }}",
+		score_index_popc2:  "{{ site.score_index_popc2    }}",
 
-		lyrics_index:       "{{ site.lyrics_index_popc2  }}", // active lyrics index
-		lyrics_index_popc1: "{{ site.lyrics_index_popc1  }}",
-		lyrics_index_popc2: "{{ site.lyrics_index_popc2  }}",
+		lyrics_index:       "{{ site.lyrics_index_popc2   }}", // active lyrics index
+		lyrics_index_popc1: "{{ site.lyrics_index_popc1   }}",
+		lyrics_index_popc2: "{{ site.lyrics_index_popc2   }}",
 
 		composer_index:      "{{ site.composer_index_popc2}}", // active composer index
 		composer_index_popc1:"{{ site.composer_index_popc1}}",
 		composer_index_popc2:"{{ site.composer_index_popc2}}",
 
-		pitch_index:        "{{ site.pitch_index_popc2   }}", // active pitch index
-		pitch_index_popc1:  "{{ site.pitch_index_popc1   }}",
-		pitch_index_popc2:  "{{ site.pitch_index_popc2   }}",
+		siglum_index:        "{{ site.siglum_index         }}",
+
+		pitch_index:         "{{ site.pitch_index_popc2    }}", // active pitch index
+		pitch_index_popc1:   "{{ site.pitch_index_popc1    }}",
+		pitch_index_popc2:   "{{ site.pitch_index_popc2    }}",
 
 		// Website coloring styles:
-		h1_color:           "{{ site.h1_color            }}",
-		h2_color:           "{{ site.h1_color            }}",
-		h3_color:           "{{ site.h1_color            }}",
-		th_color:           "{{ site.th_color            }}",
-		button_hover_color: "{{ site.button_hover_color  }}",
+		h1_color:            "{{ site.h1_color             }}",
+		h2_color:            "{{ site.h1_color             }}",
+		h3_color:            "{{ site.h1_color             }}",
+		th_color:            "{{ site.th_color             }}",
+		button_hover_color:  "{{ site.button_hover_color   }}",
 
 		// Other CSS settings:
-		max_content_width:  "{{ site.max_content_width   }}",
+		max_content_width:   "{{ site.max_content_width    }}",
 
 		// Notation settings:
-		size_increment:     {{ site.size_increment  }}
+		size_increment:       {{ site.size_increment       }}
 
 	};
 

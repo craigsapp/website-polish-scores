@@ -65,7 +65,7 @@ POPC2.prototype.sortByTitle = function (index, reverse) {
 			}
 			return comA.localeCompare(comB);
 		}
-		
+
 		// To break ties remaining ties, sort by siglum/shelfmark/shelfwork
 		let siglumA = a.siglum || "";
 		let siglumB = b.siglum || "";

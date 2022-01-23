@@ -118,7 +118,7 @@ POPC2.prototype.displayWorkSearchResults = function (humdrum) {
 		}
 	}
 	let mkeys = Object.keys(measures).sort(function(a, b) { return a - b});
-	
+
 	let mtext = "<i>measures</i>:";
 	for (let i=0; i<mkeys.length; i++) {
 		mtext += " ";

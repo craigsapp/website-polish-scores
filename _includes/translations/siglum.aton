@@ -1,47 +1,21 @@
 @
 @ Siglum long names to display in browse results shelfmark pop-up titles.
 @
+@ Translations for siglum titles (and URLs in specific languages) are stored
+@ in the POPC2 metadata spreadsheet.  The sigla information is found in the URL:
+@    https://script.google.com/macros/s/AKfycbyCYdG0G1mlr-EyN498pmM3w5OD967frNkdHN2JJaWe53LQEriPk79fZ0Ycc8iZq_DsVw/exec?format=json
+@
 
 @@BEGIN:	ENTRY
-@TAG:		pl-cz
-@EN:		Klasztor OO. Paulinów Jasna Góra, Biblioteka, Częstochowa
-@PL:		Klasztor OO. Paulinów Jasna Góra, Biblioteka, Częstochowa
+@TAG:		shelfmark
+@EN:		Shelfmark
+@PL:		Sygnatura
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
-@TAG:		pl-kk
-@EN:		Archives and Library of Cracow Cathedral Chapter
-@PL:		Archives and Library of Cracow Cathedral Chapter
-@@END:		ENTRY
-
-@@BEGIN:	ENTRY
-@TAG:		pl-kozmzk
-@EN:		Muzeum Zamoyskich w Kozłówce, Kozłówka
-@PL:		Muzeum Zamoyskich w Kozłówce, Kozłówka
-@@END:		ENTRY
-
-@@BEGIN:	ENTRY
-@TAG:		pl-sa
-@EN:		Diocesan Library in Sandomierz
-@PL:		Diocesan Library in Sandomierz
-@@END:		ENTRY
-
-@@BEGIN:	ENTRY
-@TAG:		pl-stab
-@EN:		Benedictine nuns abbey of St. Adalbert
-@PL:		Benedictine nuns abbey of St. Adalbert
-@@END:		ENTRY
-
-@@BEGIN:	ENTRY
-@TAG:		pl-wn
-@EN:		Polish National Library, Warsaw
-@PL:		Polish National Library, Warsaw
-@@END:		ENTRY
-
-@@BEGIN:	ENTRY
-@TAG:		pl-wtm
-@EN:		Warsaw Music Society
-@PL:		Warsaw Music Society
+@TAG:		source_library
+@EN:		Source library
+@PL:		Biblioteka źródłowa
 @@END:		ENTRY
 
 

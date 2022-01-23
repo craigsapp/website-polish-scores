@@ -1,5 +1,10 @@
 
 
+#composer-name {
+	font-size: 1.3rem;
+	color: {{ site.h1_color }};
+}
+
 #composer-info {
 	padding-bottom: 20px;
 }
@@ -18,10 +23,6 @@
 }
 
 .open.composer-info:hover {
-	color: {{ site.h1_color }};
-}
-
-#composer-name {
 	color: {{ site.h1_color }};
 }
 

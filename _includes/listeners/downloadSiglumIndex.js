@@ -33,61 +33,75 @@ POPC2.prototype.downloadSiglumIndex = function () {
 					continue;
 				}
 				that.VARS.SIGLUM_INDEX[siglum] = data[i];
-			}
 
-			// Parameters in each entry:
-			//    Siglum:      Siglum for library, case sensitive, such as "PL-Wn"
-			//    Name-PL:     Name of the library in Polish
-			//    Name-EN:     Name of the library in English
-			//    Website-PL:  URL for the Polish-language homepage of library
-			//    Website-EN:  URL for the English-language homepage of library
-			//    NIFC-URL-PL: NIFC website for library in Polish
-			//    NIFC-URL-EN: NIFC webiste for library
-			// Borrow values into empty locations:
-			if (!data[i]["Name-PL"]    ) { data[i]["Name-PL"] = "";     }
-			if (!data[i]["Name-EN"]    ) { data[i]["Name-EN"] = "";     }
-			if (!data[i]["Website-PL"] ) { data[i]["Website-PL"] = "";  }
-			if (!data[i]["Website-EN"] ) { data[i]["Website-EN"] = "";  }
-			if (!data[i]["NIFC-URL-PL"]) { data[i]["NIFC-URL-PL"] = ""; }
-			if (!data[i]["NIFC-URL-EN"]) { data[i]["NIFC-URL-EN"] = ""; }
+				// Parameters in each entry:
+				//    Siglum:      Siglum for library, case sensitive, such as "PL-Wn"
+				//    Name-PL:     Name of the library in Polish
+				//    Name-EN:     Name of the library in English
+				//    Website-PL:  URL for the Polish-language homepage of library
+				//    Website-EN:  URL for the English-language homepage of library
+				//    NIFC-URL-PL: NIFC website for library in Polish
+				//    NIFC-URL-EN: NIFC webiste for library
+				// Borrow values into empty locations:
+				if (!data[i]["Name-PL"]    ) { data[i]["Name-PL"] = "";     }
+				if (!data[i]["Name-EN"]    ) { data[i]["Name-EN"] = "";     }
+				if (!data[i]["Website-PL"] ) { data[i]["Website-PL"] = "";  }
+				if (!data[i]["Website-EN"] ) { data[i]["Website-EN"] = "";  }
+				if (!data[i]["NIFC-URL-PL"]) { data[i]["NIFC-URL-PL"] = ""; }
+				if (!data[i]["NIFC-URL-EN"]) { data[i]["NIFC-URL-EN"] = ""; }
 
-			if (!data[i]["Name-EN"]) {
-				data[i]["Name-EN"] = data[i]["Name-PL"];
-			}
-			if (!data[i]["Name-PL"]) {
-				data[i]["Name-PL"] = data[i]["Name-EN"];
-			}
+				if (data[i]["Name-EN"] === "") {
+					data[i]["Name-EN"] = data[i]["Name-PL"];
+				}
+				if (data[i]["Name-PL"] === "") {
+					data[i]["Name-PL"] = data[i]["Name-EN"];
+				}
 
-			if (!data[i]["Website-EN"]) {
-				data[i]["Website-EN"] = data[i]["Website-PL"];
-			}
-			if (!data[i]["Website-PL"]) {
-				data[i]["Website-PL"] = data[i]["Website-EN"];
-			}
+				if (data[i]["Website-EN"] === "") {
+					data[i]["Website-EN"] = data[i]["Website-PL"];
+				}
+				if (data[i]["Website-PL"] === "") {
+					data[i]["Website-PL"] = data[i]["Website-EN"];
+				}
 
-			if (!data[i]["NIFC-URL-EN"]) {
-				data[i]["NIFC-URL-EN"] = data[i]["NIFC-URL-PL"];
-			}
-			if (!data[i]["NIFC-URL-PL"]) {
-				data[i]["NIFC-URL-PL"] = data[i]["NIFC-URL-EN"];
-			}
+				if (data[i]["NIFC-URL-EN"] === "") {
+					data[i]["NIFC-URL-EN"] = data[i]["NIFC-URL-PL"];
+				}
+				if (data[i]["NIFC-URL-PL"] === "") {
+					data[i]["NIFC-URL-PL"] = data[i]["NIFC-URL-EN"];
+				}
 
-			if (!data[i]["NIFC-URL-EN"]) {
-				data[i]["NIFC-URL-EN"] = data[i]["Website-PL"];
-			}
-			if (!data[i]["NIFC-URL-PL"]) {
-				data[i]["NIFC-URL-PL"] = data[i]["Website-EN"];
-			}
+				if (data[i]["NIFC-URL-EN"] === "") {
+					data[i]["NIFC-URL-EN"] = data[i]["Website-PL"];
+				}
+				if (data[i]["NIFC-URL-PL"] === "") {
+					data[i]["NIFC-URL-PL"] = data[i]["Website-EN"];
+				}
 
-			if (!data[i]["NIFC-URL-EN"]) {
-				data[i]["NIFC-URL-EN"] = data[i]["NIFC-URL-PL"];
-			}
-			if (!data[i]["NIFC-URL-PL"]) {
-				data[i]["NIFC-URL-PL"] = data[i]["NIFC-URL-EN"];
+				if (data[i]["NIFC-URL-EN"] === "") {
+					data[i]["NIFC-URL-EN"] = data[i]["NIFC-URL-PL"];
+				}
+				if (data[i]["NIFC-URL-PL"] === "") {
+					data[i]["NIFC-URL-PL"] = data[i]["NIFC-URL-EN"];
+				}
+
+				// Store siglum name and URL in translation database
+				if (this.VARS.TRANSLATIONS) {
+					let tentry = {};
+					tentry.TAG = `${siglum}_Name`;
+					tentry.EN = data[i]["Name-EN"];
+					tentry.PL = data[i]["Name-PL"];
+					this.VARS.TRANSLATIONS[tentry.TAG] = tentry;
+
+					let uentry = {};
+					uentry.TAG = `${siglum}_URL`;
+					uentry.EN = data[i]["NIFC-URL-EN"];
+					uentry.PL = data[i]["NIFC-URL-PL"];
+					this.VARS.TRANSLATIONS[uentry.TAG] = uentry;
+				}
 			}
 
 			that.DebugMessage("DOWNLOADED SIGLUM INDEX FROM " + url, "purple");
-console.log("SIGLA", that.VARS.SIGLUM_INDEX);
 		})
 		.catch(err => { console.error("downloadSiglumIndex:", err); });
 };

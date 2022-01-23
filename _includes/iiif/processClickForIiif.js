@@ -20,7 +20,7 @@ POPC2.prototype.processClickForIiif = function (event, path) {
 	if (!path) {
 		return;
 	}
-	
+
 	let boxinfo = this.getIiifBoundingBoxInfo(path);
 	if (!boxinfo) {
 		return;

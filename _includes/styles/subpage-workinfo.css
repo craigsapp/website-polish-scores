@@ -1,0 +1,37 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Jan 22 19:03:24 PST 2022
+// Last Modified: Sat Jan 22 19:03:28 PST 2022
+// Filename:      _includes/styles/subpage-workinfo.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for the workinfo section of the work page.
+//
+{% endcomment %}
+
+#subpage-workinfo {
+	height: 110px;
+	min-height: 110px;
+	margin-top: -110px;
+	width: 100%;
+	padding: 0px;
+	max-width: 800px;
+}
+
+#library-name {
+	font-size: 1.10rem;
+}
+
+#library-name a {
+	text-decoration: none;
+}
+
+#shelfmark {
+	font-size: 0.95rem;
+}
+
+
+

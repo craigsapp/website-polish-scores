@@ -58,7 +58,7 @@ POPC2.prototype.prepareShelfmarkForSorting = function (input) {
 				[  90, 'XC'], [  50, 'L'], [  40, 'XL'], [  10, 'X'],
 				[   9, 'IX'], [   5, 'V'], [   4, 'IV'], [   1, 'I'],
 			];
-	
+
 		let str = '';
 		for (let i=0; i<LETTERS.length; i++) {
 			while (num >= LETTERS[i][0]) {

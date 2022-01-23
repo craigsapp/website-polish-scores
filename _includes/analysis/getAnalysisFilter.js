@@ -77,7 +77,7 @@ POPC2.prototype.getAnalysisFilter = function () {
 	if (value.match(/\s-[^\s-]*x/)) {
 		value += " | rid -glid";
 	}
-	
+
 	return value;
 };
 

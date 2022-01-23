@@ -30,7 +30,7 @@ POPC2.prototype.getIiifBase = function (info, event, callback) {
 
 	// First search for line in the format:
 	//     !!!IIIF-{label}: {iiifbase}
-	
+
 	// Most likely at end of file, so searching backwards.
 	// Could also limit to outer regions of file and not search
 	// inside data region.

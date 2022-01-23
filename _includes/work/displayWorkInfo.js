@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Tue Oct 12 07:35:37 PDT 2021
-// Last Modified: Tue Oct 19 06:34:18 PDT 2021
+// Last Modified: Sat Jan 22 20:04:19 PST 2022
 // Filename:      _includes/work/displayWorkInfo.js
 // Used by:       _includes/work/displayScore.js
 // Included in:   _includes/work/main.html
@@ -124,7 +124,40 @@ POPC2.prototype.displayWorkInfo = function(id) {
 
 	}
 
-	// Needed for some composer dates:
+	// Show source library name:
+	let libraryElement = document.querySelector("#library-name");
+	if (libraryElement && this.VARS.SIGLUM_INDEX[entry.siglum]) {
+		let siglum = entry.siglum;
+		libraryElement.innerHTML = "";
+		let tag = `${siglum}_URL`;
+		let hasUrl = false;
+		let translation = this.VARS.TRANSLATIONS[tag];
+		if (translation) {
+			if (translation.PL) {
+				hasUrl = true;
+			} else if (translation.EN) {
+				hasUrl = true;
+			}
+		}
+		let output = `<a target="_blank" class="trans" href="" data-trans="${siglum}_Name" data-transatt="href:${siglum}_URL"></a>`;
+		if (!hasUrl) {
+			output = `<span class="trans" data-trans="${siglum}_Name"></span>`;
+		}
+		libraryElement.innerHTML = output;
+	}
+
+	// Show siglum and shelfmark:
+	let shelfmarkElement = document.querySelector("#shelfmark");
+	if (shelfmarkElement && this.VARS.SIGLUM_INDEX[entry.siglum]) {
+		let siglum = entry.siglum;
+		let shelfmark = entry.shelfmark;
+		shelfmarkElement.innerHTML = "";
+		let output = `${siglum} ${shelfmark}`;
+		shelfmarkElement.innerHTML = output;
+	}
+
+
+	// Needed for some composer dates and shelfmark:
 	this.ApplyElementTranslations();
 
 };

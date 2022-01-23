@@ -15,7 +15,7 @@
 
 POPC2.prototype.toggleBookmarkDisplay = function () {
 	this.DebugMessageFunction();
-	
+
 	let belement = document.querySelector("#bookmark-browse-button");
 	if (!belement) {
 		console.error("CANNOT FIND BOOKMARK BUTTON");

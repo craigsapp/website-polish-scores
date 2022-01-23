@@ -125,29 +125,13 @@ POPC2.prototype.displayWorkInfo = function(id) {
 	}
 
 	// Show source library name:
-	let libraryElement = document.querySelector("#library-name");
-	if (libraryElement && this.VARS.SIGLUM_INDEX[entry.siglum]) {
-		let siglum = entry.siglum;
-		libraryElement.innerHTML = "";
-		let tag = `${siglum}_URL`;
-		let hasUrl = false;
-		let translation = this.VARS.TRANSLATIONS[tag];
-		if (translation) {
-			if (translation.PL) {
-				hasUrl = true;
-			} else if (translation.EN) {
-				hasUrl = true;
-			}
-		}
-		let output = `<a target="_blank" class="trans" href="" data-trans="${siglum}_Name" data-transatt="href:${siglum}_URL"></a>`;
-		if (!hasUrl) {
-			output = `<span class="trans" data-trans="${siglum}_Name"></span>`;
-		}
-		libraryElement.innerHTML = output;
+	libraryElement = document.querySelector("#work-library-name");
+	if (libraryElement) {
+		this.DisplayLibraryName(libraryElement, entry.siglum);
 	}
 
 	// Show siglum and shelfmark:
-	let shelfmarkElement = document.querySelector("#shelfmark");
+	let shelfmarkElement = document.querySelector("#work-shelfmark");
 	if (shelfmarkElement && this.VARS.SIGLUM_INDEX[entry.siglum]) {
 		let siglum = entry.siglum;
 		let shelfmark = entry.shelfmark;
@@ -155,7 +139,6 @@ POPC2.prototype.displayWorkInfo = function(id) {
 		let output = `${siglum} ${shelfmark}`;
 		shelfmarkElement.innerHTML = output;
 	}
-
 
 	// Needed for some composer dates and shelfmark:
 	this.ApplyElementTranslations();

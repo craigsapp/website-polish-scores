@@ -16,10 +16,15 @@
 //
 {% endcomment %}
 
-POPC2.prototype.ApplyElementTranslations = function () {
+POPC2.prototype.ApplyElementTranslations = function (target) {
 	this.DebugMessageFunction();
 
-	let list = document.querySelectorAll(".trans");
+	let list;
+	if (target) {
+		list = target.querySelectorAll(".trans");
+	} else {
+		list = document.querySelectorAll(".trans");
+	}
 
 	// Apply translations to element text content:
 	for (let i=0; i<list.length; i++) {

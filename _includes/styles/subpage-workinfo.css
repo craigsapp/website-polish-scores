@@ -21,15 +21,15 @@
 	max-width: 800px;
 }
 
-#library-name {
+#work-library-name, #browse-library-name {
 	font-size: 1.10rem;
 }
 
-#library-name a {
+#work-library-name a, #browse-library-name a {
 	text-decoration: none;
 }
 
-#shelfmark {
+#work-shelfmark {
 	font-size: 0.95rem;
 }
 

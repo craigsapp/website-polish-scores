@@ -256,6 +256,14 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 	}
 	element.style.zoom = zoom;
 
+	libraryElement = document.querySelector("#browse-library-name");
+	if (libraryElement) {
+		let librarySelectElement = document.querySelector("select.filter.siglum");
+		let siglum = librarySelectElement.value;
+		this.DisplayLibraryName(libraryElement, siglum);
+		this.ApplyElementTranslations(libraryElement);
+	}
+
 };
 
 Object.defineProperty(POPC2.prototype.displayBrowseTable, "name", { value: "displayBrowseTable" });

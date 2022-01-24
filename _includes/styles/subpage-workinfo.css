@@ -41,5 +41,9 @@
    color: {{ site.button_hover_color }};
 }
 
+.ssm:after { /* siglum-shelfmark: A siglum at the start of a shelfmark */
+	content: ":";
+}
+
 
 

@@ -136,7 +136,7 @@ POPC2.prototype.displayWorkInfo = function(id) {
 		let siglum = entry.siglum;
 		let shelfmark = entry.shelfmark;
 		shelfmarkElement.innerHTML = "";
-		let output = `${siglum} ${shelfmark}`;
+		let output = `<span class="ssm">${siglum}</span> ${shelfmark}`;
 		shelfmarkElement.innerHTML = output;
 	}
 

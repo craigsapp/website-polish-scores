@@ -52,7 +52,7 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 		}
 		setTimeout(function() {
 			 document.body.classList.add("waiting");
-		}, 80);
+		}, 100);
 		displayHumdrum(options);
 		if (!noscrollQ) {
 			scroll(0, 0);
@@ -76,7 +76,7 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 				}
 				setTimeout(function() {
 					document.body.classList.add("waiting");
-				}, 80);
+				}, 100);
 				displayHumdrum(options);
 				if (!noscrollQ) {
 					scroll(0, 0);

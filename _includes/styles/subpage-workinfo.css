@@ -33,5 +33,13 @@
 	font-size: 0.95rem;
 }
 
+.image-scan {
+	font-size: 1.75rem;
+}
+
+.image-scan:hover {
+   color: {{ site.button_hover_color }};
+}
+
 
 

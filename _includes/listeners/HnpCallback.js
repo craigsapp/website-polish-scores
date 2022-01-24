@@ -16,7 +16,6 @@
 POPC2.prototype.HnpCallback = function (humid) {
 	this.DebugMessageFunction();
 
-
 	document.body.classList.remove("waiting");
 	setTimeout(function() {
  		document.body.classList.remove("waiting");
@@ -45,6 +44,9 @@ POPC2.prototype.HnpCallback = function (humid) {
 
 	// Prepare timemap in case it is needed (for keyscape performance time selection).
    popc2.LoadTimemap();
+
+	// display any embedded scan links
+	popc2.displayScanInfo();
 
 };
 

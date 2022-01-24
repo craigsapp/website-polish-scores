@@ -2,14 +2,14 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Last Modified: Mon Jan 24 11:38:07 PST 2022
 // Filename:      _includes/browse/filterByTitle.js
 // Used by:       _includes/browse/doBrowseSearch.js
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
-// Description:
+// Description:   Filter the input list of scores by title.
 //
 {% endcomment %}
 
@@ -61,7 +61,7 @@ POPC2.prototype.filterByTitle = function (input) {
 				negate = true;
 				searchString = matches[1];
 			}
-			let re = new RegExp(searchString, "i");
+			let re = new RegExp(this.createIgnoreAccentsString(searchString), "i");
 			for (let j=0; j<input.length; j++) {
 				if (negate) {
 					if (!re.exec(input[j][field])) {

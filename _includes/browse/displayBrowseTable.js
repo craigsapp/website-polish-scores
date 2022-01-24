@@ -65,6 +65,7 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 			lyricsSearch = true;
 			lyricsSearchText = value;
 		}
+		lyricsSearchText = this.createIgnoreAccentsString(lyricsSearchText);
 	}
 
 	let sortMethod = this.VARS.SEARCH_SORT_TYPE;

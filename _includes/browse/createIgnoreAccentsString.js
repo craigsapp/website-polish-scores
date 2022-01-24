@@ -20,7 +20,7 @@
 {% endcomment %}
 
 POPC2.prototype.createIgnoreAccentsString = function (input) {
-	this.DebugMessageFunction();
+	this.DebugMessageFunctionVerbose();
 	let equivalence = {
 		"a": "[aáàâäãāăąǎȃȧα]",
 		"c": "[cçćĉčƈ]",

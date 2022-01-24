@@ -46,7 +46,7 @@ POPC2.prototype.getHighlightedString = function (contents, query) {
 	}
 
 	for (let i=0; i<titleTargets.length; i++) {
-		let re = new RegExp(this.createIgnoreAccentsString(titleTargets[i]), "gi");
+		let re = new RegExp(titleTargets[i], "gi");
 		contents = contents.replace(re, (match) => `<#>${match}</#>`);
 	}
 	contents = contents.replace(/#/g, "span");

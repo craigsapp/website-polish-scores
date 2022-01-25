@@ -3,33 +3,45 @@
 @
 
 @@BEGIN:	ENTRY
-@TAG:		15xx
+@TAG:		14xx
 @EN:		15th c.
 @PL:		XV w.
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
-@TAG:		16xx
+@TAG:		15xx
 @EN:		16th c.
 @PL:		XVI w.
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
-@TAG:		17xx
+@TAG:		16xx
 @EN:		17th c.
 @PL:		XVII w.
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
-@TAG:		18xx
+@TAG:		17xx
 @EN:		18th c.
 @PL:		XVIII w.
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
-@TAG:		19xx
+@TAG:		18xx
 @EN:		19th c.
 @PL:		XIX w.
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		19xx
+@EN:		20th c.
+@PL:		XX w.
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		20xx
+@EN:		21th c.
+@PL:		XXI w.
 @@END:		ENTRY
 
 

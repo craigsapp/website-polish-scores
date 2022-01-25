@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Last Modified: Tue Jan 25 01:59:05 PST 2022
 // Filename:      _includes/browse/buildCenturyFilter.js
 // Used by:
 // Included in:   _includes/browse/main.html
@@ -83,7 +83,7 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 
 	for (let i=0; i<fullKeys.length; i++) {
 		let century = fullKeys[i];
-		let displayCentury = century;
+		let displayCentury = this.getTranslation(century);
 		output += '<option';
 		if (partial && centuries[century]) {
 			output += ' class="highlight"';

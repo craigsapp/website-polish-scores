@@ -36,25 +36,52 @@ POPC2.prototype.downloadSiglumIndex = function () {
 
 				// Parameters in each entry:
 				//    Siglum:      Siglum for library, case sensitive, such as "PL-Wn"
-				//    Name-PL:     Name of the library in Polish
-				//    Name-EN:     Name of the library in English
-				//    Website-PL:  URL for the Polish-language homepage of library
-				//    Website-EN:  URL for the English-language homepage of library
-				//    NIFC-URL-PL: NIFC website for library in Polish
-				//    NIFC-URL-EN: NIFC webiste for library
+				//    Name-full-PL:  Full name of the library in Polish
+				//    Name-short-PL: Short name of the library in Polish
+				//    Name-full-EN:  Full name of the library in English
+				//    Name-short-EN: Short name of the library in English
+				//    Website-PL:    URL for the Polish-language homepage of library
+				//    Website-EN:    URL for the English-language homepage of library
+				//    NIFC-URL-PL:   NIFC website for library in Polish
+				//    NIFC-URL-EN:   NIFC webiste for library
 				// Borrow values into empty locations:
-				if (!data[i]["Name-PL"]    ) { data[i]["Name-PL"] = "";     }
-				if (!data[i]["Name-EN"]    ) { data[i]["Name-EN"] = "";     }
-				if (!data[i]["Website-PL"] ) { data[i]["Website-PL"] = "";  }
-				if (!data[i]["Website-EN"] ) { data[i]["Website-EN"] = "";  }
-				if (!data[i]["NIFC-URL-PL"]) { data[i]["NIFC-URL-PL"] = ""; }
-				if (!data[i]["NIFC-URL-EN"]) { data[i]["NIFC-URL-EN"] = ""; }
+				if (!data[i]["Name-full-PL"] ) { data[i]["Name-full-PL"]  = ""; }
+				if (!data[i]["Name-short-PL"]) { data[i]["Name-short-PL"] = ""; }
+				if (!data[i]["Name-full-EN"] ) { data[i]["Name-full-EN"]  = ""; }
+				if (!data[i]["Name-short-EN"]) { data[i]["Name-short-EN"] = ""; }
+				if (!data[i]["Website-PL"]   ) { data[i]["Website-PL"]    = ""; }
+				if (!data[i]["Website-EN"]   ) { data[i]["Website-EN"]    = ""; }
+				if (!data[i]["NIFC-URL-PL"]  ) { data[i]["NIFC-URL-PL"]   = ""; }
+				if (!data[i]["NIFC-URL-EN"]  ) { data[i]["NIFC-URL-EN"]   = ""; }
 
-				if (data[i]["Name-EN"] === "") {
-					data[i]["Name-EN"] = data[i]["Name-PL"];
+				// If no short name in language, borrow long name:
+				if (data[i]["Name-short-EN"] === "") {
+					data[i]["Name-short-EN"] = data[i]["Name-full-EN"];
 				}
-				if (data[i]["Name-PL"] === "") {
-					data[i]["Name-PL"] = data[i]["Name-EN"];
+				if (data[i]["Name-short-PL"] === "") {
+					data[i]["Name-short-PL"] = data[i]["Name-full-PL"];
+				}
+
+				// If no long name in language, borrow short name:
+				if (data[i]["Name-long-EN"] === "") {
+					data[i]["Name-long-EN"] = data[i]["Name-short-EN"];
+				}
+				if (data[i]["Name-long-PL"] === "") {
+					data[i]["Name-long-PL"] = data[i]["Name-short-PL"];
+				}
+
+				// If no name in language, borrow other language's
+				if (data[i]["Name-long-EN"] === "") {
+					data[i]["Name-long-EN"] = data[i]["Name-long-PL"];
+				}
+				if (data[i]["Name-long-PL"] === "") {
+					data[i]["Name-long-PL"] = data[i]["Name-long-EN"];
+				}
+				if (data[i]["Name-short-EN"] === "") {
+					data[i]["Name-short-EN"] = data[i]["Name-short-PL"];
+				}
+				if (data[i]["Name-short-PL"] === "") {
+					data[i]["Name-short-PL"] = data[i]["Name-short-EN"];
 				}
 
 				if (data[i]["Website-EN"] === "") {
@@ -64,39 +91,24 @@ POPC2.prototype.downloadSiglumIndex = function () {
 					data[i]["Website-PL"] = data[i]["Website-EN"];
 				}
 
-				if (data[i]["NIFC-URL-EN"] === "") {
-					data[i]["NIFC-URL-EN"] = data[i]["NIFC-URL-PL"];
-				}
-				if (data[i]["NIFC-URL-PL"] === "") {
-					data[i]["NIFC-URL-PL"] = data[i]["NIFC-URL-EN"];
-				}
-
-				if (data[i]["NIFC-URL-EN"] === "") {
-					data[i]["NIFC-URL-EN"] = data[i]["Website-PL"];
-				}
-				if (data[i]["NIFC-URL-PL"] === "") {
-					data[i]["NIFC-URL-PL"] = data[i]["Website-EN"];
-				}
-
-				if (data[i]["NIFC-URL-EN"] === "") {
-					data[i]["NIFC-URL-EN"] = data[i]["NIFC-URL-PL"];
-				}
-				if (data[i]["NIFC-URL-PL"] === "") {
-					data[i]["NIFC-URL-PL"] = data[i]["NIFC-URL-EN"];
-				}
-
 				// Store siglum name and URL in translation database
 				if (this.VARS.TRANSLATIONS) {
-					let tentry = {};
-					tentry.TAG = `${siglum}_Name`;
-					tentry.EN = data[i]["Name-EN"];
-					tentry.PL = data[i]["Name-PL"];
-					this.VARS.TRANSLATIONS[tentry.TAG] = tentry;
+					let lentry = {};
+					lentry.TAG = `${siglum}_Name_long`;
+					lentry.EN = data[i]["Name-long-EN"];
+					lentry.PL = data[i]["Name-long-PL"];
+					this.VARS.TRANSLATIONS[lentry.TAG] = lentry;
+
+					let sentry = {};
+					sentry.TAG = `${siglum}_Name_short`;
+					sentry.EN = data[i]["Name-short-EN"];
+					sentry.PL = data[i]["Name-short-PL"];
+					this.VARS.TRANSLATIONS[sentry.TAG] = sentry;
 
 					let uentry = {};
 					uentry.TAG = `${siglum}_URL`;
-					uentry.EN = data[i]["NIFC-URL-EN"];
-					uentry.PL = data[i]["NIFC-URL-PL"];
+					uentry.EN = data[i]["Website-EN"];
+					uentry.PL = data[i]["Website-PL"];
 					this.VARS.TRANSLATIONS[uentry.TAG] = uentry;
 				}
 			}

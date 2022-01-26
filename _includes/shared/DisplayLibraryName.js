@@ -15,7 +15,7 @@
 //
 {% endcomment %}
 
-POPC2.prototype.DisplayLibraryName = function (element, siglum) {
+POPC2.prototype.DisplayLibraryName = function (element, siglum, type) {
 	this.DebugMessageFunction();
 	if (!element) {
 		return;
@@ -23,6 +23,9 @@ POPC2.prototype.DisplayLibraryName = function (element, siglum) {
 	if (!siglum) {
 		element.innerHTML = "";
 		return;
+	}
+	if (!type) {
+		type = "long";
 	}
 
 	if (element && this.VARS.SIGLUM_INDEX[siglum]) {
@@ -37,9 +40,9 @@ POPC2.prototype.DisplayLibraryName = function (element, siglum) {
 				hasUrl = true;
 			}
 		}
-		let output = `<a target="_blank" class="trans" href="" data-trans="${siglum}_Name" data-transatt="href:${siglum}_URL"></a>`;
+		let output = `<a target="_blank" class="trans" href="" data-trans="${siglum}_Name_${type}" data-transatt="href:${siglum}_URL"></a>`;
 		if (!hasUrl) {
-			output = `<span class="trans" data-trans="${siglum}_Name"></span>`;
+			output = `<span class="trans" data-trans="${siglum}_Name_${type}"></span>`;
 		}
 		element.innerHTML = output;
 	} else {

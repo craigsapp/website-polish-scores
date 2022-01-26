@@ -127,7 +127,7 @@ POPC2.prototype.displayWorkInfo = function(id) {
 	// Show source library name:
 	libraryElement = document.querySelector("#work-library-name");
 	if (libraryElement) {
-		this.DisplayLibraryName(libraryElement, entry.siglum);
+		this.DisplayLibraryName(libraryElement, entry.siglum, "short");
 	}
 
 	// Show siglum and shelfmark:

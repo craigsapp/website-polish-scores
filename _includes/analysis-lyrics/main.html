@@ -1,0 +1,24 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Mon Jan 31 21:36:30 PST 2022
+// Last Modified: Mon Jan 31 21:36:33 PST 2022
+// Filename:      _includes/lyrics/main.html
+// Included in:   _includes/head/main.html
+// Syntax:        ECMAScript 6; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Functions related to displaying extracted lyrics.
+//
+{% endcomment %}
+
+<script>
+
+{% include analysis-lyrics/prepareWordlist.js       %}
+{% include analysis-lyrics/highlightLyricsWord.js   %}
+{% include analysis-lyrics/unhighlightLyricsWord.js %}
+
+</script>
+
+
+

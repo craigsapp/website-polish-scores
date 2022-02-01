@@ -202,6 +202,18 @@ function POPC2() {
 
 	//////////////////////////////
 	//
+	// Analysis variables
+	//
+	
+	// WORDLIST: List of extracted lyrics for the currently displayed work.
+	this.VARS.WORDLIST = {};
+	
+	// LASTWORD: Keep track of the last word highlighed in the extracted lyrics.
+	this.VARS.LASTWORD = "";
+
+
+	//////////////////////////////
+	//
 	// Other interface state variables:
 	//
 

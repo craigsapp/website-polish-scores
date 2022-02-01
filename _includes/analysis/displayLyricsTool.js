@@ -51,20 +51,6 @@ POPC2.prototype.displayLyricsTool = function (tool) {
 			text += "<div style='height:30px'></div>";
 			toolElement.innerHTML = text;
 
-			if (!script.match(/^\s*$/)) {
-				script += "\nconsole.warn('PARSING LYRIC SCRIPT');\n";
-
-				let selement = document.querySelector("#lyric-script");
-				if (!selement) {
-					// add lyric tool script for highlighting same words
-					// as hovered text.
-					selement = document.createElement("script");
-					selement.setAttribute("id", "lyric-script");
-					selement.textContent = script;
-					document.head.appendChild(selement);
-				}
-			}
-
 			// style adjustments: hide the title
 			let h2 = toolElement.querySelector("h2");
 			if (h2) {
@@ -74,6 +60,28 @@ POPC2.prototype.displayLyricsTool = function (tool) {
 			let verseElements = toolElement.querySelectorAll("td.verse");
 			for (let i=0; i<verseElements.length; i++) {
 				verseElements[i].style.visibility = "hidden";
+			}
+
+			this.VARS.LASTWORD = "";
+			this.prepareWordlist();
+
+			let lyricsTable = toolElement.querySelector("table.lyrics");
+			if (lyricsTable) {
+				lyricsTable.addEventListener("mouseover", function(event) {
+					if (!event.target.nodeName.match(/^SPAN$/i)) {
+						return;
+					}
+					event.preventDefault();
+					var text = event.target.innerHTML.toLowerCase();
+					if (text === that.VARS.LASTWORD) {
+						return;
+					}
+					that.unhighlightLyricsWord(that.VARS.LASTWORD);
+					that.highlightLyricsWord(text);
+					that.VARS.LASTWORD = text;
+				});
+			} else {
+				console.error("Cannot find lyrics table");
 			}
 
 		})

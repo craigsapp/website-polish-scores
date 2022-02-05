@@ -34,7 +34,7 @@
 
 @@BEGIN:	ENTRY
 @TAG:		any_century
-@EN:		any century
+@EN:		century
 @PL:		dowolne stulecie
 @@END:		ENTRY
 
@@ -44,7 +44,7 @@
 
 @@BEGIN:	ENTRY
 @TAG:		any_library
-@EN:		any library
+@EN:		library
 @PL:		dowolna biblioteka
 @@END:		ENTRY
 
@@ -54,7 +54,7 @@
 
 @@BEGIN:	ENTRY
 @TAG:		title_placeholder
-@EN:		search title text...
+@EN:		title search...
 @PL:		szukaj tytułu...
 @@END:		ENTRY
 
@@ -64,7 +64,7 @@
 
 @@BEGIN:	ENTRY
 @TAG:		lyrics_placeholder
-@EN:		search lyric text...
+@EN:		lyrics search...
 @PL:		szukaj tekstów...
 @@END:		ENTRY
 
@@ -74,7 +74,7 @@
 
 @@BEGIN:	ENTRY
 @TAG:		pitch_placeholder
-@EN:		search pitch...
+@EN:		pitch search...
 @PL:		szukaj ton...
 @@END:		ENTRY
 

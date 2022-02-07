@@ -31,6 +31,8 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	var titleElement       = document.querySelector("input.filter.title");
 	var lyricsElement      = document.querySelector("input.filter.lyrics");
 	var pitchElement       = document.querySelector("input.filter.pitch");
+	var tonicElement       = document.querySelector("input.filter.tonic");
+	var modeElement        = document.querySelector("input.filter.mode");
 
 	if (centuryElement) {
 		centuryElement.value = "";
@@ -43,6 +45,12 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	}
 	if (genreElement) {
 		genreElement.value = "";
+	}
+	if (tonicElement) {
+		tonicElement.value = "";
+	}
+	if (modeElement) {
+		modeElement.value = "";
 	}
 	if (nationalityElement) {
 		nationalityElement.value = "";

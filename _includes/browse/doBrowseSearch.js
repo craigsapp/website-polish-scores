@@ -46,6 +46,8 @@ POPC2.prototype.doBrowseSearch = function (index) {
 	results = this.filterByTitle(results);
 	results = this.filterByLyrics(results);
 	results = this.filterByPitch(results);
+	results = this.filterByTonic(results);
+	results = this.filterByMode(results);
 
 	if (results.length != this.VARS.SEARCH_INDEX.length) {
 		this.VARS.SEARCH_FREEZE = true;
@@ -54,6 +56,8 @@ POPC2.prototype.doBrowseSearch = function (index) {
 		this.buildSiglumFilter(results);
 		this.buildGenreFilter(results);
 		this.buildNationalityFilter(results);
+		this.buildTonicFilter(results);
+		this.buildModeFilter(results);
 		this.VARS.SEARCH_FREEZE = false;
 	}
 	this.buildBrowseFilters(results);

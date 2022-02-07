@@ -15,6 +15,8 @@
 //                   #filter-siglum
 //                   #filter-lyrics
 //                   #filter-pitch
+//                   #filter-tonic
+//                   #filter-mode
 //                   #filter-reset
 //                   #filter-link
 //                   #more-break
@@ -32,6 +34,10 @@ POPC2.prototype.showBrowseMore = function () {
 	element = document.querySelector("#filter-lyrics");
 	if (element) { element.style.display = "inline-block"; }
 	element = document.querySelector("#filter-pitch");
+	if (element) { element.style.display = "inline-block"; }
+	element = document.querySelector("#filter-tonic");
+	if (element) { element.style.display = "inline-block"; }
+	element = document.querySelector("#filter-mode");
 	if (element) { element.style.display = "inline-block"; }
 	// element = document.querySelector("#filter-reset");
 	// if (element) { element.style.display = "inline-block"; }

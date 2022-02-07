@@ -42,6 +42,8 @@ POPC2.prototype.buildBrowseFilters = function (index) {
 	this.buildTitleFilter();
 	this.buildLyricsFilter();
 	this.buildPitchFilter();
+	this.buildTonicFilter();
+	this.buildModeFilter();
 
 	if (selector) {
 		// Restore focus on the title/lyrics input:

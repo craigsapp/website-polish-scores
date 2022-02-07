@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct  8 23:56:37 PDT 2021
-// Last Modified: Mon Jan 24 11:21:47 PST 2022
+// Last Modified: Sun Feb  6 20:02:36 PST 2022
 // Filename:      _includes/browse/main.html
 // Included in:   _includes/head/main.html
 // Syntax:        ECMAScript 6; Jekyll/Liquid
@@ -22,10 +22,12 @@
 {% include browse/buildComposerFilter.js           %}
 {% include browse/buildGenreFilter.js              %}
 {% include browse/buildLyricsFilter.js             %}
+{% include browse/buildModeFilter.js               %}
 {% include browse/buildNationalityFilter.js        %}
 {% include browse/buildPitchFilter.js              %}
 {% include browse/buildSiglumFilter.js             %}
 {% include browse/buildTitleFilter.js              %}
+{% include browse/buildTonicFilter.js              %}
 {% include browse/copyBrowseTableAsTsv.js          %}
 {% include browse/copySearchLink.js                %}
 {% include browse/createIgnoreAccentsString.js     %}
@@ -36,10 +38,12 @@
 {% include browse/filterByComposer.js              %}
 {% include browse/filterByGenre.js                 %}
 {% include browse/filterByLyrics.js                %}
+{% include browse/filterByMode.js                  %}
 {% include browse/filterByNationality.js           %}
 {% include browse/filterByPitch.js                 %}
 {% include browse/filterBySiglum.js                %}
 {% include browse/filterByTitle.js                 %}
+{% include browse/filterByTonic.js                 %}
 {% include browse/getComposerLinks.js              %}
 {% include browse/getHighlightedString.js          %}
 {% include browse/getMatchText.js                  %}

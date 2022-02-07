@@ -24,6 +24,8 @@ POPC2.prototype.prepareBrowseSelectOptions = function () {
 	data.century     = {};
 	data.siglum      = {};
 	data.genre       = {};
+	data.tonic       = {};
+	data.mode        = {};
 	data.nationality = {};
 
 	let index = this.VARS.SEARCH_INDEX;
@@ -33,6 +35,7 @@ POPC2.prototype.prepareBrowseSelectOptions = function () {
 		let century     = entry.cenid  || "";
 		let siglum      = entry.siglum || "";
 		let genre       = entry.AGN    || "";
+		let key         = entry.key    || "";
 		let nationality = entry.CNT    || "";
 		if (century) {
 			century = century.replace(/:.*/, "");
@@ -73,6 +76,80 @@ POPC2.prototype.prepareBrowseSelectOptions = function () {
 				}
 			}
 		}
+
+		if (key) {
+			key = key.trim();
+			let matches;
+			if (matches = key.match(/^([^:]+)/)) {
+				let tonic = matches[1].toUpperCase();
+				if (!data.tonic[tonic]) {
+					data.tonic[tonic] = 1;
+				} else {
+					data.tonic[tonic]++;
+				}
+			}
+		}
+
+		if (key) {
+			let matches;
+
+			if (matches = key.match(/:ion$/)) {
+				if (!data.mode["ion"]) {
+					data.mode["ion"] = 1;
+				} else {
+					data.mode["ion"]++;
+				}
+			} else if (matches = key.match(/:dor$/)) {
+				if (!data.mode["dor"]) {
+					data.mode["dor"] = 1;
+				} else {
+					data.mode["dor"]++;
+				}
+			} else if (matches = key.match(/:phr$/)) {
+				if (!data.mode["phr"]) {
+					data.mode["phr"] = 1;
+				} else {
+					data.mode["phr"]++;
+				}
+			} else if (matches = key.match(/:lyd$/)) {
+				if (!data.mode["lyd"]) {
+					data.mode["lyd"] = 1;
+				} else {
+					data.mode["lyd"]++;
+				}
+			} else if (matches = key.match(/:mix$/)) {
+				if (!data.mode["mix"]) {
+					data.mode["mix"] = 1;
+				} else {
+					data.mode["mix"]++;
+				}
+			} else if (matches = key.match(/:aeo$/)) {
+				if (!data.mode["aeo"]) {
+					data.mode["aeo"] = 1;
+				} else {
+					data.mode["aeo"]++;
+				}
+			} else if (matches = key.match(/:loc$/)) {
+				if (!data.mode["loc"]) {
+					data.mode["loc"] = 1;
+				} else {
+					data.mode["loc"]++;
+				}
+			} else if (matches = key.match(/^([A-G])/)) {
+				if (!data.mode["maj"]) {
+					data.mode["maj"] = 1;
+				} else {
+					data.mode["maj"]++;
+				}
+			} else if (matches = key.match(/^([a-g])/)) {
+				if (!data.mode["min"]) {
+					data.mode["min"] = 1;
+				} else {
+					data.mode["min"]++;
+				}
+			}
+		}
+
 		if (nationality) {
 			if (data.nationality[nationality]) {
 				data.nationality[nationality]++;

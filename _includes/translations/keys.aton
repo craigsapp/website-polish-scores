@@ -1,0 +1,206 @@
+@
+@ Musical keys/modes
+@
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@
+@@ mode name
+@@
+
+@@BEGIN:	ENTRY
+@TAG:		any_mode
+@EN:		mode
+@PL:		kościelna
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		maj
+@EN:		major
+@PL:		major
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		min
+@EN:		minor
+@PL:		minor
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		ion
+@EN:		ionian
+@PL:		ionian
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		dor
+@EN:		dorian
+@PL:		dorycka
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		phr
+@EN:		phrygian
+@PL:		frygijska
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		lyd
+@EN:		lydian
+@PL:		lidyjska
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		mix
+@EN:		mixolydian
+@PL:		miksolidyjska
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		aeo
+@EN:		aeolean
+@PL:		aeolean
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		loc
+@EN:		locrian
+@PL:		locrian
+@@END:		ENTRY
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@
+@@ Tonic pitch name
+@@
+
+@@BEGIN:	ENTRY
+@TAG:		any_tonic
+@EN:		tonic
+@PL:		tonic
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_C-flat
+@EN:		C&flat;
+@PL:		C&flat;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_C
+@EN:		C
+@PL:		C
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_C-sharp
+@EN:		C&sharp;
+@PL:		C&sharp;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_D-flat
+@EN:		D&flat;
+@PL:		D&flat;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_D
+@EN:		D
+@PL:		D
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_D-sharp
+@EN:		D&sharp;
+@PL:		D&sharp;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_E-flat
+@EN:		E&flat;
+@PL:		E&flat;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_E
+@EN:		E
+@PL:		E
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_E-sharp
+@EN:		E&sharp;
+@PL:		E&sharp;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_F-flat
+@EN:		F&flat;
+@PL:		F&flat;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_F
+@EN:		F
+@PL:		F
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_F-sharp
+@EN:		F&sharp;
+@PL:		F&sharp;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_G-flat
+@EN:		G&flat;
+@PL:		G&flat;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_G
+@EN:		G
+@PL:		G
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_G-sharp
+@EN:		G&sharp;
+@PL:		G&sharp;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_A-flat
+@EN:		A&flat;
+@PL:		A&flat;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_A
+@EN:		A
+@PL:		A
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_A-sharp
+@EN:		A&sharp;
+@PL:		A&sharp;
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_B-flat
+@EN:		B&flat;
+@PL:		B
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_B
+@EN:		B
+@PL:		H
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		tonic_B-sharp
+@EN:		B&sharp;
+@PL:		H&sharp;
+@@END:		ENTRY
+

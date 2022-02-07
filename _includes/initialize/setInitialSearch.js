@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sun Oct 10 20:18:39 PDT 2021
-// Last Modified: Sun Oct 10 20:18:44 PDT 2021
+// Last Modified: Sun Feb  6 20:30:15 PST 2022
 // Filename:      _includes/initialize/setInitialSearch.js
 // Used by:       _includes/initialize/main.html
 // Included in:   _includes/initialize/main.html
@@ -28,6 +28,8 @@ POPC2.prototype.setInitialSearch = function (path) {
 	if (cgi.text)        { tempSearch.text        = cgi.text;        }
 	if (cgi.lyrics)      { tempSearch.lyrics      = cgi.lyrics;      }
 	if (cgi.pitch)       { tempSearch.pitch       = cgi.pitch;       }
+	if (cgi.tonic)       { tempSearch.tonic       = cgi.tonic;       }
+	if (cgi.mode)        { tempSearch.mode        = cgi.mode;        }
 	let keys = Object.keys(tempSearch);
 	if (keys.length > 0) {
 		this.VARS.SEARCH = tempSearch;

@@ -63,6 +63,10 @@ input.filter.lyrics {
 	width: 250px;
 }
 
+input.filter.pitch {
+	width: 200px;
+}
+
 
 /* Input text placeholder styling: */
 

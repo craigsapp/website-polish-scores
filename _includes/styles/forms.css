@@ -67,6 +67,11 @@ input.filter.pitch {
 	width: 200px;
 }
 
+select.filter.century {
+	width: 175px;
+	min-width: 175px;
+}
+
 
 /* Input text placeholder styling: */
 

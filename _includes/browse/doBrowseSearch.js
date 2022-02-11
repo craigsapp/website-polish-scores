@@ -11,6 +11,7 @@
 // Used by:       _includes/browse/buildPitchFilter.js
 // Used by:       _includes/browse/buildNationalityFilter.js
 // Used by:       _includes/browse/buildSiglumFilter.js
+// Used by:       _includes/browse/buildInstrumentFilter.js
 // Used by:       _includes/browse/buildTitleFilter.js
 // Used by:       _includes/browse/displayBrowsePage.js
 // Included in:   _includes/browse/main.html
@@ -44,6 +45,7 @@ POPC2.prototype.doBrowseSearch = function (index) {
 	results = this.filterByGenre(results);
 	results = this.filterByNationality(results);
 	results = this.filterByTitle(results);
+	results = this.filterByInstrument(results);
 	results = this.filterByLyrics(results);
 	results = this.filterByPitch(results);
 	results = this.filterByTonic(results);
@@ -54,6 +56,7 @@ POPC2.prototype.doBrowseSearch = function (index) {
 		this.buildComposerFilter(results);
 		this.buildCenturyFilter(results);
 		this.buildSiglumFilter(results);
+		this.buildInstrumentFilter(results);
 		this.buildGenreFilter(results);
 		this.buildNationalityFilter(results);
 		this.buildTonicFilter(results);

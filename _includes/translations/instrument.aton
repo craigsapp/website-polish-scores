@@ -1,0 +1,16 @@
+@
+@ Instrument names to display in browse results shelfmark pop-up titles.
+@
+@ Translations for instruments are stored in the POPC2 metadata spreadsheet and/or
+@ the Humdrum Instrument Code spreadsheet.  The instrument names are found in the URL:
+@    {{ site.instrument_index }}
+@
+
+@@BEGIN:	ENTRY
+@TAG:		instrument
+@EN:		instrument
+@PL:		instrument
+@@END:		ENTRY
+
+
+

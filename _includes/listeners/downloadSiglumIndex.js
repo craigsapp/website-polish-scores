@@ -10,7 +10,7 @@
 // vim:           ts=3:nowrap
 //
 // Description:   Download the siglum index and store its contents
-//                into VARS.SIGLUM global variable.
+//                into VARS.SIGLUM_INDEX global variable.
 //
 {% endcomment %}
 
@@ -113,7 +113,7 @@ POPC2.prototype.downloadSiglumIndex = function () {
 				}
 			}
 
-			that.DebugMessage("DOWNLOADED SIGLUM INDEX FROM " + url, "purple");
+			that.DebugMessage("DOWNLOADED SIGLUM INDEX FROM " + url, "plum");
 		})
 		.catch(err => { console.error("downloadSiglumIndex:", err); });
 };

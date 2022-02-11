@@ -23,6 +23,7 @@ POPC2.prototype.prepareBrowseSelectOptions = function () {
 	data.composer    = {};
 	data.century     = {};
 	data.siglum      = {};
+	data.instrument  = {};
 	data.genre       = {};
 	data.tonic       = {};
 	data.mode        = {};
@@ -31,12 +32,13 @@ POPC2.prototype.prepareBrowseSelectOptions = function () {
 	let index = this.VARS.SEARCH_INDEX;
 	for (let i=0; i<index.length; i++) {
 		let entry = index[i];
-		let composer    = entry.COM    || "";
-		let century     = entry.cenid  || "";
-		let siglum      = entry.siglum || "";
-		let genre       = entry.AGN    || "";
-		let key         = entry.key    || "";
-		let nationality = entry.CNT    || "";
+		let composer    = entry.COM        || "";
+		let century     = entry.cenid      || "";
+		let siglum      = entry.siglum     || "";
+		let ain         = entry.AIN        || "";
+		let genre       = entry.AGN        || "";
+		let key         = entry.key        || "";
+		let nationality = entry.CNT        || "";
 		if (century) {
 			century = century.replace(/:.*/, "");
 			if (!century.match(/^1[5678]xx$/)) {
@@ -63,6 +65,21 @@ POPC2.prototype.prepareBrowseSelectOptions = function () {
 				data.siglum[siglum]++;
 			} else {
 				data.siglum[siglum] = 1;
+			}
+		}
+		if (ain) {
+			let ains = ain.split(/\s+/);
+			for (let j=0; j<ains.length; j++) {
+				if (ains[j].match(/^[a-z]/)) {
+					if (ains[j] === "empty") {
+						continue;
+					}
+					if (data.instrument[ains[j]]) {
+						data.instrument[ains[j]]++;
+					} else {
+						data.instrument[ains[j]] = 1;
+					}
+				}
 			}
 		}
 		if (genre) {

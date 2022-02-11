@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			popc2.prepareBrowseSelectOptions();
 			popc2.loadBookmarksFromLocalStorage();
 			popc2.downloadSiglumIndex();
+			popc2.downloadInstrumentIndex();
 
 			if (popc2.VARS.WORK_ID) {
 				// Display of work page handled by downloadComposerIndex().

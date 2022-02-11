@@ -38,6 +38,7 @@ POPC2.prototype.buildBrowseFilters = function (index) {
 	this.buildCenturyFilter(index);
 	this.buildSiglumFilter(index);
 	this.buildGenreFilter(index);
+	this.buildInstrumentFilter(index);
 	this.buildNationalityFilter(index);
 	this.buildTitleFilter();
 	this.buildLyricsFilter();

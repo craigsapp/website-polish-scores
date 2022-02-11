@@ -60,6 +60,10 @@ function POPC2() {
 	// downloaded from {{ site.siglum_index}}.  Indexed by siglum (country-library).
 	this.VARS.SIGLUM_INDEX = {};
 
+	// INSTRUMENT_INDEX -- A list of Humdrum instrument codes and English/Polish names.
+	// downloaded from {{ site.instrument_index}}.  Indexed by instrument code.
+	this.VARS.INSTRUMENT_INDEX = {};
+
 
 	//////////////////////////////
 	//
@@ -264,6 +268,8 @@ function POPC2() {
 		composer_index_popc2:"{{ site.composer_index_popc2}}",
 
 		siglum_index:        "{{ site.siglum_index         }}",
+
+		instrument_index:    "{{ site.instrument_index     }}",
 
 		pitch_index:         "{{ site.pitch_index_popc2    }}", // active pitch index
 		pitch_index_popc1:   "{{ site.pitch_index_popc1    }}",

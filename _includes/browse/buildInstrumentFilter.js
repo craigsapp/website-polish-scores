@@ -67,9 +67,19 @@ POPC2.prototype.buildInstrumentFilter = function (index, target) {
 
 	let limitedKeys = Object.getOwnPropertyNames(instruments);
 	let fullKeys    = Object.getOwnPropertyNames(this.VARS.BROWSE_MENU_OPTIONS.instrument);
+	let keys        = fullKeys;
 
-	fullKeys.sort(function(a, b) {
-		return a.localeCompare(b);
+	let tinstruments = [];  // Translate instruments into active language.
+	for (let i=0; i<fullKeys.length; i++) {
+		let entry = {};
+		entry.value = fullKeys[i];
+		entry.count = instruments[fullKeys[i]];
+		entry.title = this.getTranslation(fullKeys[i]);
+		tinstruments.push(entry);
+	}
+
+	tinstruments.sort(function(a, b) {
+		return a.title.localeCompare(b.title);
 	});
 
 	// In the future allow multiple instruments to be selected.
@@ -85,12 +95,10 @@ POPC2.prototype.buildInstrumentFilter = function (index, target) {
 	output += ` [${limitedKeys.length}]`;
 	output += "</option>\n";
 
-	for (let i=0; i<fullKeys.length; i++) {
-		output += '<option value="';
-		let instrument = fullKeys[i];
-		let displayInstrument = this.getTranslation(instrument);
-		output += instrument.replace(/"/g, '\\"');
-		output += '"'
+	for (let i=0; i<tinstruments.length; i++) {
+		let instrument = tinstruments[i];
+		let displayInstrument = tinstruments[i].title;
+		output += `<option value="${instrument}"`;
 		if (selectedInstrument === instrument) {
 			output += " selected";
 		}

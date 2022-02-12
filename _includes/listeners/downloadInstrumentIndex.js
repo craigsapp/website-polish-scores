@@ -35,7 +35,7 @@ POPC2.prototype.downloadInstrumentIndex = function () {
 					this.VARS.TRANSLATIONS[entry.TAG] = entry;
 				}
 			}
-
+			that.buildInstrumentFilter();
 			that.DebugMessage("DOWNLOADED INSTRUMENT INDEX FROM " + url, "lightblue");
 		})
 		.catch(err => { console.error("downloadInstrumentIndex:", err); });

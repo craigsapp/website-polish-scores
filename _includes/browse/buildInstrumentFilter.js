@@ -104,8 +104,8 @@ POPC2.prototype.buildInstrumentFilter = function (index, target) {
 		}
 		output += '>';
 		output += displayInstrument;
-		if (instruments[instrument]) {
-			output += ` (${instruments[instrument]})`;
+		if (instrument.count) {
+			output += ` (${instrument.count})`;
 		}
 		output += "</option>\n";
 	}

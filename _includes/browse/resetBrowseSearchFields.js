@@ -27,6 +27,7 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	var composerElement    = document.querySelector("select.filter.composer");
 	var siglumElement      = document.querySelector("select.filter.siglum");
 	var genreElement       = document.querySelector("select.filter.genre");
+	var instrumentElement  = document.querySelector("select.filter.instrument");
 	var nationalityElement = document.querySelector("select.filter.nationality");
 	var titleElement       = document.querySelector("input.filter.title");
 	var lyricsElement      = document.querySelector("input.filter.lyrics");
@@ -45,6 +46,9 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	}
 	if (genreElement) {
 		genreElement.value = "";
+	}
+	if (instrumentElement) {
+		instrumentElement.value = "";
 	}
 	if (tonicElement) {
 		tonicElement.value = "";

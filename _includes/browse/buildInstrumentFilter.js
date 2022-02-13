@@ -98,8 +98,8 @@ POPC2.prototype.buildInstrumentFilter = function (index, target) {
 	for (let i=0; i<tinstruments.length; i++) {
 		let instrument = tinstruments[i];
 		let displayInstrument = tinstruments[i].title;
-		output += `<option value="${instrument}"`;
-		if (selectedInstrument === instrument) {
+		output += `<option value="${instrument.value}"`;
+		if (selectedInstrument === instrument.value) {
 			output += " selected";
 		}
 		output += '>';

@@ -77,8 +77,13 @@ POPC2.prototype.buildSiglumFilter = function (index, target) {
 	output += "</option>\n";
 
 	for (let i=0; i<fullKeys.length; i++) {
-		output += '<option value="';
 		let siglum = fullKeys[i];
+		let count = sigla[siglum];
+		output += '<option'
+		if (!count) {
+			output += ' disabled';
+		}
+		output += ' value="';
 		let displaySiglum = siglum;
 		output += siglum.replace(/"/g, '\\"');
 		output += '"'

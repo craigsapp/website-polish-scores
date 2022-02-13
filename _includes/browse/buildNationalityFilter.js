@@ -84,7 +84,11 @@ POPC2.prototype.buildNationalityFilter = function (index, target) {
 	output += "</option>\n";
 
 	for (let i=0; i<tnationalities.length; i++) {
-		output += '<option value="';
+		output += '<option'
+		if (!tnationalities[i].count) {
+			output += ' disabled';
+		}
+		output += ' value="';
 		output += tnationalities[i].value;
 		output += '"'
 		if (selectedNationality === tnationalities[i].value) {

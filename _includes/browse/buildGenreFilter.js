@@ -93,7 +93,11 @@ POPC2.prototype.buildGenreFilter = function (index, target) {
 	output += "</option>\n";
 
 	for (let i=0; i<tgenres.length; i++) {
-		output += '<option value="';
+		output += '<option';
+		if (!tgenres[i].count) {
+			output += ' disabled';
+		}
+		output += ' value="';
 		output += tgenres[i].value;
 		output += '"'
 		if (selectedGenre === tgenres[i].value) {

@@ -37,7 +37,6 @@ POPC2.prototype.filterByMode = function (input) {
 		} else if (target === "min") {
 			re = new RegExp("^[a-g]");
 		} else {
-console.error("MODE TARGET", target);
 			re = new RegExp("\\b" + target + "\\b");
 		}
 		for (let i=0; i<input.length; i++) {

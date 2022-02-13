@@ -105,7 +105,11 @@ POPC2.prototype.buildModeFilter = function (index, target) {
 	output += "</option>\n";
 
 	for (let i=0; i<tmodes.length; i++) {
+		let count = tmodes[i].count;
 		output += '<option value="';
+		if (!count) {
+			output += ' disabled';
+		}
 		output += tmodes[i].value;
 		output += '"'
 		if (selectedMode === tmodes[i].value) {
@@ -113,8 +117,8 @@ POPC2.prototype.buildModeFilter = function (index, target) {
 		}
 		output += '>';
 		output += tmodes[i].title.replace("ZZZZZ ", "");
-		if (tmodes[i].count) {
-			output += ` (${tmodes[i].count})`;
+		if (count) {
+			output += ` (${count})`;
 		}
 		output += "</option>\n";
 	}

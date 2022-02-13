@@ -80,10 +80,14 @@ POPC2.prototype.buildComposerFilter = function (index, target) {
 	output += "</option>\n";
 
 	for (let i=0; i<fullKeys.length; i++) {
-		output += '<option value="';
 		let composer = fullKeys[i];
 		let count = composers[composer] || 0;
 		let displayComposer = composer;
+		output += '<option'
+		if (!count) {
+			output += ' disabled';
+		}
+		output += ' value="';
 		if ((displayComposer === "Anonim") || (displayComposer === "anonim")) {
 			displayComposer = this.getTranslation("Anonymus");
 		}

@@ -44,25 +44,28 @@ POPC2.prototype.buildTonicFilter = function (index, target) {
 		for (let i=0; i<index.length; i++) {
 			let tonic = "";
 			if (index[i].key) {
-				tonic = index[i].key.replace(/:.*/, "");
+				tonic = index[i].key.replace(/:.*/, "").toUpperCase();
 			}
 			if (!tonic) {
 				continue;
 			}
 			tonic = tonic.trim();
-			tonics[tonic]++;
+			if (tonics[tonic]) {
+				tonics[tonic]++;
+			} else {
+				tonics[tonic] = 1;
+			}
 		}
 	}
 
 	let limitedKeys = Object.getOwnPropertyNames(tonics);
 	let fullKeys    = Object.getOwnPropertyNames(this.VARS.BROWSE_MENU_OPTIONS.tonic);
-	let keys        = fullKeys;
 
 	let ttonics = [];  // Translate tonics into active language.
 	for (let i=0; i<fullKeys.length; i++) {
 		let entry = {};
 		entry.value = fullKeys[i];
-		entry.count = tonics[fullKeys[i]];
+		entry.count = tonics[limitedKeys[i]] || 0;
 		let tkey = fullKeys[i].toUpperCase().replace(/-/, "-flat").replace(/#/, "-sharp");
 		tkey = `tonic_${tkey}`;
 		entry.title = this.getTranslation(tkey);
@@ -155,7 +158,11 @@ POPC2.prototype.buildTonicFilter = function (index, target) {
 	output += "</option>\n";
 
 	for (let i=0; i<ttonics.length; i++) {
-		output += '<option value="';
+		output += '<option';
+		if (!ttonics[i].count) {
+			output += ' disabled';
+		}
+		output += ' value="';
 		output += ttonics[i].value;
 		output += '"'
 		if (selectedTonic === ttonics[i].value) {

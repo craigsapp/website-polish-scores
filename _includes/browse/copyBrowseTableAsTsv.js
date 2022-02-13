@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Nov 26 04:59:10 CET 2021
-// Last Modified: Fri Nov 26 04:59:13 CET 2021
+// Last Modified: Sat Feb 12 16:46:28 PST 2022
 // Filename:      _includes/browse/copyBrowseTableAsTsv.js
 // Used by:       
 // Included in:   _includes/browse/main.html
@@ -48,6 +48,11 @@ POPC2.prototype.copyBrowseTableAsTsv = function () {
 		output += "\t";
 	}
 	output += "Link";
+	output += "\tCenid";
+	output += "\tKey";
+	output += "\tInstrumentation";
+	output += "\tGenres";
+
 	output += "\n";
 
 	// Print table body:
@@ -75,8 +80,25 @@ POPC2.prototype.copyBrowseTableAsTsv = function () {
 		}
 		let url = `${window.location.origin}?id=${id}`;
 		output += url;
-		output += "\n";
 
+		// Copy other metadata that is not displayed in the search results table
+		output += "\t";
+		output += id;
+		let entry = null;
+		for (let j=0; j<this.VARS.SCORE_INDEX.length; j++) {
+			if (this.VARS.SCORE_INDEX[j].cenid === id) {
+				entry = this.VARS.SCORE_INDEX[j];
+			}
+		}
+		if (entry) {
+			output += "\t";
+			output += entry.key;
+			output += "\t";
+			output += entry.AIN;
+			output += "\t";
+			output += entry.AGN;
+		}
+		output += "\n";
 	}
 
 	this.CopyToClipboard(output);

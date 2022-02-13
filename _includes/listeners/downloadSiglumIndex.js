@@ -113,6 +113,7 @@ POPC2.prototype.downloadSiglumIndex = function () {
 				}
 			}
 
+			that.buildSiglumFilter();
 			that.DebugMessage("DOWNLOADED SIGLUM INDEX FROM " + url, "plum");
 		})
 		.catch(err => { console.error("downloadSiglumIndex:", err); });

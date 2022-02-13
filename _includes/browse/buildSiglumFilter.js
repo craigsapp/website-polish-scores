@@ -80,6 +80,9 @@ POPC2.prototype.buildSiglumFilter = function (index, target) {
 		let siglum = fullKeys[i];
 		let count = sigla[siglum];
 		output += '<option'
+		output += ' title="';
+		output += this.getTranslation(`${siglum}_Name_short`).replace(/"/g, "");
+		output += '"';
 		if (!count) {
 			output += ' disabled';
 		}

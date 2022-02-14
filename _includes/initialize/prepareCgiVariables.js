@@ -31,9 +31,27 @@ POPC2.prototype.prepareCgiVariables = function () {
 		return;
 	}
 
-	if (cgi.k === "undefined") {
-		// show keyscape on workpages:
-		// Off by default so initial toggling should make visible:
+	if (typeof cgi.k !== "undefined") {
+		// show keyscape on workpages
+		// Off by default so initial toggling should make visible
+		if (cgi.k.match(/r/)) {
+			// Check the relative keyscape checkbox:
+			let relement = document.querySelector("#checkbox-relative");
+			if (relement) {
+				relement.checked = true;
+			}
+		}
+		if (cgi.k.match(/c/)) {
+			// Check the cleaned keyscape checkbox:
+			let celement = document.querySelector("#checkbox-cleaned");
+			if (celement) {
+				celement.checked = true;
+			}
+		}
+
+		// The keyscape needs to be displayed last so that
+		// only one keyscape image is downloaded and displayed
+		// initially.
 		popc2.toggleSubpageDisplay('keyscape')
 	}
 

@@ -72,10 +72,10 @@ POPC2.prototype.showDataInNewTab = function (event, data_type, location) {
 		if (matches) {
 			// POPC2 source, where scores are organized into siglum folders.
 			let siglum = matches[1];
-			url = `${this.SETTINGS.popc2_github_addr}/blob/main/${siglum}/kern/${filename}`;
+			url = `${this.SETTINGS.github_addr_popc2}/blob/main/${siglum}/kern/${filename}`;
 		} else {
 			// POPC1 source
-			url = `${this.SETTINGS.popc2_github_addr}/blob/main/kern/${filename}`;
+			url = `${this.SETTINGS.github_addr_popc2}/blob/main/kern/${filename}`;
 		}
 	} else if (location === "vhv") {
 		let encode = encodeURIComponent(`${this.SETTINGS.data_addr}/${this.VARS.WORK_ID}.${ext2}`);

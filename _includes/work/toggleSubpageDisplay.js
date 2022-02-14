@@ -61,6 +61,9 @@ POPC2.prototype.toggleSubpageDisplay = function (type) {
 	if (showWorkInfo && workinfo) {
 		workinfo.classList.remove("hidden");
 	}
+
+	this.updateWorkUrlDisplay();
+
 };
 
 Object.defineProperty(POPC2.prototype.toggleSubpageDisplay, "name", { value: "toggleSubpageDisplay" });

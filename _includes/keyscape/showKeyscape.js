@@ -53,6 +53,8 @@ POPC2.prototype.showKeyscape = function (id) {
 	let ielement = document.querySelector("#keyscape img");
 	ielement.src = url;
 
+	// Update the URL if one of the checkboxes has changed:
+	this.updateWorkUrlDisplay();
 };
 
 Object.defineProperty(POPC2.prototype.showKeyscape, "name", { value: "showKeyscape" });

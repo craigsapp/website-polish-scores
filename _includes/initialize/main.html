@@ -28,6 +28,8 @@ popc2.VARS.MARKER = new HnpSvg();
 {% include initialize/DebugMessageFunction.js        %}
 {% include initialize/DebugMessageFunctionVerbose.js %}
 
+{% include initialize/prepareCgiVariables.js         %}
+
 popc2.DebugMessage("Created popc2 interface", "chartreuse");
 
 {% include initialize/getCgiParameters.js            %}

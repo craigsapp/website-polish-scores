@@ -17,7 +17,6 @@ POPC2.prototype.addAnalysisOptions = function (options) {
 	this.DebugMessageFunction();
 
 	let filter = this.getAnalysisFilter();
-console.warn("FILTER FOUND HERE IS", filter);
 	if (!filter) {
 		return options;
 	}
@@ -27,8 +26,6 @@ console.warn("FILTER FOUND HERE IS", filter);
 	} else {
 		options.fiter = [ filter ];
 	}
-
-console.warn("OPTIONS AFTER ADDING ANALYSIS ONES", options);
 
 	return options;
 };

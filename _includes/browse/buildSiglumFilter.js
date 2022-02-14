@@ -33,7 +33,8 @@ POPC2.prototype.buildSiglumFilter = function (index, target) {
 	}
 	let element = document.querySelector(target);
 	if (!element) {
-		console.error("ERROR: Cannot find target", target);
+		// This case can happen when a work page is the initial entry point to the website.
+		// console.error("ERROR: Cannot find target", target);
 		return;
 	}
 

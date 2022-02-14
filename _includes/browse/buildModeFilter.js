@@ -44,25 +44,36 @@ POPC2.prototype.buildModeFilter = function (index, target) {
 		for (let i=0; i<index.length; i++) {
 			let mode = "";
 			if (index[i].key) {
-				mode = index[i].key.replace(/:.*/, "");
+				let matches;
+				matches = index[i].key.match(/:(.*)/);
+				if (matches) {
+					mode = matches[1];
+				} else if (index[i].key.match(/^[A-G]/)) {
+					mode = "maj";
+				} else if (index[i].key.match(/^[a-g]/)) {
+					mode = "min";
+				}
 			}
 			if (!mode) {
 				continue;
 			}
 			mode = mode.trim();
-			modes[mode]++;
+			if (modes[mode]) {
+				modes[mode]++;
+			} else {
+				modes[mode] = 1;
+			}
 		}
 	}
 
 	let limitedKeys = Object.getOwnPropertyNames(modes);
 	let fullKeys    = Object.getOwnPropertyNames(this.VARS.BROWSE_MENU_OPTIONS.mode);
-	let keys        = fullKeys;
 
 	let tmodes = [];  // Translate modes into active language.
 	for (let i=0; i<fullKeys.length; i++) {
 		let entry = {};
 		entry.value = fullKeys[i];
-		entry.count = modes[fullKeys[i]];
+		entry.count = modes[limitedKeys[i]];
 		let tkey = fullKeys[i];
 		entry.title = this.getTranslation(tkey);
 		tmodes.push(entry);
@@ -111,7 +122,11 @@ POPC2.prototype.buildModeFilter = function (index, target) {
 
 	for (let i=0; i<tmodes.length; i++) {
 		let count = tmodes[i].count;
-		output += '<option value="';
+		output += '<option'
+		if (!count) {
+			output += ' disabled';
+		}
+		output += ' value="';
 		if (!count) {
 			output += ' disabled';
 		}

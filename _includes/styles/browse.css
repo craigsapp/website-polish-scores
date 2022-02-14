@@ -49,7 +49,7 @@
 }
 
 #clear-button.browse-highlight {
-	color: {{site.browse_highlight_color }};
+	color: {{ site.browse_highlight_color }};
 	opacity: 100%;
 }
 
@@ -72,7 +72,7 @@
 
 span.mark {
 	font-weight: bold;
-	color: {{ site.h1_color }};
+	color: {{ site.text_match_color }};
 }
 
 

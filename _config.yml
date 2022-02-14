@@ -107,6 +107,9 @@ button_hover_color: "limegreen"
 # navigator_hover_color: Color when hovering over top navigator buttons.
 navigator_hover_color: "#dc143c"
 
+# text_match_color: Color to highlight matches in lyrics on browse page.
+text_match_color: "#dc143c"
+
 # selected_langauge_color: Color to highlight the selected language in the navigator.
 selected_language_color: "goldenrod"
 

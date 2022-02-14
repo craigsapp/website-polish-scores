@@ -150,7 +150,12 @@ POPC2.prototype.buildTonicFilter = function (index, target) {
 		selectedTonic = this.VARS.SEARCH.tonic;
 	}
 
-	let output = "<select class='filter tonic'>\n";
+	let output = "<select class='filter tonic";
+	if (selectedTonic) {
+		output += " browse-highlight";
+		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
+	}
+	output += "'>\n";
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_tonic");

@@ -76,7 +76,12 @@ POPC2.prototype.buildNationalityFilter = function (index, target) {
 		selectedNationality = this.VARS.SEARCH.nationality;
 	}
 
-	let output = "<select class='filter nationality'>\n";
+	let output = "<select class='filter nationality";
+	if (selectedNationality) {
+		output += " browse-highlight";
+		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
+	}
+	output += "'>\n";
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_nationality");

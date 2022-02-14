@@ -97,7 +97,12 @@ POPC2.prototype.buildModeFilter = function (index, target) {
 		selectedMode = this.VARS.SEARCH.mode;
 	}
 
-	let output = "<select class='filter mode'>\n";
+	let output = "<select class='filter mode";
+	if (selectedMode) {
+		output += " browse-highlight";
+		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
+	}
+	output += "'>\n";
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_mode");

@@ -88,7 +88,12 @@ POPC2.prototype.buildInstrumentFilter = function (index, target) {
 		selectedInstrument = this.VARS.SEARCH.instrument;
 	}
 
-	let output = "<select class='filter instrument'>\n";
+	let output = "<select class='filter instrument";
+	if (selectedInstrument) {
+		output += " browse-highlight";
+		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
+	}
+	output += "'>\n";
 
 	output += "<option value=''>";
 	output += this.getTranslation("instrument");

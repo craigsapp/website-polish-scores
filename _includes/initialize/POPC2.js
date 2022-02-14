@@ -85,6 +85,9 @@ function POPC2() {
 	// SEARCH -- List of parameters for browse page searching.
 	this.VARS.SEARCH = {};
 
+	// BROWSE_DELETE_HIGHLIGHT -- boolean for highlighting delete button to clear parameters.
+	this.VARS.BROWSE_DELETE_HIGHLIGHT = false;
+
 	// SEARCH_FREEZE -- State variable used to avoid recursive
 	// updating of search drop-down menus when searching.
 	this.VARS.SEARCH_FREEZE = false;

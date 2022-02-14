@@ -20,6 +20,15 @@ textarea:focus, input:focus select:focus {
 	outline: none;
 }
 
+
+select.browse-highlight {
+	background: {{site.browse_highlight_color }};
+}
+
+select.filter.composer {
+	width: 325px;
+}
+
 select {
 	background: {{ site.h1_color }};
 	border-radius: 15px;

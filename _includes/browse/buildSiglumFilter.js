@@ -69,7 +69,12 @@ POPC2.prototype.buildSiglumFilter = function (index, target) {
 		selectedSiglum = this.VARS.SEARCH.siglum;
 	}
 
-	let output = "<select class='filter siglum'>\n";
+	let output = "<select class='filter siglum";
+	if (selectedSiglum) {
+		output += " browse-highlight";
+		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
+	}
+	output += "'>\n";
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_library");

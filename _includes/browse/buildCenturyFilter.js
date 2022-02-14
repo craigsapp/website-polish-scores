@@ -74,7 +74,12 @@ POPC2.prototype.buildCenturyFilter = function (index, target) {
 		selectedCentury = this.VARS.SEARCH.century;
 	}
 
-	let output = "<select class='filter century'>\n";
+	let output = "<select class='filter century";
+	if (selectedCentury) {
+		output += " browse-highlight";
+		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
+	}
+	output += "'>\n";
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_century");

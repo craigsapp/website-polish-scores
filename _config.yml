@@ -98,6 +98,9 @@ h3_color: "#aaaaaa"
 #th_color: "#a71b1d"
 th_color: "#312783"
 
+#browse_highlight_color: Color for active select menus on browse page.
+browse_highlight_color: "#0b6166"
+
 # button_hover_color: Color for buttons when hovering over them.
 button_hover_color: "limegreen"
 

@@ -85,7 +85,12 @@ POPC2.prototype.buildGenreFilter = function (index, target) {
 		selectedGenre = this.VARS.SEARCH.genre;
 	}
 
-	let output = "<select class='filter genre'>\n";
+	let output = "<select class='filter genre";
+	if (selectedGenre) {
+		output += " browse-highlight";
+		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
+	}
+	output += "'>\n";
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_genre");

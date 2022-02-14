@@ -43,6 +43,10 @@ POPC2.prototype.buildTitleFilter = function (target) {
 		selectedTitle = lastTitle;
 	}
 
+	if (!selectedTitle.match(/^\s*$/)) {
+		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
+	}
+
 	let output = "<input type='text' class='filter title'";
 	output += ` placeholder='${this.getTranslation("title_placeholder")}'`;
 	output += ` value="${selectedTitle}"`;

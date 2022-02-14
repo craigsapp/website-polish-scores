@@ -43,6 +43,10 @@ POPC2.prototype.buildLyricsFilter = function (target) {
 		selectedLyrics = lastLyrics;
 	}
 
+	if (!selectedLyrics.match(/^\s*$/)) {
+		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
+	}
+
 	let output = "<input type='text' class='filter lyrics'";
 	output += ` placeholder='${this.getTranslation("lyrics_placeholder")}'`;
 	output += ` value="${selectedLyrics}"`;

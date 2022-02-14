@@ -34,6 +34,8 @@ POPC2.prototype.buildBrowseFilters = function (index) {
 		selector = null;
 	}
 
+	this.VARS.BROWSE_DELETE_HIGHLIGHT = false;
+
 	this.buildComposerFilter(index);
 	this.buildCenturyFilter(index);
 	this.buildSiglumFilter(index);
@@ -45,6 +47,17 @@ POPC2.prototype.buildBrowseFilters = function (index) {
 	this.buildTitleFilter();
 	this.buildLyricsFilter();
 	this.buildPitchFilter();
+
+	// Highlight the browse-clear button if there are any
+	// search fields on the browse page that are not empty:
+	let clearElement = document.querySelector("#clear-button");
+	if (clearElement) {
+		if (this.VARS.BROWSE_DELETE_HIGHLIGHT) {
+			clearElement.classList.add("browse-highlight");
+		} else {
+			clearElement.classList.remove("browse-highlight");
+		}
+	}
 
 	if (selector) {
 		// Restore focus on the title/lyrics input:

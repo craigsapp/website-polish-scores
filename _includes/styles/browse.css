@@ -44,8 +44,17 @@
 }
 
 #moreless-button:hover,
-#clear-button:hover {
+#clear-button.browse-highlight:hover {
 	color: {{ site.button_hover_color }};
+}
+
+#clear-button.browse-highlight {
+	color: {{site.browse_highlight_color }};
+	opacity: 100%;
+}
+
+#clear-button {
+	opacity: 25%;
 }
 
 #results-count,

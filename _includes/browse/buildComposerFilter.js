@@ -72,7 +72,12 @@ POPC2.prototype.buildComposerFilter = function (index, target) {
 		selectedComposer = lastComposer;
 	}
 
-	let output = "<select class='filter composer'>\n";
+	let output = "<select class='filter composer";
+	if (selectedComposer) {
+		output += " browse-highlight";
+		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
+	}
+	output += "'>\n";
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_composer");

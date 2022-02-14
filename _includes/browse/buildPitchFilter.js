@@ -37,6 +37,10 @@ POPC2.prototype.buildPitchFilter = function (target) {
 		selectedPitch = lastPitch;
 	}
 
+	if (!selectedPitch.match(/^\s*$/)) {
+		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
+	}
+
 	let output = "<input type='text' class='filter pitch'";
 	output += ` placeholder='${this.getTranslation("pitch_placeholder")}'`;
 	output += ` value="${selectedPitch}"`;

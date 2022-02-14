@@ -48,21 +48,7 @@ POPC2.prototype.toggleBookmarkDisplay = function () {
 
 	bstate = !bstate;
 	if (bstate) {
-		this.VARS.SEARCH_SORT_TYPE = "bookmark";
-		belement.classList.add("selected");
-		if (felement) {
-			felement.classList.add("hidden");
-		}
-		this.VARS.SEARCH_RESULTS = this.VARS.WORK_BOOKMARKS;
-		this.VARS.SEARCH_INDEX   = this.VARS.WORK_BOOKMARKS;
-		if (h1element) {
-			h1element.innerHTML = this.getTranslation("bookmarks");
-		}
-
-		// Turn off history if already selected:
-		if (helement) {
-			helement.classList.remove("selected");
-		}
+		this.setupBookmarkDisplay(belement, helement, felement, h1element);
 	} else {
 		this.VARS.SEARCH_SORT_TYPE = this.VARS.SAVED_SORT_TYPE;
 		belement.classList.remove("selected");

@@ -23,6 +23,23 @@ POPC2.prototype.displayBrowsePage = function () {
 	document.body.classList.remove("waiting");
 
 	this.DebugMessageFunction();
+
+	let helement = document.querySelector("#history-browse-button");
+	if (helement && helement.classList.contains("selected")) {
+		this.setupHistoryPage();
+		this.displayBrowseTable();
+		this.showResultsCount(this.VARS.SEARCH_INDEX);
+		return;
+	}
+
+	let belement = document.querySelector("#bookmark-browse-button");
+	if (belement && belement.classList.contains("selected")) {
+		this.setupBookmarkPage();
+		this.displayBrowseTable();
+		this.showResultsCount(this.VARS.SEARCH_INDEX);
+		return;
+	}
+
 	this.showNavigator("browse");
 	var telement = document.querySelector("#template-browse");
 	if (!telement) {

@@ -48,21 +48,7 @@ POPC2.prototype.toggleHistoryDisplay = function () {
 
 	hstate = !hstate;
 	if (hstate) {
-		this.VARS.SEARCH_SORT_TYPE = "history";
-		helement.classList.add("selected");
-		if (felement) {
-			felement.classList.add("hidden");
-		}
-		this.VARS.SEARCH_RESULTS = this.VARS.WORK_HISTORY;
-		this.VARS.SEARCH_INDEX   = this.VARS.WORK_HISTORY;
-		if (h1element) {
-			h1element.innerHTML = this.getTranslation("history");
-		}
-
-		// Turn off bookmark if already selected:
-		if (belement) {
-			belement.classList.remove("selected");
-		}
+		this.setupHistoryPage(helement, belement, felement, h1element);
 	} else {
 		this.VARS.SEARCH_SORT_TYPE = this.VARS.SAVED_SORT_TYPE;
 		helement.classList.remove("selected");

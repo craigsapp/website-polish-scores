@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Nov 26 04:59:10 CET 2021
-// Last Modified: Sat Feb 12 16:46:28 PST 2022
+// Last Modified: Mon Feb 14 18:22:29 PST 2022
 // Filename:      _includes/browse/copyBrowseTableAsTsv.js
 // Used by:       
 // Included in:   _includes/browse/main.html
@@ -27,7 +27,7 @@ POPC2.prototype.copyBrowseTableAsTsv = function () {
 	let headerElement = tableElement.querySelector("thead");
 	let headers       = headerElement.querySelectorAll("th");
 	let bodyElement   = tableElement.querySelector("tbody");
-	let rows          = bodyElement.querySelectorAll("tr");
+	let rows          = bodyElement.querySelectorAll("table.search-results tr");
 
 	// Print table header:
 	let output = "";
@@ -48,6 +48,12 @@ POPC2.prototype.copyBrowseTableAsTsv = function () {
 		output += "\t";
 	}
 	output += "Link";
+
+	let lyricMatches = bodyElement.querySelector("tr.lyrics");
+	if (lyricMatches) {
+		output += "\tLyric matches";
+	}
+
 	output += "\tCenid";
 	output += "\tKey";
 	output += "\tInstrumentation";
@@ -80,6 +86,18 @@ POPC2.prototype.copyBrowseTableAsTsv = function () {
 		}
 		let url = `${window.location.origin}?id=${id}`;
 		output += url;
+
+		// Copy lyrics matches if present:
+		if (lyricMatches) {
+			let row = rows[i+1];
+			let text = "";
+			if (row) {
+				let td = row.querySelector("td");
+				text += td.innerText;
+			}
+			output += "\t";
+			output += text;
+		}
 
 		// Copy other metadata that is not displayed in the search results table
 		output += "\t";

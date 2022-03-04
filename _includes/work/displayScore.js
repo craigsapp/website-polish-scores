@@ -35,6 +35,7 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 	this.storeWorkId(id);
 	this.displayWorkInfo(id);
 
+	let that = this;
 	let options = JSON.parse(JSON.stringify(this.VARS.HNP_OPTIONS));
 	options.source = "humdrum";
 	options.postFunction = target => popc2.HnpCallback(target);
@@ -47,7 +48,7 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 			console.log("HNP OPTIONS", options);
 		}
 		setTimeout(function() {
-			 document.body.classList.add("waiting");
+			that.ShowWaitingCursor();
 		}, 100);
 		displayHumdrum(options);
 		if (!noscrollQ) {
@@ -56,7 +57,6 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 	} else {
 		let url = `${this.SETTINGS.data_addr}/${id}.krn`;
 		this.DebugMessage("Downloading Humdrum score " + url, "yellow");
-		let that = this;
 		fetch(url)
 			.then(res => res.text())
 			.then(text => {
@@ -71,7 +71,7 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 					console.log("HNP OPTIONS", options);
 				}
 				setTimeout(function() {
-					document.body.classList.add("waiting");
+					that.ShowWaitingCursor();
 				}, 100);
 				displayHumdrum(options);
 				if (!noscrollQ) {

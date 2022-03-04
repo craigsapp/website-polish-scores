@@ -18,6 +18,7 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	if (!this.IsBrowsePage()) {
 		return;
 	}
+	this.ShowWaitingCursor();
 	this.VARS.SEARCH = {};
 
 	this.VARS.SEARCH_FREEZE = true;
@@ -74,7 +75,7 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	this.buildBrowseFilters();
 	this.doBrowseSearch();
 	this.DisplayComposerInfoPortrait();
-
+	this.ClearWaitingCursor();
 };
 
 Object.defineProperty(POPC2.prototype.resetBrowseSearchFields, "name", { value: "resetBrowseSearchFields" });

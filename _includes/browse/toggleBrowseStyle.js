@@ -28,8 +28,12 @@ POPC2.prototype.toggleBrowseStyle = function () {
 		this.showBrowseMore();
 		this.showShelfmarkColumn();
 	} else {
-		this.showBrowseLess();
-		this.hideShelfmarkColumn();
+		// disable minimal view for now:
+		// this.showBrowseLess();
+		// this.showBrowseLess();
+		// this.hideShelfmarkColumn();
+		this.showBrowseMore();
+		this.showShelfmarkColumn();
 	}
 };
 

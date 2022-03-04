@@ -18,7 +18,7 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 	// need to explicitly disable mmOutput = 1 set by the printing process.
 	oldOptions.mmOutput = 0;
 
-	document.body.classList.add("waiting");
+	this.ShowWaitingCursor();
 
 	format = format ? format : "letter";
 	orientation = orientation ? orientation : "portrait";
@@ -66,7 +66,7 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 			pdfFilename = "data.pdf";
 		}
 		saveAs(blob, pdfFilename);
-		document.body.classList.remove("waiting");
+		that.ClearWaitingCursor();
 	});
 
 	let scale = 95;

@@ -20,7 +20,7 @@ POPC2.prototype.displayBrowsePage = function () {
 	// Initial page load sets the cursor to "progress" (mostly for the
 	// workpage load which will take longer than the browse page).
 	// Remove the waiting class to stop the cursor spinning:
-	document.body.classList.remove("waiting");
+	this.ClearWaitingCursor();
 
 	this.DebugMessageFunction();
 

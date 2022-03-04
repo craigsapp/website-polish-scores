@@ -77,7 +77,7 @@ function POPC2() {
 	// BROWSE_STYLE -- Variable to keep track of more/less style to display
 	// browse form in.  Default is in less mode, but localStorage.BROWSE_STYLE
 	// will keep track of the desired style across multiple sessions.
-	this.VARS.BROWSE_STYLE = "less";
+	this.VARS.BROWSE_STYLE = "more";
 
 	// SEARCH_RESULTS -- The list of matches from the last search on the browse page.
 	this.VARS.SEARCH_RESULTS = [];

@@ -14,7 +14,7 @@
 {% endcomment %}
 
 POPC2.prototype.generatePdfSnapshot = function (format, orientation) {
-	document.body.classList.add("waiting");
+	this.ShowWaitingCursor();
 	var svg = document.querySelector("#humdrum-svg svg");
 	var svgwidth = svg.getAttribute("width");
 	var svgheight = svg.getAttribute("height");
@@ -85,6 +85,7 @@ POPC2.prototype.generatePdfSnapshot = function (format, orientation) {
 		layout:        orientation
 	});
 
+	var that = this;
 	var stream = pdf.pipe(blobStream());
 	stream.on('finish', function() {
 		var blob = stream.toBlob('application/pdf');
@@ -101,7 +102,7 @@ POPC2.prototype.generatePdfSnapshot = function (format, orientation) {
 			pdfFilename = "snapshot.pdf";
 		}
 		saveAs(blob, pdfFilename);
-		document.body.classList.remove("waiting");
+		that.ClearWaitingCursor();
 		//$('html').css('cursor', 'auto');
 	});
 

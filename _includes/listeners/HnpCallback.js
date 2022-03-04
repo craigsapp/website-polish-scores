@@ -16,18 +16,19 @@
 POPC2.prototype.HnpCallback = function (humid) {
 	this.DebugMessageFunction();
 
-	document.body.classList.remove("waiting");
+	this.ClearWaitingCursor();
+	let that = this;
 	setTimeout(function() {
- 		document.body.classList.remove("waiting");
+		that.ClearWaitingCursor();
 	}, 80);
 	setTimeout(function() {
- 		document.body.classList.remove("waiting");
+		that.ClearWaitingCursor();
 	}, 85);
 	setTimeout(function() {
- 		document.body.classList.remove("waiting");
+		that.ClearWaitingCursor();
 	}, 95);
 	setTimeout(function() {
- 		document.body.classList.remove("waiting");
+		that.ClearWaitingCursor();
 	}, 120);
 
 	var svg = document.querySelector(`#${humid}-svg`);

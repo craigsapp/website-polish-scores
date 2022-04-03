@@ -26,7 +26,7 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) 
 		relativeQ = true;
 	}
 
-	// console.log("HEXCOLOR", hexColor);
+	console.log("HEXCOLOR", hexColor);
 
 	if (relativeQ) {
 
@@ -47,6 +47,7 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) 
 		else if (hexColor == '#ff6304') { keyText = 'VII'; }
 		else if (hexColor == '#fe6f08') { keyText = 'VII'; }
 		else if (hexColor == '#ff6f03') { keyText = 'VII'; }
+		else if (hexColor == '#ff6e03') { keyText = 'VII'; }
 		else if (hexColor == '#fe6f04') { keyText = 'VII'; }
 
 		else if (hexColor == '#00a200') { keyText = 'i'; }
@@ -92,6 +93,7 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) 
 		else if (hexColor == '#ff6304') { keyText = 'H Dur'; }
 		else if (hexColor == '#fe6f08') { keyText = 'H Dur'; }
 		else if (hexColor == '#ff6f03') { keyText = 'H Dur'; }
+		else if (hexColor == '#ff6e03') { keyText = 'H Dur'; }
 		else if (hexColor == '#fe6f04') { keyText = 'H Dur'; }
 
 		else if (hexColor == '#00a200') { keyText = 'C Moll'; }
@@ -138,6 +140,7 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) 
 		else if (hexColor == '#ff6304') { keyText = 'B major'; }
 		else if (hexColor == '#fe6f08') { keyText = 'B major'; }
 		else if (hexColor == '#ff6f03') { keyText = 'B major'; }
+		else if (hexColor == '#ff6e03') { keyText = 'B major'; }
 		else if (hexColor == '#fe6f04') { keyText = 'B major'; }
 
 		else if (hexColor == '#00a200') { keyText = 'C minor'; }

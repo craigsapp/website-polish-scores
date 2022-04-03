@@ -52,6 +52,15 @@
 	cursor: pointer;
 }
 
+.fa-key {
+	-moz-transform: rotate(90deg) scale(1, -1);
+	-webkit-transform: rotate(90deg) scale(1, -1);
+	-o-transform: rotate(90deg) scale(1, -1);
+	-ms-transform: rotate(90deg) scale(1, -1);
+	transform: rotate(135deg) scale(1, -1);
+}
+
+
 #incipit-button {
 	/* Expand/compress icons are not the same width, so
 	 * put them in a container with a constant width

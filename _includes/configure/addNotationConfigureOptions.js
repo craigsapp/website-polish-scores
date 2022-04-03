@@ -9,7 +9,7 @@
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
-// Description:   Get notation rendering optios from notation configuration
+// Description:   Get notation rendering options from notation configuration
 //                subpage on the workpage.
 //
 {% endcomment %}

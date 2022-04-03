@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 19:24:32 PDT 2021
-// Last Modified: Wed Oct 13 00:39:54 PDT 2021
+// Last Modified: Sat Apr  2 19:20:31 PDT 2022
 // Filename:      _includes/work/displayScore.js
 // Used by:
 // Included in:   _includes/work/main.html
@@ -40,6 +40,7 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 	options.source = "humdrum";
 	options.postFunction = target => popc2.HnpCallback(target);
 	options = this.addNotationConfigureOptions(options);
+	options = this.addTempoScalingOption(options);
 	options = this.addAnalysisOptions(options);
 	options = this.addWorkPageSearchOptions(options);
 	if (this.VARS.HUMDRUM[id]) {

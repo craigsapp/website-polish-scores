@@ -25,22 +25,30 @@
 		trans="display_incipit" 
 		action="popc2.toggleMusicIncipit()"
 	%}
-	{% include macro/checkbox.html id="checkbox-systembreaks" trans="system_breaks"  %}
 
 	{% comment %}
+		{% include macro/checkbox.html id="checkbox-systembreaks" trans="system_breaks"  %}
 		{% include macro/checkbox.html id="checkbox-sic" trans="correct_sic"  %}
 	{% endcomment %}
 
-	<div id="filter-form" class="checkboxes">
+	<span class="filter-form checkboxes" style="display:inline-block; margin-top:5px;">
 		<label class="container">
-			<span id="dummy-span">&nbsp;</span>
+			<span class="dummy-span">&nbsp;</span>
+			<input type="checkbox" id="checkbox-tempo-scaling" onchange="popc2.displayScore()">
+			<span class="checkmark"></span>
+		</label>
+		<input id="tempo-scaling-input" class="trans" data-transatt="placeholder:tempo_scaling_placeholder" style="width:150px;display:inline-block" type="text" placeholder="" value="">%
+	</span>
+
+	<span class="filter-form checkboxes" style="display:inline-block; margin-top:-10px;">
+		<label class="container">
+			<span class="dummy-span">&nbsp;</span>
 			<input type="checkbox" id="checkbox-filter" onchange="popc2.displayScore()">
 			<span class="checkmark"></span>
 		</label>
 		<input id="filter-input" class="trans" data-transatt="placeholder:filter_placeholder" style="display:block" type="text" placeholder="" value="">
-	</div>
+	</span>
 
 </div>
-
 
 

@@ -12,14 +12,6 @@
 //
 {% endcomment %}
 
-div.checkboxes {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	align-content: flex-start;
-	height: 110px;
-}
-
 span.ctext {
 	display: inline-block;
 }

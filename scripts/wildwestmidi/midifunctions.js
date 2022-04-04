@@ -10,7 +10,7 @@ LASTLINE = -1;
 // otherwise, start from the start of the music.
 //
 
-function playCurrentMidi(startime, stoptime) {
+function playCurrentMidi(starttime, stoptime) {
 	if (popc2.VARS.CURSOR_NOTE && popc2.VARS.CURSOR_NOTE.id) {
 		let id = popc2.VARS.CURSOR_NOTE.id;
 		vrvWorker.getTimeForElement(id)
@@ -18,7 +18,7 @@ function playCurrentMidi(startime, stoptime) {
 			play_midi(time);
 		});
 	} else {
-		play_midi(startime, stoptime);
+		play_midi(starttime, stoptime);
 	}
 } 
 

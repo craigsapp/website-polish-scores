@@ -127,6 +127,16 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	element = document.querySelector("#checkbox-tightspacing");
+	options.spacingLinear = 0.25;
+	options.spacingNonLinear = 0.60;
+	if (element) {
+		if (element.checked) {
+			options.spacingLinear = 0.1;
+			options.spacingNonLinear = 0.3;
+		}
+	}
+
 	return options;
 };
 

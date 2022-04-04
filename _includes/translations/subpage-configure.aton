@@ -57,6 +57,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		tight_spacing
+@EN:		Tight spacing
+@PL:		Tight spacing
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		display_incipit
 @EN:		First system only
 @PL:		Tylko pierwszy system

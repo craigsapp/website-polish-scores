@@ -3,12 +3,6 @@
 // vim: ts=3
 
 LASTLINE = -1;
-// used to highlight the current note at the location of the cursor.
-let CursorNote;
-
-// RestoreCursorNote: Used to go back to a highlighted note after a redraw.
-// This is an ID string rather than an element.
-let RestoreCursorNote;
 
 //////////////////////////////
 //
@@ -17,8 +11,8 @@ let RestoreCursorNote;
 //
 
 function playCurrentMidi(startime, stoptime) {
-	if (CursorNote && CursorNote.id) {
-		let id = CursorNote.id;
+	if (popc2.VARS.CURSOR_NOTE && popc2.VARS.CURSOR_NOTE.id) {
+		let id = popc2.VARS.CURSOR_NOTE.id;
 		vrvWorker.getTimeForElement(id)
 		.then(function(time) {
 			play_midi(time);
@@ -254,7 +248,7 @@ var midiStop = function () {
    if (offbutton) {
       offbutton.style.display = "none";
    }
-	CursorNote = null;
+	popc2.VARS.CURSOR_NOTE = null;
 	PLAY = false;
    LASTLINE = -1;
 }

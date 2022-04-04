@@ -1,0 +1,56 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sun Apr  3 19:11:43 PDT 2022
+// Last Modified: Sun Apr  3 19:11:46 PDT 2022
+// Filename:      _includes/styles/svg.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for the music notation SVG.
+//
+{% endcomment %}
+
+
+.highlight {
+        color: #c00;
+        fill: #c00;
+        stroke: #c00;
+        filter: url(#highlight-shadow);
+}
+.highlight [stroke] {
+        stroke: #c00;
+        stroke-width: 50px;
+}
+
+
+g[id^="clef-"]:hover,
+g[id^="ksig-"]:hover,
+g[id^="msig-"]:hover,
+g[id^="note-"]:hover,
+g[id^="hairpin-"]:hover,
+g[id^="accid-"]:hover,
+g[id^="trill-"]:hover,
+g[id^="artic-"]:hover,
+g[id^="slur-"]:hover,
+g[id^="tie-"]:hover,
+g[id^="slur-"]:hover,
+g[id^="fermata-"]:hover,
+g[id^="rest-"]:hover {
+        fill: orange;
+        stroke: orange;
+        filter: url(#hover-shadow);
+}
+
+
+/* Highlight barlines:
+g[id^="bline-"] path:hover
+*/
+g[id^="slur-"] path:hover
+{
+        stroke: orange;
+}
+
+
+

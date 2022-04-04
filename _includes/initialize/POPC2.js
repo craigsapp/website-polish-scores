@@ -138,6 +138,14 @@ function POPC2() {
 	// TIMEMAP -- quarter note to time in seconds mapping.
 	this.VARS.TIMEMAP = {};
 
+	// CURSOR_NOTE -- used to highlight the current note at the location
+	// of the cursor.
+	this.VARS.CURSOR_NOTE = null;
+
+	// RESTORE_CURSOR_NOTE: Used to go back to a highlighted note after a redraw.
+	// This is an ID string rather than an element.
+	this.VARS.RESTORE_CURSOR_NOTE_ID = "";
+
 
 	//////////////////////////////
 	//

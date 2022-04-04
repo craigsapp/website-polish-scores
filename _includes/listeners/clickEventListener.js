@@ -30,6 +30,8 @@ document.addEventListener("click", function (event) {
 		if (workid) {
 			popc2.displayWorkPage(workid);
 		}
+	} else if (pageType === "work") {
+		popc2.toggleNoteHighlight(path);
 	}
 });
 

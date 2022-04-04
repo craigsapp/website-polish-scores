@@ -36,6 +36,9 @@ POPC2.prototype.HnpCallback = function (humid) {
 		if (popc2.VARS.MARKER) {
 			   popc2.VARS.MARKER.loadSvg(`#${humid}-svg svg`);
 		}
+		if (popc2.VARS.RESTORE_CURSOR_ID) {
+			popc2.RestoreSelectedSvgElement(svg, popc2.VARS.RESTORE_CURSOR_ID);
+		}
 	}
 
 	// Update search results on work page from embedded search

@@ -55,6 +55,17 @@ div.checkboxes {
 	display: inline-block;
 }
 
+select.plainwhite {
+	border-radius: 2px;
+	background: white;
+	color: black;
+	font-size: 1.15rem;
+	border: 1px solid black;
+	text-shadow: none;
+	height: auto;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
 
 
 

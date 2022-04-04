@@ -74,5 +74,11 @@
 @PL:		Oryginalne łamania systemów
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		select_transposition
+@EN:		Transposition
+@PL:		Transposition
+@@END:		ENTRY
+
 
 

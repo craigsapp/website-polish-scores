@@ -118,6 +118,16 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// Transposition
+	element = document.querySelector("#select-transposition");
+	if (element) {
+		value = element.value;
+		if (value) {
+			let entry = `transpose -t ${value}`;
+			options.filter.push(entry);
+		}
+	}
+
 	// Encoded system breaks
 	element = document.querySelector("#checkbox-systembreaks");
 	options.breaks = "auto";

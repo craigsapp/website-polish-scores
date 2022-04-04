@@ -1,0 +1,22 @@
+@
+@ Translations for composite analysis tool
+@
+
+@@BEGIN:	ENTRY
+@TAG:		composite_only
+@EN:		Display analysis only
+@PL:		Wyświetlaj tylko personel analityczny
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		composite_onset_counts
+@EN:		Show note onset counts
+@PL:		Show note onset counts
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		composite_small_score
+@EN:		Small input score
+@PL:		Small input score
+@@END:		ENTRY
+

@@ -49,17 +49,20 @@ POPC2.prototype.getAnalysisFilter = function () {
 			}
 			let matches = id.match(/option-([a-zA-Z0-9][a-zA-Z0-9-]*)/);
 			if (matches) {
+				let newmatches = id.match(/option-([a-zA-Z0-9_][a-zA-Z0-9-_]*)/);
+				let value = newmatches[1];
+				value = value.replace("_", " ", "g");
 				if (matches[1].length == 1) {
-					singleBool.push(matches[1]);
+					singleBool.push(value);
 				} else {
-					multipleBool.push(matches[1]);
+					multipleBool.push(value);
 				}
 			}
 		}
 	}
 	if (singleBool.length > 0) {
-		value += " -";
 		for (let i=0; i<singleBool.length; i++) {
+			value += " -";
 			value += singleBool[i];
 		}
 	}

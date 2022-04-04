@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Thu Oct 14 19:37:15 PDT 2021
-// Last Modified: Thu Oct 14 19:37:17 PDT 2021
+// Last Modified: Mon Apr  4 10:38:46 PDT 2022
 // Filename:      _includes/work/openInVhv.js
 // Used by:       _includes/navigator/main.html
 // Included in:   _includes/work/main.html
@@ -20,8 +20,13 @@ POPC2.prototype.openInVhv = function () {
 	if (!id) {
 		return;
 	}
+	let filter = this.getAnalysisFilter();
 	url = "https://verovio.humdrum.org?file=";
 	url += encodeURIComponent(`${this.SETTINGS.data_addr}/${id}.krn`);
+	if (filter) {
+		url += "&filter=";
+		url += encodeURIComponent(filter);
+	}
 	window.open(url, "_blank");
 
 };

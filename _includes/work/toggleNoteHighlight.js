@@ -51,7 +51,6 @@ POPC2.prototype.toggleNoteHighlight = function (path) {
 	}
 	let highlight = target.classList.contains("highlight");
 	if (highlight) {
-		console.warn("TURN OFF HIGHLIGHT");
 		if (this.VARS.CURSOR_NOTE) {
 			this.VARS.CURSOR_NOTE.classList.remove("highlight");
 		}
@@ -64,7 +63,6 @@ POPC2.prototype.toggleNoteHighlight = function (path) {
 		if (this.VARS.CURSOR_NOTE) {
 			this.VARS.CURSOR_NOTE.classList.remove("highlight");
 		}
-		console.warn("TURN ON HIGHLIGHT");
 		this.VARS.CURSOR_NOTE = target;
 		target.classList.add("highlight");
 	}

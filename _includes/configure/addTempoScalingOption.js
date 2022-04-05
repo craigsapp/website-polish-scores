@@ -38,7 +38,6 @@ POPC2.prototype.addTempoScalingOption = function (options) {
 			}
 		}
 	}
-console.error("OPTIONS ====================== ", options);
 	return options;
 };
 

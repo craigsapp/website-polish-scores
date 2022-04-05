@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 19:24:32 PDT 2021
-// Last Modified: Fri Oct  8 03:02:09 PDT 2021
+// Last Modified: Mon Apr  4 19:06:02 PDT 2022
 // Filename:      _includes/work/displayWorkPage.js
 // Used by:
 // Included in:
@@ -20,6 +20,7 @@ POPC2.prototype.displayWorkPage = function (id) {
 	}
 	this.ShowPage("work");
 	this.insertBrowseSearchOnWorkPage();
+	this.HideIiifLogo();
 	this.displayScore(id);
 };
 

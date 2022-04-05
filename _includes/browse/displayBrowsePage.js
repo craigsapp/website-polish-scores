@@ -64,6 +64,7 @@ POPC2.prototype.displayBrowsePage = function () {
 		this.showBrowseLess();
 	}
 
+	this.HideIiifLogo();
 	this.showNavigator("browse");
 	this.ApplyElementTranslations();
 	this.buildBrowseFilters();

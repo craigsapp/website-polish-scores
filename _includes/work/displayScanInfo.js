@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sun Jan 23 20:17:32 PST 2022
-// Last Modified: Sun Jan 23 20:32:07 PST 2022
+// Last Modified: Mon Apr  4 19:07:43 PDT 2022
 // Filename:      _includes/work/displayWorkInfo.js
 // Used by:       _includes/work/displayScore.js
 // Included in:   _includes/work/main.html
@@ -26,6 +26,12 @@ POPC2.prototype.displayScanInfo = function(humdrum) {
 	}
 	if (!humdrum) {
 		scanElement.innerHTML = "";
+	}
+
+	if (humdrum.match("!!!IIIF")) {
+		this.ShowIiifLogo();
+	} else {
+		this.HideIiifLogo();
 	}
 
 	let lines = humdrum.split(/\r?\n/);

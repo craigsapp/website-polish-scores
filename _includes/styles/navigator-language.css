@@ -87,6 +87,19 @@ header {
 	top: 20px;
 }
 
+#iiif-logo {
+	width: 40px;
+	position: relative;
+	float: right;
+	right: -75px;
+	top: 60px;
+	display: none;
+}
+
+#iiif-logo.enabled {
+	display: inline-block;
+}
+
 #nifc-logo {
 	width: 60px;
 	position: relative;

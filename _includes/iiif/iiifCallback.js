@@ -57,7 +57,8 @@ POPC2.prototype.iiifCallback = function (event, info) {
 				let aspect = imgwidth / imgheight;
 				let newwidth = scheight * aspect;
 				options += `,width=${newwidth}`;
-				window.open(url, "_blank", options);
+
+				let win = window.open(url, "_blank", options);
 			})
 			.catch(err => {
 				window.open(url, "_blank", options);
@@ -93,7 +94,8 @@ POPC2.prototype.iiifCallback = function (event, info) {
 		options += `,height=${height}`;
 		options += `,top=${sctop}`;
 		options += `,left=${scleft}`;
-		window.open(url, "_blank", options);
+
+		let win = window.open(url, "_blank", options);
 	}
 
 };

@@ -18,6 +18,7 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 	this.displayWorkNavigator();
 	this.ApplyElementTranslations();
 	this.VARS.INITIALIZED_WORK_PAGE = true;
+	this.HideIiifLogo();
 
 	if (id === "random") {
 		id = this.getRandomWorkId(this.VARS.SEARCH_RESULTS);

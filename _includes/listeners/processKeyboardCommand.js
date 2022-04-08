@@ -45,6 +45,23 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			}
 			break;
 
+		case "c":
+		case "k":
+			if (popc2.IsBrowsePage()) {
+				// Toggle display of last edited date entry in browse table.
+				if (this.VARS.SEARCH_SORT_TYPE === "composer") {
+					let tempval = this.VARS.SEARCH_SORT_TYPE;
+					this.VARS.SEARCH_SORT_TYPE =  this.VARS.SEARCH_SORT_TYPE_LAST;
+					this.VARS.SEARCH_SORT_TYPE_LAST = tempval;
+				} else {
+					this.VARS.SEARCH_SORT_TYPE_LAST = this.VARS.SEARCH_SORT_TYPE;
+					this.VARS.SEARCH_SORT_TYPE = "composer";
+				}
+				this.displayBrowseTable();
+				event.preventDefault();
+			}
+			break;
+
 		case "d":
 			if (popc2.IsBrowsePage()) {
 				// Toggle display of last edited date entry in browse table.
@@ -136,6 +153,38 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 		case "r":
 			if (popc2.VARS.SEARCH_RESULTS.length > 1) {
 				popc2.displayRandomWork();
+				event.preventDefault();
+			}
+			break;
+
+		case "s":
+			if (popc2.IsBrowsePage()) {
+				// Toggle display of last edited date entry in browse table.
+				if (this.VARS.SEARCH_SORT_TYPE === "shelfmark") {
+					let tempval = this.VARS.SEARCH_SORT_TYPE;
+					this.VARS.SEARCH_SORT_TYPE =  this.VARS.SEARCH_SORT_TYPE_LAST;
+					this.VARS.SEARCH_SORT_TYPE_LAST = tempval;
+				} else {
+					this.VARS.SEARCH_SORT_TYPE_LAST = this.VARS.SEARCH_SORT_TYPE;
+					this.VARS.SEARCH_SORT_TYPE = "shelfmark";
+				}
+				this.displayBrowseTable();
+				event.preventDefault();
+			}
+			break;
+
+		case "t":
+			if (popc2.IsBrowsePage()) {
+				// Toggle display of last edited date entry in browse table.
+				if (this.VARS.SEARCH_SORT_TYPE === "title") {
+					let tempval = this.VARS.SEARCH_SORT_TYPE;
+					this.VARS.SEARCH_SORT_TYPE =  this.VARS.SEARCH_SORT_TYPE_LAST;
+					this.VARS.SEARCH_SORT_TYPE_LAST = tempval;
+				} else {
+					this.VARS.SEARCH_SORT_TYPE_LAST = this.VARS.SEARCH_SORT_TYPE;
+					this.VARS.SEARCH_SORT_TYPE = "title";
+				}
+				this.displayBrowseTable();
 				event.preventDefault();
 			}
 			break;

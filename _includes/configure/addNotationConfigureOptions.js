@@ -128,6 +128,15 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// Add keyscape measure range selection:
+	if (this.VARS.WORK_ID && (this.VARS.WORK_ID === this.VARS.KEYSCAPE.ID)) {
+		let starting = popc2.VARS.KEYSCAPE.SELECT_START_MEASURE || 0;
+		let ending   = popc2.VARS.KEYSCAPE.SELECT_END_MEASURE   || 0;
+		if (starting >= 0) {
+			options.filter.push(`myank -m ${starting}-${ending}`);
+		}
+	}
+
 	// Encoded system breaks
 	element = document.querySelector("#checkbox-systembreaks");
 	options.breaks = "auto";

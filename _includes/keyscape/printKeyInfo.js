@@ -26,7 +26,7 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) 
 		relativeQ = true;
 	}
 
-	console.log("HEXCOLOR", hexColor);
+	// console.log("HEXCOLOR", hexColor);
 
 	if (relativeQ) {
 
@@ -169,16 +169,18 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) 
 
 	}
 
-	if (keyText != '') {
-		keyText = '<span height="40px" style="color:' + hexColor + ';'
-				+ ' font-family:Arial; font-weight:bold; font-size:32px;'
-				+ ' text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;'
-				+ '">'
-				+ keyText + '</span>';
-	}
+	if (!this.VARS.KEYSCAPE.FREEZE) {
+		if (keyText != '') {
+			keyText = '<span height="40px" style="color:' + hexColor + ';'
+					+ ' font-family:Arial; font-weight:bold; font-size:32px;'
+					+ ' text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;'
+					+ '">'
+					+ keyText + '</span>';
+		}
 
-	if (textElement != undefined) {
-		textElement.innerHTML = keyText;
+		if (textElement != undefined) {
+			textElement.innerHTML = keyText;
+		}
 	}
 
 	return good;

@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		return;
 	}
 
+
 	//////////////////////////////
 	//
 	// cursor mousemove event listener -- When hovering over the keyscape,
@@ -42,9 +43,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		let position = popc2.findPos(cursor);
 		let mouseX = event.pageX - position.x;
 		let mouseY = event.pageY - position.y;
+		popc2.VARS.KEYSCAPE.MOUSE_X = mouseX;
+		popc2.VARS.KEYSCAPE.MOUSE_Y = mouseY;
 		let context = canvas.getContext('2d');
 		let p = context.getImageData(mouseX, mouseY, 1, 1).data;
 		let hex = "#" + ("000000" + popc2.rgbToHex(p[0], p[1], p[2])).slice(-6);
+
 		let good = popc2.printKeyInfo(keyinfo, hex);
 		if (good) {
 			// cursor.style.cursor = 'crosshair';
@@ -55,29 +59,45 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 
 		let context2 = cursor.getContext('2d');
+		context2.clearRect(0, 0, cursor.width, cursor.height);
+
+		popc2.VARS.KEYSCAPE.CURSOR_CONTEXT = context2;
 		if (!good) {
-			context2.clearRect(0, 0, cursor.width, cursor.height);
-			let element = document.querySelector("#measure-info");
-			if (element) {
-				element.innerHTML = "";
+			if (popc2.VARS.KEYSCAPE.FREEZE) {
+				// show selected measure range
+				let mousex = popc2.VARS.KEYSCAPE.SELECT_MOUSE_X;
+				let mousey = popc2.VARS.KEYSCAPE.SELECT_MOUSE_Y;
+				popc2.drawTriangleCursor(context2, mousex, mousey, "#aaaaaa");
+			}
+			if (!popc2.VARS.KEYSCAPE.FREEZE) {
+				let element = document.querySelector("#measure-info");
+				if (element) {
+					element.innerHTML = "";
+				}
 			}
 			return;
 		}
 
-		let b1 = mouseX + mouseY;
-		let newx1 = b1 - 300;
+		popc2.drawTriangleCursor(context2, mouseX, mouseY, "#000000");
 
-		let b2 = mouseY - mouseX;
-		let newx2 = 300 - b2;
+		if (popc2.VARS.KEYSCAPE.FREEZE) {
+			// show selected measure range
+			let mousex = popc2.VARS.KEYSCAPE.SELECT_MOUSE_X;
+			let mousey = popc2.VARS.KEYSCAPE.SELECT_MOUSE_Y;
+			popc2.drawTriangleCursor(context2, mousex, mousey, "#aaaaaa");
+		}
 
-		context2.clearRect(0, 0, cursor.width, cursor.height);
-		context2.beginPath();
-		context2.moveTo(newx1,300);
-		context2.lineTo(mouseX,mouseY);
-		context2.lineTo(newx2, 300);
-		context2.stroke();
+		if (!popc2.VARS.KEYSCAPE.FREEZE) {
+			// show update measure range if not freezing display to show selected measures.
 
-		popc2.printMeasureInfo(newx1, newx2);
+			let b1    = mouseX + mouseY;
+			let newx1 = b1 - 300;
+			let b2    = mouseY - mouseX;
+			let newx2 = 300 - b2;
+
+			popc2.printMeasureInfo(newx1, newx2);
+			return;
+		}
 	});
 
 	cursor.addEventListener("click", popc2.keyscapeClickEvent);

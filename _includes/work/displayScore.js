@@ -31,7 +31,9 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 
 	let subpage = this.getActiveSubpage();
 	if (subpage === "keyscape") {
-		this.showKeyscape(id);
+		if (id !== this.VARS.KEYSCAPE_ID) {
+			this.showKeyscape(id);
+		}
 	}
 	this.storeWorkId(id);
 	this.displayWorkInfo(id);

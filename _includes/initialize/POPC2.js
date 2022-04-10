@@ -135,6 +135,46 @@ function POPC2() {
 	// There should be 300 entries in the array, since keyscapes are set to 600px.
 	this.VARS.KEYSCAPE_INFO = {};
 
+	// KEYSCAPE -- info about the keyscape interface.
+	this.VARS.KEYSCAPE = {};
+
+	// KEYSCAPE.FREEZE -- true when selecting a region of the score to display.
+	this.VARS.KEYSCAPE.FREEZE = 0;
+
+	// KEYSCAPE.ID -- the work ID of the score that the keyscape is being displayed.
+	// this is needed to deactivate the keyscape measure range when switching to
+	// a new score.
+	this.VARS.KEYSCAPE.ID = null;
+
+	// KEYSCAPE.SELECT_START_MEASURE -- The first measure to display when selecting a range
+	// from the keyscape.
+	this.VARS.KEYSCAPE.SELECT_START_MEASURE = -1;
+
+	// KEYSCAPE.SELECT_END_MEASURE -- The last measure to display when selecting a range
+	// from the keyscape.
+	this.VARS.KEYSCAPE.SELECT_END_MEASURE = -1;
+
+	// KEYSCAPE.MOUSE_START_MEASURE -- The first measure to display when moving the mouse.
+	this.VARS.KEYSCAPE.MOUSE_START_MEASURE = -1;
+
+	// KEYSCAPE.MOUSE_END_MEASURE -- The last measure to display when moving the mouse.
+	this.VARS.KEYSCAPE.MOUSE_END_MEASURE = -1;
+
+	// KEYSCAPE.SELECT_MOUSE_X -- X position of selection
+	this.VARS.KEYSCAPE.SELECT_MOUSE_X = -1;
+
+	// KEYSCAPE.SELECT_MOUSE_Y -- Y position of selection
+	this.VARS.KEYSCAPE.SELECT_MOUSE_Y = -1;
+
+	// KEYSCAPE.SELECT_MOUSE_X -- X position of selection
+	this.VARS.KEYSCAPE.MOUSE_X = -1;
+
+	// KEYSCAPE.SELECT_MOUSE_Y -- Y position of selection
+	this.VARS.KEYSCAPE.MOUSE_Y = -1;
+
+	// KEYSCAPE.CURSOR_CONTEXT -- Canvas element for triangle cursor;
+	this.VARS.KEYSCAPE.CURSOR_CONTEXT = null;
+
 	// TIMEMAP -- quarter note to time in seconds mapping.
 	this.VARS.TIMEMAP = {};
 

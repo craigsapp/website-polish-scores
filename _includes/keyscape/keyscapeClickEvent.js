@@ -36,41 +36,60 @@ POPC2.prototype.keyscapeClickEvent = function (event) {
 	// console.warn(`CLICK IN TRIANGLE: (${mouseX}, ${mouseY})`);
 
 	let b1 = mouseX + mouseY;
-	let newx1 = b1 - 300;
+	let startpx = b1 - 300;
 
 	let b2 = mouseY - mouseX;
-	let newx2 = 300 - b2;
+	let endpx = 300 - b2;
 
-	let qrange = popc2.getQuarterNoteRange(newx1, newx2);
+	let qrange = popc2.getQuarterNoteRange(startpx, endpx);
 	// console.warn(`PLAY from quarter note ${qrange.qstart} to ${qrange.qend}`);
 	let timerange = popc2.getTimeRange(qrange.qstart, qrange.qend);
 
 	// console.warn("TIMERANGE", timerange);
 	// console.warn("START TIME", timerange["start-time"], "END TIME", timerange["end-time"]);
 
+	let startcol = parseInt(startpx / 2)
+	let endcol   = parseInt(endpx / 2)
+	if (startcol < 0)  {
+		startcol = 0;
+	}
+	let id = popc2.VARS.WORK_ID;
+	if (!id) {
+		return;
+	}
+	if (typeof popc2.VARS.KEYSCAPE_INFO === "undefined") {
+		return;
+	}
+	if (popc2.VARS.KEYSCAPE_INFO[id].length != 300) {
+		return;
+	}
+	let startmeasure = popc2.VARS.KEYSCAPE_INFO[id][startcol].startbar;
+	let endmeasure = popc2.VARS.KEYSCAPE_INFO[id][endcol].endbar;
+
+	// console.warn("START", startmeasure, "END", endmeasure);
+
 	if (event.altKey) {
 		// Go to first measure in range of mouse selection (do not start MIDI playback).
-		if (typeof popc2.VARS.KEYSCAPE_INFO === "undefined") {
-			return;
-		}
-		let id = popc2.VARS.WORK_ID;
-		if (!id) {
-			return;
-		}
-		if (popc2.VARS.KEYSCAPE_INFO[id].length != 300) {
-			return;
-		}
-		let b1 = mouseX + mouseY;
-		let startpx = b1 - 300;
-		let startcol = parseInt(startpx / 2)
-		if (startcol < 0)  { startcol = 0; }
-		let startmeasure = popc2.VARS.KEYSCAPE_INFO[id][startcol].startbar;
-		// console.error("START MEASURE", startmeasure);
 		popc2.gotoMeasure(startmeasure);
 	} else {
-		playCurrentMidi(timerange["start-time"], timerange["end-time"]);
-	}
+		// To play the selected region:
+		// playCurrentMidi(timerange["start-time"], timerange["end-time"]);
+		popc2.VARS.KEYSCAPE.FREEZE = !popc2.VARS.KEYSCAPE.FREEZE;
 
+		if (popc2.VARS.KEYSCAPE.FREEZE) {
+			popc2.VARS.KEYSCAPE.ID = id;
+			popc2.VARS.KEYSCAPE.SELECT_MOUSE_X = mouseX;
+			popc2.VARS.KEYSCAPE.SELECT_MOUSE_Y = mouseY;
+			popc2.VARS.KEYSCAPE.SELECT_START_MEASURE = startmeasure;
+			popc2.VARS.KEYSCAPE.SELECT_END_MEASURE = endmeasure;
+		} else {
+			popc2.VARS.KEYSCAPE.SELECT_MOUSE_X = -1;
+			popc2.VARS.KEYSCAPE.SELECT_MOUSE_Y = -1;
+			popc2.VARS.KEYSCAPE.SELECT_START_MEASURE = -1;
+			popc2.VARS.KEYSCAPE.SELECT_END_MEASURE = -1;
+		}
+	}
+	popc2.displayScore();
 	event.preventDefault();
 	event.stopPropagation();
 

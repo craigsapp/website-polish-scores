@@ -14,7 +14,7 @@
 {% endcomment %}
 
 POPC2.prototype.keyscapeImageLoadEvent = function (event) {
-   popc2.LoadTimemap();
+	popc2.LoadTimemap();
 
 	if (!event) {
 		console.error("Event is empty");
@@ -38,6 +38,7 @@ POPC2.prototype.keyscapeImageLoadEvent = function (event) {
 	canvas.height = height;
 	let context = canvas.getContext("2d");
 	context.drawImage(target, 0, 0);
+
 	let cursor = document.querySelector("#keyscape #cursor");
 	if (!cursor) {
 		console.error("Error: cannot find keyscape cursor.");
@@ -46,17 +47,16 @@ POPC2.prototype.keyscapeImageLoadEvent = function (event) {
 	cursor.width  = width;
 	cursor.height = height;
 
-	let context2 = cursor.getContext('2d');
-	popc2.VARS.KEYSCAPE.CURSOR_CONTEXT = context2;
-	context2.clearRect(0, 0, cursor.width, cursor.height);
-
-	// let mousex = popc2.VARS.KEYSCAPE.SELECT_MOUSE_X;
-	// let mousey = popc2.VARS.KEYSCAPE.SELECT_MOUSE_X;
-	// if ((mousex >= 0) && (mousey >= 0)) {
-	// 	if (popc2.WORK_ID === popc2.KEYSCAPE.ID) {
-	// 		popc2.drawTriangleCursor(context2, mousex, mousey, "#aaaaaa");
-	// 	}
-	// }
+	if (popc2.VARS.KEYSCAPE.CURSOR_CONTEXT) {
+		let context2 = popc2.VARS.KEYSCAPE.CURSOR_CONTEXT;
+		let mousex = popc2.VARS.KEYSCAPE.SELECT_MOUSE_X;
+		let mousey = popc2.VARS.KEYSCAPE.SELECT_MOUSE_Y;
+		if ((mousex >= 0) && (mousey >= 0)) {
+			if (popc2.VARS.WORK_ID === popc2.VARS.KEYSCAPE.ID) {
+				popc2.drawTriangleCursor(context2, mousex, mousey, "#aaaaaa");
+			}
+		}
+	}
 
 };
 

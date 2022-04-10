@@ -27,6 +27,13 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 		id = this.VARS.WORK_ID;
 	}
 
+	if (this.VARS.KEYSCAPE.ID && (id !== this.VARS.KEYSCAPE.ID)) {
+		this.VARS.KEYSCAPE.ID = "";
+		this.VARS.KEYSCAPE.FREEZE = 0;
+		this.VARS.KEYSCAPE.SELECT_MOUSE_X = -1;
+		this.VARS.KEYSCAPE.SELECT_MOUSE_Y = -1;
+	}
+
 	this.updateWorkUrlDisplay(id);
 
 	let subpage = this.getActiveSubpage();

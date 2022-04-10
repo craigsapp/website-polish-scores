@@ -160,20 +160,29 @@ function POPC2() {
 	// KEYSCAPE.MOUSE_END_MEASURE -- The last measure to display when moving the mouse.
 	this.VARS.KEYSCAPE.MOUSE_END_MEASURE = -1;
 
-	// KEYSCAPE.SELECT_MOUSE_X -- X position of selection
+	// KEYSCAPE.SELECT_MOUSE_X -- X position of selection.
 	this.VARS.KEYSCAPE.SELECT_MOUSE_X = -1;
 
-	// KEYSCAPE.SELECT_MOUSE_Y -- Y position of selection
+	// KEYSCAPE.SELECT_MOUSE_Y -- Y position of selection.
 	this.VARS.KEYSCAPE.SELECT_MOUSE_Y = -1;
 
-	// KEYSCAPE.SELECT_MOUSE_X -- X position of selection
+	// KEYSCAPE.SELECT_MOUSE_X -- X position of selection.
 	this.VARS.KEYSCAPE.MOUSE_X = -1;
 
-	// KEYSCAPE.SELECT_MOUSE_Y -- Y position of selection
+	// KEYSCAPE.SELECT_MOUSE_Y -- Y position of selection.
 	this.VARS.KEYSCAPE.MOUSE_Y = -1;
 
-	// KEYSCAPE.CURSOR_CONTEXT -- Canvas element for triangle cursor;
+	// KEYSCAPE.CANVAS -- Canvas element for keyscape.
+	this.VARS.KEYSCAPE.CONTEXT = null;
+
+	// KEYSCAPE.CURSOR_CANVAS -- Canvas element for triangle cursor.
 	this.VARS.KEYSCAPE.CURSOR_CONTEXT = null;
+
+	// KEYSCAPE.CURSOR_CONTEXT -- Context element for triangle cursor.
+	this.VARS.KEYSCAPE.CURSOR_CONTEXT = null;
+
+	// KEYSCAPE.KEYINFO_ELEMENT -- Element where key info is displayed.
+	this.VARS.KEYSCAPE.KEYINFO_ELEMENT = null;
 
 	// TIMEMAP -- quarter note to time in seconds mapping.
 	this.VARS.TIMEMAP = {};

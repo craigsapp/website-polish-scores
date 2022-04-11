@@ -138,6 +138,10 @@ function POPC2() {
 	// There should be 300 entries in the array, since keyscapes are set to 600px.
 	this.VARS.KEYSCAPE.INFO = {};
 
+	// KEYSCAPE.INITIALIZED -- true when the URL parameters have not yet been checked 
+	// for a keyscape measure selection.
+	this.VARS.KEYSCAPE.INITIALIZED = 0;
+
 	// KEYSCAPE.FREEZE -- true when selecting a region of the score to display.
 	this.VARS.KEYSCAPE.FREEZE = 0;
 

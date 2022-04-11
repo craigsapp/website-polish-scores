@@ -171,6 +171,21 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, suppress) {
 
 	}
 
+	let initialized = this.VARS.KEYSCAPE.INITIALIZED;
+	if (!initialized) {
+		if (keyText != '') {
+			keyText = '<span height="40px" style="color:' + hexColor + ';'
+					+ ' font-family:Arial; font-weight:bold; font-size:32px;'
+					+ ' text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;'
+					+ '">'
+					+ keyText + '</span>';
+		}
+
+		if (textElement != undefined) {
+			textElement.innerHTML = keyText;
+		}
+	}
+
 	if (!suppress && !this.VARS.KEYSCAPE.FREEZE) {
 		if (keyText != '') {
 			keyText = '<span height="40px" style="color:' + hexColor + ';'
@@ -186,7 +201,7 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, suppress) {
 	}
 
 	return good;
-}
+};
 
 Object.defineProperty(POPC2.prototype.printKeyInfo, "name", { value: "printKeyInfo" });
 

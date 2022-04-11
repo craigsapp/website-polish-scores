@@ -19,7 +19,7 @@ POPC2.prototype.rgbToHex = function (r, g, b) {
 		throw "Invalid color component";
 	}
 	return ((r << 16) | (g << 8) | b).toString(16);
-}
+};
 
 Object.defineProperty(POPC2.prototype.rgbToHex, "name", { value: "rgbToHex" });
 

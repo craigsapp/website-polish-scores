@@ -58,6 +58,28 @@ POPC2.prototype.keyscapeImageLoadEvent = function (event) {
 		}
 	}
 
+	if (!popc2.VARS.KEYSCAPE.INITIALIZED) {
+		let kparam = popc2.VARS.CGI.k || "";
+		let mstart = -1;
+		let mend   = -1;
+		let matches = kparam.match(/m(\d+)-(\d+)/);
+		if (matches) {
+			mstart = matches[1];
+			mend = matches[2];
+		} else {
+			matches = kparam.match(/m(\d+)/);
+			if (matches) {
+				mstart = matches[1];
+				mend = mstart;
+			}
+		}
+		if (mstart >= 0) {
+			let id = popc2.VARS.WORK_ID;
+			popc2.selectKeyscapeMeasure(id, mstart, mend);
+		}
+		popc2.VARS.KEYSCAPE.INITIALIZED = 1;
+	}
+
 };
 
 Object.defineProperty(POPC2.prototype.keyscapeImageLoadEvent, "name", { value: "keyscapeImageLoadEvent" });

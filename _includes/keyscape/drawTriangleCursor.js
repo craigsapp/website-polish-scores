@@ -31,7 +31,7 @@ POPC2.prototype.drawTriangleCursor = function (context, xvalue, yvalue, color) {
 	context.lineTo(newx2,  300);
 	context.strokeStyle = color;
 	context.stroke();
-}
+};
 
 
 Object.defineProperty(POPC2.prototype.drawTriangleCursor, "name", { value: "drawTriangleCursor" });

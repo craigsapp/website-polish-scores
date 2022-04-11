@@ -60,7 +60,7 @@ POPC2.prototype.printMeasureInfo = function (startpx, endpx, smeasure, emeasure)
 		console.error("Error: cannot find #measure-info");
 	}
 	element.innerHTML = value;
-}
+};
 
 Object.defineProperty(POPC2.prototype.printMeasureInfo, "name", { value: "printMeasureInfo" });
 

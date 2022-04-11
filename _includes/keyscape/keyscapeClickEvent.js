@@ -20,6 +20,7 @@ POPC2.prototype.keyscapeClickEvent = function (event) {
 	let mouseX = event.pageX - position.x;
 	let mouseY = event.pageY - position.y;
 
+console.error("MOUSEX", mouseX, "Y", mouseY);
 	// Decide if the coordinate is within the triangle.
 	// The good region is in a triangle described by the
 	// coordinates:
@@ -80,7 +81,9 @@ POPC2.prototype.keyscapeClickEvent = function (event) {
 			popc2.VARS.KEYSCAPE.SELECT_MOUSE_Y = mouseY;
 			popc2.VARS.KEYSCAPE.SELECT_START_MEASURE = startmeasure;
 			popc2.VARS.KEYSCAPE.SELECT_END_MEASURE = endmeasure;
-			popc2.printMeasureInfo(startpx, endpx);
+			popc2.VARS.KEYSCAPE.FREEZE = 0;
+			popc2.keyscapeMouseMoveEvent(event);
+			popc2.VARS.KEYSCAPE.FREEZE = 1;
 		} else {
 			if (event.shiftKey) {
 				// Turn on freeze again with the selected music:
@@ -103,13 +106,14 @@ POPC2.prototype.keyscapeClickEvent = function (event) {
 				let context2 = popc2.VARS.KEYSCAPE.CURSOR_CONTEXT;
 				let p = context.getImageData(mouseX, mouseY, 1, 1).data;
 				let hex = "#" + ("000000" + popc2.rgbToHex(p[0], p[1], p[2])).slice(-6);
-				let good = popc2.printKeyInfo(keyinfo, hex);
+				let good = popc2.printKeyInfo(popc2.VARS.KEYSCAPE.KEYINFO_ELEMENT, hex);
 				if (good) {
 					popc2.drawTriangleCursor(context2, mouseX, mouseY, "#000000");
 				}
 			}
 		}
 	}
+	popc2.updateWorkUrlDisplay();
 	popc2.displayScore();
 	event.preventDefault();
 	event.stopPropagation();

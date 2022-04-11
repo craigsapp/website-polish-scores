@@ -45,7 +45,7 @@ POPC2.prototype.getQuarterNoteRange = function (startpx, endpx) {
 	output.qstart = qstart;
 	output.qend = qend;
 	return output;
-}
+};
 
 Object.defineProperty(POPC2.prototype.getQuarterNoteRange, "name", { value: "getQuarterNoteRange" });
 

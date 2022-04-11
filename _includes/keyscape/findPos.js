@@ -25,7 +25,7 @@ POPC2.prototype.findPos = function (element) {
 		return {x: current_left, y: current_top};
 	}
 	return undefined;
-}
+};
 
 Object.defineProperty(POPC2.prototype.findPos, "name", { value: "findPos" });
 

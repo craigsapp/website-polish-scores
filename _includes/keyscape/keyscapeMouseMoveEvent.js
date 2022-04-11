@@ -94,7 +94,7 @@ POPC2.prototype.keyscapeMouseMoveEvent = function (event) {
 			}
 		}
 	}
-}
+};
 
 Object.defineProperty(POPC2.prototype.keyscapeMouseMoveEvent, "name", { value: "keyscapeMouseMoveEvent" });
 

@@ -130,13 +130,13 @@ function POPC2() {
 	// later sessions (as a JSON array of fileids).
 	this.VARS.WORK_BOOKMARKS = [];
 
-	// KEYSCAPE_INFO -- timing informat for each double-wide pixel column
-	// in a keyscape.  This is used to display measure ranges in keyscapes.
-	// There should be 300 entries in the array, since keyscapes are set to 600px.
-	this.VARS.KEYSCAPE_INFO = {};
-
 	// KEYSCAPE -- info about the keyscape interface.
 	this.VARS.KEYSCAPE = {};
+
+	// KEYSCAPE.INFO -- timing informat for each double-wide pixel column
+	// in a keyscape.  This is used to display measure ranges in keyscapes.
+	// There should be 300 entries in the array, since keyscapes are set to 600px.
+	this.VARS.KEYSCAPE.INFO = {};
 
 	// KEYSCAPE.FREEZE -- true when selecting a region of the score to display.
 	this.VARS.KEYSCAPE.FREEZE = 0;

@@ -19,10 +19,10 @@ POPC2.prototype.getQuarterNoteRange = function (startpx, endpx) {
 	this.DebugMessageFunction(startpx, endpx);
 	let output = {qstart: -1, qend: -1};
 	let id = this.VARS.WORK_ID;
-	if (!this.VARS.KEYSCAPE_INFO[id]) {
+	if (!this.VARS.KEYSCAPE.INFO[id]) {
 		return output;
 	}
-	if (this.VARS.KEYSCAPE_INFO[id].length != 300) {
+	if (this.VARS.KEYSCAPE.INFO[id].length != 300) {
 		return output;
 	}
 
@@ -32,15 +32,15 @@ POPC2.prototype.getQuarterNoteRange = function (startpx, endpx) {
 	if (endcol >= 300) { endcol = 299; }
 	if (startcol < 0)  { startcol = 0; }
 
-	if (typeof this.VARS.KEYSCAPE_INFO[id][startcol].qstart === "undefined") {
+	if (typeof this.VARS.KEYSCAPE.INFO[id][startcol].qstart === "undefined") {
 		return output;
 	}
-	let qstart = this.VARS.KEYSCAPE_INFO[id][startcol].qstart;
+	let qstart = this.VARS.KEYSCAPE.INFO[id][startcol].qstart;
 
-	if (typeof this.VARS.KEYSCAPE_INFO[id][endcol].qend === "undefined") {
+	if (typeof this.VARS.KEYSCAPE.INFO[id][endcol].qend === "undefined") {
 		return;
 	}
-	let qend = this.VARS.KEYSCAPE_INFO[id][endcol].qend;
+	let qend = this.VARS.KEYSCAPE.INFO[id][endcol].qend;
 
 	output.qstart = qstart;
 	output.qend = qend;

@@ -57,14 +57,14 @@ POPC2.prototype.keyscapeClickEvent = function (event) {
 	if (!id) {
 		return;
 	}
-	if (typeof popc2.VARS.KEYSCAPE_INFO === "undefined") {
+	if (typeof popc2.VARS.KEYSCAPE.INFO === "undefined") {
 		return;
 	}
-	if (popc2.VARS.KEYSCAPE_INFO[id].length != 300) {
+	if (popc2.VARS.KEYSCAPE.INFO[id].length != 300) {
 		return;
 	}
-	let startmeasure = popc2.VARS.KEYSCAPE_INFO[id][startcol].startbar;
-	let endmeasure = popc2.VARS.KEYSCAPE_INFO[id][endcol].endbar;
+	let startmeasure = popc2.VARS.KEYSCAPE.INFO[id][startcol].startbar;
+	let endmeasure = popc2.VARS.KEYSCAPE.INFO[id][endcol].endbar;
 
 	if (event.altKey) {
 		// Go to first measure in range of mouse selection (do not start MIDI playback).

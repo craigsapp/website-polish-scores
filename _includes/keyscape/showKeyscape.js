@@ -22,13 +22,13 @@ POPC2.prototype.showKeyscape = function (id) {
 		return;
 	}
 
-	if (!this.VARS.KEYSCAPE_INFO[id]) {
+	if (!this.VARS.KEYSCAPE.INFO[id]) {
 		let infourl = `${this.SETTINGS.data_addr}/${id}.keyscape-info`;
 		fetch(infourl)
 			.then(res => res.json())
 			.then(json => {
 				// console.warn("JSON INFO KEYSCAPE", json);
-				this.VARS.KEYSCAPE_INFO[id] = json;
+				this.VARS.KEYSCAPE.INFO[id] = json;
 			})
 			.catch(err => { console.error(err); });
 	}

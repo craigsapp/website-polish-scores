@@ -14,14 +14,14 @@
 {% endcomment %}
 
 POPC2.prototype.printMeasureInfo = function (startpx, endpx, smeasure, emeasure) {
-	if (!this.VARS.KEYSCAPE_INFO) {
+	if (!this.VARS.KEYSCAPE.INFO) {
 		return;
 	}
 	let id = this.VARS.WORK_ID;
 	if (!id) {
 		return;
 	}
-	if (this.VARS.KEYSCAPE_INFO[id].length != 300) {
+	if (this.VARS.KEYSCAPE.INFO[id].length != 300) {
 		return;
 	}
 
@@ -32,18 +32,18 @@ POPC2.prototype.printMeasureInfo = function (startpx, endpx, smeasure, emeasure)
 	if (startcol < 0)  { startcol = 0; }
 	// console.warn("STARTPX", startcol, "ENDPX", endcol);
 
-	if (typeof this.VARS.KEYSCAPE_INFO[id][startcol].startbar === "undefined") {
+	if (typeof this.VARS.KEYSCAPE.INFO[id][startcol].startbar === "undefined") {
 		return;
 	}
-	let startmeasure = this.VARS.KEYSCAPE_INFO[id][startcol].startbar;
+	let startmeasure = this.VARS.KEYSCAPE.INFO[id][startcol].startbar;
 	if (smeasure) {
 		startmeasure = smeasure;
 	}
 
-	if (typeof this.VARS.KEYSCAPE_INFO[id][endcol].endbar === "undefined") {
+	if (typeof this.VARS.KEYSCAPE.INFO[id][endcol].endbar === "undefined") {
 		return;
 	}
-	let endmeasure = this.VARS.KEYSCAPE_INFO[id][endcol].endbar;
+	let endmeasure = this.VARS.KEYSCAPE.INFO[id][endcol].endbar;
 	if (emeasure) {
 		endmeasure = emeasure;
 	}

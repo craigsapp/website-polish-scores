@@ -41,13 +41,15 @@ POPC2.prototype.updateWorkUrlDisplay = function (id) {
 		if (rcheck) {
 			url += "r"
 		}
-		let startmeasure = this.VARS.KEYSCAPE.SELECT_START_MEASURE;
-		let endmeasure   = this.VARS.KEYSCAPE.SELECT_END_MEASURE;
-		if (startmeasure >= 0 && endmeasure >= 0) {
-			if (startmeasure == endmeasure) {
-				url += `m${startmeasure}`;
-			} else {
-				url += `m${startmeasure}-${endmeasure}`;
+		if (id && (id === this.VARS.KEYSCAPE.ID)) {
+			let startmeasure = this.VARS.KEYSCAPE.SELECT_START_MEASURE;
+			let endmeasure   = this.VARS.KEYSCAPE.SELECT_END_MEASURE;
+			if (startmeasure >= 0 && endmeasure >= 0) {
+				if (startmeasure == endmeasure) {
+					url += `m${startmeasure}`;
+				} else {
+					url += `m${startmeasure}-${endmeasure}`;
+				}
 			}
 		}
 	}

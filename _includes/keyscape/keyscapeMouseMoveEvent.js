@@ -54,8 +54,8 @@ POPC2.prototype.keyscapeMouseMoveEvent = function (event) {
 	let context = canvas.getContext('2d');
 	let p = context.getImageData(mouseX, mouseY, 1, 1).data;
 	let hex = "#" + ("000000" + popc2.rgbToHex(p[0], p[1], p[2])).slice(-6);
-
 	let good = popc2.printKeyInfo(keyinfo, hex);
+
 	if (good) {
 		// cursor.style.cursor = 'crosshair';
 		cursor.style.cursor = 'none';
@@ -73,6 +73,11 @@ POPC2.prototype.keyscapeMouseMoveEvent = function (event) {
 		popc2.drawTriangleCursor(context2, mouseX, mouseY, "#000000");
 	}
 
+	let b1 = mouseX + mouseY;
+	let newx1 = b1 - 300;
+	let b2 = mouseY - mouseX;
+	let newx2 = 300 - b2;
+
 	if (popc2.VARS.KEYSCAPE.FREEZE) {
 		// show selected measure range
 		let mousex = popc2.VARS.KEYSCAPE.SELECT_MOUSE_X;
@@ -80,9 +85,13 @@ POPC2.prototype.keyscapeMouseMoveEvent = function (event) {
 		popc2.drawTriangleCursor(context2, mousex, mousey, "#aaaaaa");
 	}
 	if (!popc2.VARS.KEYSCAPE.FREEZE) {
-		let element = document.querySelector("#measure-info");
-		if (element) {
-			element.innerHTML = "";
+		let measureinfo = document.querySelector("#measure-info");
+		if (measureinfo) {
+			if (!good) {
+				measureinfo.innerHTML = "";
+			} else {
+				popc2.printMeasureInfo(newx1, newx2);
+			}
 		}
 	}
 }

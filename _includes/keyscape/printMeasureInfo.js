@@ -13,7 +13,7 @@
 //
 {% endcomment %}
 
-POPC2.prototype.printMeasureInfo = function (startpx, endpx) {
+POPC2.prototype.printMeasureInfo = function (startpx, endpx, smeasure, emeasure) {
 	if (!this.VARS.KEYSCAPE_INFO) {
 		return;
 	}
@@ -36,11 +36,17 @@ POPC2.prototype.printMeasureInfo = function (startpx, endpx) {
 		return;
 	}
 	let startmeasure = this.VARS.KEYSCAPE_INFO[id][startcol].startbar;
+	if (smeasure) {
+		startmeasure = smeasure;
+	}
 
 	if (typeof this.VARS.KEYSCAPE_INFO[id][endcol].endbar === "undefined") {
 		return;
 	}
 	let endmeasure = this.VARS.KEYSCAPE_INFO[id][endcol].endbar;
+	if (emeasure) {
+		endmeasure = emeasure;
+	}
 
 	let value;
 	if (startmeasure === endmeasure) {

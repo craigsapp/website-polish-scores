@@ -31,7 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	popc2.VARS.KEYSCAPE.KEYINFO_ELEMENT = keyinfo;
 	popc2.VARS.KEYSCAPE.CANVAS = canvas;
+	popc2.VARS.KEYSCAPE.CONTEXT = canvas.getContext("2d");
 	popc2.VARS.KEYSCAPE.CURSOR_CANVAS = cursor;
+	popc2.VARS.KEYSCAPE.CURSOR_CONTEXT = cursor.getContext("2d");
 
 	cursor.addEventListener("mousemove", popc2.keyscapeMouseMoveEvent);
 	cursor.addEventListener("click", popc2.keyscapeClickEvent);

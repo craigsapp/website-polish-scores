@@ -66,8 +66,6 @@ POPC2.prototype.keyscapeClickEvent = function (event) {
 	let startmeasure = popc2.VARS.KEYSCAPE_INFO[id][startcol].startbar;
 	let endmeasure = popc2.VARS.KEYSCAPE_INFO[id][endcol].endbar;
 
-	// console.warn("START", startmeasure, "END", endmeasure);
-
 	if (event.altKey) {
 		// Go to first measure in range of mouse selection (do not start MIDI playback).
 		popc2.gotoMeasure(startmeasure);
@@ -82,11 +80,34 @@ POPC2.prototype.keyscapeClickEvent = function (event) {
 			popc2.VARS.KEYSCAPE.SELECT_MOUSE_Y = mouseY;
 			popc2.VARS.KEYSCAPE.SELECT_START_MEASURE = startmeasure;
 			popc2.VARS.KEYSCAPE.SELECT_END_MEASURE = endmeasure;
+			popc2.printMeasureInfo(startpx, endpx);
 		} else {
-			popc2.VARS.KEYSCAPE.SELECT_MOUSE_X = -1;
-			popc2.VARS.KEYSCAPE.SELECT_MOUSE_Y = -1;
-			popc2.VARS.KEYSCAPE.SELECT_START_MEASURE = -1;
-			popc2.VARS.KEYSCAPE.SELECT_END_MEASURE = -1;
+			if (event.shiftKey) {
+				// Turn on freeze again with the selected music:
+				popc2.keyscapeMouseMoveEvent(event);
+				popc2.VARS.KEYSCAPE.FREEZE = !popc2.VARS.KEYSCAPE.FREEZE;
+				popc2.VARS.KEYSCAPE.ID = id;
+				popc2.VARS.KEYSCAPE.SELECT_MOUSE_X = mouseX;
+				popc2.VARS.KEYSCAPE.SELECT_MOUSE_Y = mouseY;
+				popc2.VARS.KEYSCAPE.SELECT_START_MEASURE = startmeasure;
+				popc2.VARS.KEYSCAPE.SELECT_END_MEASURE = endmeasure;
+			} else {
+				popc2.VARS.KEYSCAPE.SELECT_MOUSE_X = -1;
+				popc2.VARS.KEYSCAPE.SELECT_MOUSE_Y = -1;
+				popc2.VARS.KEYSCAPE.SELECT_START_MEASURE = -1;
+				popc2.VARS.KEYSCAPE.SELECT_END_MEASURE = -1;
+				popc2.keyscapeMouseMoveEvent(event);
+
+				// triangle cursor is currently disappearing here so redraw it:
+				let context = popc2.VARS.KEYSCAPE.CONTEXT;
+				let context2 = popc2.VARS.KEYSCAPE.CURSOR_CONTEXT;
+				let p = context.getImageData(mouseX, mouseY, 1, 1).data;
+				let hex = "#" + ("000000" + popc2.rgbToHex(p[0], p[1], p[2])).slice(-6);
+				let good = popc2.printKeyInfo(keyinfo, hex);
+				if (good) {
+					popc2.drawTriangleCursor(context2, mouseX, mouseY, "#000000");
+				}
+			}
 		}
 	}
 	popc2.displayScore();

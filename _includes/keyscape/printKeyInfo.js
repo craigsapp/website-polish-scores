@@ -14,7 +14,9 @@
 //
 {% endcomment %}
 
-POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) {
+POPC2.prototype.printKeyInfo = function (textElement, hexColor, suppress) {
+	this.DebugMessageFunctionVerbose();
+
 	let keyText = "";
 	let sharp = '&#x266f;'
 	let good = 1;
@@ -169,7 +171,7 @@ POPC2.prototype.printKeyInfo = function (textElement, hexColor, mouseX, mouseY) 
 
 	}
 
-	if (!this.VARS.KEYSCAPE.FREEZE) {
+	if (!suppress && !this.VARS.KEYSCAPE.FREEZE) {
 		if (keyText != '') {
 			keyText = '<span height="40px" style="color:' + hexColor + ';'
 					+ ' font-family:Arial; font-weight:bold; font-size:32px;'

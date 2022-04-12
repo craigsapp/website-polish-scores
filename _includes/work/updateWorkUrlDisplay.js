@@ -45,6 +45,9 @@ POPC2.prototype.updateWorkUrlDisplay = function (id) {
 			let startmeasure = this.VARS.KEYSCAPE.SELECT_START_MEASURE;
 			let endmeasure   = this.VARS.KEYSCAPE.SELECT_END_MEASURE;
 			if (startmeasure >= 0 && endmeasure >= 0) {
+				if (!(rcheck || ccheck)) {
+					url += "=";
+				}
 				if (startmeasure == endmeasure) {
 					url += `m${startmeasure}`;
 				} else {

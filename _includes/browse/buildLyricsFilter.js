@@ -47,7 +47,7 @@ POPC2.prototype.buildLyricsFilter = function (target) {
 		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
 	}
 
-	let output = "<input type='text' class='filter lyrics'";
+	let output = "<input type='text' spellcheck='false' class='filter lyrics'";
 	output += ` placeholder='${this.getTranslation("lyrics_placeholder")}'`;
 	output += ` value="${selectedLyrics}"`;
 	output += ">\n";

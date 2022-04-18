@@ -17,11 +17,13 @@ div.checkboxes {
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	height: 110px;
+	height: 130px;
 }
 
+/* Height of checkboxes has to be the same height as #subpage-configure */
+
 #subpage-configure {
-	height: 110px;
+	height: 130px;
 	margin-top: -110px;
 	width: 100%;
 	letter-spacing: -0.5px;

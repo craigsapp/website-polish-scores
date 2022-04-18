@@ -28,12 +28,13 @@
 		action="popc2.toggleMusicIncipit()"
 	%}
 
+	{% include macro/checkbox.html id="checkbox-sic-hide"   trans="sic_hide"   %}
+
 	{% comment %}
-		{% include macro/checkbox.html id="checkbox-sic" trans="correct_sic"  %}
+	{% include macro/checkbox.html id="checkbox-sic-apply"  trans="sic_apply"   %}
 	{% endcomment %}
 
-
-	<select id="select-transposition" onchange="popc2.displayScore()" class="plainwhite">
+	<select id="select-transposition" style="margin-top:10px;" onchange="popc2.displayScore()" class="plainwhite">
 		<option class="trans" data-trans="select_transposition" value=""></option>
 		<option class="trans" data-trans="transpose_up_m2" value="+m2">&uarr; m2</option>
 		<option class="trans" data-trans="transpose_down_m2" value="-m2">&darr; m2</option>
@@ -59,8 +60,6 @@
 		<option class="trans" data-trans="transpose_down_P8" value="-P8">&darr; P8</option>
 	</select>
 	
-
-
 	<span class="filter-form checkboxes" style="display:inline-block; margin-top:5px;">
 		<label class="container">
 			<span class="dummy-span">&nbsp;</span>

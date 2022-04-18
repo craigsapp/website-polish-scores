@@ -54,6 +54,15 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// Hide sic warnings
+	element = document.querySelector("#checkbox-sic-hide");
+	if (element) {
+		if (element.checked) {
+			let entry = "s/^LO:SIC:/LO:XSIC:/L";
+			shed.push(entry);
+		}
+	}
+
 	// Sounding score (remove transposition information)
 	element = document.querySelector("#checkbox-soundingscore");
 	if (element) {
@@ -87,13 +96,13 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 	}
 
 	// Correct sic
-	element = document.querySelector("#checkbox-sic");
-	if (element) {
-		if (element.checked) {
-			let entry = "sic -s";
-			options.filter.push(entry);
-		}
-	}
+	//element = document.querySelector("#checkbox-sic-apply");
+	//if (element) {
+	//	if (element.checked) {
+	//		let entry = "sic -s";
+	//		options.filter.push(entry);
+	//	}
+	//}
 
 	// Add free-form filter option
 	element = document.querySelector("#checkbox-filter");

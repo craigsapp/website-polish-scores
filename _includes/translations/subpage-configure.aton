@@ -212,3 +212,16 @@
 @PL:		&darr; octave
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		sic_hide
+@EN:		Hide sic warnings
+@PL:		Hide sic warnings
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		sic_apply
+@EN:		Show sic corrections
+@PL:		Show sic corrections
+@@END:		ENTRY
+
+

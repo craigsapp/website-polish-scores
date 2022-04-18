@@ -80,5 +80,135 @@
 @PL:		Transposition
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		transpose_up_m2
+@EN:		&uarr; minor 2nd
+@PL:		&uarr; minor 2nd
+@@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		transpose_down_m2
+@EN:		&darr; minor 2nd
+@PL:		&darr; minor 2nd
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_up_M2
+@EN:		&uarr; major 2nd
+@PL:		&uarr; major 2nd
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_down_M2
+@EN:		&darr; major 2nd
+@PL:		&darr; major 2nd
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_up_m3
+@EN:		&uarr; minor 3rd
+@PL:		&uarr; minor 3rd
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_down_m3
+@EN:		&darr; minor 3rd
+@PL:		&darr; minor 3rd
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_up_M3
+@EN:		&uarr; major 3rd
+@PL:		&uarr; major 3rd
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_down_M3
+@EN:		&darr; major 3rd
+@PL:		&darr; major 3rd
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_up_P4
+@EN:		&uarr; perfect 4th
+@PL:		&uarr; perfect 4th
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_down_P4
+@EN:		&darr; perfect 4th
+@PL:		&darr; perfect 4th
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_up_P5
+@EN:		&uarr; perfect 5th
+@PL:		&uarr; perfect 5th
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_down_P5
+@EN:		&darr; perfect 5th
+@PL:		&darr; perfect 5th
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_up_m6
+@EN:		&uarr; minor 6th
+@PL:		&uarr; minor 6th
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_down_m6
+@EN:		&darr; minor 6th
+@PL:		&darr; minor 6th
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_up_M6
+@EN:		&uarr; major 6th
+@PL:		&uarr; major 6th
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_down_M6
+@EN:		&darr; major 6th
+@PL:		&darr; major 6th
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_up_m7
+@EN:		&uarr; minor 7th
+@PL:		&uarr; minor 7th
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_down_m7
+@EN:		&darr; minor 7th
+@PL:		&darr; minor 7th
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_up_M7
+@EN:		&uarr; major 7th
+@PL:		&uarr; major 7th
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_down_M7
+@EN:		&darr; major 7th
+@PL:		&darr; major 7th
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_up_P8
+@EN:		&uarr; octave
+@PL:		&uarr; octave
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		transpose_down_P8
+@EN:		&darr; octave
+@PL:		&darr; octave
+@@END:		ENTRY
 

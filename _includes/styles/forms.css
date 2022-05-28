@@ -31,7 +31,7 @@ select.filter.composer {
 
 select {
 	background: {{ site.h1_color }};
-	border-radius: 15px;
+	border-radius: 1px;
 	border: none;
 	box-sizing: inherit;
 	color: #eeeeee;

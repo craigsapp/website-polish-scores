@@ -1,0 +1,55 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat Oct 23 02:12:11 PDT 2021
+// Last Modified: Sat Oct 23 02:12:13 PDT 2021
+// Filename:      _includes/styles/checkbox.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Fonts loaded from Google Fonts.
+//
+//                Montserrat:
+//                   https://fonts.google.com/specimen/Montserrat
+//                   Used for most text on website.
+//
+//                Zilla Slab
+//                   https://fonts.google.com/specimen/Zilla+Slab
+//                   Used for page titles.
+//                To import directly from Google (but this is slow):
+//
+//                @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Zilla+Slab:wght@600&display=swap');
+//
+//                Formerly Monserrat was downloaded by:
+//                   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&amp;display=swap" rel="stylesheet">
+//
+{% endcomment %}
+
+
+@font-face {
+   font-family: Zilla Slab;
+   src: url(/styles/ZillaSlab/ZillaSlab-SemiBold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+   font-family: Montserrat;
+   src: url(/styles/Montserrat/Montserrat-Regular.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+   font-family: Montserrat;
+   src: url(/styles/Montserrat/Montserrat-SemiBold.ttf) format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: block;
+}
+
+
+

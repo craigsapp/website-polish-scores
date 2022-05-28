@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat Oct  9 00:45:39 PDT 2021
-// Last Modified: Sat Oct  9 00:45:41 PDT 2021
+// Last Modified: Sat May 28 16:26:37 PDT 2022
 // Filename:      _includes/styles/headings.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS; Jekyll/Liquid
@@ -17,16 +17,14 @@ h1 {
 	color: {{ site.h1_color }};
 	cursor: auto;
 	text-shadow: 0px 0px 2px #300;
-	font-family: 'Montserrat', sans-serif !important;
+	font-family: 'Zilla Slab', serif;
 	font-size: 2.75rem;
-	font-weight: 400;
 	letter-spacing: 7px;
 	line-height: 1.5;
 	list-style-type: none;
 	margin: 0;
 	margin-top: 9px; /* increased due to #player */
 	padding-bottom: 45px;
-	/* padding-top: 20px; */
 	padding-top: 81px; /* increased due to #player */
 	text-align: center;
 	word-spacing: 5px;

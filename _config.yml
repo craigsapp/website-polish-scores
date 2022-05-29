@@ -86,7 +86,7 @@ size_increment: "1.10"
 
 # h1_color: Color for H1 headings.
 #h1_color: "#a71b1d"
-h1_color: "#312783"
+h1_color: "#2d2e83"
 
 # h2_color: Color for H2 headings.
 h2_color: "black"
@@ -96,7 +96,7 @@ h3_color: "#aaaaaa"
 
 # th_color: Color for Table headings.
 #th_color: "#a71b1d"
-th_color: "#312783"
+th_color: "#2d2e83"
 
 #browse_highlight_color: Color for active select menus on browse page.
 browse_highlight_color: "#0b6166"

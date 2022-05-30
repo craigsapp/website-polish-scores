@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 25 12:20:14 PDT 2021
 // Last Modified: Mon Oct 25 12:20:16 PDT 2021
-// Filename:      _includes/styles/subpage-configure.css
+// Filename:      _includes/styles/tool-configure.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
 // vim:           ts=3:nowrap
@@ -20,11 +20,11 @@ div.checkboxes {
 	height: 130px;
 }
 
-/* Height of checkboxes has to be the same height as #subpage-configure */
+/* Height of checkboxes has to be the same height as #tool-configure */
 
-#subpage-configure {
+#tool-configure {
 	height: 130px;
-	margin-top: -110px;
+	margin-top: 0;
 	width: 100%;
 	letter-spacing: -0.5px;
 	justify-content: space-around;

@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 18 12:12:54 PDT 2021
 // Last Modified: Mon Oct 18 12:12:57 PDT 2021
-// Filename:      _includes/work/scrollToTopForSubpage.js
+// Filename:      _includes/work/scrollToTopForTool.js
 // Used by:       _includes/navigator/main.html
 // Included in:   _includes/work/main.html
 // Syntax:        ECMAScript 6
@@ -13,7 +13,7 @@
 //
 {% endcomment %}
 
-POPC2.prototype.scrollToTopForSubpage = function () {
+POPC2.prototype.scrollToTopForTool = function () {
 	this.DebugMessageFunction();
 	let content = document.querySelector("#content");
 	if (!content) {
@@ -28,7 +28,7 @@ POPC2.prototype.scrollToTopForSubpage = function () {
 	}
 };
 
-Object.defineProperty(POPC2.prototype.scrollToTopForSubpage, "name", { value: "scrollToTopForSubpage" });
+Object.defineProperty(POPC2.prototype.scrollToTopForTool, "name", { value: "scrollToTopForTool" });
 
 
 

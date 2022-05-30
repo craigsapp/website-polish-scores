@@ -1,0 +1,38 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sun May 29 15:05:50 PDT 2022
+// Last Modified: Sun May 29 15:05:53 PDT 2022
+// Filename:      _includes/tool/main.html
+// Included in:   _layouts/default.html
+// Syntax:        HTML
+// vim:           ts=3:nowrap
+//
+// Description:   Tool pages that appear under the main toolbar, usually
+//                on the work page.
+//
+{% endcomment %}
+
+<div id="tools">
+
+	<div class="hidden" id="tool-keyscape">
+		{% include keyscape/tool-keyscape.html %}
+	</div>
+
+	<div class="hidden" id="tool-search">
+		{% include search/tool-search.html %}
+	</div>
+
+	<div class="hidden" id="tool-analysis">
+		{% include analysis/tool-analysis.html %}
+	</div>
+
+	<div class="hidden" id="tool-configure">
+		{% include configure/tool-configure.html %}
+	</div>
+
+	<div class="hidden" id="tool-download">
+		{% include download/tool-download.html %}
+	</div>
+
+</div>

@@ -1,0 +1,37 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sun May 29 15:59:02 PDT 2022
+// Last Modified: /bin/bash: dat: command not found
+// Filename:      _includes/comlib/comlib.html
+// Included in:   _layouts/default.html
+// Syntax:        HTML
+// vim:           ts=3:nowrap
+//
+// Description:   Display of composer / library.
+//
+{% endcomment %}
+
+
+<div id="comlib" class="hidden">
+	<table>
+		<tr>
+
+			<td>
+				<div id="composer">
+					<div id="composer-name" onclick="popc2.toggleComposerInfoDisplay()"></div>
+					<div class="hidden" id="composer-info"></div>
+				</div>
+			</td>
+
+			<td>
+				<div class="" id="tool-workinfo">
+					{% include workinfo/tool-workinfo.html %}
+				</div>
+			</td>
+
+			</tr>
+		</table>
+</div>
+
+

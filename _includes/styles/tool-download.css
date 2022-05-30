@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 25 12:26:45 PDT 2021
 // Last Modified: Mon Oct 25 12:26:48 PDT 2021
-// Filename:      _includes/styles/subpage-download.css
+// Filename:      _includes/styles/tool-download.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
 // vim:           ts=3:nowrap
@@ -12,16 +12,14 @@
 //
 {% endcomment %}
 
-#subpage-download {
-	/* background: #f0f0f0; */
+#tool-download {
 	align-items: center;
-	color: #666666;
 	display: flex;
 	height: 110px;
 	justify-content: space-between;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -110px;
+	margin-top: 0;
 	max-width: 900px;
 	padding-left: 30px;
 }
@@ -33,7 +31,7 @@
 	cursor: pointer;
 }
 
-#subpage-download i {
+#tool-download i {
 	font-size: 1.70rem;
 }
 
@@ -45,12 +43,12 @@
 	color: {{ site.button_hover_color }};
 }
 
-#subpage-download .disabled {
+#tool-download .disabled {
 	color: #dddddd;
 }
 
-#subpage-download .disabled:hover,
-#subpage-download .disabled i:hover {
+#tool-download .disabled:hover,
+#tool-download .disabled i:hover {
 	color: #dddddd !important;
 	cursor: auto;
 }
@@ -68,10 +66,10 @@
 	}
 }
 
-@media only screen and (max-width: 700px) { #subpage-download i { font-size: 1.70rem; } }
-@media only screen and (max-width: 650px) { #subpage-download i { font-size: 1.60rem; } }
-@media only screen and (max-width: 600px) { #subpage-download i { font-size: 1.45rem; } }
-@media only screen and (max-width: 575px) { #subpage-download i { font-size: 1.35rem; } }
+@media only screen and (max-width: 700px) { #tool-download i { font-size: 1.70rem; } }
+@media only screen and (max-width: 650px) { #tool-download i { font-size: 1.60rem; } }
+@media only screen and (max-width: 600px) { #tool-download i { font-size: 1.45rem; } }
+@media only screen and (max-width: 575px) { #tool-download i { font-size: 1.35rem; } }
 
 
 

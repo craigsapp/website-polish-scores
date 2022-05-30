@@ -12,13 +12,22 @@
 //
 {% endcomment %}
 
+#tool-keyscape {
+	background: white;
+	color: black;
+	width: 100%;
+}
+
+
 #keyscape {
+	width: 100%;
 	height: 311px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -115px;
+	margin-top: 0;
 	width: 600px;
 }
+
 
 canvas#image {
 	position: absolute;
@@ -27,12 +36,14 @@ canvas#image {
 	mix-blend-mode: multiply;
 }
 
+
 canvas#cursor {
 	position: absolute;
 	top: 5px;
 	z-index: 99;
 	mix-blend-mode: multiply;
 }
+
 
 #keyscape #info-overlay {
 	border-collapse: collapse;
@@ -48,8 +59,10 @@ canvas#cursor {
 	z-index: 999;
 }
 
+
 #keyscape #left-info {
 }
+
 
 #keyscape #right-info {
 	text-align:right;
@@ -57,10 +70,12 @@ canvas#cursor {
 	opacity: 0.15;
 }
 
+
 #keyscape #right-info:hover {
 	display: block;
 	opacity: 1.0;
 }
+
 
 #keyscape #keyscape-info {
 	opacity: 0.7555;
@@ -68,6 +83,7 @@ canvas#cursor {
 	padding-top: 3px;
 	padding-right: 13px;
 }
+
 
 #keyscape #keyscape-info:hover {
 	color: {{ site.h1_color }};

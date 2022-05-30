@@ -39,6 +39,7 @@ POPC2.prototype.ChangePageLanguage = function (lang, type) {
 	} else {
 		console.log("UNKNOWN PAGE TYPE:", pageType);
 	}
+	this.ShowWebsiteTitle();
 	this.ApplyElementTranslations();
 };
 

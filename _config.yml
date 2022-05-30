@@ -43,6 +43,9 @@ github_addr_popc1: "https://github.com/pl-wnifc/humdrum-chopin-first-editions"
 #background_image: "/img/pope-martin.jpg"
 background_image: "/img/zielenski.png"
 
+# background_color: This will be multiplied with the background image.
+background_color: "#5b5765"
+
 # langauges: List of langauges available on website.
 languages:
    - "EN"
@@ -84,12 +87,24 @@ size_increment: "1.10"
 ##     they are needed for dynamic content generation.
 ##
 
+# primary_color: blue
+primary_color: "#2d2e83"
+
+# secondary_color: gold
+secondary_color: "#b0845f"
+
+# tertiary_color: gray
+tertiary_color: "#e5e5e5"
+
+# black_color: black
+black_color: "#000000"
+
 # h1_color: Color for H1 headings.
 #h1_color: "#a71b1d"
 h1_color: "#2d2e83"
 
 # h2_color: Color for H2 headings.
-h2_color: "black"
+h2_color: "#000000"
 
 # h3_color: Color for H3 headings.
 h3_color: "#aaaaaa"
@@ -111,7 +126,7 @@ navigator_hover_color: "#dc143c"
 text_match_color: "#dc143c"
 
 # selected_langauge_color: Color to highlight the selected language in the navigator.
-selected_language_color: "goldenrod"
+selected_language_color: "#2d2e83"
 
 # max_content_width: Maximum width of main content
 max_content_width: "1000px"

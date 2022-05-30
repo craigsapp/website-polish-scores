@@ -52,7 +52,7 @@ POPC2.prototype.prepareCgiVariables = function () {
 		// The keyscape needs to be displayed last so that
 		// only one keyscape image is downloaded and displayed
 		// initially.
-		popc2.toggleSubpageDisplay('keyscape')
+		popc2.toggleToolDisplay('keyscape')
 	}
 
 };

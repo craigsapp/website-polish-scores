@@ -17,6 +17,8 @@
 POPC2.prototype.displayBrowsePage = function () {
 	let pageElement = this.ShowPage("browse");
 
+	this.ShowWebsiteTitle();
+
 	// Initial page load sets the cursor to "progress" (mostly for the
 	// workpage load which will take longer than the browse page).
 	// Remove the waiting class to stop the cursor spinning:
@@ -38,6 +40,11 @@ POPC2.prototype.displayBrowsePage = function () {
 		this.displayBrowseTable();
 		this.showResultsCount(this.VARS.SEARCH_INDEX);
 		return;
+	}
+
+	let celement = document.querySelector("#comlib");
+	if (celement) {
+		celement.classList.add("hidden");
 	}
 
 	this.showNavigator("browse");

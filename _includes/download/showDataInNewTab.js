@@ -4,7 +4,7 @@
 // Creation Date: Sat Oct 16 17:34:30 PDT 2021
 // Last Modified: Sun Oct 31 18:19:26 PDT 2021
 // Filename:      _includes/download/showDataInNewTab.js
-// Used by:       _includes/download/subpage-download.html
+// Used by:       _includes/download/tool-download.html
 // Included in:   _includes/download/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap

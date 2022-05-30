@@ -1,0 +1,43 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sun May 29 15:09:19 PDT 2022
+// Last Modified: Sun May 29 15:09:21 PDT 2022
+// Filename:      _includes/styles/tools.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for the tool section of a work page.
+//
+{% endcomment %}
+
+
+#tools {
+	color: white;
+	margin-top: 0;
+	margin: 0px auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	max-width: calc({{ site.max_content_width }} + 15px * 2);
+	flex-wrap: wrap;
+	flex: 1 0 auto;
+	background: {{ site.secondary_color }};
+	z-index: 10;
+	position: sticky;
+	top: 66px;
+}
+
+
+/* Each tool page needs to have padding added at the bottom.
+ * (Added to individual tools so that the main tool div does
+ *	not need to be hidden when not used.
+ */
+
+[id^="tool-"] {
+	padding-bottom: 15px !important;
+}
+
+
+

@@ -22,17 +22,17 @@ POPC2.prototype.insertBrowseSearchOnWorkPage = function () {
 		let pitchSearch = this.VARS.SEARCH.pitch || "";
 		pitchElement.value = pitchSearch;
 
-		let subpage = document.querySelector("#subpage-search");
+		let subpage = document.querySelector("#tool-search");
 		if (!pitchSearch.match(/^\s*$/)) {
 			// Show the work search menu if there is a browse pitch search
 			// to apply to the work.
 			if (subpage && subpage.classList.contains("hidden")) {
-				popc2.toggleSubpageDisplay('search');
+				popc2.toggleToolDisplay('search');
 			}
 		} else {
 			// Hide search subpage if it is visible
 			if (subpage && !subpage.classList.contains("hidden")) {
-				popc2.toggleSubpageDisplay('search');
+				popc2.toggleToolDisplay('search');
 			}
 		}
 	}

@@ -30,7 +30,10 @@ body {
 
 main {
 	background-size: cover;
-	background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url({{ site.background_image }}) no-repeat center fixed;
+	/* background: linear-gradient(rgba(45,46,131,.5), rgba(45,46,131,.5)), url({{ site.background_image }}) no-repeat center fixed; */
+	background: url({{ site.background_image }}) no-repeat center fixed;
+	background-blend-mode: multiply;
+	background-color: {{ site.background_color }};
 	box-sizing: inherit;
 	cursor: auto;
 	display: block;
@@ -42,7 +45,7 @@ main {
 	padding-bottom: 30px;
 	padding-left: 0px;
 	padding-right: 0px;
-	padding-top: 50px;
+	padding-top: 0px;
 	-webkit-text-size-adjust: 100%;
 }
 

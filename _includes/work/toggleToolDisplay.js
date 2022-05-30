@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Oct 15 12:40:31 PDT 2021
 // Last Modified: Sun Jan 23 07:00:14 PST 2022
-// Filename:      _includes/work/toggleSubpageDisplay.js
+// Filename:      _includes/work/toggleToolDisplay.js
 // Used by:       _includes/navigator/toolbar-work.html
 // Included in:   _includes/work/main.html
 // Syntax:        ECMAScript 6
@@ -13,15 +13,15 @@
 //
 {% endcomment %}
 
-POPC2.prototype.toggleSubpageDisplay = function (type) {
+POPC2.prototype.toggleToolDisplay = function (type) {
 	this.DebugMessageFunction(type);
-	let target = `subpage-${type}`;
-	let subpages = document.querySelectorAll("[id^='subpage-']");
+	let target = `tool-${type}`;
+	let subpages = document.querySelectorAll("[id^='tool-']");
 	let workinfo;
 	let showWorkInfo = false;
 	for (let i=0; i<subpages.length; i++) {
 		let id = subpages[i].id;
-		let matches = id.match(/^subpage-(.*)\s*/);
+		let matches = id.match(/^tool-(.*)\s*/);
 		if (!matches) {
 			continue;
 		}
@@ -45,7 +45,7 @@ POPC2.prototype.toggleSubpageDisplay = function (type) {
 			if (icon) {
 				icon.classList.add("selected");
 			}
-			this.scrollToTopForSubpage();
+			this.scrollToTopForTool();
 		} else {
 			showWorkInfo = true;
 			subpages[i].classList.add("hidden");
@@ -66,7 +66,7 @@ POPC2.prototype.toggleSubpageDisplay = function (type) {
 
 };
 
-Object.defineProperty(POPC2.prototype.toggleSubpageDisplay, "name", { value: "toggleSubpageDisplay" });
+Object.defineProperty(POPC2.prototype.toggleToolDisplay, "name", { value: "toggleToolDisplay" });
 
 
 

@@ -16,16 +16,12 @@ h1 {
 	box-sizing: inherit;
 	color: {{ site.h1_color }};
 	cursor: auto;
-	text-shadow: 0px 0px 2px #300;
 	font-family: 'Zilla Slab', serif;
 	font-size: 2.75rem;
-	letter-spacing: 7px;
+	letter-spacing: 5px;
 	line-height: 1.5;
 	list-style-type: none;
 	margin: 0;
-	margin-top: 9px; /* increased due to #player */
-	padding-bottom: 45px;
-	padding-top: 81px; /* increased due to #player */
 	text-align: center;
 	word-spacing: 5px;
 	-webkit-text-size-adjust: 100%;
@@ -49,12 +45,12 @@ th {
  * Adjust the page title so that it does not wrap (usually).
  */
 {% endcomment %}
-@media only screen and (max-width: 950px) { h1.browse-page { zoom: 0.96; letter-spacing: 6px; } }
-@media only screen and (max-width: 900px) { h1.browse-page { zoom: 0.92; letter-spacing: 5px; } }
-@media only screen and (max-width: 850px) { h1.browse-page { zoom: 0.88; letter-spacing: 4px; } }
-@media only screen and (max-width: 800px) { h1.browse-page { zoom: 0.84; letter-spacing: 3px; } }
-@media only screen and (max-width: 750px) { h1.browse-page { zoom: 0.80; letter-spacing: 2px; } }
-@media only screen and (max-width: 700px) { h1.browse-page { zoom: 0.76; letter-spacing: 1px; } }
+@media only screen and (max-width: 950px) { h1.browse-page { zoom: 0.96; letter-spacing: 4px; } }
+@media only screen and (max-width: 900px) { h1.browse-page { zoom: 0.92; letter-spacing: 3px; } }
+@media only screen and (max-width: 850px) { h1.browse-page { zoom: 0.88; letter-spacing: 2px; } }
+@media only screen and (max-width: 800px) { h1.browse-page { zoom: 0.84; letter-spacing: 1px; } }
+@media only screen and (max-width: 750px) { h1.browse-page { zoom: 0.80; letter-spacing: 0px; } }
+@media only screen and (max-width: 700px) { h1.browse-page { zoom: 0.76; letter-spacing: 0px; } }
 @media only screen and (max-width: 650px) { h1.browse-page { zoom: 0.72; letter-spacing: 0px; } }
 
 

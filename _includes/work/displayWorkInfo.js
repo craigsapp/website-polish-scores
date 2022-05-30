@@ -55,7 +55,7 @@ POPC2.prototype.displayWorkInfo = function(id) {
 	}
 
 	// Show composer name/info
-	let composerNameElement = base.querySelector("#composer-name");
+	let composerNameElement = document.querySelector("#composer-name");
 	if (composerNameElement && entry.COM) {
 		let text = this.FlipName(entry.COM);
 		if (!entry.COM.match(/^anon/i)) {

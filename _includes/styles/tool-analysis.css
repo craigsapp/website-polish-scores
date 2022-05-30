@@ -1,20 +1,21 @@
 {% comment %}
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
-// Creation Date: Sat Oct 16 13:25:46 PDT 2021
-// Last Modified: Fri Nov 12 21:11:45 PST 2021
-// Filename:      _includes/styles/subpage-search.css
+// Creation Date: Tue Nov  2 20:00:39 PDT 2021
+// Last Modified: Fri Nov 26 10:52:40 CET 2021
+// Filename:      _includes/styles/tool-analysis.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
 // vim:           ts=3:nowrap
 //
-// Description:   Styles for the search section of the work page.
+// Description:   Styles for the analysis section of the work page.
 //
 {% endcomment %}
 
-#subpage-search {
-	height: 110px;
-	margin-top: -110px;
+#tool-analysis {
+	/* height: 110px; now handleded by displayAnalysisPanel.js */
+	min-height: 110px;
+	margin-top: 0;
 	width: 100%;
 	justify-content: space-around;
 	align-items: center;

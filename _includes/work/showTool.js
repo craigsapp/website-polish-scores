@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 18 10:38:54 PDT 2021
 // Last Modified: Mon Oct 18 10:38:57 PDT 2021
-// Filename:      _includes/shared/showSubpage.js
+// Filename:      _includes/shared/showTool.js
 // Used by:
 // Included in:
 // Syntax:        ECMAScript 6
@@ -21,12 +21,12 @@
 //
 {% endcomment %}
 
-POPC2.prototype.showSubpage = function (type) {
+POPC2.prototype.showTool = function (type) {
 	this.DebugMessageFunction(type);
 	targets = document.querySelectorAll("#content .subpage");
 	let element = null;
 	for (let i=0; i<targets.length; i++) {
-		if (targets[i].id === "subpage-" + type) {
+		if (targets[i].id === "tool-" + type) {
 			targets[i].classList.remove("hidden");
 			element = targets[i];
 		} else {
@@ -38,7 +38,7 @@ POPC2.prototype.showSubpage = function (type) {
 	return element;
 };
 
-Object.defineProperty(POPC2.prototype.showSubpage, "name", { value: "showSubpage" });
+Object.defineProperty(POPC2.prototype.showTool, "name", { value: "showTool" });
 
 
 

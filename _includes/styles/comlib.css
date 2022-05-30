@@ -1,0 +1,32 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sun May 29 12:44:57 PDT 2022
+// Last Modified: Sun May 29 12:45:00 PDT 2022
+// Filename:      _includes/styles/comlib.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for work composer/library area.
+//
+{% endcomment %}
+
+
+#comlib {
+	height: 150px;
+	margin-top: 0;
+	text-shadow: 0px 0px 1px #999999;
+	margin: 0px auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	max-width: {{ site.max_content_width }};
+	padding: 15px;
+	flex-wrap: wrap;
+	flex: 1 0 auto;
+	background: {{ site.tertiary_color }};
+}
+
+
+

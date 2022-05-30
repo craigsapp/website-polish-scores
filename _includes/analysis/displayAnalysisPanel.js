@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Nov  3 18:51:07 PDT 2021
-// Last Modified: Wed Nov  3 18:51:10 PDT 2021
+// Last Modified: Sun May 29 15:33:04 PDT 2022
 // Filename:      _includes/browse/displayAnalysisPanel.js
 // Used by:
 // Included in:   _includes/browse/main.html
@@ -16,7 +16,7 @@
 POPC2.prototype.displayAnalysisPanel = function (tool) {
 	this.DebugMessageFunction(tool);
 
-	let subpageAnalysisElement = document.querySelector("#subpage-analysis");
+	let subpageAnalysisElement = document.querySelector("#tool-analysis");
 	if (subpageAnalysisElement) {
 		subpageAnalysisElement.style.height = "110px";
 	}

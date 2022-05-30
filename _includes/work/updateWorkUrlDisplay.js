@@ -25,7 +25,7 @@ POPC2.prototype.updateWorkUrlDisplay = function (id) {
 	let url = `${window.location.origin}/?id=${id}`;
 
 	// check for keyscape states.
-	let subpage = this.getActiveSubpage();
+	let subpage = this.getActiveTool();
 	if (subpage === "keyscape") {
 		url += "&k";
 		let celement = document.querySelector("#checkbox-cleaned");

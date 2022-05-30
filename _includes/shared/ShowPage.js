@@ -36,6 +36,10 @@ POPC2.prototype.ShowPage = function (type) {
 	this.showNavigator(type);
 	if (type === "work") {
 		this.ActivateNotationUpdates();
+		let comlib = document.querySelector("#comlib");
+		if (comlib) {
+			comlib.classList.remove("hidden");
+		}
 	} else {
 		let url = window.location.origin;
 		window.history.pushState(null, null, url);

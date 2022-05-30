@@ -15,16 +15,18 @@
 [id^="navigator-"] {
 	margin-top: 0;
 	text-shadow: 0px 0px 1px #999999;
-	margin-bottom: 0;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0px auto;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	max-width: {{ site.max_content_width }};
-	width: 100%;
+	padding: 15px;
 	flex-wrap: wrap;
 	flex: 1 0 auto;
+	background: {{ site.secondary_color }};
+	z-index: 10;
+	position: sticky;
+	top: 0px;
 }
 
 #navigator-browse {

@@ -33,7 +33,7 @@ POPC2.prototype.fillInComposerInfo = function(composer) {
 
 	element.classList.remove("anonymous");
 
-	this.DisplayComposerInfoPortrait(composer, "#composer-info");
+	this.DisplayComposerPortrait(composer, "#composer-portrait");
 };
 
 Object.defineProperty(POPC2.prototype.fillInComposerInfo, "name", { value: "fillInComposerInfo" });

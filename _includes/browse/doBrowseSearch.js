@@ -74,7 +74,7 @@ POPC2.prototype.doBrowseSearch = function (index) {
 	this.VARS.SEARCH.lang  = this.VARS.LANGUAGE;
 	this.storeSearchInfo(this.VARS.SEARCH);
 
-	this.DisplayComposerInfoPortrait(this.VARS.SEARCH.composer);
+	this.DisplayComposerPortrait(this.VARS.SEARCH.composer);
 	this.displayBrowseTable(results);
 };
 

@@ -41,7 +41,13 @@ github_addr_popc1: "https://github.com/pl-wnifc/humdrum-chopin-first-editions"
 # background_image: Background image for <main>
 #background_image: "/img/bgcbw.png"
 #background_image: "/img/pope-martin.jpg"
-background_image: "/img/zielenski.png"
+background_image: "/img/background/zielenski.png"
+
+# composer_images: Where the composer images are stored:
+composer_images: "/img/composer"
+
+# library_images: Where the library images are stored:
+library_images: "/img/siglum"
 
 # background_color: This will be multiplied with the background image.
 background_color: "#5b5765"

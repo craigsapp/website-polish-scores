@@ -350,7 +350,11 @@ function POPC2() {
 		max_content_width:   "{{ site.max_content_width    }}",
 
 		// Notation settings:
-		size_increment:       {{ site.size_increment       }}
+		size_increment:       {{ site.size_increment       }},
+
+		// Image locations:
+		composer_images:     "{{ site.composer_images      }}",
+		library_images:      "{{ site.library_images       }}"
 
 	};
 

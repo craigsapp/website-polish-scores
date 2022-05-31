@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sun Jan 23 20:17:32 PST 2022
-// Last Modified: Mon Apr  4 19:07:43 PDT 2022
+// Last Modified: Tue May 31 00:17:34 PDT 2022
 // Filename:      _includes/work/displayWorkInfo.js
 // Used by:       _includes/work/displayScore.js
 // Included in:   _includes/work/main.html
@@ -56,10 +56,13 @@ POPC2.prototype.displayScanInfo = function(humdrum) {
 	let output = "";
 	for (let i=0; i<links.length; i++) {
 		if (links[i].title) {
-			output += `<a target="_blank" class="trans image-scan" data-transatt="title:${links[i].title}" href="${links[i].url}"><span class="fas fa-picture-o"></span></a> `;
+			output += `<a target="_blank" class="trans image-scan" data-transatt="title:${links[i].title}" href="${links[i].url}"><img src="/img/icon/scan-icon.svg"></span></a> `;
 		} else {
-			output += `<a target="_blank" class="image-scan" href="${links[i].url}"><span class="fas fa-picture-o"></span></a> `;
+			output += `<a target="_blank" class="image-scan" href="${links[i].url}"><img src="/img/icon/scan-icon.svg"></span></a> `;
 		}
+
+
+
 	}
 
 	scanElement.innerHTML = output;

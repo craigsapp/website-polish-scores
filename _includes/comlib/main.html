@@ -2,9 +2,9 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sun May 29 15:59:02 PDT 2022
-// Last Modified: /bin/bash: dat: command not found
-// Filename:      _includes/comlib/comlib.html
-// Included in:   _layouts/default.html
+// Last Modified: Mon May 30 22:20:56 PDT 2022
+// Filename:      _includes/comlib/main.html
+// Included in:   
 // Syntax:        HTML
 // vim:           ts=3:nowrap
 //
@@ -14,28 +14,16 @@
 
 
 <div id="comlib" class="hidden">
-	<table>
+	<table width="100%">
 		<tr>
-
-			<td>
-				<div id="composer-portrait"></div>
-				<div id="composer">
-					<div id="composer-name" onclick="popc2.toggleComposerInfoDisplay()"></div>
-					<div class="hidden" id="composer-info"></div>
-				</div>
+			<td width="50%">
+				{% include comlib/composer-info.html %}
 			</td>
-
-			<td>
-				<div id="library-portrait"></div>
-				<div class="" id="tool-workinfo">
-					<div class="trans" data-transatt="title:source_library" id="work-library-name"></div>
-					<div class="trans" data-transatt="title:shelfmark" id="work-shelfmark"></div>
-					<div id="work-scans"></div>
-				</div>
+			<td width="50%">
+				{% include comlib/library-info.html %}
 			</td>
-
-			</tr>
-		</table>
+		</tr>
+	</table>
 </div>
 
 

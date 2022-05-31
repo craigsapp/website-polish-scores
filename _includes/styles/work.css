@@ -12,16 +12,38 @@
 //
 {% endcomment %}
 
+
 #GROUPTITLE {
 	font-size: 1.5rem;
 }
+
 
 #TITLE {
 	font-size: 1.5rem;
 }
 
+
 #SUBTITLE {
 	font-size: 1.2rem;
 }
+
+
+.composer-link {
+	display: inline-block;
+	padding-right: 15px;
+	text-decoration: none;
+	color: {{ site.secondary_color }};
+}
+
+.composer-link a {
+	text-decoration: none;
+	color: {{ site.secondary_color }};
+}
+
+
+.composer-link a:hover {
+	color: {{ site.primary_color }};
+}
+
 
 

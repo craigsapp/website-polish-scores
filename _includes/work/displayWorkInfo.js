@@ -54,19 +54,6 @@ POPC2.prototype.displayWorkInfo = function(id) {
 		console.error("Error: cannot find #work-header");
 	}
 
-	// Show composer name/info
-	let composerNameElement = document.querySelector("#composer-name");
-	if (composerNameElement && entry.COM) {
-		let text = this.FlipName(entry.COM);
-		if (!entry.COM.match(/^anon/i)) {
-			composerNameElement.style.cursor = "pointer";
-			text += "&nbsp;<i class='composer-info fas fa-info-circle'></i>";
-		} else {
-			composerNameElement.style.cursor = "auto";
-		}
-		composerNameElement.innerHTML = text;
-		composerNameElement.dataset.name = entry.COM;
-	}
 	this.fillInComposerInfo(entry.COM);
 
 	// Show work/movement title:

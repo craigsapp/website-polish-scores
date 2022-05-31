@@ -13,107 +13,126 @@
 //
 {% endcomment %}
 
-POPC2.prototype.getComposerLinks = function (info) {
-	if (!info) {
+POPC2.prototype.getComposerLinks = function (composer) {
+	this.DebugMessageFunction();
+
+	if (!composer) {
+		// maybe use SEARCH composer here.
+		return "";
+	}
+
+	if (composer === "Anonymous") {
+		return "";
+	}
+
+	if (composer === "Anonim") {
+		return "";
+	}
+
+	if (composer === "Anonymus") {
+		return "";
+	}
+
+	let entry = this.VARS.COMPOSER_INDEX[composer];
+
+	if (!entry) {
 		return "";
 	}
 
 	let output = "";
 
 	// CPDL link:
-	let cpdl = info["URL-COM-cpdl"];
+	let cpdl = entry["URL-COM-cpdl"];
 	if (cpdl) {
 		cpdl = cpdl.trim();
-		output += "<div class='composer-link'>";
+		output += "<span class='composer-link'>";
 		output += `<a target="_blank" href="${cpdl}">CPDL</a>`;
-		output += "</div>";
+		output += "</span>";
 	}
 
 	// IMSLP link:
-	let imslp = info["URL-COM-imslp"];
+	let imslp = entry["URL-COM-imslp"];
 	if (imslp) {
 		imslp = imslp.trim();
-		output += "<div class='composer-link'>";
+		output += "<span class='composer-link'>";
 		output += `<a target="_blank" href="${imslp}">IMSLP</a>`;
-		output += "</div>";
+		output += "</span>";
 	}
 
 	// NIFC link:
 	let nifc = "";
 	if (this.VARS.LANGUAGE === "PL") {
-		nifc = info["URL-COM-nifc@PL"];
+		nifc = entry["URL-COM-nifc@PL"];
 	}
 	if (!nifc) {
-		nifc = info["URL-COM-nifc@EN"];
+		nifc = entry["URL-COM-nifc@EN"];
 	}
 	if (nifc) {
 		nifc = nifc.trim();
 		let content = this.getTranslation("pmp");
-		output += "<div class='composer-link'>";
+		output += "<span class='composer-link'>";
 		output += `<a class="trans" data-trans="pmp" target="_blank" href="${nifc}">${content}</a>`;
-		output += "</div>";
+		output += "</span>";
 	}
 
 	// RISM link:
-	let rismid = info["COM-rism"];
+	let rismid = entry["COM-rism"];
 	if (!rismid) {
-		rismid = info["COM-rismid"];
+		rismid = entry["COM-rismid"];
 	}
 	if (rismid) {
 		rismid = rismid.trim();
 		let url = `https://opac.rism.info/metaopac/search?View=rism&id=${rismid}`;
-		output += "<div class='composer-link'>";
+		output += "<span class='composer-link'>";
 		output += `<a target="_blank" href="${url}">RISM</a>`;
-		output += "</div>";
+		output += "</span>";
 	}
 
 	// VIAF link:
-	let viaf = info["VIAF"];
+	let viaf = entry["VIAF"];
 	let url = `https://viaf.org/viaf/${viaf}`;
 	if (viaf) {
 		viaf = viaf.trim();
-		output += "<div class='composer-link'>";
+		output += "<span class='composer-link'>";
 		output += `<a target="_blank" href="${url}">VIAF</a>`;
-		output += "</div>";
+		output += "</span>";
 	}
 
 	// Wikidata link:
-	let wikidata = info["URL-COM-wikidata"];
+	let wikidata = entry["URL-COM-wikidata"];
 	if (wikidata) {
 		wikidata = wikidata.trim();
-		output += "<div class='composer-link'>";
+		output += "<span class='composer-link'>";
 		output += `<a target="_blank" href="${wikidata}">Wikidata</a>`;
-		output += "</div>";
+		output += "</span>";
 	}
 
 	// Wikipedia link:
 	let wikipedia = "";
 	if (this.VARS.LANGUAGE === "PL") {
-		wikipedia = info["URL-COM-wikipedia@PL"];
+		wikipedia = entry["URL-COM-wikipedia@PL"];
 	}
 	if (!wikipedia) {
-		wikipedia = info["URL-COM-wikipedia@EN"];
+		wikipedia = entry["URL-COM-wikipedia@EN"];
 	}
 	if (!wikipedia) {
-		wikipedia = info["URL-COM-wikipedia"];
+		wikipedia = entry["URL-COM-wikipedia"];
 	}
 	if (wikipedia) {
 		wikipedia = wikipedia.trim();
-		output += "<div class='composer-link'>";
+		output += "<span class='composer-link'>";
 		output += `<a target="_blank" href="${wikipedia}">Wikipedia</a>`;
-		output += "</div>";
+		output += "</span>";
 	}
 
 	// Worldcat link:
-	let worldcat = info["URL-COM-worldcat"];
+	let worldcat = entry["URL-COM-worldcat"];
 	if (worldcat) {
 		worldcat = worldcat.trim();
-		output += "<div class='composer-link'>";
+		output += "<span class='composer-link'>";
 		output += `<a target="_blank" href="${worldcat}">Worldcat</a>`;
-		output += "</div>";
+		output += "</span>";
 	}
-
-
 
 	return output;
 };

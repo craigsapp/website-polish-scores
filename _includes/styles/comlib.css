@@ -29,4 +29,38 @@
 }
 
 
+#tool-workinfo {
+	height: 110px;
+	min-height: 110px;
+	margin-top: 0;
+	width: 100%;
+	padding: 0px;
+	max-width: 800px;
+}
+
+#work-library-name, #browse-library-name {
+	font-size: 1.10rem;
+}
+
+#work-library-name a, #browse-library-name a {
+	text-decoration: none;
+}
+
+#work-shelfmark {
+	font-size: 0.95rem;
+}
+
+.image-scan {
+	font-size: 1.75rem;
+}
+
+.image-scan:hover {
+   color: {{ site.button_hover_color }};
+}
+
+.ssm:after { /* siglum-shelfmark: A siglum at the start of a shelfmark */
+	content: ":";
+}
+
+
 

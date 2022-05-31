@@ -89,6 +89,7 @@ POPC2.prototype.DisplayComposerPortrait = function (composer, selector) {
 	} else {
 		// This composer does not have a portrait, so display non-portrait.
 		element.innerHTML = composerDefaultImg;
+		element.dataset.composer = composer;
 		return;
 	}
 
@@ -104,7 +105,9 @@ POPC2.prototype.DisplayComposerPortrait = function (composer, selector) {
 			}
 		}
 	} else {
-		// show composer non-image
+		// Strange case: show composer non-image?
+		element.innerHTML = composerDefaultImg;
+		element.dataset.composer = composer;
 	}
 
 };

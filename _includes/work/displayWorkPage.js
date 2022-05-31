@@ -18,6 +18,7 @@ POPC2.prototype.displayWorkPage = function (id) {
 	if (!id) {
 		id = this.VARS.WORK_ID;
 	}
+	this.VARS.WORK_ID = id;
 	this.ShowPage("work");
 	this.ShowWebsiteTitle();
 	this.insertBrowseSearchOnWorkPage();

@@ -19,7 +19,6 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 	this.ApplyElementTranslations();
 	this.VARS.INITIALIZED_WORK_PAGE = true;
 	this.HideIiifLogo();
-	this.DisplayComposerPortrait();
 
 	if (id === "random") {
 		id = this.getRandomWorkId(this.VARS.SEARCH_RESULTS);
@@ -27,6 +26,10 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 	if (!id) {
 		id = this.VARS.WORK_ID;
 	}
+	this.VARS.WORK_ID = id;
+
+	this.DisplayComposerPortrait();
+	this.DisplayLibraryPortrait();
 
 	if (this.VARS.KEYSCAPE.ID && (id !== this.VARS.KEYSCAPE.ID)) {
 		this.VARS.KEYSCAPE.ID = "";

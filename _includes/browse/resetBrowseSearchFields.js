@@ -75,6 +75,7 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	this.buildBrowseFilters();
 	this.doBrowseSearch();
 	this.DisplayComposerPortrait();
+	this.DisplayLibraryPortrait();
 	this.ClearWaitingCursor();
 };
 

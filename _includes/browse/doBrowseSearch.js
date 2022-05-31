@@ -75,6 +75,7 @@ POPC2.prototype.doBrowseSearch = function (index) {
 	this.storeSearchInfo(this.VARS.SEARCH);
 
 	this.DisplayComposerPortrait(this.VARS.SEARCH.composer);
+	this.DisplayLibraryPortrait();
 	this.displayBrowseTable(results);
 };
 

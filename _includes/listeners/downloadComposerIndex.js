@@ -60,6 +60,7 @@ POPC2.prototype.downloadComposerIndex = function () {
 				that.displayWorkPage();
 			} else {
 				that.DisplayComposerPortrait();
+				that.DisplayLibraryPortrait();
 			}
 		})
 		.catch(err => { console.error(err); });

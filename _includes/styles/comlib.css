@@ -35,6 +35,11 @@
 }
 
 
+.comlib-line2 {
+	margin-top: -8px;
+}
+
+
 #work-library-name a:hover {
 	font-size: 1.3rem;
 	color: {{ site.secondary_color }};

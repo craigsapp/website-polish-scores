@@ -2,14 +2,16 @@
 #player {
 	position:sticky;
 	position: -webkit-sticky;
-	margin-left:80px;
+	margin-left:-15px;
 	margin-top:0px;
 	visibility:hidden;
+	color: #666;
 }
 
 #midiPlayer_div  {
 	height: 24px;
-	background: #999;
+	/* background: #999; */
+	background: none;
 	opacity: 0.70;
 }
 

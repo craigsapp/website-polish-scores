@@ -30,7 +30,10 @@ div.checkboxes {
 	letter-spacing: -0.5px;
 	justify-content: space-around;
 	align-items: center;
-	padding: 0px;
+	padding-top: 20px;
+	padding-bottom: 4px;
+	padding-left: 0px;
+	padding-right: 0px;
 	max-width: 800px;
 	margin-left: 50px;
 	margin-right: 50px;

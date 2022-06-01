@@ -20,7 +20,10 @@
 	justify-content: space-around;
 	align-items: center;
 	max-width: {{ site.max_content_width }};
-	padding: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 	flex-wrap: wrap;
 	flex: 1 0 auto;
 	background: {{ site.secondary_color }};

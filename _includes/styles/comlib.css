@@ -14,7 +14,7 @@
 
 
 #comlib {
-	height: 150px;
+	height: 141px;
 	margin-top: 0;
 	text-shadow: 0px 0px 1px #999999;
 	margin: 0px auto;
@@ -22,7 +22,10 @@
 	justify-content: space-around;
 	align-items: center;
 	max-width: {{ site.max_content_width }};
-	padding: 15px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 15px;
+	padding-right: 15px;
 	flex-wrap: wrap;
 	flex: 1 0 auto;
 	background: {{ site.tertiary_color }};

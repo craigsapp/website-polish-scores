@@ -16,7 +16,11 @@
 #title-div {
 	margin: 0px auto;
 	background: white;	
-	padding: 0px 15px;
+	height: 84px
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 15px;
+	padding-right: 15px;
 	max-width: {{ site.max_content_width }};
 }
 

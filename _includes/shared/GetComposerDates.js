@@ -63,9 +63,15 @@ POPC2.prototype.GetComposerDates = function (composer) {
 	matches1 = birth.match(/^(\d{4})\b/);
 	matches2 = death.match(/^[<>=]?~(\d{4})\b/);
 	if (matches1 && matches2) {
-		return `<i>c.</i> ${matches1[1]} &ndash; <i>c.</i>${matches2[1]}`;
+		return `<i>c.</i> ${matches1[1]} &ndash; <i>c.</i> ${matches2[1]}`;
 	}
-	
+
+	matches1 = birth.match(/^~(\d{4})\b/);
+	matches2 = death.match(/^[<>=]?(\d{4})\b/);
+	if (matches1 && matches2) {
+		return `<i>c.</i> ${matches1[1]} &ndash; <i>c.</i> ${matches2[1]}`;
+	}
+
 
 	return "";
 

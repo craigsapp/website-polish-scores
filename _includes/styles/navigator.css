@@ -28,6 +28,7 @@
 	flex: 1 0 auto;
 	background: {{ site.secondary_color }};
 	z-index: 10;
+	opacity: 0.95;
 	position: sticky;
 	top: 0px;
 }

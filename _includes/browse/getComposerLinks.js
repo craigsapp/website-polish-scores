@@ -82,7 +82,8 @@ POPC2.prototype.getComposerLinks = function (composer) {
 	}
 	if (rismid) {
 		rismid = rismid.trim();
-		let url = `https://opac.rism.info/metaopac/search?View=rism&id=${rismid}`;
+		// let url = `https://opac.rism.info/metaopac/search?View=rism&id=${rismid}`;
+		let url = `https://rism.online/people/${rismid.replace(/^pe/, "")}`;
 		output += "<span class='composer-link'>";
 		output += `<a target="_blank" href="${url}">RISM</a>`;
 		output += "</span>";

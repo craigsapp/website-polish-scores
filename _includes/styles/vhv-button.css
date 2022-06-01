@@ -65,7 +65,8 @@
 
 #player {
 	top: 50px;
-	z-index: 9999;
+	z-index: 20;
+	margin-left: -15px;
 	position: sticky;
 }
 

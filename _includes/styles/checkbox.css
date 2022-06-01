@@ -21,7 +21,7 @@ span.ctext {
 	cursor: pointer;
 	display: block;
 	font-size: 18px;
-	margin-bottom: -4px;
+	/* margin-bottom: -4px; */
 	padding-left: 35px;
 	padding-right: 10px;
 	position: relative;
@@ -43,8 +43,8 @@ span.ctext {
 
 /* Create a custom checkbox */
 .container .checkmark {
-	background-color: #eee;
-	outline: 1px solid #aaa;
+	background-color: {{ site.secondary_color }};
+	outline: 1px solid white;
 	height: 20px;
 	left: 0;
 	position: absolute;

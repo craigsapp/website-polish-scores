@@ -16,8 +16,9 @@ div.checkboxes {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	align-content: flex-start;
-	height: 130px;
+	/* align-content: flex-start; */
+	width: 100%;
+	height: 140px;
 }
 
 /* Height of checkboxes has to be the same height as #tool-configure */
@@ -35,6 +36,62 @@ div.checkboxes {
 	margin-right: 50px;
 	padding-left: 5px;
 	/* overflow-x: auto; */
+}
+
+
+#filter-input {
+	background: {{ site.secondary_color }};
+	height: 18px;
+	margin-top: 7px;
+	outline: 1px solid white;
+	border: 0;
+}
+
+#filter-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: white;
+	margin-top: 12px;
+	font-weight: italic;
+	opacity: 1; /* Firefox */
+}
+#filter-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	font-weight: italic;
+	color: white;
+}
+#filter-input::-ms-input-placeholder { /* Microsoft Edge */
+	font-weight: italic;
+	color: white;
+}
+
+.filter-form {
+	white-space: nowrap;
+	display: inline-block !important;
+}
+
+.filter-form label {
+	display: inline-block;
+	color: purple;
+	margin-right: -20px;
+}
+
+#tempo-scaling-input {
+	background: {{ site.secondary_color }};
+	outline: 1px solid white;
+	height: 18px;
+	border: 0;
+}
+
+#tempo-scaling-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: white;
+	font-weight: italic;
+	opacity: 1; /* Firefox */
+}
+#tempo-scaling-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	font-weight: italic;
+	color: white;
+}
+#tempo-scaling-input::-ms-input-placeholder { /* Microsoft Edge */
+	font-weight: italic;
+	color: white;
 }
 
 .filter-form {
@@ -59,14 +116,17 @@ div.checkboxes {
 
 select.plainwhite {
 	border-radius: 2px;
-	background: white;
-	color: black;
-	font-size: 1.15rem;
-	border: 1px solid black;
+	background: {{ site.secondary_color; }};
+	color: white;
+	width: 210px;
+	font-size: 16px;
+	border: 1px solid white;
 	text-shadow: none;
-	height: auto;
-	margin-bottom: 0px;
+	height: 20px;
+	margin-top: 4px;
+	margin-bottom: -3px;
 	padding-bottom: 0px;
+	margin-left: -1px;
 }
 
 

@@ -123,7 +123,7 @@ th_color: "#2d2e83"
 browse_highlight_color: "#0b6166"
 
 # button_hover_color: Color for buttons when hovering over them.
-button_hover_color: "limegreen"
+button_hover_color: "#dc143c"
 
 # navigator_hover_color: Color when hovering over top navigator buttons.
 navigator_hover_color: "#dc143c"

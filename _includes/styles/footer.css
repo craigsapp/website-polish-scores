@@ -25,11 +25,11 @@ footer center {
 
 span.img-background {
   	background-image: linear-gradient(to top,
-		#706a6040,
-		#706a60ff,
-		#706a60ff,
-		#706a50ff,
-		#706a6040);
+		{{ site.background_color }}40,
+		{{ site.background_color }}ff,
+		{{ site.background_color }}ff,
+		{{ site.background_color }}ff,
+		{{ site.background_color }}40);
 	display: inline-block;
 	margin: 0;
 	padding: 0;

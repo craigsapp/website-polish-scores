@@ -36,10 +36,31 @@ POPC2.prototype.buildModeFilter = function (index, target) {
 		console.error("ERROR: Cannot find target", target);
 		return;
 	}
-	let modes = {};
+	let modeCounts = [];
+
+	// Force order of modes
+	let modeOrder = {};
+	modeOrder["maj"] = 0;
+	modeOrder["min"] = 1;
+	modeOrder["dor"] = 2;
+	modeOrder["phr"] = 3;
+	modeOrder["lyd"] = 4;
+	modeOrder["mix"] = 5;
+	modeOrder["aeo"] = 6;
+	modeOrder["ion"] = 7;
+	let sortedModes = Object.getOwnPropertyNames(modeOrder);
+
 	if (index.length === this.VARS.SEARCH_INDEX.length) {
 			// Use cached mode counts
-			modes = this.VARS.BROWSE_MENU_OPTIONS.mode;
+			let tempModes = this.VARS.BROWSE_MENU_OPTIONS.mode;
+				modeCounts[0] = tempModes["maj"];
+				modeCounts[1] = tempModes["min"];
+				modeCounts[2] = tempModes["dor"];
+				modeCounts[3] = tempModes["phr"];
+				modeCounts[4] = tempModes["lyd"];
+				modeCounts[5] = tempModes["mix"];
+				modeCounts[6] = tempModes["aeo"];
+				modeCounts[7] = tempModes["ion"];
 	} else {
 		for (let i=0; i<index.length; i++) {
 			let mode = "";
@@ -58,50 +79,33 @@ POPC2.prototype.buildModeFilter = function (index, target) {
 				continue;
 			}
 			mode = mode.trim();
-			if (modes[mode]) {
-				modes[mode]++;
+			if (modeCounts[modeOrder[mode]]) {
+				modeCounts[modeOrder[mode]]++;
 			} else {
-				modes[mode] = 1;
+				modeCounts[modeOrder[mode]] = 1;
 			}
 		}
 	}
 
-	let limitedKeys = Object.getOwnPropertyNames(modes);
-	let fullKeys    = Object.getOwnPropertyNames(this.VARS.BROWSE_MENU_OPTIONS.mode);
+	let limitedKeys = Object.getOwnPropertyNames(modeCounts);
+	let limitedCount = 0;
+	for (let i=0; i<limitedKeys.length; i++) {
+		if (limitedKeys[i].match(/^\d+$/)) {
+			limitedCount++;
+		}
+	}
 
 	let tmodes = [];  // Translate modes into active language.
-	for (let i=0; i<fullKeys.length; i++) {
+	for (let i=0; i<sortedModes.length; i++) {
 		let entry = {};
-		entry.value = fullKeys[i];
-		entry.count = modes[limitedKeys[i]];
-		let tkey = fullKeys[i];
+		entry.value = i;
+		entry.count = modeCounts[i];
+		let tkey = sortedModes[i];
 		entry.title = this.getTranslation(tkey);
 		tmodes.push(entry);
 	}
 
 	let that = this;
-	tmodes.sort(function(a, b) {
-		let groupA = 0;
-		if      (a.value === "maj") { groupA = 1; }
-		else if (a.value === "min") { groupA = 2; }
-		else if (a.value === "ion") { groupA = 3; }
-		else if (a.value === "dor") { groupA = 4; }
-		else if (a.value === "phr") { groupA = 5; }
-		else if (a.value === "lyd") { groupA = 6; }
-		else if (a.value === "mix") { groupA = 7; }
-		else if (a.value === "aeo") { groupA = 8; }
-		else if (a.value === "loc") { groupA = 9; }
-		if      (b.value === "maj") { groupB = 1; }
-		else if (b.value === "min") { groupB = 2; }
-		else if (b.value === "ion") { groupB = 3; }
-		else if (b.value === "dor") { groupB = 4; }
-		else if (b.value === "phr") { groupB = 5; }
-		else if (b.value === "lyd") { groupB = 6; }
-		else if (b.value === "mix") { groupB = 7; }
-		else if (b.value === "aeo") { groupB = 8; }
-		else if (b.value === "loc") { groupB = 9; }
-		return groupA - groupB;
-	});
 
 	let selectedMode = "";
 	if (this.VARS.SEARCH && this.VARS.SEARCH.mode) {
@@ -117,7 +121,7 @@ POPC2.prototype.buildModeFilter = function (index, target) {
 
 	output += "<option value=''>";
 	output += this.getTranslation("any_mode");
-	output += ` [${limitedKeys.length}]`;
+	output += ` [${limitedCount}]`;
 	output += "</option>\n";
 
 	for (let i=0; i<tmodes.length; i++) {

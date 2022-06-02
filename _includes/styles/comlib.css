@@ -114,5 +114,6 @@
 #composer-name {
 	font-size: 1.3rem;
 	color: black;
+	white-space: nowrap;
 }
 

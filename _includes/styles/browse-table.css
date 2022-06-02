@@ -110,7 +110,7 @@ table.search-results td.shelfmark span.siglum-postfix {
 }
 
 table.search-results tbody tr:hover {
-	background: #99000011;
+	background: {{ site.secondary_color }}18;
 }
 
 table.search-results tbody tr.lyrics:hover{

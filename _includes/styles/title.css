@@ -16,11 +16,11 @@
 #title-div {
 	margin: 0px auto;
 	background: white;	
-	height: 84px
+	height: {{ site.titlebar_height }};
 	padding-top: 0px;
 	padding-bottom: 0px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: {{ site.content_padding }};
+	padding-right: {{ site.content_padding }};
 	max-width: {{ site.max_content_width }};
 }
 

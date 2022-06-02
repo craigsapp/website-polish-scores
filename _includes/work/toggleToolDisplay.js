@@ -45,7 +45,7 @@ POPC2.prototype.toggleToolDisplay = function (type) {
 			if (icon) {
 				icon.classList.add("selected");
 			}
-			this.scrollToTopForTool();
+			// this.scrollToTopForTool();
 		} else {
 			showWorkInfo = true;
 			subpages[i].classList.add("hidden");

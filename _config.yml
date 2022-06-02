@@ -134,7 +134,24 @@ text_match_color: "#dc143c"
 # selected_langauge_color: Color to highlight the selected language in the navigator.
 selected_language_color: "#2d2e83"
 
+# slight_opacity: slight opacity for giving a slight view of underlying
+# notation or background to break-up the plain color of a toolbar or the
+# composer/library info box.
+slight_opacity: "0.95"
+
 # max_content_width: Maximum width of main content
 max_content_width: "1000px"
+
+# toolbar_height: vertical pixel height of the toolbar.  Need to coordinate
+# between various elements, such as the MIDI progress bar (which will be moved
+# later and not care about this number eventually).
+toolbar_height: "52px"
+
+# titlebar_height: vertical pixel height of the title region of the page.
+titlebar_height: "84px"
+
+# content_padding: padding on left/right/bottom of main content.  Needed to 
+# coordinate between separate divs above the main content.
+content_padding: "15px"
 
 

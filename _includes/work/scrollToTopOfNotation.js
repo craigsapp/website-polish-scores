@@ -20,7 +20,7 @@ POPC2.prototype.scrollToTopOfNotation = function () {
 		console.error("Error: cannot find #content");
 		return;
 	}
-	let adjustment = -50;
+	let adjustment = -parseInt("{{ site.toolbar_height }}");
 	let elementY = content.getBoundingClientRect().top;
 	let targetY = elementY + window.pageYOffset + adjustment;
 	window.scrollTo({top: targetY, behavior: "smooth"});

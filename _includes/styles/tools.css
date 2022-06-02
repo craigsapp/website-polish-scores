@@ -20,14 +20,14 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	max-width: calc({{ site.max_content_width }} + 15px * 2);
+	max-width: calc({{ site.max_content_width }} + {{ site.content_padding }}  * 2);
 	flex-wrap: wrap;
 	flex: 1 0 auto;
 	background: {{ site.secondary_color }};
 	z-index: 10;
 	position: sticky;
-	opacity: 0.95;
-	top: 52px; /* needs to match height of toolbar */
+	opacity: {{ site.slight_opacity }};
+	top: {{ site.toolbar_height }};
 }
 
 
@@ -37,7 +37,7 @@
  */
 
 [id^="tool-"] {
-	padding-bottom: 15px !important;
+	padding-bottom: {{ site.content_padding }} !important;
 }
 
 

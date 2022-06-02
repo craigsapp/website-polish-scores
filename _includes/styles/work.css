@@ -30,7 +30,7 @@
 
 .composer-link {
 	display: inline-block;
-	padding-right: 15px;
+	padding-right: {{ site.content_padding }};
 	text-decoration: none;
 	color: {{ site.secondary_color }};
 }

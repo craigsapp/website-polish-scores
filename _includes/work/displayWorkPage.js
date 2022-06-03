@@ -24,6 +24,13 @@ POPC2.prototype.displayWorkPage = function (id) {
 	this.insertBrowseSearchOnWorkPage();
 	this.HideIiifLogo();
 	this.displayScore(id);
+	if (this.VARS.RESTORE_TOOLS) {
+		this.VARS.RESTORE_TOOLS = false;
+		let element = document.querySelector("#tools");
+		if (element) {
+			element.classList.remove("hidden");
+		}
+	}
 };
 
 Object.defineProperty(POPC2.prototype.displayWorkPage, "name", { value: "displayWorkPage" });

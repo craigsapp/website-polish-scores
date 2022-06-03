@@ -26,6 +26,16 @@ POPC2.prototype.displayBrowsePage = function () {
 
 	this.DebugMessageFunction();
 
+	let toolsElement = document.querySelector("#tools");
+	if (toolsElement) {
+		if (!toolsElement.classList.contains("hidden")) {
+			// A tool is open when coming from the Work page, so hide it and then
+			// when returning to the work page, display the selected tools region again:
+			this.VARS.RESTORE_TOOLS = true;
+			toolsElement.classList.add("hidden");
+		}
+	}
+
 	let helement = document.querySelector("#history-browse-button");
 	if (helement && helement.classList.contains("selected")) {
 		this.setupHistoryPage();

@@ -130,6 +130,9 @@ function POPC2() {
 	// later sessions (as a JSON array of fileids).
 	this.VARS.WORK_BOOKMARKS = [];
 
+	// RESTORE_TOOLS -- unhide any selected tool when returning from the browse page.
+	this.VARS.RESTORE_TOOLS = false;
+
 	// KEYSCAPE -- info about the keyscape interface.
 	this.VARS.KEYSCAPE = {};
 

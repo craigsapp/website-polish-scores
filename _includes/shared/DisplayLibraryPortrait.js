@@ -48,7 +48,7 @@ POPC2.prototype.DisplayLibraryPortrait = function (siglum, selector) {
 	if (!siglum) {
 		element.style.display = "none";
 		console.error("Library is undefined in DisplayLibraryPortrait()");
-		// this is an error: If unknown, then should be composed by anonymous.
+		// this is an error: If unknown, then should be an unknown library.
 		return;
 	}
 
@@ -85,6 +85,7 @@ POPC2.prototype.DisplayLibraryPortrait = function (siglum, selector) {
 			this.VARS.PORTRAIT_IMAGES[siglum] = encoded;
 			element.dataset.siglum === siglum;
 			element.innerHTML = text;
+			element.style.display = "block";
 		});
 
 };

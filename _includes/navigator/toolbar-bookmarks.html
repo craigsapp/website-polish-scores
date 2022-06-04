@@ -13,7 +13,10 @@
 {% endcomment %}
 
 
-<div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-arrow-circle-left"
+		data-transatt="title:history_tool" onclick="popc2.displayBrowsePage();">
+</div>
+
 <div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
 <div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
 <div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
@@ -26,20 +29,20 @@
 <div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
 <div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
 
-<div id="random-browse-button" class="trans worknav-tool fas fa-random"
+<div class="random trans worknav-tool fas fa-random"
 		data-transatt="title:random_tool" onclick="popc2.displayRandomWork();">
 </div>
 
-<div id="copy-browse-button" class="trans worknav-tool fas fa-table"
+<div class="copytable trans worknav-tool fas fa-table"
 		data-transatt="title:copy_browse_tool" onclick="popc2.copyBrowseTableAsTsv()">
 </div>
 
-<div id="history-browse-button" class="hidden trans worknav-tool fas fa-history"
+<div class="history hidden trans worknav-tool fas fa-history"
 		data-transatt="title:history_tool" onclick="popc2.displayHistoryPage()">
 </div>
 
-<div id="bookmark-browse-button" class="hidden trans worknav-tool fas fa-star"
-		data-transatt="title:bookmark_browse_tool" onclick="popc2.displayBookmarkPage()">
+<div class="selected bookmarks trans worknav-tool fas fa-star"
+		data-transatt="title:bookmark_browse_tool" onclick="popc2.displayBrowsePage()">
 </div>
 
 

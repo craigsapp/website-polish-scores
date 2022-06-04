@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Tue Oct 12 08:07:59 PDT 2021
-// Last Modified: Thu Oct 21 00:27:14 PDT 2021
+// Last Modified: Fri Jun  3 06:48:29 PDT 2022
 // Filename:      _includes/styles/navigator.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
@@ -33,6 +33,7 @@
 	top: 0px;
 }
 
+/* Now adding invisible icons to space
 #navigator-browse {
 	justify-content: right;
 }
@@ -40,6 +41,8 @@
 #navigator-browse .worknav-tool {
 	padding-left: 25px;
 }
+
+*/
 
 .worknav-tool.selected {
 	color: {{ site.selected_language_color }} !important;

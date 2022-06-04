@@ -31,6 +31,19 @@ POPC2.prototype.showNavigator = function (target) {
 			navigators[i].classList.add("hidden");
 		}
 	}
+
+	if (target === "browse") {
+		let helement = document.querySelector("#history-browse-button");
+		if (helement) {
+			if (this.VARS.WORK_HISTORY.length > 0) {
+				helement.classList.remove("hidden");
+			} else {
+				helement.classList.add("hidden");
+			}
+		}
+	}
+
+
 };
 
 Object.defineProperty(POPC2.prototype.showNavigator, "name", { value: "showNavigator" });

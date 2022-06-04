@@ -30,7 +30,22 @@ POPC2.prototype.GetPageType = function () {
 		}
 		let matches = id.match(/^page-(.*)/);
 		if (matches) {
-			return matches[1];
+			pageType =  matches[1];
+			if (pageType !== "browse") {
+				return pageType;
+			}
+			let n = document.querySelectorAll("[id^='navigator-']");
+			for (let i=0; i<n.length; i++) {
+				if (n[i].classList.contains("hidden")) {
+					continue;
+				}
+				let id = n[i].id;
+				let matches = id.match(/navigator-(.*)/);
+				if (matches) {
+					let pageType = matches[1];
+					return pageType;
+				}
+			}
 		}
 	}
 	return "none";

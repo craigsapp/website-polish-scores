@@ -25,7 +25,7 @@ document.addEventListener("click", function (event) {
 	}
 	let path = popc2.BuildPath(target);
 	let pageType = popc2.GetPageType();
-	if (pageType === "browse") {
+	if ((pageType === "browse") || (pageType === "history") || (pageType === "bookmarks")) {
 		let workid = popc2.getBrowseWorkId(path);
 		if (workid) {
 			popc2.displayWorkPage(workid);

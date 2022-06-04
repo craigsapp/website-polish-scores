@@ -15,16 +15,16 @@
 {% endcomment %}
 
 POPC2.prototype.displayBrowsePage = function () {
+	this.DebugMessageFunction();
+	this.manageSearchResults("browse");
+
 	let pageElement = this.ShowPage("browse");
 
-	this.ShowWebsiteTitle();
 
 	// Initial page load sets the cursor to "progress" (mostly for the
 	// workpage load which will take longer than the browse page).
 	// Remove the waiting class to stop the cursor spinning:
 	this.ClearWaitingCursor();
-
-	this.DebugMessageFunction();
 
 	let toolsElement = document.querySelector("#tools");
 	if (toolsElement) {
@@ -36,28 +36,13 @@ POPC2.prototype.displayBrowsePage = function () {
 		}
 	}
 
-	let helement = document.querySelector("#history-browse-button");
-	if (helement && helement.classList.contains("selected")) {
-		this.setupHistoryPage();
-		this.displayBrowseTable();
-		this.showResultsCount(this.VARS.SEARCH_INDEX);
-		return;
-	}
-
-	let belement = document.querySelector("#bookmark-browse-button");
-	if (belement && belement.classList.contains("selected")) {
-		this.setupBookmarkPage();
-		this.displayBrowseTable();
-		this.showResultsCount(this.VARS.SEARCH_INDEX);
-		return;
-	}
+	this.showNavigator("browse");
 
 	let celement = document.querySelector("#comlib");
 	if (celement) {
 		celement.classList.add("hidden");
 	}
 
-	this.showNavigator("browse");
 	var telement = document.querySelector("#template-browse");
 	if (!telement) {
 		console.error("ERROR: Cannot find #template-browse.");
@@ -82,7 +67,9 @@ POPC2.prototype.displayBrowsePage = function () {
 	}
 
 	this.HideIiifLogo();
-	this.showNavigator("browse");
+	this.ShowWebsiteTitle();
+	this.showBookmarksIfNotEmpty();
+	this.showHistoryIfNotEmpty();
 	this.ApplyElementTranslations();
 	this.buildBrowseFilters();
 	this.doBrowseSearch();

@@ -1,0 +1,49 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct 20 23:08:50 PDT 2021
+// Last Modified: Thu Jun  2 23:31:36 PDT 2022
+// Filename:      _includes/navigator/navigator-browse.html
+// Included in:   _includes/navigator/main.html
+// Syntax:        HTML
+// vim:           ts=3:nowrap
+//
+// Description:   Toolbar for the browse page.
+//
+{% endcomment %}
+
+
+<div class="trans worknav-tool fas fa-arrow-circle-left"
+		data-transatt="title:history_tool" onclick="popc2.displayBrowsePage();">
+</div>
+
+<div class="trans worknav-tool fas fa-random" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-random" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-random" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-random" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-random" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-random" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-random" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-random" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-random" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-random" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-random" style="visibility:hidden"></div>
+
+<div class="trans worknav-tool fas fa-random"
+		data-transatt="title:random_tool" onclick="popc2.displayRandomWork();">
+</div>
+
+<div class="copytable trans worknav-tool fas fa-table"
+		data-transatt="title:copy_browse_tool" onclick="popc2.copyBrowseTableAsTsv()">
+</div>
+
+<div class="selected history trans worknav-tool fas fa-history"
+		data-transatt="title:history_tool" onclick="popc2.displayBrowsePage()">
+</div>
+
+<div class="bookmarks hidden trans worknav-tool fas fa-star"
+		data-transatt="title:bookmark_browse_tool" onclick="popc2.displayBookmarkPage()">
+</div>
+
+
+

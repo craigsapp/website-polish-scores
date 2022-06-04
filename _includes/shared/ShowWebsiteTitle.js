@@ -15,11 +15,37 @@
 
 
 POPC2.prototype.ShowWebsiteTitle = function () {
-	let h1element = document.querySelector("h1");
-	if (h1element) {
-		h1element.innerHTML = this.getTranslation(`title_${this.VARS.REPERTORY}`);
+	this.DebugMessageFunction();
+
+	let ptype = "";
+	let n = document.querySelectorAll("[id^='navigator-']");
+	for (let i=0; i<n.length; i++) {
+		if (n[i].classList.contains("hidden")) {
+			continue;
+		}
+		let id = n[i].id;
+		let matches = id.match(/navigator-(.*)/);
+		if (matches) {
+			ptype = matches[1];
+			break;
+		}
 	}
-	h1element.classList.remove("hidden");
+
+	let h1element = document.querySelector("h1#page-title");
+	if (h1element) {
+		if (ptype === "history") {
+			h1element.innerHTML = this.getTranslation("history");
+			h1element.dataset.trans = "history";
+		} else if (ptype === "bookmarks") {
+			h1element.innerHTML = this.getTranslation("bookmarks");
+			h1element.dataset.trans = "bookmarks";
+		} else {
+			let title = this.getTranslation(`title_${this.VARS.REPERTORY}`) || "ERROR";
+			h1element.innerHTML = title;
+			h1element.dataset.trans = `title_${this.VARS.REPERTORY}`;
+			h1element.classList.remove("hidden");
+		}
+	}
 };
 
 Object.defineProperty(POPC2.prototype.ShowWebsiteTitle, "name", { value: "ShowWebsiteTitle" });

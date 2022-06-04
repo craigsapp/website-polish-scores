@@ -31,8 +31,17 @@ POPC2.prototype.ChangePageLanguage = function (lang, type) {
 
 	let pageType = this.GetPageType();
 
+console.error("PAGE TYPE", pageType);
 	if (pageType === "browse") {
 		this.displayBrowsePage();
+	} else if (pageType === "bookmarks") {
+console.log("CHANGING TO BOOKMARKS");
+		this.displayBrowsePage();
+		this.displayBookmarkPage();
+	} else if (pageType === "history") {
+console.log("CHANGING TO HISTORY");
+		this.displayBrowsePage();
+		this.displayHistoryPage();
 	} else if (pageType === "work") {
 		// Most/all of work is now done by ApplyElementTranslations.
 		// this.updateWorkPageLanguage();

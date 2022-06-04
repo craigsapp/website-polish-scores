@@ -77,7 +77,7 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 				event.preventDefault();
 			} else if (popc2.IsWorkPage()) {
 				// Toggle display of download menu.
-				popc2.toggleDownloadDisplay();
+				popc2.toggleToolDisplay("download");
 				event.preventDefault();
 			}
 			break;

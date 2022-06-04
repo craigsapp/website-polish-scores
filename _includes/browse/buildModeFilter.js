@@ -49,6 +49,15 @@ POPC2.prototype.buildModeFilter = function (index, target) {
 	modeOrder["aeo"] = 6;
 	modeOrder["ion"] = 7;
 	let sortedModes = Object.getOwnPropertyNames(modeOrder);
+	let rmode = [];
+	rmode[0] = "maj";
+	rmode[1] = "min";
+	rmode[2] = "dor";
+	rmode[3] = "phr";
+	rmode[4] = "lyd";
+	rmode[5] = "mix";
+	rmode[6] = "aeo";
+	rmode[7] = "ion";
 
 	if (index.length === this.VARS.SEARCH_INDEX.length) {
 			// Use cached mode counts
@@ -134,9 +143,9 @@ POPC2.prototype.buildModeFilter = function (index, target) {
 		if (!count) {
 			output += ' disabled';
 		}
-		output += tmodes[i].value;
+		output += rmode[tmodes[i].value];
 		output += '"'
-		if (selectedMode === tmodes[i].value) {
+		if (selectedMode === rmode[tmodes[i].value]) {
 			output += " selected";
 		}
 		output += '>';

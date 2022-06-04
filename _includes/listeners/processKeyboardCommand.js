@@ -135,6 +135,10 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			}
 			break;
 
+		case "o":
+			popc2.toggleToolOpacity();
+			break;
+
 		case "p":
 			if (popc2.IsWorkPage()) {
 				if (popc2.VARS.PROBLEM_TEXT) {

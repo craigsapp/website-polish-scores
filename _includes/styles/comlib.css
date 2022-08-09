@@ -52,6 +52,14 @@
 	color: {{ site.secondary_color }};
 }
 
+#work-shelfmark .shelfmark a {
+	text-decoration: none;
+	color: black;
+}
+
+#work-shelfmark .shelfmark a:hover {
+	color: {{ site.secondary_color }};
+}
 
 #library-portrait .st0:hover {
 	fill: {{ site.secondary_color }};
@@ -88,7 +96,9 @@
 }
 
 
-#work-library-name a, #browse-library-name a {
+#work-library-name a,
+#browse-library-name a
+#work-shelfmark a {
 	text-decoration: none;
 }
 

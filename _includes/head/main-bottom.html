@@ -17,9 +17,10 @@
 
 <script src="https://plugin.humdrum.org/scripts/humdrum-notation-plugin-worker.js"></script>
 
-{% include pdf/main.html   %}
-
-{% include midi/main.html     %}
-
-
+{% include pdf/main.html         %}
+{% include midi/main.html        %}
+<div id="pagination">
+	{% include pagination-browse/main.html %}
+	{% include pagination-work/main.html   %}
+</div>
 

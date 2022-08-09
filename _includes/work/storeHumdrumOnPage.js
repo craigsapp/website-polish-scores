@@ -18,6 +18,7 @@ POPC2.prototype.storeHumdrumOnPage = function(data) {
 	this.DebugMessageFunction();
 	element = document.querySelector("#humdrum");
 	element.textContent = data;
+	this.storeHumdrumReferenceRecords(data);
 };
 
 Object.defineProperty(POPC2.prototype.storeHumdrumOnPage, "name", { value: "storeHumdrumOnPage" });

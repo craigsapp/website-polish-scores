@@ -24,6 +24,7 @@ POPC2.prototype.displayWorkPage = function (id) {
 	this.insertBrowseSearchOnWorkPage();
 	this.HideIiifLogo();
 	this.displayScore(id);
+	this.displayWorkPagination();
 	if (this.VARS.RESTORE_TOOLS) {
 		this.VARS.RESTORE_TOOLS = false;
 		let element = document.querySelector("#tools");

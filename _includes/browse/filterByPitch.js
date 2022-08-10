@@ -23,7 +23,7 @@ POPC2.prototype.filterByPitch = function (input) {
 	if (input.length == 0) {
 		return input;
 	}
-	let element = document.querySelector(`input.filter.${type}`);
+	let element = document.querySelector(`#filters input.filter.${type}`);
 	let target = "";
 	if (element) {
 		target = element.value;

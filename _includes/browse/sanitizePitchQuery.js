@@ -63,6 +63,7 @@ POPC2.prototype.sanitizePitchQuery = function (input) {
 			output += `${value}[#-]* `;
 		}
 	}
+
 	this.DebugMessage("SANTIZED PITCH: " + output, "teal");
 	return output;
 };

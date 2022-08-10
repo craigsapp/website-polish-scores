@@ -29,12 +29,16 @@ POPC2.prototype.processHumdrumRecordsForWorkPage = function(entry) {
 	}
 	if (element && nifcrism) {
 		let shelfmark = element.querySelector("span.shelfmark");
+		let output = `<span class="trans ssm" data-transatt="title:click_rism_siglum" >`
 		if (shelfmark) {
+			shelfmark.classList.add("trans");
+			shelfmark.dataset.transatt = "title:click_rism_source";
 			let text = shelfmark.innerHTML;
 			if (!text.match(/<a/)) {
 				let url = `https://rism.online/sources/${nifcrism}`;
 				text = `<a target="_blank" href="${url}">${text}</a>`;
 				shelfmark.innerHTML = text;
+				this.ApplyElementTranslations(element);
 			}
 		}
 	}

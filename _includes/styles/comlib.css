@@ -52,12 +52,14 @@
 	color: {{ site.secondary_color }};
 }
 
-#work-shelfmark .shelfmark a {
+#work-shelfmark .shelfmark a,
+#work-shelfmark .ssm a {
 	text-decoration: none;
 	color: black;
 }
 
-#work-shelfmark .shelfmark a:hover {
+#work-shelfmark .shelfmark a:hover,
+#work-shelfmark .ssm a:hover {
 	color: {{ site.secondary_color }};
 }
 

@@ -7,6 +7,18 @@
 @
 
 @@BEGIN:	ENTRY
+@TAG:		click_rism_siglum
+@EN:		Click to view RISM siglum info
+@PL:		Click to view RISM siglum info
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		click_rism_source
+@EN:		Click to view RISM source info
+@PL:		Click to view RISM source info
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		shelfmark
 @EN:		Shelfmark
 @PL:		Sygnatura

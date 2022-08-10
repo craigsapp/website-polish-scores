@@ -122,8 +122,22 @@ POPC2.prototype.displayWorkInfo = function(id) {
 	if (shelfmarkElement && this.VARS.SIGLUM_INDEX[entry.siglum]) {
 		let siglum = entry.siglum;
 		let shelfmark = entry.shelfmark;
+		let siglumentry = this.VARS.SIGLUM_INDEX[siglum];
+		let siglumid;
+		if (siglumentry) {
+			siglumid = siglumentry["RISM-ID"];
+		}
 		shelfmarkElement.innerHTML = "";
-		let output = `<span class="ssm">${siglum}</span> <span class="shelfmark">${shelfmark}</span>`;
+		let output = `<span class="trans ssm" data-transatt="title:click_rism_siglum" >`
+		if (siglumid && siglumid.match(/^[0-9]+$/)) {
+			output += `<a target="_blank" href="https://rism.online/institutions/${siglumid}">`;
+		}
+		output += `${siglum}`
+		if (siglumid && siglumid.match(/^[0-9]+$/)) {
+			output += "</a>";
+		}
+		output += `</span> `;
+		output += `<span class="shelfmark">${shelfmark}</span>`;
 		shelfmarkElement.innerHTML = output;
 	}
 

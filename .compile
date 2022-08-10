@@ -17,8 +17,5 @@ rm -rf _site
 bundle exec jekyll build
 
 ## Allow access through SELinux:
-#chcon -R -t httpd_sys_content_t _site
-#chcon -R -t httpd_sys_content_t _site/resources
-#chcon --user system_u --type httpd_sys_content_t -Rv _site/
-#chcon -Rv --type=httpd_sys_content_t /var/www/websites/polyrhythm
-#chcon -Rv --type=httpd_sys_content_t /projects/polyrhythm-resources/
+chcon -R -t httpd_sys_content_t _site
+chcon --user system_u --type httpd_sys_content_t -Rv _site/

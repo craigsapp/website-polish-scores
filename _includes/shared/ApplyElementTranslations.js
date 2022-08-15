@@ -26,6 +26,23 @@ POPC2.prototype.ApplyElementTranslations = function (target) {
 		list = document.querySelectorAll(".trans");
 	}
 
+	// Adjust language-contextual links to POPC2 scans:
+	for (let i=0; i<list.length; i++) {
+		if (!list[i].href) {
+			continue;
+		}
+		let url = list[i].href;
+		let matches = url.match(/^(https:\/\/polish.musicsources.pl\/)(pl|en)(\/.*)$/);
+		if (matches) {
+			let lang = this.VARS.LANGUAGE || "EN";
+			lang = lang.toLowerCase();
+			let newurl = `${matches[1]}${lang}${matches[3]}`;
+			if (newurl !== url) {
+				list[i].href = newurl;
+			}
+		}
+	}
+
 	// Apply translations to element text content:
 	for (let i=0; i<list.length; i++) {
 		let tag = list[i].dataset.trans;

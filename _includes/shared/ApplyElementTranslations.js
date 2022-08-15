@@ -52,7 +52,34 @@ POPC2.prototype.ApplyElementTranslations = function (target) {
 		}
 		let attribute = matches[1];
 		let newtag = matches[2];
-		let translation = this.getTranslation(newtag);
+		let translation = "";
+		matches = newtag.match(/(@[A-Z]{2,3}{.*?\})/g);
+		let mm;
+		if (matches) {
+			// Extract embedded translation:
+			let mlang;
+			let mtrans;
+			for (let i=0; i<matches.length; i++) {
+				mm = matches[i].match(/@([A-Z]{2,3})\{(.*?)\}/);
+				if (!mm) {
+					continue;
+				}
+				mlang = mm[1];
+				mtrans = mm[2];
+				if (mlang === this.VARS.LANGAUGE) {
+					break;
+				}
+			}
+			if (mlang === this.VARS.LANGUAGE) {
+				translation = mtrans;
+			} else {
+				// Use first listed language:
+				mm = matches[0].match(/@([A-Z]{2,3})\{(.*?)\}/);
+				translation = mm[2];
+			}
+		} else {
+			translation = this.getTranslation(newtag);
+		}
 		list[i][attribute] = translation;
 	}
 

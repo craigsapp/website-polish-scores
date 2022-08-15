@@ -20,7 +20,9 @@ POPC2.prototype.processHumdrumRecordsForWorkPage = function(entry) {
 
 	// Create a link to RISM source
 	let element = document.querySelector("#work-shelfmark");
-	let nifcrism = entry.humdrum["NIFC-rismid"];
+	let nifcrism = entry.humdrum["NIFC-rismSourceID"];
+	// If nifcrism is empty, check older alias for parameter name:
+	if (!nifcrism) { nifcrism = entry.humdrum["NIFC-rismid"]; }
 	if (nifcrism) {
 		nifcrism = nifcrism[0].value;
 		if (!nifcrism.match(/^[0-9]+$/)) {

@@ -76,10 +76,10 @@ POPC2.prototype.getComposerLinks = function (composer) {
 	}
 
 	// RISM link:
-	let rismid = entry["COM-rism"];
-	if (!rismid) {
-		rismid = entry["COM-rismid"];
-	}
+	let rismid = entry["COM-rismID"];
+	// Check for older aliases for this parameter
+	if (!rismid) { rismid = entry["COM-rismid"]; }
+	if (!rismid) { rismid = entry["COM-rism"]; }
 	if (rismid) {
 		rismid = rismid.trim();
 		// let url = `https://opac.rism.info/metaopac/search?View=rism&id=${rismid}`;

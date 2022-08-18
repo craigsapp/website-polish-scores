@@ -37,6 +37,10 @@ POPC2.prototype.ApplyElementTranslations = function (target) {
 			let lang = this.VARS.LANGUAGE || "EN";
 			lang = lang.toLowerCase();
 			let newurl = `${matches[1]}${lang}${matches[3]}`;
+			if (!newurl.match(/\/\d+\/\d+\/?$/)) {
+				// Add first page to URL (which is now required)
+				newurl += "/1";
+			}
 			if (newurl !== url) {
 				list[i].href = newurl;
 			}

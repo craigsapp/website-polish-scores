@@ -79,10 +79,7 @@ POPC2.prototype.DisplayLibraryPortrait = function (siglum, selector) {
 			if (response.ok) {
 				return response.text();
 			} else {
-				let svg = atob(libraryDefaultSvg);
-				this.VARS.PORTRAIT_IMAGES[siglum] = libraryDefaultSvg;
-				element.dataset.siglum = siglum;
-				element.innerHTML = svg;
+				return atob(libraryDefaultSvg);
 			}
 		})
 		.then(text => {
@@ -90,6 +87,14 @@ POPC2.prototype.DisplayLibraryPortrait = function (siglum, selector) {
 			this.VARS.PORTRAIT_IMAGES[siglum] = encoded;
 			element.dataset.siglum === siglum;
 			element.innerHTML = text;
+			element.style.display = "block";
+		})
+		.catch(error => {
+			console.log(error);
+			let svg = atob(libraryDefaultSvg);
+			this.VARS.PORTRAIT_IMAGES[siglum] = libraryDefaultSvg;
+			element.dataset.siglum = siglum;
+			element.innerHTML = svg;
 			element.style.display = "block";
 		});
 

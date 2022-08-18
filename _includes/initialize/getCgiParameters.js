@@ -24,6 +24,8 @@
 //    p      pitch        query string for melodic pitch searches
 //    id                  work ID for displaying score
 //    rep    repertory    repository/repertory of scores for database
+//    pms                 Polish Music Scan ID
+//    rism                RISM ID
 //
 // For y, c, s, n, and g, the string must match exactly one of the select options.
 //
@@ -62,6 +64,13 @@ POPC2.prototype.getCgiParameters = function () {
 			output[pair[0]].push(pair[1]);
 		}
 	}
+
+	if (output.pms && !output.id) {
+		output.id = `pms:${output.pms}`
+	} else if (output.rism && !output.id) {
+		output.id = `rism:${output.rism}`
+	}
+
 	this.DebugMessage("CGI PARAMETERS: " + JSON.stringify(output), "steelblue");
 	return output;
 };

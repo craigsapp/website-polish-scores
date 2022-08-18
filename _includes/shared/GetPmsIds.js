@@ -22,12 +22,33 @@ POPC2.prototype.GetPmsIds = function (pmsscope, pmsnum, scoreindex) {
 	let full = `${pmsscope}${pmsnum}`;
 	let output = [];
 	let si = scoreindex;
+
+	if (pmsscope) {
+		for (let i=0; i<si.length; i++) {
+			if (!si[i].pmsid) {
+				continue;
+			}
+			if (si[i].pmsid === full) {
+				output.push(si[i].fileid);
+			}
+		}
+	}
+
+	if (output.length != 0) {
+		return output;
+	}
+
+	// There were no matches so try to search by number only:
+	let search = `^[a-z]${pmsnum}$`;
+	let re = new RegExp(search, "g");
 	for (let i=0; i<si.length; i++) {
 		if (!si[i].pmsid) {
 			continue;
 		}
-		if (si[i].pmsid === full) {
+		if (si[i].pmsid.match(re)) {
 			output.push(si[i].fileid);
+		} else if (si[i].pmsid.match(/4548/)) {
+			console.warn("ERROR did not match to ", si[i].pmsid);
 		}
 	}
 

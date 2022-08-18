@@ -18,7 +18,7 @@ POPC2.prototype.displayWorkPage = function (id) {
 	if (!id) {
 		id = this.VARS.WORK_ID;
 	}
-	let matches = id.match(/pms:([a-z])(\d+)-?(0*\d*)/);
+	let matches = id.match(/pms:([a-z]?)(\d+)-?(0*\d*)/);
 	if (matches) {
 		ids = this.GetPmsIds(matches[1], matches[2], this.VARS.SCORE_INDEX);
 		if (ids.length > 0) {
@@ -32,10 +32,8 @@ POPC2.prototype.displayWorkPage = function (id) {
 		}
 	} else {
 		matches = id.match(/rism:(\d+)-?(0*\d*)/);
-console.error("MATCHES FOR RISM IDS", matches);
 		if (matches) {
 			ids = this.GetRismIds(matches[1], this.VARS.SCORE_INDEX);
-console.error("IDS FOR RISM:", ids);
 			if (ids.length > 0) {
 				let subnum = parseInt(matches[2] || 0);
 				if ((subnum <= 1) || (subnum >= ids.length)) {

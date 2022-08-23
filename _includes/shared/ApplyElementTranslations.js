@@ -32,7 +32,7 @@ POPC2.prototype.ApplyElementTranslations = function (target) {
 			continue;
 		}
 		let url = list[i].href;
-		let matches = url.match(/^(https:\/\/polish.musicsources.pl\/)(pl|en)(\/.*)$/);
+		let matches = url.match(/^(https:\/\/polish.musicsources.pl\/)(pl|en)(\/[^#]*)$/);
 		if (matches) {
 			let lang = this.VARS.LANGUAGE || "EN";
 			lang = lang.toLowerCase();
@@ -41,6 +41,7 @@ POPC2.prototype.ApplyElementTranslations = function (target) {
 				// Add first page to URL (which is now required)
 				newurl += "/1";
 			}
+			newurl += "#nomenu";
 			if (newurl !== url) {
 				list[i].href = newurl;
 			}

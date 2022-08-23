@@ -49,7 +49,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		// Modernize stem directions
 		let entry = "s/2.right//I; s/all.right//I";
 		if (!shedEntryCount[entry]) {
-			shedEntrtyCount[entry] = 1;
+			shedEntryCount[entry] = 1;
 			shed.push(entry);
 		}
 	}
@@ -60,7 +60,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		if (element.checked) {
 			let entry = "s/2.right//I; s/all.right//I";
 			if (!shedEntryCount[entry]) {
-				shedEntrtyCount[entry] = 1;
+				shedEntryCount[entry] = 1;
 				shed.push(entry);
 			}
 		}

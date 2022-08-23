@@ -106,6 +106,14 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			}
 			break;
 
+		case "m":
+			if (popc2.IsWorkPage()) {
+				// View score in modernized form:
+				popc2.makeNotationModern();
+				event.preventDefault();
+			}
+			break;
+
 		case "n":
 			if (popc2.IsBrowsePage()) {
 				// Toggle sorting search results in notecount order.
@@ -136,6 +144,14 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 			break;
 
 		case "o":
+			if (popc2.IsWorkPage()) {
+				// View score in original/diplomatic form:
+				popc2.makeNotationOriginal();
+				event.preventDefault();
+			}
+			break;
+
+		case "O":
 			popc2.toggleToolOpacity();
 			break;
 

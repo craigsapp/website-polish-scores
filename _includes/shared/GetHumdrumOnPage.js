@@ -13,7 +13,7 @@
 //
 {% endcomment %}
 
-POPC2.prototype.GetHumdrumOnPage = function(data) {
+POPC2.prototype.GetHumdrumOnPage = function() {
 	this.DebugMessageFunction();
 	element = document.querySelector("#humdrum");
 	if (!element) {

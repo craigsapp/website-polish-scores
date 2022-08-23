@@ -202,6 +202,10 @@ function POPC2() {
 	// This is an ID string rather than an element.
 	this.VARS.RESTORE_CURSOR_NOTE_ID = "";
 
+	// KEYSCAPE.MODERNIZE -- true when embedded modern filter (or default modern filter)
+	// should be applied before rendering the score.
+	this.VARS.MODERNIZE = false;
+
 
 	//////////////////////////////
 	//

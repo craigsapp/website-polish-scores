@@ -17,13 +17,52 @@
 POPC2.prototype.addNotationConfigureOptions = function (options) {
 	let shed = [];
 	let element;
+	let shedEntryCount = {};
+	let hasModFilter = false;
+	let addModFilter = false;
+
+	if (this.VARS.MODERNIZE) {
+		// Add modernization filter
+		// First check if there is a !!!filter-modern: line in the Humdrum data
+		let humdrum = this.GetHumdrumOnPage();
+		let lines = humdrum.split(/\r?\n/);
+		hasModFilter = false;
+
+		// The filter is more likely at the bottom of the file, so
+		// search backwards in the file:
+		for (let i=lines.length-1; i>0; i--) {
+			if (lines[i].match(/^!!!filter-modern:/)) {
+				hasModFilter = true;
+				console.error("MODERN FILTER", lines[i]);
+				break;
+			}
+		}
+		if (!hasModFilter) {
+			addModFilter = true;
+		}
+	}
+
+	if (addModFilter) {
+		// Add a default modernization filter if no
+		// !!!filter-modern: line found in file.
+
+		// Modernize stem directions
+		let entry = "s/2.right//I; s/all.right//I";
+		if (!shedEntryCount[entry]) {
+			shedEntrtyCount[entry] = 1;
+			shed.push(entry);
+		}
+	}
 
 	// Display music with modern stemming
 	element = document.querySelector("#checkbox-stemming");
 	if (element) {
 		if (element.checked) {
 			let entry = "s/2.right//I; s/all.right//I";
-			shed.push(entry);
+			if (!shedEntryCount[entry]) {
+				shedEntrtyCount[entry] = 1;
+				shed.push(entry);
+			}
 		}
 	}
 
@@ -54,20 +93,20 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
-	// Hide sic warnings
-	element = document.querySelector("#checkbox-sic-hide");
-	if (element) {
-		if (element.checked) {
-			let entry = "s/^LO:SIC:/LO:XSIC:/L";
-			shed.push(entry);
-		}
-	}
-
 	// Sounding score (remove transposition information)
 	element = document.querySelector("#checkbox-soundingscore");
 	if (element) {
 		if (element.checked) {
 			let entry = "s/^ITrd/XITrd/I";
+			shed.push(entry);
+		}
+	}
+
+	// Hide sic warnings
+	element = document.querySelector("#checkbox-sic-hide");
+	if (element) {
+		if (element.checked) {
+			let entry = "s/^LO:SIC:/LO:XSIC:/L";
 			shed.push(entry);
 		}
 	}
@@ -95,14 +134,18 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		options.filter = [];
 	}
 
-	// Correct sic
-	//element = document.querySelector("#checkbox-sic-apply");
-	//if (element) {
-	//	if (element.checked) {
-	//		let entry = "sic -s";
-	//		options.filter.push(entry);
-	//	}
-	//}
+	if (addModFilter) {
+		// Substitute SICs with corrections:
+		options.filter.push("sic -s");
+
+		// Split rests and notes going over barlines:
+		options.filter.push("tie -s");
+	}
+
+	if (hasModFilter) {
+		// Activate the modern filter line:
+		options.filter.push("filter -v modern");
+	}
 
 	// Add free-form filter option
 	element = document.querySelector("#checkbox-filter");
@@ -118,7 +161,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
-	// Automatic note stems
+	// Automatic note stems directions
 	element = document.querySelector("#checkbox-autostems");
 	if (element) {
 		if (element.checked) {

@@ -87,6 +87,18 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		original_tool
+@EN:		viewing original (diplomatic) score (click to view modernized score) (m)
+@PL:		viewing original (diplomatic) score (click to view modernized score) (m)
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		modern_tool
+@EN:		viewing modernized score (click to view diplomatic score) (o)
+@PL:		viewing modernized score (click to view diplomatic score) (o)
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		download_tool
 @EN:		toggle display of downloads (d)
 @PL:		przełącz pobieranie pobranych plików (d)

@@ -110,8 +110,9 @@
 }
 
 
-.image-scan {
+.image-scan, .image-scan * {
 	font-size: 1.75rem;
+	text-decoration: none;
 }
 
 

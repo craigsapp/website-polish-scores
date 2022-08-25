@@ -61,9 +61,9 @@ POPC2.prototype.displayScanInfo = function(humdrum) {
 	// also should adjust SVG ID when links more than 1.
 	for (let i=0; i<links.length; i++) {
 		if (links[i].title) {
-			output += `<a target="_blank" class="trans image-scan" data-transatt="title:${links[i].title}" href="${links[i].url}">${scanSvg}</span></a> `;
+			output += `<a target="scan" class="trans image-scan" data-transatt="title:${links[i].title}" href="${links[i].url}">${scanSvg}</span></a> `;
 		} else {
-			output += `<a target="_blank" class="image-scan" href="${links[i].url}">${scanSvg}</span></a> `;
+			output += `<a target="scan" class="image-scan" href="${links[i].url}">${scanSvg}</span></a> `;
 		}
 	}
 

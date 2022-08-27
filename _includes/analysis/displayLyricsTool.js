@@ -18,7 +18,7 @@ POPC2.prototype.displayLyricsTool = function (tool) {
 
 	this.displayAnalysisPanel("lyrics");
 
-	let toolElement = document.querySelector("#analysis-lyrics");
+	let toolElement = document.querySelector("#lyrics-content");
 	if (toolElement) {
 		toolElement.innerHTML = "";
 	} else {
@@ -30,7 +30,15 @@ POPC2.prototype.displayLyricsTool = function (tool) {
 		return;
 	}
 
+	let melement = document.querySelector("#lyrics-modern");
+	let modernQ = false;
+	if (melement) {
+		modernQ = melement.checked;
+	}
 	let url = `${this.SETTINGS.data_addr}/${id}.lyrics`;
+	if (modernQ) {
+		url += "-modern";
+	}
 	this.DebugMessage("Downloading lyrics tool " + url, "hotpink");
 	let that = this;
 	fetch(url)

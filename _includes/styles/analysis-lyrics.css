@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Jan 31 21:48:32 PST 2022
-// Last Modified: Mon Jan 31 21:48:35 PST 2022
+// Last Modified: Sat Aug 27 11:19:04 CEST 2022
 // Filename:      _includes/styles/analysis-lyrics.css
 // Included in:   _includes/styles/main.html
 // Syntax:        CSS
@@ -32,7 +32,8 @@ table.lyrics td {
 }
 
 table.lyrics td.partname {
-	background: #eee;
+	background: {{ site.primary_color }};
+	padding-left: 3px;
 	font-family: Helvetica;
 }
 
@@ -41,6 +42,10 @@ table.lyrics td.verse {
 	padding-right: 20px;
 	/* font-family: Helvetica; */
 	
+}
+
+#lyrics-content {
+	margin-top: 20px;
 }
 
 table.wordlist {

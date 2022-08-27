@@ -24,18 +24,18 @@ POPC2.prototype.displayAnalysisPanel = function (tool) {
 	let list = document.querySelectorAll("div.analysis-options");
 	if (!tool) {
 		for (let i=0; i<list.length; i++) {
-			list[i].classList.add("invisible");
+			list[i].classList.add("hidden");
 		}
 		return;
 	}
 
 	for (let i=0; i<list.length; i++){
 		if (!list[i].id) {
-			list[i].classList.add("invisible");
+			list[i].classList.add("hidden");
 			continue;
 		}
 		if (list[i].id === `analysis-${tool}`) {
-			list[i].classList.remove("invisible");
+			list[i].classList.remove("hidden");
 			if (list[i].classList.contains("variable-height")) {
 				if (subpageAnalysisElement) {
 					subpageAnalysisElement.style.height = "auto";
@@ -46,7 +46,7 @@ POPC2.prototype.displayAnalysisPanel = function (tool) {
 				}
 			}
 		} else {
-			list[i].classList.add("invisible");
+			list[i].classList.add("hidden");
 		}
 	}
 

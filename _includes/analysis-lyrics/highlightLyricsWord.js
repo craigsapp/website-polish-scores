@@ -21,7 +21,7 @@ POPC2.prototype.highlightLyricsWord = function (word) {
 		return;
 	}
 	for (let i=0; i<list.length; i++) {
-		list[i].style.color = "red";
+		list[i].style.color = "{{ site.primary_color }}";
 	}
 }
 

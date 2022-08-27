@@ -21,6 +21,11 @@
 	justify-content: space-around;
 	align-items: center;
 	max-width: calc({{ site.max_content_width }} + {{ site.content_padding }}  * 2);
+
+	/* Does not seem to work: */
+	/* height: 100vh - {{ site.toolbar_height }}; */
+	/* overflow: scroll; */
+
 	flex-wrap: wrap;
 	flex: 1 0 auto;
 	background: {{ site.secondary_color }};

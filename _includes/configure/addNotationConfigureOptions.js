@@ -140,6 +140,9 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 
 		// Split rests and notes going over barlines:
 		options.filter.push("tie -s");
+
+		// Modernize letters
+		options.filter.push("humtr -p");
 	}
 
 	if (hasModFilter) {

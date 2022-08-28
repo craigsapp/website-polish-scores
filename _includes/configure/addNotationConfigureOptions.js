@@ -147,6 +147,14 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		options.filter.push("filter -v modern");
 	}
 
+	// Display text with modern letters
+	element = document.querySelector("#checkbox-letters");
+	if (element) {
+		if (element.checked) {
+			options.filter.push("humtr -p");
+		}
+	}
+
 	// Add free-form filter option
 	element = document.querySelector("#checkbox-filter");
 	if (element) {

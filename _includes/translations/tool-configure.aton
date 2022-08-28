@@ -9,6 +9,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		modern_letters
+@EN:		Modern letters
+@PL:		Modern letters
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		only_bass_treble_clefs
 @EN:		Only bass/treble clefs
 @PL:		Tylko klucze wiolinowe/basowe

@@ -37,6 +37,8 @@ POPC2.prototype.doBrowseSearch = function (index) {
 	let results = index;
 	let newresults;
 
+	results = this.filterBySearchFlags(results);
+
 	// Search by composer first since there are pre-build
 	// worklist for composers that can speed up the search.
 	results = this.filterByComposer(results);

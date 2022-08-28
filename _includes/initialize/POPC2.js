@@ -113,6 +113,18 @@ function POPC2() {
 	this.VARS.SEARCH_SORT_REVERSE = false;
 
 
+	/////////////////////////////
+	//
+	// SEARCH_FLAGS -- Filter searches by various properties of scores.
+	//
+
+	this.VARS.SEARCH_FLAGS = {};
+	this.VARS.SEARCH_FLAGS.MODERN = false;  // Search only files with modernized scores.
+	this.VARS.SEARCH_FLAGS.IIIF   = false;  // Search only files with IIIF bounding boxes.
+	this.VARS.SEARCH_FLAGS.TEXT   = false;  // Search only files containg lyrical text.
+	this.VARS.SEARCH_FLAGS.NOTEXT = false;  // Search only files that contain no lyrical text.
+	this.VARS.SEARCH_FLAGS.SINGLE = false;  // Search only files that contain single-layer parts.
+
 
 	//////////////////////////////
 	//

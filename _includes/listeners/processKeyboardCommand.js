@@ -95,6 +95,14 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 				// Toggle view of full score or first system (incipit).
 				popc2.toggleMusicIncipit();
 				event.preventDefault();
+			} else if (popc2.IsBrowsePage()) {
+				popc2.VARS.SEARCH_FLAGS.IIIF = !popc2.VARS.SEARCH_FLAGS.IIIF;
+				popc2.doBrowseSearch();
+				if (popc2.VARS.SEARCH_FLAGS.IIIF) {
+					console.warn("Doing IIIF search");
+				} else {
+					console.warn("Turning off IIIF search");
+				}
 			}
 			break;
 
@@ -111,6 +119,14 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 				// View score in modernized form:
 				popc2.makeNotationModern();
 				event.preventDefault();
+			} else if (popc2.IsBrowsePage()) {
+				popc2.VARS.SEARCH_FLAGS.MODERN = !popc2.VARS.SEARCH_FLAGS.MODERN;
+				popc2.doBrowseSearch();
+				if (popc2.VARS.SEARCH_FLAGS.MODERN) {
+					console.warn("Doing modern edition search");
+				} else {
+					console.warn("Turning off modern edition search");
+				}
 			}
 			break;
 
@@ -223,6 +239,18 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 					// Display the work page (with the last viewed score)
 					popc2.displayWorkPage();
 					event.preventDefault();
+				}
+			}
+			break;
+
+		case "x":
+			if (popc2.IsBrowsePage()) {
+				popc2.VARS.SEARCH_FLAGS.TEXT = !popc2.VARS.SEARCH_FLAGS.TEXT;
+				popc2.doBrowseSearch();
+				if (popc2.VARS.SEARCH_FLAGS.TEXT) {
+					console.warn("Doing lyrical text search");
+				} else {
+					console.warn("Turning off lyrical text search");
 				}
 			}
 			break;

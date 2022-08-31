@@ -30,6 +30,7 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 
 	this.DisplayComposerPortrait();
 	this.DisplayLibraryPortrait();
+	this.doAnalysis(true);
 
 	if (this.VARS.KEYSCAPE.ID && (id !== this.VARS.KEYSCAPE.ID)) {
 		this.VARS.KEYSCAPE.ID = "";

@@ -13,11 +13,16 @@
 //
 {% endcomment %}
 
-POPC2.prototype.doAnalysis = function () {
+POPC2.prototype.doAnalysis = function (reverse) {
 	this.DebugMessageFunction();
 
 	let analysisSelectElement = document.querySelector("#analysis-select");
+	if (!analysisSelectElement) {
+		return;
+	}
+
 	if (analysisSelectElement) {
+		// Do analyses that are not related to altering the score:
 		let value = analysisSelectElement.value;
 		if (value === "lyrics") {
 			this.displayLyricsTool();
@@ -25,6 +30,15 @@ POPC2.prototype.doAnalysis = function () {
 		}
 	}
 
+	if (reverse) {
+		// This function will run displayScore(), but displayScore() can also
+		// trigger this function.  Avoid a recursive loop by passing reverse=true
+		// to this function (from the displayScore() function.
+		return;
+	}
+
+	// Do analyses that alter the score (these are
+	// handled by displayScore():
 	this.displayScore();
 };
 

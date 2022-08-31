@@ -49,6 +49,7 @@ POPC2.prototype.displayWorkPage = function (id) {
 	this.ShowPage("work");
 	this.ShowWebsiteTitle();
 	this.insertBrowseSearchOnWorkPage();
+	this.checkForDisplayAnalysis();
 	this.HideIiifLogo();
 	this.displayScore(id);
 	this.displayWorkPagination();

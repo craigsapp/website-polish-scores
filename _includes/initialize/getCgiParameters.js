@@ -14,6 +14,9 @@
 //
 //   Short    Long        Meaning
 //  -------------------------------------------
+//
+// Browse page CGI parameters:
+//
 //    y      century      option string for century select
 //    c      composer     option string for composer select
 //    s      siglum       option string for library select
@@ -22,8 +25,16 @@
 //    t      title        query string for title searches
 //    l      lyrics       query string for lyrics searches
 //    p      pitch        query string for melodic pitch searches
-//    id                  work ID for displaying score
 //    rep    repertory    repository/repertory of scores for database
+
+//    Work-page related CGI parameters:
+//
+//    a      analysis     open given analysis page:
+//                            lyrics
+//                            wordlist
+//                            colortriads
+//                            composite
+//    id                  work ID for displaying score
 //    pms                 Polish Music Scan ID
 //    rism                RISM ID
 //
@@ -54,6 +65,7 @@ POPC2.prototype.getCgiParameters = function () {
 		if (pair[0] === "l") { pair[0] = "lyrics"; }
 		if (pair[0] === "p") { pair[0] = "pitch"; }
 		if (pair[0] === "r") { pair[0] = "repertory"; }
+		if (pair[0] === "a") { pair[0] = "analysis"; }
 		pair[1] = decodeURIComponent(pair[1]);
 		if (typeof output[pair[0]] === 'undefined') {
 			output[pair[0]] = pair[1];

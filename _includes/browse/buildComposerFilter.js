@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Sat Oct  9 10:04:20 PDT 2021
+// Last Modified: Sat Sep  3 15:30:21 CEST 2022
 // Filename:      _includes/browse/buildComposerFilter.js
 // Used by:       _include/browse/buildBrowseFilters.js
 // Used by:       _include/browse/doBrowseSearch.js
@@ -40,6 +40,10 @@ POPC2.prototype.buildComposerFilter = function (index, target) {
 	let lastComposer = "";
 	if (selement) {
 		lastComposer = selement.value;
+	}
+	if (this.VARS.CGI.composer) {
+		lastComposer = this.getComposerMatch(this.VARS.CGI.composer, index);
+		delete this.VARS.CGI.composer;
 	}
 
 	let composers = {};

@@ -32,7 +32,10 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	var nationalityElement = document.querySelector("select.filter.nationality");
 	var titleElement       = document.querySelector("input.filter.title");
 	var lyricsElement      = document.querySelector("input.filter.lyrics");
-	var pitchElement       = document.querySelector("input.filter.pitch");
+
+	// #filter-pitch distinguishes between browse and work pitch searches
+	var pitchElement       = document.querySelector("#filter-pitch input.filter.pitch");
+
 	var tonicElement       = document.querySelector("input.filter.tonic");
 	var modeElement        = document.querySelector("input.filter.mode");
 
@@ -68,6 +71,9 @@ POPC2.prototype.resetBrowseSearchFields = function () {
 	}
 	if (pitchElement) {
 		pitchElement.value = "";
+		if (this.VARS.SEARCH.pitch) {
+			delete this.VARS.SEARCH.pitch;
+		}
 	}
 	this.VARS.SEARCH_FREEZE = false;
 

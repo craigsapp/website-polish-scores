@@ -60,6 +60,8 @@ POPC2.prototype.buildBrowseFilters = function (index) {
 	}
 
 	if (selector) {
+		// The .active-filter will be independently added/removes, so ignore it:
+		selector = selector.replace(".active-filter", "");
 		// Restore focus on the title/lyrics input:
 		let newelement = document.querySelector(selector);
 		if (newelement) {

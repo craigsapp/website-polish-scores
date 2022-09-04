@@ -41,7 +41,12 @@ POPC2.prototype.buildPitchFilter = function (target) {
 		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
 	}
 
-	let output = "<input type='text' spellcheck='false' class='filter pitch'";
+	let activeFilter = "";
+	if (selectedPitch) {
+		activeFilter = " active-filter";
+	}
+
+	let output = `<input type='text' spellcheck='false' class='filter pitch${activeFilter}'`;
 	output += ` placeholder='${this.getTranslation("pitch_placeholder")}'`;
 	output += ` value="${selectedPitch}"`;
 	output += ">\n";

@@ -47,7 +47,11 @@ POPC2.prototype.buildTitleFilter = function (target) {
 		this.VARS.BROWSE_DELETE_HIGHLIGHT = true;
 	}
 
-	let output = "<input type='text' spellcheck='false' class='filter title'";
+	let activeFilter = "";
+	if (selectedTitle) {
+		activeFilter = " active-filter";
+	}
+	let output = `<input type='text' spellcheck='false' class='filter title${activeFilter}'`;
 	output += ` placeholder='${this.getTranslation("title_placeholder")}'`;
 	output += ` value="${selectedTitle}"`;
 	output += ">\n";

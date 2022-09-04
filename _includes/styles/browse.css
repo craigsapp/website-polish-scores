@@ -70,6 +70,11 @@
 	color: #aaaaaa;
 }
 
+.active-filter {
+	background: #cedfe0;
+}
+
+
 span.mark {
 	font-weight: bold;
 	color: {{ site.text_match_color }};

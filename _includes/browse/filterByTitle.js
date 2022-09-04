@@ -27,6 +27,11 @@ POPC2.prototype.filterByTitle = function (input) {
 	let target = "";
 	if (element) {
 		target = element.value;
+		if (target) {
+			element.classList.add("active-filter");
+		} else {
+			element.classList.remove("active-filter");
+		}
 	}
 
 	target = target.trim();

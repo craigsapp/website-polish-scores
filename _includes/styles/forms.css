@@ -51,6 +51,11 @@ select {
 	-webkit-text-size-adjust: 100%;
 }
 
+#filter-instrument select {
+	/* set instrument filter to the widest one (in Polish): */
+	min-width: 355px;
+}
+
 select option.highlight {
 	background: {{ site.selected_language_color }};
 }

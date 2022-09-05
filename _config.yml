@@ -28,8 +28,8 @@ lyrics_index2_popc1: "https://data.nifc.humdrum.org/popc1-lyrics-index.txt"
 # composer_index: JSON list of composers for browse and work pages.
 composer_index_popc2: "https://humdrum.nifc.pl/popc2-composer-index.json"
 composer_index_popc1: "https://humdrum.nifc.pl/popc1-composer-index.json"
-composer_index_popc2: "https://data.nifc.humdrum.org/popc2-composer-index.json"
-composer_index_popc1: "https://data.nifc.humdrum.org/popc1-composer-index.json"
+composer_index2_popc2: "https://data.nifc.humdrum.org/popc2-composer-index.json"
+composer_index2_popc1: "https://data.nifc.humdrum.org/popc1-composer-index.json"
 
 # siglum_index: JSON list of RISM sigla for browse and work pages.
 siglum_index: "https://humdrum.nifc.pl/siglum-index.json"

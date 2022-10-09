@@ -19,7 +19,7 @@ POPC2.prototype.SelectMirrorDataServer = function () {
 	for (p in this.SETTINGS.mirror_data_server) {
 		this.SETTINGS[p] = this.SETTINGS.mirror_data_server[p];
 	}
-	console.warn("USING MIRROR DATA SERVER:", this.SETTINGS.data_addr);
+	console.warn("USING MIRROR DATA SERVER:", this.SETTINGS.data_addr, "(should match:", site.data_addr2 + ")");
 };
 
 Object.defineProperty(POPC2.prototype.SelectMirrorDataServer, "name", { value: "SelectMirrorDataServer" });

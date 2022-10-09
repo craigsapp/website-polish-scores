@@ -19,7 +19,7 @@ POPC2.prototype.SelectMainDataServer = function () {
 	for (p in this.SETTINGS.main_data_server) {
 		this.SETTINGS[p] = this.SETTINGS.main_data_server[p];
 	}
-	console.warn("USING MAIN DATA SERVER:", this.SETTINGS.data_addr);
+	console.warn("USING MAIN DATA SERVER:", this.SETTINGS.data_addr, "(should match:", site.data_addr1 + ")");
 };
 
 Object.defineProperty(POPC2.prototype.SelectMainDataServer, "name", { value: "SelectMainDataServer" });

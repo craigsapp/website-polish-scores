@@ -10,7 +10,7 @@
 #
 
 # data_addr: Website for Humdrum scores and derivatives.
-data_addr: "https://humdrum.nifc.pl"
+data_addr1: "https://humdrum.nifc.pl"
 data_addr2: "https://data.nifc.humdrum.org"
 
 # score_index: JSON list of works for browse page.

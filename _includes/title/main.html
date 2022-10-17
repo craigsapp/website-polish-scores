@@ -15,10 +15,6 @@
 
 
 <div id="title-div">
-	<!-- JI: Added declaration-of-accessibility div element containing url to declaration-->
-	<div id="declaration-of-accessibility" style="height:23px" >
-		<a id="declaration-url" href="javascript:popc2.displayAccessibilityPage()" ></a>
-	</div>
 	<table>
 		<tr>
 			<td>
@@ -47,14 +43,6 @@
 
 popc2.addLanguageButtons("#language-list", popc2.SETTINGS.languages);
 popc2.HighlightLanguage(popc2.VARS.LANGUAGE);
-
-//JI: translate declaration-url:
-let declarationUrl = document.querySelector("#declaration-url");
-if (popc2.VARS.LANGUAGE === "PL") {
-	declarationUrl.innerHTML = "Deklaracja Dostępności";
-} else {
-	declarationUrl.innerHTML = "Declaration of Accessibility";
-}
 
 </script>
 

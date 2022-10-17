@@ -159,9 +159,9 @@ max_content_width: "1000px"
 toolbar_height: "52px"
 
 # titlebar_height: vertical pixel height of the title region of the page.
-titlebar_height: "100px" #JI: I've changed that number to fit the Declaration of Accessibility link
+titlebar_height: "84px"
 
-# content_padding: padding on left/right/bottom of main content.  Needed to 
+# content_padding: padding on left/right/bottom of main content.  Needed to
 # coordinate between separate divs above the main content.
 content_padding: "15px"
 

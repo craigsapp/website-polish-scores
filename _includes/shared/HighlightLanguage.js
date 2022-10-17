@@ -24,8 +24,12 @@ POPC2.prototype.HighlightLanguage = function (lang) {
 		let text = links[i].textContent;
 		if (text === lang) {
 			links[i].classList.add("highlight");
+			links[i].removeAttribute("role");
+			links[i].removeAttribute("tabindex");
 		} else {
 			links[i].classList.remove("highlight");
+			links[i].setAttribute("role", "button");
+			links[i].setAttribute("tabindex", "0");
 		}
 	}
 };

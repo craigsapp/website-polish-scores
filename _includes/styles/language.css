@@ -23,6 +23,11 @@
 	/* font-weight: bold; */
 }
 
+div[role="button"].button-language:focus {
+	/* Keyboard tab highlighting */
+	color: {{ site.navigator_hover_color }} !important;
+}
+
 
 #language-navigator {
 	box-sizing: unset;

@@ -36,4 +36,21 @@ document.addEventListener("click", function (event) {
 });
 
 
+//
+// When hovering (with the keyboard) over a button, use enter to
+// click on the button.
+//
+
+document.addEventListener("keyup", function (event) {
+	let target = event.target;
+	if (!target) {
+		return;
+	}
+	if (event.keyCode === 13) {
+		event.preventDefault();
+		target.click();
+	}
+});
+
+
 

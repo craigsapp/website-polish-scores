@@ -44,6 +44,13 @@
 
 */
 
+
+#navigator div[role="button"]:focus {
+	/* Keyboard tab highlighting */
+	color: {{ site.navigator_hover_color }} !important;
+}
+
+
 .worknav-tool.selected {
 	color: {{ site.selected_language_color }} !important;
 }

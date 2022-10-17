@@ -32,4 +32,8 @@
 @PL:		Historia
 @@END:		ENTRY
 
-
+@@BEGIN:	ENTRY
+@TAG:		accessibility
+@EN:		Declaration of Accesibility
+@PL:		Deklaracja Dostępności
+@@END:		ENTRY

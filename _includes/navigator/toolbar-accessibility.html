@@ -1,0 +1,49 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Oct 20 23:08:50 PDT 2021
+// Last Modified: Wed Oct 20 23:08:54 PDT 2021
+// Filename:      _includes/navigator/navigator-accessibility.html
+// Included in:   _includes/navigator/main.html
+// Syntax:        HTML
+// vim:           ts=3:nowrap
+//
+// Description:   Toolbar for the accessibility page, coppied from navigator-bookmark page by JI.
+//
+{% endcomment %}
+
+
+<div class="trans worknav-tool fas fa-arrow-circle-left"
+		data-transatt="title:history_tool" onclick="popc2.displayBrowsePage();">
+</div>
+
+<div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
+<div class="trans worknav-tool fas fa-star" style="visibility:hidden"></div>
+
+<div class="random trans worknav-tool fas fa-random"
+		data-transatt="title:random_tool" onclick="popc2.displayRandomWork();" style="visibility:hidden">
+</div>
+
+<div class="copytable trans worknav-tool fas fa-table"
+		data-transatt="title:copy_browse_tool" onclick="popc2.copyBrowseTableAsTsv()" style="visibility:hidden">
+</div>
+
+<div class="history hidden trans worknav-tool fas fa-history"
+		data-transatt="title:history_tool" onclick="popc2.displayHistoryPage()" style="visibility:hidden">
+</div>
+
+<div class="selected bookmarks trans worknav-tool fas fa-star"
+		data-transatt="title:bookmark_browse_tool" onclick="popc2.displayBrowsePage()" style="visibility:hidden">
+</div>
+
+
+

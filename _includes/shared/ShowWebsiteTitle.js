@@ -39,6 +39,10 @@ POPC2.prototype.ShowWebsiteTitle = function () {
 		} else if (ptype === "bookmarks") {
 			h1element.innerHTML = this.getTranslation("bookmarks");
 			h1element.dataset.trans = "bookmarks";
+		//JI: added title translation for Declaration of Accessibility
+		} else if (ptype === "accessibility") {
+			h1element.innerHTML = this.getTranslation("accessibility");
+			h1element.dataset.trans = "accessibility";
 		} else {
 			let title = this.getTranslation(`title_${this.VARS.REPERTORY}`) || "ERROR";
 			h1element.innerHTML = title;

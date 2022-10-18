@@ -47,8 +47,12 @@ document.addEventListener("keyup", function (event) {
 		return;
 	}
 	if (event.keyCode === 13) {
-		event.preventDefault();
-		target.click();
+		if (target.tagName == "SELECT") {
+			// ignore since down arrow will open select menu.
+		} else {
+			event.preventDefault();
+			target.click();
+		}
 	}
 });
 

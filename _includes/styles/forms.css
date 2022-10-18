@@ -21,7 +21,7 @@ textarea:focus, input:focus select:focus {
 }
 
 select:focus {
-	background: {{ site.navigator_hover_color }};
+	background: {{ site.navigator_hover_color }} !important;
 }
 
 select.browse-highlight {

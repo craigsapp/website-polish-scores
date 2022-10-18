@@ -1,24 +1,21 @@
 ---
+vim:	nowrap
 ---
 <!DOCTYPE html>
 <html>
 <head>
-{% include head/main-info.html %}
+{% include info/head.html %}
 </head>
 <body>
-<header>
-</header>
 <main>
-	<div id="content">
-		<div style="height:51px"></div>
+	<div id="content-info">
 		{{ content }}
-		<div id="EN-content"></div>
-		<div id="PL-content"></div>
+		<div style="display:none;" id="PL-text">{% include_relative index-PL.txt %}</div>
+		<div style="display:none;" id="EN-text">{% include_relative index-EN.txt %}</div>
 	</div>
 <footer>
 	{% include footer/main.html %}
 </footer>
 </main>
-{% include head/main-bottom.html %}
 </body>
 </html>

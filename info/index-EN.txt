@@ -1,0 +1,10 @@
+
+<h1 class="title-info"> Documentation </h1>
+
+
+<ul class="toc">
+<li> <a tabindex="0" role="button" href="access"> Declaration of accessibility </a> </li>
+<li> <a tabindex="0" role="button" href="keyscape"> Keyscape documentation</a> </li>
+</ul>
+
+

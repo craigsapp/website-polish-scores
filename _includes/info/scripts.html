@@ -1,0 +1,45 @@
+<script>
+// vim: ts=3
+
+
+function displayIndexByLanguage(language) {
+	if (typeof language !== "string") {
+		language = "EN";
+	}
+	if (language.match(/pl/i)) {
+		displayPolishPage();
+	} else {
+		displayEnglishPage();
+	}
+}
+
+
+function displayPolishPage() {
+	let PL_element = document.querySelector("#PL-text");
+	if (!PL_element) {
+		console.error("ERROR: no Polish content on page.");
+		return;
+	}
+	PL_element.style.display = "block";
+	let EN_element = document.querySelector("#EN-text");
+	if (EN_element) {
+		EN_element.style.display = "none";
+	}
+}
+
+function displayEnglishPage() {
+	let EN_element = document.querySelector("#EN-text");
+	if (!EN_element) {
+		console.error("ERROR: no Polish content on page.");
+		return;
+	}
+	EN_element.style.display = "block";
+	let PL_element = document.querySelector("#PL-text");
+	if (PL_element) {
+		PL_element.style.display = "none";
+	}
+}
+
+
+
+</script>

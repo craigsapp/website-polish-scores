@@ -1,13 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
-  <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
-</head>
-<body>
+
+
+<h1 class="title-info"> Declaration of Accessibility </h1>
+
 <!--h1 id="declaration-of-accessibility">DECLARATION OF ACCESSIBILITY</h1-->
 <p>The Fryderyk Chopin Institute hereby undertakes to ensure the accessibility of its website in accordance with the provisions of the Act of 4 April 2019 on digital accessibility of websites and mobile applications of public entities. The Declaration of Accessibility applies to the Polish Digital Scores website <a href="https://polishscores.org" class="uri">https://polishscores.org</a>.</p>
 <p>Date of publication of the website: <strong>May 2022</strong>. Date of last essential update: <strong>May 2022</strong>.</p>
@@ -134,5 +128,6 @@
 <p>Please contact us regarding problems with access to the website. The contact person is Bartosz Czapski, e-mail: <a href="mailto:bczapski@nifc.pl">bczapski@nifc.pl</a>. You can also contact us by calling the provided telephone number (+48 22) 44 16 198. In the same way, requests for access to unavailable information, as well as accessibility requests, can be made.</p>
 <h2 id="notification-of-digital-inaccessibility">Notification of digital inaccessibility:</h2>
 <p>Anyone has the right to request the accessibility to a digital website, a mobile application or any element thereof. Information accessibility may also be requested by means of an alternative means of access, for example by reading a digitally unavailable document, describing the content of a film without an audiodescription, etc. The request shall include the details of the person making the request, an indication which website or mobile application the request concerns and the method of contact. If the claimant requests information by means of an alternative means of access, s/he should also specify a way of presenting the information that is convenient for her/him. The public entity should comply with the request without delay, but no later than 7 days after the request is made. If this deadline cannot be met, the public entity shall immediately inform the claimant when it will be possible to comply with the request, which shall not be more than 2 months from the date of submitting the request. If digital accessibility cannot be ensured, a public entity may propose an alternative way of accessing information. Where a public entity refuses to comply with a request for accessibility or an alternative means of accessing information, the claimant may submit a complaint with regard to the provision of the accessibility to a digital website, mobile application or element of a website or mobile application. Once the above procedure has been exhausted, an application may also be submitted to the <a href="https://bip.brpo.gov.pl/en">Civil Rights Ombudsman</a>.</p>
-</body>
-</html>
+
+
+

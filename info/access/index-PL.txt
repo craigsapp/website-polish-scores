@@ -1,13 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
-  <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
-</head>
-<body>
+<h1 class="title-info"> Deklaracja Dostępności </h1>
+
 <!--h1 id="deklaracja-dostępności">DEKLARACJA DOSTĘPNOŚCI</h1-->
 <p>Narodowy Instytut Fryderyka Chopina zobowiązuje się zapewnić dostępność swojej strony internetowej zgodnie z przepisami ustawy z dnia 4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych. Oświadczenie w sprawie dostępności ma zastosowanie do strony internetowej Polskie Partytury Cyfrowe opublikowanej pod adresem https://polishscores.org.</p>
 <p>Data publikacji strony internetowej: <strong>maj 2022 roku</strong>. Data ostatniej istotnej aktualizacji: <strong>maj 2022 roku</strong>.</p>

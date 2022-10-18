@@ -1,0 +1,29 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sun Oct 31 08:37:23 PDT 2021
+// Last Modified: Mon Oct 17 21:09:50 PDT 2022
+// Filename:      _includes/info/head.html
+// Included in:   _layouts/info.html
+// Syntax:        ECMAScript 6; Jekyll/Liquid
+// vim:           ts=3:nowrap
+//
+// Description:   Support code for info pages.
+//
+{% endcomment %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+<title>{{site.tab_title}}</title>
+
+{% include info/styles.html       %}
+{% include info/listeners.html    %}
+{% include info/scripts.html      %}
+
+{% include aton/main.html         %}
+{% include styles/main.html       %}
+{% include head/fontawesome.html  %}
+
+
+

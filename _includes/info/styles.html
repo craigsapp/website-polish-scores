@@ -1,0 +1,50 @@
+
+
+<style>
+
+#content-info {
+	background: white;
+	box-sizing: unset;
+	cursor: auto;
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 1.5rem;
+	line-height: 1.3;
+	margin: 0px auto;
+	margin-top: 0px;
+	max-width: {{ site.max_content_width }};
+	min-height: 100vh;
+	padding-top: 50px;
+	padding-bottom: 150px;
+	padding-left: 50px;
+	padding-right: 50px;
+	-webkit-text-size-adjust: 100%;
+}
+
+h1.title-info {
+	letter-spacing: 1.5px;
+	padding-bottom: 50px;
+}
+
+
+.toc li {
+	font-size: 110%;
+	padding-bottom: 20px;
+}
+
+
+a {
+	text-decoration: none;
+	color: {{ site.secondary_color }};
+}
+
+a:focus, a:hover {
+	color: {{ site.navigator_hover_color }};
+}
+
+
+</style>
+
+
+{% include  styles/main.html %}
+
+

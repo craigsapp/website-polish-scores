@@ -127,11 +127,11 @@ POPC2.prototype.displayBrowseTable = function (results, target) {
 		let lastedit = results[i].lastedit || 0;
 
 		if (!cenid.match(/^\s*$/)) {
-			output += `<tr data-id='${cenid}'>\n`;
+			output += `<tr roll="button" tabindex="0" data-id='${cenid}'>\n`;
 		} else if (!fileid.match(/^\s*$/)) {
-			output += `<tr data-id='${fileid}'>\n`;
+			output += `<tr roll="button" tabindex="0" data-id='${fileid}'>\n`;
 		} else if (!nifcid.match(/^\s*$/)) {
-			output += `<tr data-id='${nifcid}'>\n`;
+			output += `<tr roll="button" tabindex="0" data-id='${nifcid}'>\n`;
 		}
 
 		if (sortByDate) {

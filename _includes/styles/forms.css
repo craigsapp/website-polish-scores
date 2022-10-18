@@ -20,9 +20,12 @@ textarea:focus, input:focus select:focus {
 	outline: none;
 }
 
+select:focus {
+	background: {{ site.navigator_hover_color }};
+}
 
 select.browse-highlight {
-	background: {{site.browse_highlight_color }};
+	background: {{ site.browse_highlight_color }};
 }
 
 select.filter.composer {

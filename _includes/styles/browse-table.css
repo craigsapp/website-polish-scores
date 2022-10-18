@@ -50,6 +50,7 @@ table.search-results th:hover::after {
 	color: {{ site.button_hover_color }};
 }
 
+
 table.search-results td {
 	vertical-align: top;
 }
@@ -109,7 +110,8 @@ table.search-results td.shelfmark span.siglum-postfix {
 	padding-left: 2px;
 }
 
-table.search-results tbody tr:hover {
+table.search-results tbody tr:hover,
+table.search-results tr:focus td {
 	background: {{ site.secondary_color }}18;
 }
 

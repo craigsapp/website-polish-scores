@@ -12,7 +12,8 @@
 //
 {% endcomment %}
 
-[id^="navigator-"] {
+#navigator, [id^="navigator-"] {
+	min-height: 52px;
 	margin-top: 0;
 	text-shadow: 0px 0px 1px #999999;
 	margin: 0px auto;

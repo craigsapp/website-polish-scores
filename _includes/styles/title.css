@@ -31,6 +31,13 @@
 }
 
 
+a:focus #nifc-logo {
+	border: 5px solid {{ site.navigator_hover_color}};
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
+
 #euflag {
 	width: 45px;
 	margin-bottom: -10px;

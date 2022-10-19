@@ -10,6 +10,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		euflag_url
+@EN:		https://nauka.nifc.pl/en/dziedzictwo-muzyki-polskiej-w-otwartym-dostepie
+@PL:		https://nauka.nifc.pl/pl/dziedzictwo-muzyki-polskiej-w-otwartym-dostepie
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		nifc
 @EN:		Chopin Institute
 @PL:		Narodowy Institut Fryderyka Chopina

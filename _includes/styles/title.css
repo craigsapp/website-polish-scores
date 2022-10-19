@@ -44,6 +44,15 @@ a:focus #nifc-logo {
 }
 
 
+a:focus #euflag {
+	border: 5px solid {{ site.navigator_hover_color}};
+	margin-left: -5px;
+	margin-right: -5px;
+	margin-bottom: -10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 #iiif-logo {
 	width: 40px;
 	position: relative;

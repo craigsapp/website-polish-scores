@@ -110,9 +110,21 @@ table.search-results td.shelfmark span.siglum-postfix {
 	padding-left: 2px;
 }
 
-table.search-results tbody tr:hover,
-table.search-results tr:focus td {
+table.search-results tbody tr:hover {
 	background: {{ site.secondary_color }}18;
+}
+
+table.search-results tr:focus td:nth-child(even) {
+	background: black;
+	color: white;
+	font-size: 1.5rem;
+}
+
+table.search-results tr:focus td:nth-child(odd) {
+	background: white;
+	color: black;
+	font-size: 1.5rem;
+	border: 1px solid black;
 }
 
 table.search-results tbody tr.lyrics:hover{

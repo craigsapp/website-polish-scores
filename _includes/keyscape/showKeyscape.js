@@ -27,7 +27,6 @@ POPC2.prototype.showKeyscape = function (id) {
 		fetch(infourl)
 			.then(res => res.json())
 			.then(json => {
-				// console.warn("JSON INFO KEYSCAPE", json);
 				this.VARS.KEYSCAPE.INFO[id] = json;
 			})
 			.catch(err => { console.error(err); });

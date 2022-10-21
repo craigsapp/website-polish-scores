@@ -12,8 +12,15 @@
 //
 {% endcomment %}
 
-#navigator, [id^="navigator-"] {
+
+#navigator {
+	height: 52px;
 	min-height: 52px;
+	max-height: 52px;
+	margin: 0;
+}
+
+#navigator, [id^="navigator-"] {
 	margin-top: 0;
 	text-shadow: 0px 0px 1px #999999;
 	margin: 0px auto;
@@ -23,8 +30,6 @@
 	max-width: {{ site.max_content_width }};
 	padding-left: {{ site.content_padding }};
 	padding-right: {{ site.content_padding }};
-	padding-top: 8px;
-	padding-bottom: 8px;
 	flex-wrap: wrap;
 	flex: 1 0 auto;
 	background: {{ site.secondary_color }};

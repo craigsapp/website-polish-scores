@@ -23,8 +23,8 @@
 let popc2 = new POPC2();
 popc2.VARS.MARKER = new HnpSvg();
 
-{% include initialize/SelectMainDataServer.js        %}
-{% include initialize/SelectMirrorDataServer.js      %}
+{% include initialize/UseMain.js                     %}
+{% include initialize/UseMirror.js                   %}
 {% include initialize/DebugMessage.js                %}
 {% include initialize/DebugMessageVerbose.js         %}
 {% include initialize/DebugMessageFunction.js        %}
@@ -40,7 +40,7 @@ popc2.DebugMessage("Created popc2 interface", "chartreuse");
 popc2.VARS.CGI = popc2.getCgiParameters();
 
 if (typeof popc2.VARS.CGI.mirror !== "undefined") {
-	popc2.SelectMirrorDataServer();
+	popc2.UseMirror();
 }
 
 if (popc2.VARS.CGI.repertory === "popc1") {

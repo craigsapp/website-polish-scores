@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Sep  5 11:17:03 CEST 2022
 // Last Modified: Mon Sep  5 11:17:05 CEST 2022
-// Filename:      _includes/shared/SelectMirrorDataServer.js
+// Filename:      _includes/shared/UseMirror.js
 // Used by:       _includes/work/displayBrowsePage.js
 // Included in:   _includes/shared/main.html
 // Syntax:        ECMAScript 6
@@ -13,7 +13,7 @@
 //
 {% endcomment %}
 
-POPC2.prototype.SelectMirrorDataServer = function () {
+POPC2.prototype.UseMirror = function () {
 	this.DebugMessageFunction();
 	// Select the main data server by default:
 	for (p in this.SETTINGS.mirror_data_server) {
@@ -22,7 +22,7 @@ POPC2.prototype.SelectMirrorDataServer = function () {
 	console.warn("USING MIRROR DATA SERVER:", this.SETTINGS.data_addr, "(should match:", site.data_addr2 + ")");
 };
 
-Object.defineProperty(POPC2.prototype.SelectMirrorDataServer, "name", { value: "SelectMirrorDataServer" });
+Object.defineProperty(POPC2.prototype.UseMirror, "name", { value: "UseMirror" });
 
 
 

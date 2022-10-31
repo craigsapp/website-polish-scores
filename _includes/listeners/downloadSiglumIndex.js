@@ -19,9 +19,15 @@ POPC2.prototype.downloadSiglumIndex = function () {
 	let url = this.SETTINGS.siglum_index;
 	this.DebugMessage("DOWNLOADING SIGLUM INDEX FROM " + url, "plum");
 	let that = this;
+	let now = new Date();
+	let starttime = now.getTime();
+
 	fetch(url)
 		.then(res => res.json())
 		.then(data => {
+			let now = new Date();
+			let endtime = now.getTime();
+			let duration = (endtime - starttime) / 1000.0;
 			// convert data to associative array
 			that.VARS.SIGLUM_INDEX = {};
 			for (let i=0; i<data.length; i++) {
@@ -114,7 +120,7 @@ POPC2.prototype.downloadSiglumIndex = function () {
 			}
 
 			that.buildSiglumFilter();
-			that.DebugMessage("DOWNLOADED SIGLUM INDEX FROM " + url, "plum");
+			that.DebugMessage(`DOWNLOADED SIGLUM INDEX FROM ${url} in ${duration} seconds`, "plum");
 		})
 		.catch(err => { console.error("downloadSiglumIndex:", err); });
 };

@@ -19,9 +19,15 @@ POPC2.prototype.downloadInstrumentIndex = function () {
 	let url = this.SETTINGS.instrument_index;
 	this.DebugMessage("DOWNLOADING INSTRUMENT INDEX FROM " + url, "lightblue");
 	let that = this;
+	let now = new Date();
+	let starttime = now.getTime();
 	fetch(url)
 		.then(res => res.json())
 		.then(data => {
+			let now = new Date();
+			let endtime = now.getTime();
+			let duration = (endtime - starttime) / 1000.0;
+
 			that.VARS.INSTRUMENT_INDEX = data;
 			if (!this.VARS.TRANSLATIONS) {
 				console.error("NO TRANSLATIONS DATABASE FOR INSTRUMENT CODES");
@@ -36,7 +42,7 @@ POPC2.prototype.downloadInstrumentIndex = function () {
 				}
 			}
 			that.buildInstrumentFilter();
-			that.DebugMessage("DOWNLOADED INSTRUMENT INDEX FROM " + url, "lightblue");
+			that.DebugMessage(`DOWNLOADED INSTRUMENT INDEX FROM ${url} in ${duration} seconds`, "lightblue");
 		})
 		.catch(err => { console.error("downloadInstrumentIndex:", err); });
 };

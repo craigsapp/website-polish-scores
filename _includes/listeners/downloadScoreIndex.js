@@ -16,13 +16,17 @@
 document.addEventListener("DOMContentLoaded", function() {
 	let url = popc2.SETTINGS.score_index;
 	popc2.DebugMessage("DOWNLOADING SCORE INDEX FROM " + url, "pink");
-
 	popc2.prepareCgiVariables();
+	let now = new Date();
+	let starttime = now.getTime();
 
 	fetch(url)
 		.then(res => res.json())
 		.then(json => {
-			popc2.DebugMessage("DOWNLOADED SCORE INDEX FROM " + url, "pink");
+			let now = new Date();
+			let endtime = now.getTime();
+			let duration = (endtime - starttime)/1000.0;
+			popc2.DebugMessage(`DOWNLOADED SCORE INDEX FROM ${url} in ${duration} seconds.`, "pink");
 			popc2.PrepareDownloadedScoreIndex(json);
 			popc2.prepareBrowseSelectOptions();
 			popc2.loadBookmarksFromLocalStorage();

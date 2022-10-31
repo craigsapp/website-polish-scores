@@ -19,9 +19,15 @@ POPC2.prototype.downloadComposerIndex = function () {
 	let url = this.SETTINGS.composer_index;
 	this.DebugMessage("DOWNLOADING COMPOSER INDEX FROM " + url, "purple");
 	let that = this;
+	let now = new Date();
+	let starttime = now.getTime();
+
 	fetch(url)
 		.then(res => res.json())
 		.then(data => {
+			let now = new Date();
+			let endtime = now.getTime();
+			let duration = (endtime - starttime)/1000.0;
 			// convert data to associative array
 			that.VARS.COMPOSER_INDEX = {};
 			for (let i=0; i<data.length; i++) {
@@ -55,7 +61,7 @@ POPC2.prototype.downloadComposerIndex = function () {
 			// Check if there are composers in the SCORE_INDEX that are
 			// not in the COMPOSER_INDEX and print some warnings here.
 
-			that.DebugMessage("DOWNLOADED COMPOSER INDEX FROM " + url, "purple");
+			that.DebugMessage(`DOWNLOADED COMPOSER INDEX FROM ${url} in ${duration} seconds`, "purple");
 			if (that.VARS.WORK_ID) {
 				that.displayWorkPage();
 			} else {

@@ -19,9 +19,15 @@ POPC2.prototype.downloadLyricsIndex = function () {
 	let url = popc2.SETTINGS.lyrics_index;
 	this.DebugMessage("DOWNLOADING LYRICS INDEX FROM " + url, "hotpink");
 	let that = this;
+	let now = new Date();
+	let starttime = now.getTime();
+
 	fetch(url)
 		.then(res => res.text())
 		.then(data => {
+			let now = new Date();
+			let endtime = now.getTime();
+			let duration = (endtime - starttime)/1000.0;
 			let lines = data.split(/\r?\n/);
 			let index = {};
 			for (let i=0; i<lines.length; i++) {
@@ -50,7 +56,7 @@ POPC2.prototype.downloadLyricsIndex = function () {
 					that.displayBrowsePage();
 				}
 			}
-			that.DebugMessage("DOWNLOADED LYRICS INDEX FROM " + url, "hotpink");
+			that.DebugMessage(`DOWNLOADED LYRICS INDEX FROM ${url} in ${duration} seconds`, "hotpink");
 		})
 		.catch(err => { console.error(err); });
 };

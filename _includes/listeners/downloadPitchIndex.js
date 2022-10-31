@@ -19,9 +19,15 @@ POPC2.prototype.downloadPitchIndex = function () {
 	let url = popc2.SETTINGS.pitch_index;
 	this.DebugMessage("DOWNLOADING PITCH INDEX FROM " + url, "magenta");
 	let that = this;
+	let now = new Date();
+	let starttime = now.getTime();
+
 	fetch(url)
 		.then(res => res.text())
 		.then(data => {
+			let now = new Date();
+			let endtime = now.getTime();
+			let duration = (endtime - starttime)/1000.0;
 			let lines = data.split(/\r?\n/);
 			let index = {};
 			for (let i=0; i<lines.length; i++) {
@@ -54,7 +60,7 @@ POPC2.prototype.downloadPitchIndex = function () {
 					that.displayBrowsePage();
 				}
 			}
-			that.DebugMessage("DOWNLOADED PITCH INDEX FROM " + url, "magenta");
+			that.DebugMessage(`DOWNLOADED PITCH INDEX FROM ${url} in ${duration} seconds`, "magenta");
 		})
 		.catch(err => { console.error(err); });
 };

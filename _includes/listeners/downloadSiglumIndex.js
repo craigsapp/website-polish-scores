@@ -23,7 +23,11 @@ POPC2.prototype.downloadSiglumIndex = function () {
 	let starttime = now.getTime();
 
 	fetch(url)
-		.then(res => res.json())
+		// .then(res => res.json())
+		.then(function(res) {
+			console.log("=============================== SIGLA INDEX RESPONSE", res);
+			return res.json();
+		})
 		.then(data => {
 			let now = new Date();
 			let endtime = now.getTime();

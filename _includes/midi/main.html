@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon Oct 25 22:53:20 PDT 2021
-// Last Modified: Mon Oct 25 22:53:26 PDT 2021
+// Last Modified: Thu Nov 10 12:04:24 PST 2022
 // Filename:      _includes/midi/main.html
 // Included in:   _includes/head/main-bottom.html
 // Syntax:        HTML; Jekyll/Liquid
@@ -14,15 +14,54 @@
 {% endcomment %}
 
 <script src="{{ site.website_root }}scripts/wildwestmidi/jquery-3.2.1.slim.min.js"></script>
-<script src="{{ site.website_root }}scripts/wildwestmidi/wildwebmidi.js"></script>
-<script src="{{ site.website_root }}scripts/wildwestmidi/midiplayer.js"></script>
-<script src="{{ site.website_root }}scripts/wildwestmidi/midifunctions.js"></script>
+
+<!--
+
+These scripts are downloaded in the event listener below.  They are delayed
+to allow for more immediately important files to be downloaded first.
+
+<!script src="{{ site.website_root }}scripts/wildwestmidi/wildwebmidi.js"></script>
+<!script src="{{ site.website_root }}scripts/wildwestmidi/midiplayer.js"></script>
+<!script src="{{ site.website_root }}scripts/wildwestmidi/midifunctions.js"></script>
+-->
 
 <script>
 
 {% include midi/initializeWildWebMidi.js %}
 
-initializeWildWebMidi();
+document.addEventListener("DOMContentLoaded", function () {
+	let midiDelay = 5000; // wait 5 seconds before downloading MIDI
+	setTimeout( function () {
+		let scripts = [
+			"{{ site.website_root }}scripts/wildwestmidi/wildwebmidi.js",
+			"{{ site.website_root }}scripts/wildwestmidi/midifunctions.js",
+			"{{ site.website_root }}scripts/wildwestmidi/midiplayer.js"
+		];
+
+		let loadScriptsInSequence = function () {
+			if (scripts.length > 0) {
+				let now = new Date();
+				let starttime = now.getTime();
+				let nextScript = scripts.shift();
+				let headTag = document.querySelector("head");
+				let scriptTag = document.createElement("script");
+				scriptTag.src = nextScript;
+				scriptTag.onload = function (e) {
+					let now = new Date();
+					let endtime = now.getTime();
+					let duration = (endtime - starttime) / 1000.0;
+					popc2.DebugMessage(`DOWNLOADED ${nextScript} in ${duration} seconds.`, "palegoldenrod");
+					loadScriptsInSequence();
+				}
+				headTag.appendChild(scriptTag);
+			} else {
+				initializeWildWebMidi();
+			}
+		}
+
+		loadScriptsInSequence();
+	}, midiDelay);
+});
 
 </script>
 

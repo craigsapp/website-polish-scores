@@ -32,11 +32,11 @@ composer_index2_popc2: "https://data.nifc.humdrum.org/popc2-composer-index.json"
 composer_index2_popc1: "https://data.nifc.humdrum.org/popc1-composer-index.json"
 
 # siglum_index: JSON list of RISM sigla for browse and work pages.
-siglum_index: "https://humdrum.nifc.pl/siglum-index.json"
+siglum_index1: "https://humdrum.nifc.pl/siglum-index.json"
 siglum_index2: "https://data.nifc.humdrum.org/siglum-index.json"
 
 # instrument_index: JSON list of Humdrum instrument codes for browse page.
-instrument_index: "https://humdrum.nifc.pl/instrument-index.json"
+instrument_index1: "https://humdrum.nifc.pl/instrument-index.json"
 instrument_index2: "https://data.nifc.humdrum.org/instrument-index.json"
 
 # pitch_index: TEXT list of melodic pitches for browse page searching.

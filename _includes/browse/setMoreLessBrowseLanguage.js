@@ -15,6 +15,8 @@
 
 POPC2.prototype.setMoreLessBrowseLanguage = function (tag) {
 	this.DebugMessageFunction();
+// currently not used (or no longer used?)
+return;
 
 	let element = document.querySelector("#moreless-button");
 	if (!element) {

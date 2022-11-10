@@ -57,11 +57,11 @@ function POPC2() {
 	this.VARS.COMPOSER_INDEX = {};
 
 	// SIGLUM_INDEX -- A list of RISM sigla giving name and URL for libraries.
-	// downloaded from {{ site.siglum_index}}.  Indexed by siglum (country-library).
+	// downloaded from {{ site.siglum_index }}.  Indexed by siglum (country-library).
 	this.VARS.SIGLUM_INDEX = {};
 
 	// INSTRUMENT_INDEX -- A list of Humdrum instrument codes and English/Polish names.
-	// downloaded from {{ site.instrument_index}}.  Indexed by instrument code.
+	// downloaded from {{ site.instrument_index }}.  Indexed by instrument code.
 	this.VARS.INSTRUMENT_INDEX = {};
 
 
@@ -353,9 +353,9 @@ function POPC2() {
 			composer_index_popc1:"{{ site.composer_index_popc1}}",
 			composer_index_popc2:"{{ site.composer_index_popc2}}",
 
-			siglum_index:        "{{ site.siglum_index         }}",
+			siglum_index:        "{{ site.siglum_index1        }}", // library/archive info
 
-			instrument_index:    "{{ site.instrument_index     }}",
+			instrument_index:    "{{ site.instrument_index1    }}", // instrument info
 
 			pitch_index:         "{{ site.pitch_index_popc2    }}", // active pitch index
 			pitch_index_popc1:   "{{ site.pitch_index_popc1    }}",
@@ -377,9 +377,9 @@ function POPC2() {
 			composer_index_popc1:"{{ site.composer_index2_popc1}}",
 			composer_index_popc2:"{{ site.composer_index2_popc2}}",
 
-			siglum_index:        "{{ site.siglum_index2        }}",
+			siglum_index:        "{{ site.siglum_index2        }}", // library/archive info
 
-			instrument_index:    "{{ site.instrument_index2    }}",
+			instrument_index:    "{{ site.instrument_index2    }}", // instrument info
 
 			pitch_index:         "{{ site.pitch_index2_popc2   }}", // active pitch index
 			pitch_index_popc1:   "{{ site.pitch_index2_popc1   }}",
@@ -406,8 +406,11 @@ function POPC2() {
 	};
 
 	// Select the main data server by default:
-	for (p in this.SETTINGS.main_data_server) {
-		this.SETTINGS[p] = this.SETTINGS["main_data_server"][p];
+	let server = "main_data_server";
+	// let server = "mirror_data_server";
+	for (p in this.SETTINGS[server]) {
+		this.SETTINGS[p] = this.SETTINGS[server][p];
+		// console.warn(`TRANSFERRING ${p} :: ${this.SETTINGS[p]}`);
 	}
 
 }

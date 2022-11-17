@@ -45,5 +45,6 @@
 	color: {{ site.primary_color }};
 }
 
-
-
+.composer-link a:focus {
+	color: {{ site.primary_color }};
+}

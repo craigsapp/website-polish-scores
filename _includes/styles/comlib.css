@@ -52,6 +52,11 @@
 	color: {{ site.secondary_color }};
 }
 
+#work-library-name a:focus {
+	font-size: 1.3rem;
+	color: {{ site.secondary_color }};
+}
+
 #work-shelfmark .shelfmark a,
 #work-shelfmark .ssm a {
 	text-decoration: none;
@@ -60,6 +65,11 @@
 
 #work-shelfmark .shelfmark a:hover,
 #work-shelfmark .ssm a:hover {
+	color: {{ site.secondary_color }};
+}
+
+#work-shelfmark .shelfmark a:focus,
+#work-shelfmark .ssm a:focus {
 	color: {{ site.secondary_color }};
 }
 
@@ -82,6 +92,9 @@
 	fill: {{ site.primary_color }};
 }
 
+#work-scans svg:focus {
+	fill: {{ site.primary_color }};
+}
 
 #tool-workinfo {
 	height: 110px;
@@ -131,4 +144,3 @@
 	color: black;
 	white-space: nowrap;
 }
-

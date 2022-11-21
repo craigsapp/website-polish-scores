@@ -41,6 +41,22 @@ POPC2.prototype.getComposerLinks = function (composer) {
 
 	let output = "";
 
+	// NIFC link:
+	let nifc = "";
+	if (this.VARS.LANGUAGE === "PL") {
+		nifc = entry["URL-COM-nifc@PL"];
+	}
+	if (!nifc) {
+		nifc = entry["URL-COM-nifc@EN"];
+	}
+	if (nifc) {
+		nifc = nifc.trim();
+		let content = this.getTranslation("pmp");
+		output += "<span class='composer-link pmp-link'>";
+		output += `<a class="trans" data-trans="pmp" target="_blank" href="${nifc}">${content}</a>`;
+		output += "</span>";
+	}
+
 	// CPDL link:
 	let cpdl = entry["URL-COM-cpdl"];
 	if (cpdl) {
@@ -59,21 +75,6 @@ POPC2.prototype.getComposerLinks = function (composer) {
 		output += "</span>";
 	}
 
-	// NIFC link:
-	let nifc = "";
-	if (this.VARS.LANGUAGE === "PL") {
-		nifc = entry["URL-COM-nifc@PL"];
-	}
-	if (!nifc) {
-		nifc = entry["URL-COM-nifc@EN"];
-	}
-	if (nifc) {
-		nifc = nifc.trim();
-		let content = this.getTranslation("pmp");
-		output += "<span class='composer-link'>";
-		output += `<a class="trans" data-trans="pmp" target="_blank" href="${nifc}">${content}</a>`;
-		output += "</span>";
-	}
 
 	// RISM link:
 	let rismid = entry["COM-rismID"];
@@ -139,6 +140,3 @@ POPC2.prototype.getComposerLinks = function (composer) {
 };
 
 Object.defineProperty(POPC2.prototype.getComposerLinks, "name", { value: "getComposerLinks" });
-
-
-

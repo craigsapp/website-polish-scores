@@ -2,132 +2,146 @@
 
 <h1 class="title-info"> Declaration of Accessibility </h1>
 
-<!--h1 id="declaration-of-accessibility">DECLARATION OF ACCESSIBILITY</h1-->
-<p>The Fryderyk Chopin Institute hereby undertakes to ensure the accessibility of its website in accordance with the provisions of the Act of 4 April 2019 on digital accessibility of websites and mobile applications of public entities. The Declaration of Accessibility applies to the Polish Digital Scores website <a href="https://polishscores.org" class="uri">https://polishscores.org</a>.</p>
-<p>Date of publication of the website: <strong>May 2022</strong>. Date of last essential update: <strong>May 2022</strong>.</p>
-<p>The websites are <strong>partially compliant</strong> with the Act of 4 April 2019 on digital accessibility of websites and mobile applications of public entities due to the incompatibilities or exclusions listed below.</p>
-<h2 id="content-not-available">Content not available:</h2>
-<ol start="2" style="list-style-type: decimal">
-<li>Inability to reach all page elements with screen readers;</li>
-<li>Key areas are not properly marked (main content area, supplementary content areas, additional menu, footer area - information on the content);</li>
-<li>Lack of availability of all functionalities via the keyboard;</li>
-<li>Some page elements have too little contrast;</li>
-</ol>
-<h2 id="building-accessibility">Building accessibility</h2>
-<h3 id="the-birthplace-of-fryderyk-chopin-and-park-in-żelazowa-wola">The Birthplace of Fryderyk Chopin and Park in Żelazowa Wola</h3>
+<p id="a11y-wstep"><strong id="a11y-podmiot">The Fryderyk Chopin Institute </strong>hereby undertakes to ensure the accessibility of its website in accordance with the provisions of the Act of 4 April 2019 on digital accessibility of websites and mobile applications of public entities. The Declaration of Accessibility applies to the Fryderyk Chopin Institute website <span id="a11y-url"><a href="https://polish.musicsources.pl/en" target="_blank" rel="noopener">https://polish.musicsources.pl</a></span>.</p>
+<p>Date of publication of the website: <strong id="a11y-data-publikacja">2022-05-31</strong>. Date of last essential update: <strong id="a11y-data-aktualizacja">2022-05-31.</strong></p>
+<p id="a11y-status">The websites are <strong> compliant</strong> with the Act of 4 April 2019 on digital accessibility of websites and mobile applications of public entities.</p>
+
+<h3>Declaration was drawn on:</h3>
+<p id="a11y-data-sporzadzenie">2022-09-05</p>
+<h3>Preparation of the declaration:</h3>
+<p>The declaration was drawn up on the basis of a self-assessment by a public entity with the support of the Utilitia programme and on the basis of an opinion from LepszyWeb.pl.</p>
+<h2 id="a11y-kontakt">Contact information</h2>
+<p>Please contact us regarding problems with access to the website. The contact person is <strong id="a11y-osoba">Bartosz Czapski</strong>, e-mail: <a id="a11y-email" href="mailto:bczapski@nifc.pl">bczapski@nifc.pl</a>. You can also contact us by calling the provided telephone number <strong id="a11y-telefon">(+48 22) 44 16 198</strong>. In the same way, requests for access to unavailable information, as well as accessibility requests, can be made.</p>
+<h3>Notification of digital inaccessibility:</h3>
+<p id="a11y-procedura:">Anyone has the right to request the accessibility to a digital website, a mobile application or any element thereof. Information accessibility may also be requested by means of an alternative means of access, for example by reading a digitally unavailable document, describing the content of a film without an audiodescription, etc. The request shall include the details of the person making the request, an indication which website or mobile application the request concerns and the method of contact. If the claimant requests information by means of an alternative means of access, s/he should also specify a way of presenting the information that is convenient for her/him. The public entity should comply with the request without delay, but no later than 7 days after the request is made. If this deadline cannot be met, the public entity shall immediately inform the claimant when it will be possible to comply with the request, which shall not be more than 2 months from the date of submitting the request. If digital accessibility cannot be ensured, a public entity may propose an alternative way of accessing information. Where a public entity refuses to comply with a request for accessibility or an alternative means of accessing information, the claimant may submit a complaint with regard to the provision of the accessibility to a digital website, mobile application or element of a website or mobile application. Once the above procedure has been exhausted, an application may also be submitted to the <a title="Click here to go to bip.brpo.gov.pl in a new window" href="https://bip.brpo.gov.pl/en" target="_blank" rel="noopener">Civil Rights Ombudsman</a>.</p>
+<h2 id="a11y-architektura">Building accessibility</h2>
+<div>
+<p><strong>The Birthplace of Fryderyk Chopin and Park in Żelazowa Wola</strong></p>
 <p><strong>Żelazowa Wola 15, 96-503 Sochaczew</strong></p>
-<ol style="list-style-type: decimal">
+</div>
+<ol>
 <li>Description of the accessibility of building entrance and passing through check points:
-<ol style="list-style-type: decimal">
+<ol>
 <li>The entrance ensures easy access to the building by the disabled, adapted for the visually impaired and the blind, is well lit;</li>
 <li>Entrance door is 147 cm wide, glass, high-contrast marked;</li>
 <li>Doorways and hallways without thresholds;</li>
 <li>Persons in wheelchairs may use the gate at the historic Main Gate upon notifying the Museum staff of their need;</li>
 <li>In the vicinity of the main entrance, security and reception desk staff’s assistance is available.</li>
-</ol></li>
+</ol>
+</li>
 <li>Description of the availability of hallways, stairways and elevators:
-<ol style="list-style-type: decimal">
+<ol>
 <li>Hallways are accessible and wide, no architectural obstacles. Simple staircase with platforms and handrails;</li>
-<li>There are three toilets for the disabled available within the Museum premises (the &quot;Preludium&quot; reception pavilion, the &quot;Etude&quot; pavilion and a building located in the park, on the north side of the park 60 metres from Chopin's Birthplace).</li>
-</ol></li>
+<li>There are three toilets for the disabled available within the Museum premises (the "Preludium" reception pavilion, the "Etude" pavilion and a building located in the park, on the north side of the park 60 metres from Chopin's Birthplace).</li>
+</ol>
+</li>
 <li>Description of adjustments:
-<ol style="list-style-type: decimal">
-<li>The museum is equipped with two wheelchairs for adults located at the entrance to the &quot;Prelude&quot; reception pavilion;</li>
+<ol>
+<li>The museum is equipped with two wheelchairs for adults located at the entrance to the "Prelude" reception pavilion;</li>
 <li>The park provides approximately 1.5 km of wheelchair-friendly pathways. The pathways are marked on a map located in the park at the entrance and in guidebooks;</li>
 <li>There are information boards and signposts posted in the building;</li>
 <li>There are guidance notes in the building in symbolic language;</li>
 <li>Persons disabled may obtain assistance during their visits. Please request such assistance at the Ticket Office or Information Desk of the Birthplace of Fryderyk Chopin and Park in Żelazowa Wola, or by phone (+ 48 46 863 33 00), or by email: <a href="mailto:zelazowawola@nifc.pl">zelazowawola@nifc.pl</a>.</li>
-</ol></li>
-<li>Information on the location and use of parking spaces designated for disabled persons:
-<ol style="list-style-type: decimal">
-<li>The parking lot is located 90 metres from the Museum. Three spaces for disabled persons have been designated in the parking lot. To get from the parking lot to the main entrance, please use a pedestrian crossing with a traffic light. You then have to go over a high curb, but right before the main entrance the curb is cut to form a driveway.</li>
-</ol></li>
-<li>Information about the right to enter with an assisting dog and any reasonable restrictions that may apply:
-<ol style="list-style-type: decimal">
-<li>Visiting with an assisting dog is permitted.</li>
-</ol></li>
-<li>Information about the availability of a sign language interpreter on site:
-<ol style="list-style-type: decimal">
-<li>A sign language interpreter on site is not available.</li>
-</ol></li>
 </ol>
-<h3 id="the-fryderyk-chopin-museum-ostrogski-castle">The Fryderyk Chopin Museum (Ostrogski Castle)</h3>
+</li>
+<li>Information on the location and use of parking spaces designated for disabled persons:
+<ol>
+<li>The parking lot is located 90 metres from the Museum. Three spaces for disabled persons have been designated in the parking lot. To get from the parking lot to the main entrance, please use a pedestrian crossing with a traffic light. You then have to go over a high curb, but right before the main entrance the curb is cut to form a driveway.</li>
+</ol>
+</li>
+<li>Information about the right to enter with an assisting dog and any reasonable restrictions that may apply:
+<ol>
+<li>Visiting with an assisting dog is permitted.</li>
+</ol>
+</li>
+<li>Information about the availability of a sign language interpreter on site:
+<ol>
+<li>A sign language interpreter on site is not available.</li>
+</ol>
+</li>
+</ol>
+<div>
+<p><strong>The Fryderyk Chopin Museum (Ostrogski Castle)</strong></p>
 <p><strong>Okólnik 1, 00-368 Warsaw</strong></p>
-<ol style="list-style-type: decimal">
+</div>
+<ol>
 <li>Description of the accessibility of building entrance and passing through check points:
-<ol style="list-style-type: decimal">
+<ol>
 <li>The main entrance door to the Museum’s Ticket Office is located at Tamka Street. There is a 74 centimetres wide ramp in front of the entrance door mounted on three treads. The door is wide and well lit;</li>
 <li>Several stairway sections with interstorey landings lead to the Museum's main entrance;</li>
 <li>The entrance for people in wheelchairs and those who have difficulty in climbing stairways is from Tamka Street. Please report such a need to the ticket office staff when purchasing your ticket in person or by phone prior to your visit;</li>
 <li>On entering the building through the main entrance, you can get assistance from the staff - museum educators or security guards.</li>
-</ol></li>
+</ol>
+</li>
 <li>Description of the availability of hallways, stairways and elevators:
-<ol style="list-style-type: decimal">
+<ol>
 <li>There is an elevator in the building;</li>
 <li>Two stairway sections on level -1 have been fitted with landing platforms operated by a security guard;</li>
 <li>The Museum features high-contrast marked stairway treads;</li>
 <li>Part of level 0 is not adapted for people in wheelchairs (Warszawa Room);</li>
 <li>The temporary exhibition room, located on level -2, is inaccessible to people in wheelchairs due to the steep treads and the lack of a platform.</li>
-</ol></li>
+</ol>
+</li>
 <li>Description of adjustments:
-<ol style="list-style-type: decimal">
+<ol>
 <li>The museum is equipped with two wheelchairs for adults, one at the Museum’s Ticket Office, the other at the Museum's checkroom at level -1;</li>
 <li>There are two restrooms available for people with disabilities in the Museum, at levels 0 and -1. Width of entrance door is 90 cm;</li>
 <li>The building features symbolic guidance instructions and information in the form of video text.</li>
-</ol></li>
-<li>Information on the location and use of parking spaces designated for disabled persons:
-<ol style="list-style-type: decimal">
-<li>The Museum does not have a parking lot, it is possible to use nearby city parking spaces.</li>
-</ol></li>
-<li>Information about the right to enter with an assisting dog and any reasonable restrictions that may apply:
-<ol style="list-style-type: decimal">
-<li>Visiting the Museum with an assisting dog is permitted.</li>
-</ol></li>
-<li>Information about the availability of a sign language interpreter on site:
-<ol style="list-style-type: decimal">
-<li>A sign language interpreter on site is not available.</li>
-</ol></li>
 </ol>
-<h3 id="seat-of-the-frederic-chopin-institute-chopin-centre">Seat of the Frederic Chopin Institute, Chopin Centre</h3>
+</li>
+<li>Information on the location and use of parking spaces designated for disabled persons:
+<ol>
+<li>The Museum does not have a parking lot, it is possible to use nearby city parking spaces.</li>
+</ol>
+</li>
+<li>Information about the right to enter with an assisting dog and any reasonable restrictions that may apply:
+<ol>
+<li>Visiting the Museum with an assisting dog is permitted.</li>
+</ol>
+</li>
+<li>Information about the availability of a sign language interpreter on site:
+<ol>
+<li>A sign language interpreter on site is not available.</li>
+</ol>
+</li>
+</ol>
+<div>
+<p><strong>Seat of the Frederic Chopin Institute, Chopin Centre</strong></p>
 <p><strong>Tamka 43, 00-355 Warsaw</strong></p>
-<ol style="list-style-type: decimal">
+</div>
+<ol>
 <li>Description of the accessibility of building entrance and passing through check points:
-<ol style="list-style-type: decimal">
+<ol>
 <li>The building has 2 entrances. The entrance from Tamka Street leads to level 0, entrance from Ordynacka Street - to level +2;</li>
 <li>The entrances are lit and well marked;</li>
 <li>The entrance from Ordynacka Street is adapted for people with disabilities; due to a 10 cm-high tread, it is recommended to use the assistant’s help;</li>
 <li>At the entrance, security guards’ assistance is available.</li>
-</ol></li>
+</ol>
+</li>
 <li>Description of the availability of hallways, stairways and elevators:
-<ol style="list-style-type: decimal">
+<ol>
 <li>The building is equipped with elevators and high-contrast marked treads.</li>
-</ol></li>
+</ol>
+</li>
 <li>Description of adjustments:
-<ol style="list-style-type: decimal">
+<ol>
 <li>There is one restroom available for people with disabilities in the building, at levels -1. Width of entrance door is 90 cm;</li>
 <li>The building features symbolic guidance instructions.</li>
-</ol></li>
-<li>Information on the location and use of parking spaces designated for disabled persons:
-<ol style="list-style-type: decimal">
-<li>The Chopin Centre does not have a parking lot, it is possible to use nearby city parking spaces.</li>
-</ol></li>
-<li>Information about the right to enter with an assisting dog and any reasonable restrictions that may apply:
-<ol style="list-style-type: decimal">
-<li>Visiting with an assisting dog is permitted.</li>
-</ol></li>
-<li>Information about the availability of a sign language interpreter on site:
-<ol style="list-style-type: decimal">
-<li>A sign language interpreter on site is not available.</li>
-</ol></li>
 </ol>
-<h2 id="declaration-was-drawn-on">Declaration was drawn on:</h2>
-<p>5 September 2022</p>
-<h2 id="preparation-of-the-declaration">Preparation of the declaration:</h2>
-<p>The declaration was drawn up on the basis of a self-assessment by a public entity with the support of the Utilitia programme and on the basis of an opinion from LepszyWeb.pl.</p>
-<h2 id="contact-information">Contact information</h2>
-<p>Please contact us regarding problems with access to the website. The contact person is Bartosz Czapski, e-mail: <a href="mailto:bczapski@nifc.pl">bczapski@nifc.pl</a>. You can also contact us by calling the provided telephone number (+48 22) 44 16 198. In the same way, requests for access to unavailable information, as well as accessibility requests, can be made.</p>
-<h2 id="notification-of-digital-inaccessibility">Notification of digital inaccessibility:</h2>
-<p>Anyone has the right to request the accessibility to a digital website, a mobile application or any element thereof. Information accessibility may also be requested by means of an alternative means of access, for example by reading a digitally unavailable document, describing the content of a film without an audiodescription, etc. The request shall include the details of the person making the request, an indication which website or mobile application the request concerns and the method of contact. If the claimant requests information by means of an alternative means of access, s/he should also specify a way of presenting the information that is convenient for her/him. The public entity should comply with the request without delay, but no later than 7 days after the request is made. If this deadline cannot be met, the public entity shall immediately inform the claimant when it will be possible to comply with the request, which shall not be more than 2 months from the date of submitting the request. If digital accessibility cannot be ensured, a public entity may propose an alternative way of accessing information. Where a public entity refuses to comply with a request for accessibility or an alternative means of accessing information, the claimant may submit a complaint with regard to the provision of the accessibility to a digital website, mobile application or element of a website or mobile application. Once the above procedure has been exhausted, an application may also be submitted to the <a href="https://bip.brpo.gov.pl/en">Civil Rights Ombudsman</a>.</p>
-
-
-
+</li>
+<li>Information on the location and use of parking spaces designated for disabled persons:
+<ol>
+<li>The Chopin Centre does not have a parking lot, it is possible to use nearby city parking spaces.</li>
+</ol>
+</li>
+<li>Information about the right to enter with an assisting dog and any reasonable restrictions that may apply:
+<ol>
+<li>Visiting with an assisting dog is permitted.</li>
+</ol>
+</li>
+<li>Information about the availability of a sign language interpreter on site:
+<ol>
+<li>A sign language interpreter on site is not available.</li>
+</ol>
+</li>
+</ol>

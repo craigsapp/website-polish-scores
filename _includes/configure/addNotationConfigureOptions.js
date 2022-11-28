@@ -111,6 +111,15 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// Show custodes
+	element = document.querySelector("#checkbox-show-custodes");
+	if (element) {
+		if (!element.checked) {
+			let entry = "s/^custos/Custos/I";
+			shed.push(entry);
+		}
+	}
+
 	if (shed.length > 0) {
 		// create shed filter
 		let sstring = "shed -e '";

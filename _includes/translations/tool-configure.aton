@@ -230,6 +230,11 @@
 @PL:		Zastosuj poprawki SIC
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		show_custodes
+@EN:		Show custodes
+@PL:		Show custodes
+@@END:		ENTRY
 
 
 

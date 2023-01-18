@@ -339,7 +339,7 @@ function POPC2() {
 
 			// URLs for data/indexes:
 
-			data_addr:          "{{ site.data_addr1           }}",
+			data_addr:          "{{ site.data_addr2           }}",
 
 			score_index:        "{{ site.score_index_popc2    }}", // active score index
 			score_index_popc1:  "{{ site.score_index_popc1    }}",

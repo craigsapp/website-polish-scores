@@ -96,13 +96,7 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 				popc2.toggleMusicIncipit();
 				event.preventDefault();
 			} else if (popc2.IsBrowsePage()) {
-				popc2.VARS.SEARCH_FLAGS.IIIF = !popc2.VARS.SEARCH_FLAGS.IIIF;
-				popc2.doBrowseSearch();
-				if (popc2.VARS.SEARCH_FLAGS.IIIF) {
-					console.warn("Doing IIIF search");
-				} else {
-					console.warn("Turning off IIIF search");
-				}
+				popc2.toggleIiifScores();
 			}
 			break;
 
@@ -120,13 +114,7 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 				popc2.makeNotationModern();
 				event.preventDefault();
 			} else if (popc2.IsBrowsePage()) {
-				popc2.VARS.SEARCH_FLAGS.MODERN = !popc2.VARS.SEARCH_FLAGS.MODERN;
-				popc2.doBrowseSearch();
-				if (popc2.VARS.SEARCH_FLAGS.MODERN) {
-					console.warn("Doing modern edition search");
-				} else {
-					console.warn("Turning off modern edition search");
-				}
+				popc2.toggleModernScores();
 			}
 			break;
 

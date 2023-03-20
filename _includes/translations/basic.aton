@@ -39,6 +39,18 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		modernized_scores
+@EN:		Toggle list of modernized scores
+@PL:		Toggle list of modernized scores
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		iiif_scores
+@EN:		Toggle list of scores with IIIF links
+@PL:		Toggle list of scores with IIIF links
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		info
 @EN:		Website information
 @PL:		Informacje o portalu

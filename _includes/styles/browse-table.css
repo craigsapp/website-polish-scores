@@ -114,6 +114,9 @@ table.search-results tbody tr:hover {
 	background: {{ site.secondary_color }}18;
 }
 
+/* Accessibility */
+
+/*
 table.search-results tr:focus td:nth-child(even) {
 	background: black;
 	color: white;
@@ -126,6 +129,7 @@ table.search-results tr:focus td:nth-child(odd) {
 	font-size: 1.5rem;
 	border: 1px solid black;
 }
+*/
 
 table.search-results tbody tr.lyrics:hover{
 	background: none !important;

@@ -23,11 +23,11 @@ POPC2.prototype.downloadSiglumIndex = function () {
 	let starttime = now.getTime();
 
 	fetch(url)
-		// .then(res => res.json())
-		.then(function(res) {
-			console.log("=============================== SIGLA INDEX RESPONSE", res);
-			return res.json();
-		})
+		.then(res => res.json())
+		// .then(function(res) {
+		// 	console.log("=============================== SIGLA INDEX RESPONSE", res);
+		// 	return res.json();
+		// })
 		.then(data => {
 			let now = new Date();
 			let endtime = now.getTime();
@@ -37,6 +37,7 @@ POPC2.prototype.downloadSiglumIndex = function () {
 			for (let i=0; i<data.length; i++) {
 				let siglum = data[i].Siglum;
 				if (!siglum) {
+					console.error("NO Siglum FIELD FOUND IN ENTRY", data[i]);
 					continue;
 				}
 				if (siglum.match(/^\s*$/)) {
@@ -126,7 +127,9 @@ POPC2.prototype.downloadSiglumIndex = function () {
 			that.buildSiglumFilter();
 			that.DebugMessage(`DOWNLOADED SIGLUM INDEX FROM ${url} in ${duration} seconds`, "plum");
 		})
-		.catch(err => { console.error("downloadSiglumIndex:", err); });
+		.catch(err => {
+			console.error("downloadSiglumIndex:", err);
+		});
 };
 
 Object.defineProperty(POPC2.prototype.downloadSiglumIndex, "name", { value: "downloadSiglumIndex" });

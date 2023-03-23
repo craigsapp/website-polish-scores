@@ -51,6 +51,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		date_sort
+@EN:		Toggle ordering of scores by upload/revision date
+@PL:		Toggle ordering of scores by upload/revision date
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		info
 @EN:		Website information
 @PL:		Informacje o portalu

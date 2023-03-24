@@ -345,7 +345,7 @@ function POPC2() {
 		github_addr_popc1:  "{{ site.github_addr_popc1    }}",
 		github_addr_popc2:  "{{ site.github_addr_popc2    }}",
 
-		main_data_server:   {
+		mirror_data_server:   {
 
 			// URLs for data/indexes:
 
@@ -372,7 +372,7 @@ function POPC2() {
 			pitch_index_popc2:   "{{ site.pitch_index_popc2    }}",
 		},
 
-		mirror_data_server:   {
+		main_data_server:   {
 			data_addr:          "{{ site.data_addr2           }}",
 
 			score_index:        "{{ site.score_index2_popc2   }}", // active score index

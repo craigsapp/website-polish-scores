@@ -4,6 +4,7 @@
 <h1 class="title-info"> Dokumentacja </h1>
 
 <ul class="toc">
-<li> <a href="access"> Deklaracja dostępności</a> </li>
-<li> <a href="keyscape"> Keyscape documentation</a> </li>
+<li> <a tabindex="0" role="button" href="booklet/popc-2022_pl.pdf">  <i>Dziedzictwo muzyki polskiej w otwartym dostępie</i> informational booklet (2022)</a> </li>
+<li> <a tabindex="0" href="access"> Deklaracja dostępności</a> </li>
+<li> <a tabindex="0" href="keyscape"> Keyscape documentation</a> </li>
 </ul>

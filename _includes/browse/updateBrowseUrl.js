@@ -15,7 +15,6 @@
 
 POPC2.prototype.updateBrowseUrl = function (data) {
 	this.DebugMessageFunction();
-console.error("DATA FOR URL", data, " +=================================");
 
 	let found = false;
 	let url = `${window.location.origin}`;

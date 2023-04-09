@@ -16,13 +16,11 @@
 
 POPC2.prototype.checkForDisplayAnalysis = function () {
 	this.DebugMessageFunction();
-console.log("CGI ==========================", JSON.stringify(this.VARS.CGI));
 
 	if (!this.VARS.CGI.analysis) {
 		console.warn("NO ANALYSIS PARAMETER");
 		return;
 	}
-console.warn("GOT HERE QQQ");
 
 	let tag = this.VARS.CGI.analysis;
 	let options = "";

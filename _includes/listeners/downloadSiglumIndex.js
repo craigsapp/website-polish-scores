@@ -125,7 +125,10 @@ POPC2.prototype.downloadSiglumIndex = function () {
 		})
 		.catch(err => {
 			console.error("downloadSiglumIndex:", err);
-			this.downloadSiglumIndex();
+			if (this.VARS.DOWNLOAD_SIGLUM_INDEX_COUNT++ < 100) {
+				// Reattempt download of siglum index if failure:
+				this.downloadSiglumIndex();
+			}
 		});
 };
 

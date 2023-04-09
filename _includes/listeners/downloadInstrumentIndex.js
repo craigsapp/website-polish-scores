@@ -46,7 +46,10 @@ POPC2.prototype.downloadInstrumentIndex = function () {
 		})
 		.catch(err => {
 			console.error("downloadInstrumentIndex:", err);
-			this.downloadInstrumentIndex();
+			if (this.VARS.DOWNLOAD_INSTRUMENT_INDEX_COUNT++ < 100) {
+				// Reattempt download of instrument index if failure:
+				this.downloadInstrumentIndex();
+			}
 		});
 };
 

@@ -84,9 +84,9 @@ POPC2.prototype.selectKeyscapeMeasure = function (id, startmeasure, endmeasure) 
 	let keyinfo = this.VARS.KEYSCAPE.KEYINFO_ELEMENT;
 	let p = context.getImageData(mouseX, mouseY, 1, 1).data;
 	let hex = "#" + ("000000" + popc2.rgbToHex(p[0], p[1], p[2])).slice(-6);
-console.error("HEX", hex, "=================================================");
+	// console.error("HEX", hex, "=================================================");
 	let good = popc2.printKeyInfo(keyinfo, hex);
-console.warn("GOOD", good, "KEYINFO", keyinfo);
+	// console.warn("GOOD", good, "KEYINFO", keyinfo);
 
 
 	let context2 = this.VARS.KEYSCAPE.CURSOR_CONTEXT;

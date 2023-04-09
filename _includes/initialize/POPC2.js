@@ -115,6 +115,13 @@ function POPC2() {
 	// SEARCH_SORT_REVERSE -- sort in normal or reversed order.
 	this.VARS.SEARCH_SORT_REVERSE = false;
 
+	// DOWNLOAD_SIGLUM_INDEX_COUNT -- cound the number of times that the siglum
+	//     index is attempted to be downloaded.
+	this.VARS.DOWNLOAD_SIGLUM_INDEX_COUNT = 0;
+
+	// DOWNLOAD_INSTRUMENT_INDEX_COUNT -- cound the number of times that the instrument
+	//     index is attempted to be downloaded.
+	this.VARS.DOWNLOAD_INSTRUMENT_INDEX_COUNT = 0;
 
 	/////////////////////////////
 	//

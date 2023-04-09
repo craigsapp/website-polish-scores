@@ -5,7 +5,7 @@ This repository contains the jekyll-based front-end website for https://polishsc
 
 ## Data and data server
 
-* Digital scores used on polishscores.org can be found in the repository https://githbu.com/pl-wnifc/humdrum-polish-scores.
+* Digital scores used on polishscores.org can be found in the repository https://github.com/pl-wnifc/humdrum-polish-scores.
 
 * The data management on the server side access to digital scores, metadata and analytic data can be found at https://github.com/craigsapp/nifc-digital-score-server.
 

@@ -85,6 +85,9 @@ function POPC2() {
 	// SEARCH -- List of parameters for browse page searching.
 	this.VARS.SEARCH = {};
 
+	// SEARCH_URL -- Temporary holder for search fields to add to URL:
+	this.VARS.SEARCH_URL = {};
+
 	// BROWSE_DELETE_HIGHLIGHT -- boolean for highlighting delete button to clear parameters.
 	this.VARS.BROWSE_DELETE_HIGHLIGHT = false;
 

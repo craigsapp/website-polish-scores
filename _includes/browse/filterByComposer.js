@@ -36,6 +36,7 @@ POPC2.prototype.filterByComposer = function (input) {
 	}
 	if (target) {
 		this.VARS.SEARCH.composer = target;
+		this.VARS.SEARCH_URL.c = target;
 
 		if ((input.length == this.VARS.SEARCH_INDEX.length)
 				&& !this.IsEmptyObject(this.VARS.COMPOSER_INDEX)) {

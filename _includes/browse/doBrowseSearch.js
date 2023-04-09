@@ -33,6 +33,7 @@ POPC2.prototype.doBrowseSearch = function (index) {
 
 	// Reset search
 	this.VARS.SEARCH = {};
+	this.VARS.SEARCH_URL = {};
 
 	let results = index;
 	let newresults;
@@ -67,7 +68,6 @@ POPC2.prototype.doBrowseSearch = function (index) {
 	}
 	this.buildBrowseFilters(results);
 
-
 	results = this.sortIndex(results);
 
 	this.showResultsCount(results);
@@ -79,6 +79,7 @@ POPC2.prototype.doBrowseSearch = function (index) {
 	this.DisplayComposerPortrait(this.VARS.SEARCH.composer);
 	this.DisplayLibraryPortrait();
 	this.displayBrowseTable(results);
+	this.updateBrowseUrl(this.VARS.SEARCH_URL);
 };
 
 Object.defineProperty(POPC2.prototype.doBrowseSearch, "name", { value: "doBrowseSearch" });

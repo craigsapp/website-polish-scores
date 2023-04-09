@@ -44,7 +44,10 @@ POPC2.prototype.downloadInstrumentIndex = function () {
 			that.buildInstrumentFilter();
 			that.DebugMessage(`DOWNLOADED INSTRUMENT INDEX FROM ${url} in ${duration} seconds`, "lightblue");
 		})
-		.catch(err => { console.error("downloadInstrumentIndex:", err); });
+		.catch(err => {
+			console.error("downloadInstrumentIndex:", err);
+			this.downloadInstrumentIndex();
+		});
 };
 
 Object.defineProperty(POPC2.prototype.downloadInstrumentIndex, "name", { value: "downloadInstrumentIndex" });

@@ -23,27 +23,23 @@ POPC2.prototype.downloadSiglumIndex = function () {
 	let starttime = now.getTime();
 
 	fetch(url)
-		.then(res => res.json())
-		// .then(function(res) {
-		// 	console.log("=============================== SIGLA INDEX RESPONSE", res);
-		// 	return res.json();
-		// })
-		.then(data => {
+		.then(response => response.json())
+		.then(json => {
 			let now = new Date();
 			let endtime = now.getTime();
 			let duration = (endtime - starttime) / 1000.0;
 			// convert data to associative array
 			that.VARS.SIGLUM_INDEX = {};
-			for (let i=0; i<data.length; i++) {
-				let siglum = data[i].Siglum;
+			for (let i=0; i<json.length; i++) {
+				let siglum = json[i].Siglum;
 				if (!siglum) {
-					console.error("NO Siglum FIELD FOUND IN ENTRY", data[i]);
+					console.error("NO Siglum FIELD FOUND IN ENTRY", json[i]);
 					continue;
 				}
 				if (siglum.match(/^\s*$/)) {
 					continue;
 				}
-				that.VARS.SIGLUM_INDEX[siglum] = data[i];
+				that.VARS.SIGLUM_INDEX[siglum] = json[i];
 
 				// Parameters in each entry:
 				//    Siglum:      Siglum for library, case sensitive, such as "PL-Wn"
@@ -56,70 +52,70 @@ POPC2.prototype.downloadSiglumIndex = function () {
 				//    NIFC-URL-PL:   NIFC website for library in Polish
 				//    NIFC-URL-EN:   NIFC webiste for library
 				// Borrow values into empty locations:
-				if (!data[i]["Name-full-PL"] ) { data[i]["Name-full-PL"]  = ""; }
-				if (!data[i]["Name-short-PL"]) { data[i]["Name-short-PL"] = ""; }
-				if (!data[i]["Name-full-EN"] ) { data[i]["Name-full-EN"]  = ""; }
-				if (!data[i]["Name-short-EN"]) { data[i]["Name-short-EN"] = ""; }
-				if (!data[i]["Website-PL"]   ) { data[i]["Website-PL"]    = ""; }
-				if (!data[i]["Website-EN"]   ) { data[i]["Website-EN"]    = ""; }
-				if (!data[i]["NIFC-URL-PL"]  ) { data[i]["NIFC-URL-PL"]   = ""; }
-				if (!data[i]["NIFC-URL-EN"]  ) { data[i]["NIFC-URL-EN"]   = ""; }
+				if (!json[i]["Name-full-PL"] ) { json[i]["Name-full-PL"]  = ""; }
+				if (!json[i]["Name-short-PL"]) { json[i]["Name-short-PL"] = ""; }
+				if (!json[i]["Name-full-EN"] ) { json[i]["Name-full-EN"]  = ""; }
+				if (!json[i]["Name-short-EN"]) { json[i]["Name-short-EN"] = ""; }
+				if (!json[i]["Website-PL"]   ) { json[i]["Website-PL"]    = ""; }
+				if (!json[i]["Website-EN"]   ) { json[i]["Website-EN"]    = ""; }
+				if (!json[i]["NIFC-URL-PL"]  ) { json[i]["NIFC-URL-PL"]   = ""; }
+				if (!json[i]["NIFC-URL-EN"]  ) { json[i]["NIFC-URL-EN"]   = ""; }
 
 				// If no short name in language, borrow long name:
-				if (data[i]["Name-short-EN"] === "") {
-					data[i]["Name-short-EN"] = data[i]["Name-full-EN"];
+				if (json[i]["Name-short-EN"] === "") {
+					json[i]["Name-short-EN"] = json[i]["Name-full-EN"];
 				}
-				if (data[i]["Name-short-PL"] === "") {
-					data[i]["Name-short-PL"] = data[i]["Name-full-PL"];
+				if (json[i]["Name-short-PL"] === "") {
+					json[i]["Name-short-PL"] = json[i]["Name-full-PL"];
 				}
 
 				// If no long name in language, borrow short name:
-				if (data[i]["Name-long-EN"] === "") {
-					data[i]["Name-long-EN"] = data[i]["Name-short-EN"];
+				if (json[i]["Name-long-EN"] === "") {
+					json[i]["Name-long-EN"] = json[i]["Name-short-EN"];
 				}
-				if (data[i]["Name-long-PL"] === "") {
-					data[i]["Name-long-PL"] = data[i]["Name-short-PL"];
+				if (json[i]["Name-long-PL"] === "") {
+					json[i]["Name-long-PL"] = json[i]["Name-short-PL"];
 				}
 
 				// If no name in language, borrow other language's
-				if (data[i]["Name-long-EN"] === "") {
-					data[i]["Name-long-EN"] = data[i]["Name-long-PL"];
+				if (json[i]["Name-long-EN"] === "") {
+					json[i]["Name-long-EN"] = json[i]["Name-long-PL"];
 				}
-				if (data[i]["Name-long-PL"] === "") {
-					data[i]["Name-long-PL"] = data[i]["Name-long-EN"];
+				if (json[i]["Name-long-PL"] === "") {
+					json[i]["Name-long-PL"] = json[i]["Name-long-EN"];
 				}
-				if (data[i]["Name-short-EN"] === "") {
-					data[i]["Name-short-EN"] = data[i]["Name-short-PL"];
+				if (json[i]["Name-short-EN"] === "") {
+					json[i]["Name-short-EN"] = json[i]["Name-short-PL"];
 				}
-				if (data[i]["Name-short-PL"] === "") {
-					data[i]["Name-short-PL"] = data[i]["Name-short-EN"];
+				if (json[i]["Name-short-PL"] === "") {
+					json[i]["Name-short-PL"] = json[i]["Name-short-EN"];
 				}
 
-				if (data[i]["Website-EN"] === "") {
-					data[i]["Website-EN"] = data[i]["Website-PL"];
+				if (json[i]["Website-EN"] === "") {
+					json[i]["Website-EN"] = json[i]["Website-PL"];
 				}
-				if (data[i]["Website-PL"] === "") {
-					data[i]["Website-PL"] = data[i]["Website-EN"];
+				if (json[i]["Website-PL"] === "") {
+					json[i]["Website-PL"] = json[i]["Website-EN"];
 				}
 
 				// Store siglum name and URL in translation database
 				if (this.VARS.TRANSLATIONS) {
 					let lentry = {};
 					lentry.TAG = `${siglum}_Name_long`;
-					lentry.EN = data[i]["Name-long-EN"];
-					lentry.PL = data[i]["Name-long-PL"];
+					lentry.EN = json[i]["Name-long-EN"];
+					lentry.PL = json[i]["Name-long-PL"];
 					this.VARS.TRANSLATIONS[lentry.TAG] = lentry;
 
 					let sentry = {};
 					sentry.TAG = `${siglum}_Name_short`;
-					sentry.EN = data[i]["Name-short-EN"];
-					sentry.PL = data[i]["Name-short-PL"];
+					sentry.EN = json[i]["Name-short-EN"];
+					sentry.PL = json[i]["Name-short-PL"];
 					this.VARS.TRANSLATIONS[sentry.TAG] = sentry;
 
 					let uentry = {};
 					uentry.TAG = `${siglum}_URL`;
-					uentry.EN = data[i]["Website-EN"];
-					uentry.PL = data[i]["Website-PL"];
+					uentry.EN = json[i]["Website-EN"];
+					uentry.PL = json[i]["Website-PL"];
 					this.VARS.TRANSLATIONS[uentry.TAG] = uentry;
 				}
 			}
@@ -129,6 +125,7 @@ POPC2.prototype.downloadSiglumIndex = function () {
 		})
 		.catch(err => {
 			console.error("downloadSiglumIndex:", err);
+			this.downloadSiglumIndex();
 		});
 };
 

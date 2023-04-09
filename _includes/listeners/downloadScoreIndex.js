@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	let now = new Date();
 	let starttime = now.getTime();
 
+	popc2.downloadSiglumIndex();
+	popc2.downloadInstrumentIndex();
+
 	fetch(url)
 		.then(res => res.json())
 		.then(json => {
@@ -30,8 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			popc2.PrepareDownloadedScoreIndex(json);
 			popc2.prepareBrowseSelectOptions();
 			popc2.loadBookmarksFromLocalStorage();
-			popc2.downloadSiglumIndex();
-			popc2.downloadInstrumentIndex();
 
 			if (popc2.VARS.WORK_ID) {
 				// Display of work page handled by downloadComposerIndex().

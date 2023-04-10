@@ -18,13 +18,13 @@ div.checkboxes {
 	flex-wrap: wrap;
 	/* align-content: flex-start; */
 	width: 100%;
-	height: 140px;
+	height: 150px;
 }
 
 /* Height of checkboxes has to be the same height as #tool-configure */
 
 #tool-configure {
-	height: 130px;
+	height: 150px;
 	margin-top: 0;
 	width: 100%;
 	letter-spacing: -0.5px;
@@ -39,6 +39,7 @@ div.checkboxes {
 	margin-right: 50px;
 	padding-left: 5px;
 	/* overflow-x: auto; */
+
 }
 
 

@@ -23,19 +23,16 @@
 	{% include macro/checkbox.html id="checkbox-soundingscore" trans="sounding_score"         %}
 	{% include macro/checkbox.html id="checkbox-tightspacing"  trans="tight_spacing"          %}
 
+	{% include macro/checkbox.html id="checkbox-sic-hide"      trans="sic_hide"               %}
+	{% include macro/checkbox.html id="checkbox-sic-apply"     trans="sic_apply"              %}
+
 	{% include macro/checkbox.html
 		id="checkbox-incipit"
 		trans="display_incipit" 
 		action="popc2.toggleMusicIncipit()"
 	%}
 
-	{% include macro/checkbox.html id="checkbox-sic-hide"   trans="sic_hide"   %}
-
-	{% include macro/checkbox.html id="checkbox-show-custodes" trans="show_custodes"   %}
-
-	{% comment %}
-	{% include macro/checkbox.html id="checkbox-sic-apply"  trans="sic_apply"   %}
-	{% endcomment %}
+	{% include macro/checkbox.html id="checkbox-show-custodes" trans="show_custodes"          %}
 
 	<select id="select-transposition" onchange="popc2.displayScore()" class="plainwhite">
 		<option class="trans" data-trans="select_transposition" value=""></option>

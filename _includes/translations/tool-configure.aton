@@ -226,7 +226,7 @@
 
 @@BEGIN:	ENTRY
 @TAG:		sic_apply
-@EN:		Show sic corrections
+@EN:		Apply sic corrections
 @PL:		Zastosuj poprawki SIC
 @@END:		ENTRY
 

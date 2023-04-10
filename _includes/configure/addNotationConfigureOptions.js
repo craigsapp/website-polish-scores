@@ -143,8 +143,17 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		options.filter = [];
 	}
 
+	// Apply sic corrections
+	element = document.querySelector("#checkbox-sic-apply");
+	if (element) {
+		if (element.checked) {
+			options.filter.push("sic -s");
+		}
+	}
+
 	if (addModFilter) {
 		// Substitute SICs with corrections:
+		// maybe check to see if sic filter not already present.
 		options.filter.push("sic -s");
 
 		// Split rests and notes going over barlines:
@@ -228,6 +237,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	console.warn("NOTATION FILTERS", options);
 	return options;
 };
 

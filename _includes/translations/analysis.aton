@@ -21,6 +21,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		color_thirds
+@EN:		Color thirds
+@PL:		Color thirds
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		composite_rhythm
 @EN:		Composite rhythm
 @PL:		Złożony rytm

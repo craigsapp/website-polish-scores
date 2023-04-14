@@ -16,7 +16,6 @@ POPC2.prototype.displayRandomWork = function () {
 	this.DebugMessageFunction();
 
 	if (this.IsWorkPage()) {
-		stop(); // Stop any active MIDI playback
 		// Already viewing a work, so do not need
 		// to first display the work page.
 		this.displayScore("random");

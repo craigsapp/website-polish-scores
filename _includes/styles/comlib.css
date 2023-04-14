@@ -73,10 +73,6 @@
 	color: {{ site.secondary_color }};
 }
 
-#library-portrait .st0:hover {
-	fill: {{ site.secondary_color }};
-}
-
 
 #composer-links {
 	padding-left: 5px;

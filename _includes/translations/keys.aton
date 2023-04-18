@@ -10,7 +10,7 @@
 @@BEGIN:	ENTRY
 @TAG:		any_mode
 @EN:		mode
-@PL:		kościelna
+@PL:		ton kościelny
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
@@ -75,7 +75,7 @@
 @@BEGIN:	ENTRY
 @TAG:		any_tonic
 @EN:		tonic
-@PL:		tonic
+@PL:		tonacja
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY

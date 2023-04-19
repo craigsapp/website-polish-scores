@@ -57,7 +57,7 @@ POPC2.prototype.displayNextWork = function() {
 		console.error("CANNOT FIND ID FOR NEXT SCORE AFTER", targetid);
 		return;
 	}
-	this.displayScore(id, true);
+	this.displayScore(id, {noscroll: true});
 };
 
 Object.defineProperty(POPC2.prototype.displayNextWork, "name", { value: "displayNextWork" });

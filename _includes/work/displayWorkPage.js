@@ -13,8 +13,14 @@
 //
 {% endcomment %}
 
-POPC2.prototype.displayWorkPage = function (id) {
-	this.DebugMessageFunction(id);
+POPC2.prototype.displayWorkPage = function (id, options) {
+	this.DebugMessageFunction(id, options);
+
+	if (!(options && typeof options === 'object' && options.constructor === Object)) {
+		options = {};
+	}
+	let nomidistopQ = options.nomidistop || 0;
+
 	if (!id) {
 		id = this.VARS.WORK_ID;
 	}
@@ -51,7 +57,7 @@ POPC2.prototype.displayWorkPage = function (id) {
 	this.insertBrowseSearchOnWorkPage();
 	this.checkForDisplayAnalysis();
 	this.HideIiifLogo();
-	this.displayScore(id);
+	this.displayScore(id, {nomidistop: nomidistopQ});
 	this.displayWorkPagination();
 	if (this.VARS.RESTORE_TOOLS) {
 		this.VARS.RESTORE_TOOLS = false;

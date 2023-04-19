@@ -29,7 +29,7 @@ POPC2.prototype.makeNotationLarger = function () {
 	}
 
 	let id = this.VARS.WORK_ID;
-	this.displayScore(id, true);
+	this.displayScore(id, {noscroll: true});
 };
 
 Object.defineProperty(POPC2.prototype.makeNotationLarger, "name", { value: "makeNotationLarger" });

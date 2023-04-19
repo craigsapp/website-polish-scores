@@ -63,7 +63,7 @@ POPC2.prototype.downloadComposerIndex = function () {
 
 			that.DebugMessage(`DOWNLOADED COMPOSER INDEX FROM ${url} in ${duration} seconds`, "purple");
 			if (that.VARS.WORK_ID) {
-				that.displayWorkPage();
+				that.displayWorkPage(null, {nomidistop: true});
 			} else {
 				that.DisplayComposerPortrait();
 				that.DisplayLibraryPortrait();

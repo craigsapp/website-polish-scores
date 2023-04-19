@@ -13,13 +13,28 @@
 //
 {% endcomment %}
 
-POPC2.prototype.displayScore = function (id, noscrollQ) {
-	this.DebugMessageFunction(id);
+POPC2.prototype.displayScore = function (id, options) {
+	this.DebugMessageFunction(id, options);
+
+	if (!(options && typeof options === 'object' && options.constructor === Object)) {
+		options = {};
+	}
+	let noscrollQ = options.noscroll || false;
+	let nomidistopQ = options.nomidistop || false;
+
 	this.displayWorkNavigator();
 	this.ApplyElementTranslations();
 	this.VARS.INITIALIZED_WORK_PAGE = true;
 	this.HideIiifLogo();
-	stop(); // turn of any active MIDI from a previous score
+	if (!nomidistopQ) {
+		// Only try stopping the MIDI playback if nomidistopQ is set to false.
+		// This is to allow for cases when it is known that there is no MIDI
+		// playback that thus does not need to be stopped (such as when
+		// displaying a score immediately after the composer index has been downloaded).
+		if (typeof stop === "function") {
+			stop(); // turn of any active MIDI from a previous score
+		}
+	}
 
 	if (id === "random") {
 		id = this.getRandomWorkId(this.VARS.SEARCH_RESULTS);
@@ -52,22 +67,22 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 	this.displayWorkInfo(id);
 
 	let that = this;
-	let options = JSON.parse(JSON.stringify(this.VARS.HNP_OPTIONS));
-	options.source = "humdrum";
-	options.postFunction = target => popc2.HnpCallback(target);
-	options = this.addNotationConfigureOptions(options);
-	options = this.addTempoScalingOption(options);
-	options = this.addAnalysisOptions(options);
-	options = this.addWorkPageSearchOptions(options);
+	let hnpoptions = JSON.parse(JSON.stringify(this.VARS.HNP_OPTIONS));
+	hnpoptions.source = "humdrum";
+	hnpoptions.postFunction = target => popc2.HnpCallback(target);
+	hnpoptions = this.addNotationConfigureOptions(hnpoptions);
+	hnpoptions = this.addTempoScalingOption(hnpoptions);
+	hnpoptions = this.addAnalysisOptions(hnpoptions);
+	hnpoptions = this.addWorkPageSearchOptions(hnpoptions);
 	if (this.VARS.HUMDRUM[id]) {
 		this.storeHumdrumOnPage(this.VARS.HUMDRUM[id]);
 		if (this.SETTINGS.debug_verbose === "true") {
-			console.log("HNP OPTIONS", options);
+			console.log("HNP OPTIONS", hnpoptions);
 		}
 		setTimeout(function() {
 			that.ShowWaitingCursor();
 		}, 100);
-		displayHumdrum(options);
+		displayHumdrum(hnpoptions);
 		if (!noscrollQ) {
 			scroll(0, 0);
 		}
@@ -85,12 +100,12 @@ POPC2.prototype.displayScore = function (id, noscrollQ) {
 				that.VARS.HUMDRUM[id] = text;
 				that.storeHumdrumOnPage(text);
 				if (this.SETTINGS.debug_verbose === "true") {
-					console.log("HNP OPTIONS", options);
+					console.log("HNP OPTIONS", hnpoptions);
 				}
 				setTimeout(function() {
 					that.ShowWaitingCursor();
 				}, 100);
-				displayHumdrum(options);
+				displayHumdrum(hnpoptions);
 				if (!noscrollQ) {
 					scroll(0, 0);
 				}

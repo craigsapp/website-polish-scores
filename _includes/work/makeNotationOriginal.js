@@ -18,7 +18,7 @@ POPC2.prototype.makeNotationOriginal = function () {
 	if (this.VARS.MODERNIZE) {
 		this.VARS.MODERNIZE = false;
 		let id = this.VARS.WORK_ID;
-		this.displayScore(id, true);
+		this.displayScore(id, {noscroll: true});
 	}
 	// show the "M" icon on the work toolbar and also hide the "O" icon.
 	let melement = document.querySelector("#modern-button");

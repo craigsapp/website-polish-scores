@@ -31,12 +31,22 @@ POPC2.prototype.displayScanInfo = function(humdrum) {
 		scanElement.innerHTML = "";
 	}
 
-	let matches;
-	if (matches = humdrum.match("!!!IIIF:\s*(.*)\s*$")) {
-		let url = mathes[1];
-		if (url) {
-			this.ShowIiifLogo();
+	// Search for the first "!!!IIIF:" line:
+	let humdrumLines = humdrum.split(/\r?\n/);
+	let iiif = "";
+	for (let i=0; i<humdrumLines.length; i++) {
+		let matches = humdrumLines[i].match("^!!!IIIF:");
+		if (!matches) {
+			continue;
 		}
+		matches = humdrumLines[i].match("^!!!IIIF:\s*(.*)\s*$");
+		if (matches) {
+			iiif = matches[1];
+		}
+		break;
+	}
+	if (iiif) {
+		this.ShowIiifLogo();
 	} else {
 		this.HideIiifLogo();
 	}

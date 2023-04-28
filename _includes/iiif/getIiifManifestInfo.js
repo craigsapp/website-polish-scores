@@ -4,7 +4,8 @@
 // Creation Date: Fri Dec 10 12:46:45 CET 2021
 // Last Modified: Fri Dec 10 12:46:48 CET 2021
 // Filename:      _includes/iiif/getIiifManifestInfo.js
-// Used by:       
+// Used by:
+
 // Included in:   _includes/iiif/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
@@ -26,6 +27,8 @@ POPC2.prototype.getIiifManifestInfo = function (info, event, callback) {
 		console.error("NO IMAGE LABEL IN", info);
 		return;
 	}
+
+	// The manifest has has been previously cached, so use that cached version:
 
 	if (this.VARS.IIIF_MANIFEST.hasOwnProperty(this.VARS.WORK_ID)) {
 		info.manifest = this.VARS.IIIF_MANIFEST[this.VARS.WORK_ID];
@@ -59,11 +62,16 @@ POPC2.prototype.getIiifManifestInfo = function (info, event, callback) {
 		return;
 	}
 
-	let skey = `^!!!IIIF:\\s*([^\\s]+manifest.json)`;
+
+	// The manifest has not yet been downloaded, so do so:
+
+	//let skey = `^!!!IIIF:\\s*([^\\s]+manifest.json)`;
+	let skey = `^!!!IIIF:\\s*([^\\s]+)`;
 	let regex = new RegExp(skey);
-	for (let i=humdrum.length - 1; i>=0; i--) {
+	for (let i=0; i<humdrum.length; i++) {
 		let matches = humdrum[i].match(regex);
 		if (matches) {
+			// First search to see if Manifest is aleady cached:
 			let manifest = matches[1];
 			let mvalue = null;
 			for (const property in this.VARS.IIIF_MANIFEST) {
@@ -73,32 +81,65 @@ POPC2.prototype.getIiifManifestInfo = function (info, event, callback) {
 				}
 			}
 			if (mvalue) {
+				// Found Manifest cache, so don't try to download again.
 				this.VARS.IIIF_MANIFEST[this.VARS.WORK_ID] = mvalue;
 				info.manifest = mvalue;
 				callback(event, info);
 				return;
 			}
+
+			// Manifest needs to be downloaded and processed:
 			fetch(manifest)
 				.then(results => results.json())
 				.then(data => {
-				   let items = data.items;
-   				let maninfo = {};
+					console.log("DOWNLOADED MANIFEST:", data);
+					let items = null;
+					if (data.items) {
+						 // Polona manifests:
+						items = data.items;
+					} else if (data.sequences && data.sequences[0] && data.sequences[0].canvases && data.sequences[0].canvases) {
+						// NIFC manifests:
+						items = data.sequences[0].canvases;
+					} else {
+						console.error("Cannot find image info in manifest");
+						return;
+					}
+					if (!items) {
+						console.error("Cannot find image info in manifest (2)");
+						return;
+					}
+
+					let maninfo = {};
 					maninfo.images = [];
 					maninfo.manifest = manifest;
-   				for (let i=0; i<items.length; i++) {
-      				let entry = {};
-      				entry.iiifbase = items[i].id.replace(/\/?info\.json$/, "");
-      				let lobj = items[i].label;
-      				let keys = Object.keys(lobj);
-      				let label = "";
-      				if (keys.length > 0) {
-         				label = lobj[keys[0]][0];
-      				}
-      				entry.label = label;
+					for (let j=0; j<items.length; j++) {
+						let entry = {};
+						let id;
+						// let mantype = "";
+						if (items[j].id) {
+							// Polona style
+							id = items[j].id;
+							// mantype = "polona" // IIIF manifest v. 3
+						} else if (items[j]["@id"]) {
+							// NIFC style
+							id = items[j].images[0].resource.service["@id"]
+							// mantype = "nifc" // IIIF manifest v. 2
+						} else {
+							console.error("Cannot find ID in", items[j]);
+							return;
+						}
+						entry.iiifbase = id.replace(/\/?info\.json$/, "");
+						let lobj = items[j].label;
+						let keys = Object.keys(lobj);
+						let label = "";
+						if (keys.length > 0) {
+							label = lobj[keys[0]][0];
+						}
+						entry.label = label;
 						if (label === info.label) {
 							info.iiifbase = entry.iiifbase;
 						}
-      				maninfo.images.push(entry);
+						maninfo.images.push(entry);
 					}
 
 					info.manifest = maninfo;
@@ -120,7 +161,7 @@ POPC2.prototype.getIiifManifestInfo = function (info, event, callback) {
 					this.VARS.IIIF_MANIFEST[this.VARS.WORK_ID] = maninfo;
 					this.VARS.IIIF_MANIFEST[manifest] = maninfo;
 					callback(event, info);
-   			})
+				})
 				.catch(error => { console.error(error); });
 			break;
 		}

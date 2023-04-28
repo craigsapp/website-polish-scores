@@ -96,6 +96,7 @@ POPC2.prototype.iiifCallback = function (event, info) {
 		options += `,left=${scleft}`;
 
 		let win = window.open(url, "_blank", options);
+		document.body.classList.remove("waiting");
 	}
 
 };

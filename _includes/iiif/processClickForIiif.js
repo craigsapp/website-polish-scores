@@ -32,6 +32,8 @@ POPC2.prototype.processClickForIiif = function (event, path) {
 		return;
 	}
 
+	document.body.classList.add("waiting");
+
 	this.getIiifBase(boxinfo, event, this.iiifCallback);
 
 };

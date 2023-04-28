@@ -58,7 +58,6 @@ POPC2.prototype.updateWorkUrlDisplay = function (id) {
 	}
 
 	if (url !== window.location.href) {
-		console.error("Setting URL", url);
 		window.history.pushState(null, null, url);
 	}
 

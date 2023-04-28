@@ -31,8 +31,12 @@ POPC2.prototype.displayScanInfo = function(humdrum) {
 		scanElement.innerHTML = "";
 	}
 
-	if (humdrum.match("!!!IIIF")) {
-		this.ShowIiifLogo();
+	let matches;
+	if (matches = humdrum.match("!!!IIIF:\s*(.*)\s*$")) {
+		let url = mathes[1];
+		if (url) {
+			this.ShowIiifLogo();
+		}
 	} else {
 		this.HideIiifLogo();
 	}

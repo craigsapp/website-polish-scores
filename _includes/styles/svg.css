@@ -53,4 +53,12 @@ g[id^="slur-"] path:hover
 }
 
 
+/* Allow clicking on holes in whole/half/breve notes (chrome only) */
+g[id^="note-"],
+g[id^="rest-"],
+g[id^="chord-"] {
+    pointer-events: bounding-box;
+}
+
+
 

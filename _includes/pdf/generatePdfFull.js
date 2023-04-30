@@ -75,7 +75,7 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 
 	// let spacingBraceGroup   = 12;
 	// let spacingBracketGroup = 12;
-	let spacingStaff        = 10;
+	let spacingStaff        = 6;
 	let spacingSystem       = 14;
 	let pageMarginTop       = 100;
 	let pageMarginBottom    = 100;

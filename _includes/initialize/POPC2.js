@@ -280,7 +280,7 @@ function POPC2() {
 		scale: 39,
 		humType: 1,
 		autoResize: true,
-		spacingSystem: 20
+		spacingSystem: 12
 	};
 
 	// MARKER -- HNP Marker object.

@@ -28,7 +28,7 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
-@TAG:		iiif_enabled
+@TAG:		iiif_info
 @EN:		Double-click on notes in the score to view original scan.
 @PL:		Double-click on notes in the score to view original scan.
 @@END:		ENTRY

@@ -53,3 +53,13 @@
 	font-weight: bold;
 	font-size: 1.1rem;
 }
+
+#iiif-logo {
+	width: 35px;
+	display: inline-block;
+	cursor: pointer;
+	margin-bottom: -3px;
+}
+
+
+

@@ -53,19 +53,5 @@ a:focus #euflag {
 	padding-bottom: 10px;
 }
 
-#iiif-logo {
-	width: 40px;
-	position: relative;
-	float: right;
-	right: -75px;
-	top: 60px;
-	display: none;
-}
-
-
-#iiif-logo.enabled {
-	display: inline-block;
-}
-
 
 

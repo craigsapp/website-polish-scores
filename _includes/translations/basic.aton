@@ -62,5 +62,10 @@
 @PL:		Informacje o portalu
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		iiif_info
+@EN:		Double-click on notes in score to view image of system it belongs to in scan.
+@PL:		Double-click on notes in score to view image of system it belongs to in scan.
+@@END:		ENTRY
 
 

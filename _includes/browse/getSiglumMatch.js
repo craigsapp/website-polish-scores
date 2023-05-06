@@ -29,7 +29,7 @@ POPC2.prototype.getSiglumMatch = function (input, index) {
 		let key = fullKeys[i];
 		if (key === input) {
 			return key;
-		} else if (key.toLowerCase() === input) {
+		} else if (key.toLowerCase() === input.toLowerCase()) {
 			return key;
 		}
 	}
@@ -37,7 +37,7 @@ POPC2.prototype.getSiglumMatch = function (input, index) {
 	// If a match has not been found, assume a PL- prefix:
 	for (let i=0; i<fullKeys.length; i++) {
 		let key = fullKeys[i];
-		if (key.toLowerCase() === "pl=" + input) {
+		if (key.toLowerCase() === "pl=" + input.toLowerCase()) {
 			return key;
 		}
 	}
@@ -46,7 +46,7 @@ POPC2.prototype.getSiglumMatch = function (input, index) {
 	for (let i=0; i<fullKeys.length; i++) {
 		let key = fullKeys[i];
 		let searchkey = key.replace(/^[A-Za-z]+-/, "");
-		if (searchkey.toLowerCase() === input) {
+		if (searchkey.toLowerCase() === input.toLowerCase()) {
 			return key;
 		}
 	}

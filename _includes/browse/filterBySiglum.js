@@ -29,6 +29,9 @@ POPC2.prototype.filterBySiglum = function (input) {
 		target = element.value;
 	}
 	if (target) {
+		this.VARS.SEARCH.siglum = target;
+		this.VARS.SEARCH_URL.s = target;
+
 		this.VARS.SEARCH[type] = target;
 		let output = [];
 		let re = new RegExp("^" + target + "$");

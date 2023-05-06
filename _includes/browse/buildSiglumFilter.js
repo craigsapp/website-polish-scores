@@ -37,6 +37,15 @@ POPC2.prototype.buildSiglumFilter = function (index, target) {
 		// console.error("ERROR: Cannot find target", target);
 		return;
 	}
+	let selement = element.querySelector("select");
+	let lastSiglum = "";
+	if (selement) {
+		lastSiglum = selement.value;
+	}
+	if (this.VARS.CGI.siglum) {
+		lastSiglum = this.getSiglumMatch(this.VARS.CGI.siglum, index);
+		delete this.VARS.CGI.siglum;
+	}
 
 	let sigla = {};
 	if (index.length === this.VARS.SEARCH_INDEX.length) {
@@ -68,6 +77,9 @@ POPC2.prototype.buildSiglumFilter = function (index, target) {
 	let selectedSiglum = "";
 	if (this.VARS.SEARCH && this.VARS.SEARCH.siglum) {
 		selectedSiglum = this.VARS.SEARCH.siglum;
+	}
+	if (lastSiglum) {
+		selectedSiglum = lastSiglum;
 	}
 
 	let output = "<select class='filter siglum";

@@ -56,7 +56,6 @@ POPC2.prototype.displayWorkPage = function (id, options) {
 	this.ShowWebsiteTitle();
 	this.insertBrowseSearchOnWorkPage();
 	this.checkForDisplayAnalysis();
-	this.HideIiifLogo();
 	this.displayScore(id, {nomidistop: nomidistopQ});
 	this.displayWorkPagination();
 	if (this.VARS.RESTORE_TOOLS) {

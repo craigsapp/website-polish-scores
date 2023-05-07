@@ -25,7 +25,6 @@ POPC2.prototype.displayScore = function (id, options) {
 	this.displayWorkNavigator();
 	this.ApplyElementTranslations();
 	this.VARS.INITIALIZED_WORK_PAGE = true;
-	this.HideIiifLogo();
 	if (!nomidistopQ) {
 		// Only try stopping the MIDI playback if nomidistopQ is set to false.
 		// This is to allow for cases when it is known that there is no MIDI

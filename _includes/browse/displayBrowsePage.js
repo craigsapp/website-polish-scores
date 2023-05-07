@@ -66,7 +66,6 @@ POPC2.prototype.displayBrowsePage = function () {
 		this.showBrowseLess();
 	}
 
-	this.HideIiifLogo();
 	this.ShowWebsiteTitle();
 	this.showBookmarksIfNotEmpty();
 	this.showHistoryIfNotEmpty();

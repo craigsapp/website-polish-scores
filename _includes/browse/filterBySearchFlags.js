@@ -59,8 +59,8 @@ POPC2.prototype.filterBySearchFlags = function (input) {
 		output = [];
 		let re = new RegExp("T");
 		for (let i=0; i<input2.length; i++) {
-			if (!(input2[i][field] && re.exec(input2[i][field]))) {
-				output.push(input[i]);
+			if (input2[i][field] && !re.exec(input2[i][field])) {
+				output.push(input2[i]);
 			}
 		}
 	}

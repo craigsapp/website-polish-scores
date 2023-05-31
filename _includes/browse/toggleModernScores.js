@@ -26,16 +26,6 @@ POPC2.prototype.toggleModernScores = function () {
 				element.classList.remove("highlight");
 			}
 		}
-		if (popc2.VARS.SEARCH_FLAGS.IIIF) {
-			popc2.VARS.SEARCH_FLAGS.IIIF = false;
-			let element = document.querySelector("#iiif-browse-button");
-			element.classList.remove("highlight");
-		}
-		if (popc2.VARS.SEARCH_FLAGS.TEXT) {
-			popc2.VARS.SEARCH_FLAGS.TEXT = false;
-			let element = document.querySelector("#text-browse-button");
-			element.classList.remove("highlight");
-		}
 		popc2.doBrowseSearch();
 	}
 };

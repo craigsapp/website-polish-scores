@@ -51,6 +51,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		text_scores
+@EN:		Toggle list of scores with text (lyrics)
+@PL:		Toggle list of scores with text (lyrics)
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		date_sort
 @EN:		Toggle ordering of scores by upload/revision date
 @PL:		Toggle ordering of scores by upload/revision date

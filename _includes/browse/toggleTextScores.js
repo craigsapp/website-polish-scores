@@ -17,13 +17,31 @@ POPC2.prototype.toggleTextScores = function () {
 	this.DebugMessageFunction();
 
 	if (popc2.IsBrowsePage()) {
-		popc2.VARS.SEARCH_FLAGS.TEXT = !popc2.VARS.SEARCH_FLAGS.TEXT;
+		popc2.VARS.SEARCH_FLAGS.TEXT = (popc2.VARS.SEARCH_FLAGS.TEXT + 1) % 3;
 		let element = document.querySelector("#text-browse-button");
 		if (element) {
-			if (popc2.VARS.SEARCH_FLAGS.TEXT) {
+			if (popc2.VARS.SEARCH_FLAGS.TEXT == 1) {
 				element.classList.add("highlight");
+			} else if (popc2.VARS.SEARCH_FLAGS.TEXT == 2) {
+				element.classList.remove("highlight");
+				// The following is needed for some reason to activate
+				// the immediate unlighting of the button.
+				element.blur();
 			} else {
 				element.classList.remove("highlight");
+				// The following is needed for some reason to activate
+				// the immediate unlighting of the button.
+				element.blur()
+			}
+		}
+		let banElement = document.querySelector("#ban-icon");
+		if (banElement) {
+			if (popc2.VARS.SEARCH_FLAGS.TEXT == 1) {
+				banElement.style.display = "none";
+			} else if (popc2.VARS.SEARCH_FLAGS.TEXT == 2) {
+				banElement.style.display = "inline-block";
+			} else {
+				banElement.style.display = "none";
 			}
 		}
 		popc2.doBrowseSearch();

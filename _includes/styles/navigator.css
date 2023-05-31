@@ -116,5 +116,16 @@
 	}
 }
 
+span#ban-icon.ban {
+	position: absolute;
+	top: -25px;
+	left: -17px;
+	font-size: 325%;
+	color: rgba(217, 83, 79, 0.7);
+	display: none;
+}
 
+.ban-container {
+	position: relative;
+}
 

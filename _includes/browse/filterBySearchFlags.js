@@ -17,7 +17,6 @@ POPC2.prototype.filterBySearchFlags = function (input) {
 	this.DebugMessageFunctionVerbose();
 
 	let field = "flags";
-
 	let fields = this.VARS.SEARCH_FLAGS;
 	if (!fields) {
 		return input;
@@ -30,25 +29,45 @@ POPC2.prototype.filterBySearchFlags = function (input) {
 	// TEXT
 	let pattern = "";
 	let count = 0;
+	let count2 = 0;
 	if (fields.IIIF)   { pattern += ".*I"; count++; }
 	if (fields.MODERN) { pattern += ".*M"; count++; }
 	if (fields.SINGLE) { pattern += ".*S"; count++; }
-	if (fields.TEXT)   { pattern += ".*T"; count++; }
+	if (fields.TEXT == 1) { pattern += ".*T"; count++; }
+	if (fields.TEXT == 2) { count2++; }
 
+	if ((count == 0) && (count2 == 0)) {
+		return input;
+	}
+
+	let output  = [];
 	if (count > 0) {
 		this.VARS.SEARCH["prefilter"] = pattern;
-		let output = [];
 		let re = new RegExp(pattern);
 		for (let i=0; i<input.length; i++) {
 			if (input[i][field] && re.exec(input[i][field])) {
 				output.push(input[i]);
 			}
 		}
-		return output;
 	} else {
-		return input;
+		output = input;
 	}
+
+	// Negation of TEXT search:
+	if (count2 > 0) {
+		let input2 = output;
+		output = [];
+		let re = new RegExp("T");
+		for (let i=0; i<input2.length; i++) {
+			if (!(input2[i][field] && re.exec(input2[i][field]))) {
+				output.push(input[i]);
+			}
+		}
+	}
+
+	return output;
 };
+
 
 Object.defineProperty(POPC2.prototype.filterBySearchFlags, "name", { value: "filterBySearchFlags" });
 

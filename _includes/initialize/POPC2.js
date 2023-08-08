@@ -347,19 +347,16 @@ function POPC2() {
 		github_addr_popc1:  "{{ site.github_addr_popc1    }}",
 		github_addr_popc2:  "{{ site.github_addr_popc2    }}",
 
-		mirror_data_server:   {
-
-			// URLs for data/indexes:
-
+		main_data_server:   {
 			data_addr:          "{{ site.data_addr1           }}",
 
-			score_index:        "{{ site.score_index_popc2    }}", // active score index
-			score_index_popc1:  "{{ site.score_index_popc1    }}",
-			score_index_popc2:  "{{ site.score_index_popc2    }}",
+			score_index:        "{{ site.score_index_popc2   }}", // active score index
+			score_index_popc1:  "{{ site.score_index_popc1   }}",
+			score_index_popc2:  "{{ site.score_index_popc2   }}",
 
-			lyrics_index:       "{{ site.lyrics_index_popc2   }}", // active lyrics index
-			lyrics_index_popc1: "{{ site.lyrics_index_popc1   }}",
-			lyrics_index_popc2: "{{ site.lyrics_index_popc2   }}",
+			lyrics_index:       "{{ site.lyrics_index_popc2  }}", // active lyrics index
+			lyrics_index_popc1: "{{ site.lyrics_index_popc1  }}",
+			lyrics_index_popc2: "{{ site.lyrics_index_popc2  }}",
 
 			composer_index:      "{{ site.composer_index_popc2}}", // active composer index
 			composer_index_popc1:"{{ site.composer_index_popc1}}",
@@ -369,21 +366,24 @@ function POPC2() {
 
 			instrument_index:    "{{ site.instrument_index1    }}", // instrument info
 
-			pitch_index:         "{{ site.pitch_index_popc2    }}", // active pitch index
-			pitch_index_popc1:   "{{ site.pitch_index_popc1    }}",
-			pitch_index_popc2:   "{{ site.pitch_index_popc2    }}",
+			pitch_index:         "{{ site.pitch_index_popc2   }}", // active pitch index
+			pitch_index_popc1:   "{{ site.pitch_index_popc1   }}",
+			pitch_index_popc2:   "{{ site.pitch_index_popc2   }}",
 		},
 
-		main_data_server:   {
+		mirror_data_server:   {
+
+			// URLs for data/indexes:
+
 			data_addr:          "{{ site.data_addr2           }}",
 
-			score_index:        "{{ site.score_index2_popc2   }}", // active score index
-			score_index_popc1:  "{{ site.score_index2_popc1   }}",
-			score_index_popc2:  "{{ site.score_index2_popc2   }}",
+			score_index:        "{{ site.score_index2_popc2    }}", // active score index
+			score_index_popc1:  "{{ site.score_index2_popc1    }}",
+			score_index_popc2:  "{{ site.score_index2_popc2    }}",
 
-			lyrics_index:       "{{ site.lyrics_index2_popc2  }}", // active lyrics index
-			lyrics_index_popc1: "{{ site.lyrics_index2_popc1  }}",
-			lyrics_index_popc2: "{{ site.lyrics_index2_popc2  }}",
+			lyrics_index:       "{{ site.lyrics_index2_popc2   }}", // active lyrics index
+			lyrics_index_popc1: "{{ site.lyrics_index2_popc1   }}",
+			lyrics_index_popc2: "{{ site.lyrics_index2_popc2   }}",
 
 			composer_index:      "{{ site.composer_index2_popc2}}", // active composer index
 			composer_index_popc1:"{{ site.composer_index2_popc1}}",
@@ -393,9 +393,9 @@ function POPC2() {
 
 			instrument_index:    "{{ site.instrument_index2    }}", // instrument info
 
-			pitch_index:         "{{ site.pitch_index2_popc2   }}", // active pitch index
-			pitch_index_popc1:   "{{ site.pitch_index2_popc1   }}",
-			pitch_index_popc2:   "{{ site.pitch_index2_popc2   }}",
+			pitch_index:         "{{ site.pitch_index2_popc2    }}", // active pitch index
+			pitch_index_popc1:   "{{ site.pitch_index2_popc1    }}",
+			pitch_index_popc2:   "{{ site.pitch_index2_popc2    }}",
 		},
 
 		// Website coloring styles:

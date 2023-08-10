@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Oct  6 12:27:04 PDT 2021
-// Last Modified: Wed Oct  6 12:27:07 PDT 2021
+// Last Modified: Thu Aug 10 15:12:50 CEST 2023
 // Filename:      _includes/browse/filterBySearchFlags.js
 // Used by:       _includes/browse/doBrowseSearch.js
 // Included in:   _includes/browse/main.html
@@ -23,6 +23,7 @@ POPC2.prototype.filterBySearchFlags = function (input) {
 	}
 
 	// Flags expected to be in alphabetical order:
+	// Figured Bass
 	// IIIF
 	// MODERN
 	// SINGLE
@@ -30,11 +31,12 @@ POPC2.prototype.filterBySearchFlags = function (input) {
 	let pattern = "";
 	let count = 0;
 	let count2 = 0;
-	if (fields.IIIF)   { pattern += ".*I"; count++; }
-	if (fields.MODERN) { pattern += ".*M"; count++; }
-	if (fields.SINGLE) { pattern += ".*S"; count++; }
-	if (fields.TEXT == 1) { pattern += ".*T"; count++; }
-	if (fields.TEXT == 2) { count2++; }
+	if (fields.FIGUREDBASS) { pattern += ".*F"; count++; }
+	if (fields.IIIF)        { pattern += ".*I"; count++; }
+	if (fields.MODERN)      { pattern += ".*M"; count++; }
+	if (fields.SINGLE)      { pattern += ".*S"; count++; }
+	if (fields.TEXT == 1)   { pattern += ".*T"; count++; }
+	if (fields.TEXT == 2)   { count2++; }
 
 	if ((count == 0) && (count2 == 0)) {
 		return input;

@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sun Mar 19 20:08:51 PDT 2023
 // Last Modified: Sun Mar 19 20:08:54 PDT 2023
-// Filename:      _includes/browse/toggleModernScores.js
+// Filename:      _includes/browse/toggleIiifScores.js
 // Used by:       
 // Included in:   _includes/browse/main.html
 // Syntax:        ECMAScript 6
@@ -30,7 +30,7 @@ POPC2.prototype.toggleIiifScores = function () {
 	}
 };
 
-Object.defineProperty(POPC2.prototype.toggleIiifScores, "name", { value: "toggleTextScores" });
+Object.defineProperty(POPC2.prototype.toggleIiifScores, "name", { value: "toggleIiifScores" });
 
 
 

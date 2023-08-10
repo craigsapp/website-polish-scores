@@ -20,6 +20,7 @@ POPC2.prototype.loadPdfFonts = function (pdf) {
 		this.loadFontResource(pdf, "TimesBold",       "{{ site.website_root }}scripts/pdfkit/EBGaramond-Bold.ttf"),
 		this.loadFontResource(pdf, "TimesBoldItalic", "{{ site.website_root }}scripts/pdfkit/EBGaramond-BoldItalic.ttf"),
 		this.loadFontResource(pdf, "VerovioText",     "{{ site.website_root }}scripts/pdfkit/VerovioText-1.0.ttf"),
+		this.loadFontResource(pdf, "Leipzig",         "{{ site.website_root }}scripts/pdfkit/Leipzig.ttf"),
 	]);
 }
 

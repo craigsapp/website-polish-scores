@@ -41,25 +41,25 @@
 @@BEGIN:	ENTRY
 @TAG:		modernized_scores
 @EN:		Toggle list of modernized scores
-@PL:		Toggle list of modernized scores
+@PL:		Wyświetl listę partytur z wersją uwspółcześnioną
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		iiif_scores
 @EN:		Toggle list of scores with IIIF links
-@PL:		Toggle list of scores with IIIF links
+@PL:		Wyświetl listę partytur z zakodowanymi współrzędnymi IIIF
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		text_scores
 @EN:		Toggle list of scores with text (lyrics)
-@PL:		Toggle list of scores with text (lyrics)
+@PL:		Wyświetl listę partytur zawierających tekst liryczny
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		date_sort
 @EN:		Toggle ordering of scores by upload/revision date
-@PL:		Toggle ordering of scores by upload/revision date
+@PL:		Sortuj listę partytur według daty ostatniej modyfikacji
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
@@ -71,7 +71,7 @@
 @@BEGIN:	ENTRY
 @TAG:		iiif_info
 @EN:		Double-click on notes in score to view image of system it belongs to in scan.
-@PL:		Double-click on notes in score to view image of system it belongs to in scan.
+@PL:		Kliknij dwukrotnie na nutę, żeby wyświetlić skan systemu, w którym się znajduje.
 @@END:		ENTRY
 
 

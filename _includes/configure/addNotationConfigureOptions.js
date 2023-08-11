@@ -111,8 +111,8 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
-	// Hide problem markers (always)
-	shed.push("s/^LO:TX.*:problem\\b.*//L");
+	// Hide problem markers (always) (local and global comments)
+	shed.push("s/^LO:TX.*:problem.*//LG");
 
 	// Show custodes
 	element = document.querySelector("#checkbox-show-custodes");

@@ -109,7 +109,7 @@ POPC2.prototype.generatePdfFull = function (format, orientation) {
 	}
 
 	let scoredata = this.VARS.HUMDRUM[this.VARS.WORK_ID];
-	scoredata += "\n!!!filter: shed -e s/t=P://L | shed -e s/:problem/:PROBLEM/L\n";
+	// scoredata += '\n!!!filter: shed -e "^LO:TX.*:problem\\b.*//L"\n';
 	// scoredata += "!!!header-center: " + HUMDRUMFILETITLE + "\n";
 	scoredata += "!!!header-left: \n";
 	//scoredata += "!!!header-left: @{PPR}, @{PPP}\n";

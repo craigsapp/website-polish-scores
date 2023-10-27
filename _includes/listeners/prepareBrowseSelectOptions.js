@@ -41,7 +41,7 @@ POPC2.prototype.prepareBrowseSelectOptions = function () {
 		let nationality = entry.CNT        || "";
 		if (century) {
 			century = century.replace(/:.*/, "");
-			if (!century.match(/^1[5678]xx$/)) {
+			if (!century.match(/^(14|15|16|17|18|19|20)xx$/)) {
 				console.warn("Unknown century option being ignored:", century);
 				century = "";
 			}

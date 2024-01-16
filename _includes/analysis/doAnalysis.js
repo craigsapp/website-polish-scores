@@ -2,8 +2,8 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Nov  3 19:15:27 PDT 2021
-// Last Modified: Wed Nov  3 19:15:30 PDT 2021
-// Filename:      _includes/browse/doAnalysis.js
+// Last Modified: Tue Jan 16 00:14:36 PST 2024
+// Filename:      _includes/analysis/doAnalysis.js
 // Used by:
 // Included in:   _includes/analysis/main.html
 // Syntax:        ECMAScript 6
@@ -26,6 +26,10 @@ POPC2.prototype.doAnalysis = function (reverse) {
 		let value = analysisSelectElement.value;
 		if (value === "lyrics") {
 			this.displayLyricsTool();
+			return;
+		}
+		if (value === "prange") {
+			this.displayPitchRangeTool();
 			return;
 		}
 	}

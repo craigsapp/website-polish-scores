@@ -3,9 +3,9 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Nov  3 18:51:07 PDT 2021
 // Last Modified: Sun May 29 15:33:04 PDT 2022
-// Filename:      _includes/browse/displayAnalysisPanel.js
+// Filename:      _includes/analysis/displayAnalysisPanel.js
 // Used by:
-// Included in:   _includes/browse/main.html
+// Included in:   _includes/analysis/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //

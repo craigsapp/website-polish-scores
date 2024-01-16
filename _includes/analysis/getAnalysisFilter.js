@@ -3,9 +3,9 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Nov  3 18:51:07 PDT 2021
 // Last Modified: Wed Nov  3 18:51:10 PDT 2021
-// Filename:      _includes/browse/getAnalysisFilter.js
+// Filename:      _includes/analysis/getAnalysisFilter.js
 // Used by:
-// Included in:   _includes/browse/main.html
+// Included in:   _includes/analysis/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //

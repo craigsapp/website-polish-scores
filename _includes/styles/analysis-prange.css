@@ -1,0 +1,26 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Tue Jan 16 00:17:00 PST 2024
+// Last Modified: Tue Jan 16 00:17:03 PST 2024
+// Filename:      _includes/styles/analysis-prange.css
+// Included in:   _includes/styles/main.html
+// Syntax:        CSS
+// vim:           ts=3:nowrap
+//
+// Description:   Styles for the pitch-range analysis subpage.
+//
+{% endcomment %}
+
+
+[id$="prange-content"] svg {
+	width: 100%;
+	height: auto;
+}
+
+svg g.labeltext {
+	color: transparent;
+}
+
+
+

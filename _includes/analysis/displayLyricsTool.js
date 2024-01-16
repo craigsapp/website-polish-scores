@@ -3,9 +3,9 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Nov 26 09:55:08 CET 2021
 // Last Modified: Fri Nov 26 09:55:12 CET 2021
-// Filename:      _includes/browse/displayLyricsTool.js
+// Filename:      _includes/analysis/displayLyricsTool.js
 // Used by:
-// Included in:   _includes/browse/main.html
+// Included in:   _includes/analysis/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //

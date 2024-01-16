@@ -14,6 +14,7 @@
 
 <select id="analysis-select" onchange="popc2.doAnalysis()">
 	<option class="trans" data-trans="choose_analysis_tool" value=""></option>
+	<option class="trans" data-trans="pitch_range_tool" value="prange"></option>
 	<option class="trans" data-trans="extract_lyrics_tool" value="lyrics"></option>
 	<option class="trans" data-trans="color_triads" value="colortriads"></option>
 	<option class="trans" data-trans="color_thirds" value="colorthirds"></option>
@@ -29,6 +30,11 @@
 <div class="analysis-options variable-height hidden" id="analysis-lyrics">
 	{% include macro/checkbox.html id="lyrics-modern" trans="modernize_letters" action="popc2.doAnalysis()" %}
 	<div id="lyrics-content"></div>
+</div>
+
+<div class="analysis-options variable-height hidden" id="analysis-prange">
+	{% include macro/checkbox.html id="prange-duration" trans="prange_duration" action="popc2.doAnalysis()" %}
+	<div id="prange-content" style="min-height:150px"></div>
 </div>
 
 

@@ -32,6 +32,18 @@
 @PL:		Złożony rytm
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		pitch_range_tool
+@EN:		Pitch ranges
+@PL:		Pitch ranges
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		prange_duration
+@EN:		durations
+@PL:		durations
+@@END:		ENTRY
+
 
 @ Include translations for individual  analysis tools:
 

@@ -35,9 +35,18 @@ POPC2.prototype.displayPitchRangeTool = function (tool) {
 	if (delement) {
 		durationQ = delement.checked;
 	}
+
+	let felement = document.querySelector("#prange-final");
+	let finalQ = false;
+	if (felement) {
+		finalQ = felement.checked;
+	}
+
 	let url = `${this.SETTINGS.data_addr}/${id}-prange-`;
 	url += durationQ ? "duration" : "attack";
+	url += finalQ ? "-final" : "";
 	url += ".svg";
+
 	this.DebugMessage("Downloading prange tool " + url, "hotpink");
 	let that = this;
 	fetch(url)

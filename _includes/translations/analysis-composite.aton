@@ -3,6 +3,12 @@
 @
 
 @@BEGIN:	ENTRY
+@TAG:		composite_rhythm
+@EN:		Composite rhythm
+@PL:		Złożony rytm
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		composite_only
 @EN:		Display analysis only
 @PL:		Wyświetlaj tylko personel analityczny

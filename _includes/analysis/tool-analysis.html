@@ -33,7 +33,13 @@
 </div>
 
 <div class="analysis-options variable-height hidden" id="analysis-prange">
+	<table>
+	<tr><td>
 	{% include macro/checkbox.html id="prange-duration" trans="prange_duration" action="popc2.doAnalysis()" %}
+	</td><td>
+	{% include macro/checkbox.html id="prange-final" trans="prange_final" action="popc2.doAnalysis()" %}
+	</td></tr>
+	</table>
 	<div id="prange-content" style="min-height:150px"></div>
 </div>
 

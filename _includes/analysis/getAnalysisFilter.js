@@ -23,11 +23,15 @@ POPC2.prototype.getAnalysisFilter = function () {
 	}
 
 	let value = element.value;
+
 	this.displayAnalysisPanel(value);
 	if (!value) {
 		return "";
 	}
-	let name = value;
+	if (value === "prange") {
+		// prange is not a humlib filter (comes from humextra and served as a static file).
+		return "";
+	}
 
 	let options = document.querySelectorAll(`#analysis-${value} [id^="option-"]`);
 	let booleans = [];

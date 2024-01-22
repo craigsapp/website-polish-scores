@@ -22,13 +22,24 @@ POPC2.prototype.downloadPitchRangePlot = function (options) {
 	}
 	// This will work unless the <svg> is wrapped later in another element.
 	contents = element.innerHTML;
-	console.log("SVG", contents);
-	// Assume XXX contains your SVG content
 
 	let blob = new Blob([contents], { type: 'image/svg+xml' });
 	let link = document.createElement('a');
 	link.href = URL.createObjectURL(blob);
-	let name = popc2.VARS.WORK_ID + "-prange.svg";
+
+	let name = popc2.VARS.WORK_ID;
+	let delement = document.querySelector("#prange-duration");
+	if (delement && delement.checked) {
+		name += "-duration";
+	} else {
+		name += "-attack";
+	}
+	let felement = document.querySelector("#prange-final");
+	if (felement && felement.checked) {
+		name += "-final";
+	}
+	name += "-prange.svg";
+
 	link.download = name;
 	document.body.appendChild(link);
 	link.click();

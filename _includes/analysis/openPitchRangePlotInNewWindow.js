@@ -31,6 +31,7 @@ POPC2.prototype.openPitchRangePlotInNewWindow = function (options) {
 	if (felement && felement.checked) {
 		url += "-final";
 	}
+
 	url += ".svg";
 	let newWindow = window.open(url, '_blank');
 	if (newWindow) {

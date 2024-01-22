@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Nov  3 18:43:06 PDT 2021
-// Last Modified: Fri Nov 26 09:56:12 CET 2021
+// Last Modified: Mon Jan 22 04:44:29 PST 2024
 // Filename:      _includes/analysis/main.html
 // Included in:   _includes/head/main.html
 // Syntax:        ECMAScript 6; Jekyll/Liquid
@@ -17,12 +17,14 @@
 
 <script>
 
-{% include analysis/addAnalysisOptions.js    %}
-{% include analysis/displayAnalysisPanel.js  %}
-{% include analysis/displayLyricsTool.js     %}
-{% include analysis/displayPitchRangeTool.js %}
-{% include analysis/doAnalysis.js            %}
-{% include analysis/getAnalysisFilter.js     %}
+{% include analysis/addAnalysisOptions.js            %}
+{% include analysis/displayAnalysisPanel.js          %}
+{% include analysis/displayLyricsTool.js             %}
+{% include analysis/displayPitchRangeTool.js         %}
+{% include analysis/doAnalysis.js                    %}
+{% include analysis/downloadPitchRangePlot.js        %}
+{% include analysis/getAnalysisFilter.js             %}
+{% include analysis/openPitchRangePlotInNewWindow.js %}
 
 </script>
 

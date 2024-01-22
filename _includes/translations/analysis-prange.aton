@@ -19,3 +19,18 @@
 @EN:		finals
 @PL:		finals
 @@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		download_prange
+@EN:		Download pitch range plot
+@PL:		Download pitch range plot
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
+@TAG:		newwindow_prange
+@EN:		Open pitch range plot in new window
+@PL:		Open pitch range plot in new window
+@@END:		ENTRY
+
+
+

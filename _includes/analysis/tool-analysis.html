@@ -38,6 +38,18 @@
 	{% include macro/checkbox.html id="prange-duration" trans="prange_duration" action="popc2.doAnalysis()" %}
 	</td><td>
 	{% include macro/checkbox.html id="prange-final" trans="prange_final" action="popc2.doAnalysis()" %}
+	</td><td>
+		<div id="download-button" class="trans worknav-tool fas fa-download"
+				style="font-size:1.25rem;"
+				role="button" tabindex="0"
+				data-transatt="title:download_prange" onclick="popc2.downloadPitchRangePlot()">
+		</div>
+	</td><td>
+		<div id="download-button" class="trans worknav-tool fas fa-expand"
+				style="font-size:1.25rem; padding-left:5px;"
+				role="button" tabindex="0"
+				data-transatt="title:newwindow_prange" onclick="popc2.openPitchRangePlotInNewWindow()">
+		</div>
 	</td></tr>
 	</table>
 	<div id="prange-content" style="min-height:150px"></div>

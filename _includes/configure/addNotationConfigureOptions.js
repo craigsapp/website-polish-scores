@@ -15,8 +15,10 @@
 {% endcomment %}
 
 POPC2.prototype.addNotationConfigureOptions = function (options) {
-	let shed = [];
+	let shedk = []; // shed filters that should only be applied to **kern spines.
+	let shed = [];  // shed filters that should be applied to any spine (or no spines).
 	let element;
+	let shedkEntryCount = {};
 	let shedEntryCount = {};
 	let hasModFilter = false;
 	let addModFilter = false;
@@ -45,9 +47,15 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 	if (addModFilter) {
 		// Add a default modernization filter if no
 		// !!!filter-modern: line found in file.
-
 		// Modernize stem directions
 		let entry = "s/2.right//I; s/all.right//I";
+		if (!shedkEntryCount[entry]) {
+			shedkEntryCount[entry] = 1;
+			shedk.push(entry);
+		}
+
+		// Unhide barlines
+		entry = "s/-//B";
 		if (!shedEntryCount[entry]) {
 			shedEntryCount[entry] = 1;
 			shed.push(entry);
@@ -59,9 +67,9 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 	if (element) {
 		if (element.checked) {
 			let entry = "s/2.right//I; s/all.right//I";
-			if (!shedEntryCount[entry]) {
-				shedEntryCount[entry] = 1;
-				shed.push(entry);
+			if (!shedkEntryCount[entry]) {
+				shedkEntryCount[entry] = 1;
+				shedk.push(entry);
 			}
 		}
 	}
@@ -71,7 +79,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 	if (element) {
 		if (element.checked) {
 			let entry = "s/^clefC[12]/clefG2/I; s/^clefC[34]/clefGv2/I; s/^clefC5/clefF4/I; s/^clefF[35]/clefF4/I; s/^clefG[13]/clefG2/I";
-			shed.push(entry);
+			shedk.push(entry);
 		}
 	}
 
@@ -80,7 +88,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 	if (element) {
 		if (element.checked) {
 			let entry = "s/yy//";
-			shed.push(entry);
+			shedk.push(entry);
 		}
 	}
 
@@ -89,7 +97,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 	if (element) {
 		if (element.checked) {
 			let entry = "s/^rep$/Xrep/I";
-			shed.push(entry);
+			shedk.push(entry);
 		}
 	}
 
@@ -98,7 +106,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 	if (element) {
 		if (element.checked) {
 			let entry = "s/^ITrd/XITrd/I";
-			shed.push(entry);
+			shedk.push(entry);
 		}
 	}
 
@@ -119,7 +127,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 	if (element) {
 		if (!element.checked) {
 			let entry = "s/^custos/Custos/I";
-			shed.push(entry);
+			shedk.push(entry);
 		}
 	}
 
@@ -133,15 +141,32 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 			}
 		}
 		sstring += "'";
-
 		if (options.filter && Array.isArray(options.filter)) {
 			options.filter.push(sstring);
 		} else {
 			options.filter = [];
 			options.filter.push(sstring);
 		}
-
 	}
+
+	if (shedk.length > 0) {
+		// create shedk filter
+		let sstring = "shed -k -e '";
+		for (let i=0; i<shedk.length; i++) {
+			sstring += shedk[i];
+			if (i < shedk.length - 1) {
+				sstring += "; ";
+			}
+		}
+		sstring += "'";
+		if (options.filter && Array.isArray(options.filter)) {
+			options.filter.push(sstring);
+		} else {
+			options.filter = [];
+			options.filter.push(sstring);
+		}
+	}
+
 	if (!options.filter) {
 		options.filter = [];
 	}

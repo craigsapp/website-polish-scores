@@ -35,14 +35,26 @@ POPC2.prototype.addWorkPageSearchOptions = function (options) {
 		}
 	}
 
+	let msearchFilter = "";
+
 	let pitchElement = document.querySelector("#work-search-pitch");
 	let pitchQuery = pitchElement.value || "";
 	if (pitchQuery) {
-		let pfilter = `msearch -p '${pitchQuery}'`;
+		msearchFilter += ` -p '${pitchQuery}'`;
+	}
+
+	let intervalElement = document.querySelector("#work-search-interval");
+	let intervalQuery = intervalElement.value || "";
+	if (intervalQuery) {
+		msearchFilter += ` -i '${intervalQuery}'`;
+	}
+
+	if (!msearchFilter.match(/^\s*$/)) {
+		msearchFilter = `msearch ${msearchFilter}`;
 		if (options.filter) {
-			options.filter.push(pfilter);
+			options.filter.push(msearchFilter);
 		} else{
-			options.filter = [pfilter];
+			options.filter = [msearchFilter];
 		}
 	}
 

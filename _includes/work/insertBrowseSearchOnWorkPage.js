@@ -18,14 +18,32 @@ POPC2.prototype.insertBrowseSearchOnWorkPage = function () {
 	this.DebugMessageFunction();
 
 	let pitchElement = document.querySelector("#work-search-pitch");
-	if (pitchElement) {
+	let intervalElement = document.querySelector("#work-search-interval");
+
+	if (pitchElement && intervalElement) {
+
 		let pitchSearch = this.VARS.SEARCH.pitch || "";
 		pitchElement.value = pitchSearch;
 
+		let intervalSearch = this.VARS.SEARCH.interval || "";
+		intervalElement.value = intervalSearch;
+
 		let subpage = document.querySelector("#tool-search");
-		if (!pitchSearch.match(/^\s*$/)) {
+
+		let pitchQ = !pitchSearch.match(/^\s*$/)
+		let intervalQ = !intervalSearch.match(/^\s*$/)
+
+		if (pitchQ && intervalQ) {
 			// Show the work search menu if there is a browse pitch search
 			// to apply to the work.
+			if (subpage && subpage.classList.contains("hidden")) {
+				popc2.toggleToolDisplay('search');
+			}
+		} else if (pitchQ) {
+			if (subpage && subpage.classList.contains("hidden")) {
+				popc2.toggleToolDisplay('search');
+			}
+		} else if (intervalQ) {
 			if (subpage && subpage.classList.contains("hidden")) {
 				popc2.toggleToolDisplay('search');
 			}

@@ -78,6 +78,12 @@
 @PL:		szukaj melodii...
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		interval_placeholder
+@EN:		interval search...
+@PL:		interval search...
+@@END:		ENTRY
+
 @
 @ General translations for browse page
 @

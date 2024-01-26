@@ -8,5 +8,11 @@
 @PL:		Informacje o keyscape
 @@END:		ENTRY
 
+@@BEGIN:	ENTRY
+@TAG:		keyscape_download
+@EN:		Download keyscape
+@PL:		Download keyscape
+@@END:		ENTRY
+
 
 

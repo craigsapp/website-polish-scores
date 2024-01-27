@@ -14,7 +14,7 @@
 
 @@BEGIN:	ENTRY
 @TAG:		copy_browse_tool
-@EN:		Copy table as TSV
+@EN:		Copy worklist as TSV data
 @PL:		Skopiuj tabelę jako TSV
 @@END:		ENTRY
 

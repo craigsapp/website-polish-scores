@@ -32,6 +32,9 @@ POPC2.prototype.getAnalysisFilter = function () {
 		// prange is not a humlib filter (comes from humextra and served as a static file).
 		return "";
 	}
+	if (value === "lyrics") {
+		// lyrics is not a humlib filter (comes from PERL script in humextra and served as a static file).
+	}
 
 	let options = document.querySelectorAll(`#analysis-${value} [id^="option-"]`);
 	let booleans = [];

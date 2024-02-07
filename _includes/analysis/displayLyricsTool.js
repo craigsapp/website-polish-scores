@@ -19,9 +19,8 @@ POPC2.prototype.displayLyricsTool = function (tool) {
 	this.displayAnalysisPanel("lyrics");
 
 	let toolElement = document.querySelector("#lyrics-content");
-	if (toolElement) {
+	if (!toolElement) {
 		toolElement.innerHTML = "";
-	} else {
 		return;
 	}
 

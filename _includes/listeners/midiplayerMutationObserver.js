@@ -2,10 +2,10 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Tue Feb  6 19:18:33 PST 2024
-// Last Modified: Tue Feb  6 19:18:36 PST 2024
-// Filename:      _includes/tool/tool-mutation-observer.html
+// Last Modified: Tue Feb  6 22:02:18 PST 2024
+// Filename:      _includes/listeners/MidiplayerMutationObserver.js
 // Used by:
-// Included in:   _includes/work/main.html
+// Included in:   _includes/listeners/main.html
 // Syntax:        ECMAScript 6
 // vim:           ts=3:nowrap
 //
@@ -13,8 +13,6 @@
 //
 {% endcomment %}
 
-
-<script>
 
 document.addEventListener("DOMContentLoaded", function() {
 	let navigatorDiv = document.querySelector("#navigator");
@@ -91,8 +89,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 });
-
-</script>
 
 
 

@@ -3,7 +3,7 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat Jun  4 08:39:41 PDT 2022
 // Last Modified: Sat Jun  4 08:39:45 PDT 2022
-// Filename:      _includes/work/toggleToolOpacity.js
+// Filename:      _includes/tool/toggleToolOpacity.js
 // Used by:
 // Included in:   _includes/work/main.html
 // Syntax:        ECMAScript 6

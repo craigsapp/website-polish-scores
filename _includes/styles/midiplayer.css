@@ -1,11 +1,12 @@
 
 #player {
 	position:sticky;
-	position: -webkit-sticky;
 	margin-left:-15px;
 	margin-top:0px;
 	visibility:hidden;
 	color: #666;
+	background: white;
+	opacity: 75%;
 }
 
 #midiPlayer_div  {

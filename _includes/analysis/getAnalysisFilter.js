@@ -34,6 +34,7 @@ POPC2.prototype.getAnalysisFilter = function () {
 	}
 	if (value === "lyrics") {
 		// lyrics is not a humlib filter (comes from PERL script in humextra and served as a static file).
+		return "";
 	}
 
 	let options = document.querySelectorAll(`#analysis-${value} [id^="option-"]`);

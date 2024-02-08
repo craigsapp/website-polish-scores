@@ -55,6 +55,10 @@ POPC2.prototype.prepareCgiVariables = function () {
 		popc2.toggleToolDisplay('keyscape')
 	}
 
+	if (typeof cgi.config !== "undefined") {
+		popc2.setConfigurationOptions(cgi.config);
+	}
+
 };
 
 Object.defineProperty(POPC2.prototype.prepareCgiVariables, "name", { value: "prepareCgiVariables" });

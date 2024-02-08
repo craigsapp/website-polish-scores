@@ -93,7 +93,7 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 		let options = TrSelectElement.querySelectorAll("option");
 		for (let i=0; i<options.length; i++) {
 			if (options[i].value === zz.Tr.param) {
-				TSSelectElement = options[i].value;
+				TrSelectElement.value = options[i].value;
 				break;
 			}
 		}

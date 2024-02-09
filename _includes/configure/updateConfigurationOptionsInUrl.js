@@ -42,7 +42,6 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 	let FiInputElement = toolsElement.querySelector("#filter-input");
 
 	let currentConfig = url.searchParams.get("config");
-console.error("CURENT CONFIG = ", currentConfig);
 	let newConfig = "";
 	if (MsElement && MsElement.checked) { newConfig += "Ms"; }
 	if (MlElement && MlElement.checked) { newConfig += "Ml"; }
@@ -83,7 +82,6 @@ console.error("CURENT CONFIG = ", currentConfig);
 	}
 
 	if (newConfig !== currentConfig) {
-		console.error("newConfig", newConfig);
 		url.searchParams.delete("config");
 		if (newConfig !== "") {
 			// don't URI encode the "+" sign:

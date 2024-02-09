@@ -239,8 +239,8 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 
 	// Add keyscape measure range selection:
 	if (this.VARS.WORK_ID && (this.VARS.WORK_ID === this.VARS.KEYSCAPE.ID)) {
-		let starting = popc2.VARS.KEYSCAPE.SELECT_START_MEASURE || 0;
-		let ending   = popc2.VARS.KEYSCAPE.SELECT_END_MEASURE   || 0;
+		let starting = this.VARS.KEYSCAPE.SELECT_START_MEASURE || 0;
+		let ending   = this.VARS.KEYSCAPE.SELECT_END_MEASURE   || 0;
 		if (starting >= 0) {
 			options.filter.push(`myank -m ${starting}-${ending}`);
 		}
@@ -264,6 +264,8 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 			options.spacingNonLinear = 0.3;
 		}
 	}
+
+	this.updateConfigurationOptionsInUrl();
 
 	console.warn("NOTATION FILTERS", options);
 	return options;

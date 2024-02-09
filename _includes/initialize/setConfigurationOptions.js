@@ -26,8 +26,8 @@
 //  Sa        Apply sic corrections
 //  Fs        First system only
 //  Sc        Show custodes
-//  Tr{+P5}   Transposition
-//  Tp{140.8} Tempo scaling
+//  Tr_+P5_   Transposition
+//  Tp_140.8_ Tempo scaling
 //  Fi{extract -k 1}    Filter
 // ------------------------------
 //
@@ -38,7 +38,7 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 
 	cparameters = decodeURIComponent(cparameters);
 	cparameters = cparameters.replace(/^c=/, "");
-	let pattern = /([A-Z][a-z](?:\{.*?\})?)/g;
+	let pattern = /([A-Z][a-z]+(?:\{.*?\})?)/g;
 	let entries = cparameters.match(pattern);
 
 	let zz = {};

@@ -26,7 +26,9 @@
 //    l      lyrics       query string for lyrics searches
 //    p      pitch        query string for melodic pitch searches
 //    rep    repertory    repository/repertory of scores for database
-
+//
+// For y, c, s, n, and g, the string must match exactly one of the select options.
+//
 //    Work-page related CGI parameters:
 //
 //    a      analysis     open given analysis page:
@@ -38,7 +40,8 @@
 //    pms                 Polish Music Scan ID
 //    rism                RISM ID
 //
-// For y, c, s, n, and g, the string must match exactly one of the select options.
+//    Notation options:
+//    config              see ../configure/addNotationConfigureOptions.js
 //
 {% endcomment %}
 

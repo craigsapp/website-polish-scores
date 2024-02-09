@@ -19,6 +19,7 @@
 //    k=r    Show relative keyscape on work pages.
 //    k=rc   Show relative and cleaned keyscape on work pages.
 //    k=cr   Show cleaned and relative keyscape on work pages.
+//    config Stores notation configuration options.
 //
 // For y, c, s, n, and g, the string must match exactly one of the select options.
 //

@@ -21,12 +21,26 @@ POPC2.prototype.openInVhv = function () {
 		return;
 	}
 	let filter = this.getAnalysisFilter();
+	if (filter.match(/^\s*$/)) {
+		let FiCheckElement = document.querySelector("#checkbox-filter");
+		let FiInputElement = document.querySelector("#filter-input");
+		if (FiCheckElement && FiCheckElement.checked) {
+			if (FiInputElement && !FiInputElement.value.match(/^\s*$/)) {
+				filter = FiInputElement.value.trim();
+			}
+		}
+	}
+
 	url = "https://verovio.humdrum.org?file=";
 	url += encodeURIComponent(`${this.SETTINGS.data_addr}/${id}.krn`);
 	if (filter) {
 		url += "&filter=";
 		url += encodeURIComponent(filter);
 	}
+	url = url.replace(/%2B/ig, "+");
+	url = url.replace(/%3A/ig, ":");
+	url = url.replace(/%7D/ig, "}");
+	url = url.replace(/%7D/ig, "}");
 	window.open(url, "_blank");
 
 };

@@ -27,6 +27,8 @@ POPC2.prototype.makeNotationOriginal = function () {
 		oelement.classList.remove("hidden");
 		melement.classList.add("hidden");
 	}
+
+	this.updateConfigurationOptionsInUrl();
 };
 
 Object.defineProperty(POPC2.prototype.makeNotationOriginal, "name", { value: "makeNotationOriginal" });

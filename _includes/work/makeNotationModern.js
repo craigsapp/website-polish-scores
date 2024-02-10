@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Tue Aug 23 19:28:03 CEST 2022
-// Last Modified: Tue Aug 23 19:28:05 CEST 2022
+// Last Modified: Fri Feb  9 21:22:36 PST 2024
 // Filename:      _includes/work/makeNotationOrginal.js
 // Used by:       _includes/navigator/main.html
 // Included in:   _includes/work/main.html
@@ -27,6 +27,8 @@ POPC2.prototype.makeNotationModern = function () {
 		melement.classList.remove("hidden");
 		oelement.classList.add("hidden");
 	}
+
+	this.updateConfigurationOptionsInUrl();
 };
 
 Object.defineProperty(POPC2.prototype.makeNotationModern, "name", { value: "makeNotationModern" });

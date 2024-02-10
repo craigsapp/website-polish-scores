@@ -23,6 +23,7 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 		return;
 	}
 
+	let MoElement = document.querySelector("#modern-button");
 	let MsElement = toolsElement.querySelector("#checkbox-stemming");
 	let MlElement = toolsElement.querySelector("#checkbox-letters");
 	let OsElement = toolsElement.querySelector("#checkbox-noclefs");
@@ -43,6 +44,11 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 
 	let currentConfig = url.searchParams.get("config");
 	let newConfig = "";
+
+	if (MoElement && !MoElement.classList.contains("hidden")) {
+		newConfig += "Mo";
+	}
+
 	if (MsElement && MsElement.checked) { newConfig += "Ms"; }
 	if (MlElement && MlElement.checked) { newConfig += "Ml"; }
 	if (OsElement && OsElement.checked) { newConfig += "Os"; }

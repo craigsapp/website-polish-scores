@@ -14,6 +14,7 @@
 //
 //  Code    Meaning
 // ------------------------------
+//  Mo        Modernized score ("M" button in navigator bar)
 //  Ms        Modern stemming
 //  Ml        Modern letters
 //  Oc        Only bass/treble clefs
@@ -75,6 +76,10 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 	let TpInputElement = toolsElement.querySelector("#tempo-scaling-input");
 	let FiCheckElement = toolsElement.querySelector("#checkbox-filter");
 	let FiInputElement = toolsElement.querySelector("#filter-input");
+
+	if (zz.Mo !== undefined) {
+		popc2.makeNotationModern();
+	}
 
 	if (MsElement && (zz.Ms !== undefined)) { MsElement.checked = true; }
 	if (MlElement && (zz.Ml !== undefined)) { MlElement.checked = true; }

@@ -59,7 +59,7 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 	if (TrSelectElement) {
 		let value = TrSelectElement.value;
 		if (value !== "") {
-			newConfig += "Tr_" + value + "_";
+			newConfig += "Tr{" + value + "}";
 		}
 	}
 
@@ -67,7 +67,7 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 		let value = TpInputElement.value;
 		let matches;
 		if (matches = value.match(/^\s*([\d.]+)\s*$/)) {
-			newConfig += "Tp_" + matches[1] + "_";
+			newConfig += "Tp{" + matches[1] + "}";
 		}
 	}
 
@@ -75,19 +75,31 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 		let value = FiInputElement.value;
 		let matches;
 		if (matches = value.match(/^\s*(.+)\s*$/)) {
-			// Also deal with cases that contain "_"
+			// Also deal with cases that contain "}"
 			// (maybe exscape with backslash?).
-			newConfig += "Fi_" + matches[1] + "_";
+			newConfig += "Fi{" + matches[1] + "}";
 		}
+	}
+
+	if (!url.href) {
+		url.href = "";
 	}
 
 	if (newConfig !== currentConfig) {
 		url.searchParams.delete("config");
 		if (newConfig !== "") {
 			// don't URI encode the "+" sign:
-			let encoded = encodeURIComponent(newConfig).replace(/%2B/g, "+");
-			url.href += `&config=${newConfig}`;
+			let encoded = encodeURIComponent(newConfig);
+			let prefix = "&";
+			if (!url.href.match(/\?/)) {
+				prefix = "?";
+			}
+			url.href += `${prefix}config=${newConfig}`;
 		}
+		url.href = url.href.replace(/%2B/ig, "+");
+		url.href = url.href.replace(/%3A/ig, ":");
+		url.href = url.href.replace(/%7D/ig, "}");
+		url.href = url.href.replace(/%7D/ig, "}");
 		window.history.replaceState({}, '', url.href);
 	}
 

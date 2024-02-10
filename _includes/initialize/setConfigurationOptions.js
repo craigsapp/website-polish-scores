@@ -26,8 +26,8 @@
 //  Sa        Apply sic corrections
 //  Fs        First system only
 //  Sc        Show custodes
-//  Tr_+P5_   Transposition
-//  Tp_140.8_ Tempo scaling
+//  Tr{+P5}   Transposition
+//  Tp{140.8} Tempo scaling
 //  Fi{extract -k 1}    Filter
 // ------------------------------
 //

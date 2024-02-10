@@ -34,6 +34,7 @@ POPC2.prototype.copyWorkLink = function () {
 	if (this.VARS.WORK_ID) {
 		if (!search.match(/^\s*$/)) { search += "&"; }
 		search += `id=${encodeURIComponent(this.VARS.WORK_ID)}`;
+		search = search.replace(/%3A/ig, ":");
 	}
 	if (typeof this.VARS.SEARCH.century !== "undefined") {
 		if (!search.match(/^\s*$/)) { search += "&"; }

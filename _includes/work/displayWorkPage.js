@@ -65,6 +65,9 @@ POPC2.prototype.displayWorkPage = function (id, options) {
 			element.classList.remove("hidden");
 		}
 	}
+
+	this.updateConfigurationOptionsInUrl();
+
 };
 
 Object.defineProperty(POPC2.prototype.displayWorkPage, "name", { value: "displayWorkPage" });

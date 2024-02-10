@@ -60,6 +60,7 @@ POPC2.prototype.updateWorkUrlDisplay = function (id) {
 	if (url !== window.location.href) {
 		window.history.pushState(null, null, url);
 	}
+	this.updateConfigurationOptionsInUrl();
 
 };
 

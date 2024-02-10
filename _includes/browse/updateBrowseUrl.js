@@ -22,6 +22,11 @@ POPC2.prototype.updateBrowseUrl = function (data) {
 	for (let property in data) {
 		if (data[property]) {
 			url += (found ? "&" : "?");
+			let piece = encodeURIComponent(data[property]);
+			piece = piece.replace(/%2B/ig, "+");
+			piece = piece.replace(/%3A/ig, ":");
+			piece = piece.replace(/%7D/ig, "}");
+			piece = piece.replace(/%7D/ig, "}");
 			url += `${property}=${encodeURIComponent(data[property])}`;
 			found = true;
 		}

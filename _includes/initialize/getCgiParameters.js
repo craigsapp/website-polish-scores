@@ -44,7 +44,7 @@
 //    rism                RISM ID
 //
 //    Notation options:
-//    config              see ../configure/addNotationConfigureOptions.js
+//    con                 see ../configure/addNotationConfigureOptions.js
 //
 {% endcomment %}
 

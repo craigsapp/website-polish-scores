@@ -42,7 +42,10 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 	let FiCheckElement = toolsElement.querySelector("#checkbox-filter");
 	let FiInputElement = toolsElement.querySelector("#filter-input");
 
-	let currentConfig = url.searchParams.get("config");
+	let currentConfig = url.searchParams.get("con");
+	if (currentConfig === "") {
+		currentConfig = url.searchParams.get("config");
+	}
 	let newConfig = "";
 
 	if (MoElement && !MoElement.classList.contains("hidden")) {
@@ -93,6 +96,7 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 
 	if (newConfig !== currentConfig) {
 		url.searchParams.delete("config");
+		url.searchParams.delete("con");
 		if (newConfig !== "") {
 			// don't URI encode the "+" sign:
 			let encoded = encodeURIComponent(newConfig);
@@ -100,7 +104,7 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 			if (!url.href.match(/\?/)) {
 				prefix = "?";
 			}
-			url.href += `${prefix}config=${newConfig}`;
+			url.href += `${prefix}con=${newConfig}`;
 		}
 		url.href = url.href.replace(/%2B/ig, "+");
 		url.href = url.href.replace(/%3A/ig, ":");

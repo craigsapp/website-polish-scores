@@ -29,7 +29,9 @@ POPC2.prototype.filterByTonic = function (input) {
 		target = element.value;
 	}
 	if (target) {
-		this.VARS.SEARCH[type] = target;
+		this.VARS.SEARCH[type] = target.trim();
+		this.VARS.SEARCH_URL.k = target.trim()
+
 		let output = [];
 		let re = new RegExp("^" + target, "i");
 		for (let i=0; i<input.length; i++) {

@@ -35,8 +35,8 @@ POPC2.prototype.filterByComposer = function (input) {
 		target = element.value;
 	}
 	if (target) {
-		this.VARS.SEARCH.composer = target;
-		this.VARS.SEARCH_URL.c = target;
+		this.VARS.SEARCH[type] = target.trim();
+		this.VARS.SEARCH_URL.c = target.trim();
 
 		if ((input.length == this.VARS.SEARCH_INDEX.length)
 				&& !this.IsEmptyObject(this.VARS.COMPOSER_INDEX)) {
@@ -48,7 +48,6 @@ POPC2.prototype.filterByComposer = function (input) {
 			}
 		}
 
-		this.VARS.SEARCH[type] = target;
 		let output = [];
 		for (let i=0; i<input.length; i++) {
 			let entry = input[i];

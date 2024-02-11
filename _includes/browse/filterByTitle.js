@@ -36,7 +36,8 @@ POPC2.prototype.filterByTitle = function (input) {
 
 	target = target.trim();
 	if (target) {
-		this.VARS.SEARCH_URL.t = target;
+		this.VARS.SEARCH[type] = target.trim();
+		this.VARS.SEARCH_URL.t = target.trim();
 	}
 	let pieces = target.replace(/-"/g, '"-').split(/\s*"+\s*/);
 	let titleTargets = [];

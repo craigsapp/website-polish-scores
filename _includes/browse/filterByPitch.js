@@ -34,7 +34,8 @@ POPC2.prototype.filterByPitch = function (input) {
 	let clean = this.sanitizePitchQuery(target);
 
 	if (clean.length > 0) {
-		this.VARS.SEARCH[type] = dirty;
+		this.VARS.SEARCH[type] = dirty.trim();
+		this.VARS.SEARCH_URL.p = dirty.trim();
 		let output = [];
 		let re = new RegExp(clean, "i");
 		for (let i=0; i<input.length; i++) {

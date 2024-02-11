@@ -29,7 +29,8 @@ POPC2.prototype.filterByInstrument = function (input) {
 		target = element.value;
 	}
 	if (target) {
-		this.VARS.SEARCH[type] = target;
+		this.VARS.SEARCH[type] = target.trim();
+		this.VARS.SEARCH_URL.i = target.trim();
 		let output = [];
 		let re = new RegExp("\\b" + target + "\\b");
 		for (let i=0; i<input.length; i++) {

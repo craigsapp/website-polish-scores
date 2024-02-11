@@ -29,7 +29,8 @@ POPC2.prototype.filterByMode = function (input) {
 		target = element.value;
 	}
 	if (target) {
-		this.VARS.SEARCH[type] = target;
+		this.VARS.SEARCH[type] = target.trim();
+		this.VARS.SEARCH_URL.m = target.trim();
 		let output = [];
 		let re;
 		if (target === "maj") {

@@ -26,6 +26,7 @@
 //  Ts        Tight spacing
 //  Hs        Hide sic warnings
 //  Sa        Apply sic corrections
+//  Ob        Original system breaks
 //  Fs        First system only
 //  Sc        Show custodes
 //  Tr{+P5}   Transposition
@@ -62,7 +63,7 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 
 	let MsElement = toolsElement.querySelector("#checkbox-stemming");
 	let MlElement = toolsElement.querySelector("#checkbox-letters");
-	let OsElement = toolsElement.querySelector("#checkbox-noclefs");
+	let OcElement = toolsElement.querySelector("#checkbox-nocclefs");
 	let AnElement = toolsElement.querySelector("#checkbox-shownotes");
 	let ErElement = toolsElement.querySelector("#checkbox-expandrep");
 	let NlElement = toolsElement.querySelector("#checkbox-nolyrics");
@@ -71,6 +72,7 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 	let TsElement = toolsElement.querySelector("#checkbox-tightspacing");
 	let HsElement = toolsElement.querySelector("#checkbox-sic-hide");
 	let SaElement = toolsElement.querySelector("#checkbox-sic-apply");
+	let ObElement = toolsElement.querySelector("#checkbox-original-sysbreaks");
 	let FsElement = toolsElement.querySelector("#checkbox-incipit");
 	let ScElement = toolsElement.querySelector("#checkbox-show-custodes");
 	let TrSelectElement = toolsElement.querySelector("#select-transposition");
@@ -85,7 +87,7 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 
 	if (MsElement && (zz.Ms !== undefined)) { MsElement.checked = true; }
 	if (MlElement && (zz.Ml !== undefined)) { MlElement.checked = true; }
-	if (OsElement && (zz.Os !== undefined)) { OsElement.checked = true; }
+	if (OcElement && (zz.Oc !== undefined)) { OcElement.checked = true; }
 	if (AnElement && (zz.An !== undefined)) { AnElement.checked = true; }
 	if (ErElement && (zz.Er !== undefined)) { ErElement.checked = true; }
 	if (NlElement && (zz.Nl !== undefined)) { NlElement.checked = true; }
@@ -94,6 +96,7 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 	if (TsElement && (zz.Ts !== undefined)) { TsElement.checked = true; }
 	if (HsElement && (zz.Hs !== undefined)) { HsElement.checked = true; }
 	if (SaElement && (zz.Sa !== undefined)) { SaElement.checked = true; }
+	if (ObElement && (zz.Ob !== undefined)) { ObElement.checked = true; }
 	if (FsElement && (zz.Fs !== undefined)) { FsElement.checked = true; }
 	if (ScElement && (zz.Sc !== undefined)) { ScElement.checked = true; }
 

@@ -265,6 +265,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// Tight spacing
 	element = document.querySelector("#checkbox-tightspacing");
 	options.spacingLinear = 0.25;
 	options.spacingNonLinear = 0.60;
@@ -272,6 +273,15 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		if (element.checked) {
 			options.spacingLinear = 0.1;
 			options.spacingNonLinear = 0.3;
+		}
+	}
+
+	// Original system breaks
+	element = document.querySelector("#checkbox-original-sysbreaks");
+	options.breaks = "auto";
+	if (element) {
+		if (element.checked) {
+			options.breaks = "encoded";
 		}
 	}
 

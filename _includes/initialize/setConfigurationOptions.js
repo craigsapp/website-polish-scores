@@ -20,6 +20,7 @@
 //  Oc        Only bass/treble clefs
 //  An        Show all notes
 //  Er        Expand repeat marks
+//  Nl        No lyrics (suppress lyrics)
 //  As        Automatic stemming
 //  Ss        Sounding score
 //  Ts        Tight spacing
@@ -64,6 +65,7 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 	let OsElement = toolsElement.querySelector("#checkbox-noclefs");
 	let AnElement = toolsElement.querySelector("#checkbox-shownotes");
 	let ErElement = toolsElement.querySelector("#checkbox-expandrep");
+	let NlElement = toolsElement.querySelector("#checkbox-nolyrics");
 	let AsElement = toolsElement.querySelector("#checkbox-autostems");
 	let SsElement = toolsElement.querySelector("#checkbox-soundingscore");
 	let TsElement = toolsElement.querySelector("#checkbox-tightspacing");
@@ -86,6 +88,7 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 	if (OsElement && (zz.Os !== undefined)) { OsElement.checked = true; }
 	if (AnElement && (zz.An !== undefined)) { AnElement.checked = true; }
 	if (ErElement && (zz.Er !== undefined)) { ErElement.checked = true; }
+	if (NlElement && (zz.Nl !== undefined)) { NlElement.checked = true; }
 	if (AsElement && (zz.As !== undefined)) { AsElement.checked = true; }
 	if (SsElement && (zz.Ss !== undefined)) { SsElement.checked = true; }
 	if (TsElement && (zz.Ts !== undefined)) { TsElement.checked = true; }

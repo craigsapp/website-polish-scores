@@ -227,6 +227,16 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// Suppress lyrics
+	element = document.querySelector("#checkbox-nolyrics");
+	if (element) {
+		if (element.checked) {
+			// Could also add **silbe, but **text is probably only used
+			let entry = "extract -I text";
+			options.filter.push(entry);
+		}
+	}
+
 	// Transposition
 	element = document.querySelector("#select-transposition");
 	if (element) {

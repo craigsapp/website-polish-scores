@@ -24,20 +24,23 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 	}
 
 	let MoElement = document.querySelector("#modern-button");
-	let MsElement = toolsElement.querySelector("#checkbox-stemming");
-	let MlElement = toolsElement.querySelector("#checkbox-letters");
-	let OcElement = toolsElement.querySelector("#checkbox-nocclefs");
+
 	let AnElement = toolsElement.querySelector("#checkbox-shownotes");
-	let ErElement = toolsElement.querySelector("#checkbox-expandrep");
 	let AsElement = toolsElement.querySelector("#checkbox-autostems");
+	let ErElement = toolsElement.querySelector("#checkbox-expandrep");
+	let CsElement = toolsElement.querySelector("#checkbox-continuous-system");
+	let FsElement = toolsElement.querySelector("#checkbox-incipit");
+	let HsElement = toolsElement.querySelector("#checkbox-sic-hide");
+	let MlElement = toolsElement.querySelector("#checkbox-letters");
+	let MsElement = toolsElement.querySelector("#checkbox-stemming");
 	let NlElement = toolsElement.querySelector("#checkbox-nolyrics");
+	let ObElement = toolsElement.querySelector("#checkbox-original-sysbreaks");
+	let OcElement = toolsElement.querySelector("#checkbox-nocclefs");
+	let SaElement = toolsElement.querySelector("#checkbox-sic-apply");
+	let ScElement = toolsElement.querySelector("#checkbox-show-custodes");
 	let SsElement = toolsElement.querySelector("#checkbox-soundingscore");
 	let TsElement = toolsElement.querySelector("#checkbox-tightspacing");
-	let HsElement = toolsElement.querySelector("#checkbox-sic-hide");
-	let SaElement = toolsElement.querySelector("#checkbox-sic-apply");
-	let ObElement = toolsElement.querySelector("#checkbox-original-sysbreaks");
-	let FsElement = toolsElement.querySelector("#checkbox-incipit");
-	let ScElement = toolsElement.querySelector("#checkbox-show-custodes");
+
 	let TrSelectElement = toolsElement.querySelector("#select-transposition");
 	let TpCheckElement = toolsElement.querySelector("#checkbox-tempo-scaling");
 	let TpInputElement = toolsElement.querySelector("#tempo-scaling-input");
@@ -54,20 +57,21 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 		newConfig += "Mo";
 	}
 
-	if (MsElement && MsElement.checked) { newConfig += "Ms"; }
-	if (MlElement && MlElement.checked) { newConfig += "Ml"; }
-	if (OcElement && OcElement.checked) { newConfig += "Oc"; }
 	if (AnElement && AnElement.checked) { newConfig += "An"; }
-	if (ErElement && ErElement.checked) { newConfig += "Er"; }
-	if (NlElement && NlElement.checked) { newConfig += "Nl"; }
 	if (AsElement && AsElement.checked) { newConfig += "As"; }
+	if (CsElement && CsElement.checked) { newConfig += "Cs"; }
+	if (ErElement && ErElement.checked) { newConfig += "Er"; }
+	if (FsElement && FsElement.checked) { newConfig += "Fs"; }
+	if (HsElement && HsElement.checked) { newConfig += "Hs"; }
+	if (MlElement && MlElement.checked) { newConfig += "Ml"; }
+	if (MsElement && MsElement.checked) { newConfig += "Ms"; }
+	if (NlElement && NlElement.checked) { newConfig += "Nl"; }
+	if (ObElement && ObElement.checked) { newConfig += "Ob"; }
+	if (OcElement && OcElement.checked) { newConfig += "Oc"; }
+	if (SaElement && SaElement.checked) { newConfig += "Sa"; }
+	if (ScElement && ScElement.checked) { newConfig += "Sc"; }
 	if (SsElement && SsElement.checked) { newConfig += "Ss"; }
 	if (TsElement && TsElement.checked) { newConfig += "Ts"; }
-	if (HsElement && HsElement.checked) { newConfig += "Hs"; }
-	if (SaElement && SaElement.checked) { newConfig += "Sa"; }
-	if (ObElement && ObElement.checked) { newConfig += "Ob"; }
-	if (FsElement && FsElement.checked) { newConfig += "Fs"; }
-	if (ScElement && ScElement.checked) { newConfig += "Sc"; }
 
 	if (TrSelectElement) {
 		let value = TrSelectElement.value;

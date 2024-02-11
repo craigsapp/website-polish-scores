@@ -18,13 +18,13 @@ div.checkboxes {
 	flex-wrap: wrap;
 	/* align-content: flex-start; */
 	width: 100%;
-	height: 170px; /* change this and in #tool-configure when adding more rows of options to configuration panel */
+	height: 175px; /* change this and in #tool-configure when adding more rows of options to configuration panel */
 }
 
 /* Height of checkboxes has to be the same height as #tool-configure */
 
 #tool-configure {
-	height: 170px;
+	height: 175px;
 	margin-top: 0;
 	width: 100%;
 	letter-spacing: -0.5px;

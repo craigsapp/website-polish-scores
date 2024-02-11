@@ -237,6 +237,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		continuous_system
+@EN:		Continuous system
+@PL:		Continuous system
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		show_custodes
 @EN:		Show custodes
 @PL:		Wyświetl kustosze

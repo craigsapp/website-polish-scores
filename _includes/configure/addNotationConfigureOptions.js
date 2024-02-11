@@ -285,6 +285,14 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// Continuous system (overrides system breaks option above
+	element = document.querySelector("#checkbox-continuous-system");
+	if (element) {
+		if (element.checked) {
+			options.breaks = "none";
+		}
+	}
+
 	this.updateConfigurationOptionsInUrl();
 
 	console.warn("NOTATION FILTERS", options);

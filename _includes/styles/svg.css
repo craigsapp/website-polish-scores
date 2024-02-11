@@ -61,4 +61,10 @@ g[id^="chord-"] {
 }
 
 
+/* Allow scrolling when showing continuous system */
+#humdrum-container {
+	overflow-x: scroll;
+}
+
+
 

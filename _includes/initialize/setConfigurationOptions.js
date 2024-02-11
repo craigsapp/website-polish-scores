@@ -14,21 +14,25 @@
 //
 //  Code    Meaning
 // ------------------------------
+//  An        Show all notes
+//  As        Automatic stemming
+//  Cs        Continuous system
+//  Er        Expand repeat marks
+//  Fs        First system only
+//  Hs        Hide sic warnings
+//  Ml        Modern letters
 //  Mo        Modernized score ("M" button in navigator bar)
 //  Ms        Modern stemming
-//  Ml        Modern letters
-//  Oc        Only bass/treble clefs
-//  An        Show all notes
-//  Er        Expand repeat marks
 //  Nl        No lyrics (suppress lyrics)
-//  As        Automatic stemming
+//  Ob        Original system breaks
+//  Oc        Only bass/treble clefs
+//  Sa        Apply sic corrections
+//  Sc        Show custodes
 //  Ss        Sounding score
 //  Ts        Tight spacing
-//  Hs        Hide sic warnings
-//  Sa        Apply sic corrections
-//  Ob        Original system breaks
-//  Fs        First system only
-//  Sc        Show custodes
+//
+//  Options that are other than checkboxes:
+//
 //  Tr{+P5}   Transposition
 //  Tp{140.8} Tempo scaling
 //  Fi{extract -k 1}    Filter
@@ -61,20 +65,22 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 		return;
 	}
 
-	let MsElement = toolsElement.querySelector("#checkbox-stemming");
-	let MlElement = toolsElement.querySelector("#checkbox-letters");
-	let OcElement = toolsElement.querySelector("#checkbox-nocclefs");
 	let AnElement = toolsElement.querySelector("#checkbox-shownotes");
-	let ErElement = toolsElement.querySelector("#checkbox-expandrep");
-	let NlElement = toolsElement.querySelector("#checkbox-nolyrics");
 	let AsElement = toolsElement.querySelector("#checkbox-autostems");
+	let CsElement = toolsElement.querySelector("#checkbox-continuous-system");
+	let ErElement = toolsElement.querySelector("#checkbox-expandrep");
+	let FsElement = toolsElement.querySelector("#checkbox-incipit");
+	let HsElement = toolsElement.querySelector("#checkbox-sic-hide");
+	let MlElement = toolsElement.querySelector("#checkbox-letters");
+	let MsElement = toolsElement.querySelector("#checkbox-stemming");
+	let NlElement = toolsElement.querySelector("#checkbox-nolyrics");
+	let ObElement = toolsElement.querySelector("#checkbox-original-sysbreaks");
+	let OcElement = toolsElement.querySelector("#checkbox-nocclefs");
+	let SaElement = toolsElement.querySelector("#checkbox-sic-apply");
+	let ScElement = toolsElement.querySelector("#checkbox-show-custodes");
 	let SsElement = toolsElement.querySelector("#checkbox-soundingscore");
 	let TsElement = toolsElement.querySelector("#checkbox-tightspacing");
-	let HsElement = toolsElement.querySelector("#checkbox-sic-hide");
-	let SaElement = toolsElement.querySelector("#checkbox-sic-apply");
-	let ObElement = toolsElement.querySelector("#checkbox-original-sysbreaks");
-	let FsElement = toolsElement.querySelector("#checkbox-incipit");
-	let ScElement = toolsElement.querySelector("#checkbox-show-custodes");
+
 	let TrSelectElement = toolsElement.querySelector("#select-transposition");
 	let TpCheckElement = toolsElement.querySelector("#checkbox-tempo-scaling");
 	let TpInputElement = toolsElement.querySelector("#tempo-scaling-input");
@@ -85,20 +91,21 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 		popc2.makeNotationModern();
 	}
 
-	if (MsElement && (zz.Ms !== undefined)) { MsElement.checked = true; }
-	if (MlElement && (zz.Ml !== undefined)) { MlElement.checked = true; }
-	if (OcElement && (zz.Oc !== undefined)) { OcElement.checked = true; }
 	if (AnElement && (zz.An !== undefined)) { AnElement.checked = true; }
-	if (ErElement && (zz.Er !== undefined)) { ErElement.checked = true; }
-	if (NlElement && (zz.Nl !== undefined)) { NlElement.checked = true; }
 	if (AsElement && (zz.As !== undefined)) { AsElement.checked = true; }
+	if (CsElement && (zz.Cs !== undefined)) { CsElement.checked = true; }
+	if (ErElement && (zz.Er !== undefined)) { ErElement.checked = true; }
+	if (FsElement && (zz.Fs !== undefined)) { FsElement.checked = true; }
+	if (HsElement && (zz.Hs !== undefined)) { HsElement.checked = true; }
+	if (MlElement && (zz.Ml !== undefined)) { MlElement.checked = true; }
+	if (MsElement && (zz.Ms !== undefined)) { MsElement.checked = true; }
+	if (NlElement && (zz.Nl !== undefined)) { NlElement.checked = true; }
+	if (ObElement && (zz.Ob !== undefined)) { ObElement.checked = true; }
+	if (OcElement && (zz.Oc !== undefined)) { OcElement.checked = true; }
+	if (SaElement && (zz.Sa !== undefined)) { SaElement.checked = true; }
+	if (ScElement && (zz.Sc !== undefined)) { ScElement.checked = true; }
 	if (SsElement && (zz.Ss !== undefined)) { SsElement.checked = true; }
 	if (TsElement && (zz.Ts !== undefined)) { TsElement.checked = true; }
-	if (HsElement && (zz.Hs !== undefined)) { HsElement.checked = true; }
-	if (SaElement && (zz.Sa !== undefined)) { SaElement.checked = true; }
-	if (ObElement && (zz.Ob !== undefined)) { ObElement.checked = true; }
-	if (FsElement && (zz.Fs !== undefined)) { FsElement.checked = true; }
-	if (ScElement && (zz.Sc !== undefined)) { ScElement.checked = true; }
 
 	if (TrSelectElement && (zz.Tr !== undefined)) {
 		let options = TrSelectElement.querySelectorAll("option");

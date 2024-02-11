@@ -15,7 +15,9 @@
 
 POPC2.prototype.ShowWaitingCursor = function (name) {
 	this.DebugMessageFunctionVerbose(name);
-	document.body.classList.add("waiting")
+	requestAnimationFrame(() => {
+		document.body.classList.add("waiting")
+	});
 };
 
 Object.defineProperty(POPC2.prototype.ShowWaitingCursor, "name", { value: "ShowWaitingCursor" });

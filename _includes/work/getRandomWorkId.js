@@ -15,8 +15,21 @@
 //
 {% endcomment %}
 
-POPC2.prototype.getRandomWorkId = function(index) {
+POPC2.prototype.getRandomWorkId = function() {
 	this.DebugMessageFunction();
+
+	let index = null;
+
+	let celement = document.querySelector("#filter-composer");
+	if (!celement) {
+		// The browse page has not yet been set up.  Set it up and
+		// do a search with the URL search parameters so that a
+		// random work can be selected from the search results
+		// rather than possibly the entire database.
+		this.displayBrowsePage();
+		this.doBrowseSearch();
+		this.ShowPage("work");
+	}
 
 	if (!index) {
 		index = this.VARS.SEARCH_RESULTS;
@@ -24,8 +37,10 @@ POPC2.prototype.getRandomWorkId = function(index) {
 	if (!index) {
 		index = this.VARS.SEARCH_INDEX;
 	}
+
 	let random_value = Math.floor(Math.random() * index.length)
 	let id = index[random_value].fileid;
+
 	if (!id) {
 		id = index[random_value].cenid;
 	}

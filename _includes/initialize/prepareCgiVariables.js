@@ -60,6 +60,10 @@ POPC2.prototype.prepareCgiVariables = function () {
 		popc2.setConfigurationOptions(cgi.config);
 	}
 
+	if (cgi.id === "random") {
+		this.ShowWaitingCursor();
+	}
+
 };
 
 Object.defineProperty(POPC2.prototype.prepareCgiVariables, "name", { value: "prepareCgiVariables" });

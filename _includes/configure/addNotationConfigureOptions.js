@@ -281,7 +281,11 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 	options.breaks = "auto";
 	if (element) {
 		if (element.checked) {
-			options.breaks = "encoded";
+			// options.breaks = "encoded";
+			// Use "line" to break at original systems, but continue
+			// on to the next page (i.e., convert page breaks into
+			// system breaks).
+			options.breaks = "line";
 		}
 	}
 

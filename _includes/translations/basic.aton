@@ -46,7 +46,7 @@
 
 @@BEGIN:	ENTRY
 @TAG:		iiif_scores
-@EN:		Toggle list of scores with IIIF links
+@EN:		Toggle list of scores with IIIF image links
 @PL:		Wyświetl listę partytur z zakodowanymi współrzędnymi IIIF
 @@END:		ENTRY
 

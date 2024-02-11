@@ -41,7 +41,7 @@
 @@BEGIN:	ENTRY
 @TAG:		original_sysbreaks
 @EN:		Original system breaks
-@PL:		Original system breaks
+@PL:		Oryginalne łamania systemów
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
@@ -84,12 +84,6 @@
 @TAG:		display_incipit
 @EN:		First system only
 @PL:		Tylko pierwszy system
-@@END:		ENTRY
-
-@@BEGIN:	ENTRY
-@TAG:		system_breaks
-@EN:		Original system breaks
-@PL:		Oryginalne łamania systemów
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY

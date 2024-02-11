@@ -57,6 +57,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		basso_continuo_scores
+@EN:		Toggle list of scores with basso continuo figures
+@PL:		Toggle list of scores with basso continuo figures
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		date_sort
 @EN:		Toggle ordering of scores by upload/revision date
 @PL:		Sortuj listę partytur według daty ostatniej modyfikacji

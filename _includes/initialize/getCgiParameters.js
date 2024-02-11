@@ -25,6 +25,9 @@
 //    t      title        query string for title searches
 //    l      lyrics       query string for lyrics searches
 //    p      pitch        query string for melodic pitch searches
+//    i      instrument   option string for instrument select
+//    k      key          option string for tonic select
+//    m      mode         option string for mode select
 //    rep    repertory    repository/repertory of scores for database
 //
 // For y, c, s, n, and g, the string must match exactly one of the select options.
@@ -67,6 +70,9 @@ POPC2.prototype.getCgiParameters = function () {
 		if (pair[0] === "t") { pair[0] = "title"; }
 		if (pair[0] === "l") { pair[0] = "lyrics"; }
 		if (pair[0] === "p") { pair[0] = "pitch"; }
+		if (pair[0] === "i") { pair[0] = "instrument"; }
+		if (pair[0] === "m") { pair[0] = "mode"; }
+		if (pair[0] === "k") { pair[0] = "tonic"; }
 		if (pair[0] === "r") { pair[0] = "repertory"; }
 		if (pair[0] === "a") { pair[0] = "analysis"; }
 		pair[1] = decodeURIComponent(pair[1]);

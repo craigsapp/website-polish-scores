@@ -59,7 +59,7 @@ POPC2.prototype.keyscapeImageLoadEvent = function (event) {
 	}
 
 	if (!popc2.VARS.KEYSCAPE.INITIALIZED) {
-		let kparam = popc2.VARS.CGI.k || "";
+		let kparam = popc2.VARS.CGI.ks || "";
 		let mstart = -1;
 		let mend   = -1;
 		let matches = kparam.match(/m(\d+)-(\d+)/);

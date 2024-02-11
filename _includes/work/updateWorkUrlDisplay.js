@@ -27,7 +27,7 @@ POPC2.prototype.updateWorkUrlDisplay = function (id) {
 	// check for keyscape states.
 	let subpage = this.getActiveTool();
 	if (subpage === "keyscape") {
-		url += "&k";
+		url += "&ks";
 		let celement = document.querySelector("#checkbox-cleaned");
 		let relement = document.querySelector("#checkbox-relative");
 		let ccheck = celement.checked;
@@ -58,6 +58,7 @@ POPC2.prototype.updateWorkUrlDisplay = function (id) {
 	}
 
 	if (url !== window.location.href) {
+		// Equals sign for empty ks parameter cannot be removed.
 		window.history.pushState(null, null, url);
 	}
 	this.updateConfigurationOptionsInUrl();

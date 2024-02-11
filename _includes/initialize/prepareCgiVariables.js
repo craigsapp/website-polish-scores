@@ -14,14 +14,14 @@
 //
 //   Short   Meaning
 //  -------------------------------------------
-//    k      Show keyscape on work pages.
-//    k=c    Show cleaned keyscape on work pages.
-//    k=r    Show relative keyscape on work pages.
-//    k=rc   Show relative and cleaned keyscape on work pages.
-//    k=cr   Show cleaned and relative keyscape on work pages.
+//    ks      Show keyscape on work pages.
+//    ks=c    Show cleaned keyscape on work pages.
+//    ks=r    Show relative keyscape on work pages.
+//    ks=rc   Show relative and cleaned keyscape on work pages.
+//    ks=cr   Show cleaned and relative keyscape on work pages.
 //    config Stores notation configuration options.
 //
-// For y, c, s, n, and g, the string must match exactly one of the select options.
+// For y, c, s, n, i, k, m, and g, the string must match exactly one of the select options.
 //
 {% endcomment %}
 
@@ -32,17 +32,17 @@ POPC2.prototype.prepareCgiVariables = function () {
 		return;
 	}
 
-	if (typeof cgi.k !== "undefined") {
+	if (typeof cgi.ks !== "undefined") {
 		// show keyscape on workpages
 		// Off by default so initial toggling should make visible
-		if (cgi.k.match(/r/)) {
+		if (cgi.ks.match(/r/)) {
 			// Check the relative keyscape checkbox:
 			let relement = document.querySelector("#checkbox-relative");
 			if (relement) {
 				relement.checked = true;
 			}
 		}
-		if (cgi.k.match(/c/)) {
+		if (cgi.ks.match(/c/)) {
 			// Check the cleaned keyscape checkbox:
 			let celement = document.querySelector("#checkbox-cleaned");
 			if (celement) {

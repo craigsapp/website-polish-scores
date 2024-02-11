@@ -28,6 +28,7 @@ POPC2.prototype.setInitialSearch = function (path) {
 	if (cgi.text)        { tempSearch.text        = cgi.text;        }
 	if (cgi.lyrics)      { tempSearch.lyrics      = cgi.lyrics;      }
 	if (cgi.pitch)       { tempSearch.pitch       = cgi.pitch;       }
+	if (cgi.instrument)  { tempSearch.instrument  = cgi.instrument;  }
 	if (cgi.tonic)       { tempSearch.tonic       = cgi.tonic;       }
 	if (cgi.mode)        { tempSearch.mode        = cgi.mode;        }
 	let keys = Object.keys(tempSearch);

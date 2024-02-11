@@ -132,6 +132,7 @@ function POPC2() {
 	this.VARS.SEARCH_FLAGS.MODERN        = false;  // Search only files with modernized scores.
 	this.VARS.SEARCH_FLAGS.IIIF          = false;  // Search only files with IIIF bounding boxes.
 	this.VARS.SEARCH_FLAGS.BASSOCONTINUO = false;  // Search only files with basso continuo figures.
+	this.VARS.SEARCH_FLAGS.FINGERING     = false;  // Search only files with fingerings.
 	this.VARS.SEARCH_FLAGS.TEXT          = 0;      // Search only files containg lyrical text.
 	                                               //   0 = search both texted and textless works.
 	                                               //   1 = search texted works.

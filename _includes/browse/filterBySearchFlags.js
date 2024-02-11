@@ -24,6 +24,7 @@ POPC2.prototype.filterBySearchFlags = function (input) {
 
 	// Flags expected to be in alphabetical order:
 	// BASSOCONTINUO
+	// FINGERING
 	// IIIF
 	// MODERN
 	// SINGLE
@@ -31,7 +32,8 @@ POPC2.prototype.filterBySearchFlags = function (input) {
 	let pattern = "";
 	let count = 0;
 	let count2 = 0;
-	if (fields.BASSOCONTINUO) { pattern += ".*F"; count++; }
+	if (fields.BASSOCONTINUO) { pattern += ".*B"; count++; }
+	if (fields.FINGERING)     { pattern += ".*F"; count++; }
 	if (fields.IIIF)          { pattern += ".*I"; count++; }
 	if (fields.MODERN)        { pattern += ".*M"; count++; }
 	if (fields.SINGLE)        { pattern += ".*S"; count++; }

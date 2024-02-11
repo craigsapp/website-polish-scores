@@ -35,6 +35,37 @@ POPC2.prototype.processKeyboardCommand = function (event) {
 		return;
 	}
 
+	if (event.altKey) {
+		// Cannot handle alt keys below since they generate alternate
+		// characters rather than the plain key (example alt-c generates
+		// the letter ç on a US keyboard (but could be other letters
+		// on other language keyboards.
+
+		if (event.code == "KeyC") {
+			// set the default ID style to century IDs.
+			this.VARS.ID_STYLE = "cenid";
+			// update the URL if viewing a work page.
+			let element = document.querySelector("#page-work");
+			if (element && !element.classList.contains("hidden")) {
+				this.updateWorkUrlDisplay();
+			}
+			event.preventDefault();
+		}
+
+		if (event.code == "KeyF") {
+			// set the default ID style to century IDs.
+			this.VARS.ID_STYLE = "fileid";
+			// update the URL if viewing a work page.
+			let element = document.querySelector("#page-work");
+			if (element && !element.classList.contains("hidden")) {
+				this.updateWorkUrlDisplay();
+			}
+			event.preventDefault();
+		}
+
+		return;
+	}
+
 	switch (event.key) {
 
 		case "b":

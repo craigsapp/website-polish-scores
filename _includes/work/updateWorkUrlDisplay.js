@@ -22,6 +22,30 @@ POPC2.prototype.updateWorkUrlDisplay = function (id) {
 		return;
 	}
 
+	console.error("ID_STYLE", this.VARS.ID_STYLE);
+	if (this.VARS.ID_STYLE) {
+		let si = this.VARS.SEARCH_INDEX;
+		if (this.VARS.ID_STYLE === "cenid") {
+			if (!id.match(/[12][0-9]xx/)) {
+				for (let i=0; i<si.length; i++) {
+					if (si[i].fileid === id) {
+						id = si[i].cenid;
+						break;
+					}
+				}
+			}
+		} else if (this.VARS.ID_STYLE === "fileid") {
+			if (id.match(/[12][0-9]xx/)) {
+				for (let i=0; i<si.length; i++) {
+					if (si[i].cenid === id) {
+						id = si[i].fileid;
+						break;
+					}
+				}
+			}
+		}
+	}
+
 	let url = `${window.location.origin}/?id=${id}`;
 
 	// check for keyscape states.

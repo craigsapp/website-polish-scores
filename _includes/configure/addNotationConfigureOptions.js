@@ -293,6 +293,9 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// always make text elision characters narrow:
+	options.lyricElision = "narrow";
+
 	this.updateConfigurationOptionsInUrl();
 
 	console.warn("NOTATION FILTERS", options);

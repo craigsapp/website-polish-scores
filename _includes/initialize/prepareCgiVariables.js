@@ -19,7 +19,7 @@
 //    ks=r    Show relative keyscape on work pages.
 //    ks=rc   Show relative and cleaned keyscape on work pages.
 //    ks=cr   Show cleaned and relative keyscape on work pages.
-//    config Stores notation configuration options.
+//    con     Stores notation configuration options.
 //
 // For y, c, s, n, i, k, m, and g, the string must match exactly one of the select options.
 //
@@ -56,7 +56,9 @@ POPC2.prototype.prepareCgiVariables = function () {
 		popc2.toggleToolDisplay('keyscape')
 	}
 
-	if (typeof cgi.config !== "undefined") {
+	if (typeof cgi.con !== "undefined") {
+		popc2.setConfigurationOptions(cgi.con);
+	} else if (typeof cgi.config !== "undefined") {
 		popc2.setConfigurationOptions(cgi.config);
 	}
 

@@ -84,6 +84,8 @@ POPC2.prototype.getCgiParameters = function () {
 				pair[1] = "Anonim";
 			} else if (pair[1].match(/^Anonyme$/)) {   // French
 				pair[1] = "Anonim";
+			} else if (pair[1].match(/^Anonim$/)) {    // Polish
+				pair[1] = "Anonim";
 			}
 		}
 		if (typeof output[pair[0]] === 'undefined') {

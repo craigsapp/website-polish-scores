@@ -75,7 +75,17 @@ POPC2.prototype.getCgiParameters = function () {
 		if (pair[0] === "k") { pair[0] = "tonic"; }
 		if (pair[0] === "r") { pair[0] = "repertory"; }
 		if (pair[0] === "a") { pair[0] = "analysis"; }
-		pair[1] = decodeURIComponent(pair[1]);
+		pair[1] = decodeURIComponent(pair[1]).trim();
+		if (pair[0] === "composer") {
+			// create language aliases for Anonim:
+			if (pair[1].match(/^Anonymous$/i)) {       // English
+				pair[1] = "Anonim";
+			} else if (pair[1].match(/^Anonymus$/i)) { // German
+				pair[1] = "Anonim";
+			} else if (pair[1].match(/^Anonyme$/)) {   // French
+				pair[1] = "Anonim";
+			}
+		}
 		if (typeof output[pair[0]] === 'undefined') {
 			output[pair[0]] = pair[1];
 		} else if (typeof output[pair[0]] === 'string') {

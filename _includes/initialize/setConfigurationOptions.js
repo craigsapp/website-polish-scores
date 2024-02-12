@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Feb  7 23:00:17 PST 2024
-// Last Modified: Wed Feb  7 23:00:21 PST 2024
+// Last Modified: Mon Feb 12 03:07:37 PST 2024
 // Filename:      _includes/initialize/setConfigurationOptions.js
 // Used by:       _includes/initialize/main.html
 // Included in:   _includes/initialize/main.html
@@ -31,13 +31,19 @@
 //  Sa        Apply sic corrections
 //  Sc        Show custodes
 //  Ss        Sounding score
+//  Tp        Tempo scaling
+//  Tr        Transpoaitions
 //  Ts        Tight spacing
+//  Fi        Humdrum filters
+//  Vv        Verovio options
 //
-//  Options that are other than checkboxes:
+//  Options that are other than checkboxes (i.e, have parameters):
 //
-//  Tr{+P5}   Transposition
-//  Tp{140.8} Tempo scaling
 //  Fi{extract -k 1}    Filter
+//  Tp{140.8} Tempo scaling
+//  Tr{+P5}   Transposition
+//  Vv{condense; condenseFirstPage}
+//
 // ------------------------------
 //
 {% endcomment %}
@@ -90,6 +96,8 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 	let TpInputElement = toolsElement.querySelector("#tempo-scaling-input");
 	let FiCheckElement = toolsElement.querySelector("#checkbox-filter");
 	let FiInputElement = toolsElement.querySelector("#filter-input");
+	let VvCheckElement = toolsElement.querySelector("#checkbox-verovio");
+	let VvInputElement = toolsElement.querySelector("#verovio-input");
 
 	if (zz.Mo !== undefined) {
 		popc2.makeNotationModern();
@@ -131,6 +139,11 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 	if (FiCheckElement && FiInputElement && (zz.Fi !== undefined)) {
 		FiCheckElement.checked = true;
 		FiInputElement.value = zz.Fi.param;
+	}
+
+	if (VvCheckElement && VvInputElement && (zz.Vv !== undefined)) {
+		VvCheckElement.checked = true;
+		VvInputElement.value = zz.Vv.param;
 	}
 
 };

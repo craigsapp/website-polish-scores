@@ -27,6 +27,7 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		// Add modernization filter
 		// First check if there is a !!!filter-modern: line in the Humdrum data
 		let humdrum = this.GetHumdrumOnPage();
+
 		let lines = humdrum.split(/\r?\n/);
 		hasModFilter = false;
 
@@ -225,6 +226,28 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 				let value = ielement.value;
 				if (value && !value.match(/^\s*$/)) {
 					options.filter.push(value);
+				}
+			}
+		}
+	}
+
+	// Add free-form verovio option
+	element = document.querySelector("#checkbox-verovio");
+	if (element) {
+		if (element.checked) {
+			let ielement = document.querySelector("#verovio-input");
+			if (ielement) {
+				let value = ielement.value.trim();
+				if (value && !value.match(/^\s*$/)) {
+					let pieces = value.split(/\s*;\s*/);
+					for (let i=0; i<pieces.length; i++) {
+						let matches;
+						if (matches = pieces[i].match(/^\s*([^\s]+)\s+([^\s]+)\s*$/)) {
+							options[matches[1]] = matches[2];
+						} else if (matches = pieces[i].match(/^\s*([^\s]+)\s*$/)) {
+							options[matches[1]] = 1;
+						}
+					}
 				}
 			}
 		}

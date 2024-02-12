@@ -57,6 +57,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		verovio_placeholder
+@EN:		Notation options
+@PL:		Notation options
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		tempo_scaling_placeholder
 @EN:		Tempo scaling
 @PL:		Tempo odtwarzania

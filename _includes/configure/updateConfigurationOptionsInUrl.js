@@ -48,6 +48,8 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 	let TpInputElement = toolsElement.querySelector("#tempo-scaling-input");
 	let FiCheckElement = toolsElement.querySelector("#checkbox-filter");
 	let FiInputElement = toolsElement.querySelector("#filter-input");
+	let VvInputElement = toolsElement.querySelector("#verovio-input");
+	let VvCheckElement = toolsElement.querySelector("#checkbox-verovio");
 
 	let currentConfig = url.searchParams.get("con");
 	if (currentConfig === "") {
@@ -99,6 +101,16 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 			// Also deal with cases that contain "}"
 			// (maybe exscape with backslash?).
 			newConfig += "Fi{" + matches[1] + "}";
+		}
+	}
+
+	if (VvCheckElement && VvCheckElement.checked) {
+		let value = VvInputElement.value;
+		let matches;
+		if (matches = value.match(/^\s*(.+)\s*$/)) {
+			// Also deal with cases that contain "}"
+			// (maybe exscape with backslash?).
+			newConfig += "Vv{" + matches[1] + "}";
 		}
 	}
 

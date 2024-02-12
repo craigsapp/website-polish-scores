@@ -82,8 +82,8 @@
 
 @@BEGIN:	ENTRY
 @TAG:		iiif_info
-@EN:		Double-click on notes in score to view image of system it belongs to in scan.
-@PL:		Kliknij dwukrotnie na nutę, żeby wyświetlić skan systemu, w którym się znajduje.
+@EN:		Double-click on notes in score to view image of system it belongs to in scan.  Also try drag-and-dropping this icon into https://iiif.humdrum.org
+@PL:		Kliknij dwukrotnie na nutę, żeby wyświetlić skan systemu, w którym się znajduje.  Also try drag-and-drop this icon into https://iiif.humdrum.org
 @@END:		ENTRY
 
 

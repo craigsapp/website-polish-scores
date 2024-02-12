@@ -243,6 +243,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		hide_fingerings
+@EN:		Hide fingerings
+@PL:		Hide fingerings
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		show_custodes
 @EN:		Show custodes
 @PL:		Wyświetl kustosze

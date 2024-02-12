@@ -22,7 +22,6 @@ POPC2.prototype.updateWorkUrlDisplay = function (id) {
 		return;
 	}
 
-	console.error("ID_STYLE", this.VARS.ID_STYLE);
 	if (this.VARS.ID_STYLE) {
 		let si = this.VARS.SEARCH_INDEX;
 		if (this.VARS.ID_STYLE === "cenid") {

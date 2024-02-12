@@ -19,6 +19,7 @@
 //  Cs        Continuous system
 //  Er        Expand repeat marks
 //  Fs        First system only
+//  Hf        Hide sic warnings
 //  Hs        Hide sic warnings
 //  Ml        Modern letters
 //  Mo        Modernized score ("M" button in navigator bar)
@@ -70,6 +71,7 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 	let CsElement = toolsElement.querySelector("#checkbox-continuous-system");
 	let ErElement = toolsElement.querySelector("#checkbox-expandrep");
 	let FsElement = toolsElement.querySelector("#checkbox-incipit");
+	let HfElement = toolsElement.querySelector("#checkbox-hide-fingerings");
 	let HsElement = toolsElement.querySelector("#checkbox-sic-hide");
 	let MlElement = toolsElement.querySelector("#checkbox-letters");
 	let MsElement = toolsElement.querySelector("#checkbox-stemming");
@@ -96,6 +98,7 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 	if (CsElement && (zz.Cs !== undefined)) { CsElement.checked = true; }
 	if (ErElement && (zz.Er !== undefined)) { ErElement.checked = true; }
 	if (FsElement && (zz.Fs !== undefined)) { FsElement.checked = true; }
+	if (HfElement && (zz.Hf !== undefined)) { HfElement.checked = true; }
 	if (HsElement && (zz.Hs !== undefined)) { HsElement.checked = true; }
 	if (MlElement && (zz.Ml !== undefined)) { MlElement.checked = true; }
 	if (MsElement && (zz.Ms !== undefined)) { MsElement.checked = true; }

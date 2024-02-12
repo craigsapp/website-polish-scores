@@ -18,7 +18,7 @@ POPC2.prototype.toggleFingeringScores = function () {
 
 	if (popc2.IsBrowsePage()) {
 		popc2.VARS.SEARCH_FLAGS.FINGERING = !popc2.VARS.SEARCH_FLAGS.FINGERING;
-		let element = document.querySelector("#fintering-browse-button");
+		let element = document.querySelector("#fingering-browse-button");
 		if (element) {
 			if (popc2.VARS.SEARCH_FLAGS.FINGERING) {
 				element.classList.add("highlight");

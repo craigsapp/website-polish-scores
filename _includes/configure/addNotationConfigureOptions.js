@@ -237,6 +237,15 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// Suppress fingerings
+	element = document.querySelector("#checkbox-hide-fingerings");
+	if (element) {
+		if (element.checked) {
+			let entry = "shed -e s/fing/FING/X";
+			options.filter.push(entry);
+		}
+	}
+
 	// Transposition
 	element = document.querySelector("#select-transposition");
 	if (element) {

@@ -249,6 +249,12 @@
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
+@TAG:		break_barlines
+@EN:		Break barlines
+@PL:		Break barlines
+@@END:		ENTRY
+
+@@BEGIN:	ENTRY
 @TAG:		show_custodes
 @EN:		Show custodes
 @PL:		Wyświetl kustosze

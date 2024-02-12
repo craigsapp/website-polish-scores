@@ -27,6 +27,7 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 
 	let AnElement = toolsElement.querySelector("#checkbox-shownotes");
 	let AsElement = toolsElement.querySelector("#checkbox-autostems");
+	let BbElement = toolsElement.querySelector("#checkbox-break-barlines");
 	let ErElement = toolsElement.querySelector("#checkbox-expandrep");
 	let CsElement = toolsElement.querySelector("#checkbox-continuous-system");
 	let FsElement = toolsElement.querySelector("#checkbox-incipit");
@@ -60,6 +61,7 @@ POPC2.prototype.updateConfigurationOptionsInUrl = function () {
 
 	if (AnElement && AnElement.checked) { newConfig += "An"; }
 	if (AsElement && AsElement.checked) { newConfig += "As"; }
+	if (BbElement && BbElement.checked) { newConfig += "Bb"; }
 	if (CsElement && CsElement.checked) { newConfig += "Cs"; }
 	if (ErElement && ErElement.checked) { newConfig += "Er"; }
 	if (FsElement && FsElement.checked) { newConfig += "Fs"; }

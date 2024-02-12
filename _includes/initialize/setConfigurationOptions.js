@@ -16,6 +16,7 @@
 // ------------------------------
 //  An        Show all notes
 //  As        Automatic stemming
+//  Bb        Break barlines
 //  Cs        Continuous system
 //  Er        Expand repeat marks
 //  Fs        First system only
@@ -68,6 +69,7 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 
 	let AnElement = toolsElement.querySelector("#checkbox-shownotes");
 	let AsElement = toolsElement.querySelector("#checkbox-autostems");
+	let BbElement = toolsElement.querySelector("#checkbox-break-barlines");
 	let CsElement = toolsElement.querySelector("#checkbox-continuous-system");
 	let ErElement = toolsElement.querySelector("#checkbox-expandrep");
 	let FsElement = toolsElement.querySelector("#checkbox-incipit");
@@ -95,6 +97,7 @@ POPC2.prototype.setConfigurationOptions = function (cparameters) {
 
 	if (AnElement && (zz.An !== undefined)) { AnElement.checked = true; }
 	if (AsElement && (zz.As !== undefined)) { AsElement.checked = true; }
+	if (BbElement && (zz.Bb !== undefined)) { BbElement.checked = true; }
 	if (CsElement && (zz.Cs !== undefined)) { CsElement.checked = true; }
 	if (ErElement && (zz.Er !== undefined)) { ErElement.checked = true; }
 	if (FsElement && (zz.Fs !== undefined)) { FsElement.checked = true; }

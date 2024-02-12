@@ -62,6 +62,18 @@ POPC2.prototype.addNotationConfigureOptions = function (options) {
 		}
 	}
 
+	// Break barlines
+	element = document.querySelector("#checkbox-break-barlines");
+	if (element) {
+		if (element.checked) {
+			entry = "s/(system-decoration.*)[()]/$1/gR";
+			if (!shedEntryCount[entry]) {
+				shedEntryCount[entry] = 1;
+				shed.push(entry);
+			}
+		}
+	}
+
 	// Display music with modern stemming
 	element = document.querySelector("#checkbox-stemming");
 	if (element) {

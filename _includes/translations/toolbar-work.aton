@@ -4,122 +4,122 @@
 
 @@BEGIN:	ENTRY
 @TAG:		previous_work
-@EN:		previous work in list (shift-←)
-@PL:		poprzednia (shift-←)
+@EN:		Previous work in list (shift-←)
+@PL:		Poprzednia (shift-←)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		next_work
-@EN:		next work in list (shift-→)
-@PL:		następna (shift-→)
+@EN:		Next work in list (shift-→)
+@PL:		Następna (shift-→)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		browse_page
-@EN:		go to browse page (b)
-@PL:		przejdź do strony przeglądania (b)
+@EN:		Go to browse page (b)
+@PL:		Przejdź do strony przeglądania (b)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		play_tool_play
-@EN:		play music (space bar)
-@PL:		graj muzykę (space bar)
+@EN:		Play music (space bar)
+@PL:		Graj muzykę (space bar)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		play_tool_stop
-@EN:		stop music playback (space bar)
-@PL:		przestań odtwarzać muzykę (space bar)
+@EN:		Stop music playback (space bar)
+@PL:		Przestań odtwarzać muzykę (space bar)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		larger_tool
-@EN:		make notation larger (+; 0:reset)
-@PL:		zwiększ notację muzyczną (+; 0:reset)
+@EN:		Make notation larger (+; 0:reset)
+@PL:		Zwiększ notację muzyczną (+; 0:reset)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		smaller_tool
-@EN:		make notation smaller (-; 0:reset)
-@PL:		zmniejsz notację muzyczną (-; 0:reset)
+@EN:		Make notation smaller (-; 0:reset)
+@PL:		Zmniejsz notację muzyczną (-; 0:reset)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		worklink_tool
-@EN:		copy link to current work (l)
-@PL:		skopiuj link do bieżącego partytura (l)
+@EN:		Copy link to current work (l)
+@PL:		Skopiuj link do bieżącego partytura (l)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		incipit_tool_compress
-@EN:		show only first system of music (i)
-@PL:		pokaż tylko pierwszy system muzyki (i)
+@EN:		Show only first system of music (i)
+@PL:		Pokaż tylko pierwszy system muzyki (i)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		incipit_tool_expand
-@EN:		show full score (i)
-@PL:		pokaż całą partyturę muzyczną (i)
+@EN:		Show full score (i)
+@PL:		Pokaż całą partyturę muzyczną (i)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		fullwidth_tool_expand
-@EN:		expand notation to full screen (f)
+@EN:		Expand notation to full window width (f)
 @PL:		Rozszerz notację muzyczną do pełnego ekranu (f)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		fullwidth_tool_compress
-@EN:		leave full-screen mode (f)
-@PL:		opuść tryb pełnoekranowy (f)
+@EN:		Leave full-screen mode (f)
+@PL:		Opuść tryb pełnoekranowy (f)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		random_tool
-@EN:		display a random score (r)
-@PL:		wyświetl losową partyturę muzyczną (r)
+@EN:		Display a random score (r)
+@PL:		Wyświetl losową partyturę muzyczną (r)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		vhv_tool
-@EN:		edit in Verovio Humdrum Viewer (v)
-@PL:		edytuj w Verovio Humdrum Viewer (v)
+@EN:		Edit in Verovio Humdrum Viewer (v)
+@PL:		Edytuj w Verovio Humdrum Viewer (v)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		original_tool
-@EN:		viewing original (diplomatic) score (click to view modernized score) (m)
-@PL:		viewing original (diplomatic) score (click to view modernized score) (m)
+@EN:		Viewing original (diplomatic) score (click to view modernized score) (m)
+@PL:		Viewing original (diplomatic) score (click to view modernized score) (m)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		modern_tool
-@EN:		viewing modernized score (click to view diplomatic score) (o)
-@PL:		viewing modernized score (click to view diplomatic score) (o)
+@EN:		Viewing modernized score (click to view diplomatic score) (o)
+@PL:		VIewing modernized score (click to view diplomatic score) (o)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		download_tool
-@EN:		toggle display of downloads (d)
-@PL:		przełącz pobieranie pobranych plików (d)
+@EN:		Toggle display of downloads (d)
+@PL:		Przełącz pobieranie pobranych plików (d)
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		search_tool
-@EN:		toggle display of music/text searching
-@PL:		przełącz wyświetlanie muzyki/wyszukiwania tekstu
+@EN:		Toggle display of music/text searching
+@PL:		Przełącz wyświetlanie muzyki/wyszukiwania tekstu
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		configure_tool
-@EN:		toggle display of configuration menu
-@PL:		przełącz wyświetlanie narzędzia konfiguracyjnego
+@EN:		Toggle display of configuration menu
+@PL:		Przełącz wyświetlanie narzędzia konfiguracyjnego
 @@END:		ENTRY
 
 @@BEGIN:	ENTRY
 @TAG:		bookmark_tool
-@EN:		bookmark this score
-@PL:		dodaj ten wynik do zakładek
+@EN:		Bookmark this score
+@PL:		Dodaj ten wynik do zakładek
 @@END:		ENTRY
 
 

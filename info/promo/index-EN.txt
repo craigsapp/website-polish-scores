@@ -1,5 +1,5 @@
 
-Promotional video from the <a target="_blank" href="facebook.com/cppc.gov">Center for Polish Digital Projects</a>:
+Promotional video from the <a target="_blank" href="https://facebook.com/cppc.gov">Center for Polish Digital Projects</a>:
 
 {% include_relative video.txt %}
 

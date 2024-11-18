@@ -1,5 +1,5 @@
 
-Film promocyjny <a target="_blank" href="facebook.com/cppc.gov">Centrum Projektów Polska Cyfrowa</a>:
+Film promocyjny <a target="_blank" href="https://facebook.com/cppc.gov">Centrum Projektów Polska Cyfrowa</a>:
 
 {% include_relative video.txt %}
 

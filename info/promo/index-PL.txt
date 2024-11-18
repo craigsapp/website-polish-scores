@@ -1,0 +1,7 @@
+
+Film promocyjny <a target="_blank" href="facebook.com/cppc.gov">Centrum Projektów Polska Cyfrowa</a>:
+
+{% include-relative video.txt %}
+
+Link do polecanego utworu muzycznego: <a target="_blank" href="https://polishscores.org/?id=18xx:440">Vingt Exercices et Préludes pour le Pianoforte: Preludium g-moll</a>, <a target="_blank" href="https://portalmuzykipolskiej.pl/pl/osoba/6777-Maria-Szymanowska">Marii Szymanowskiej</a>.
+

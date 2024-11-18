@@ -1,12 +1,23 @@
 Generowany w formie trójkąta model ukazuje analizę tonalną, gdzie poszczególne kolory oznaczają daną tonację.
+
 Odcienie jaśniejsze zarezerwowane są dla trybu durowego, ciemniejsze - mollowego.
+
 Kolory odpowiadają tonacjom (odpowiedni opis pojawia się po najechaniu kursorem na wykres).
+
 U podstawy trójkąta umieszczone są kreski, oznaczające kolejne takty.
+
 Model należy interpretować następująco.
+
 Najniższy poziom ukazuje bezpośrednie następstwo kolejnych akordów.
+
 Przenosząc się o poziom wyżej, uzyskujemy obraz tonacji pełniących strukturalnie ważniejszą funkcję w utworze.
+
 Na szczycie diagramu powinna być odzwierciedlona tonacja zasadnicza utworu.
+
 Wykresy tonalne sporządzane są przez algorytm ,,Krumhansl-Kessler'' obliczający współczynnik korelacji liniowej Pearsona pomiędzy histogramem klas wysokości dźwięków a zdefiniowanymi uprzednio profilami dla trybu durowego i mollowego.
+
 Predefiniowane profile dostosowane są do analizy tonalności dur-moll, co może budzić wątpliwości natury metodologicznej w przypadku analizy repertuaru starszego.
+
 Bez wątpienia jednak modele takie pozwalają w sposób niezwykle wyraźny zaprezentować strukturę tonalną kompozycji, wskazać na korelację pomiędzy tonalnością poszczególnych części utworu a jego formą oraz wykazać stabilność tonalną utworu, bądź jej brak.
+
 Aktualnie trwają prace nad wdrożeniem analogicznego do obecnie używanego algorytmu dla starszych typów tonalności.

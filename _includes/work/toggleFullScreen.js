@@ -45,6 +45,7 @@ POPC2.prototype.toggleFullScreen = function () {
 	// measure visible on the screen and move to that measure
 	// when redoing the layout.
 	this.scrollToTopOfNotation();
+	this.updateConfigurationOptionsInUrl();
 };
 
 Object.defineProperty(POPC2.prototype.toggleFullScreen, "name", { value: "toggleFullScreen" });

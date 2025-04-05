@@ -90,7 +90,7 @@ POPC2.prototype.DisplayComposerPortrait = function (composer, selector) {
 	let filename = entry.POPC2_IMAGE;
 	if (filename) {
 		url = `${this.SETTINGS.composer_images}/${filename}`;
-		console.warn("URL for composer image is", url);
+		// console.warn("URL for composer image is", url);
 	} else {
 		// This composer does not have a portrait, so display non-portrait.
 		element.innerHTML = composerDefaultImg;

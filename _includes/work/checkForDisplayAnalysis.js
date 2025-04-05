@@ -18,7 +18,7 @@ POPC2.prototype.checkForDisplayAnalysis = function () {
 	this.DebugMessageFunction();
 
 	if (!this.VARS.CGI.analysis) {
-		console.warn("NO ANALYSIS PARAMETER");
+		// console.warn("NO ANALYSIS PARAMETER");
 		return;
 	}
 

@@ -48,23 +48,27 @@ POPC2.prototype.displayScanInfo = function(humdrum) {
 
 	let lines = humdrum.split(/\r?\n/);
 	let links = [];
+	let youtube = [];
 	for (let i=0; i<lines.length; i++) {
-		matches = lines[i].match(/^!!!URL-scan[^:]*\s*:\s*([^\s]+)\s*(.*)\s*$/);
-		if (!matches) {
+		let matches = lines[i].match(/^!!!URL-scan[^:]*\s*:\s*([^\s]+)\s*(.*)\s*$/);
+		if (matches) {
+			let entry = {};
+			entry.url = matches[1];
+			entry.title = matches[2];
+			links.push(entry);
 			continue;
 		}
-		let entry = {};
-		entry.url = matches[1];
-		entry.title = matches[2];
-		links.push(entry);
+		matches = lines[i].match(/^!!!URL-youtube[^:]*\s*:\s*([^\s]+)\s*(.*)\s*$/);
+		if (matches) {
+			let entry = {};
+			entry.url = matches[1];
+			entry.title = matches[2];
+			youtube.push(entry)
+			continue;
+		}
 	}
 
-	if (links.length == 0) {
-		scanElement.innerHTML = "";
-		return;
-	}
-
-	// create scan contents from links
+	// Create scan contents from links:
 	let output = "";
 	let scanSvg = atob(scanBase64);
 	// also should adjust SVG ID when links more than 1.
@@ -93,8 +97,12 @@ POPC2.prototype.displayScanInfo = function(humdrum) {
 		output += 'style="cursor:alias" ';
 		output += 'src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmlld0JveD0iMCAwIDQ5My4zNTk5OSA0NDEuMzMzMzQiCiAgIGhlaWdodD0iNDQxLjMzMzM0IgogICB3aWR0aD0iNDkzLjM1OTk5IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICBpZD0ic3ZnMiIKICAgdmVyc2lvbj0iMS4xIj48bWV0YWRhdGEKICAgICBpZD0ibWV0YWRhdGE4Ij48cmRmOlJERj48Y2M6V29yawogICAgICAgICByZGY6YWJvdXQ9IiI+PGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+PGRjOnR5cGUKICAgICAgICAgICByZGY6cmVzb3VyY2U9Imh0dHA6Ly9wdXJsLm9yZy9kYy9kY21pdHlwZS9TdGlsbEltYWdlIiAvPjwvY2M6V29yaz48L3JkZjpSREY+PC9tZXRhZGF0YT48ZGVmcwogICAgIGlkPSJkZWZzNiIgLz48ZwogICAgIHRyYW5zZm9ybT0ibWF0cml4KDEuMzMzMzMzMywwLDAsLTEuMzMzMzMzMywwLDQ0MS4zMzMzMykiCiAgICAgaWQ9ImcxMCI+PGcKICAgICAgIHRyYW5zZm9ybT0ic2NhbGUoMC4xKSIKICAgICAgIGlkPSJnMTIiPjxwYXRoCiAgICAgICAgIGlkPSJwYXRoMTQiCiAgICAgICAgIHN0eWxlPSJmaWxsOiMyODczYWI7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmUiCiAgICAgICAgIGQ9Ik0gNjUuMjQyMiwyMTc4Ljc1IDc3NS4yNDIsMTkxNSA3NzMuOTkyLDE1IDY1LjI0MjIsMjc2LjI1IHYgMTkwMi41IiAvPjxwYXRoCiAgICAgICAgIGlkPSJwYXRoMTYiCiAgICAgICAgIHN0eWxlPSJmaWxsOiMyODczYWI7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmUiCiAgICAgICAgIGQ9Im0gODA0LjE0NSwyNjQwLjA5IGMgODEuNDQxLC0yNDAuOTEgLTI2LjQ3MywtNDM2LjIgLTI0MS4wNCwtNDM2LjIgLTIxNC41NTgsMCAtNDU0LjUxMSwxOTUuMjkgLTUzNS45NTI3LDQzNi4yIC04MS40MzM1LDI0MC44OSAyNi40ODA1LDQzNi4xOCAyNDEuMDM4Nyw0MzYuMTggMjE0LjU2NywwIDQ1NC41MTIsLTE5NS4yOSA1MzUuOTU0LC00MzYuMTgiIC8+PHBhdGgKICAgICAgICAgaWQ9InBhdGgxOCIKICAgICAgICAgc3R5bGU9ImZpbGw6I2VkMWQzMztmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZSIKICAgICAgICAgZD0iTSAxNjc4LjU4LDIxNzguNzUgOTY4LjU3OCwxOTE1IDk2OS44MjgsMTUgMTY3OC41OCwyNzYuMjUgdiAxOTAyLjUiIC8+PHBhdGgKICAgICAgICAgaWQ9InBhdGgyMCIKICAgICAgICAgc3R5bGU9ImZpbGw6I2VkMWQzMztmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZSIKICAgICAgICAgZD0ibSA5MzUuMDgyLDI2NDAuMDkgYyAtODEuNDM3LC0yNDAuOTEgMjYuNDc3LC00MzYuMiAyNDEuMDM4LC00MzYuMiAyMTQuNTYsMCA0NTQuNTEsMTk1LjI5IDUzNS45Niw0MzYuMiA4MS40MywyNDAuODkgLTI2LjQ4LDQzNi4xOCAtMjQxLjA0LDQzNi4xOCAtMjE0LjU3LDAgLTQ1NC41MiwtMTk1LjI5IC01MzUuOTU4LC00MzYuMTgiIC8+PHBhdGgKICAgICAgICAgaWQ9InBhdGgyMiIKICAgICAgICAgc3R5bGU9ImZpbGw6IzI4NzNhYjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZSIKICAgICAgICAgZD0ibSAxODYwLjI0LDIxNzguNzUgNzEwLC0yNjMuNzUgLTEuMjUsLTE5MDAgLTcwOC43NSwyNjEuMjUgdiAxOTAyLjUiIC8+PHBhdGgKICAgICAgICAgaWQ9InBhdGgyNCIKICAgICAgICAgc3R5bGU9ImZpbGw6IzI4NzNhYjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZSIKICAgICAgICAgZD0ibSAyNjAzLjc0LDI2NDAuMDkgYyA4MS40NSwtMjQwLjkxIC0yNi40NywtNDM2LjIgLTI0MS4wMywtNDM2LjIgLTIxNC41OCwwIC00NTQuNTIsMTk1LjI5IC01MzUuOTYsNDM2LjIgLTgxLjQ0LDI0MC44OSAyNi40OCw0MzYuMTggMjQxLjAzLDQzNi4xOCAyMTQuNTcsMCA0NTQuNTEsLTE5NS4yOSA1MzUuOTYsLTQzNi4xOCIgLz48cGF0aAogICAgICAgICBpZD0icGF0aDI2IgogICAgICAgICBzdHlsZT0iZmlsbDojZWQxZDMzO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lIgogICAgICAgICBkPSJtIDM3MDAuMjQsMzMxMCB2IC02NTIuNSBjIDAsMCAtMjMwLDkwIC0yNTcuNSwtMTQyLjUgLTIuNSwtMjQ3LjUgMCwtMzM2LjI1IDAsLTMzNi4yNSBsIDI1Ny41LDgzLjc1IFYgMTY5MCBsIC0yNTguNjEsLTkyLjUgViAyNjIuNSBMIDI3MzUuMjQsMCB2IDIzNjAgYyAwLDAgLTE1LDg1MCA5NjUsOTUwIiAvPjwvZz48L2c+PC9zdmc+Cg=="';
 		output += '>';
-
 		output += '</a>';
+
+	}
+
+	if (youtube.length > 0) {
+		output += this.generateYoutubeLinks(youtube);
 	}
 
 	scanElement.innerHTML = output;
@@ -116,8 +124,8 @@ POPC2.prototype.displayScanInfo = function(humdrum) {
 		iiifLink.addEventListener("copy", function (event) {
 			event.preventDefault();
 			event.clipboardData.setData('text/plain', iiif);
-    });
-}
+		});
+	}
 
 	if (iiif) {
 		// Add event listner for copying link address via
